@@ -123,6 +123,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\MySql.Data.dll</HintPath>
     </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\0.DLL\MySqlBackup.dll</HintPath>
+    </Reference>
     <Reference Include="MySQL_Login">
       <HintPath>..\0.DLL\MySQL_Login.dll</HintPath>
     </Reference>
