@@ -94,7 +94,6 @@ namespace 智能藥庫系統
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_緊急訂單_信箱設定);
         }
-
      
         private bool flag_藥庫_緊急訂單_信箱設定 = false;
         private void sub_Program_藥庫_緊急訂單_信箱設定()
@@ -115,7 +114,6 @@ namespace 智能藥庫系統
                 this.flag_藥庫_緊急訂單_信箱設定 = false;
             }
         }
-
 
         #region Function
         public string Function_信箱設定_GetCode(int index)
@@ -205,6 +203,7 @@ namespace 智能藥庫系統
                 if (list_value_buf.Count == 0)
                 {
                     object[] value = new object[new enum_藥品補給系統_參數資料().GetLength()];
+                    value[(int)enum_藥品補給系統_參數資料.GUID] = Guid.NewGuid().ToString();
                     value[(int)enum_藥品補給系統_參數資料.名稱] = 名稱;
                     value[(int)enum_藥品補給系統_參數資料.數值] = myEmail_Send_UI_信箱設定_文本.Subject;
                     sqL_DataGridView_藥品補給系統_參數資料.SQL_AddRow(value, false);

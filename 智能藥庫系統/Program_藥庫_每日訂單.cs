@@ -194,6 +194,7 @@ namespace 智能藥庫系統
                 this.flag_藥庫_每日訂單 = false;
             }
         }
+
         #region Function
         public List<object[]> Function_藥庫_每日訂單_取得藥品資料()
         {
@@ -406,6 +407,7 @@ namespace 智能藥庫系統
 
             return aPI_OrderClass;
         }
+
         public void Function_藥庫_每日訂單_更新藥品資料表單()
         {
             List<object[]> list_藥品資料 = Function_藥庫_每日訂單_取得藥品資料();
@@ -744,6 +746,9 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_藥庫_每日訂單_選取藥品補足基準量_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_藥品資料.Get_All_Checked_RowsValues();
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥品資料_buf = new List<object[]>();
+
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取資料!");
@@ -755,6 +760,14 @@ namespace 智能藥庫系統
             for (int i = 0; i < list_value.Count; i++)
             {
                 string code = list_value[i][(int)enum_藥庫_每日訂單.藥品碼].ObjectToString();
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, code);
+
+                int 最小包裝數量 = 0;
+                if(list_藥品資料_buf.Count > 0)
+                {
+                    最小包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.最小包裝數量].StringToInt32();
+                }
+
                 int 安全量 = list_value[i][(int)enum_藥庫_每日訂單.安全庫存].ObjectToString().StringToInt32();
                 int 緊急訂購數量 = list_value[i][(int)enum_藥庫_每日訂單.緊急訂購數量].ObjectToString().StringToInt32();
                 int 基準量 = list_value[i][(int)enum_藥庫_每日訂單.基準量].ObjectToString().StringToInt32();
@@ -767,6 +780,11 @@ namespace 智能藥庫系統
                 if (基準量 <= 安全量) continue;
                 訂購量 = 基準量 - (總庫存+ 在途量 + 緊急訂購數量);
                 if (訂購量 <= 0) continue;
+                if(最小包裝數量 > 0)
+                {
+                    int temp = 訂購量 % 最小包裝數量;
+                    訂購量 += temp;
+                }
                 aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
             }
 
