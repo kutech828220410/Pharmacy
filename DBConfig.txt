@@ -1,0 +1,47 @@
+{
+  "DB_Basic": {
+    "DataBaseName": "ds01",
+    "IP": "10.18.1.146",
+    "UserName": "user",
+    "Password": "66437068",
+    "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": ""
+  },
+  "DB_person_page": {
+    "DataBaseName": "ds01_vm",
+    "IP": "10.18.1.146",
+    "UserName": "user",
+    "Password": "66437068",
+    "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": ""
+  },
+  "DB_Medicine_Cloud": {
+    "DataBaseName": "dbvm",
+    "IP": "10.18.1.146",
+    "UserName": "user",
+    "Password": "66437068",
+    "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": "medicine_page_cloud"
+  },
+  "DB_posting_server": {
+    "DataBaseName": "ds01_vm",
+    "IP": "10.18.1.146",
+    "UserName": "user",
+    "Password": "66437068",
+    "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": ""
+  },
+  "DB_order_server": {
+    "DataBaseName": "order_000",
+    "IP": "10.18.1.146",
+    "UserName": "user",
+    "Password": "66437068",
+    "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": ""
+  }
+}

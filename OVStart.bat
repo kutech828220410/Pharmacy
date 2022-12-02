@@ -2,7 +2,7 @@
 title SunloginKeeper
 cls
 
-set runAppPath="C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)\智能藥庫系統(VM Server).exe"
+set runAppPath=".\\智能藥庫系統.exe"
 
 set _interval=10
 
