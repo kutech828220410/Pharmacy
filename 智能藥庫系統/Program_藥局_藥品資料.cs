@@ -52,6 +52,8 @@ namespace 智能藥庫系統
             中文名稱,
             藥品名稱,
             總庫存,
+            包裝單位,
+            包裝數量,
             基準量,
             安全庫存,
             藥品條碼1,
@@ -60,6 +62,7 @@ namespace 智能藥庫系統
         public enum enum_藥局_藥品資料_匯入
         {
             藥品碼,
+            包裝數量,
             基準量,
             安全庫存,
             藥品條碼1,
@@ -151,7 +154,7 @@ namespace 智能藥庫系統
                     src_value[(int)enum_藥局_藥品資料.總庫存] = dst_value[(int)enum_藥局_藥品資料.總庫存];
                     src_value[(int)enum_藥局_藥品資料.基準量] = dst_value[(int)enum_藥局_藥品資料.基準量];
                     src_value[(int)enum_藥局_藥品資料.安全庫存] = dst_value[(int)enum_藥局_藥品資料.安全庫存];
-                    bool flag_IsEqual = src_value.IsEqual(dst_value, (int)enum_藥局_藥品資料.藥局庫存, (int)enum_藥局_藥品資料.藥庫庫存, (int)enum_藥局_藥品資料.總庫存, (int)enum_藥局_藥品資料.基準量, (int)enum_藥局_藥品資料.安全庫存);
+                    bool flag_IsEqual = src_value.IsEqual(dst_value, (int)enum_藥局_藥品資料.包裝數量, (int)enum_藥局_藥品資料.藥局庫存, (int)enum_藥局_藥品資料.藥庫庫存, (int)enum_藥局_藥品資料.總庫存, (int)enum_藥局_藥品資料.基準量, (int)enum_藥局_藥品資料.安全庫存);
                     if (src_value[(int)enum_藥局_藥品資料.藥庫庫存].ObjectToString().StringIsEmpty())
                     {
                         src_value[(int)enum_藥局_藥品資料.藥庫庫存] = "0";
