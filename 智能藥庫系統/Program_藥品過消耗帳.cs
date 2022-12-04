@@ -46,6 +46,8 @@ namespace 智能藥庫系統
             藥品碼,
             藥品名稱,
             異動量,
+            訂購單價,
+            訂購總價,
             報表日期,
             產出時間,
             過帳時間,
@@ -379,8 +381,28 @@ namespace 智能藥庫系統
                 if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
                 {
                     this.Cursor = Cursors.WaitCursor;
+                    List<object[]> list_補給系統藥品資料 = sqL_DataGridView_藥品補給系統_藥品資料.SQL_GetAllRows(false);
+                    List<object[]> list_補給系統藥品資料_buf = new List<object[]>();
+
                     List<object[]> list_藥品過消耗帳_src = this.sqL_DataGridView_藥品過消耗帳.GetAllRows();
                     List<object[]> list_藥品過消耗帳_out = list_藥品過消耗帳_src.CopyRows(new enum_藥品過消耗帳(), new enum_藥品過消耗帳_匯出());
+                    for (int i = 0; i < list_藥品過消耗帳_out.Count; i++)
+                    {
+                        string 藥品碼 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
+                        list_補給系統藥品資料_buf = list_補給系統藥品資料.GetRows((int)enum_藥品補給系統_藥品資料.藥品碼, 藥品碼);
+                        if (list_補給系統藥品資料_buf.Count > 0)
+                        {
+                            int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量].ObjectToString().StringToInt32();
+                            數量 *= -1;
+                            double 訂購單價 = list_補給系統藥品資料_buf[0][(int)enum_藥品補給系統_藥品資料.最新訂購單價].StringToDouble();
+                            double 訂購總價 = 訂購單價 * 數量;
+                            if(訂購單價 > 0)
+                            {
+                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000");
+                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購總價] = 訂購總價.ToString("0.000");
+                            }
+                        }
+                    }
                     DataTable dataTable = list_藥品過消耗帳_out.ToDataTable(new enum_藥品過消耗帳_匯出());
                     dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出());
                     CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);

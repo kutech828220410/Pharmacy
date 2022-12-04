@@ -66,6 +66,10 @@
             this.批次過帳 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_批次過帳 = new MyUI.PLC_ScreenPage();
             this.tabPage33 = new System.Windows.Forms.TabPage();
+            this.label25 = new System.Windows.Forms.Label();
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束 = new MyUI.RJ_DatePicker();
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始 = new MyUI.RJ_DatePicker();
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_顯示全部 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_藥品名稱篩選 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_藥品碼篩選 = new MyUI.PLC_RJ_Button();
@@ -1015,10 +1019,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出 = new MyUI.PLC_RJ_Button();
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始 = new MyUI.RJ_DatePicker();
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束 = new MyUI.RJ_DatePicker();
-            this.label25 = new System.Windows.Forms.Label();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -2233,6 +2233,85 @@
             this.tabPage33.Size = new System.Drawing.Size(1630, 938);
             this.tabPage33.TabIndex = 4;
             this.tabPage33.Text = "藥品過消耗帳";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label25.Location = new System.Drawing.Point(610, 886);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(19, 19);
+            this.label25.TabIndex = 229;
+            this.label25.Text = "~";
+            // 
+            // rJ_DatePicker_藥品過消耗帳_指定報表日期_結束
+            // 
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.BorderSize = 0;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Font = new System.Drawing.Font("新細明體", 15.75F);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Location = new System.Drawing.Point(637, 875);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.MinimumSize = new System.Drawing.Size(100, 35);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Name = "rJ_DatePicker_藥品過消耗帳_指定報表日期_結束";
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Size = new System.Drawing.Size(210, 35);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.SkinColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.TabIndex = 228;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_DatePicker_藥品過消耗帳_指定報表日期_起始
+            // 
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.BorderSize = 0;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Font = new System.Drawing.Font("新細明體", 15.75F);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Location = new System.Drawing.Point(386, 875);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.MinimumSize = new System.Drawing.Size(100, 35);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Name = "rJ_DatePicker_藥品過消耗帳_指定報表日期_起始";
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Size = new System.Drawing.Size(210, 35);
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.SkinColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.TabIndex = 227;
+            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.TextColor = System.Drawing.Color.White;
+            // 
+            // plC_RJ_Button_藥品過消耗帳_全部資料匯出
+            // 
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.AutoResetState = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Bool = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.but_press = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Location = new System.Drawing.Point(1089, 743);
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Name = "plC_RJ_Button_藥品過消耗帳_全部資料匯出";
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字內容 = "全部資料匯出";
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字內容 = "全部資料匯出";
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.State = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.TabIndex = 226;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Text = "全部資料匯出";
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Texts = "全部資料匯出";
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.字型鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.文字鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.讀取位元反向 = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.音效 = true;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.顯示 = false;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.顯示狀態 = false;
             // 
             // plC_RJ_Button_藥品過消耗帳_顯示全部
             // 
@@ -25782,85 +25861,6 @@
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // plC_RJ_Button_藥品過消耗帳_全部資料匯出
-            // 
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.AutoResetState = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Bool = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderRadius = 5;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.but_press = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Location = new System.Drawing.Point(1089, 743);
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Name = "plC_RJ_Button_藥品過消耗帳_全部資料匯出";
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字內容 = "全部資料匯出";
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字內容 = "全部資料匯出";
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Size = new System.Drawing.Size(168, 81);
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.State = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.TabIndex = 226;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Text = "全部資料匯出";
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Texts = "全部資料匯出";
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.字型鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.文字鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.讀取位元反向 = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.音效 = true;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.顯示 = false;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.顯示狀態 = false;
-            // 
-            // rJ_DatePicker_藥品過消耗帳_指定報表日期_起始
-            // 
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.BorderSize = 0;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Location = new System.Drawing.Point(386, 875);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.MinimumSize = new System.Drawing.Size(100, 35);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Name = "rJ_DatePicker_藥品過消耗帳_指定報表日期_起始";
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Size = new System.Drawing.Size(210, 35);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.SkinColor = System.Drawing.Color.CornflowerBlue;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.TabIndex = 227;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_DatePicker_藥品過消耗帳_指定報表日期_結束
-            // 
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.BorderSize = 0;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Location = new System.Drawing.Point(637, 875);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.MinimumSize = new System.Drawing.Size(100, 35);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Name = "rJ_DatePicker_藥品過消耗帳_指定報表日期_結束";
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Size = new System.Drawing.Size(210, 35);
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.SkinColor = System.Drawing.Color.CornflowerBlue;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.TabIndex = 228;
-            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.TextColor = System.Drawing.Color.White;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label25.Location = new System.Drawing.Point(610, 886);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(19, 19);
-            this.label25.TabIndex = 229;
-            this.label25.Text = "~";
             // 
             // Form1
             // 
