@@ -114,7 +114,6 @@ namespace 智能藥庫系統
             }
             public void 新增藥品(string code , int num)
             {
-                if (num < 0) return;
                 
                 List<resultClass> Result_buf = new List<resultClass>();
                 Result_buf = (from value in Result
@@ -283,7 +282,6 @@ namespace 智能藥庫系統
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;
         }
-
         public API_OrderClass Function_藥庫_每日訂單_取得今日訂購數量()
         {
             API_OrderClass aPI_OrderClass = new API_OrderClass();
@@ -480,7 +478,6 @@ namespace 智能藥庫系統
             if (!flag) return false;
             return true;
         }
-
         public void Function_藥庫_每日訂單_今日訂購數量更新(API_OrderClass aPI_OrderClass)
         {
             List<string> _藥品碼 = new List<string>();
@@ -546,7 +543,6 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_每日訂單.SQL_AddRows(list_value_add, false);
             this.sqL_DataGridView_每日訂單.SQL_ReplaceExtra(list_value_replace, false);
         }
-
         #endregion
         #region Event
         private void RJ_TextBox_藥庫_每日訂單_藥品名稱_KeyPress(object sender, KeyPressEventArgs e)
@@ -563,7 +559,6 @@ namespace 智能藥庫系統
                 PlC_RJ_Button__藥庫_每日訂單_藥品碼搜尋_MouseDownEvent(null);
             }
         }
-
         private void SqL_DataGridView_藥庫_每日訂單_藥品資料_RowDoubleClickEvent(object[] RowValue)
         {
             string Code = RowValue[(int)enum_藥庫_每日訂單.藥品碼].ObjectToString();
@@ -774,6 +769,7 @@ namespace 智能藥庫系統
                 int 總庫存 = list_value[i][(int)enum_藥庫_每日訂單.總庫存].ObjectToString().StringToInt32();
                 int 在途量 = list_value[i][(int)enum_藥庫_每日訂單.在途量].ObjectToString().StringToInt32();
                 int 訂購量 = 0;
+                if (總庫存 >= 安全量) continue;
                 if (安全量 <= 0) continue;
                 if (基準量 <= 0) continue;
                 if (總庫存 < 0) continue;

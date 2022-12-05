@@ -66,7 +66,61 @@ namespace 智能藥庫系統
             }
         }
         #region Function
+        private void Function_藥庫_驗收入庫_補給驗收_寫入過帳明細(List<object[]> list_發票資料)
+        {
+            List<object[]> list_補給驗收入庫_add = new List<object[]>();
+            List<string[]> list_發票資料_serchvalues = new List<string[]>();
+            List<object[]> list_發票資料_values = new List<object[]>();
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥品資料_buf = new List<object[]>();
+            for (int i = 0; i < list_發票資料.Count; i++)
+            {
+                string 藥品碼 = list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString();
+                if (list_發票資料[i][(int)enum_藥品補給系統_發票資料.中榮匯出].ObjectToString() == true.ToString())
+                {
+                    continue;
+                }
 
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                if (list_藥品資料_buf.Count == 0)
+                {
+                    continue;
+                }
+                object[] value = new object[new enum_補給驗收入庫().GetLength()];
+                value[(int)enum_補給驗收入庫.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_補給驗收入庫.藥品碼] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString();
+                value[(int)enum_補給驗收入庫.效期] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.效期].ToDateString();
+                value[(int)enum_補給驗收入庫.批號] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.批號].ObjectToString();
+                value[(int)enum_補給驗收入庫.數量] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.數量].ObjectToString();
+                string 驗收時間 = list_發票資料[i][(int)enum_藥品補給系統_發票資料.登錄時間].ObjectToString();
+                if (驗收時間.StringIsEmpty()) 驗收時間 = list_發票資料[i][(int)enum_藥品補給系統_發票資料.登錄時間].ToDateTimeString();
+                value[(int)enum_補給驗收入庫.驗收時間] = 驗收時間;
+                value[(int)enum_補給驗收入庫.加入時間] = DateTime.Now.ToDateTimeString_6();
+                value[(int)enum_補給驗收入庫.狀態] = enum_藥庫_驗收入庫_過帳明細_狀態.等待過帳.GetEnumName();
+                value[(int)enum_補給驗收入庫.來源] = "補給驗收";
+                value[(int)enum_補給驗收入庫.備註] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.訂單編號].ObjectToString();
+                DateTime dateTime = DateTime.Now;
+                if (!DateTime.TryParse(驗收時間, out dateTime))
+                {
+                    continue;
+                }
+                if (!value[(int)enum_補給驗收入庫.效期].ObjectToString().Check_Date_String())
+                {
+                    continue;
+                }
+                list_補給驗收入庫_add.Add(value);
+
+                list_發票資料[i][(int)enum_藥品補給系統_發票資料.中榮匯出] = true.ToString();
+                string[] serchvalues = new string[] { list_發票資料[i][(int)enum_藥品補給系統_發票資料.訂單編號].ObjectToString(), list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString() };
+                list_發票資料_values.Add(list_發票資料[i]);
+                list_發票資料_serchvalues.Add(serchvalues);
+            }
+
+            string[] colnames = new string[] { enum_藥品補給系統_發票資料.訂單編號.GetEnumName(), enum_藥品補給系統_發票資料.藥品碼.GetEnumName() };
+            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.SQL_ReplaceExtra(colnames, list_發票資料_serchvalues, list_發票資料_values, false);
+            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.ReplaceExtra(colnames, list_發票資料_serchvalues, list_發票資料_values, true);
+            this.sqL_DataGridView_補給驗收入庫.SQL_AddRows(list_補給驗收入庫_add, false);
+        }
         #endregion
         #region Event
         private void SqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料_DataGridRefreshEvent()
@@ -84,7 +138,6 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
-            RowsList = RowsList.GetRows((int)enum_藥品補給系統_發票資料.已結清, true.ToString());
             RowsList.Sort(new ICP_驗收入庫_補給驗收());
         }
         private void PlC_RJ_Button_藥庫_驗收入庫_補給驗收_選取資料設定未匯出_MouseDownEvent(MouseEventArgs mevent)
@@ -112,47 +165,10 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_藥庫_驗收入庫_補給驗收_選取資料寫入過帳明細_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_發票資料 = this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.Get_All_Checked_RowsValues();
-            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-            List<object[]> list_藥品資料_buf = new List<object[]>();
-            if (list_發票資料.Count == 0)
-            {
-                MyMessageBox.ShowDialog("未選取資料!");
-                return;
-            }
-            List<object[]> list_補給驗收入庫_add = new List<object[]>();
-            List<string[]> list_發票資料_serchvalues = new List<string[]>();
-            List<object[]> list_發票資料_values = new List<object[]>();
 
-            for (int i = 0; i < list_發票資料.Count; i++)
-            {
-                if (list_發票資料[i][(int)enum_藥品補給系統_發票資料.中榮匯出].ObjectToString() == true.ToString()) continue;
-                string 藥品碼 = list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString();
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
-                if (list_藥品資料_buf.Count == 0) continue;
-                object[] value = new object[new enum_補給驗收入庫().GetLength()];
-                value[(int)enum_補給驗收入庫.GUID] = Guid.NewGuid().ToString();
-                value[(int)enum_補給驗收入庫.藥品碼] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString();
-                value[(int)enum_補給驗收入庫.效期] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.效期].ToDateString();
-                value[(int)enum_補給驗收入庫.批號] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.批號].ObjectToString();
-                value[(int)enum_補給驗收入庫.數量] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.數量].ObjectToString();
-                value[(int)enum_補給驗收入庫.驗收時間] = list_發票資料[i][(int)enum_藥品補給系統_發票資料.登錄時間].ObjectToString();
-                value[(int)enum_補給驗收入庫.加入時間] = DateTime.Now.ToDateTimeString_6();
-                value[(int)enum_補給驗收入庫.狀態] = enum_藥庫_驗收入庫_過帳明細_驗收入庫明細_狀態.等待過帳.GetEnumName();
-                value[(int)enum_補給驗收入庫.來源] = "補給驗收";
+            Function_藥庫_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
 
-                if (!value[(int)enum_補給驗收入庫.效期].ObjectToString().Check_Date_String()) continue;
-                list_補給驗收入庫_add.Add(value);
-
-                list_發票資料[i][(int)enum_藥品補給系統_發票資料.中榮匯出] = true.ToString();
-                string[] serchvalues = new string[] { list_發票資料[i][(int)enum_藥品補給系統_發票資料.訂單編號].ObjectToString(), list_發票資料[i][(int)enum_藥品補給系統_發票資料.藥品碼].ObjectToString() };
-                list_發票資料_values.Add(list_發票資料[i]);
-                list_發票資料_serchvalues.Add(serchvalues);
-            }
-
-            string[] colnames = new string[] { enum_藥品補給系統_發票資料.訂單編號.GetEnumName(), enum_藥品補給系統_發票資料.藥品碼.GetEnumName() };
-            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.SQL_ReplaceExtra(colnames, list_發票資料_serchvalues, list_發票資料_values, false);
-            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.ReplaceExtra(colnames, list_發票資料_serchvalues, list_發票資料_values, true);
-            this.sqL_DataGridView_補給驗收入庫.SQL_AddRows(list_補給驗收入庫_add, false);
+            
             MyMessageBox.ShowDialog("寫入完成!");
         }
         private void PlC_RJ_Button_藥庫_驗收入庫_補給驗收_全部顯示_MouseDownEvent(MouseEventArgs mevent)
