@@ -66,6 +66,10 @@
             this.批次過帳 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_批次過帳 = new MyUI.PLC_ScreenPage();
             this.tabPage33 = new System.Windows.Forms.TabPage();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.checkBox_藥品過消耗帳_住院 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥品過消耗帳_急診 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥品過消耗帳_門診 = new System.Windows.Forms.CheckBox();
             this.label25 = new System.Windows.Forms.Label();
             this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束 = new MyUI.RJ_DatePicker();
             this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始 = new MyUI.RJ_DatePicker();
@@ -1038,11 +1042,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.groupBox20 = new System.Windows.Forms.GroupBox();
-            this.checkBox_藥品過消耗帳_門診 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥品過消耗帳_急診 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥品過消耗帳_住院 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥品過消耗帳_公藥 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1057,6 +1056,7 @@
             this.批次過帳.SuspendLayout();
             this.plC_ScreenPage_批次過帳.SuspendLayout();
             this.tabPage33.SuspendLayout();
+            this.groupBox20.SuspendLayout();
             this.rJ_GroupBox20.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox20.SuspendLayout();
             this.tabPage11.SuspendLayout();
@@ -1357,7 +1357,6 @@
             this.tabPage35.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.groupBox20.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -2267,6 +2266,55 @@
             this.tabPage33.Size = new System.Drawing.Size(1630, 938);
             this.tabPage33.TabIndex = 4;
             this.tabPage33.Text = "藥品過消耗帳";
+            // 
+            // groupBox20
+            // 
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_住院);
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_急診);
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_門診);
+            this.groupBox20.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox20.Location = new System.Drawing.Point(736, 738);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(221, 81);
+            this.groupBox20.TabIndex = 230;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "藥局選擇";
+            // 
+            // checkBox_藥品過消耗帳_住院
+            // 
+            this.checkBox_藥品過消耗帳_住院.AutoSize = true;
+            this.checkBox_藥品過消耗帳_住院.Checked = true;
+            this.checkBox_藥品過消耗帳_住院.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_住院.Location = new System.Drawing.Point(153, 38);
+            this.checkBox_藥品過消耗帳_住院.Name = "checkBox_藥品過消耗帳_住院";
+            this.checkBox_藥品過消耗帳_住院.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_住院.TabIndex = 2;
+            this.checkBox_藥品過消耗帳_住院.Text = "住院";
+            this.checkBox_藥品過消耗帳_住院.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥品過消耗帳_急診
+            // 
+            this.checkBox_藥品過消耗帳_急診.AutoSize = true;
+            this.checkBox_藥品過消耗帳_急診.Checked = true;
+            this.checkBox_藥品過消耗帳_急診.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_急診.Location = new System.Drawing.Point(87, 38);
+            this.checkBox_藥品過消耗帳_急診.Name = "checkBox_藥品過消耗帳_急診";
+            this.checkBox_藥品過消耗帳_急診.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_急診.TabIndex = 1;
+            this.checkBox_藥品過消耗帳_急診.Text = "急診";
+            this.checkBox_藥品過消耗帳_急診.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥品過消耗帳_門診
+            // 
+            this.checkBox_藥品過消耗帳_門診.AutoSize = true;
+            this.checkBox_藥品過消耗帳_門診.Checked = true;
+            this.checkBox_藥品過消耗帳_門診.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_門診.Location = new System.Drawing.Point(21, 38);
+            this.checkBox_藥品過消耗帳_門診.Name = "checkBox_藥品過消耗帳_門診";
+            this.checkBox_藥品過消耗帳_門診.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_門診.TabIndex = 0;
+            this.checkBox_藥品過消耗帳_門診.Text = "門診";
+            this.checkBox_藥品過消耗帳_門診.UseVisualStyleBackColor = true;
             // 
             // label25
             // 
@@ -26364,68 +26412,6 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // groupBox20
-            // 
-            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_公藥);
-            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_住院);
-            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_急診);
-            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_門診);
-            this.groupBox20.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox20.Location = new System.Drawing.Point(736, 738);
-            this.groupBox20.Name = "groupBox20";
-            this.groupBox20.Size = new System.Drawing.Size(299, 81);
-            this.groupBox20.TabIndex = 230;
-            this.groupBox20.TabStop = false;
-            this.groupBox20.Text = "藥局選擇";
-            // 
-            // checkBox_藥品過消耗帳_門診
-            // 
-            this.checkBox_藥品過消耗帳_門診.AutoSize = true;
-            this.checkBox_藥品過消耗帳_門診.Checked = true;
-            this.checkBox_藥品過消耗帳_門診.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥品過消耗帳_門診.Location = new System.Drawing.Point(21, 38);
-            this.checkBox_藥品過消耗帳_門診.Name = "checkBox_藥品過消耗帳_門診";
-            this.checkBox_藥品過消耗帳_門診.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥品過消耗帳_門診.TabIndex = 0;
-            this.checkBox_藥品過消耗帳_門診.Text = "門診";
-            this.checkBox_藥品過消耗帳_門診.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥品過消耗帳_急診
-            // 
-            this.checkBox_藥品過消耗帳_急診.AutoSize = true;
-            this.checkBox_藥品過消耗帳_急診.Checked = true;
-            this.checkBox_藥品過消耗帳_急診.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥品過消耗帳_急診.Location = new System.Drawing.Point(87, 38);
-            this.checkBox_藥品過消耗帳_急診.Name = "checkBox_藥品過消耗帳_急診";
-            this.checkBox_藥品過消耗帳_急診.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥品過消耗帳_急診.TabIndex = 1;
-            this.checkBox_藥品過消耗帳_急診.Text = "急診";
-            this.checkBox_藥品過消耗帳_急診.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥品過消耗帳_住院
-            // 
-            this.checkBox_藥品過消耗帳_住院.AutoSize = true;
-            this.checkBox_藥品過消耗帳_住院.Checked = true;
-            this.checkBox_藥品過消耗帳_住院.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥品過消耗帳_住院.Location = new System.Drawing.Point(153, 38);
-            this.checkBox_藥品過消耗帳_住院.Name = "checkBox_藥品過消耗帳_住院";
-            this.checkBox_藥品過消耗帳_住院.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥品過消耗帳_住院.TabIndex = 2;
-            this.checkBox_藥品過消耗帳_住院.Text = "住院";
-            this.checkBox_藥品過消耗帳_住院.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥品過消耗帳_公藥
-            // 
-            this.checkBox_藥品過消耗帳_公藥.AutoSize = true;
-            this.checkBox_藥品過消耗帳_公藥.Checked = true;
-            this.checkBox_藥品過消耗帳_公藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥品過消耗帳_公藥.Location = new System.Drawing.Point(219, 38);
-            this.checkBox_藥品過消耗帳_公藥.Name = "checkBox_藥品過消耗帳_公藥";
-            this.checkBox_藥品過消耗帳_公藥.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥品過消耗帳_公藥.TabIndex = 3;
-            this.checkBox_藥品過消耗帳_公藥.Text = "公藥";
-            this.checkBox_藥品過消耗帳_公藥.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -26455,6 +26441,8 @@
             this.plC_ScreenPage_批次過帳.ResumeLayout(false);
             this.tabPage33.ResumeLayout(false);
             this.tabPage33.PerformLayout();
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
             this.rJ_GroupBox20.ContentsPanel.ResumeLayout(false);
             this.rJ_GroupBox20.ResumeLayout(false);
             this.tabPage11.ResumeLayout(false);
@@ -26782,8 +26770,6 @@
             this.tabPage35.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.groupBox20.ResumeLayout(false);
-            this.groupBox20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -27799,7 +27785,6 @@
         private MyUI.RJ_Lable rJ_Lable116;
         private MyUI.RJ_TextBox rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋;
         private System.Windows.Forms.GroupBox groupBox20;
-        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_公藥;
         private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_住院;
         private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_急診;
         private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_門診;

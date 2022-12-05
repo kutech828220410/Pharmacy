@@ -355,19 +355,25 @@ namespace 智能藥庫系統
             if (checkBox_藥品過消耗帳_門診.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.門診.GetEnumName()));
+                List<object[]> list_公藥 = RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName());
+                list_公藥 = list_公藥.GetRows((int)enum_藥品過消耗帳.藥局代碼, "OPD");
+                list_value.LockAdd(list_公藥);
             }
             if (checkBox_藥品過消耗帳_急診.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.急診.GetEnumName()));
+                List<object[]> list_公藥 = RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName());
+                list_公藥 = list_公藥.GetRows((int)enum_藥品過消耗帳.藥局代碼, "PHER");
+                list_value.LockAdd(list_公藥);
             }
             if (checkBox_藥品過消耗帳_住院.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.住院.GetEnumName()));
+                List<object[]> list_公藥 = RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName());
+                list_公藥 = list_公藥.GetRows((int)enum_藥品過消耗帳.藥局代碼, "PHR");
+                list_value.LockAdd(list_公藥);
             }
-            if (checkBox_藥品過消耗帳_公藥.Checked)
-            {
-                list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName()));
-            }
+       
             RowsList = list_value;
         }
         private void PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent(MouseEventArgs mevent)
