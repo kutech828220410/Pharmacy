@@ -120,16 +120,16 @@ namespace 智能藥庫系統
                               select value).ToList();
                 if(Result_buf.Count > 0)
                 {
-                    if(num == 0)
-                    {
-                        Result.Remove(Result_buf[0]);
-                        return;
-                    }
+                    //if(num == 0)
+                    //{
+                    //    Result.Remove(Result_buf[0]);
+                    //    return;
+                    //}
                     Result_buf[0].value = num.ToString();
                 }
                 else
                 {
-                    if (num == 0) return;
+                    //if (num == 0) return;
                     this.Result.Add(new resultClass(code, num.ToString(), ""));
                 }
             }
@@ -704,6 +704,7 @@ namespace 智能藥庫系統
                 string 數量 = aPI_OrderClass.Result[i].value;
                 string 訂購日期 = DateTime.Now.ToDateString();
                 string text = this.Function_藥庫_每日訂單_下訂單_已訂購字串轉換(藥品碼, 數量, 訂購日期);
+                if (數量.StringToInt32() <= 0) continue;
                 list_texts.Add(text);
             }
             bool flag = Basic.MyFileStream.SaveFile($"{localfilepath}{localfilename}", list_texts);
