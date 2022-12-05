@@ -529,6 +529,18 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品 = new MyUI.PLC_RJ_Button();
             this.tabPage37 = new System.Windows.Forms.TabPage();
+            this.panel35 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable116 = new MyUI.RJ_Lable();
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋 = new MyUI.RJ_TextBox();
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable115 = new MyUI.RJ_Lable();
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束 = new MyUI.RJ_DatePicker();
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_GroupBox16 = new MyUI.PLC_RJ_GroupBox();
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料 = new SQLUI.SQL_DataGridView();
+            this.label26 = new System.Windows.Forms.Label();
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始 = new MyUI.RJ_DatePicker();
             this.panel_藥庫_每日訂單 = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton41 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton44 = new MyUI.PLC_RJ_ScreenButton();
@@ -1026,18 +1038,11 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_GroupBox16 = new MyUI.PLC_RJ_GroupBox();
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料 = new SQLUI.SQL_DataGridView();
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部 = new MyUI.PLC_RJ_Button();
-            this.rJ_Lable115 = new MyUI.RJ_Lable();
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束 = new MyUI.RJ_DatePicker();
-            this.label26 = new System.Windows.Forms.Label();
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始 = new MyUI.RJ_DatePicker();
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋 = new MyUI.PLC_RJ_Button();
-            this.panel35 = new System.Windows.Forms.Panel();
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋 = new MyUI.PLC_RJ_Button();
-            this.rJ_Lable116 = new MyUI.RJ_Lable();
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋 = new MyUI.RJ_TextBox();
+            this.groupBox20 = new System.Windows.Forms.GroupBox();
+            this.checkBox_藥品過消耗帳_門診 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥品過消耗帳_急診 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥品過消耗帳_住院 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥品過消耗帳_公藥 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1178,6 +1183,9 @@
             this.plC_RJ_GroupBox7.SuspendLayout();
             this.panel120.SuspendLayout();
             this.tabPage37.SuspendLayout();
+            this.panel35.SuspendLayout();
+            this.plC_RJ_GroupBox16.ContentsPanel.SuspendLayout();
+            this.plC_RJ_GroupBox16.SuspendLayout();
             this.panel_藥庫_每日訂單.SuspendLayout();
             this.藥庫_緊急訂單.SuspendLayout();
             this.plC_ScreenPage_藥庫_緊急訂單.SuspendLayout();
@@ -1349,9 +1357,7 @@
             this.tabPage35.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.plC_RJ_GroupBox16.ContentsPanel.SuspendLayout();
-            this.plC_RJ_GroupBox16.SuspendLayout();
-            this.panel35.SuspendLayout();
+            this.groupBox20.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -2237,6 +2243,7 @@
             // tabPage33
             // 
             this.tabPage33.BackColor = System.Drawing.Color.White;
+            this.tabPage33.Controls.Add(this.groupBox20);
             this.tabPage33.Controls.Add(this.label25);
             this.tabPage33.Controls.Add(this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束);
             this.tabPage33.Controls.Add(this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始);
@@ -14165,6 +14172,330 @@
             this.tabPage37.TabIndex = 1;
             this.tabPage37.Text = "訂單查詢";
             // 
+            // panel35
+            // 
+            this.panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel35.Controls.Add(this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋);
+            this.panel35.Controls.Add(this.rJ_Lable116);
+            this.panel35.Controls.Add(this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋);
+            this.panel35.Location = new System.Drawing.Point(1053, 81);
+            this.panel35.Name = "panel35";
+            this.panel35.Size = new System.Drawing.Size(365, 62);
+            this.panel35.TabIndex = 196;
+            // 
+            // plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋
+            // 
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.AutoResetState = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Bool = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderSize = 0;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.but_press = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Location = new System.Drawing.Point(278, 5);
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Name = "plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋";
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字內容 = "搜尋";
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字內容 = "搜尋";
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Size = new System.Drawing.Size(75, 50);
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.State = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TabIndex = 144;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Text = "搜尋";
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Texts = "搜尋";
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.UseVisualStyleBackColor = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.字型鎖住 = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.文字鎖住 = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.讀取位元反向 = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.讀寫鎖住 = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.音效 = true;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.顯示 = false;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.顯示狀態 = false;
+            // 
+            // rJ_Lable116
+            // 
+            this.rJ_Lable116.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable116.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable116.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable116.BorderRadius = 5;
+            this.rJ_Lable116.BorderSize = 0;
+            this.rJ_Lable116.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable116.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.rJ_Lable116.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable116.Location = new System.Drawing.Point(3, 5);
+            this.rJ_Lable116.Name = "rJ_Lable116";
+            this.rJ_Lable116.Size = new System.Drawing.Size(106, 50);
+            this.rJ_Lable116.TabIndex = 143;
+            this.rJ_Lable116.Text = "藥品碼";
+            this.rJ_Lable116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable116.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋
+            // 
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 0;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderSize = 2;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Location = new System.Drawing.Point(115, 5);
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Multiline = false;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Name = "rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋";
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PassWordChar = false;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PlaceholderText = "";
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShowTouchPannel = false;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Size = new System.Drawing.Size(157, 50);
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TabIndex = 142;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Texts = "";
+            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.UnderlineStyle = false;
+            // 
+            // plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋
+            // 
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.AutoResetState = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Bool = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderRadius = 5;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderSize = 0;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.but_press = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Location = new System.Drawing.Point(1525, 16);
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Name = "plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋";
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字內容 = "搜尋";
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字內容 = "搜尋";
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Size = new System.Drawing.Size(79, 46);
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.State = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.TabIndex = 194;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Text = "搜尋";
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Texts = "搜尋";
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.UseVisualStyleBackColor = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.字型鎖住 = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.文字鎖住 = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.讀取位元反向 = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.讀寫鎖住 = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.音效 = true;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.顯示 = false;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.顯示狀態 = false;
+            // 
+            // rJ_Lable115
+            // 
+            this.rJ_Lable115.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable115.BackgroundColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable115.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable115.BorderRadius = 8;
+            this.rJ_Lable115.BorderSize = 0;
+            this.rJ_Lable115.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable115.Font = new System.Drawing.Font("新細明體", 12F);
+            this.rJ_Lable115.ForeColor = System.Drawing.Color.Black;
+            this.rJ_Lable115.Location = new System.Drawing.Point(1050, 16);
+            this.rJ_Lable115.Name = "rJ_Lable115";
+            this.rJ_Lable115.Size = new System.Drawing.Size(122, 46);
+            this.rJ_Lable115.TabIndex = 190;
+            this.rJ_Lable115.Text = "訂購時間";
+            this.rJ_Lable115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable115.TextColor = System.Drawing.Color.Black;
+            // 
+            // rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束
+            // 
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.BorderSize = 0;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Font = new System.Drawing.Font("新細明體", 15.75F);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Location = new System.Drawing.Point(1359, 22);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.MinimumSize = new System.Drawing.Size(100, 35);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Name = "rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束";
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Size = new System.Drawing.Size(147, 35);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.SkinColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.TabIndex = 193;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.TextColor = System.Drawing.Color.White;
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Location = new System.Drawing.Point(1436, 172);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Name = "plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.TabIndex = 189;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Text = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Texts = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.顯示狀態 = false;
+            // 
+            // plC_RJ_GroupBox16
+            // 
+            // 
+            // plC_RJ_GroupBox16.ContentsPanel
+            // 
+            this.plC_RJ_GroupBox16.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox16.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_GroupBox16.ContentsPanel.BorderRadius = 5;
+            this.plC_RJ_GroupBox16.ContentsPanel.BorderSize = 2;
+            this.plC_RJ_GroupBox16.ContentsPanel.Controls.Add(this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料);
+            this.plC_RJ_GroupBox16.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plC_RJ_GroupBox16.ContentsPanel.ForeColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox16.ContentsPanel.Location = new System.Drawing.Point(0, 37);
+            this.plC_RJ_GroupBox16.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox16.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.plC_RJ_GroupBox16.ContentsPanel.Size = new System.Drawing.Size(1029, 820);
+            this.plC_RJ_GroupBox16.ContentsPanel.TabIndex = 2;
+            this.plC_RJ_GroupBox16.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plC_RJ_GroupBox16.Location = new System.Drawing.Point(0, 0);
+            this.plC_RJ_GroupBox16.Name = "plC_RJ_GroupBox16";
+            this.plC_RJ_GroupBox16.PannelBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox16.PannelBorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_GroupBox16.PannelBorderRadius = 5;
+            this.plC_RJ_GroupBox16.PannelBorderSize = 2;
+            this.plC_RJ_GroupBox16.Size = new System.Drawing.Size(1029, 857);
+            this.plC_RJ_GroupBox16.TabIndex = 188;
+            this.plC_RJ_GroupBox16.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox16.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_GroupBox16.TitleBorderRadius = 5;
+            this.plC_RJ_GroupBox16.TitleBorderSize = 0;
+            this.plC_RJ_GroupBox16.TitleFont = new System.Drawing.Font("新細明體", 12F);
+            this.plC_RJ_GroupBox16.TitleForeColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox16.TitleHeight = 37;
+            this.plC_RJ_GroupBox16.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.plC_RJ_GroupBox16.TitleTexts = "訂購資料";
+            // 
+            // sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料
+            // 
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.AutoSelectToDeep = false;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderRadius = 0;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderSize = 2;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersHeight = 65;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns1"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns2"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns3"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns4"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns5"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns6"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns7"))));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.DataBaseName = "storehouse_0";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Font = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.ImageBox = false;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Location = new System.Drawing.Point(3, 3);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Name = "sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Password = "user82822040";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Port = ((uint)(3306u));
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.rowHeaderBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RowsHeight = 60;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Server = "localhost";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Size = new System.Drawing.Size(1023, 814);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.TabIndex = 157;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.TableName = "medicine_page_firstclass";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.UserName = "root";
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.可拖曳欄位寬度 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.可選擇多列 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.自動換行 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.表單字體 = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示CheckBox = false;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示首列 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示首行 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.ForeColor = System.Drawing.Color.Black;
+            this.label26.Location = new System.Drawing.Point(1338, 33);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(11, 12);
+            this.label26.TabIndex = 192;
+            this.label26.Text = "~";
+            // 
+            // rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始
+            // 
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.BorderSize = 0;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Font = new System.Drawing.Font("新細明體", 15.75F);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Location = new System.Drawing.Point(1185, 22);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.MinimumSize = new System.Drawing.Size(100, 35);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Name = "rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始";
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Size = new System.Drawing.Size(147, 35);
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.SkinColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TabIndex = 191;
+            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TextColor = System.Drawing.Color.White;
+            // 
             // panel_藥庫_每日訂單
             // 
             this.panel_藥庫_每日訂單.Controls.Add(this.plC_RJ_ScreenButton41);
@@ -26017,7 +26348,7 @@
             // saveFileDialog_SaveExcel
             // 
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
-            this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
+            this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt|Excel File (*.xls)|*.xls;";
             // 
             // ContentsPanel
             // 
@@ -26033,329 +26364,67 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // plC_RJ_GroupBox16
+            // groupBox20
             // 
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_公藥);
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_住院);
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_急診);
+            this.groupBox20.Controls.Add(this.checkBox_藥品過消耗帳_門診);
+            this.groupBox20.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox20.Location = new System.Drawing.Point(736, 738);
+            this.groupBox20.Name = "groupBox20";
+            this.groupBox20.Size = new System.Drawing.Size(299, 81);
+            this.groupBox20.TabIndex = 230;
+            this.groupBox20.TabStop = false;
+            this.groupBox20.Text = "藥局選擇";
             // 
-            // plC_RJ_GroupBox16.ContentsPanel
+            // checkBox_藥品過消耗帳_門診
             // 
-            this.plC_RJ_GroupBox16.ContentsPanel.BackColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox16.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox16.ContentsPanel.BorderRadius = 5;
-            this.plC_RJ_GroupBox16.ContentsPanel.BorderSize = 2;
-            this.plC_RJ_GroupBox16.ContentsPanel.Controls.Add(this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料);
-            this.plC_RJ_GroupBox16.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plC_RJ_GroupBox16.ContentsPanel.ForeColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox16.ContentsPanel.Location = new System.Drawing.Point(0, 37);
-            this.plC_RJ_GroupBox16.ContentsPanel.Name = "ContentsPanel";
-            this.plC_RJ_GroupBox16.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
-            this.plC_RJ_GroupBox16.ContentsPanel.Size = new System.Drawing.Size(1029, 820);
-            this.plC_RJ_GroupBox16.ContentsPanel.TabIndex = 2;
-            this.plC_RJ_GroupBox16.Dock = System.Windows.Forms.DockStyle.Left;
-            this.plC_RJ_GroupBox16.Location = new System.Drawing.Point(0, 0);
-            this.plC_RJ_GroupBox16.Name = "plC_RJ_GroupBox16";
-            this.plC_RJ_GroupBox16.PannelBackColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox16.PannelBorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox16.PannelBorderRadius = 5;
-            this.plC_RJ_GroupBox16.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox16.Size = new System.Drawing.Size(1029, 857);
-            this.plC_RJ_GroupBox16.TabIndex = 188;
-            this.plC_RJ_GroupBox16.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.plC_RJ_GroupBox16.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_GroupBox16.TitleBorderRadius = 5;
-            this.plC_RJ_GroupBox16.TitleBorderSize = 0;
-            this.plC_RJ_GroupBox16.TitleFont = new System.Drawing.Font("新細明體", 12F);
-            this.plC_RJ_GroupBox16.TitleForeColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox16.TitleHeight = 37;
-            this.plC_RJ_GroupBox16.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.plC_RJ_GroupBox16.TitleTexts = "訂購資料";
+            this.checkBox_藥品過消耗帳_門診.AutoSize = true;
+            this.checkBox_藥品過消耗帳_門診.Checked = true;
+            this.checkBox_藥品過消耗帳_門診.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_門診.Location = new System.Drawing.Point(21, 38);
+            this.checkBox_藥品過消耗帳_門診.Name = "checkBox_藥品過消耗帳_門診";
+            this.checkBox_藥品過消耗帳_門診.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_門診.TabIndex = 0;
+            this.checkBox_藥品過消耗帳_門診.Text = "門診";
+            this.checkBox_藥品過消耗帳_門診.UseVisualStyleBackColor = true;
             // 
-            // sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料
+            // checkBox_藥品過消耗帳_急診
             // 
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.AutoSelectToDeep = false;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.backColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderRadius = 0;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.BorderSize = 2;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStylBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.cellStylForeColor = System.Drawing.Color.Black;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersHeight = 65;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns1"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns2"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns3"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns4"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns5"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns6"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Columns7"))));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.DataBaseName = "storehouse_0";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Font = new System.Drawing.Font("新細明體", 12F);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.ImageBox = false;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Location = new System.Drawing.Point(3, 3);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Name = "sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Password = "user82822040";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Port = ((uint)(3306u));
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.rowHeaderBackColor = System.Drawing.Color.LightBlue;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RowsHeight = 60;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.SaveFileName = "SQL_DataGridView";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Server = "localhost";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Size = new System.Drawing.Size(1023, 814);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.TabIndex = 157;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.TableName = "medicine_page_firstclass";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.UserName = "root";
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.可拖曳欄位寬度 = true;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.可選擇多列 = true;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.自動換行 = true;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.表單字體 = new System.Drawing.Font("新細明體", 12F);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.邊框樣式 = System.Windows.Forms.BorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示CheckBox = false;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示首列 = true;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.顯示首行 = true;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.checkBox_藥品過消耗帳_急診.AutoSize = true;
+            this.checkBox_藥品過消耗帳_急診.Checked = true;
+            this.checkBox_藥品過消耗帳_急診.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_急診.Location = new System.Drawing.Point(87, 38);
+            this.checkBox_藥品過消耗帳_急診.Name = "checkBox_藥品過消耗帳_急診";
+            this.checkBox_藥品過消耗帳_急診.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_急診.TabIndex = 1;
+            this.checkBox_藥品過消耗帳_急診.Text = "急診";
+            this.checkBox_藥品過消耗帳_急診.UseVisualStyleBackColor = true;
             // 
-            // plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部
+            // checkBox_藥品過消耗帳_住院
             // 
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Bool = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderRadius = 5;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.but_press = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Location = new System.Drawing.Point(1436, 172);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Name = "plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字內容 = "顯示全部";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字內容 = "顯示全部";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Size = new System.Drawing.Size(168, 81);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.State = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.TabIndex = 189;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Text = "顯示全部";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Texts = "顯示全部";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.字型鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.文字鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.讀取位元反向 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.音效 = true;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.顯示 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.顯示狀態 = false;
+            this.checkBox_藥品過消耗帳_住院.AutoSize = true;
+            this.checkBox_藥品過消耗帳_住院.Checked = true;
+            this.checkBox_藥品過消耗帳_住院.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_住院.Location = new System.Drawing.Point(153, 38);
+            this.checkBox_藥品過消耗帳_住院.Name = "checkBox_藥品過消耗帳_住院";
+            this.checkBox_藥品過消耗帳_住院.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_住院.TabIndex = 2;
+            this.checkBox_藥品過消耗帳_住院.Text = "住院";
+            this.checkBox_藥品過消耗帳_住院.UseVisualStyleBackColor = true;
             // 
-            // rJ_Lable115
+            // checkBox_藥品過消耗帳_公藥
             // 
-            this.rJ_Lable115.BackColor = System.Drawing.Color.SkyBlue;
-            this.rJ_Lable115.BackgroundColor = System.Drawing.Color.SkyBlue;
-            this.rJ_Lable115.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable115.BorderRadius = 8;
-            this.rJ_Lable115.BorderSize = 0;
-            this.rJ_Lable115.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable115.Font = new System.Drawing.Font("新細明體", 12F);
-            this.rJ_Lable115.ForeColor = System.Drawing.Color.Black;
-            this.rJ_Lable115.Location = new System.Drawing.Point(1050, 16);
-            this.rJ_Lable115.Name = "rJ_Lable115";
-            this.rJ_Lable115.Size = new System.Drawing.Size(122, 46);
-            this.rJ_Lable115.TabIndex = 190;
-            this.rJ_Lable115.Text = "訂購時間";
-            this.rJ_Lable115.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rJ_Lable115.TextColor = System.Drawing.Color.Black;
-            // 
-            // rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束
-            // 
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.BorderSize = 0;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Location = new System.Drawing.Point(1359, 22);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.MinimumSize = new System.Drawing.Size(100, 35);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Name = "rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束";
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.Size = new System.Drawing.Size(147, 35);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.SkinColor = System.Drawing.Color.CornflowerBlue;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.TabIndex = 193;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束.TextColor = System.Drawing.Color.White;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(1338, 33);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(11, 12);
-            this.label26.TabIndex = 192;
-            this.label26.Text = "~";
-            // 
-            // rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始
-            // 
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.BorderSize = 0;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Location = new System.Drawing.Point(1185, 22);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.MinimumSize = new System.Drawing.Size(100, 35);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Name = "rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始";
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.Size = new System.Drawing.Size(147, 35);
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.SkinColor = System.Drawing.Color.CornflowerBlue;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TabIndex = 191;
-            this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TextColor = System.Drawing.Color.White;
-            // 
-            // plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋
-            // 
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.AutoResetState = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Bool = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderRadius = 5;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderSize = 0;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.but_press = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Location = new System.Drawing.Point(1525, 16);
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Name = "plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋";
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字內容 = "搜尋";
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字內容 = "搜尋";
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Size = new System.Drawing.Size(79, 46);
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.State = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.TabIndex = 194;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Text = "搜尋";
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Texts = "搜尋";
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.UseVisualStyleBackColor = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.字型鎖住 = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.文字鎖住 = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.讀取位元反向 = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.讀寫鎖住 = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.音效 = true;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.顯示 = false;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.顯示狀態 = false;
-            // 
-            // panel35
-            // 
-            this.panel35.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel35.Controls.Add(this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋);
-            this.panel35.Controls.Add(this.rJ_Lable116);
-            this.panel35.Controls.Add(this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋);
-            this.panel35.Location = new System.Drawing.Point(1053, 81);
-            this.panel35.Name = "panel35";
-            this.panel35.Size = new System.Drawing.Size(365, 62);
-            this.panel35.TabIndex = 196;
-            // 
-            // plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋
-            // 
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.AutoResetState = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Bool = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 5;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderSize = 0;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.but_press = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Location = new System.Drawing.Point(278, 5);
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Name = "plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋";
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字內容 = "搜尋";
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字內容 = "搜尋";
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Size = new System.Drawing.Size(75, 50);
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.State = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TabIndex = 144;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Text = "搜尋";
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Texts = "搜尋";
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.UseVisualStyleBackColor = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.字型鎖住 = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.文字鎖住 = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.讀取位元反向 = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.讀寫鎖住 = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.音效 = true;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.顯示 = false;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.顯示狀態 = false;
-            // 
-            // rJ_Lable116
-            // 
-            this.rJ_Lable116.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.rJ_Lable116.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
-            this.rJ_Lable116.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable116.BorderRadius = 5;
-            this.rJ_Lable116.BorderSize = 0;
-            this.rJ_Lable116.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable116.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.rJ_Lable116.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable116.Location = new System.Drawing.Point(3, 5);
-            this.rJ_Lable116.Name = "rJ_Lable116";
-            this.rJ_Lable116.Size = new System.Drawing.Size(106, 50);
-            this.rJ_Lable116.TabIndex = 143;
-            this.rJ_Lable116.Text = "藥品碼";
-            this.rJ_Lable116.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.rJ_Lable116.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋
-            // 
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BackColor = System.Drawing.SystemColors.Window;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 0;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderSize = 2;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ForeColor = System.Drawing.Color.DimGray;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Location = new System.Drawing.Point(115, 5);
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Multiline = false;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Name = "rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋";
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PassWordChar = false;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.PlaceholderText = "";
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShowTouchPannel = false;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Size = new System.Drawing.Size(157, 50);
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TabIndex = 142;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Texts = "";
-            this.rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.UnderlineStyle = false;
+            this.checkBox_藥品過消耗帳_公藥.AutoSize = true;
+            this.checkBox_藥品過消耗帳_公藥.Checked = true;
+            this.checkBox_藥品過消耗帳_公藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥品過消耗帳_公藥.Location = new System.Drawing.Point(219, 38);
+            this.checkBox_藥品過消耗帳_公藥.Name = "checkBox_藥品過消耗帳_公藥";
+            this.checkBox_藥品過消耗帳_公藥.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥品過消耗帳_公藥.TabIndex = 3;
+            this.checkBox_藥品過消耗帳_公藥.Text = "公藥";
+            this.checkBox_藥品過消耗帳_公藥.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -26525,6 +26594,9 @@
             this.panel120.ResumeLayout(false);
             this.tabPage37.ResumeLayout(false);
             this.tabPage37.PerformLayout();
+            this.panel35.ResumeLayout(false);
+            this.plC_RJ_GroupBox16.ContentsPanel.ResumeLayout(false);
+            this.plC_RJ_GroupBox16.ResumeLayout(false);
             this.panel_藥庫_每日訂單.ResumeLayout(false);
             this.藥庫_緊急訂單.ResumeLayout(false);
             this.plC_ScreenPage_藥庫_緊急訂單.ResumeLayout(false);
@@ -26710,9 +26782,8 @@
             this.tabPage35.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.plC_RJ_GroupBox16.ContentsPanel.ResumeLayout(false);
-            this.plC_RJ_GroupBox16.ResumeLayout(false);
-            this.panel35.ResumeLayout(false);
+            this.groupBox20.ResumeLayout(false);
+            this.groupBox20.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -27727,6 +27798,11 @@
         private MyUI.PLC_RJ_Button plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋;
         private MyUI.RJ_Lable rJ_Lable116;
         private MyUI.RJ_TextBox rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋;
+        private System.Windows.Forms.GroupBox groupBox20;
+        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_公藥;
+        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_住院;
+        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_急診;
+        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_門診;
     }
 }
 

@@ -69,7 +69,7 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_藥品過消耗帳.Init();
             this.sqL_DataGridView_藥品過消耗帳.DataGridRefreshEvent += SqL_DataGridView_藥品過消耗帳_DataGridRefreshEvent;
-
+            this.sqL_DataGridView_藥品過消耗帳.DataGridRowsChangeRefEvent += SqL_DataGridView_藥品過消耗帳_DataGridRowsChangeRefEvent;
 
             this.plC_RJ_Button_藥品過消耗帳_顯示今日消耗帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示今日消耗帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_指定報表日期_顯示.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_指定報表日期_顯示_MouseDownEvent;
@@ -86,12 +86,10 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-  
-
+ 
         private void sub_Program_藥品過消耗帳()
         {
         }
-
 
 
         #region Fucntion
@@ -350,6 +348,28 @@ namespace 智能藥庫系統
                 }
             }
         }
+        private void SqL_DataGridView_藥品過消耗帳_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            List<object[]> list_value = new List<object[]>();
+
+            if (checkBox_藥品過消耗帳_門診.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.門診.GetEnumName()));
+            }
+            if (checkBox_藥品過消耗帳_急診.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.急診.GetEnumName()));
+            }
+            if (checkBox_藥品過消耗帳_住院.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.住院.GetEnumName()));
+            }
+            if (checkBox_藥品過消耗帳_公藥.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName()));
+            }
+            RowsList = list_value;
+        }
         private void PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細(rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value, rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value);
@@ -405,7 +425,17 @@ namespace 智能藥庫系統
                     }
                     DataTable dataTable = list_藥品過消耗帳_out.ToDataTable(new enum_藥品過消耗帳_匯出());
                     dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出());
-                    CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if(Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xls")
+                    {
+                        MyOffice.ExcelClass.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+
                     this.Cursor = Cursors.Default;
                     MyMessageBox.ShowDialog("匯出完成");
                 }
