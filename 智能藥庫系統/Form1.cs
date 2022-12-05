@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.12.0")]
-[assembly: AssemblyFileVersion("1.0.12.0")]
+[assembly: AssemblyVersion("1.0.13.0")]
+[assembly: AssemblyFileVersion("1.0.13.0")]
 namespace 智能藥庫系統
 {
 
@@ -189,6 +189,7 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_撥補_藥局, this.plC_ScreenPage_藥庫_撥補_藥局);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_緊急訂單, this.plC_ScreenPage_藥庫_緊急訂單);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_驗收入庫, this.plC_ScreenPage_藥庫_驗收入庫);
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_每日訂單, this.plC_ScreenPage_藥庫_每日訂單);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥品資料, this.plC_ScreenPage_藥品資料);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_系統, this.plC_ScreenPage_系統);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_系統_Pannel設定, this.plC_ScreenPage_系統_Pannel設定);
@@ -219,7 +220,9 @@ namespace 智能藥庫系統
             this.sub_Program_藥庫_儲位設定_區域儲位_Init();
             this.sub_Program_藥庫_儲位設定_Pannel35_Init();
             this.sub_Program_藥庫_入庫_Init();
-            this.sub_Program_藥庫_每日訂單_Init();
+            this.sub_Program_藥庫_每日訂單_下訂單_Init();
+            this.sub_Program_藥庫_每日訂單_訂單查詢_Init();
+
             this.sub_Program_藥庫_撥補_藥局_自動撥補_Init();
             this.sub_Program_藥庫_撥補_藥局_緊急申領_Init();
             this.sub_Program_藥庫_驗收入庫_過帳明細_Init();

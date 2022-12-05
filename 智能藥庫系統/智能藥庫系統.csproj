@@ -244,7 +244,7 @@
     <Compile Include="Program_藥品過消耗帳.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program_藥庫_每日訂單.cs">
+    <Compile Include="Program_藥庫_每日訂單_下訂單.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_藥庫_儲位設定.cs">
@@ -263,6 +263,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_藥庫_撥補_藥局_自動撥補.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program_藥庫_每日訂單_訂單查詢.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_藥庫_緊急訂單_下訂單.cs">
