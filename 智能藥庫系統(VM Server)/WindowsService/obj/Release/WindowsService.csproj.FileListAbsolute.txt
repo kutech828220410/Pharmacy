@@ -1,0 +1,36 @@
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.exe.config
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.exe
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.pdb
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Release\cjwdev.windowsapi.dll
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csprojAssemblyReference.cache
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.ProjectInstaller.resources
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.Service1.resources
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.GenerateResource.cache
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.CopyComplete
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.exe
+C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.pdb
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.exe.config
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.exe
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\bin\Release\WindowsService.pdb
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\bin\Release\cjwdev.windowsapi.dll
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csprojAssemblyReference.cache
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.ProjectInstaller.resources
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.Service1.resources
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.GenerateResource.cache
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.CoreCompileInputs.cache
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.csproj.CopyComplete
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.exe
+C:\Users\kwokzoco\Desktop\萬芳API轉換系統\WindowsService\obj\Release\WindowsService.pdb
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe.config
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.pdb
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\cjwdev.windowsapi.dll
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.csproj.AssemblyReference.cache
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.ProjectInstaller.resources
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.Service1.resources
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.csproj.GenerateResource.cache
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.csproj.CoreCompileInputs.cache
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.csproj.CopyComplete
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.exe
+C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\obj\Release\WindowsService.pdb

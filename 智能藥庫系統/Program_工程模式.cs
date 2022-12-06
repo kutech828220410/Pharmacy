@@ -105,19 +105,20 @@ namespace 智能藥庫系統
         }
         void cnt_Program_檢查Pannel35_主畫面_初始化(ref int cnt)
         {
-            List<StorageUI_WT32.UDP_READ> uDP_READs = this.storageUI_WT32.GerAllUDP_READ();
-            List<string> list_refresh_ip = new List<string>();
-            for (int i = 0; i < uDP_READs.Count; i++)
-            {
-                if (uDP_READs[i].Screen_Page == (int)StorageUI_WT32.enum_Page.主頁面 && uDP_READs[i].ScreenPage_Init == true)
-                {
-                    list_refresh_ip.Add(uDP_READs[i].IP);
-                }
-            }
-            List<Task> taskList = new List<Task>();
-            List<Storage> storages = this.List_Pannel35_本地資料;
+            
             try
             {
+                List<StorageUI_WT32.UDP_READ> uDP_READs = this.storageUI_WT32.GerAllUDP_READ();
+                List<string> list_refresh_ip = new List<string>();
+                for (int i = 0; i < uDP_READs.Count; i++)
+                {
+                    if (uDP_READs[i].Screen_Page == (int)StorageUI_WT32.enum_Page.主頁面 && uDP_READs[i].ScreenPage_Init == true)
+                    {
+                        list_refresh_ip.Add(uDP_READs[i].IP);
+                    }
+                }
+                List<Task> taskList = new List<Task>();
+                List<Storage> storages = this.List_Pannel35_本地資料;
                 for (int i = 0; i < list_refresh_ip.Count; i++)
                 {
                     List<Storage> storages_buf = (from value in storages

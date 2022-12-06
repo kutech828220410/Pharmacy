@@ -1,0 +1,100 @@
+﻿正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+在 C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+正在認可組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+在 C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+由於找不到安裝程式，所以必須移除 InstallState 檔案。
+正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+在 C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+正在認可組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+在 C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe 組件中找不到具有 RunInstallerAttribute.Yes 屬性的公用安裝程式。
+由於找不到安裝程式，所以必須移除 InstallState 檔案。
+正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在復原組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在解除安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在解除安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在解除安裝組件 'C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.InstallLog
+   assemblypath = C:\Users\User\Desktop\萬芳API轉換系統\WindowsService\bin\Debug\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。

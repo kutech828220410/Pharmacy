@@ -1,0 +1,379 @@
+﻿正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+在 System.Diagnostics.EventLogInstaller 安裝程式的解除安裝中發生例外狀況。
+System.Security.SecurityException: 不允許要求的登錄使用權。
+解除安裝時發生例外狀況。將略過此例外狀況，而解除安裝將會繼續。然而，解除安裝完成之後，可能無法完全解除安裝應用程式。
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在復原組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正將來源 my_process 的事件記錄檔恢復成之前的狀態。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在復原組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正將來源 my_process 的事件記錄檔恢復成之前的狀態。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在復原組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正將來源 my_process 的事件記錄檔恢復成之前的狀態。
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。
+正在安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在安裝服務 my_process...
+已經成功安裝服務 my_process。
+正在記錄檔 Application 中建立 EventLog 來源 my_process...
+正在認可組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在解除安裝組件 'C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe'。
+受影響的參數為:
+   logtoconsole = 
+   logfile = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.InstallLog
+   assemblypath = C:\Users\hsonds01\Desktop\智能藥庫系統(VM Server)20221108\WindowsService\bin\Release\WindowsService.exe
+正在移除 EventLog 來源 my_process。
+已從系統中移除服務 my_process...
+已經成功從系統移除服務 my_process。
+嘗試停止服務 my_process。

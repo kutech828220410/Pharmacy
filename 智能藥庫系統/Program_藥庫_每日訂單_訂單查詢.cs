@@ -89,10 +89,14 @@ namespace 智能藥庫系統
             string 藥品名稱 = "";
             string 中文名稱 = "";
             string 包裝單位 = "";
-            
+            int 今日訂購數量 = 0;
+            int 緊急訂購數量 = 0;
+
             for (int i = 0; i < list_value.Count; i++)
             {
-             
+                今日訂購數量 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.今日訂購數量].ObjectToString().StringToInt32();
+                緊急訂購數量 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.緊急訂購數量].ObjectToString().StringToInt32();
+                if (!(今日訂購數量 > 0 || 緊急訂購數量 > 0)) continue;
                 藥品碼 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.藥品碼].ObjectToString();
                 if (藥品碼.Length != 5)
                 {
