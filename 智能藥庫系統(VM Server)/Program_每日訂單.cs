@@ -330,11 +330,19 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     if (Task_檢查每日訂單_補足基準量 == null)
                     {
-                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate { this.Function_藥庫_每日訂單_藥品補足基準量(null); }));
+                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                        {
+                            List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
+                          this.Function_藥庫_每日訂單_藥品補足基準量(list_value);
+                        }));
                     }
                     if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.RanToCompletion)
                     {
-                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate { this.Function_藥庫_每日訂單_藥品補足基準量(null); }));
+                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                        {
+                            List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
+                            this.Function_藥庫_每日訂單_藥品補足基準量(list_value); 
+                        }));
                     }
                     if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.Created)
                     {
@@ -479,7 +487,7 @@ namespace 智能藥庫系統_VM_Server_
             myTimer.StartTickTime(50000);
             string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
             string serverfilename = "itinvd0304.txt";
-            string localfilepath = @"C:\Users\HS1T16\Desktop\";
+            string localfilepath = @"C:\Users\hsonds01\Desktop\";
             string localfilename = "itinvd0304.txt";
             string username = "hsonds01";
             string password = "KuT1Ch@75511";
@@ -577,7 +585,7 @@ namespace 智能藥庫系統_VM_Server_
 
             string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
             string serverfilename = "itinvd0304.txt";
-            string localfilepath = @"C:\Users\HS1T16\Desktop\";
+            string localfilepath = @"C:\Users\hsonds01\Desktop\";
             string localfilename = "itinvd0304.txt";
             string username = "hsonds01";
             string password = "KuT1Ch@75511";
@@ -654,10 +662,10 @@ namespace 智能藥庫系統_VM_Server_
                 string code = list_value[i][(int)enum_藥庫_每日訂單.藥品碼].ObjectToString();
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, code);
 
-                int 最小包裝數量 = 0;
+                int 包裝數量 = 0;
                 if (list_藥品資料_buf.Count > 0)
                 {
-                    最小包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.最小包裝數量].StringToInt32();
+                    包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝數量].StringToInt32();
                 }
                 else
                 {
@@ -676,9 +684,9 @@ namespace 智能藥庫系統_VM_Server_
                 if (基準量 <= 安全量) continue;
                 訂購量 = 基準量 - (總庫存 + 在途量 + 緊急訂購數量);
                 if (訂購量 <= 0) continue;
-                if (最小包裝數量 > 0)
+                if (包裝數量 > 0)
                 {
-                    int temp = 訂購量 % 最小包裝數量;
+                    int temp = 訂購量 % 包裝數量;
                     訂購量 += temp;
                 }
                 aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
@@ -806,7 +814,7 @@ namespace 智能藥庫系統_VM_Server_
             myTimer.StartTickTime(50000);
             string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
             string serverfilename = "itinvd0304.txt";
-            string localfilepath = @"C:\Users\HS1T16\Desktop\";
+            string localfilepath = @"C:\Users\hsonds01\Desktop\";
             string localfilename = "itinvd0304.txt";
             string username = "hsonds01";
             string password = "KuT1Ch@75511";
@@ -826,7 +834,7 @@ namespace 智能藥庫系統_VM_Server_
             myTimer.StartTickTime(50000);
             string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
             string serverfilename = "itinvd0304.txt";
-            string localfilepath = @"C:\Users\HS1T16\Desktop\";
+            string localfilepath = @"C:\Users\hsonds01\Desktop\";
             string localfilename = "itinvd0304.txt";
             string username = "hsonds01";
             string password = "KuT1Ch@75511";
@@ -898,47 +906,7 @@ namespace 智能藥庫系統_VM_Server_
                 MyMessageBox.ShowDialog("未選取資料!");
                 return;
             }
-            API_OrderClass aPI_OrderClass = Function_藥庫_每日訂單_取得已訂購數量();
-            API_OrderClass aPI_OrderClass_今日訂購數量 = Function_藥庫_每日訂單_取得今日訂購數量();
-
-            for (int i = 0; i < list_value.Count; i++)
-            {
-                string code = list_value[i][(int)enum_藥庫_每日訂單.藥品碼].ObjectToString();
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, code);
-
-                int 最小包裝數量 = 0;
-                if (list_藥品資料_buf.Count > 0)
-                {
-                    最小包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.最小包裝數量].StringToInt32();
-                }
-                else
-                {
-                    continue;
-                }
-                int 安全量 = list_value[i][(int)enum_藥庫_每日訂單.安全庫存].ObjectToString().StringToInt32();
-                int 緊急訂購數量 = list_value[i][(int)enum_藥庫_每日訂單.緊急訂購數量].ObjectToString().StringToInt32();
-                int 基準量 = list_value[i][(int)enum_藥庫_每日訂單.基準量].ObjectToString().StringToInt32();
-                int 總庫存 = list_value[i][(int)enum_藥庫_每日訂單.總庫存].ObjectToString().StringToInt32();
-                int 在途量 = list_value[i][(int)enum_藥庫_每日訂單.在途量].ObjectToString().StringToInt32();
-                int 訂購量 = 0;
-                if (總庫存 >= 安全量) continue;
-                if (安全量 <= 0) continue;
-                if (基準量 <= 0) continue;
-                if (總庫存 < 0) continue;
-                if (基準量 <= 安全量) continue;
-                訂購量 = 基準量 - (總庫存 + 在途量 + 緊急訂購數量);
-                if (訂購量 <= 0) continue;
-                if (最小包裝數量 > 0)
-                {
-                    int temp = 訂購量 % 最小包裝數量;
-                    訂購量 += temp;
-                }
-                aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
-            }
-
-
-            this.Function_藥庫_每日訂單_今日訂購數量更新(aPI_OrderClass_今日訂購數量);
-            this.Function_藥庫_每日訂單_更新藥品資料表單();
+            this.Function_藥庫_每日訂單_藥品補足基準量(list_value);
         }
         private void PlC_RJ_Button_藥庫_每日訂單_藥品名稱搜尋_MouseDownEvent(MouseEventArgs mevent)
         {

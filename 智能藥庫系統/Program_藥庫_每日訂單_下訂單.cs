@@ -555,10 +555,10 @@ namespace 智能藥庫系統
                 string code = list_value[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, code);
 
-                int 最小包裝數量 = 0;
+                int 包裝數量 = 0;
                 if (list_藥品資料_buf.Count > 0)
                 {
-                    最小包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.最小包裝數量].StringToInt32();
+                    包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝數量].StringToInt32();
                 }
                 else
                 {
@@ -577,9 +577,9 @@ namespace 智能藥庫系統
                 if (基準量 <= 安全量) continue;
                 訂購量 = 基準量 - (總庫存 + 在途量 + 緊急訂購數量);
                 if (訂購量 <= 0) continue;
-                if (最小包裝數量 > 0)
+                if (包裝數量 > 0)
                 {
-                    int temp = 訂購量 % 最小包裝數量;
+                    int temp = 訂購量 % 包裝數量;
                     訂購量 += temp;
                 }
                 aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
@@ -788,9 +788,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Get_All_Checked_RowsValues();
-      
-
+            List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Get_All_Checked_RowsValues();      
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取資料!");
