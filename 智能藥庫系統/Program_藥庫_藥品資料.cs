@@ -94,11 +94,13 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_修正批號_MouseDownEvent;
             this.plC_RJ_Button_藥庫_藥品資料_測試清除所有效期資料.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_測試清除所有效期資料_MouseDownEvent;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品_MouseDownEvent;
-
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_設定包裝數量_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_藥品資料);
         }
- 
+
+  
+
         private bool flag_Program_藥庫_藥品資料_Init = false;
         private void sub_Program_藥庫_藥品資料()
         {
@@ -425,6 +427,30 @@ namespace 智能藥庫系統
                     for (int i = 0; i < list_value.Count; i++)
                     {
                         list_value[i][(int)enum_藥庫_藥品資料.安全庫存] = num.ToString();
+
+                        list_Replace_SerchValue.Add(list_value[i][(int)enum_藥庫_藥品資料.GUID].ObjectToString());
+                        list_Replace_Value.Add(list_value[i]);
+                    }
+                    this.sqL_DataGridView_藥庫_藥品資料.SQL_ReplaceExtra(list_Replace_Value, false);
+                    this.sqL_DataGridView_藥庫_藥品資料.ReplaceExtra(list_Replace_Value, true);
+                }
+            }));
+        }
+        private void PlC_RJ_Button_藥庫_藥品資料_設定包裝數量_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel();
+                if (dialog_NumPannel.ShowDialog() == DialogResult.Yes)
+                {
+                    int num = dialog_NumPannel.Value;
+                    List<object[]> list_value = this.sqL_DataGridView_藥庫_藥品資料.Get_All_Select_RowsValues();
+                    List<string> list_Replace_SerchValue = new List<string>();
+                    List<object[]> list_Replace_Value = new List<object[]>();
+                    if (num <= 0) return;
+                    for (int i = 0; i < list_value.Count; i++)
+                    {
+                        list_value[i][(int)enum_藥庫_藥品資料.包裝數量] = num.ToString();
 
                         list_Replace_SerchValue.Add(list_value[i][(int)enum_藥庫_藥品資料.GUID].ObjectToString());
                         list_Replace_Value.Add(list_value[i]);
