@@ -273,6 +273,26 @@ namespace 智能藥庫系統
                 PLC_Device_緊急訂單_下訂單_發送Email.Bool = false;
                 cnt_Program_緊急訂單_下訂單_發送Email = 65535;
             }
+            if(!this.myEmail_Send_UI.Get_Send_Ready())
+            {
+                if (!rJ_Lable_下訂單_發送中.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        rJ_Lable_下訂單_發送中.Visible = true;
+                    }));
+                }                          
+            }
+            else
+            {
+                if(rJ_Lable_下訂單_發送中.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        rJ_Lable_下訂單_發送中.Visible = false;
+                    }));
+                }
+            }
         }
         void cnt_Program_緊急訂單_下訂單_發送Email_檢查按下(ref int cnt)
         {
@@ -286,6 +306,7 @@ namespace 智能藥庫系統
         {
             if(plC_Button_Email不發送.Bool)
             {
+                Console.WriteLine($"Email 不發送!");
                 this.PLC_Device_緊急訂單_下訂單_發送Email_OK.Bool = true;
                 cnt = 65500;
                 return;
@@ -296,6 +317,7 @@ namespace 智能藥庫系統
         {
             if (this.myEmail_Send_UI.Get_Send_Ready())
             {
+                Console.WriteLine($"Email 開始發送!");
                 this.myEmail_Send_UI.Send_Email();
                 cnt++;
             }
@@ -304,6 +326,7 @@ namespace 智能藥庫系統
         {
             if (!this.myEmail_Send_UI.Get_Send_Ready())
             {
+                Console.WriteLine($"Email 正在發送!");
                 cnt++;
             }
         }
@@ -311,6 +334,7 @@ namespace 智能藥庫系統
         {
             if (this.myEmail_Send_UI.Get_Send_Ready())
             {
+                Console.WriteLine($"Email 發送完畢!");
                 cnt++;
             }
         }
@@ -667,7 +691,7 @@ namespace 智能藥庫系統
             }));
 
             List<object[]> list_供應商資料 = this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.SQL_GetAllRows(false);
-            list_供應商資料 = list_供應商資料.GetRows((int)enum_藥品補給系統_供應商資料.簡名, 訂購商);
+            list_供應商資料 = list_供應商資料.GetRowsByLike((int)enum_藥品補給系統_供應商資料.簡名, 訂購商);
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.RefreshGrid(list_供應商資料);
 
         }

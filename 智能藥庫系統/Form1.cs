@@ -33,6 +33,7 @@ namespace 智能藥庫系統
         public MyConfigClass myConfigClass = new MyConfigClass();
         public DBConfigClass dBConfigClass = new DBConfigClass();
         private PLC_Device PLC_Device_主機模式 = new PLC_Device("S1050");
+        private PLC_Device PLC_Device_M8013 = new PLC_Device("M8013");
         private PLC_Device PLC_Device_主頁面頁碼 = new PLC_Device("D0");
         public class DBConfigClass
         {

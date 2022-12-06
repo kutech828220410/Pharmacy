@@ -346,6 +346,7 @@
             this.藥庫 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_藥庫 = new MyUI.PLC_ScreenPage();
             this.藥庫_藥品資料 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥庫_藥品資料_測試清除所有效期資料 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_GroupBox3 = new MyUI.PLC_RJ_GroupBox();
@@ -552,6 +553,7 @@
             this.plC_ScreenPage_藥庫_緊急訂單 = new MyUI.PLC_ScreenPage();
             this.tabPage23 = new System.Windows.Forms.TabPage();
             this.groupBox13 = new System.Windows.Forms.GroupBox();
+            this.rJ_Lable_下訂單_發送中 = new MyUI.RJ_Lable();
             this.plC_Button_下訂單_取消作業 = new MyUI.PLC_Button();
             this.plC_Button_下訂單_訂單確認 = new MyUI.PLC_Button();
             this.plC_Button_下訂單_發送Email = new MyUI.PLC_Button();
@@ -1042,7 +1044,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -8928,6 +8929,47 @@
             this.藥庫_藥品資料.TabIndex = 7;
             this.藥庫_藥品資料.Text = "藥品資料";
             // 
+            // plC_RJ_Button_藥庫_藥品資料_設定包裝數量
+            // 
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Bool = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.but_press = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Location = new System.Drawing.Point(1265, 856);
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Name = "plC_RJ_Button_藥庫_藥品資料_設定包裝數量";
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字內容 = "設定包裝數量";
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字內容 = "設定包裝數量";
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Size = new System.Drawing.Size(171, 57);
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.State = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.TabIndex = 159;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Text = "設定包裝數量";
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Texts = "設定包裝數量";
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.音效 = true;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.顯示 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.顯示狀態 = false;
+            // 
             // plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品
             // 
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.AutoResetState = false;
@@ -14683,6 +14725,7 @@
             // 
             // groupBox13
             // 
+            this.groupBox13.Controls.Add(this.rJ_Lable_下訂單_發送中);
             this.groupBox13.Controls.Add(this.plC_Button_下訂單_取消作業);
             this.groupBox13.Controls.Add(this.plC_Button_下訂單_訂單確認);
             this.groupBox13.Controls.Add(this.plC_Button_下訂單_發送Email);
@@ -14694,6 +14737,26 @@
             this.groupBox13.TabIndex = 19;
             this.groupBox13.TabStop = false;
             this.groupBox13.Text = "發訂單步驟";
+            // 
+            // rJ_Lable_下訂單_發送中
+            // 
+            this.rJ_Lable_下訂單_發送中.BackColor = System.Drawing.Color.Crimson;
+            this.rJ_Lable_下訂單_發送中.BackgroundColor = System.Drawing.Color.Crimson;
+            this.rJ_Lable_下訂單_發送中.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_下訂單_發送中.BorderRadius = 12;
+            this.rJ_Lable_下訂單_發送中.BorderSize = 0;
+            this.rJ_Lable_下訂單_發送中.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.rJ_Lable_下訂單_發送中.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_下訂單_發送中.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_下訂單_發送中.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_下訂單_發送中.Location = new System.Drawing.Point(3, 273);
+            this.rJ_Lable_下訂單_發送中.Name = "rJ_Lable_下訂單_發送中";
+            this.rJ_Lable_下訂單_發送中.Size = new System.Drawing.Size(101, 156);
+            this.rJ_Lable_下訂單_發送中.TabIndex = 21;
+            this.rJ_Lable_下訂單_發送中.Text = "發送中";
+            this.rJ_Lable_下訂單_發送中.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable_下訂單_發送中.TextColor = System.Drawing.Color.White;
+            this.rJ_Lable_下訂單_發送中.Visible = false;
             // 
             // plC_Button_下訂單_取消作業
             // 
@@ -14780,7 +14843,7 @@
             this.plC_Button_下訂單_發送Email.事件驅動 = false;
             this.plC_Button_下訂單_發送Email.字型鎖住 = false;
             this.plC_Button_下訂單_發送Email.寫入元件位置 = "M1010";
-            this.plC_Button_下訂單_發送Email.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button_下訂單_發送Email.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
             this.plC_Button_下訂單_發送Email.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
             this.plC_Button_下訂單_發送Email.提示文字 = "步驟02.發送Email";
             this.plC_Button_下訂單_發送Email.文字鎖住 = false;
@@ -14814,7 +14877,7 @@
             this.plC_Button_下訂單_資料確認.事件驅動 = false;
             this.plC_Button_下訂單_資料確認.字型鎖住 = false;
             this.plC_Button_下訂單_資料確認.寫入元件位置 = "M1000";
-            this.plC_Button_下訂單_資料確認.按鈕型態 = MyUI.PLC_Button.StatusEnum.保持型;
+            this.plC_Button_下訂單_資料確認.按鈕型態 = MyUI.PLC_Button.StatusEnum.交替型;
             this.plC_Button_下訂單_資料確認.按鍵方式 = MyUI.PLC_Button.PressEnum.Mouse_左鍵;
             this.plC_Button_下訂單_資料確認.提示文字 = "步驟01.資料確認";
             this.plC_Button_下訂單_資料確認.文字鎖住 = false;
@@ -16419,7 +16482,7 @@
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.rowHeaderBackColor = System.Drawing.Color.LightBlue;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.RowsHeight = 30;
+            this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.RowsHeight = 50;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.Server = "localhost";
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.Size = new System.Drawing.Size(867, 115);
@@ -26414,47 +26477,6 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // plC_RJ_Button_藥庫_藥品資料_設定包裝數量
-            // 
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BackgroundColor = System.Drawing.Color.SteelBlue;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Bool = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderRadius = 5;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.but_press = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Location = new System.Drawing.Point(1265, 856);
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Name = "plC_RJ_Button_藥庫_藥品資料_設定包裝數量";
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字內容 = "設定包裝數量";
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字內容 = "設定包裝數量";
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Size = new System.Drawing.Size(171, 57);
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.State = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.TabIndex = 159;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Text = "設定包裝數量";
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.Texts = "設定包裝數量";
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.字型鎖住 = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.文字鎖住 = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.讀取位元反向 = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.音效 = true;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.顯示 = false;
-            this.plC_RJ_Button_藥庫_藥品資料_設定包裝數量.顯示狀態 = false;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -27832,6 +27854,7 @@
         private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_急診;
         private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_門診;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_設定包裝數量;
+        private MyUI.RJ_Lable rJ_Lable_下訂單_發送中;
     }
 }
 
