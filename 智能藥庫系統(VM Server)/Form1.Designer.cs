@@ -361,6 +361,7 @@
             this.rJ_GroupBox13 = new MyUI.RJ_GroupBox();
             this.sqL_DataGridView_驗收入庫明細 = new SQLUI.SQL_DataGridView();
             this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_驗收入庫_補給驗收_藥品名稱篩選 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_驗收入庫_補給驗收_藥品碼篩選 = new MyUI.PLC_RJ_Button();
             this.rJ_TextBox_驗收入庫_補給驗收_藥品碼篩選 = new MyUI.RJ_TextBox();
@@ -457,7 +458,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.藥品資料.SuspendLayout();
@@ -1420,6 +1421,7 @@
             // tabPage6
             // 
             this.tabPage6.BackColor = System.Drawing.Color.White;
+            this.tabPage6.Controls.Add(this.plC_RJ_Button_藥庫_藥品資料_顯示全部);
             this.tabPage6.Controls.Add(this.sqL_DataGridView_藥庫_藥品資料);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
@@ -8815,6 +8817,48 @@
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "補給驗收";
             // 
+            // plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票
+            // 
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.AutoResetState = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Bool = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderRadius = 5;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.but_press = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Location = new System.Drawing.Point(420, 598);
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Name = "plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票";
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字內容 = "顯示未入帳發票";
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字內容 = "顯示未入帳發票";
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Size = new System.Drawing.Size(201, 101);
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.State = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.TabIndex = 249;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Text = "顯示未入帳發票";
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Texts = "顯示未入帳發票";
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.字型鎖住 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.文字鎖住 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.讀取位元反向 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.讀寫鎖住 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.音效 = true;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示狀態 = false;
+            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示讀取位置 = "S4077";
+            // 
             // plC_RJ_Button_驗收入庫_補給驗收_藥品名稱篩選
             // 
             this.plC_RJ_Button_驗收入庫_補給驗收_藥品名稱篩選.AutoResetState = false;
@@ -11143,47 +11187,46 @@
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
             this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
-            // plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票
+            // plC_RJ_Button_藥庫_藥品資料_顯示全部
             // 
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.AutoResetState = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Bool = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderRadius = 5;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.BorderSize = 0;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.but_press = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Location = new System.Drawing.Point(420, 598);
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Name = "plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票";
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字內容 = "顯示未入帳發票";
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字內容 = "顯示未入帳發票";
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Size = new System.Drawing.Size(201, 101);
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.State = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.TabIndex = 249;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Text = "顯示未入帳發票";
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.Texts = "顯示未入帳發票";
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.字型鎖住 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.文字鎖住 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.讀取位元反向 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.讀寫鎖住 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.音效 = true;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示狀態 = false;
-            this.plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票.顯示讀取位置 = "S4077";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Bool = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.but_press = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Location = new System.Drawing.Point(1469, 599);
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Name = "plC_RJ_Button_藥庫_藥品資料_顯示全部";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.OFF_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.ON_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.State = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.TabIndex = 187;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Text = "顯示全部";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.Texts = "顯示全部";
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.音效 = true;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.顯示 = false;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -11741,6 +11784,7 @@
         private MyUI.RJ_TextBox rJ_TextBox_藥品過消耗帳_藥品碼篩選;
         private MyUI.RJ_Lable rJ_Lable45;
         private MyUI.PLC_RJ_Button plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_顯示全部;
     }
 }
 

@@ -45,9 +45,13 @@ namespace 智能藥庫系統_VM_Server_
         {
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_藥庫_藥品資料, dBConfigClass.DB_DS01);
             this.sqL_DataGridView_藥庫_藥品資料.Init();
+            this.sqL_DataGridView_藥庫_藥品資料.DataGridRowsChangeEvent += SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent;
 
+            this.plC_RJ_Button_藥庫_藥品資料_顯示全部.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_顯示全部_MouseDownEvent;
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_藥品資料);
         }
+
+    
 
         private bool flag_藥庫_藥品資料 = false;
         private void sub_Program_藥庫_藥品資料()
@@ -66,7 +70,7 @@ namespace 智能藥庫系統_VM_Server_
             }
         }
 
-
+        #region Function
         private void Function_藥庫_藥品資料_檢查表格()
         {
             MyTimer myTimer = new MyTimer();
@@ -182,6 +186,63 @@ namespace 智能藥庫系統_VM_Server_
 
             DeviceBasicClass_藥庫.SQL_AddDeviceBasic(devices_Add);
             Console.Write($"儲位總量新增時間 ,耗時 :{myTimer.GetTickTime().ToString("0.000")}\n");
+        }
+        #endregion
+        #region Event
+        private void PlC_RJ_Button_藥庫_藥品資料_顯示全部_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(true);
+        }
+        private void SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent(List<object[]> RowsList)
+        {
+            this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+            this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
+            this.List_Pannel35_本地資料 = this.storageUI_WT32.SQL_GetAllStorage();
+            Parallel.ForEach(RowsList, value =>
+            {
+                string 藥品碼 = value[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+
+                int 總庫存 = 0;
+                int 藥庫庫存 = 0;
+                int 藥局庫存 = 0;
+                List<DeviceBasic> deviceBasic_藥庫_buf = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
+                List<DeviceBasic> deviceBasic_藥局_buf = this.List_藥局_DeviceBasic.SortByCode(藥品碼);
+                List<Storage> storages_buf = this.List_Pannel35_本地資料.SortByCode(藥品碼);
+
+                for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
+                {
+
+                    總庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
+                    藥庫庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
+                }
+                for (int i = 0; i < deviceBasic_藥局_buf.Count; i++)
+                {
+                    總庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
+                    藥局庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
+                }
+                for (int i = 0; i < storages_buf.Count; i++)
+                {
+                    總庫存 += storages_buf[i].Inventory.StringToInt32();
+                    藥庫庫存 += storages_buf[i].Inventory.StringToInt32();
+                }
+                //庫存 = this.Function_從本地資料取得庫存(藥品碼);
+
+                value[(int)enum_藥庫_藥品資料.藥庫庫存] = 藥庫庫存;
+                value[(int)enum_藥庫_藥品資料.藥局庫存] = 藥局庫存;
+                value[(int)enum_藥庫_藥品資料.總庫存] = 總庫存;
+            });
+
+            RowsList.Sort(new ICP_藥庫_藥品資料());
+        }
+        #endregion
+        private class ICP_藥庫_藥品資料 : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                string Code0 = x[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+                string Code1 = y[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+                return Code0.CompareTo(Code1);
+            }
         }
     }
 }
