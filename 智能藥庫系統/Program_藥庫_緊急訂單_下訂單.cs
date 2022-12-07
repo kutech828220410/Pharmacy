@@ -350,6 +350,7 @@ namespace 智能藥庫系統
             {
                 MyMessageBox.ShowDialog("發送完成!");
                 this.PLC_Device_緊急訂單_下訂單_發送Email_OK.Bool = true;
+                this.PLC_Device_緊急訂單_下訂單_訂單確認.Bool = true;
                 cnt++;
             }
         }
