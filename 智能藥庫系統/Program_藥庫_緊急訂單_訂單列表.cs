@@ -66,10 +66,14 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋_MouseDownEvent;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋_MouseDownEvent;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_刪除訂單_MouseDownEvent;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_修正備註_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_緊急訂單_訂單列表);
         }
-     
+
+    
+
         private bool flag_藥庫_緊急訂單_訂單列表 = false;
         private void sub_Program_藥庫_緊急訂單_訂單列表()
         {
@@ -227,6 +231,25 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_訂單管理_發票內容.SQL_Delete("訂單編號", 訂單編號, false);
             this.sqL_DataGridView_訂單管理_發票內容.Delete("訂單編號", 訂單編號, true);
 
+        }
+        private void PlC_RJ_Button_緊急訂單_訂單管理_修正備註_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_訂單列表 = this.sqL_DataGridView_訂單管理_訂單列表.Get_All_Select_RowsValues();
+            if (list_訂單列表.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取資料!");
+                return;
+            }
+            Dialog_輸入備註 dialog_輸入備註 = new Dialog_輸入備註();
+            if (dialog_輸入備註.ShowDialog() != DialogResult.Yes) return;
+            string 訂單編號 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.訂單編號].ObjectToString();
+            string 序號 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.序號].ObjectToString();
+            string 藥品碼 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.藥品碼].ObjectToString();
+            list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.備註] = dialog_輸入備註.Value;
+            string[] serch_cols = new string[] { "訂單編號", "序號", "藥品碼" };
+            string[] serch_values = new string[] { 訂單編號, 序號, 藥品碼 };
+            this.sqL_DataGridView_訂單管理_訂單列表.SQL_Replace(serch_cols, serch_values, list_訂單列表[0], false);
+            this.sqL_DataGridView_訂單管理_訂單列表.Replace(serch_cols, serch_values, list_訂單列表[0], true);
         }
         #endregion
         public class Distinct_訂單管理_訂單列表 : IEqualityComparer<object[]>

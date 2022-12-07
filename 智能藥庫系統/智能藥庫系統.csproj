@@ -212,6 +212,12 @@
     <Compile Include="Dialog\Dialog_Prcessbar.Designer.cs">
       <DependentUpon>Dialog_Prcessbar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_輸入備註.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_輸入備註.Designer.cs">
+      <DependentUpon>Dialog_輸入備註.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -329,6 +335,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Dialog\Dialog_輸入備註.resx">
+      <DependentUpon>Dialog_輸入備註.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_輸入批號.resx">
       <SubType>Designer</SubType>
     </EmbeddedResource>
