@@ -27,6 +27,7 @@ namespace 智能藥庫系統
             中文名稱,
             藥品名稱,            
             包裝單位,
+            包裝數量,
             藥庫庫存,
             總庫存,      
             安全庫存,
@@ -764,6 +765,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單_MouseDownEvent(MouseEventArgs mevent)
         {
+            if (MyMessageBox.ShowDialog("是否清除訂單?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
             List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Get_All_Checked_RowsValues();
             List<object[]> list_每日訂單 = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
             List<object[]> list_每日訂單_buf = new List<object[]>();
@@ -788,6 +790,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量_MouseDownEvent(MouseEventArgs mevent)
         {
+            if (MyMessageBox.ShowDialog("是否補足基準量?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
             List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Get_All_Checked_RowsValues();      
             if (list_value.Count == 0)
             {
