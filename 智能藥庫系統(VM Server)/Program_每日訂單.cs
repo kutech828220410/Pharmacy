@@ -204,7 +204,7 @@ namespace 智能藥庫系統_VM_Server_
             PLC_Device_檢查每日訂單.Bool = true;
             if (cnt_Program_檢查每日訂單 == 65534)
             {
-                this.MyTimer_檢查每日訂單_結束延遲.StartTickTime(10000);
+                this.MyTimer_檢查每日訂單_結束延遲.StartTickTime(5000);
                 PLC_Device_檢查每日訂單.SetComment("PLC_檢查每日訂單");
                 PLC_Device_檢查每日訂單_OK.SetComment("PLC_檢查每日訂單_OK");
                 PLC_Device_檢查每日訂單.Bool = false;
@@ -219,7 +219,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_檢查每日訂單 == 65500)
             {
                 this.MyTimer_檢查每日訂單_結束延遲.TickStop();
-                this.MyTimer_檢查每日訂單_結束延遲.StartTickTime(60000);
+                this.MyTimer_檢查每日訂單_結束延遲.StartTickTime(5000);
                 PLC_Device_檢查每日訂單.Bool = false;
                 PLC_Device_檢查每日訂單_OK.Bool = false;
                 cnt_Program_檢查每日訂單 = 65535;
@@ -832,7 +832,7 @@ namespace 智能藥庫系統_VM_Server_
         {
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
+            string serverfilepath = @"C:\MIS\DG\";
             string serverfilename = "itinvd0304.txt";
             string localfilepath = @"C:\Users\hsonds01\Desktop\";
             string localfilename = "itinvd0304.txt";
@@ -866,10 +866,9 @@ namespace 智能藥庫系統_VM_Server_
             }
             bool flag = Basic.MyFileStream.SaveFile($"{localfilepath}{localfilename}", list_texts);
             Console.WriteLine($"存至本地 {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
-            flag = Basic.FileIO.CopyToServer(serverfilepath, serverfilename, localfilepath, localfilename, username, password);
+            flag = Basic.MyFileStream.SaveFile($"{serverfilepath}{serverfilename}", list_texts);
             Console.WriteLine($"上傳檔案至Fileserver {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
 
-            MyMessageBox.ShowDialog(flag ? "訂單送出完成!" : "訂單送出失敗!");
         }
         private void PlC_RJ_Button_藥庫_每日訂單_清除選取藥品訂單_MouseDownEvent(MouseEventArgs mevent)
         {
