@@ -925,7 +925,7 @@ namespace 智能藥庫系統_VM_Server_
             string password = "KuT1Ch@75511";
 
             API_OrderClass aPI_OrderClass_今日訂購數量 = Function_藥庫_每日訂單_取得今日訂購數量();
-            API_OrderClass aPI_OrderClass_緊急訂購數量 = Function_藥庫_每日訂單_取得緊急訂購數量();
+            
             API_OrderClass aPI_OrderClass = new API_OrderClass();
             for (int i = 0; i < aPI_OrderClass_今日訂購數量.Result.Count; i++)
             {
@@ -933,12 +933,13 @@ namespace 智能藥庫系統_VM_Server_
                 string 數量 = aPI_OrderClass_今日訂購數量.Result[i].value;
                 aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32());
             }
-            for (int i = 0; i < aPI_OrderClass_緊急訂購數量.Result.Count; i++)
-            {
-                string 藥品碼 = aPI_OrderClass_緊急訂購數量.Result[i].code;
-                string 數量 = aPI_OrderClass_緊急訂購數量.Result[i].value;
-                aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32());
-            }
+            //API_OrderClass aPI_OrderClass_緊急訂購數量 = Function_藥庫_每日訂單_取得緊急訂購數量();
+            //for (int i = 0; i < aPI_OrderClass_緊急訂購數量.Result.Count; i++)
+            //{
+            //    string 藥品碼 = aPI_OrderClass_緊急訂購數量.Result[i].code;
+            //    string 數量 = aPI_OrderClass_緊急訂購數量.Result[i].value;
+            //    aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32());
+            //}
             List<string> list_texts = new List<string>();
             for (int i = 0; i < aPI_OrderClass.Result.Count; i++)
             {
