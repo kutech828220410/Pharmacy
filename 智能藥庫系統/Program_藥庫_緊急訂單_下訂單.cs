@@ -151,24 +151,24 @@ namespace 智能藥庫系統
             if (rJ_TextBox_緊急訂單_下訂單_應驗收日期.Texts.StringIsEmpty()) list_error_msg.Add($"'應驗收日期'空白");
             if (rJ_TextBox_緊急訂單_下訂單_全名.Texts.StringIsEmpty()) list_error_msg.Add($"'全名'空白");
             if (rJ_TextBox_緊急訂單_下訂單_Email.Texts.StringIsEmpty()) list_error_msg.Add($"'Email'空白");
-            if (rJ_TextBox_緊急訂單_下訂單_聯絡人.Texts.StringIsEmpty()) list_error_msg.Add($"'聯絡人'空白");           
+            if (rJ_TextBox_緊急訂單_下訂單_聯絡人.Texts.StringIsEmpty()) list_error_msg.Add($"'聯絡人'空白");
             if (list_訂單內容.Count == 0) list_error_msg.Add($"未建立訂單內容");
 
-            for(int i = 0; i < list_error_msg.Count; i++)
+            for (int i = 0; i < list_error_msg.Count; i++)
             {
-                error_msg += $"{(i+1).ToString("00")}. {list_error_msg[i]}";
-                if(i != list_error_msg.Count -1) error_msg += "\n";
+                error_msg += $"{(i + 1).ToString("00")}. {list_error_msg[i]}";
+                if (i != list_error_msg.Count - 1) error_msg += "\n";
             }
-            if(!error_msg.StringIsEmpty())
+            if (!error_msg.StringIsEmpty())
             {
                 MyMessageBox.ShowDialog(error_msg);
                 cnt = 65500;
                 return;
             }
 
-          
-         
-            this.Invoke(new Action(delegate 
+
+
+            this.Invoke(new Action(delegate
             {
 
                 textBox_信箱設定_訂單編號.Text = rJ_TextBox_緊急訂單_下訂單_訂單編號.Texts;
@@ -205,7 +205,7 @@ namespace 智能藥庫系統
                            list_訂單內容[i][(int)enum_緊急訂單_下訂單_訂單內容.包裝單位].ObjectToString(),
                   });
                 }
-              
+
                 Table_Rtf.Set_ColunmWidth(0, 1000);
                 Table_Rtf.Set_ColunmWidth(1, 4000);
                 Table_Rtf.Set_ColunmWidth(2, 1000);
@@ -266,14 +266,19 @@ namespace 智能藥庫系統
             if (cnt_Program_緊急訂單_下訂單_發送Email == 7) cnt_Program_緊急訂單_下訂單_發送Email = 65500;
             if (cnt_Program_緊急訂單_下訂單_發送Email > 1) cnt_Program_緊急訂單_下訂單_發送Email_檢查放開(ref cnt_Program_緊急訂單_下訂單_發送Email);
 
-            if (cnt_Program_緊急訂單_下訂單_發送Email == 65500)
+            if (!plC_Button_下訂單_發送Email.but_press)
+            {
+                cnt_Program_緊急訂單_下訂單_發送Email = 65501;
+            }
+            if (cnt_Program_緊急訂單_下訂單_發送Email == 65501)
             {
                 this.MyTimer_緊急訂單_下訂單_發送Email_結束延遲.TickStop();
                 this.MyTimer_緊急訂單_下訂單_發送Email_結束延遲.StartTickTime(10000);
                 PLC_Device_緊急訂單_下訂單_發送Email.Bool = false;
+
                 cnt_Program_緊急訂單_下訂單_發送Email = 65535;
             }
-            if(!this.myEmail_Send_UI.Get_Send_Ready())
+            if (!this.myEmail_Send_UI.Get_Send_Ready())
             {
                 if (!rJ_Lable_下訂單_發送中.Visible)
                 {
@@ -281,11 +286,11 @@ namespace 智能藥庫系統
                     {
                         rJ_Lable_下訂單_發送中.Visible = true;
                     }));
-                }                          
+                }
             }
             else
             {
-                if(rJ_Lable_下訂單_發送中.Visible)
+                if (rJ_Lable_下訂單_發送中.Visible)
                 {
                     this.Invoke(new Action(delegate
                     {
@@ -304,10 +309,11 @@ namespace 智能藥庫系統
         }
         void cnt_Program_緊急訂單_下訂單_發送Email_初始化(ref int cnt)
         {
-            if(plC_Button_Email不發送.Bool)
+            if (plC_Button_Email不發送.Bool)
             {
                 Console.WriteLine($"Email 不發送!");
                 this.PLC_Device_緊急訂單_下訂單_發送Email_OK.Bool = true;
+                this.PLC_Device_緊急訂單_下訂單_訂單確認.Bool = true;
                 cnt = 65500;
                 return;
             }
@@ -418,11 +424,11 @@ namespace 智能藥庫系統
         {
             List<object[]> list_訂單內容 = this.sqL_DataGridView_緊急訂單_下訂單_訂單內容.GetAllRows();
             List<object[]> list_value_add = new List<object[]>();
-            for(int i = 0; i < list_訂單內容.Count; i++)
+            for (int i = 0; i < list_訂單內容.Count; i++)
             {
                 string 藥品碼 = list_訂單內容[i][(int)enum_緊急訂單_下訂單_訂單內容.藥品碼].ObjectToString();
                 List<object[]> list_藥品資料 = this.sqL_DataGridView_藥品補給系統_藥品資料.SQL_GetRows((int)enum_藥品補給系統_藥品資料.藥品碼, 藥品碼, false);
-                if(list_藥品資料.Count == 0)
+                if (list_藥品資料.Count == 0)
                 {
                     MyMessageBox.ShowDialog($"找無<{藥品碼}>資料!");
                     cnt = 65500;
@@ -518,6 +524,8 @@ namespace 智能藥庫系統
                 this.rJ_TextBox_緊急訂單_下訂單_已訂購總價.Text = "";
                 this.rJ_TextBox_緊急訂單_下訂單_已訂購總量.Text = "";
                 this.sqL_DataGridView_緊急訂單_下訂單_訂單內容.ClearGrid();
+                sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.ClearGrid();
+                sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.ClearGrid();
                 this.myEmail_Send_UI.Clear();
 
 
@@ -525,7 +533,7 @@ namespace 智能藥庫系統
                 PLC_Device_緊急訂單_下訂單_發送Email_OK.Bool = false;
                 PLC_Device_緊急訂單_下訂單_訂單確認_OK.Bool = false;
             }));
-   
+
         }
         #endregion
         #region Event
@@ -553,7 +561,7 @@ namespace 智能藥庫系統
 
         private void RJ_TextBox_緊急訂單_下訂單_藥品搜尋_藥品名稱_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == (char)Keys.Enter)
+            if (e.KeyChar == (char)Keys.Enter)
             {
                 PlC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋_MouseDownEvent(null);
             }
@@ -567,7 +575,7 @@ namespace 智能藥庫系統
         }
         private void RJ_TextBox_緊急訂單_下訂單_數量_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar >= 0x30 && e.KeyChar <= 0x39 || e.KeyChar == (char)Keys.Back)
+            if (e.KeyChar >= 0x30 && e.KeyChar <= 0x39 || e.KeyChar == (char)Keys.Back)
             {
                 return;
             }
@@ -598,7 +606,7 @@ namespace 智能藥庫系統
             {
                 return;
             }
-            
+
             e.Handled = true;
         }
         private void RJ_TextBox_緊急訂單_下訂單_單價__TextChanged(object sender, EventArgs e)
@@ -619,7 +627,7 @@ namespace 智能藥庫系統
             if (flag_failed) return;
             if (double.TryParse(this.rJ_TextBox_緊急訂單_下訂單_單價.Texts, out 單價))
             {
-                
+
             }
 
             double 總價 = 數量 * 單價;
@@ -651,7 +659,7 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.Get_All_Select_RowsValues();
-            if(list_value.Count == 0)
+            if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取資料!");
                 return;
@@ -740,7 +748,7 @@ namespace 智能藥庫系統
             {
                 this.rJ_TextBox_緊急訂單_下訂單_訂單編號.Text = "EM" + DateTime.Now.Get_DateTimeTINY().ToString();
             }));
- 
+
 
         }
 
@@ -760,7 +768,7 @@ namespace 智能藥庫系統
             if (單價.StringIsEmpty()) error_msg += $"◎ '單價'空白\n";
             if (數量.StringIsEmpty()) error_msg += $"◎ '數量'空白\n";
             if (總價.StringIsEmpty()) error_msg += $"◎ '總價'空白\n";
-            if(!error_msg.StringIsEmpty())
+            if (!error_msg.StringIsEmpty())
             {
                 MyMessageBox.ShowDialog($"{error_msg}");
                 return;
@@ -796,7 +804,7 @@ namespace 智能藥庫系統
 
             list_訂單內容_buf = list_訂單內容.GetRows((int)enum_緊急訂單_下訂單_訂單內容.藥品碼, 藥品碼);
 
-            if(list_訂單內容_buf.Count == 0)
+            if (list_訂單內容_buf.Count == 0)
             {
                 object[] value = new object[new enum_緊急訂單_下訂單_訂單內容().GetLength()];
                 value[(int)enum_緊急訂單_下訂單_訂單內容.GUID] = Guid.NewGuid().ToString();
@@ -807,7 +815,7 @@ namespace 智能藥庫系統
                 value[(int)enum_緊急訂單_下訂單_訂單內容.數量] = 數量;
                 value[(int)enum_緊急訂單_下訂單_訂單內容.總價] = 總價;
                 value[(int)enum_緊急訂單_下訂單_訂單內容.前次訂購單價] = 前次訂購單價;
-                this.sqL_DataGridView_緊急訂單_下訂單_訂單內容.AddRow(value , true);
+                this.sqL_DataGridView_緊急訂單_下訂單_訂單內容.AddRow(value, true);
             }
             else
             {
@@ -836,7 +844,7 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_緊急訂單_下訂單_刪除訂單內容_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_訂單內容 = this.sqL_DataGridView_緊急訂單_下訂單_訂單內容.Get_All_Select_RowsValues();
-            if(list_訂單內容.Count == 0)
+            if (list_訂單內容.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取資料!");
                 return;
