@@ -1046,6 +1046,7 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -18495,6 +18496,7 @@
             // 
             // groupBox_伺服器參數
             // 
+            this.groupBox_伺服器參數.Controls.Add(this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件);
             this.groupBox_伺服器參數.Controls.Add(this.plC_RJ_Button_信箱設定_伺服器參數_讀檔);
             this.groupBox_伺服器參數.Controls.Add(this.plC_RJ_Button_信箱設定_伺服器參數_存檔);
             this.groupBox_伺服器參數.Controls.Add(this.panel96);
@@ -26570,6 +26572,47 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
+            // plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件
+            // 
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.AutoResetState = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Bool = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.BorderRadius = 5;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.BorderSize = 0;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.but_press = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Location = new System.Drawing.Point(476, 23);
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Name = "plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件";
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.OFF_文字內容 = "寫入測試郵件";
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.ON_文字內容 = "寫入測試郵件";
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Size = new System.Drawing.Size(208, 76);
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.State = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.TabIndex = 152;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Text = "寫入測試郵件";
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.Texts = "寫入測試郵件";
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.字型鎖住 = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.文字鎖住 = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.讀取位元反向 = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.讀寫鎖住 = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.音效 = true;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.顯示 = false;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.顯示狀態 = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -27950,6 +27993,7 @@
         private MyUI.RJ_Lable rJ_Lable_下訂單_發送中;
         private MyUI.PLC_RJ_Button plC_RJ_Button_緊急訂單_訂單管理_修正備註;
         private MyUI.PLC_RJ_Button plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件;
     }
 }
 

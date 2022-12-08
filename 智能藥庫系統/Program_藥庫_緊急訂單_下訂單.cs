@@ -266,7 +266,7 @@ namespace 智能藥庫系統
             if (cnt_Program_緊急訂單_下訂單_發送Email == 7) cnt_Program_緊急訂單_下訂單_發送Email = 65500;
             if (cnt_Program_緊急訂單_下訂單_發送Email > 1) cnt_Program_緊急訂單_下訂單_發送Email_檢查放開(ref cnt_Program_緊急訂單_下訂單_發送Email);
 
-            if (!plC_Button_下訂單_發送Email.but_press)
+            if (!plC_Button_下訂單_發送Email.but_press && cnt_Program_緊急訂單_下訂單_發送Email == 65500)
             {
                 cnt_Program_緊急訂單_下訂單_發送Email = 65501;
             }
@@ -354,7 +354,7 @@ namespace 智能藥庫系統
             }
             else
             {
-                MyMessageBox.ShowDialog("發送完成!");
+                //MyMessageBox.ShowDialog("發送完成!");
                 this.PLC_Device_緊急訂單_下訂單_發送Email_OK.Bool = true;
                 this.PLC_Device_緊急訂單_下訂單_訂單確認.Bool = true;
                 cnt++;

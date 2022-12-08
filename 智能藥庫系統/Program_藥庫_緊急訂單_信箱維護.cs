@@ -91,10 +91,14 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_信箱設定_伺服器參數_讀檔.MouseDownEvent += PlC_RJ_Button_信箱設定_伺服器參數_讀檔_MouseDownEvent;
             this.plC_RJ_Button_信箱設定_讀取測試值.MouseDownEvent += PlC_RJ_Button_信箱設定_讀取測試值_MouseDownEvent;
             this.plC_RJ_Button_信箱設定_預覽.MouseDownEvent += PlC_RJ_Button_信箱設定_預覽_MouseDownEvent;
+            this.plC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件.MouseDownEvent += PlC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_緊急訂單_信箱設定);
         }
-     
+
+  
+
         private bool flag_藥庫_緊急訂單_信箱設定 = false;
         private void sub_Program_藥庫_緊急訂單_信箱設定()
         {
@@ -407,7 +411,20 @@ namespace 智能藥庫系統
             }));
 
         }
+        private void PlC_RJ_Button_信箱設定_伺服器參數_寫入測試郵件_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate 
+            {
+                textBox_信箱設定_伺服器參數_UserName.Text = "Hson_Evan@outlook.com";
+                textBox_信箱設定_伺服器參數_Password.Text = "s19910404";
+                textBox_信箱設定_伺服器參數_Host.Text = "smtp-mail.outlook.com";
+                textBox_信箱設定_伺服器參數_Port.Text = "587";
+                textBox_信箱設定_伺服器參數_發件者.Text = "Hson_Evan@outlook.com";
+                this.myEmail_Send_UI.EnableSsl = true;
+
+            }));
+        }
         #endregion
-      
+
     }
 }
