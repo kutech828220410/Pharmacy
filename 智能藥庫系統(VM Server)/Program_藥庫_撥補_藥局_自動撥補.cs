@@ -249,19 +249,19 @@ namespace 智能藥庫系統_VM_Server_
                     if (storage_藥庫 == null && deviceBasic_藥庫 == null) continue;
                     if (storage_藥庫 != null)
                     {
-                        storage_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_異動量);
+                        storage_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_批號, 儲位資訊_異動量.ToString());
                         storages_藥庫_replace.Add_NewStorage(storage_藥庫);
                         this.List_Pannel35_本地資料.Add_NewStorage(storage_藥庫);
                     }
                     if (deviceBasic_藥庫 != null)
                     {
-                        deviceBasic_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_異動量);
+                        deviceBasic_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_批號, 儲位資訊_異動量.ToString());
                         deviceBasics_藥庫_replace.Add_NewDeviceBasic(deviceBasic_藥庫);
                         List_藥庫_DeviceBasic.Add_NewDeviceBasic(deviceBasic_藥庫);
                     }
                     if (deviceBasics_藥局_buf[0] != null)
                     {
-                        deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_異動量 * -1);
+                        deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_批號, (儲位資訊_異動量 * -1).ToString());
                         deviceBasics_藥局_replace.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                         List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                     }
