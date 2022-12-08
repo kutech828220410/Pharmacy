@@ -472,7 +472,6 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
-            dateTime_start = dateTime_start.AddMinutes(-15);
             list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;
@@ -537,7 +536,6 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
-            dateTime_start = dateTime_start.AddMinutes(-15);
             List<object[]> list_訂單資料 = this.sqL_DataGridView_藥品補給系統_訂單資料.SQL_GetRowsByBetween((int)enum_藥品補給系統_訂單資料.訂購時間, dateTime_start, dateTime_end, false);
             list_訂單資料 = list_訂單資料.GetRowsByLike((int)enum_藥品補給系統_訂單資料.訂單編號, "EM");
             for (int i = 0; i < list_訂單資料.Count; i++)
