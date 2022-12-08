@@ -1045,6 +1045,7 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -2047,17 +2048,17 @@
             this.ftp_DounloadUI.DownloadType = MyFtpUI.Ftp_DounloadUI.E_DownloadType.URL;
             this.ftp_DounloadUI.FileName = "Setup.msi";
             this.ftp_DounloadUI.ForeColor = System.Drawing.Color.Black;
-            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = true;
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
             this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
-            this.ftp_DounloadUI.FTP_Server_要顯示 = true;
+            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
             this.ftp_DounloadUI.Location = new System.Drawing.Point(0, 0);
             this.ftp_DounloadUI.Name = "ftp_DounloadUI";
             this.ftp_DounloadUI.Password = "test";
-            this.ftp_DounloadUI.Password_要顯示 = true;
+            this.ftp_DounloadUI.Password_要顯示 = false;
             this.ftp_DounloadUI.Size = new System.Drawing.Size(430, 263);
             this.ftp_DounloadUI.TabIndex = 1;
             this.ftp_DounloadUI.Username = "test";
-            this.ftp_DounloadUI.Username_要顯示 = true;
+            this.ftp_DounloadUI.Username_要顯示 = false;
             // 
             // plC_RJ_GroupBox14
             // 
@@ -16957,6 +16958,7 @@
             // 
             // panel114
             // 
+            this.panel114.Controls.Add(this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間);
             this.panel114.Controls.Add(this.plC_RJ_Button_緊急訂單_訂單管理_修正備註);
             this.panel114.Controls.Add(this.groupBox14);
             this.panel114.Controls.Add(this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單);
@@ -16987,7 +16989,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Location = new System.Drawing.Point(227, 16);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Location = new System.Drawing.Point(227, 9);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Name = "plC_RJ_Button_緊急訂單_訂單管理_修正備註";
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.OFF_文字內容 = "修正備註";
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
@@ -16997,7 +16999,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Size = new System.Drawing.Size(124, 127);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Size = new System.Drawing.Size(124, 65);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.State = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.TabIndex = 198;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Text = "修正備註";
@@ -26523,6 +26525,48 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
+            // plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間
+            // 
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.AutoResetState = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Bool = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.but_press = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Location = new System.Drawing.Point(227, 78);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Name = "plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間";
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.OFF_文字內容 = "修正\n訂購時間";
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_文字內容 = "修正\n訂購時間";
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Size = new System.Drawing.Size(124, 65);
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.State = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.TabIndex = 199;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Text = "修正\n訂購時間";
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Texts = "修正\n訂購時間";
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.字型鎖住 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.文字鎖住 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.讀取位元反向 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.讀寫鎖住 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.音效 = true;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.顯示 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.顯示狀態 = false;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.顯示讀取位置 = "S4077";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -27902,6 +27946,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_設定包裝數量;
         private MyUI.RJ_Lable rJ_Lable_下訂單_發送中;
         private MyUI.PLC_RJ_Button plC_RJ_Button_緊急訂單_訂單管理_修正備註;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間;
     }
 }
 

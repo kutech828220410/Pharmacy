@@ -808,11 +808,43 @@ namespace 智能藥庫系統
                 MyMessageBox.ShowDialog("未選取資料!");
                 return;
             }
+
+
+            List<object[]> list_寫入報表設定 = this.sqL_DataGridView_寫入報表設定.SQL_GetAllRows(false);
+            list_寫入報表設定 = list_寫入報表設定.GetRows((int)enum_寫入報表設定.檔名, "每日訂單送出");
+            if (list_寫入報表設定.Count == 0) return;
+            int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
+            int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
+
+            DateTime dateTime_start;
+            DateTime dateTime_end;
+
+            DateTime dateTime_basic = DateTime.Now;
+            while (true)
+            {
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                {
+                    break;
+                }
+                dateTime_basic.AddDays(-1);
+            }
+
+            if (dateTime_basic.IsNewDay(hour, min))
+            {
+                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = dateTime_start.AddDays(1);
+            }
+            else
+            {
+                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_start = dateTime_end.AddDays(-1);
+            }
+
             for (int i = 0; i < list_value.Count; i++)
             {
                 string code = list_value[i][(int)enum_每日訂單.藥品碼].ObjectToString();
                 list_每日訂單_buf = list_每日訂單.GetRows((int)enum_每日訂單.藥品碼, code);
-                list_每日訂單_buf = list_每日訂單_buf.GetRowsInDate((int)enum_每日訂單.訂購時間, DateTime.Now);
+                list_每日訂單_buf = list_每日訂單_buf.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
                 if(list_每日訂單_buf.Count > 0)
                 {
                     list_value_delete.Add(list_每日訂單_buf[0]);

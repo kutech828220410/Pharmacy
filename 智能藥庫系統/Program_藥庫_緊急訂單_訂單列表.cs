@@ -32,6 +32,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.訂單編號);
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.供應商全名);
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.訂購日期);
+            this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.訂購時間);
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.訂購人);
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.驗收院所別);
             this.sqL_DataGridView_訂單管理_訂單列表.Set_ColumnVisible(true, enum_藥品補給系統_訂單資料.驗收人);
@@ -67,7 +68,7 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋_MouseDownEvent;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_刪除訂單_MouseDownEvent;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_修正備註_MouseDownEvent;
-
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.MouseDownEvent += PlC_RJ_Button_緊急訂單_訂單管理_修正訂購時間_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_緊急訂單_訂單列表);
         }
@@ -176,7 +177,7 @@ namespace 智能藥庫系統
             List<object[]> list_發票內容 = this.sqL_DataGridView_訂單管理_發票內容.SQL_GetRows(enum_藥品補給系統_發票資料.訂單編號.GetEnumName(), 訂單編號, false);
             this.sqL_DataGridView_訂單管理_發票內容.RefreshGrid(list_發票內容);
         }
-
+       
         private void PlC_RJ_Button_緊急訂單_訂單管理_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
             MyTimer myTimer = new MyTimer();
@@ -248,6 +249,25 @@ namespace 智能藥庫系統
             list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.備註] = dialog_輸入備註.Value;
             string[] serch_cols = new string[] { "訂單編號", "序號", "藥品碼" };
             string[] serch_values = new string[] { 訂單編號, 序號, 藥品碼 };
+            this.sqL_DataGridView_訂單管理_訂單列表.SQL_Replace(serch_cols, serch_values, list_訂單列表[0], false);
+            this.sqL_DataGridView_訂單管理_訂單列表.Replace(serch_cols, serch_values, list_訂單列表[0], true);
+        }
+        private void PlC_RJ_Button_緊急訂單_訂單管理_修正訂購時間_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_訂單列表 = this.sqL_DataGridView_訂單管理_訂單列表.Get_All_Select_RowsValues();
+            if (list_訂單列表.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取資料!");
+                return;
+            }
+            string 訂單編號 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.訂單編號].ObjectToString();
+            string 序號 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.序號].ObjectToString();
+            string 藥品碼 = list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.藥品碼].ObjectToString();
+            string[] serch_cols = new string[] { "訂單編號", "序號", "藥品碼" };
+            string[] serch_values = new string[] { 訂單編號, 序號, 藥品碼 };
+            DateTime dateTime = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, 10, 30, 00);
+            dateTime = dateTime.AddDays(-1);
+            list_訂單列表[0][(int)enum_藥品補給系統_訂單資料.訂購時間] = dateTime.ToDateTimeString();
             this.sqL_DataGridView_訂單管理_訂單列表.SQL_Replace(serch_cols, serch_values, list_訂單列表[0], false);
             this.sqL_DataGridView_訂單管理_訂單列表.Replace(serch_cols, serch_values, list_訂單列表[0], true);
         }
