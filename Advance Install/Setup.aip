@@ -12,10 +12,10 @@
     <ROW Property="AiSkipExitDlg" Value="1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="鴻森整合機電有限公司"/>
-    <ROW Property="ProductCode" Value="1028:{14C7DA88-CADB-4297-8C55-5E701CFDF950} " Type="16"/>
+    <ROW Property="ProductCode" Value="1028:{741FF7F7-8E74-43F3-83E3-0B4C2006153F} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能藥庫系統"/>
-    <ROW Property="ProductVersion" Value="1.0.23.0" Type="32" TargetFile="exe"/>
+    <ROW Property="ProductVersion" Value="1.0.24.0" Type="32" TargetFile="exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{DD530B82-8A1C-4702-89C3-1D317BE8BDF9}"/>
@@ -29,7 +29,7 @@
     <ROW Property="WindowsTypeNT5XDisplay" MultiBuildValue="DefaultBuild:Windows XP/2003 RTM, Windows XP/2003 SP1, Windows XP SP2 x86" ValueLocId="-"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
-    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1" DirectoryOptions="3"/>
     <ROW Directory="CommonAppDataFolder" Directory_Parent="TARGETDIR" DefaultDir="COMMON~1|CommonAppDataFolder" IsPseudoRoot="1"/>
     <ROW Directory="DesktopFolder" Directory_Parent="TARGETDIR" DefaultDir="DESKTO~1|DesktopFolder" IsPseudoRoot="1"/>
     <ROW Directory="SHORTCUTDIR" Directory_Parent="TARGETDIR" DefaultDir="SHORTC~1|SHORTCUTDIR" IsPseudoRoot="1"/>
@@ -91,65 +91,65 @@
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="AxAltairUDrv.dll" Component_="AxAltairUDrv.dll" FileName="AXALTA~1.DLL|AxAltairUDrv.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxAltairUDrv.dll" SelfReg="false" NextFile="AxAltairUDrvAsm4.5.dll"/>
-    <ROW File="AxAltairUDrvAsm4.5.dll" Component_="AxAltairUDrvAsm4.5.dll" FileName="AXALTA~2.DLL|AxAltairUDrvAsm4.5.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxAltairUDrvAsm4.5.dll" SelfReg="false" NextFile="AxOvkBase.dll"/>
-    <ROW File="AxOvkBase.dll" Component_="AxOvkBase.dll" FileName="AXOVKB~1.DLL|AxOvkBase.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkBase.dll" SelfReg="false" NextFile="AxOvkBaseAsm4.5.dll"/>
-    <ROW File="AxOvkBaseAsm4.5.dll" Component_="AxOvkBaseAsm4.5.dll" FileName="AXOVKB~2.DLL|AxOvkBaseAsm4.5.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkBaseAsm4.5.dll" SelfReg="false" NextFile="AxOvkMsr.dll"/>
-    <ROW File="AxOvkMsr.dll" Component_="AxOvkMsr.dll" FileName="AxOvkMsr.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkMsr.dll" SelfReg="false" NextFile="Basic.dll"/>
-    <ROW File="Basic.dll" Component_="Basic.dll" FileName="Basic.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Basic.dll" SelfReg="false" NextFile="CallBackUI.dll"/>
-    <ROW File="CallBackUI.dll" Component_="CallBackUI.dll" FileName="CALLBA~1.DLL|CallBackUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\CallBackUI.dll" SelfReg="false" NextFile="DBConfig.txt"/>
-    <ROW File="DBConfig.txt" Component_="DBConfig.txt" FileName="DBConfig.txt" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\DBConfig.txt" SelfReg="false" NextFile="DrawingClass.dll"/>
-    <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="FontAwesome.Sharp.dll"/>
-    <ROW File="FontAwesome.Sharp.dll" Component_="FontAwesome.Sharp.dll" FileName="FONTAW~1.DLL|FontAwesome.Sharp.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\FontAwesome.Sharp.dll" SelfReg="false" NextFile="H_Pannel_lib.dll"/>
-    <ROW File="HCGUI.dll" Component_="HCGUI.dll" FileName="HCGUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\HCGUI.dll" SelfReg="false" NextFile="LadderUI.dll"/>
-    <ROW File="H_Pannel_lib.dll" Component_="H_Pannel_lib.dll" FileName="H_PANN~1.DLL|H_Pannel_lib.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\H_Pannel_lib.dll" SelfReg="false" NextFile="HCGUI.dll"/>
-    <ROW File="LadderUI.dll" Component_="LadderUI.dll" FileName="LadderUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LadderUI.dll" SelfReg="false" NextFile="LeadShineUI.dll"/>
-    <ROW File="LeadShineUI.dll" Component_="LeadShineUI.dll" FileName="LEADSH~1.DLL|LeadShineUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LeadShineUI.dll" SelfReg="false" NextFile="LicenseLib.dll"/>
-    <ROW File="LicenseLib.dll" Component_="LicenseLib.dll" FileName="LICENS~1.DLL|LicenseLib.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LicenseLib.dll" SelfReg="false" NextFile="LightControlUI.dll"/>
-    <ROW File="LightControlUI.dll" Component_="LightControlUI.dll" FileName="LIGHTC~1.DLL|LightControlUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LightControlUI.dll" SelfReg="false" NextFile="MeasureSystemUI.dll"/>
-    <ROW File="MVSDK.dll" Component_="MVSDK.dll" FileName="MVSDK.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDK.dll" SelfReg="false" NextFile="MVSDKUI.dll"/>
-    <ROW File="MVSDKUI.dll" Component_="MVSDKUI.dll" FileName="MVSDKUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDKUI.dll" SelfReg="false" NextFile="MyConfig.txt"/>
-    <ROW File="MeasureSystemUI.dll" Component_="MeasureSystemUI.dll" FileName="MEASUR~1.DLL|MeasureSystemUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MeasureSystemUI.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.dll"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.xml"/>
-    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="DBConfig.txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false" NextFile="MVSDK.dll"/>
-    <ROW File="Microsoft.Office.Interop.Excel.dll" Component_="Microsoft.Office.Interop.Excel.dll" FileName="MICROS~2.DLL|Microsoft.Office.Interop.Excel.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll" SelfReg="false" NextFile="Microsoft.Office.Interop.Word.dll"/>
-    <ROW File="Microsoft.Office.Interop.Word.dll" Component_="Microsoft.Office.Interop.Word.dll" FileName="MICROS~3.DLL|Microsoft.Office.Interop.Word.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Word.dll" SelfReg="false" NextFile="Office.dll"/>
-    <ROW File="MyConfig.txt" Component_="DBConfig.txt" FileName="MyConfig.txt" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyConfig.txt" SelfReg="false" NextFile="MyEmail.dll"/>
-    <ROW File="MyEmail.dll" Component_="MyEmail.dll" FileName="MyEmail.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyEmail.dll" SelfReg="false" NextFile="MyFtpUI.dll"/>
-    <ROW File="MyFtpUI.dll" Component_="MyFtpUI.dll" FileName="MyFtpUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyFtpUI.dll" SelfReg="false" NextFile="MySql.Data.dll"/>
-    <ROW File="MySQL_Login.dll" Component_="MySQL_Login.dll" FileName="MYSQL_~1.DLL|MySQL_Login.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySQL_Login.dll" SelfReg="false" NextFile="MySqlBackup.dll"/>
-    <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MYSQLD~1.DLL|MySql.Data.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySql.Data.dll" SelfReg="false" NextFile="MySQL_Login.dll"/>
-    <ROW File="MySqlBackup.dll" Component_="MySqlBackup.dll" FileName="MYSQLB~1.DLL|MySqlBackup.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySqlBackup.dll" SelfReg="false" NextFile="MyUI.dll"/>
-    <ROW File="MyUI.dll" Component_="MyUI.dll" FileName="MyUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyUI.dll" SelfReg="false" NextFile="OVStart.bat"/>
-    <ROW File="OVStart.bat" Component_="DBConfig.txt" FileName="OVStart.bat" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\OVStart.bat" SelfReg="false" NextFile="PortControlUI.dll"/>
-    <ROW File="Office.dll" Component_="Office.dll" FileName="Office.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Office.dll" SelfReg="false"/>
-    <ROW File="PortControlUI.dll" Component_="PortControlUI.dll" FileName="PORTCO~1.DLL|PortControlUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\PortControlUI.dll" SelfReg="false" NextFile="program.stp"/>
-    <ROW File="RFID_FX600lib.dll" Component_="RFID_FX600lib.dll" FileName="RFID_F~1.DLL|RFID_FX600lib.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\RFID_FX600lib.dll" SelfReg="false" NextFile="SLDUI.dll"/>
-    <ROW File="SLDUI.dll" Component_="SLDUI.dll" FileName="SLDUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\SLDUI.dll" SelfReg="false" NextFile="SQLUI.dll"/>
-    <ROW File="SQLUI.dll" Component_="SQLUI.dll" FileName="SQLUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\SQLUI.dll" SelfReg="false" NextFile="System.Buffers.dll"/>
-    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Buffers.dll" SelfReg="false" NextFile="System.Buffers.xml"/>
-    <ROW File="System.Buffers.xml" Component_="DBConfig.txt" FileName="SYSTEM~1.XML|System.Buffers.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Buffers.xml" SelfReg="false" NextFile="System.Memory.dll"/>
-    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~2.DLL|System.Memory.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Memory.dll" SelfReg="false" NextFile="System.Memory.xml"/>
-    <ROW File="System.Memory.xml" Component_="DBConfig.txt" FileName="SYSTEM~2.XML|System.Memory.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Memory.xml" SelfReg="false" NextFile="System.Numerics.Vectors.dll"/>
-    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~3.DLL|System.Numerics.Vectors.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Numerics.Vectors.dll" SelfReg="false" NextFile="System.Numerics.Vectors.xml"/>
-    <ROW File="System.Numerics.Vectors.xml" Component_="DBConfig.txt" FileName="SYSTEM~3.XML|System.Numerics.Vectors.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Numerics.Vectors.xml" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.dll"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~4.DLL|System.Runtime.CompilerServices.Unsafe.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.xml"/>
-    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="DBConfig.txt" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false" NextFile="System.Text.Encodings.Web.dll"/>
-    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~5.DLL|System.Text.Encodings.Web.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false" NextFile="System.Text.Encodings.Web.xml"/>
-    <ROW File="System.Text.Encodings.Web.xml" Component_="DBConfig.txt" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false" NextFile="System.Text.Json.dll"/>
-    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~6.DLL|System.Text.Json.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Json.dll" SelfReg="false" NextFile="System.Text.Json.xml"/>
-    <ROW File="System.Text.Json.xml" Component_="DBConfig.txt" FileName="SYSTEM~6.XML|System.Text.Json.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Json.xml" SelfReg="false" NextFile="System.Threading.Tasks.Extensions.dll"/>
-    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~7.DLL|System.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false" NextFile="System.Threading.Tasks.Extensions.xml"/>
-    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="DBConfig.txt" FileName="SYSTEM~7.XML|System.Threading.Tasks.Extensions.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false" NextFile="System.ValueTuple.dll"/>
-    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~8.DLL|System.ValueTuple.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.ValueTuple.dll" SelfReg="false" NextFile="System.ValueTuple.xml"/>
-    <ROW File="System.ValueTuple.xml" Component_="DBConfig.txt" FileName="SYSTEM~8.XML|System.ValueTuple.xml" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.ValueTuple.xml" SelfReg="false" NextFile="TCP.dll"/>
-    <ROW File="TCP.dll" Component_="TCP.dll" FileName="TCP.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\TCP.dll" SelfReg="false" NextFile="ZealTechUI.dll"/>
-    <ROW File="ZealTechUI.dll" Component_="ZealTechUI.dll" FileName="ZEALTE~1.DLL|ZealTechUI.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\ZealTechUI.dll" SelfReg="false" NextFile="zxing.dll"/>
-    <ROW File="exe" Component_="exe" FileName="智能藥庫系統.exe" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.exe" SelfReg="false" NextFile="AxAltairUDrv.dll" DigSign="true"/>
-    <ROW File="exe.config" Component_="DBConfig.txt" FileName="智能藥庫系統~1.CON|智能藥庫系統.exe.config" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.exe.config" SelfReg="false" NextFile="pdb"/>
-    <ROW File="pdb" Component_="exe" FileName="智能藥庫系統.pdb" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.pdb" SelfReg="false" NextFile="Microsoft.Office.Interop.Excel.dll"/>
-    <ROW File="program.stp" Component_="DBConfig.txt" FileName="program.stp" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\program.stp" SelfReg="false" NextFile="RFID_FX600lib.dll"/>
-    <ROW File="zxing.dll" Component_="zxing.dll" FileName="zxing.dll" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\zxing.dll" SelfReg="false" NextFile="exe.config"/>
+    <ROW File="AxAltairUDrv.dll" Component_="AxAltairUDrv.dll" FileName="AXALTA~1.DLL|AxAltairUDrv.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxAltairUDrv.dll" SelfReg="false" NextFile="AxAltairUDrvAsm4.5.dll"/>
+    <ROW File="AxAltairUDrvAsm4.5.dll" Component_="AxAltairUDrvAsm4.5.dll" FileName="AXALTA~2.DLL|AxAltairUDrvAsm4.5.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxAltairUDrvAsm4.5.dll" SelfReg="false" NextFile="AxOvkBase.dll"/>
+    <ROW File="AxOvkBase.dll" Component_="AxOvkBase.dll" FileName="AXOVKB~1.DLL|AxOvkBase.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkBase.dll" SelfReg="false" NextFile="AxOvkBaseAsm4.5.dll"/>
+    <ROW File="AxOvkBaseAsm4.5.dll" Component_="AxOvkBaseAsm4.5.dll" FileName="AXOVKB~2.DLL|AxOvkBaseAsm4.5.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkBaseAsm4.5.dll" SelfReg="false" NextFile="AxOvkMsr.dll"/>
+    <ROW File="AxOvkMsr.dll" Component_="AxOvkMsr.dll" FileName="AxOvkMsr.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\AxOvkMsr.dll" SelfReg="false" NextFile="Basic.dll"/>
+    <ROW File="Basic.dll" Component_="Basic.dll" FileName="Basic.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Basic.dll" SelfReg="false" NextFile="CallBackUI.dll"/>
+    <ROW File="CallBackUI.dll" Component_="CallBackUI.dll" FileName="CALLBA~1.DLL|CallBackUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\CallBackUI.dll" SelfReg="false" NextFile="DBConfig.txt"/>
+    <ROW File="DBConfig.txt" Component_="DBConfig.txt" FileName="DBConfig.txt" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\DBConfig.txt" SelfReg="false" NextFile="DrawingClass.dll"/>
+    <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="FontAwesome.Sharp.dll"/>
+    <ROW File="FontAwesome.Sharp.dll" Component_="FontAwesome.Sharp.dll" FileName="FONTAW~1.DLL|FontAwesome.Sharp.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\FontAwesome.Sharp.dll" SelfReg="false" NextFile="H_Pannel_lib.dll"/>
+    <ROW File="HCGUI.dll" Component_="HCGUI.dll" FileName="HCGUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\HCGUI.dll" SelfReg="false" NextFile="LadderUI.dll"/>
+    <ROW File="H_Pannel_lib.dll" Component_="H_Pannel_lib.dll" FileName="H_PANN~1.DLL|H_Pannel_lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\H_Pannel_lib.dll" SelfReg="false" NextFile="HCGUI.dll"/>
+    <ROW File="LadderUI.dll" Component_="LadderUI.dll" FileName="LadderUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LadderUI.dll" SelfReg="false" NextFile="LeadShineUI.dll"/>
+    <ROW File="LeadShineUI.dll" Component_="LeadShineUI.dll" FileName="LEADSH~1.DLL|LeadShineUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LeadShineUI.dll" SelfReg="false" NextFile="LicenseLib.dll"/>
+    <ROW File="LicenseLib.dll" Component_="LicenseLib.dll" FileName="LICENS~1.DLL|LicenseLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LicenseLib.dll" SelfReg="false" NextFile="LightControlUI.dll"/>
+    <ROW File="LightControlUI.dll" Component_="LightControlUI.dll" FileName="LIGHTC~1.DLL|LightControlUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LightControlUI.dll" SelfReg="false" NextFile="MeasureSystemUI.dll"/>
+    <ROW File="MVSDK.dll" Component_="MVSDK.dll" FileName="MVSDK.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDK.dll" SelfReg="false" NextFile="MVSDKUI.dll"/>
+    <ROW File="MVSDKUI.dll" Component_="MVSDKUI.dll" FileName="MVSDKUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDKUI.dll" SelfReg="false" NextFile="MyConfig.txt"/>
+    <ROW File="MeasureSystemUI.dll" Component_="MeasureSystemUI.dll" FileName="MEASUR~1.DLL|MeasureSystemUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MeasureSystemUI.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.dll"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.xml"/>
+    <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="DBConfig.txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false" NextFile="MVSDK.dll"/>
+    <ROW File="Microsoft.Office.Interop.Excel.dll" Component_="Microsoft.Office.Interop.Excel.dll" FileName="MICROS~2.DLL|Microsoft.Office.Interop.Excel.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll" SelfReg="false" NextFile="Microsoft.Office.Interop.Word.dll"/>
+    <ROW File="Microsoft.Office.Interop.Word.dll" Component_="Microsoft.Office.Interop.Word.dll" FileName="MICROS~3.DLL|Microsoft.Office.Interop.Word.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Word.dll" SelfReg="false" NextFile="Office.dll"/>
+    <ROW File="MyConfig.txt" Component_="DBConfig.txt" FileName="MyConfig.txt" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyConfig.txt" SelfReg="false" NextFile="MyEmail.dll"/>
+    <ROW File="MyEmail.dll" Component_="MyEmail.dll" FileName="MyEmail.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyEmail.dll" SelfReg="false" NextFile="MyFtpUI.dll"/>
+    <ROW File="MyFtpUI.dll" Component_="MyFtpUI.dll" FileName="MyFtpUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyFtpUI.dll" SelfReg="false" NextFile="MySql.Data.dll"/>
+    <ROW File="MySQL_Login.dll" Component_="MySQL_Login.dll" FileName="MYSQL_~1.DLL|MySQL_Login.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySQL_Login.dll" SelfReg="false" NextFile="MySqlBackup.dll"/>
+    <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MYSQLD~1.DLL|MySql.Data.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySql.Data.dll" SelfReg="false" NextFile="MySQL_Login.dll"/>
+    <ROW File="MySqlBackup.dll" Component_="MySqlBackup.dll" FileName="MYSQLB~1.DLL|MySqlBackup.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySqlBackup.dll" SelfReg="false" NextFile="MyUI.dll"/>
+    <ROW File="MyUI.dll" Component_="MyUI.dll" FileName="MyUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyUI.dll" SelfReg="false" NextFile="OVStart.bat"/>
+    <ROW File="OVStart.bat" Component_="DBConfig.txt" FileName="OVStart.bat" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\OVStart.bat" SelfReg="false" NextFile="PortControlUI.dll"/>
+    <ROW File="Office.dll" Component_="Office.dll" FileName="Office.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Office.dll" SelfReg="false"/>
+    <ROW File="PortControlUI.dll" Component_="PortControlUI.dll" FileName="PORTCO~1.DLL|PortControlUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\PortControlUI.dll" SelfReg="false" NextFile="program.stp"/>
+    <ROW File="RFID_FX600lib.dll" Component_="RFID_FX600lib.dll" FileName="RFID_F~1.DLL|RFID_FX600lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\RFID_FX600lib.dll" SelfReg="false" NextFile="SLDUI.dll"/>
+    <ROW File="SLDUI.dll" Component_="SLDUI.dll" FileName="SLDUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\SLDUI.dll" SelfReg="false" NextFile="SQLUI.dll"/>
+    <ROW File="SQLUI.dll" Component_="SQLUI.dll" FileName="SQLUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\SQLUI.dll" SelfReg="false" NextFile="System.Buffers.dll"/>
+    <ROW File="System.Buffers.dll" Component_="System.Buffers.dll" FileName="SYSTEM~1.DLL|System.Buffers.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Buffers.dll" SelfReg="false" NextFile="System.Buffers.xml"/>
+    <ROW File="System.Buffers.xml" Component_="DBConfig.txt" FileName="SYSTEM~1.XML|System.Buffers.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Buffers.xml" SelfReg="false" NextFile="System.Memory.dll"/>
+    <ROW File="System.Memory.dll" Component_="System.Memory.dll" FileName="SYSTEM~2.DLL|System.Memory.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Memory.dll" SelfReg="false" NextFile="System.Memory.xml"/>
+    <ROW File="System.Memory.xml" Component_="DBConfig.txt" FileName="SYSTEM~2.XML|System.Memory.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Memory.xml" SelfReg="false" NextFile="System.Numerics.Vectors.dll"/>
+    <ROW File="System.Numerics.Vectors.dll" Component_="System.Numerics.Vectors.dll" FileName="SYSTEM~3.DLL|System.Numerics.Vectors.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Numerics.Vectors.dll" SelfReg="false" NextFile="System.Numerics.Vectors.xml"/>
+    <ROW File="System.Numerics.Vectors.xml" Component_="DBConfig.txt" FileName="SYSTEM~3.XML|System.Numerics.Vectors.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Numerics.Vectors.xml" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.dll"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.dll" Component_="System.Runtime.CompilerServices.Unsafe.dll" FileName="SYSTEM~4.DLL|System.Runtime.CompilerServices.Unsafe.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Runtime.CompilerServices.Unsafe.dll" SelfReg="false" NextFile="System.Runtime.CompilerServices.Unsafe.xml"/>
+    <ROW File="System.Runtime.CompilerServices.Unsafe.xml" Component_="DBConfig.txt" FileName="SYSTEM~4.XML|System.Runtime.CompilerServices.Unsafe.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Runtime.CompilerServices.Unsafe.xml" SelfReg="false" NextFile="System.Text.Encodings.Web.dll"/>
+    <ROW File="System.Text.Encodings.Web.dll" Component_="System.Text.Encodings.Web.dll" FileName="SYSTEM~5.DLL|System.Text.Encodings.Web.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Encodings.Web.dll" SelfReg="false" NextFile="System.Text.Encodings.Web.xml"/>
+    <ROW File="System.Text.Encodings.Web.xml" Component_="DBConfig.txt" FileName="SYSTEM~5.XML|System.Text.Encodings.Web.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Encodings.Web.xml" SelfReg="false" NextFile="System.Text.Json.dll"/>
+    <ROW File="System.Text.Json.dll" Component_="System.Text.Json.dll" FileName="SYSTEM~6.DLL|System.Text.Json.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Json.dll" SelfReg="false" NextFile="System.Text.Json.xml"/>
+    <ROW File="System.Text.Json.xml" Component_="DBConfig.txt" FileName="SYSTEM~6.XML|System.Text.Json.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Text.Json.xml" SelfReg="false" NextFile="System.Threading.Tasks.Extensions.dll"/>
+    <ROW File="System.Threading.Tasks.Extensions.dll" Component_="System.Threading.Tasks.Extensions.dll" FileName="SYSTEM~7.DLL|System.Threading.Tasks.Extensions.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Threading.Tasks.Extensions.dll" SelfReg="false" NextFile="System.Threading.Tasks.Extensions.xml"/>
+    <ROW File="System.Threading.Tasks.Extensions.xml" Component_="DBConfig.txt" FileName="SYSTEM~7.XML|System.Threading.Tasks.Extensions.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.Threading.Tasks.Extensions.xml" SelfReg="false" NextFile="System.ValueTuple.dll"/>
+    <ROW File="System.ValueTuple.dll" Component_="System.ValueTuple.dll" FileName="SYSTEM~8.DLL|System.ValueTuple.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.ValueTuple.dll" SelfReg="false" NextFile="System.ValueTuple.xml"/>
+    <ROW File="System.ValueTuple.xml" Component_="DBConfig.txt" FileName="SYSTEM~8.XML|System.ValueTuple.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\System.ValueTuple.xml" SelfReg="false" NextFile="TCP.dll"/>
+    <ROW File="TCP.dll" Component_="TCP.dll" FileName="TCP.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\TCP.dll" SelfReg="false" NextFile="ZealTechUI.dll"/>
+    <ROW File="ZealTechUI.dll" Component_="ZealTechUI.dll" FileName="ZEALTE~1.DLL|ZealTechUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\ZealTechUI.dll" SelfReg="false" NextFile="zxing.dll"/>
+    <ROW File="exe" Component_="exe" FileName="智能藥庫系統.exe" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.exe" SelfReg="false" NextFile="AxAltairUDrv.dll" DigSign="true"/>
+    <ROW File="exe.config" Component_="DBConfig.txt" FileName="智能藥庫系統~1.CON|智能藥庫系統.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.exe.config" SelfReg="false" NextFile="pdb"/>
+    <ROW File="pdb" Component_="exe" FileName="智能藥庫系統.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.pdb" SelfReg="false" NextFile="Microsoft.Office.Interop.Excel.dll"/>
+    <ROW File="program.stp" Component_="DBConfig.txt" FileName="program.stp" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\program.stp" SelfReg="false" NextFile="RFID_FX600lib.dll"/>
+    <ROW File="zxing.dll" Component_="zxing.dll" FileName="zxing.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\zxing.dll" SelfReg="false" NextFile="exe.config"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
     <ROW BootstrOptKey="GlobalOptions" DownloadFolder="[AppDataFolder][|Manufacturer]\[|ProductName]\prerequisites" Options="2"/>
@@ -322,7 +322,7 @@
     <ROW XmlAttribute="xsischemaLocation" XmlElement="swidsoftware_identification_tag" Name="xsi:schemaLocation" Flags="14" Order="3" Value="http://standards.iso.org/iso/19770/-2/2008/schema.xsd software_identification_tag.xsd"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.XmlElementComponent">
-    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="23"/>
+    <ROW XmlElement="swidbuild" ParentElement="swidnumeric" Name="swid:build" Condition="1" Order="2" Flags="14" Text="24"/>
     <ROW XmlElement="swidentitlement_required_indicator" ParentElement="swidsoftware_identification_tag" Name="swid:entitlement_required_indicator" Condition="1" Order="0" Flags="14" Text="false"/>
     <ROW XmlElement="swidmajor" ParentElement="swidnumeric" Name="swid:major" Condition="1" Order="0" Flags="14" Text="1"/>
     <ROW XmlElement="swidminor" ParentElement="swidnumeric" Name="swid:minor" Condition="1" Order="1" Flags="14" Text="0"/>
