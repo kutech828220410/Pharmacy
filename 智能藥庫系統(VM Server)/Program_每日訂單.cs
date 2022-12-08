@@ -46,7 +46,6 @@ namespace 智能藥庫系統_VM_Server_
         }
 
         private API_OrderClass API_OrderClass_每日訂單_訂購數量 = new API_OrderClass();
-
         [Serializable]
         public class API_OrderClass
         {
@@ -79,8 +78,11 @@ namespace 智能藥庫系統_VM_Server_
             {
                 Result.Clear();
             }
-
             public void 新增數量(string code, int num)
+            {
+                this.新增數量(code, num, "");
+            }
+            public void 新增數量(string code, int num, string orderDateTime)
             {
                 if (num < 0) return;
 
@@ -100,7 +102,7 @@ namespace 智能藥庫系統_VM_Server_
                 else
                 {
                     if (num == 0) return;
-                    this.Result.Add(new resultClass(code, num.ToString(), ""));
+                    this.Result.Add(new resultClass(code, num.ToString(), orderDateTime));
                 }
             }
 
@@ -110,7 +112,6 @@ namespace 智能藥庫系統_VM_Server_
             }
             public void 新增藥品(string code, int num)
             {
-                if (num < 0) return;
 
                 List<resultClass> Result_buf = new List<resultClass>();
                 Result_buf = (from value in Result
@@ -118,16 +119,16 @@ namespace 智能藥庫系統_VM_Server_
                               select value).ToList();
                 if (Result_buf.Count > 0)
                 {
-                    if (num == 0)
-                    {
-                        Result.Remove(Result_buf[0]);
-                        return;
-                    }
+                    //if(num == 0)
+                    //{
+                    //    Result.Remove(Result_buf[0]);
+                    //    return;
+                    //}
                     Result_buf[0].value = num.ToString();
                 }
                 else
                 {
-                    if (num == 0) return;
+                    //if (num == 0) return;
                     this.Result.Add(new resultClass(code, num.ToString(), ""));
                 }
             }
@@ -246,18 +247,22 @@ namespace 智能藥庫系統_VM_Server_
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.檔名, "每日訂單送出");
                 if(list_過帳狀態.Count > 0)
                 {
-                    if (Task_檢查每日訂單 == null)
+                    if(!Basic.TypeConvert.IsHolidays(DateTime.Now))
                     {
-                        Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
+                        if (Task_檢查每日訂單 == null)
+                        {
+                            Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
+                        }
+                        if (Task_檢查每日訂單.Status == TaskStatus.RanToCompletion)
+                        {
+                            Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
+                        }
+                        if (Task_檢查每日訂單.Status == TaskStatus.Created)
+                        {
+                            Task_檢查每日訂單.Start();
+                        }
                     }
-                    if (Task_檢查每日訂單.Status == TaskStatus.RanToCompletion)
-                    {
-                        Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
-                    }
-                    if (Task_檢查每日訂單.Status == TaskStatus.Created)
-                    {
-                        Task_檢查每日訂單.Start();
-                    }
+               
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                     this.sqL_DataGridView_過帳狀態列表.SQL_ReplaceExtra(list_過帳狀態[0], false);
@@ -328,26 +333,30 @@ namespace 智能藥庫系統_VM_Server_
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.檔名, "每日訂單補足基準量");
                 if (list_過帳狀態.Count > 0)
                 {
-                    if (Task_檢查每日訂單_補足基準量 == null)
+                    if (!Basic.TypeConvert.IsHolidays(DateTime.Now))
                     {
-                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                        if (Task_檢查每日訂單_補足基準量 == null)
                         {
-                            List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
-                          this.Function_藥庫_每日訂單_藥品補足基準量(list_value);
-                        }));
-                    }
-                    if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.RanToCompletion)
-                    {
-                        Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                            Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                            {
+                                List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
+                                this.Function_藥庫_每日訂單_藥品補足基準量(list_value);
+                            }));
+                        }
+                        if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.RanToCompletion)
                         {
-                            List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
-                            this.Function_藥庫_每日訂單_藥品補足基準量(list_value); 
-                        }));
+                            Task_檢查每日訂單_補足基準量 = new Task(new Action(delegate
+                            {
+                                List<object[]> list_value = this.Function_藥庫_每日訂單_取得藥品資料();
+                                this.Function_藥庫_每日訂單_藥品補足基準量(list_value);
+                            }));
+                        }
+                        if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.Created)
+                        {
+                            Task_檢查每日訂單_補足基準量.Start();
+                        }
                     }
-                    if (Task_檢查每日訂單_補足基準量.Status == TaskStatus.Created)
-                    {
-                        Task_檢查每日訂單_補足基準量.Start();
-                    }
+                 
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                     this.sqL_DataGridView_過帳狀態列表.SQL_ReplaceExtra(list_過帳狀態[0], false);
@@ -427,13 +436,53 @@ namespace 智能藥庫系統_VM_Server_
 
             return list_藥品資料_每日訂單;
         }
+        public List<object[]> Function_藥庫_每日訂單_取得每日訂單資料()
+        {
+            List<object[]> list_value = new List<object[]>();
+            List<object[]> list_寫入報表設定 = this.sqL_DataGridView_寫入報表設定.SQL_GetAllRows(false);
+            list_寫入報表設定 = list_寫入報表設定.GetRows((int)enum_寫入報表設定.檔名, "每日訂單送出");
+            if (list_寫入報表設定.Count == 0) return list_value;
+            int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
+            int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
+
+            DateTime dateTime_start;
+            DateTime dateTime_end;
+
+            DateTime dateTime_basic = DateTime.Now;
+            while (true)
+            {
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                {
+                    break;
+                }
+                dateTime_basic.AddDays(-1);
+            }
+
+            if (dateTime_basic.IsNewDay(hour, min))
+            {
+                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = dateTime_start.AddDays(1);
+            }
+            else
+            {
+                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_start = dateTime_end.AddDays(-1);
+            }
+
+
+            list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
+            list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
+            return list_value;
+        }
         public API_OrderClass Function_藥庫_每日訂單_取得今日訂購數量()
         {
             API_OrderClass aPI_OrderClass = new API_OrderClass();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            List<object[]> list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
-            list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, DateTime.Now);
+            List<object[]> list_value = this.Function_藥庫_每日訂單_取得每日訂單資料();
+
+
+
             for (int i = 0; i < list_value.Count; i++)
             {
                 string 藥品碼 = list_value[i][(int)enum_每日訂單.藥品碼].ObjectToString();
@@ -441,7 +490,7 @@ namespace 智能藥庫系統_VM_Server_
                 string 訂購日期 = list_value[i][(int)enum_每日訂單.訂購時間].ToDateTimeString();
                 if (!數量.StringIsInt32()) continue;
                 if (!訂購日期.Check_Date_String()) continue;
-                aPI_OrderClass.Result.Add(new API_OrderClass.resultClass(藥品碼, 數量, 訂購日期));
+                aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32(), 訂購日期);
 
             }
             return aPI_OrderClass;
@@ -451,12 +500,45 @@ namespace 智能藥庫系統_VM_Server_
             API_OrderClass aPI_OrderClass = new API_OrderClass();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            List<object[]> list_value = this.sqL_DataGridView_藥品補給系統_訂單資料.SQL_GetRowsByBetween((int)enum_藥品補給系統_訂單資料.訂購日期, DateTime.Now, false);
-            list_value = list_value.GetRowsByLike((int)enum_藥品補給系統_訂單資料.訂單編號, "EM");
-            for (int i = 0; i < list_value.Count; i++)
+
+            List<object[]> list_value = new List<object[]>();
+            List<object[]> list_寫入報表設定 = this.sqL_DataGridView_寫入報表設定.SQL_GetAllRows(false);
+            list_寫入報表設定 = list_寫入報表設定.GetRows((int)enum_寫入報表設定.檔名, "每日訂單送出");
+            if (list_寫入報表設定.Count == 0) return aPI_OrderClass;
+            int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
+            int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
+
+            DateTime dateTime_start;
+            DateTime dateTime_end;
+
+            DateTime dateTime_basic = DateTime.Now;
+            while (true)
             {
-                string 藥品碼 = list_value[i][(int)enum_藥品補給系統_訂單資料.藥品碼].ObjectToString();
-                string 數量 = list_value[i][(int)enum_藥品補給系統_訂單資料.訂購數量].ObjectToString();
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                {
+                    break;
+                }
+                dateTime_basic.AddDays(-1);
+            }
+
+            if (dateTime_basic.IsNewDay(hour, min))
+            {
+                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = dateTime_start.AddDays(1);
+            }
+            else
+            {
+                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_start = dateTime_end.AddDays(-1);
+            }
+
+
+            List<object[]> list_訂單資料 = this.sqL_DataGridView_藥品補給系統_訂單資料.SQL_GetRowsByBetween((int)enum_藥品補給系統_訂單資料.訂購時間, dateTime_start, dateTime_end, false);
+            list_訂單資料 = list_訂單資料.GetRowsByLike((int)enum_藥品補給系統_訂單資料.訂單編號, "EM");
+            for (int i = 0; i < list_訂單資料.Count; i++)
+            {
+                string 藥品碼 = list_訂單資料[i][(int)enum_藥品補給系統_訂單資料.藥品碼].ObjectToString();
+                string 數量 = list_訂單資料[i][(int)enum_藥品補給系統_訂單資料.訂購數量].ObjectToString();
                 if (!數量.StringIsInt32()) continue;
                 aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32());
 

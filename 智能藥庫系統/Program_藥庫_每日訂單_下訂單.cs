@@ -20,6 +20,8 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
+      
+
         public enum enum_藥庫_每日訂單_下訂單 : int
         {
             GUID,
@@ -156,6 +158,7 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Init();
             this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.RowDoubleClickEvent += SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_RowDoubleClickEvent;
+            this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_DataGridRowsChangeRefEvent;
 
             this.rJ_TextBox_藥庫_每日訂單_下訂單_藥品碼.KeyPress += RJ_TextBox_藥庫_每日訂單_下訂單_藥品碼_KeyPress;
             this.rJ_TextBox_藥庫_每日訂單_下訂單_藥品名稱.KeyPress += RJ_TextBox_藥庫_每日訂單_下訂單_藥品名稱_KeyPress;
@@ -175,7 +178,9 @@ namespace 智能藥庫系統
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_下訂單);
         }
-   
+
+       
+
         private bool flag_藥庫_每日訂單_下訂單 = false;
         private void sub_Program_藥庫_每日訂單_下訂單()
         {
@@ -266,14 +271,25 @@ namespace 智能藥庫系統
       
             DateTime dateTime_start;
             DateTime dateTime_end;
-            if (DateTime.Now.IsNewDay(hour, min))
+
+            DateTime dateTime_basic = DateTime.Now;
+            while (true)
             {
-                dateTime_start = $"{DateTime.Now.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                {
+                    break;
+                }
+                dateTime_basic.AddDays(-1);
+            }
+
+            if (dateTime_basic.IsNewDay(hour, min))
+            {
+                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
             }
             else
             {
-                dateTime_end = $"{DateTime.Now.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
        
@@ -318,14 +334,25 @@ namespace 智能藥庫系統
 
             DateTime dateTime_start;
             DateTime dateTime_end;
-            if (DateTime.Now.IsNewDay(hour, min))
+
+            DateTime dateTime_basic = DateTime.Now;
+            while (true)
             {
-                dateTime_start = $"{DateTime.Now.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                {
+                    break;
+                }
+                dateTime_basic.AddDays(-1);
+            }
+
+            if (dateTime_basic.IsNewDay(hour, min))
+            {
+                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
             }
             else
             {
-                dateTime_end = $"{DateTime.Now.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
 
@@ -617,6 +644,12 @@ namespace 智能藥庫系統
 
             this.Function_藥庫_每日訂單_下訂單_今日訂購數量更新(aPI_OrderClass);
             this.Function_藥庫_每日訂單_下訂單_更新藥品資料表單();
+
+            
+        }
+        private void SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            RowsList.Sort(new ICP_藥庫_每日訂單_下訂單());
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -814,7 +847,15 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.RefreshGrid(list_value);
         }
         #endregion
-
+        private class ICP_藥庫_每日訂單_下訂單 : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                string Code0 = x[(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                string Code1 = y[(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                return Code0.CompareTo(Code1);
+            }
+        }
         public class Distinct_藥庫_每日訂單_下訂單 : IEqualityComparer<object[]>
         {
             public bool Equals(object[] x, object[] y)

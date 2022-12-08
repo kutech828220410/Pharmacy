@@ -2044,19 +2044,20 @@
             // 
             this.ftp_DounloadUI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.ftp_DounloadUI.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ftp_DounloadUI.DownloadType = MyFtpUI.Ftp_DounloadUI.E_DownloadType.URL;
             this.ftp_DounloadUI.FileName = "Setup.msi";
             this.ftp_DounloadUI.ForeColor = System.Drawing.Color.Black;
-            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = true;
             this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
-            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
+            this.ftp_DounloadUI.FTP_Server_要顯示 = true;
             this.ftp_DounloadUI.Location = new System.Drawing.Point(0, 0);
             this.ftp_DounloadUI.Name = "ftp_DounloadUI";
             this.ftp_DounloadUI.Password = "test";
-            this.ftp_DounloadUI.Password_要顯示 = false;
+            this.ftp_DounloadUI.Password_要顯示 = true;
             this.ftp_DounloadUI.Size = new System.Drawing.Size(430, 263);
             this.ftp_DounloadUI.TabIndex = 1;
             this.ftp_DounloadUI.Username = "test";
-            this.ftp_DounloadUI.Username_要顯示 = false;
+            this.ftp_DounloadUI.Username_要顯示 = true;
             // 
             // plC_RJ_GroupBox14
             // 
