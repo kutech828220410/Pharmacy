@@ -2048,17 +2048,17 @@
             this.ftp_DounloadUI.DownloadType = MyFtpUI.Ftp_DounloadUI.E_DownloadType.URL;
             this.ftp_DounloadUI.FileName = "Setup.msi";
             this.ftp_DounloadUI.ForeColor = System.Drawing.Color.Black;
-            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = true;
+            this.ftp_DounloadUI.FTP_Groupbox_要顯示 = false;
             this.ftp_DounloadUI.FTP_Server = "ftp://kutech.myds.me/FTP";
-            this.ftp_DounloadUI.FTP_Server_要顯示 = true;
+            this.ftp_DounloadUI.FTP_Server_要顯示 = false;
             this.ftp_DounloadUI.Location = new System.Drawing.Point(0, 0);
             this.ftp_DounloadUI.Name = "ftp_DounloadUI";
             this.ftp_DounloadUI.Password = "test";
-            this.ftp_DounloadUI.Password_要顯示 = true;
+            this.ftp_DounloadUI.Password_要顯示 = false;
             this.ftp_DounloadUI.Size = new System.Drawing.Size(430, 263);
             this.ftp_DounloadUI.TabIndex = 1;
             this.ftp_DounloadUI.Username = "test";
-            this.ftp_DounloadUI.Username_要顯示 = true;
+            this.ftp_DounloadUI.Username_要顯示 = false;
             // 
             // plC_RJ_GroupBox14
             // 
@@ -21369,6 +21369,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.音效 = true;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.顯示 = false;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.顯示狀態 = false;
+            this.plC_RJ_Button_藥局_藥品資料_設定安全量.顯示讀取位置 = "S39012";
             // 
             // plC_RJ_Button_藥局_藥品資料_設定基準量
             // 
@@ -21410,6 +21411,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.音效 = true;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.顯示 = false;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.顯示狀態 = false;
+            this.plC_RJ_Button_藥局_藥品資料_設定基準量.顯示讀取位置 = "S39012";
             // 
             // plC_RJ_Button_藥局_藥品資料_匯出
             // 
@@ -21657,6 +21659,7 @@
             this.plC_RJ_GroupBox4.TitleHeight = 37;
             this.plC_RJ_GroupBox4.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.plC_RJ_GroupBox4.TitleTexts = "效期管理";
+            this.plC_RJ_GroupBox4.致能讀取位置 = "S39012";
             // 
             // sqL_DataGridView_藥局_藥品資料_效期及庫存
             // 
