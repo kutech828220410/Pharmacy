@@ -962,19 +962,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\HS1T16\\.nuget\\packages\\": {}
+    "C:\\Users\\hsonds01\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy1\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+      "projectUniqueName": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
       "projectName": "智慧藥庫系統_WebApi",
-      "projectPath": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy1\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
-      "packagesPath": "C:\\Users\\HS1T16\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy1\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\obj\\",
+      "projectPath": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+      "packagesPath": "C:\\Users\\hsonds01\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智能藥庫系統_WebApi\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\HS1T16\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\hsonds01\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1019,24 +1023,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[5.0.17, 5.0.17]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[5.0.0, 5.0.0]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"
@@ -1045,7 +1031,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.414\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
       }
     }
   }

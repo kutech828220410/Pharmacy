@@ -135,3 +135,4 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\HS1T16\Source\Repos\Pharmacy1\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_輸入備註.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_輸入備註.resources
