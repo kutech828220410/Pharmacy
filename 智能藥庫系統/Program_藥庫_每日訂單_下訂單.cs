@@ -268,21 +268,23 @@ namespace 智能藥庫系統
             if (list_寫入報表設定.Count == 0) return list_value;
             int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
-      
+
             DateTime dateTime_start;
             DateTime dateTime_end;
 
             DateTime dateTime_basic = DateTime.Now;
+            bool isholiday = false;
             while (true)
             {
                 if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
                 {
                     break;
                 }
-                dateTime_basic.AddDays(-1);
+                dateTime_basic = dateTime_basic.AddDays(-1);
+                isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(hour, min))
+            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
@@ -292,7 +294,6 @@ namespace 智能藥庫系統
                 dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
-       
 
             list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
@@ -336,16 +337,18 @@ namespace 智能藥庫系統
             DateTime dateTime_end;
 
             DateTime dateTime_basic = DateTime.Now;
+            bool isholiday = false;
             while (true)
             {
                 if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
                 {
                     break;
                 }
-                dateTime_basic.AddDays(-1);
+                dateTime_basic = dateTime_basic.AddDays(-1);
+                isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(hour, min))
+            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);

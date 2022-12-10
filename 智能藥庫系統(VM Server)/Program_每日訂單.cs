@@ -453,16 +453,18 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_end;
 
             DateTime dateTime_basic = DateTime.Now;
+            bool isholiday = false;
             while (true)
             {
                 if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
                 {
                     break;
                 }
-                dateTime_basic.AddDays(-1);
+                dateTime_basic = dateTime_basic.AddDays(-1);
+                isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
+            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
@@ -517,16 +519,18 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_end;
 
             DateTime dateTime_basic = DateTime.Now;
+            bool isholiday = false;
             while (true)
             {
                 if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
                 {
                     break;
                 }
-                dateTime_basic.AddDays(-1);
+                dateTime_basic = dateTime_basic.AddDays(-1);
+                isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
+            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);

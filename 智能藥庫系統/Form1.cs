@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.26.0")]
-[assembly: AssemblyFileVersion("1.0.26.0")]
+[assembly: AssemblyVersion("1.0.27.0")]
+[assembly: AssemblyFileVersion("1.0.27.0")]
 namespace 智能藥庫系統
 {
 
