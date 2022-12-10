@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.27.0")]
-[assembly: AssemblyFileVersion("1.0.27.0")]
+[assembly: AssemblyVersion("1.0.28.0")]
+[assembly: AssemblyFileVersion("1.0.28.0")]
 namespace 智能藥庫系統
 {
 
@@ -148,6 +148,7 @@ namespace 智能藥庫系統
 
             if (this.DesignMode == false)
             {
+                MyMessageBox.form = this.FindForm();
                 this.LoadMyConfig();
                 this.LoadDBConfig();
                 this.ftp_DounloadUI.FTP_Server = myConfigClass.FTP_Server;
@@ -168,7 +169,6 @@ namespace 智能藥庫系統
                 this.WindowState = FormWindowState.Maximized;
                 this.plC_RJ_Button_測試.MouseDownEvent += PlC_RJ_Button_測試_MouseDownEvent;
                 MyMessageBox.音效 = false;
-                MyMessageBox.form = this.FindForm();
                 Dialog_Prcessbar.form = this.FindForm();
                 Dialog_寫入批號.form = this.FindForm();
                 Dialog_寫入效期.form = this.FindForm();
