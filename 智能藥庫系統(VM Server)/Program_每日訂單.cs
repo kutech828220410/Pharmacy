@@ -446,7 +446,7 @@ namespace 智能藥庫系統_VM_Server_
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
             DateTime dateTime_temp = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 00);
-            dateTime_temp = dateTime_temp.AddMinutes(15);
+            dateTime_temp = dateTime_temp.AddMinutes(20);
 
 
             DateTime dateTime_start;
@@ -464,7 +464,7 @@ namespace 智能藥庫系統_VM_Server_
                 isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
+            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
@@ -513,12 +513,12 @@ namespace 智能藥庫系統_VM_Server_
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
             DateTime dateTime_temp = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 00);
-            dateTime_temp = dateTime_temp.AddMinutes(15);
+            dateTime_temp = dateTime_temp.AddMinutes(20);
 
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic = DateTime.Now;
+            DateTime dateTime_basic = dateTime_temp;
             bool isholiday = false;
             while (true)
             {
@@ -530,7 +530,7 @@ namespace 智能藥庫系統_VM_Server_
                 isholiday = true;
             }
 
-            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
+            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = dateTime_start.AddDays(1);
@@ -775,13 +775,8 @@ namespace 智能藥庫系統_VM_Server_
                 if (訂購量 <= 0) continue;
                 if (包裝數量 > 0)
                 {
-                    int temp0 = 訂購量 % 包裝數量;
-                    int temp1 = 訂購量 / 包裝數量;
-                    if (temp0 > 0)
-                    {
-                        temp1++;
-                    }
-                    訂購量 = 包裝數量 * temp1;
+                    int temp = 訂購量 % 包裝數量;
+                    訂購量 += temp;
                 }
                 aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
             }
