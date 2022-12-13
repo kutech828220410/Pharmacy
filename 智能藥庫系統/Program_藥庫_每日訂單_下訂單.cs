@@ -610,8 +610,13 @@ namespace 智能藥庫系統
                 if (訂購量 <= 0) continue;
                 if (包裝數量 > 0)
                 {
-                    int temp = 訂購量 % 包裝數量;
-                    訂購量 += temp;
+                    int temp0 = 訂購量 % 包裝數量;
+                    int temp1 = 訂購量 / 包裝數量;
+                    if (temp0 > 0)
+                    {
+                        temp1++;
+                    }
+                    訂購量 = 包裝數量 * temp1;
                 }
                 aPI_OrderClass_今日訂購數量.新增藥品(code, 訂購量);
             }
