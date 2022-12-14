@@ -327,7 +327,7 @@ namespace 智能藥庫系統_VM_Server_
             this.DeviceBasicClass_藥局.SQL_ReplaceDeviceBasic(deviceBasics_藥局_replace);
             this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.SQL_ReplaceExtra(list_value, false);
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_Add, false);
-            this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.RefreshGrid(list_value);
+            //this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.RefreshGrid(list_value);
             dialog_Prcessbar.Close();
         }
         #endregion
