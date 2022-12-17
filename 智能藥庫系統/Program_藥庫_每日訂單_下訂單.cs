@@ -418,6 +418,7 @@ namespace 智能藥庫系統
         public API_OrderClass Function_藥庫_每日訂單_下訂單_取得在途量()
         {
             API_OrderClass aPI_OrderClass = new API_OrderClass();
+            API_OrderClass aPI_OrderClass_out = new API_OrderClass();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
             string result = Basic.Net.WEBApiPostJson("https://wac01p.vghks.gov.tw:4430/ITWeb/jaxrs/ItCommon/pinmed_itm", "{\"hid\"   : [\"2A0\"]}");
@@ -431,9 +432,12 @@ namespace 智能藥庫系統
             {
                 aPI_OrderClass.Result[i].code = Function_藥庫_每日訂單_下訂單_藥品碼轉換(aPI_OrderClass.Result[i].code);
             }
+            for (int i = 0; i < aPI_OrderClass.Result.Count; i++)
+            {
+                aPI_OrderClass_out.新增數量(aPI_OrderClass.Result[i].code, aPI_OrderClass.Result[i].value.StringToInt32());
+            }
 
-
-            return aPI_OrderClass;
+            return aPI_OrderClass_out;
         }
 
         public void Function_藥庫_每日訂單_下訂單_更新藥品資料表單()
