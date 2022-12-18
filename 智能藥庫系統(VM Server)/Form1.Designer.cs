@@ -459,6 +459,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.藥品資料.SuspendLayout();
@@ -4877,6 +4878,7 @@
             // 藥品過消耗帳
             // 
             this.藥品過消耗帳.BackColor = System.Drawing.Color.White;
+            this.藥品過消耗帳.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳);
             this.藥品過消耗帳.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_藥品碼篩選);
             this.藥品過消耗帳.Controls.Add(this.rJ_TextBox_藥品過消耗帳_藥品碼篩選);
             this.藥品過消耗帳.Controls.Add(this.rJ_Lable45);
@@ -5030,7 +5032,7 @@
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.Location = new System.Drawing.Point(870, 557);
+            this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.Location = new System.Drawing.Point(1246, 556);
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.Name = "plC_RJ_Button藥品過消耗帳_選取資料等待過帳";
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.OFF_文字內容 = "選取資料設定\n[等待過帳]";
             this.plC_RJ_Button藥品過消耗帳_選取資料等待過帳.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -5071,7 +5073,7 @@
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.Location = new System.Drawing.Point(1077, 557);
+            this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.Location = new System.Drawing.Point(1453, 556);
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.Name = "plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳";
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.OFF_文字內容 = "選取資料設定\n[忽略過帳]";
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -9279,7 +9281,7 @@
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11228,6 +11230,47 @@
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
             this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
+            // plC_RJ_Button_藥品過消耗帳_顯示異常過帳
+            // 
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.AutoResetState = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Bool = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.but_press = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Location = new System.Drawing.Point(858, 557);
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Name = "plC_RJ_Button_藥品過消耗帳_顯示異常過帳";
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.OFF_文字內容 = "顯示\n[異常過帳]";
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.ON_文字內容 = "顯示\n[異常過帳]";
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.State = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.TabIndex = 233;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Text = "顯示\n[異常過帳]";
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.Texts = "顯示\n[異常過帳]";
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.字型鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.文字鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.讀取位元反向 = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.音效 = true;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.顯示 = false;
+            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.顯示狀態 = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -11785,6 +11828,7 @@
         private MyUI.RJ_Lable rJ_Lable45;
         private MyUI.PLC_RJ_Button plC_RJ_Button_驗收入庫_補給驗收_顯示未入帳發票;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_顯示全部;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥品過消耗帳_顯示異常過帳;
     }
 }
 
