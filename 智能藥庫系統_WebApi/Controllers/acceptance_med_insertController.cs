@@ -64,6 +64,7 @@ namespace 智慧調劑台管理系統_WebApi
             加入時間,
             狀態,
             來源,
+            備註,
         }
         [HttpGet]
         public string Get()
@@ -144,6 +145,7 @@ namespace 智慧調劑台管理系統_WebApi
                 value[(int)enum_acceptance_med.加入時間] = DateTime.Now.ToDateTimeString_6();
                 value[(int)enum_acceptance_med.狀態] = enum_狀態.等待過帳.GetEnumName();
                 value[(int)enum_acceptance_med.來源] = "院內系統";
+                value[(int)enum_acceptance_med.備註] = "";
                 list_value_add.LockAdd(value);
             }
             else
@@ -161,6 +163,7 @@ namespace 智慧調劑台管理系統_WebApi
                     value[(int)enum_acceptance_med.加入時間] = DateTime.Now.ToDateTimeString_6();
                     value[(int)enum_acceptance_med.狀態] = list_value_buf[0][(int)enum_acceptance_med.狀態];
                     value[(int)enum_acceptance_med.來源] = "院內系統";
+                    value[(int)enum_acceptance_med.備註] = "";
 
                     list_value_replace.LockAdd(value);
                 }
