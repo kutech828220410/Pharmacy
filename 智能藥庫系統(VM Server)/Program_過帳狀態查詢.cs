@@ -184,8 +184,16 @@ namespace 智能藥庫系統_VM_Server_
                     list_過帳狀態列表_buf = list_過帳狀態列表_buf.GetRows((int)enum_過帳狀態列表.檔名, 檔名);
 
                     string filename = $@"{檔案位置}{檔名}";
-
-                    List<string> list_text = MyFileStream.LoadFile(filename);
+                    List<string> list_text = new List<string>();
+                    try
+                    {
+                        list_text = MyFileStream.LoadFile(filename);
+                    }
+                    catch
+                    {
+                        continue;
+                    }
+                   
                     if (list_text == null) continue;
 
                     if (list_過帳狀態列表_buf.Count == 0)
