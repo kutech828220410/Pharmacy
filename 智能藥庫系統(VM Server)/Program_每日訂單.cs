@@ -324,6 +324,7 @@ namespace 智能藥庫系統_VM_Server_
         {
             if (this.MyTimer_檢查每日訂單_補足基準量_結束延遲.IsTimeOut())
             {
+                return;
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
