@@ -132,9 +132,9 @@ namespace 智能藥庫系統_VM_Server_
                 if (UDDRGNO != "")
                 {
 
-                    obj_temp.Add(UDDRGNO);
-                    obj_temp.Add(reader["UDPRDNAM"].ToString().Trim());
+                    obj_temp.Add(UDDRGNO); 
                     obj_temp.Add(reader["UDRPNAME"].ToString().Trim());
+                    obj_temp.Add(reader["UDPRDNAM"].ToString().Trim());
                     obj_temp.Add(reader["UDCHTNAM"].ToString().Trim());
                     obj_temp.Add(reader["UDUNFORM"].ToString().Trim());
                     obj_temp.Add(reader["UDCONVER"].ToString().Trim());
@@ -220,9 +220,9 @@ namespace 智能藥庫系統_VM_Server_
                 if (UDDRGNO != "")
                 {
 
-                    obj_temp.Add(UDDRGNO);
-                    obj_temp.Add(reader["UDPRDNAM"].ToString().Trim());
+                    obj_temp.Add(UDDRGNO); 
                     obj_temp.Add(reader["UDRPNAME"].ToString().Trim());
+                    obj_temp.Add(reader["UDPRDNAM"].ToString().Trim());
                     obj_temp.Add(reader["UDCHTNAM"].ToString().Trim());
                     obj_temp.Add(reader["UDUNFORM"].ToString().Trim());
                     obj_temp.Add(reader["UDCONVER"].ToString().Trim());
