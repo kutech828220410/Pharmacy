@@ -92,6 +92,21 @@ namespace 智能藥庫系統
             {
                 this.flag_登入畫面_頁面更新 = false;
             }
+            if(!PLC_Device_已登入.Bool)
+            {
+                this.myTimer_登出計時.TickStop();
+                this.myTimer_登出計時.StartTickTime(600000);
+            }
+            else
+            {
+                if (this.myTimer_登出計時.IsTimeOut())
+                {
+                    Function_登出();
+                }
+            }
+            rJ_ProgressBar_閒置登出時間.Maximum = 600000;
+            rJ_ProgressBar_閒置登出時間.Value = (int)this.myTimer_登出計時.GetTickTime();
+
             this.sub_Program_登入畫面_RFID登入();
         }
         #region PLC_登入畫面_RFID登入

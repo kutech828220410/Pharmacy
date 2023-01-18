@@ -116,6 +116,9 @@ namespace 智能藥庫系統_VM_Server_
                     flag_IsEqual = value.IsEqual(value_dst, (int)enum_本地_藥品資料.GUID, (int)enum_本地_藥品資料.藥品群組);
                     if (!flag_IsEqual)
                     {
+                        value[(int)enum_本地_藥品資料.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_雲端_藥品資料.藥品名稱];
+                        value[(int)enum_本地_藥品資料.藥品學名] = list_雲端藥檔_buf[0][(int)enum_雲端_藥品資料.藥品學名];
+
                         list_本地藥檔_buf.LockAdd(value);
                     }
                 }

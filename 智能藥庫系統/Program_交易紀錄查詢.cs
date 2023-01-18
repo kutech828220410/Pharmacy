@@ -69,11 +69,28 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_交易紀錄查詢);
         }
 
-      
 
+        private bool flag_交易紀錄查詢_頁面更新 = false;
         private void sub_Program_交易紀錄查詢()
         {
+            if (this.plC_ScreenPage_Main.PageText == "交易紀錄查詢" && this.plC_ScreenPage_批次過帳.PageText == "交易紀錄查詢")
+            {
+                if (!this.flag_交易紀錄查詢_頁面更新)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        this.dateTimePicker_交易記錄查詢_操作時間_起始.Value = DateTime.Now.AddHours(-1);
+                        this.dateTimePicker_交易記錄查詢_操作時間_結束.Value = DateTime.Now;
 
+                    }));
+
+                    this.flag_交易紀錄查詢_頁面更新 = true;
+                }
+            }
+            else
+            {
+                this.flag_交易紀錄查詢_頁面更新 = false;
+            }
         }
 
         #region Function
@@ -134,6 +151,26 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_交易紀錄查詢_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {
+            bool flag_限制兩個月搜尋條件 = true;
+
+            if (textBox_交易記錄查詢_藥品碼.Text.StringIsEmpty() == false) flag_限制兩個月搜尋條件 = false;
+            if (textBox_交易記錄查詢_藥品名稱.Text.StringIsEmpty() == false) flag_限制兩個月搜尋條件 = false;
+
+
+            DateTime start = dateTimePicker_交易記錄查詢_操作時間_起始.Value;
+
+            DateTime end = dateTimePicker_交易記錄查詢_操作時間_結束.Value;
+
+            TimeSpan ts = end.Subtract(start); //兩時間天數相減
+
+            double dayCount = ts.Days; //相距天數
+
+            if (dayCount > 60 && flag_限制兩個月搜尋條件)
+            {
+                MyMessageBox.ShowDialog("搜尋時間範圍大於兩個月,請縮短搜尋範圍!");
+                return;
+            }
+
             List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
 
             List<List<object[]>> list_list_value_buf = new List<List<object[]>>();

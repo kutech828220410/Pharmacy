@@ -51,7 +51,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_撥補_藥局_緊急申領_DataGridRowsChangeRefEvent;
 
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥補選取資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥補選取資料_MouseDownEvent;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_藥局_緊急申領);
         }
@@ -73,10 +73,25 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥庫_撥補_藥局_緊急申領_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
+            List<object[]> list_藥庫庫存資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥庫庫存資料_buf = new List<object[]>();
+            list_藥庫庫存資料 = this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_藥庫庫存資料);
+
+            for (int i = 0; i < RowsList.Count; i++)
+            {
+                list_藥庫庫存資料_buf = list_藥庫庫存資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString());
+                if(list_藥庫庫存資料_buf.Count > 0)
+                {
+                    RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = list_藥庫庫存資料_buf[0][(int)enum_藥庫_藥品資料.藥庫庫存];
+                }
+                
+            }
+
             RowsList.Sort(new ICP_藥庫_撥補_藥局_緊急申領());
         }
-        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥補選取資料_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent(MouseEventArgs mevent)
         {
+            if (MyMessageBox.ShowDialog("是否確定撥發?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
             List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Get_All_Select_RowsValues();
 
             list_value = (from value in list_value

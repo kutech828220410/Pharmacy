@@ -243,6 +243,9 @@ namespace 智能藥庫系統
                     flag_IsEqual = value.IsEqual(value_dst, (int)enum_藥品資料_資料維護_本地藥檔.GUID, (int)enum_藥品資料_資料維護_本地藥檔.藥品群組);
                     if (!flag_IsEqual)
                     {
+                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品名稱];
+                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品學名] = list_雲端藥檔_buf[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品學名];
+
                         list_本地藥檔_buf.LockAdd(value);
                     }
                 }

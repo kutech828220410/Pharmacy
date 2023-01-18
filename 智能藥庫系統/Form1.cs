@@ -64,23 +64,11 @@ namespace 智能藥庫系統
             public string FTP_username { get => fTP_username; set => fTP_username = value; }
             public string FTP_password { get => fTP_password; set => fTP_password = value; }
         }
-
+ 
+     
         public Form1()
         {
             InitializeComponent();
-
-            //Basic.Screen.ShowConsole();
-            //Console.Title = "123132";
-            //ConsoleColor oriColor = Console.ForegroundColor;
-            //Console.ForegroundColor = ConsoleColor.Yellow;
-            //Console.ResetColor();
-            //System.IO.TextWriter writer = new System.IO.StreamWriter(Console.OpenStandardOutput(200));
-            //System.IO.TextReader reader = new System.IO.StreamReader(Console.OpenStandardInput(200));
-            //Console.SetIn(reader);
-            //Console.SetOut(writer);
-            //Console.WriteLine();
-            //Console.Write("12");
-            //Console.ForegroundColor = oriColor;
         }
         private void LoadDBConfig()
         {
@@ -254,10 +242,29 @@ namespace 智能藥庫系統
 
             this.Function_堆疊資料_刪除指定調劑台名稱母資料("藥庫");
             this.WindowState = FormWindowState.Maximized;
-
-
+            Basic.Keyboard.Hook.KeyDown += Hook_KeyDown;
+            Basic.Keyboard.Hook.MouseDown += Hook_MouseDown;
         }
-     
+
+        MyTimer myTimer_登出計時 = new MyTimer();
+        private void Hook_MouseDown(int nCode, int mouse_x, int mouse_y)
+        {
+            if(this.CanFocus)
+            {
+                this.myTimer_登出計時.TickStop();
+                this.myTimer_登出計時.StartTickTime(600000);
+            }
+        }
+
+        private void Hook_KeyDown(int nCode, IntPtr wParam, Keys Keys)
+        {
+             if (this.CanFocus)
+            {
+                this.myTimer_登出計時.TickStop();
+                this.myTimer_登出計時.StartTickTime(600000);
+            }
+        }
+
         private class medclass
         {
             private string Code = "";
