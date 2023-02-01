@@ -187,8 +187,9 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥局_屏東榮總, this.plC_ScreenPage_藥局_屏東榮總);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_人員資料, this.plC_ScreenPage_人員資料);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_盤點作業, this.plC_ScreenPage_盤點作業);
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備, this.plC_ScreenPage_周邊設備);
 
-            
+
 
 
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
@@ -237,6 +238,8 @@ namespace 智能藥庫系統
             this.sub_Program_工程模式_Init();
 
             this.sub_Program_寫入報表設定_Init();
+
+            this.sub_Program_周邊設備_麻醉部ADC_Init();
 
             this.plC_RJ_Button1.MouseDownEvent += PlC_RJ_Button1_MouseDownEvent;
 

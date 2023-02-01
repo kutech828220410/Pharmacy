@@ -105,7 +105,11 @@ namespace 智能藥庫系統
                 }
             }
             rJ_ProgressBar_閒置登出時間.Maximum = 600000;
-            rJ_ProgressBar_閒置登出時間.Value = (int)this.myTimer_登出計時.GetTickTime();
+            if ((int)this.myTimer_登出計時.GetTickTime() < rJ_ProgressBar_閒置登出時間.Maximum)
+            {
+                rJ_ProgressBar_閒置登出時間.Value = (int)this.myTimer_登出計時.GetTickTime();
+            }
+            
 
             this.sub_Program_登入畫面_RFID登入();
         }
@@ -304,7 +308,7 @@ namespace 智能藥庫系統
             if (e.KeyChar == (char)Keys.Enter)
             {
                 if (!this.Function_登入())
-                {
+                {                
                     textBox_登入畫面_帳號.Focus();
                 }
                 else
