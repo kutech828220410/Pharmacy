@@ -136,3 +136,7 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\HS1T16\Source\Repos\Pharmacy1\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_輸入備註.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_輸入備註.resources
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\NPOI.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\NPOI.OOXML.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\NPOI.OpenXmlFormats.dll

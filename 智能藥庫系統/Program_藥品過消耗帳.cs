@@ -71,15 +71,10 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥品過消耗帳.DataGridRefreshEvent += SqL_DataGridView_藥品過消耗帳_DataGridRefreshEvent;
             this.sqL_DataGridView_藥品過消耗帳.DataGridRowsChangeRefEvent += SqL_DataGridView_藥品過消耗帳_DataGridRowsChangeRefEvent;
 
-            this.plC_RJ_Button_藥品過消耗帳_顯示今日消耗帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示今日消耗帳_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_指定報表日期_顯示.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_指定報表日期_顯示_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_選取資料設定過帳完成.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_選取資料設定過帳完成_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_選取資料等待過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_選取資料等待過帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_選取資料忽略過帳_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示異常過帳_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_藥品碼篩選_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_藥品名稱篩選.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_藥品名稱篩選_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_顯示全部.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent;
+            this.plC_RJ_Button_藥品過消耗帳_搜尋.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_全部資料匯出_MouseDownEvent;
 
 
@@ -95,7 +90,7 @@ namespace 智能藥庫系統
                 {
                     this.Invoke(new Action(delegate 
                     {
-                        this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value = DateTime.Now.AddHours(-1);
+                        this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value = DateTime.Now.AddMonths(-1);
                         this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value = DateTime.Now;
 
                     }));
@@ -402,7 +397,9 @@ namespace 智能藥庫系統
         {
             List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細(rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value, rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value);
 
-            
+            if (!rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text.StringIsEmpty()) list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品碼, rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text);
+            if (!rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Text.StringIsEmpty()) list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品名稱, rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Text);
+
             list_value.Sort(new ICP_藥品過消耗帳());
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
         }
@@ -411,14 +408,6 @@ namespace 智能藥庫系統
             List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細();
 
             list_value = list_value.GetRowsInDate((int)enum_藥品過消耗帳.報表日期, DateTime.Now);
-            list_value.Sort(new ICP_藥品過消耗帳());
-            this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
-        }
-        private void PlC_RJ_Button_藥品過消耗帳_指定報表日期_顯示_MouseDownEvent(MouseEventArgs mevent)
-        {
-            List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細();
-
-            list_value = list_value.GetRowsInDate((int)enum_藥品過消耗帳.報表日期, this.rJ_DatePicker_藥品過消耗帳_指定報表日期.Value);
             list_value.Sort(new ICP_藥品過消耗帳());
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
         }
