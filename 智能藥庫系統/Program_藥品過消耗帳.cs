@@ -47,7 +47,23 @@ namespace 智能藥庫系統
             藥品名稱,
             異動量,
             訂購單價,
-            訂購總價,
+            消耗金額,
+            報表日期,
+            產出時間,
+            過帳時間,
+            狀態,
+            備註,
+        }
+        private enum enum_藥品過消耗帳_匯出_out
+        {
+            來源名稱,
+            來源報表,
+            藥局代碼,
+            藥品碼,
+            藥品名稱,
+            消耗量,
+            訂購單價,
+            消耗金額,
             報表日期,
             產出時間,
             過帳時間,
@@ -431,17 +447,18 @@ namespace 智能藥庫系統
                         {
                             int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量].ObjectToString().StringToInt32();
                             數量 *= -1;
+                            list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量] = 數量;
                             double 訂購單價 = list_補給系統藥品資料_buf[0][(int)enum_藥品補給系統_藥品資料.最新訂購單價].StringToDouble();
                             double 訂購總價 = 訂購單價 * 數量;
                             if(訂購單價 > 0)
                             {
                                 list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000");
-                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購總價] = 訂購總價.ToString("0.000");
+                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗金額] = 訂購總價.ToString("0.000");
                             }
                         }
                     }
-                    DataTable dataTable = list_藥品過消耗帳_out.ToDataTable(new enum_藥品過消耗帳_匯出());
-                    dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出());
+                    DataTable dataTable = list_藥品過消耗帳_out.ToDataTable(new enum_藥品過消耗帳_匯出_out());
+                    dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出_out());
 
                     string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
                     if(Extension == ".txt")
