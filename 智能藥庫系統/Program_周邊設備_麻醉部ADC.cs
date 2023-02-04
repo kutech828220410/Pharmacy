@@ -20,6 +20,25 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
+        public enum enum_周邊設備_麻醉部ADC_交易記錄查詢動作
+        {
+            掃碼領藥,
+            手輸領藥,
+            批次領藥,
+            掃碼退藥,
+            手輸退藥,
+            重複領藥,
+            人臉識別登入,
+            RFID登入,
+            密碼登入,
+            登出,
+            操作工程模式,
+            效期庫存異動,
+            入庫,
+            實瓶繳回,
+            空瓶繳回,
+            None,
+        }
         private enum enum_周邊設備_麻醉部ADC_庫存查詢
         {
             藥碼,
@@ -169,6 +188,7 @@ namespace 智能藥庫系統
                 list_values.Add(values);
             }
             list_values.RemoveRow((int)enum_周邊設備_麻醉部ADC_交易紀錄查詢.藥碼, "");
+            list_values.RemoveRow((int)enum_周邊設備_麻醉部ADC_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_交易記錄查詢動作.實瓶繳回.GetEnumName());
             list_values.Sort(new ICP_周邊設備_麻醉部ADC_交易記錄查詢());
             return list_values;
         }

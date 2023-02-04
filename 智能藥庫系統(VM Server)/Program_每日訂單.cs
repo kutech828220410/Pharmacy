@@ -453,26 +453,34 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic = DateTime.Now;
+            DateTime dateTime_basic_start = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now;
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
                 {
                     break;
                 }
-                dateTime_basic = dateTime_basic.AddDays(-1);
+                dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-
-            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
+            while (true)
             {
-                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = dateTime_start.AddDays(1);
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                {
+                    break;
+                }
+                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+            }
+            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            {
+                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
-                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
             list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
@@ -519,26 +527,34 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic = dateTime_temp;
+            DateTime dateTime_basic_start = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now;
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
                 {
                     break;
                 }
-                dateTime_basic = dateTime_basic.AddDays(-1);
+                dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-
-            if (dateTime_basic.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
+            while (true)
             {
-                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = dateTime_start.AddDays(1);
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                {
+                    break;
+                }
+                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+            }
+            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            {
+                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
-                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
             List<object[]> list_訂單資料 = this.sqL_DataGridView_藥品補給系統_訂單資料.SQL_GetRowsByBetween((int)enum_藥品補給系統_訂單資料.訂購時間, dateTime_start, dateTime_end, false);

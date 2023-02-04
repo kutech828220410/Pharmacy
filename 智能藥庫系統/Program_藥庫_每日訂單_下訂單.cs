@@ -272,26 +272,34 @@ namespace 智能藥庫系統
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic = DateTime.Now;
+            DateTime dateTime_basic_start = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now;
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
                 {
                     break;
                 }
-                dateTime_basic = dateTime_basic.AddDays(-1);
+                dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-
-            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
+            while (true)
             {
-                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = dateTime_start.AddDays(1);
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                {
+                    break;
+                }
+                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+            }
+            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            {
+                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
-                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
 
@@ -336,26 +344,34 @@ namespace 智能藥庫系統
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic = DateTime.Now;
+            DateTime dateTime_basic_start = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now;
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
                 {
                     break;
                 }
-                dateTime_basic = dateTime_basic.AddDays(-1);
+                dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-
-            if (dateTime_basic.IsNewDay(hour, min) || isholiday)
+            while (true)
             {
-                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = dateTime_start.AddDays(1);
+                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                {
+                    break;
+                }
+                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+            }
+            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            {
+                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
-                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_start = dateTime_end.AddDays(-1);
             }
 
