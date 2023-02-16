@@ -346,7 +346,7 @@ namespace 智能藥庫系統
             DateTime dateTime_end;
 
             DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
             bool isholiday = false;
             while (true)
             {

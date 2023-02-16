@@ -454,7 +454,7 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_end;
 
             DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
             bool isholiday = false;
             while (true)
             {
@@ -466,7 +466,7 @@ namespace 智能藥庫系統_VM_Server_
                 isholiday = true;
             }
            
-            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
@@ -530,7 +530,7 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_end;
 
             DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = DateTime.Now;
+            DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
             bool isholiday = false;
             while (true)
             {
@@ -542,7 +542,7 @@ namespace 智能藥庫系統_VM_Server_
                 isholiday = true;
             }
           
-            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
