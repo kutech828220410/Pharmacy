@@ -33,8 +33,10 @@ namespace 智能藥庫系統
         public MyConfigClass myConfigClass = new MyConfigClass();
         public DBConfigClass dBConfigClass = new DBConfigClass();
         private PLC_Device PLC_Device_主機模式 = new PLC_Device("S1050");
+        private PLC_Device PLC_Device_滑鼠左鍵按下 = new PLC_Device("S4600");
         private PLC_Device PLC_Device_M8013 = new PLC_Device("M8013");
         private PLC_Device PLC_Device_主頁面頁碼 = new PLC_Device("D0");
+        
         public class DBConfigClass
         {
             private SQL_DataGridView.ConnentionClass dB_Basic = new SQL_DataGridView.ConnentionClass();
@@ -188,8 +190,9 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_人員資料, this.plC_ScreenPage_人員資料);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_盤點作業, this.plC_ScreenPage_盤點作業);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備, this.plC_ScreenPage_周邊設備);
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_戰情白板, this.plC_ScreenPage_戰情白板);
 
-
+            
 
 
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
@@ -240,6 +243,7 @@ namespace 智能藥庫系統
             this.sub_Program_寫入報表設定_Init();
 
             this.sub_Program_周邊設備_麻醉部ADC_Init();
+            this.sub_Program_戰情白板_Init();
 
             this.plC_RJ_Button1.MouseDownEvent += PlC_RJ_Button1_MouseDownEvent;
 
@@ -247,7 +251,10 @@ namespace 智能藥庫系統
             this.WindowState = FormWindowState.Maximized;
             Basic.Keyboard.Hook.KeyDown += Hook_KeyDown;
             Basic.Keyboard.Hook.MouseDown += Hook_MouseDown;
+            Basic.Keyboard.Hook.MouseUp += Hook_MouseUp;
         }
+
+      
 
         MyTimer myTimer_登出計時 = new MyTimer();
         private void Hook_MouseDown(int nCode, int mouse_x, int mouse_y)
@@ -257,6 +264,7 @@ namespace 智能藥庫系統
                 this.myTimer_登出計時.TickStop();
                 this.myTimer_登出計時.StartTickTime(600000);
             }
+            this.PLC_Device_滑鼠左鍵按下.Bool = true;
         }
 
         private void Hook_KeyDown(int nCode, IntPtr wParam, Keys Keys)
@@ -267,7 +275,10 @@ namespace 智能藥庫系統
                 this.myTimer_登出計時.StartTickTime(600000);
             }
         }
-
+        private void Hook_MouseUp(int nCode, int mouse_x, int mouse_y)
+        {
+            this.PLC_Device_滑鼠左鍵按下.Bool = false;
+        }
         private class medclass
         {
             private string Code = "";

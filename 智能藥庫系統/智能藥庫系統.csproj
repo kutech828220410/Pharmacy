@@ -240,6 +240,9 @@
     <Compile Include="Program_寫入報表設定.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Program_戰情白板.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_批次過帳_公藥.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -467,6 +470,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
+    <None Include="Resources\Red_alarm.png" />
+    <None Include="Resources\Blue_alarm.png" />
+    <None Include="Resources\Green_alarm.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">

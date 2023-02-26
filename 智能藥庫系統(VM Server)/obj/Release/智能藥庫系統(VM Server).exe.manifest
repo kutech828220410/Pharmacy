@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DrawingClass.dll" size="22016">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DrawingClass.dll" size="22528">
       <assemblyIdentity name="DrawingClass" version="1.0.0.5" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>SShx3/c+ZAxVn9ufgXZOwD5K1mJ89Gxmw59scaKtff0=</dsig:DigestValue>
+        <dsig:DigestValue>bFA6F4wtWaJjRe/vjoZx5qKXzypfcrBlvZf2xJLP5a0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
