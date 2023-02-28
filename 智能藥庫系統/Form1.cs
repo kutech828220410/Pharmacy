@@ -333,6 +333,7 @@ namespace 智能藥庫系統
         #region PLC_Method
         PLC_Device PLC_Device_Method = new PLC_Device("");
         PLC_Device PLC_Device_Method_OK = new PLC_Device("");
+        Task Task_Method;
         MyTimer MyTimer_Method_結束延遲 = new MyTimer();
         int cnt_Program_Method = 65534;
         void sub_Program_Method()
@@ -372,25 +373,21 @@ namespace 智能藥庫系統
         {
             if (this.MyTimer_Method_結束延遲.IsTimeOut())
             {
-                Task.Run(() =>
+                if (Task_Method == null)
                 {
-
-                });
+                    Task_Method = new Task(new Action(delegate { }));
+                }
+                if (Task_Method.Status == TaskStatus.RanToCompletion)
+                {
+                    Task_Method = new Task(new Action(delegate { }));
+                }
+                if (Task_Method.Status == TaskStatus.Created)
+                {
+                    Task_Method.Start();
+                }
                 cnt++;
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

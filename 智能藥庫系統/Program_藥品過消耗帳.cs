@@ -355,11 +355,6 @@ namespace 智能藥庫系統
 
                 狀態 = this.sqL_DataGridView_藥品過消耗帳.dataGridView.Rows[i].Cells[enum_藥品過消耗帳.狀態.GetEnumName()].Value.ToString();
 
-                if (i == 0)
-                {
-                    this.sqL_DataGridView_藥品過消耗帳.dataGridView.Rows[i].Cells[enum_藥品過消耗帳.狀態.GetEnumName()].ValueType = typeof(Bitmap);
-                    this.sqL_DataGridView_藥品過消耗帳.dataGridView.Rows[i].Cells[enum_藥品過消耗帳.狀態.GetEnumName()].Value = (Bitmap)智能藥庫系統.Properties.Resources.Blue_alarm;
-                }
                 if (狀態 == enum_藥品過消耗帳_狀態.過帳完成.GetEnumName())
                 {
                     this.sqL_DataGridView_藥品過消耗帳.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.White;
@@ -390,7 +385,7 @@ namespace 智能藥庫系統
         private void SqL_DataGridView_藥品過消耗帳_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
             List<object[]> list_value = new List<object[]>();
-
+         
             if (checkBox_藥品過消耗帳_門診.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.門診.GetEnumName()));

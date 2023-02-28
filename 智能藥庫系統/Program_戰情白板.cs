@@ -20,41 +20,152 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
+        public enum enum_戰情白板_公告
+        {
+            GUID,
+            排序,
+            內容,
+            登錄時間,
+        }
+        public enum enum_戰情白板
+        {
+            藥碼,
+            藥名,
+            中文名,
+            狀態,
+            單位,
+            總庫存,
+            藥庫庫存,
+            藥局庫存,
+            安全量,
+            基準量,
+            狀態文字
+        }
+        public enum enum_戰情白板_自選藥品
+        {
+            GUID,
+            藥碼,
+            藥名,
+            單位,
+        }
+        public enum enum_戰情白板_狀態文字
+        {
+            高於安全量,
+            低於基準量,
+            低於安全量
+        }
         private void sub_Program_戰情白板_Init()
         {
-            this.plC_RJ_Button_戰情白板_全螢幕顯示.MouseDownEvent += PlC_RJ_Button_戰情白板_全螢幕顯示_MouseDownEvent;
+            SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_戰情白板_公告, dBConfigClass.DB_Basic);
+            this.sqL_DataGridView_戰情白板_公告.Init();
+            if (!this.sqL_DataGridView_戰情白板_公告.SQL_IsTableCreat()) this.sqL_DataGridView_戰情白板_公告.SQL_CreateTable();
+            this.sqL_DataGridView_戰情白板_公告.RowEnterEvent += SqL_DataGridView_戰情白板_公告_RowEnterEvent;
+            this.sqL_DataGridView_戰情白板_公告.DataGridRowsChangeRefEvent += SqL_DataGridView_戰情白板_公告_DataGridRowsChangeRefEvent;
 
+            SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_戰情白板_自選藥品_選取內容, dBConfigClass.DB_Basic);
+            this.sqL_DataGridView_戰情白板_自選藥品_選取內容.Init();
+            if (!this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_IsTableCreat()) this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_CreateTable();
+
+            this.sqL_DataGridView_戰情白板_自選藥品.Init();
+            this.sqL_DataGridView_戰情白板_自選藥品.DataGridRefreshEvent += SqL_DataGridView_戰情白板_自選藥品_DataGridRefreshEvent;
+            this.sqL_DataGridView_戰情白板_自選藥品.DataGridRowsChangeRefEvent += SqL_DataGridView_戰情白板_自選藥品_DataGridRowsChangeRefEvent;
+
+            this.sqL_DataGridView_戰情白板_一般藥品.Init();
+            this.sqL_DataGridView_戰情白板_一般藥品.DataGridRefreshEvent += SqL_DataGridView_戰情白板_一般藥品_DataGridRefreshEvent;
+
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Init(this.sqL_DataGridView_藥庫_藥品資料);
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(false, new enum_藥庫_藥品資料().GetEnumNames());
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(true, enum_藥庫_藥品資料.藥品碼, enum_藥庫_藥品資料.藥品名稱, enum_藥庫_藥品資料.中文名稱, enum_藥庫_藥品資料.包裝單位);
+
+            this.plC_RJ_Button_戰情白板_全螢幕顯示.MouseDownEvent += PlC_RJ_Button_戰情白板_全螢幕顯示_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_刷新一般藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_刷新自選藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新自選藥品_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_刷新公告內容.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent;
+
+            this.plC_RJ_Button_戰情白板_公告_確認.MouseDownEvent += PlC_RJ_Button_戰情白板_公告_確認_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_公告_刷新.MouseDownEvent += PlC_RJ_Button_戰情白板_公告_刷新_MouseDownEvent;
+
+          
+            this.plC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品名稱搜尋.MouseDownEvent += PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品名稱搜尋_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品碼搜尋.MouseDownEvent += PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品碼搜尋_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_自選藥品_藥品資料_填入資料.MouseDownEvent += PlC_RJ_Button_戰情白板_自選藥品_藥品資料_填入資料_MouseDownEvent;
+
+            this.plC_RJ_Button_戰情白板_自選藥品_更新.MouseDownEvent += PlC_RJ_Button_戰情白板_自選藥品_更新_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_自選藥品_刪除已選擇藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_自選藥品_刪除已選擇藥品_MouseDownEvent;
+
+            this.Function_戰情白板_公告_確認表格合理性();
             this.plC_UI_Init.Add_Method(sub_Program_戰情白板);
         }
 
-        PLC_Device PLC_Device_戰情白板_全螢幕顯示 = new PLC_Device("");
 
-        private bool flag_戰情白板_頁面更新 = false;
+
+        PLC_Device PLC_Device_戰情白板_全螢幕顯示 = new PLC_Device("");
+        private string 戰情白板_公告內容 = "";
+        private bool flag_戰情白板_顯示畫面_頁面更新 = false;
+        private bool flag_戰情白板_設定_頁面更新 = false;
         private void sub_Program_戰情白板()
         {
             if (this.plC_ScreenPage_Main.PageText == "戰情白板" && this.plC_ScreenPage_戰情白板.PageText == "顯示畫面")
             {
-                if (!this.flag_戰情白板_頁面更新)
+                if (!this.flag_戰情白板_顯示畫面_頁面更新)
                 {
                     this.Invoke(new Action(delegate
                     {
                 
 
                     }));
-                   
-                    this.flag_戰情白板_頁面更新 = true;
+
+                    this.PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent(null);
+                    this.flag_戰情白板_顯示畫面_頁面更新 = true;
                 }
                 this.sub_Program_戰情白板_檢查離開全螢幕();
+                this.sub_Program_戰情白板_刷新一般藥品();
+                this.sub_Program_戰情白板_刷新自選藥品();
+                this.sub_Program_戰情白板_刷新公告內容();
+
 
                 this.Function_戰情白板_繪製時間();
                 this.Function_戰情白板_醫院名稱();
                 this.Function_戰情白板_標題();
-                this.Function_戰情白板_即時公告("");
+                this.Function_戰情白板_即時公告(戰情白板_公告內容);
                 this.Function_戰情白板_藥品庫存量及安全量即時資訊();
+
+                rJ_ProgressBar_戰情白版_一般藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新一般藥品_結束延遲.TickTime;
+                if ((int)this.MyTimer_戰情白板_刷新一般藥品_結束延遲.GetTickTime() < rJ_ProgressBar_戰情白版_一般藥品刷新條.Maximum)
+                {
+                    rJ_ProgressBar_戰情白版_一般藥品刷新條.Value = (int)this.MyTimer_戰情白板_刷新一般藥品_結束延遲.GetTickTime();
+                }
+
+                rJ_ProgressBar_戰情白版_自選藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新自選藥品_結束延遲.TickTime;
+                if ((int)this.MyTimer_戰情白板_刷新自選藥品_結束延遲.GetTickTime() < rJ_ProgressBar_戰情白版_自選藥品刷新條.Maximum)
+                {
+                    rJ_ProgressBar_戰情白版_自選藥品刷新條.Value = (int)this.MyTimer_戰情白板_刷新自選藥品_結束延遲.GetTickTime();
+                }
             }
             else
             {
-                this.flag_戰情白板_頁面更新 = false;
+                this.flag_戰情白板_顯示畫面_頁面更新 = false;
+            }
+
+            if (this.plC_ScreenPage_Main.PageText == "戰情白板" && this.plC_ScreenPage_戰情白板.PageText == "設定")
+            {
+                if (!this.flag_戰情白板_設定_頁面更新)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+
+
+                    }));
+
+                    this.PlC_RJ_Button_戰情白板_公告_刷新_MouseDownEvent(null);
+                    this.PlC_RJ_Button_戰情白板_自選藥品_更新_MouseDownEvent(null);
+                    this.flag_戰情白板_設定_頁面更新 = true;
+                }
+            
+            }
+            else
+            {
+                this.flag_戰情白板_設定_頁面更新 = false;
             }
         }
 
@@ -148,13 +259,223 @@ namespace 智能藥庫系統
 
 
         #endregion
+        #region PLC_戰情白板_刷新一般藥品
+        PLC_Device PLC_Device_戰情白板_刷新一般藥品 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新一般藥品_OK = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新一般藥品_每頁列數 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新一般藥品_現在列數 = new PLC_Device("");
+        Task Task_戰情白板_刷新一般藥品;
+        MyTimer MyTimer_戰情白板_刷新一般藥品_結束延遲 = new MyTimer();
+        int cnt_Program_戰情白板_刷新一般藥品 = 65534;
+        void sub_Program_戰情白板_刷新一般藥品()
+        {
+            PLC_Device_戰情白板_刷新一般藥品.Bool = true;
+            PLC_Device_戰情白板_刷新一般藥品_每頁列數.Value = 10;
+            if (cnt_Program_戰情白板_刷新一般藥品 == 65534)
+            {
+                this.MyTimer_戰情白板_刷新一般藥品_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新一般藥品_每頁列數.Value = 10;
+                PLC_Device_戰情白板_刷新一般藥品.SetComment("PLC_戰情白板_刷新一般藥品");
+                PLC_Device_戰情白板_刷新一般藥品_OK.SetComment("PLC_戰情白板_刷新一般藥品_OK");
+                PLC_Device_戰情白板_刷新一般藥品.Bool = false;
+                cnt_Program_戰情白板_刷新一般藥品 = 65535;
+            }
+            if (cnt_Program_戰情白板_刷新一般藥品 == 65535) cnt_Program_戰情白板_刷新一般藥品 = 1;
+            if (cnt_Program_戰情白板_刷新一般藥品 == 1) cnt_Program_戰情白板_刷新一般藥品_檢查按下(ref cnt_Program_戰情白板_刷新一般藥品);
+            if (cnt_Program_戰情白板_刷新一般藥品 == 2) cnt_Program_戰情白板_刷新一般藥品_初始化(ref cnt_Program_戰情白板_刷新一般藥品);
+            if (cnt_Program_戰情白板_刷新一般藥品 == 3) cnt_Program_戰情白板_刷新一般藥品 = 65500;
+            if (cnt_Program_戰情白板_刷新一般藥品 > 1) cnt_Program_戰情白板_刷新一般藥品_檢查放開(ref cnt_Program_戰情白板_刷新一般藥品);
 
+            if (cnt_Program_戰情白板_刷新一般藥品 == 65500)
+            {
+                this.MyTimer_戰情白板_刷新一般藥品_結束延遲.TickStop();
+                this.MyTimer_戰情白板_刷新一般藥品_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新一般藥品.Bool = false;
+                PLC_Device_戰情白板_刷新一般藥品_OK.Bool = false;
+                cnt_Program_戰情白板_刷新一般藥品 = 65535;
+            }
+        }
+        void cnt_Program_戰情白板_刷新一般藥品_檢查按下(ref int cnt)
+        {
+            if (PLC_Device_戰情白板_刷新一般藥品.Bool) cnt++;
+        }
+        void cnt_Program_戰情白板_刷新一般藥品_檢查放開(ref int cnt)
+        {
+            if (!PLC_Device_戰情白板_刷新一般藥品.Bool) cnt = 65500;
+        }
+        void cnt_Program_戰情白板_刷新一般藥品_初始化(ref int cnt)
+        {
+            if (this.MyTimer_戰情白板_刷新一般藥品_結束延遲.IsTimeOut())
+            {
+                if (Task_戰情白板_刷新一般藥品 == null)
+                {
+                    Task_戰情白板_刷新一般藥品 = new Task(new Action(delegate { this.PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新一般藥品.Status == TaskStatus.RanToCompletion)
+                {
+                    Task_戰情白板_刷新一般藥品 = new Task(new Action(delegate { this.PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新一般藥品.Status == TaskStatus.Created)
+                {
+                    Task_戰情白板_刷新一般藥品.Start();
+                }
+                cnt++;
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
+        #region PLC_戰情白板_刷新自選藥品
+        PLC_Device PLC_Device_戰情白板_刷新自選藥品 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新自選藥品_OK = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新自選藥品_每頁列數 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新自選藥品_現在列數 = new PLC_Device("");
+        Task Task_戰情白板_刷新自選藥品;
+        MyTimer MyTimer_戰情白板_刷新自選藥品_結束延遲 = new MyTimer();
+        int cnt_Program_戰情白板_刷新自選藥品 = 65534;
+        void sub_Program_戰情白板_刷新自選藥品()
+        {
+            PLC_Device_戰情白板_刷新自選藥品.Bool = true;
+            PLC_Device_戰情白板_刷新自選藥品_每頁列數.Value = 5;
+            if (cnt_Program_戰情白板_刷新自選藥品 == 65534)
+            {
+                this.MyTimer_戰情白板_刷新自選藥品_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新自選藥品_每頁列數.Value = 10;
+                PLC_Device_戰情白板_刷新自選藥品.SetComment("PLC_戰情白板_刷新自選藥品");
+                PLC_Device_戰情白板_刷新自選藥品_OK.SetComment("PLC_戰情白板_刷新自選藥品_OK");
+                PLC_Device_戰情白板_刷新自選藥品.Bool = false;
+                cnt_Program_戰情白板_刷新自選藥品 = 65535;
+            }
+            if (cnt_Program_戰情白板_刷新自選藥品 == 65535) cnt_Program_戰情白板_刷新自選藥品 = 1;
+            if (cnt_Program_戰情白板_刷新自選藥品 == 1) cnt_Program_戰情白板_刷新自選藥品_檢查按下(ref cnt_Program_戰情白板_刷新自選藥品);
+            if (cnt_Program_戰情白板_刷新自選藥品 == 2) cnt_Program_戰情白板_刷新自選藥品_初始化(ref cnt_Program_戰情白板_刷新自選藥品);
+            if (cnt_Program_戰情白板_刷新自選藥品 == 3) cnt_Program_戰情白板_刷新自選藥品 = 65500;
+            if (cnt_Program_戰情白板_刷新自選藥品 > 1) cnt_Program_戰情白板_刷新自選藥品_檢查放開(ref cnt_Program_戰情白板_刷新自選藥品);
+
+            if (cnt_Program_戰情白板_刷新自選藥品 == 65500)
+            {
+                this.MyTimer_戰情白板_刷新自選藥品_結束延遲.TickStop();
+                this.MyTimer_戰情白板_刷新自選藥品_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新自選藥品.Bool = false;
+                PLC_Device_戰情白板_刷新自選藥品_OK.Bool = false;
+                cnt_Program_戰情白板_刷新自選藥品 = 65535;
+            }
+        }
+        void cnt_Program_戰情白板_刷新自選藥品_檢查按下(ref int cnt)
+        {
+            if (PLC_Device_戰情白板_刷新自選藥品.Bool) cnt++;
+        }
+        void cnt_Program_戰情白板_刷新自選藥品_檢查放開(ref int cnt)
+        {
+            if (!PLC_Device_戰情白板_刷新自選藥品.Bool) cnt = 65500;
+        }
+        void cnt_Program_戰情白板_刷新自選藥品_初始化(ref int cnt)
+        {
+            if (this.MyTimer_戰情白板_刷新自選藥品_結束延遲.IsTimeOut())
+            {
+                if (Task_戰情白板_刷新自選藥品 == null)
+                {
+                    Task_戰情白板_刷新自選藥品 = new Task(new Action(delegate { this.PlC_RJ_Button_戰情白板_刷新自選藥品_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新自選藥品.Status == TaskStatus.RanToCompletion)
+                {
+                    Task_戰情白板_刷新自選藥品 = new Task(new Action(delegate { this.PlC_RJ_Button_戰情白板_刷新自選藥品_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新自選藥品.Status == TaskStatus.Created)
+                {
+                    Task_戰情白板_刷新自選藥品.Start();
+                }
+                cnt++;
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
+        #region PLC_戰情白板_刷新公告內容
+        PLC_Device PLC_Device_戰情白板_刷新公告內容 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_刷新公告內容_OK = new PLC_Device("");
+        Task Task_戰情白板_刷新公告內容;
+        MyTimer MyTimer_戰情白板_刷新公告內容_結束延遲 = new MyTimer();
+        int cnt_Program_戰情白板_刷新公告內容 = 65534;
+        void sub_Program_戰情白板_刷新公告內容()
+        {
+            if (cnt_Program_戰情白板_刷新公告內容 == 65534)
+            {
+                this.MyTimer_戰情白板_刷新公告內容_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新公告內容.SetComment("PLC_戰情白板_刷新公告內容");
+                PLC_Device_戰情白板_刷新公告內容_OK.SetComment("PLC_戰情白板_刷新公告內容_OK");
+                PLC_Device_戰情白板_刷新公告內容.Bool = false;
+                cnt_Program_戰情白板_刷新公告內容 = 65535;
+            }
+            if (cnt_Program_戰情白板_刷新公告內容 == 65535) cnt_Program_戰情白板_刷新公告內容 = 1;
+            if (cnt_Program_戰情白板_刷新公告內容 == 1) cnt_Program_戰情白板_刷新公告內容_檢查按下(ref cnt_Program_戰情白板_刷新公告內容);
+            if (cnt_Program_戰情白板_刷新公告內容 == 2) cnt_Program_戰情白板_刷新公告內容_初始化(ref cnt_Program_戰情白板_刷新公告內容);
+            if (cnt_Program_戰情白板_刷新公告內容 == 3) cnt_Program_戰情白板_刷新公告內容 = 65500;
+            if (cnt_Program_戰情白板_刷新公告內容 > 1) cnt_Program_戰情白板_刷新公告內容_檢查放開(ref cnt_Program_戰情白板_刷新公告內容);
+
+            if (cnt_Program_戰情白板_刷新公告內容 == 65500)
+            {
+                this.MyTimer_戰情白板_刷新公告內容_結束延遲.TickStop();
+                this.MyTimer_戰情白板_刷新公告內容_結束延遲.StartTickTime(10000);
+                PLC_Device_戰情白板_刷新公告內容.Bool = false;
+                PLC_Device_戰情白板_刷新公告內容_OK.Bool = false;
+                cnt_Program_戰情白板_刷新公告內容 = 65535;
+            }
+        }
+        void cnt_Program_戰情白板_刷新公告內容_檢查按下(ref int cnt)
+        {
+            if (PLC_Device_戰情白板_刷新公告內容.Bool) cnt++;
+        }
+        void cnt_Program_戰情白板_刷新公告內容_檢查放開(ref int cnt)
+        {
+            if (!PLC_Device_戰情白板_刷新公告內容.Bool) cnt = 65500;
+        }
+        void cnt_Program_戰情白板_刷新公告內容_初始化(ref int cnt)
+        {
+            if (this.MyTimer_戰情白板_刷新公告內容_結束延遲.IsTimeOut())
+            {
+                if (Task_戰情白板_刷新公告內容 == null)
+                {
+                    Task_戰情白板_刷新公告內容 = new Task(new Action(delegate { PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新公告內容.Status == TaskStatus.RanToCompletion)
+                {
+                    Task_戰情白板_刷新公告內容 = new Task(new Action(delegate { PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_刷新公告內容.Status == TaskStatus.Created)
+                {
+                    Task_戰情白板_刷新公告內容.Start();
+                }
+                cnt++;
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
         #region Function
         private void Function_戰情白板_繪製時間()
         {
             using (Graphics g = this.panel_戰情白板_時間.CreateGraphics())
             {
-                using (Bitmap bitmap = new Bitmap(this.panel_戰情白板_時間.Width, this.panel_戰情白板_時間.Height))
+                int width = this.panel_戰情白板_時間.Width;
+                int height = this.panel_戰情白板_時間.Height;
+                if (width == 0 || height == 0) return;
+                using (Bitmap bitmap = new Bitmap(width, height))
                 {
                     using(Graphics g_bmp = Graphics.FromImage(bitmap))
                     {
@@ -184,7 +505,10 @@ namespace 智能藥庫系統
         {
             using (Graphics g = this.panel_戰情白板_醫院名稱.CreateGraphics())
             {
-                using (Bitmap bitmap = new Bitmap(this.panel_戰情白板_醫院名稱.Width, this.panel_戰情白板_醫院名稱.Height))
+                int width = this.panel_戰情白板_醫院名稱.Width;
+                int height = this.panel_戰情白板_醫院名稱.Height;
+                if (width == 0 || height == 0) return;
+                using (Bitmap bitmap = new Bitmap(width, height))
                 {
                     using (Graphics g_bmp = Graphics.FromImage(bitmap))
                     {
@@ -221,7 +545,10 @@ namespace 智能藥庫系統
         {
             using (Graphics g = this.panel_戰情白板_標題.CreateGraphics())
             {
-                using (Bitmap bitmap = new Bitmap(this.panel_戰情白板_標題.Width, this.panel_戰情白板_標題.Height))
+                int width = this.panel_戰情白板_標題.Width;
+                int height = this.panel_戰情白板_標題.Height;
+                if (width == 0 || height == 0) return;
+                using (Bitmap bitmap = new Bitmap(width, height))
                 {
                     using (Graphics g_bmp = Graphics.FromImage(bitmap))
                     {
@@ -254,7 +581,25 @@ namespace 智能藥庫系統
 
             }
         }
-
+        private void Function_戰情白板_公告_確認表格合理性()
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_公告.SQL_GetAllRows(false);
+            List<object[]> list_value_add = new List<object[]>();
+            if (list_value.Count != 10)
+            {
+                this.sqL_DataGridView_戰情白板_公告.SQL_CreateTable();
+                for (int i = 0; i < 10; i++)
+                {
+                    object[] value = new object[new enum_戰情白板_公告().GetLength()];
+                    value[(int)enum_戰情白板_公告.GUID] = Guid.NewGuid().ToString();
+                    value[(int)enum_戰情白板_公告.排序] = i.ToString();
+                    value[(int)enum_戰情白板_公告.內容] = "";
+                    value[(int)enum_戰情白板_公告.登錄時間] = DateTime.Now.ToDateTimeString_6();
+                    list_value_add.Add(value);
+                }
+            }
+            this.sqL_DataGridView_戰情白板_公告.SQL_AddRows(list_value_add, false);
+        }
         private MyTimer MyTimer_戰情白板_即時公告_捲動時間 = new MyTimer();
         int StringCurrent_X;
         private void Function_戰情白板_即時公告(string AlarmString)
@@ -264,7 +609,10 @@ namespace 智能藥庫系統
             {
                 using (Graphics g = this.panel_戰情白板_即時公告.CreateGraphics())
                 {
-                    using (Bitmap bitmap = new Bitmap(this.panel_戰情白板_即時公告.Width, this.panel_戰情白板_即時公告.Height))
+                    int width = this.panel_戰情白板_即時公告.Width;
+                    int height = this.panel_戰情白板_即時公告.Height;
+                    if (width == 0 || height == 0) return;
+                    using (Bitmap bitmap = new Bitmap(width, height))
                     {
                         using (Graphics g_bmp = Graphics.FromImage(bitmap))
                         {
@@ -296,7 +644,11 @@ namespace 智能藥庫系統
         {
             using (Graphics g = this.panel_戰情白板_藥品庫存量及安全量即時資訊.CreateGraphics())
             {
-                using (Bitmap bitmap = new Bitmap(this.panel_戰情白板_藥品庫存量及安全量即時資訊.Width, this.panel_戰情白板_藥品庫存量及安全量即時資訊.Height))
+                int width = this.panel_戰情白板_藥品庫存量及安全量即時資訊.Width;
+                int height = this.panel_戰情白板_藥品庫存量及安全量即時資訊.Height;
+                if (width == 0 || height == 0) return;
+
+                using (Bitmap bitmap = new Bitmap(width, height))
                 {
                     using (Graphics g_bmp = Graphics.FromImage(bitmap))
                     {
@@ -328,6 +680,60 @@ namespace 智能藥庫系統
         #endregion
 
         #region Event
+        private void SqL_DataGridView_戰情白板_自選藥品_DataGridRefreshEvent()
+        {
+            for (int i = 0; i < this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows.Count; i++)
+            {
+                this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].DefaultCellStyle.BackColor = ((i % 2 == 1) ? Color.Black : Color.RoyalBlue);
+                this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                string 狀態文字 = this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態文字.GetEnumName()].Value.ObjectToString();
+                if (狀態文字 == enum_戰情白板_狀態文字.低於安全量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Red_alarm; ;
+                }
+                else if (狀態文字 == enum_戰情白板_狀態文字.低於基準量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Blue_alarm; ;
+                }
+                else if (狀態文字 == enum_戰情白板_狀態文字.高於安全量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_自選藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Green_alarm; ;
+                }
+            }
+        }
+        private void SqL_DataGridView_戰情白板_自選藥品_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            RowsList.Sort(new ICP_戰情白板_公告());
+        }
+        private void SqL_DataGridView_戰情白板_公告_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            RowsList.Sort(new ICP_戰情白板_公告());
+        }
+        private void SqL_DataGridView_戰情白板_公告_RowEnterEvent(object[] RowValue)
+        {
+            rJ_TextBox_戰情白板_公告_內容.Text = RowValue[(int)enum_戰情白板_公告.內容].ObjectToString();
+        }
+        private void SqL_DataGridView_戰情白板_一般藥品_DataGridRefreshEvent()
+        {
+            for (int i = 0; i < this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows.Count; i++)
+            {
+                this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].DefaultCellStyle.BackColor = ((i % 2 == 1) ? Color.Black : Color.RoyalBlue);
+                this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                string 狀態文字 = this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態文字.GetEnumName()].Value.ObjectToString();
+                if(狀態文字 == enum_戰情白板_狀態文字.低於安全量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Red_alarm; ;
+                }
+                else if (狀態文字 == enum_戰情白板_狀態文字.低於基準量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Blue_alarm; ;
+                }
+                else if (狀態文字 == enum_戰情白板_狀態文字.高於安全量.GetEnumName())
+                {
+                    this.sqL_DataGridView_戰情白板_一般藥品.dataGridView.Rows[i].Cells[enum_戰情白板.狀態.GetEnumName()].Value = 智能藥庫系統.Properties.Resources.Green_alarm; ;
+                }
+            }
+        }
         private void PlC_RJ_Button_戰情白板_全螢幕顯示_MouseDownEvent(MouseEventArgs mevent)
         {
             this.Invoke(new Action(delegate
@@ -339,6 +745,317 @@ namespace 智能藥庫系統
             }));
        
         }
+        private void PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent(MouseEventArgs mevent)
+        {
+            MyTimer myTimer = new MyTimer();
+            myTimer.StartTickTime(50000);
+            List<object[]> list_藥庫_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            Console.WriteLine($"戰情白板_刷新一般藥品>>取得藥庫藥品資料 ,耗時 {myTimer.ToString()}ms");
+            this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_藥庫_藥品資料);
+            Console.WriteLine($"戰情白板_刷新一般藥品>>更新藥庫藥品資料 ,耗時 {myTimer.ToString()}ms");
+            List<object[]> list_戰情白板_一般藥品 = new List<object[]>();
+            List<object[]> list_戰情白板_一般藥品_buf = new List<object[]>();
+
+            list_藥庫_藥品資料.Sort(new ICP_藥庫_藥品資料());
+        
+
+            Parallel.ForEach(list_藥庫_藥品資料, value_temp =>
+            {
+                object[] value = new object[new enum_戰情白板().GetLength()];
+                value[(int)enum_戰情白板.藥碼] =value_temp[(int)enum_藥庫_藥品資料.藥品碼];
+                value[(int)enum_戰情白板.藥名] =value_temp[(int)enum_藥庫_藥品資料.藥品名稱];
+                value[(int)enum_戰情白板.中文名] =value_temp[(int)enum_藥庫_藥品資料.中文名稱];
+                value[(int)enum_戰情白板.單位] =value_temp[(int)enum_藥庫_藥品資料.包裝單位];
+                value[(int)enum_戰情白板.總庫存] =value_temp[(int)enum_藥庫_藥品資料.總庫存];
+                value[(int)enum_戰情白板.藥局庫存] =value_temp[(int)enum_藥庫_藥品資料.藥局庫存];
+                value[(int)enum_戰情白板.藥庫庫存] =value_temp[(int)enum_藥庫_藥品資料.藥庫庫存];
+                value[(int)enum_戰情白板.安全量] =value_temp[(int)enum_藥庫_藥品資料.安全庫存];
+                value[(int)enum_戰情白板.基準量] =value_temp[(int)enum_藥庫_藥品資料.基準量];
+
+                int 總庫存 = value[(int)enum_戰情白板.總庫存].StringToInt32();
+                int 安全量 = value[(int)enum_戰情白板.安全量].StringToInt32();
+                int 基準量 = value[(int)enum_戰情白板.基準量].StringToInt32();
+                if (總庫存 < 安全量)
+                {
+                   value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.低於安全量.GetEnumName();
+                }
+                else if (總庫存 < 基準量)
+                {
+                   value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.低於基準量.GetEnumName();
+                }
+                else
+                {
+                    value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.高於安全量.GetEnumName();
+                }
+                list_戰情白板_一般藥品_buf.LockAdd(value);
+            });
+
+            if(!plC_RJ_ChechBox_戰情白板_一般藥品_高於安全量要顯示.Checked)
+            {
+                list_戰情白板_一般藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.高於安全量.GetEnumName());
+            }
+            if (!plC_RJ_ChechBox_戰情白板_一般藥品_低於基準量要顯示.Checked)
+            {
+                list_戰情白板_一般藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.低於基準量.GetEnumName());
+            }
+            if (!plC_RJ_ChechBox_戰情白板_一般藥品_低於安全量要顯示.Checked)
+            {
+                list_戰情白板_一般藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.低於安全量.GetEnumName());
+            }
+
+            int startnum = PLC_Device_戰情白板_刷新一般藥品_現在列數.Value;
+            int endnum = PLC_Device_戰情白板_刷新一般藥品_現在列數.Value + PLC_Device_戰情白板_刷新一般藥品_每頁列數.Value;
+            bool flag_recount = false;
+            if (PLC_Device_戰情白板_刷新一般藥品_現在列數.Value + PLC_Device_戰情白板_刷新一般藥品_每頁列數.Value >= list_戰情白板_一般藥品_buf.Count)
+            {
+                flag_recount = true;
+                endnum = list_戰情白板_一般藥品_buf.Count;
+            }
+
+            list_戰情白板_一般藥品_buf.Sort(new ICP_戰情白板());
+            for (int i = startnum; i < (endnum); i++)
+            {
+                list_戰情白板_一般藥品.Add(list_戰情白板_一般藥品_buf[i]);
+            }
+            
+            PLC_Device_戰情白板_刷新一般藥品_現在列數.Value += PLC_Device_戰情白板_刷新一般藥品_每頁列數.Value;
+            if (flag_recount) PLC_Device_戰情白板_刷新一般藥品_現在列數.Value = 0;
+            Console.WriteLine($"戰情白板_刷新一般藥品>>藥庫藥品資料轉換 ,耗時 {myTimer.ToString()}ms");
+            this.sqL_DataGridView_戰情白板_一般藥品.RefreshGrid(list_戰情白板_一般藥品);
+            Console.WriteLine($"戰情白板_刷新一般藥品>>刷新面板 ,耗時 {myTimer.ToString()}ms");
+
+        }
+        private void PlC_RJ_Button_戰情白板_刷新自選藥品_MouseDownEvent(MouseEventArgs mevent)
+        {
+            MyTimer myTimer = new MyTimer();
+            myTimer.StartTickTime(50000);
+            List<object[]> list_藥庫_藥品資料_src = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥庫_藥品資料_buf = new List<object[]>();
+            List<object[]> list_藥庫_藥品資料 = new List<object[]>();
+            Console.WriteLine($"戰情白板_刷新自選藥品>>取得藥庫藥品資料 ,耗時 {myTimer.ToString()}ms");
+            this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_藥庫_藥品資料);
+            Console.WriteLine($"戰情白板_刷新自選藥品>>更新藥庫藥品資料 ,耗時 {myTimer.ToString()}ms");
+
+            List<object[]> list_戰情白板_自選藥品資料 = this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_GetAllRows(false);
+
+
+            for (int i = 0; i < list_戰情白板_自選藥品資料.Count; i++)
+            {
+                string 藥品碼 = list_戰情白板_自選藥品資料[i][(int)enum_戰情白板_自選藥品.藥碼].ObjectToString();
+                list_藥庫_藥品資料_buf = list_藥庫_藥品資料_src.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                if(list_藥庫_藥品資料_buf.Count > 0)
+                {
+                    list_藥庫_藥品資料.Add(list_藥庫_藥品資料_buf[0]);
+                }
+
+            }
+
+            List<object[]> list_戰情白板_自選藥品 = new List<object[]>();
+            List<object[]> list_戰情白板_自選藥品_buf = new List<object[]>();
+
+            list_藥庫_藥品資料.Sort(new ICP_藥庫_藥品資料());
+
+
+            Parallel.ForEach(list_藥庫_藥品資料, value_temp =>
+            {
+                object[] value = new object[new enum_戰情白板().GetLength()];
+                value[(int)enum_戰情白板.藥碼] = value_temp[(int)enum_藥庫_藥品資料.藥品碼];
+                value[(int)enum_戰情白板.藥名] = value_temp[(int)enum_藥庫_藥品資料.藥品名稱];
+                value[(int)enum_戰情白板.中文名] = value_temp[(int)enum_藥庫_藥品資料.中文名稱];
+                value[(int)enum_戰情白板.單位] = value_temp[(int)enum_藥庫_藥品資料.包裝單位];
+                value[(int)enum_戰情白板.總庫存] = value_temp[(int)enum_藥庫_藥品資料.總庫存];
+                value[(int)enum_戰情白板.藥局庫存] = value_temp[(int)enum_藥庫_藥品資料.藥局庫存];
+                value[(int)enum_戰情白板.藥庫庫存] = value_temp[(int)enum_藥庫_藥品資料.藥庫庫存];
+                value[(int)enum_戰情白板.安全量] = value_temp[(int)enum_藥庫_藥品資料.安全庫存];
+                value[(int)enum_戰情白板.基準量] = value_temp[(int)enum_藥庫_藥品資料.基準量];
+
+                int 總庫存 = value[(int)enum_戰情白板.總庫存].StringToInt32();
+                int 安全量 = value[(int)enum_戰情白板.安全量].StringToInt32();
+                int 基準量 = value[(int)enum_戰情白板.基準量].StringToInt32();
+                if (總庫存 < 安全量)
+                {
+                    value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.低於安全量.GetEnumName();
+                }
+                else if (總庫存 < 基準量)
+                {
+                    value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.低於基準量.GetEnumName();
+                }
+                else
+                {
+                    value[(int)enum_戰情白板.狀態文字] = enum_戰情白板_狀態文字.高於安全量.GetEnumName();
+                }
+                list_戰情白板_自選藥品_buf.LockAdd(value);
+            });
+
+            if (!plC_RJ_ChechBox_戰情白板_自選藥品_高於安全量要顯示.Checked)
+            {
+                list_戰情白板_自選藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.高於安全量.GetEnumName());
+            }
+            if (!plC_RJ_ChechBox_戰情白板_自選藥品_低於基準量要顯示.Checked)
+            {
+                list_戰情白板_自選藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.低於基準量.GetEnumName());
+            }
+            if (!plC_RJ_ChechBox_戰情白板_自選藥品_低於安全量要顯示.Checked)
+            {
+                list_戰情白板_自選藥品_buf.RemoveRow((int)enum_戰情白板.狀態文字, enum_戰情白板_狀態文字.低於安全量.GetEnumName());
+            }
+
+            int startnum = PLC_Device_戰情白板_刷新自選藥品_現在列數.Value;
+            int endnum = PLC_Device_戰情白板_刷新自選藥品_現在列數.Value + PLC_Device_戰情白板_刷新自選藥品_每頁列數.Value;
+            bool flag_recount = false;
+            if (PLC_Device_戰情白板_刷新自選藥品_現在列數.Value + PLC_Device_戰情白板_刷新自選藥品_每頁列數.Value >= list_戰情白板_自選藥品_buf.Count)
+            {
+                flag_recount = true;
+                endnum = list_戰情白板_自選藥品_buf.Count;
+            }
+
+            list_戰情白板_自選藥品_buf.Sort(new ICP_戰情白板());
+            for (int i = startnum; i < (endnum); i++)
+            {
+                list_戰情白板_自選藥品.Add(list_戰情白板_自選藥品_buf[i]);
+            }
+
+            PLC_Device_戰情白板_刷新自選藥品_現在列數.Value += PLC_Device_戰情白板_刷新自選藥品_每頁列數.Value;
+            if (flag_recount) PLC_Device_戰情白板_刷新自選藥品_現在列數.Value = 0;
+            Console.WriteLine($"戰情白板_刷新自選藥品>>藥庫藥品資料轉換 ,耗時 {myTimer.ToString()}ms");
+            this.sqL_DataGridView_戰情白板_自選藥品.RefreshGrid(list_戰情白板_自選藥品);
+            Console.WriteLine($"戰情白板_刷新自選藥品>>刷新面板 ,耗時 {myTimer.ToString()}ms");
+        }
+        private void PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_公告.SQL_GetAllRows(false);
+            List<string> list_str_result = new List<string>();
+            string str_result = "";
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string str = list_value[i][(int)enum_戰情白板_公告.內容].ObjectToString();
+                if(!str.StringIsEmpty())
+                {
+                    list_str_result.Add(str);
+                }
+            }
+            for (int i = 0; i < list_str_result.Count; i++)
+            {
+                if (i != 0) str_result += "         ";
+                str_result += list_str_result[i];
+              
+            }
+            戰情白板_公告內容 = str_result;
+        }
+        private void PlC_RJ_Button_戰情白板_公告_確認_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_公告.Get_All_Select_RowsValues();
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取公告欄位!");
+                return;
+            }
+            list_value[0][(int)enum_戰情白板_公告.內容] = rJ_TextBox_戰情白板_公告_內容.Text;
+            list_value[0][(int)enum_戰情白板_公告.登錄時間] = DateTime.Now.ToDateTimeString_6();
+            this.sqL_DataGridView_戰情白板_公告.SQL_ReplaceExtra(list_value[0], false);
+            this.sqL_DataGridView_戰情白板_公告.ReplaceExtra(list_value[0], true);
+
+        }
+        private void PlC_RJ_Button_戰情白板_公告_刷新_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.sqL_DataGridView_戰情白板_公告.SQL_GetAllRows(true);
+        }
+        private void PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.SQL_GetAllRows(false);          
+            list_value = list_value.GetRowsByLike((int)enum_藥庫_藥品資料.藥品碼, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品碼.Text);
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("查無資料!");
+                return;
+            }
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.RefreshGrid(list_value);
+        }
+        private void PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品名稱搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.SQL_GetAllRows(false);           
+            list_value = list_value.GetRowsByLike((int)enum_藥庫_藥品資料.藥品名稱, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品名稱.Text);
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("查無資料!");
+                return;
+            }
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.RefreshGrid(list_value);
+        }
+        private void PlC_RJ_Button_戰情白板_自選藥品_藥品資料_填入資料_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Get_All_Select_RowsValues();
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取藥品!");
+                return;
+            }
+            List<object[]> list_自選藥品 = this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_GetAllRows(false);
+            List<object[]> list_自選藥品_buf = new List<object[]>();
+            string 藥品碼 = list_value[0][(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+            string 藥品名稱 = list_value[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
+            string 包裝單位 = list_value[0][(int)enum_藥庫_藥品資料.包裝單位].ObjectToString();
+            list_自選藥品_buf = list_自選藥品.GetRows((int)enum_戰情白板_自選藥品.藥碼, 藥品碼);
+            if (list_自選藥品_buf.Count == 0)
+            {
+                object[] value = new object[new enum_戰情白板_自選藥品().GetLength()];
+                value[(int)enum_戰情白板_自選藥品.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_戰情白板_自選藥品.藥碼] = 藥品碼;
+                value[(int)enum_戰情白板_自選藥品.藥名] = 藥品名稱;
+                value[(int)enum_戰情白板_自選藥品.單位] = 包裝單位;
+                this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_AddRow(value, false);
+                this.sqL_DataGridView_戰情白板_自選藥品_選取內容.AddRow(value, true);
+            }
+            else
+            {
+                object[] value = list_自選藥品_buf[0];
+                value[(int)enum_戰情白板_自選藥品.藥碼] = 藥品碼;
+                value[(int)enum_戰情白板_自選藥品.藥名] = 藥品名稱;
+                value[(int)enum_戰情白板_自選藥品.單位] = 包裝單位;
+                this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_ReplaceExtra(value, false);
+                this.sqL_DataGridView_戰情白板_自選藥品_選取內容.ReplaceExtra(value, true);
+            }
+        }
+        private void PlC_RJ_Button_戰情白板_自選藥品_更新_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_GetAllRows(true);
+        }
+        private void PlC_RJ_Button_戰情白板_自選藥品_刪除已選擇藥品_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_選取內容.Get_All_Checked_RowsValues();
+            if (list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取藥品!");
+                return;
+            }
+            this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_DeleteExtra(list_value, false);
+            this.sqL_DataGridView_戰情白板_自選藥品_選取內容.DeleteExtra(list_value, true);
+
+            MyMessageBox.ShowDialog("刪除完畢!");
+        }
         #endregion
+        private class ICP_戰情白板 : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                int temp = (x[(int)enum_戰情白板.狀態文字].ObjectToString().CompareTo(y[(int)enum_戰情白板.狀態文字].ObjectToString()));
+                if (temp == 0)
+                {
+                    string Code0 = x[(int)enum_戰情白板.藥碼].ObjectToString();
+                    string Code1 = y[(int)enum_戰情白板.藥碼].ObjectToString();
+                    return Code0.CompareTo(Code1);
+                }
+                return temp;
+            }
+        }
+        private class ICP_戰情白板_公告 : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                int temp = (x[(int)enum_戰情白板_公告.排序].ObjectToString().CompareTo(y[(int)enum_戰情白板_公告.排序].ObjectToString()));
+
+                return temp;
+            }
+        }
     }
 }
