@@ -92,10 +92,12 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥品過消耗帳_選取資料忽略過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_選取資料忽略過帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_全部資料匯出_MouseDownEvent;
-
+            this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_上月消耗量計算_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
+
+   
 
         private bool flag_藥品過消耗帳_頁面更新 = false;
         private void sub_Program_藥品過消耗帳()
@@ -122,7 +124,43 @@ namespace 智能藥庫系統
 
 
         #region Fucntion
+        private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(string 藥品碼)
+        {
+            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+            List<object[]> list_value = new List<object[]>();
 
+            List<object[]> list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_門診_buf.Count; i++)
+            {
+                list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+            }
+            List<object[]> list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_急診_buf.Count; i++)
+            {
+                list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+            }
+            List<object[]> list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_住院_buf.Count; i++)
+            {
+                list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+            }
+            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_公藥_buf.Count; i++)
+            {
+                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+            }
+
+
+            list_value.LockAdd(list_門診_buf);
+            list_value.LockAdd(list_急診_buf);
+            list_value.LockAdd(list_住院_buf);
+            list_value.LockAdd(list_公藥_buf);
+
+            return list_value;
+        }
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(DateTime dateTime1 , DateTime dateTime2)
         {
             List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_藥品過消耗帳.報表日期, dateTime1.ToDateString(), dateTime2.ToDateString(), false);
@@ -414,7 +452,11 @@ namespace 智能藥庫系統
         {
             List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細(rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value, rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value);
 
-            if (!rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text.StringIsEmpty()) list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品碼, rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text);
+            if (!rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text.StringIsEmpty())
+            {
+                PlC_RJ_Button_藥品過消耗帳_上月消耗量計算_MouseDownEvent(null);
+                list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品碼, rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text);
+            }
             if (!rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Text.StringIsEmpty()) list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品名稱, rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Text);
 
             list_value.Sort(new ICP_藥品過消耗帳());
@@ -575,6 +617,33 @@ namespace 智能藥庫系統
             List<object[]> list_value = this.sqL_DataGridView_藥品過消耗帳.GetAllRows();
             list_value = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥品名稱, rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Text);
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_上月消耗量計算_MouseDownEvent(MouseEventArgs mevent)
+        {
+            MyTimer myTimer = new MyTimer();
+            myTimer.StartTickTime(50000);
+            string 藥品碼 = rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text;
+            if(藥品碼.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("藥品碼空白!");
+                return;
+            }
+
+            List<object[]> list_value = Function_藥品過消耗帳_取得所有過帳明細(藥品碼);
+            Console.WriteLine($"藥品過消耗帳 ,從資料庫取得<{藥品碼}>資料 <{list_value.Count}>筆 , 耗時{myTimer.ToString()}ms");
+            list_value = list_value.GetRowsInMonth((int)enum_藥品過消耗帳.報表日期, DateTime.Now.AddMonths(-1).Month);
+            Console.WriteLine($"藥品過消耗帳 ,篩選<{ DateTime.Now.AddMonths(-1).Month}>月份資料 <{list_value.Count}>筆 , 耗時{myTimer.ToString()}ms");
+
+            int 消耗量 = 0;
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                消耗量 += list_value[i][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+            }
+            消耗量 *= -1;
+            this.Invoke(new Action(delegate 
+            {
+                rJ_TextBox_藥品過消耗帳_上月消耗量計算.Text = 消耗量.ToString();
+            }));
         }
         #endregion
 
