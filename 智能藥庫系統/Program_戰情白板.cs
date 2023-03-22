@@ -81,6 +81,8 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_戰情白板_刷新一般藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent;
             this.plC_RJ_Button_戰情白板_刷新自選藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新自選藥品_MouseDownEvent;
             this.plC_RJ_Button_戰情白板_刷新公告內容.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新公告內容_MouseDownEvent;
+            this.plC_RJ_Button_戰情白板_檢查緊急申領.MouseDownEvent += PlC_RJ_Button_戰情白板_檢查緊急申領_MouseDownEvent;
+
 
             this.plC_RJ_Button_戰情白板_公告_確認.MouseDownEvent += PlC_RJ_Button_戰情白板_公告_確認_MouseDownEvent;
             this.plC_RJ_Button_戰情白板_公告_刷新.MouseDownEvent += PlC_RJ_Button_戰情白板_公告_刷新_MouseDownEvent;
@@ -97,7 +99,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(sub_Program_戰情白板);
         }
 
-
+      
 
         PLC_Device PLC_Device_戰情白板_全螢幕顯示 = new PLC_Device("");
         private string 戰情白板_公告內容 = "";
@@ -122,7 +124,7 @@ namespace 智能藥庫系統
                 this.sub_Program_戰情白板_刷新一般藥品();
                 this.sub_Program_戰情白板_刷新自選藥品();
                 this.sub_Program_戰情白板_刷新公告內容();
-
+                this.sub_Program_戰情白板_檢查緊急申領();
 
                 this.Function_戰情白板_繪製時間();
                 this.Function_戰情白板_醫院名稱();
@@ -455,6 +457,73 @@ namespace 智能藥庫系統
                 if (Task_戰情白板_刷新公告內容.Status == TaskStatus.Created)
                 {
                     Task_戰情白板_刷新公告內容.Start();
+                }
+                cnt++;
+            }
+        }
+
+
+
+
+
+
+
+        #endregion
+        #region PLC_戰情白板_檢查緊急申領
+        List<object[]> list_檢查緊急申領_已警示 = new List<object[]>();
+        PLC_Device PLC_Device_戰情白板_檢查緊急申領 = new PLC_Device("");
+        PLC_Device PLC_Device_戰情白板_檢查緊急申領_OK = new PLC_Device("");
+        Task Task_戰情白板_檢查緊急申領;
+        MyTimer MyTimer_戰情白板_檢查緊急申領_結束延遲 = new MyTimer();
+        int cnt_Program_戰情白板_檢查緊急申領 = 65534;
+        void sub_Program_戰情白板_檢查緊急申領()
+        {
+            if (cnt_Program_戰情白板_檢查緊急申領 == 65534)
+            {
+                this.MyTimer_戰情白板_檢查緊急申領_結束延遲.StartTickTime(3000);
+                PLC_Device_戰情白板_檢查緊急申領.SetComment("PLC_戰情白板_檢查緊急申領");
+                PLC_Device_戰情白板_檢查緊急申領_OK.SetComment("PLC_戰情白板_檢查緊急申領_OK");
+                PLC_Device_戰情白板_檢查緊急申領.Bool = false;
+                cnt_Program_戰情白板_檢查緊急申領 = 65535;
+            }
+            if (cnt_Program_戰情白板_檢查緊急申領 == 65535) cnt_Program_戰情白板_檢查緊急申領 = 1;
+            if (cnt_Program_戰情白板_檢查緊急申領 == 1) cnt_Program_戰情白板_檢查緊急申領_檢查按下(ref cnt_Program_戰情白板_檢查緊急申領);
+            if (cnt_Program_戰情白板_檢查緊急申領 == 2) cnt_Program_戰情白板_檢查緊急申領_初始化(ref cnt_Program_戰情白板_檢查緊急申領);
+            if (cnt_Program_戰情白板_檢查緊急申領 == 3) cnt_Program_戰情白板_檢查緊急申領 = 65500;
+            if (cnt_Program_戰情白板_檢查緊急申領 > 1) cnt_Program_戰情白板_檢查緊急申領_檢查放開(ref cnt_Program_戰情白板_檢查緊急申領);
+
+            if (cnt_Program_戰情白板_檢查緊急申領 == 65500)
+            {
+                this.MyTimer_戰情白板_檢查緊急申領_結束延遲.TickStop();
+                this.MyTimer_戰情白板_檢查緊急申領_結束延遲.StartTickTime(3000);
+                PLC_Device_戰情白板_檢查緊急申領.Bool = false;
+                PLC_Device_戰情白板_檢查緊急申領_OK.Bool = false;
+                cnt_Program_戰情白板_檢查緊急申領 = 65535;
+            }
+        }
+        void cnt_Program_戰情白板_檢查緊急申領_檢查按下(ref int cnt)
+        {
+            if (PLC_Device_戰情白板_檢查緊急申領.Bool) cnt++;
+        }
+        void cnt_Program_戰情白板_檢查緊急申領_檢查放開(ref int cnt)
+        {
+            if (!PLC_Device_戰情白板_檢查緊急申領.Bool) cnt = 65500;
+        }
+        void cnt_Program_戰情白板_檢查緊急申領_初始化(ref int cnt)
+        {
+            if (this.MyTimer_戰情白板_檢查緊急申領_結束延遲.IsTimeOut())
+            {
+                if (Task_戰情白板_檢查緊急申領 == null)
+                {
+                    Task_戰情白板_檢查緊急申領 = new Task(new Action(delegate { PlC_RJ_Button_戰情白板_檢查緊急申領_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_檢查緊急申領.Status == TaskStatus.RanToCompletion)
+                {
+                    Task_戰情白板_檢查緊急申領 = new Task(new Action(delegate { PlC_RJ_Button_戰情白板_檢查緊急申領_MouseDownEvent(null); }));
+                }
+                if (Task_戰情白板_檢查緊急申領.Status == TaskStatus.Created)
+                {
+                    Task_戰情白板_檢查緊急申領.Start();
                 }
                 cnt++;
             }
@@ -941,6 +1010,90 @@ namespace 智能藥庫系統
               
             }
             戰情白板_公告內容 = str_result;
+        }
+        private void PlC_RJ_Button_戰情白板_檢查緊急申領_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_檢查緊急申領_已警示_buf = new List<object[]>();
+            List<object[]> list_緊急申領 = this.sqL_DataGridView_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥局_緊急申領.產出時間, DateTime.Now, false);
+            list_緊急申領 = list_緊急申領.GetRows((int)enum_藥局_緊急申領.狀態, enum_藥局_緊急申領_狀態.等待過帳.GetEnumName());
+            if (list_緊急申領.Count == 0)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    rJ_Lable_戰情白版_新申領藥品.Visible = false;
+                }));
+                return;
+            }
+            this.Invoke(new Action(delegate
+            {
+                rJ_Lable_戰情白版_新申領藥品.Visible = true;
+                rJ_Lable_戰情白版_新申領藥品.BackColor = Color.Red;
+                rJ_Lable_戰情白版_新申領藥品.ForeColor = Color.White;
+            }));
+            bool flag_Alarm = false;
+            for (int i = 0; i < list_緊急申領.Count; i++)
+            {
+                string GUID = list_緊急申領[i][(int)enum_藥局_緊急申領.GUID].ObjectToString();
+                list_檢查緊急申領_已警示_buf = list_檢查緊急申領_已警示.GetRows((int)enum_藥局_緊急申領.GUID, GUID);
+                if(list_檢查緊急申領_已警示_buf.Count > 0)
+                {
+                    continue;
+                }
+                flag_Alarm = true;
+                list_檢查緊急申領_已警示.Add(list_緊急申領[i]);
+            }
+            if (!flag_Alarm) return;
+            MyTimer myTimer_break = new MyTimer();
+            myTimer_break.StartTickTime(10000);
+
+            MyTimer myTimer = new MyTimer();
+         
+            int cnt = 0;
+            while(true)
+            {
+                if (myTimer_break.IsTimeOut()) break;
+                if(cnt == 0)
+                {
+                    Voice voice = new Voice();
+                    voice.SpeakOnTask("有新申領請求");
+                    myTimer.StartTickTime(500);
+                    this.Invoke(new Action(delegate
+                    {
+                        rJ_Lable_戰情白版_新申領藥品.BackColor = Color.Red;
+                        rJ_Lable_戰情白版_新申領藥品.ForeColor = Color.White;
+                    }));               
+                    cnt++;
+                }
+                if (cnt == 1)
+                {
+                    if (myTimer.IsTimeOut())
+                    {
+                        myTimer.StartTickTime(500);
+                        this.Invoke(new Action(delegate
+                        {
+                            rJ_Lable_戰情白版_新申領藥品.BackColor = Color.White;
+                            rJ_Lable_戰情白版_新申領藥品.ForeColor = Color.Black;
+                        }));
+                        cnt++;
+                    }
+                }
+                if(cnt == 2)
+                {
+                    if (myTimer.IsTimeOut())
+                    {
+                        cnt++;
+                    }                     
+                }
+                if (cnt == 3)
+                {
+                    cnt = 0;
+                }
+                System.Threading.Thread.Sleep(10);
+            }
+            this.Invoke(new Action(delegate
+            {
+                rJ_Lable_戰情白版_新申領藥品.Visible = false;
+            }));
         }
         private void PlC_RJ_Button_戰情白板_公告_確認_MouseDownEvent(MouseEventArgs mevent)
         {
