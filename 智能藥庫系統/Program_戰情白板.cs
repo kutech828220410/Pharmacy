@@ -411,6 +411,7 @@ namespace 智能藥庫系統
         int cnt_Program_戰情白板_刷新公告內容 = 65534;
         void sub_Program_戰情白板_刷新公告內容()
         {
+            PLC_Device_戰情白板_刷新公告內容.Bool = true;
             if (cnt_Program_戰情白板_刷新公告內容 == 65534)
             {
                 this.MyTimer_戰情白板_刷新公告內容_結束延遲.StartTickTime(10000);
@@ -478,6 +479,7 @@ namespace 智能藥庫系統
         int cnt_Program_戰情白板_檢查緊急申領 = 65534;
         void sub_Program_戰情白板_檢查緊急申領()
         {
+            PLC_Device_戰情白板_檢查緊急申領.Bool = true;
             if (cnt_Program_戰情白板_檢查緊急申領 == 65534)
             {
                 this.MyTimer_戰情白板_檢查緊急申領_結束延遲.StartTickTime(3000);
@@ -1054,9 +1056,12 @@ namespace 智能藥庫系統
                 if (myTimer_break.IsTimeOut()) break;
                 if(cnt == 0)
                 {
-                    Voice voice = new Voice();
-                    voice.SpeakOnTask("有新申領請求");
-                    myTimer.StartTickTime(500);
+                    this.Invoke(new Action(delegate
+                    {
+                        Basic.Voice.GoogleSpeaker("有新申領請求", $@"speak.mp3");
+                    }));
+      
+                    myTimer.StartTickTime(2000);
                     this.Invoke(new Action(delegate
                     {
                         rJ_Lable_戰情白版_新申領藥品.BackColor = Color.Red;
@@ -1068,7 +1073,7 @@ namespace 智能藥庫系統
                 {
                     if (myTimer.IsTimeOut())
                     {
-                        myTimer.StartTickTime(500);
+                        myTimer.StartTickTime(2000);
                         this.Invoke(new Action(delegate
                         {
                             rJ_Lable_戰情白版_新申領藥品.BackColor = Color.White;
