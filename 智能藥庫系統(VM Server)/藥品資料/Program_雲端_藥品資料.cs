@@ -39,6 +39,9 @@ namespace 智能藥庫系統_VM_Server_
             最小包裝數量,
             藥品條碼1,
             藥品條碼2,
+            警訊藥品,
+            管制級別,
+            類別
         }
         public enum enum_雲端_藥品資料_匯出
         {
