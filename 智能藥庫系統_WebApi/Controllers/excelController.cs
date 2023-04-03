@@ -41,7 +41,7 @@ namespace 智慧調劑台管理系統_WebApi
         public string Get_emg_apply([FromBody] List<class_emg_apply> class_Emg_Applies)
         {
             string json = "";
-            int row_max = 45;
+            int row_max = 50;
             string loadText = Basic.MyFileStream.LoadFileAllText(@"C:\excel.txt", "utf-8");
             List<SheetClass> sheetClasses = new List<SheetClass>();
             List<class_emg_apply> class_Emg_Applies_Distinct = new List<class_emg_apply>();
