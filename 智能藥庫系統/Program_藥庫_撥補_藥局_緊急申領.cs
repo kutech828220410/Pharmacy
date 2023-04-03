@@ -409,6 +409,7 @@ namespace 智能藥庫系統
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取有效資料!");
+                return;
             }
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate { dialogResult = this.saveFileDialog_SaveExcel.ShowDialog(); }));
