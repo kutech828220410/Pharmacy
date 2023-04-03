@@ -23,6 +23,8 @@ namespace 智能藥庫系統
             未建立儲位,
             過帳完成,
             找無此藥品,
+            備藥中,
+            撥發完成,
         }
         enum enum_藥局_緊急申領
         {
@@ -98,7 +100,7 @@ namespace 智能藥庫系統
             String 狀態 = "";
             for (int i = 0; i < this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows.Count; i++)
             {
-                狀態 = this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].Cells[(int)enum_藥局_緊急申領.狀態].Value.ToString();
+                狀態 = this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].Cells[enum_藥局_緊急申領.狀態.GetEnumName()].Value.ToString();
                 if (狀態 == enum_藥局_緊急申領_狀態.過帳完成.GetEnumName())
                 {
                     this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.White;
@@ -112,6 +114,16 @@ namespace 智能藥庫系統
                 if (狀態 == enum_藥局_緊急申領_狀態.未建立儲位.GetEnumName())
                 {
                     this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                    this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                if (狀態 == enum_藥局_緊急申領_狀態.備藥中.GetEnumName())
+                {
+                    this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
+                    this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                }
+                if (狀態 == enum_藥局_緊急申領_狀態.撥發完成.GetEnumName())
+                {
+                    this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
                     this.sqL_DataGridView_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
 
@@ -180,7 +192,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥局_緊急申領_取消申領_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥局_緊急申領.Get_All_Select_RowsValues();
+            List<object[]> list_value = this.sqL_DataGridView_藥局_緊急申領.Get_All_Checked_RowsValues();
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取申領資料!");
@@ -203,9 +215,19 @@ namespace 智能藥庫系統
         {
             public int Compare(object[] x, object[] y)
             {
-                DateTime datetime0 = x[(int)enum_藥局_緊急申領.產出時間].ToDateTimeString_6().StringToDateTime();
-                DateTime datetime1 = y[(int)enum_藥局_緊急申領.產出時間].ToDateTimeString_6().StringToDateTime();
-                return datetime0.CompareTo(datetime1);
+                string 藥品碼0 = x[(int)enum_藥局_緊急申領.藥品碼].ObjectToString();
+                string 藥品碼1 = y[(int)enum_藥局_緊急申領.藥品碼].ObjectToString();
+                int temp = 藥品碼0.CompareTo(藥品碼1);
+                if (temp == 0)
+                {
+                    DateTime datetime0 = x[(int)enum_藥局_緊急申領.產出時間].ToDateTimeString_6().StringToDateTime();
+                    DateTime datetime1 = y[(int)enum_藥局_緊急申領.產出時間].ToDateTimeString_6().StringToDateTime();
+                    return datetime0.CompareTo(datetime1);
+                }
+                else
+                {
+                    return temp;
+                }
             }
         }
     }

@@ -1018,6 +1018,10 @@ namespace 智能藥庫系統
             List<object[]> list_檢查緊急申領_已警示_buf = new List<object[]>();
             List<object[]> list_緊急申領 = this.sqL_DataGridView_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥局_緊急申領.產出時間, DateTime.Now, false);
             list_緊急申領 = list_緊急申領.GetRows((int)enum_藥局_緊急申領.狀態, enum_藥局_緊急申領_狀態.等待過帳.GetEnumName());
+            //list_緊急申領 = (from value in list_緊急申領
+            //             where value[(int)enum_藥局_緊急申領.狀態].ObjectToString() != enum_藥局_緊急申領_狀態.過帳完成.GetEnumName()
+            //             select value).ToList();
+
             if (list_緊急申領.Count == 0)
             {
                 this.Invoke(new Action(delegate
