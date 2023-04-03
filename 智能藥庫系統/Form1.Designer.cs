@@ -587,6 +587,16 @@
             this.rJ_GroupBox27 = new MyUI.RJ_GroupBox();
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領 = new SQLUI.SQL_DataGridView();
             this.panel65 = new System.Windows.Forms.Panel();
+            this.groupBox22 = new System.Windows.Forms.GroupBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳 = new MyUI.PLC_CheckBox();
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中 = new MyUI.PLC_RJ_Button();
             this.label22 = new System.Windows.Forms.Label();
             this.rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_起始 = new MyUI.RJ_DatePicker();
             this.rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_結束 = new MyUI.RJ_DatePicker();
@@ -1165,16 +1175,7 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中 = new MyUI.PLC_RJ_Button();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳 = new MyUI.PLC_CheckBox();
-            this.groupBox22 = new System.Windows.Forms.GroupBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位 = new MyUI.PLC_CheckBox();
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品 = new MyUI.PLC_CheckBox();
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1332,6 +1333,7 @@
             this.rJ_GroupBox27.ContentsPanel.SuspendLayout();
             this.rJ_GroupBox27.SuspendLayout();
             this.panel65.SuspendLayout();
+            this.groupBox22.SuspendLayout();
             this.panel_藥庫_撥補_藥局.SuspendLayout();
             this.panel_藥庫_撥補.SuspendLayout();
             this.藥庫_今日訂單.SuspendLayout();
@@ -1529,7 +1531,6 @@
             this.tabPage35.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.groupBox22.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -15308,6 +15309,7 @@
             // 
             // panel65
             // 
+            this.panel65.Controls.Add(this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料);
             this.panel65.Controls.Add(this.groupBox22);
             this.panel65.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳);
             this.panel65.Controls.Add(this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中);
@@ -15322,6 +15324,222 @@
             this.panel65.Name = "panel65";
             this.panel65.Size = new System.Drawing.Size(1608, 150);
             this.panel65.TabIndex = 140;
+            // 
+            // groupBox22
+            // 
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成);
+            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳);
+            this.groupBox22.Font = new System.Drawing.Font("新細明體", 12F);
+            this.groupBox22.Location = new System.Drawing.Point(696, 5);
+            this.groupBox22.Name = "groupBox22";
+            this.groupBox22.Size = new System.Drawing.Size(240, 142);
+            this.groupBox22.TabIndex = 193;
+            this.groupBox22.TabStop = false;
+            this.groupBox22.Text = "顯示設定";
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Location = new System.Drawing.Point(121, 81);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Size = new System.Drawing.Size(107, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.TabIndex = 199;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Text = "找無此藥品";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字內容 = "找無此藥品";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Location = new System.Drawing.Point(121, 55);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Size = new System.Drawing.Size(107, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.TabIndex = 198;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Text = "未建立儲位";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字內容 = "未建立儲位";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Location = new System.Drawing.Point(121, 29);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Size = new System.Drawing.Size(91, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.TabIndex = 197;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Text = "庫存不足";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字內容 = "庫存不足";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Location = new System.Drawing.Point(19, 107);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Size = new System.Drawing.Size(91, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.TabIndex = 196;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Text = "撥發完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字內容 = "撥發完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Location = new System.Drawing.Point(19, 81);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Size = new System.Drawing.Size(75, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.TabIndex = 195;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Text = "備藥中";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字內容 = "備藥中";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Location = new System.Drawing.Point(19, 55);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Size = new System.Drawing.Size(91, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.TabIndex = 194;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Text = "過帳完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字內容 = "過帳完成";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Checked = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Location = new System.Drawing.Point(19, 30);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Size = new System.Drawing.Size(91, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.TabIndex = 193;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Text = "等待過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字內容 = "等待過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.音效 = true;
+            // 
+            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳
+            // 
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.AutoSize = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Bool = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Location = new System.Drawing.Point(1345, 68);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Size = new System.Drawing.Size(75, 20);
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.TabIndex = 192;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Text = "要過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字內容 = "要過帳";
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.讀寫鎖住 = false;
+            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.音效 = true;
+            // 
+            // plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中
+            // 
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Bool = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.but_press = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Location = new System.Drawing.Point(983, 5);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Name = "plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字內容 = "備藥中";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字內容 = "備藥中";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Size = new System.Drawing.Size(175, 83);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.State = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.TabIndex = 191;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Text = "備藥中";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Texts = "備藥中";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.音效 = true;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示狀態 = false;
             // 
             // label22
             // 
@@ -29487,221 +29705,46 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中
+            // plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料
             // 
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Bool = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderRadius = 5;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.but_press = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Location = new System.Drawing.Point(983, 5);
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Name = "plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中";
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字內容 = "備藥中";
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字內容 = "備藥中";
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Size = new System.Drawing.Size(175, 83);
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.State = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.TabIndex = 191;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Text = "備藥中";
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Texts = "備藥中";
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.字型鎖住 = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.文字鎖住 = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.讀取位元反向 = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.音效 = true;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示 = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示狀態 = false;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Location = new System.Drawing.Point(1345, 68);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Size = new System.Drawing.Size(75, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.TabIndex = 192;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Text = "要過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字內容 = "要過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.音效 = true;
-            // 
-            // groupBox22
-            // 
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成);
-            this.groupBox22.Controls.Add(this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳);
-            this.groupBox22.Font = new System.Drawing.Font("新細明體", 12F);
-            this.groupBox22.Location = new System.Drawing.Point(696, 5);
-            this.groupBox22.Name = "groupBox22";
-            this.groupBox22.Size = new System.Drawing.Size(240, 142);
-            this.groupBox22.TabIndex = 193;
-            this.groupBox22.TabStop = false;
-            this.groupBox22.Text = "顯示設定";
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Location = new System.Drawing.Point(19, 30);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Size = new System.Drawing.Size(91, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.TabIndex = 193;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Text = "等待過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字內容 = "等待過帳";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Location = new System.Drawing.Point(19, 55);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Size = new System.Drawing.Size(91, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.TabIndex = 194;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Text = "過帳完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字內容 = "過帳完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Location = new System.Drawing.Point(19, 81);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Size = new System.Drawing.Size(75, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.TabIndex = 195;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Text = "備藥中";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字內容 = "備藥中";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Location = new System.Drawing.Point(19, 107);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Size = new System.Drawing.Size(91, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.TabIndex = 196;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Text = "撥發完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字內容 = "撥發完成";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Location = new System.Drawing.Point(121, 29);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Size = new System.Drawing.Size(91, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.TabIndex = 197;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Text = "庫存不足";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字內容 = "庫存不足";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Location = new System.Drawing.Point(121, 55);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Size = new System.Drawing.Size(107, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.TabIndex = 198;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Text = "未建立儲位";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字內容 = "未建立儲位";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.音效 = true;
-            // 
-            // plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品
-            // 
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.AutoSize = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Bool = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Checked = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.ForeColor = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Location = new System.Drawing.Point(121, 81);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Name = "plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Size = new System.Drawing.Size(107, 20);
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.TabIndex = 199;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Text = "找無此藥品";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.UseVisualStyleBackColor = true;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字內容 = "找無此藥品";
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.文字顏色 = System.Drawing.Color.Black;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.讀寫鎖住 = false;
-            this.plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.音效 = true;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Bool = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.but_press = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Location = new System.Drawing.Point(1426, 6);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Name = "plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.OFF_文字內容 = "列印選擇資料";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.ON_文字內容 = "列印選擇資料";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Size = new System.Drawing.Size(175, 83);
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.State = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.TabIndex = 194;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Text = "列印選擇資料";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.Texts = "列印選擇資料";
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.音效 = true;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.顯示 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -29888,6 +29931,8 @@
             this.rJ_GroupBox27.ResumeLayout(false);
             this.panel65.ResumeLayout(false);
             this.panel65.PerformLayout();
+            this.groupBox22.ResumeLayout(false);
+            this.groupBox22.PerformLayout();
             this.panel_藥庫_撥補_藥局.ResumeLayout(false);
             this.panel_藥庫_撥補.ResumeLayout(false);
             this.藥庫_今日訂單.ResumeLayout(false);
@@ -30100,8 +30145,6 @@
             this.tabPage35.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.groupBox22.ResumeLayout(false);
-            this.groupBox22.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -31253,6 +31296,7 @@
         private MyUI.PLC_CheckBox plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成;
         private MyUI.PLC_CheckBox plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位;
         private MyUI.PLC_CheckBox plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料;
     }
 }
 

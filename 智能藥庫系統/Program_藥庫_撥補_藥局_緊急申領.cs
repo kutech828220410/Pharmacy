@@ -15,11 +15,26 @@ using Basic;
 using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 using H_Pannel_lib;
-
+using MyOffice;
+using MyPrinterlib;
+using NPOI;
 namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
+        public class class_emg_apply
+        {
+            [JsonPropertyName("cost_center")]
+            public string 成本中心 { get; set; }
+            [JsonPropertyName("code")]
+            public string 藥品碼 { get; set; }
+            [JsonPropertyName("name")]
+            public string 藥品名稱 { get; set; }
+            [JsonPropertyName("value")]
+            public string 撥出量 { get; set; }
+
+
+        }
         enum enum_藥庫_撥補_藥局_緊急申領_狀態
         {
             等待過帳,
@@ -44,7 +59,7 @@ namespace 智能藥庫系統
             狀態,
             備註,
         }
-
+        private PrinterClass printerClass_緊急申領 = new PrinterClass();
         private void sub_Program_藥庫_撥補_藥局_緊急申領_Init()
         {
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Init();
@@ -55,6 +70,11 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中_MouseDownEvent;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料_MouseDownEvent;
+
+            this.printerClass_緊急申領.Init();
+            this.printerClass_緊急申領.PrintPageEvent += PrinterClass_緊急申領_PrintPageEvent;
+
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_藥局_緊急申領);
         }
 
@@ -349,6 +369,38 @@ namespace 智能藥庫系統
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
+            }
+        }
+        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<class_emg_apply> class_Emg_Applies = new List<class_emg_apply>();
+            List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Get_All_Checked_RowsValues();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                class_emg_apply class_Emg_Apply = new class_emg_apply();
+                class_Emg_Apply.成本中心 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥局代碼].ObjectToString();
+                class_Emg_Apply.藥品碼 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString();
+                class_Emg_Apply.藥品名稱 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱].ObjectToString();
+                class_Emg_Apply.撥出量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString();
+                class_Emg_Applies.Add(class_Emg_Apply);
+            }
+
+            string json_in = class_Emg_Applies.JsonSerializationt(true);
+            string json = Basic.Net.WEBApiPostJson($"{dBConfigClass.Emg_apply_ApiURL}", json_in);
+            List<SheetClass> sheetClass = json.JsonDeserializet<List<SheetClass>>();
+            if (printerClass_緊急申領.ShowPreviewDialog(sheetClass, MyPrinterlib.PrinterClass.PageSize.A4) == DialogResult.OK)
+            {
+
+            }
+
+        }
+        private void PrinterClass_緊急申領_PrintPageEvent(object sender, Graphics g, int width, int height, int page_num)
+        {
+            Rectangle rectangle = new Rectangle(0, 0, width, height);
+            using (Bitmap bitmap = printerClass_緊急申領.GetSheetClass(page_num).GetBitmap(width, height, 0.75, H_Alignment.Center, V_Alignment.Top, 0, 50))
+            {
+                rectangle.Height = bitmap.Height;
+                g.DrawImage(bitmap, rectangle);
             }
         }
         #endregion

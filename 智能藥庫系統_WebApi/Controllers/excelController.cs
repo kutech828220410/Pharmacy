@@ -60,6 +60,7 @@ namespace 智慧調劑台管理系統_WebApi
                     sheetClass = loadText.JsonDeserializet<SheetClass>();
                     sheetClass.ReplaceCell(1, 2, $"{DateTime.Now.ToDateString()}");
                     sheetClasses.Add(sheetClass);
+                    NumOfRow = 0;
                 }
 
                 class_Emg_Applies_buf = (from value in class_Emg_Applies

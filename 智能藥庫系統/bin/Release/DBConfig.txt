@@ -43,5 +43,6 @@
     "Port": 3306,
     "MySqlSslMode": 0,
     "TableName": ""
-  }
+  },
+  "Emg_apply_ApiURL": "https://10.18.1.146:4433/api/excel/emg_apply/"
 }

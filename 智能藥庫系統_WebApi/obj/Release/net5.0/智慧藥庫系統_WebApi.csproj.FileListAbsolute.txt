@@ -417,3 +417,8 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\ne
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OOXML.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXml4Net.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXmlFormats.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\MyOffice.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OOXML.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXml4Net.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXmlFormats.dll
