@@ -239,6 +239,10 @@ namespace 智能藥庫系統
             {
                 list_error.Add("'ID'欄位不得空白!");
             }
+            if (value[(int)enum_人員資料.密碼].ObjectToString().StringIsEmpty())
+            {
+                list_error.Add("'密碼'欄位不得空白!");
+            }
             for (int i = 0; i < list_error.Count; i++)
             {
                 str_error += $"{(i + 1).ToString("00")}. {list_error[i]}";
