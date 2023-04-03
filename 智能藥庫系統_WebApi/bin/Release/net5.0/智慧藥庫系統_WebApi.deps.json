@@ -33,6 +33,7 @@
     ".NETCoreApp,Version=v5.0": {
       "智慧藥庫系統_WebApi/1.0.0": {
         "dependencies": {
+          "IBM.Data.DB2.Core": "3.1.0.600",
           "MySql.Data": "8.0.29",
           "System.Text.Json": "6.0.0",
           "Basic": "1.0.0.0",
@@ -348,6 +349,17 @@
         },
         "compile": {
           "lib/net5.0/Google.Protobuf.dll": {}
+        }
+      },
+      "IBM.Data.DB2.Core/3.1.0.600": {
+        "runtime": {
+          "lib/netstandard2.1/IBM.Data.DB2.Core.dll": {
+            "assemblyVersion": "3.1.0.600",
+            "fileVersion": "3.1.0.600"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.1/IBM.Data.DB2.Core.dll": {}
         }
       },
       "K4os.Compression.LZ4/1.2.6": {
@@ -2287,6 +2299,13 @@
       "sha512": "sha512-fd07/ykL4O4FhqrZIELm5lmiyOHfdPg9+o+hWr6tcfRdS7tHXnImg/2wtogLzlW2eEmr0J7j6ZrZvaWOLiJbxQ==",
       "path": "google.protobuf/3.19.4",
       "hashPath": "google.protobuf.3.19.4.nupkg.sha512"
+    },
+    "IBM.Data.DB2.Core/3.1.0.600": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xD8Cur1S3np5RbiDax+SYypOMEZGnI+9FXI/c4uSEQU3grOt9PlecG6voemXfBaAGSxZNtbTzYmA/dDmUelZMA==",
+      "path": "ibm.data.db2.core/3.1.0.600",
+      "hashPath": "ibm.data.db2.core.3.1.0.600.nupkg.sha512"
     },
     "K4os.Compression.LZ4/1.2.6": {
       "type": "package",
