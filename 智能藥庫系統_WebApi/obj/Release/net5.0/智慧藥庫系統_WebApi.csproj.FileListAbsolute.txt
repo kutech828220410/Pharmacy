@@ -412,3 +412,8 @@ C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\clidriver\msg\en_US\db2supp.mo
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\clidriver\properties\version\ibm.com_IBM_Data_Server_Driver_for_ODBC_and_CLI-11.5.0.swidtag
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統_WebApi\bin\Release\net5.0\IBM.Data.DB2.Core.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\MyOffice.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OOXML.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXml4Net.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統_WebApi\bin\Release\net5.0\NPOI.OpenXmlFormats.dll
