@@ -44,11 +44,7 @@ namespace 智能藥庫系統_VM_Server_
             訂購時間,
             狀態,
         }
-        public enum enum_讀取每日訂單
-        {
-            藥品碼,
-            請購數量,
-        }
+
         private API_OrderClass API_OrderClass_每日訂單_訂購數量 = new API_OrderClass();
         [Serializable]
         public class API_OrderClass
@@ -173,12 +169,10 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_藥庫_每日訂單_藥品碼搜尋.MouseDownEvent += PlC_RJ_Button__藥庫_每日訂單_藥品碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_藥品名稱搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_藥品名稱搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_送出線上訂單.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單);
         }
-
-    
 
         private bool flag_藥庫_每日訂單 = false;
         private void sub_Program_藥庫_每日訂單()
@@ -462,14 +456,6 @@ namespace 智能藥庫系統_VM_Server_
             DateTime dateTime_basic_start = DateTime.Now;
             DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
             bool isholiday = false;
-            if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
-            {
-                if (Basic.TypeConvert.IsHolidays(dateTime_basic_start.AddDays(-1)))
-                {
-                    dateTime_basic_start = dateTime_basic_start.AddDays(-1);
-                }                    
-                
-            }
             while (true)
             {
                 if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
@@ -499,7 +485,7 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_basic_end = dateTime_basic_end.AddDays(1);
             }
 
-            list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);  
+            list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;
         }
@@ -957,69 +943,6 @@ namespace 智能藥庫系統_VM_Server_
             MyMessageBox.ShowDialog("清除完成!");
             API_OrderClass_每日訂單_訂購數量.清除全部();
             this.Function_藥庫_每日訂單_更新藥品資料表單();
-        }
-        private void PlC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單_MouseDownEvent(MouseEventArgs mevent)
-        {
-            this.Invoke(new Action(delegate
-            {
-                if (this.openFileDialog.ShowDialog() != DialogResult.OK) return;
-            }));
-            MyTimer myTimer = new MyTimer();
-            myTimer.StartTickTime(50000);
-            string serverfilepath = @"C:\MIS\DG\";
-            string serverfilename = "itinvd0304.txt";
-            string localfilepath = @"C:\Users\hsonds01\Desktop\";
-            string localfilename = "itinvd0304.txt";
-            string username = "hsonds01";
-            string password = "KuT1Ch@75511";
-            DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog.FileName);
-            DataTable datatable_buf = dataTable.ReorderTable(new enum_讀取每日訂單());
-
-            if (datatable_buf == null)
-            {
-                MyMessageBox.ShowDialog("匯入檔案,資料錯誤!");
-                this.Cursor = Cursors.Default;
-                return;
-            }
-            List<object[]> list_LoadValue = datatable_buf.DataTableToRowList();
-            API_OrderClass aPI_OrderClass_今日訂購數量 = new API_OrderClass();
-
-            for (int i = 0; i < list_LoadValue.Count; i++)
-            {
-                string 藥品碼 = list_LoadValue[i][(int)enum_讀取每日訂單.藥品碼].ObjectToString();
-                if (藥品碼.Length < 5) 藥品碼 = "0" + 藥品碼;
-                if (藥品碼.Length < 5) 藥品碼 = "0" + 藥品碼;
-                if (藥品碼.Length < 5) 藥品碼 = "0" + 藥品碼;
-                string 數量 = list_LoadValue[i][(int)enum_讀取每日訂單.請購數量].ObjectToString();
-                string 訂購日期 = DateTime.Now.ToDateTimeString();
-                if (!數量.StringIsInt32()) continue;
-                if (!訂購日期.Check_Date_String()) continue;
-                aPI_OrderClass_今日訂購數量.新增數量(藥品碼, 數量.StringToInt32(), 訂購日期);
-
-            }
-            API_OrderClass aPI_OrderClass = new API_OrderClass();
-            for (int i = 0; i < aPI_OrderClass_今日訂購數量.Result.Count; i++)
-            {
-                string 藥品碼 = aPI_OrderClass_今日訂購數量.Result[i].code;
-                string 數量 = aPI_OrderClass_今日訂購數量.Result[i].value;
-                aPI_OrderClass.新增數量(藥品碼, 數量.StringToInt32());
-            }
-
-            List<string> list_texts = new List<string>();
-            for (int i = 0; i < aPI_OrderClass.Result.Count; i++)
-            {
-                string 藥品碼 = aPI_OrderClass.Result[i].code;
-                string 數量 = aPI_OrderClass.Result[i].value;
-                string 訂購日期 = DateTime.Now.ToDateString();
-                string text = this.Function_藥庫_每日訂單_已訂購字串轉換(藥品碼, 數量, 訂購日期);
-                if (數量.StringToInt32() <= 0) continue;
-                list_texts.Add(text);
-            }
-            bool flag = Basic.MyFileStream.SaveFile($"{localfilepath}{localfilename}", list_texts);
-            Console.WriteLine($"存至本地 {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
-            flag = Basic.MyFileStream.SaveFile($"{serverfilepath}{serverfilename}", list_texts);
-            Console.WriteLine($"上傳檔案至Fileserver {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
-            MyMessageBox.ShowDialog($"訂單送出完成!共{aPI_OrderClass.Result.Count}筆");
         }
         private void PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(MouseEventArgs mevent)
         {

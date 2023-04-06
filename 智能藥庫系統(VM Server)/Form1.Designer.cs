@@ -205,7 +205,6 @@
             this.過帳明細 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_過帳明細 = new MyUI.PLC_ScreenPage();
             this.藥品過消耗帳 = new System.Windows.Forms.TabPage();
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_藥品碼篩選 = new MyUI.PLC_RJ_Button();
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選 = new MyUI.RJ_TextBox();
@@ -461,7 +460,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.藥品資料.SuspendLayout();
@@ -4220,7 +4219,6 @@
             // 每日訂單
             // 
             this.每日訂單.BackColor = System.Drawing.SystemColors.Window;
-            this.每日訂單.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單);
             this.每日訂單.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_選取藥品補足基準量);
             this.每日訂單.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_清除選取藥品訂單);
             this.每日訂單.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_送出線上訂單);
@@ -4901,47 +4899,6 @@
             this.藥品過消耗帳.Size = new System.Drawing.Size(1668, 733);
             this.藥品過消耗帳.TabIndex = 4;
             this.藥品過消耗帳.Text = "藥品過消耗帳";
-            // 
-            // plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成
-            // 
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.AutoResetState = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Bool = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderRadius = 5;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.but_press = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Location = new System.Drawing.Point(1039, 556);
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Name = "plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成";
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字內容 = "異常過帳\n設定[過帳完成]";
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字內容 = "異常過帳\n設定[過帳完成]";
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Size = new System.Drawing.Size(201, 101);
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.State = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.TabIndex = 234;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Text = "異常過帳\n設定[過帳完成]";
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Texts = "異常過帳\n設定[過帳完成]";
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.字型鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.文字鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.讀取位元反向 = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.音效 = true;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.顯示 = false;
-            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.顯示狀態 = false;
             // 
             // plC_RJ_Button_藥品過消耗帳_顯示異常過帳
             // 
@@ -11312,53 +11269,53 @@
             // openFileDialog_LoadExcel
             // 
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
-            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
+            this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
             // saveFileDialog_SaveExcel
             // 
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
-            this.saveFileDialog_SaveExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
+            this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
-            // plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單
+            // plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成
             // 
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Bool = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.BorderRadius = 5;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.but_press = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Location = new System.Drawing.Point(1276, 626);
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Name = "plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單";
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_文字內容 = "讀取送出\n[線上訂單]";
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.ON_文字內容 = "讀取送出\n[線上訂單]";
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Size = new System.Drawing.Size(168, 81);
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.State = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.TabIndex = 196;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Text = "讀取送出\n[線上訂單]";
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Texts = "讀取送出\n[線上訂單]";
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.字型鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.文字鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.讀取位元反向 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.音效 = true;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.顯示 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.顯示狀態 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.AutoResetState = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Bool = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.but_press = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Location = new System.Drawing.Point(1039, 556);
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Name = "plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成";
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字內容 = "異常過帳\n設定[過帳完成]";
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字內容 = "異常過帳\n設定[過帳完成]";
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Size = new System.Drawing.Size(201, 101);
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.State = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.TabIndex = 234;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Text = "異常過帳\n設定[過帳完成]";
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.Texts = "異常過帳\n設定[過帳完成]";
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.字型鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.文字鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.讀取位元反向 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.音效 = true;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.顯示 = false;
+            this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -11919,7 +11876,6 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_顯示全部;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥品過消耗帳_顯示異常過帳;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成;
-        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單;
     }
 }
 

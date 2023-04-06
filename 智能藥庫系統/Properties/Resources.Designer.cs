@@ -63,6 +63,16 @@ namespace 智能藥庫系統.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap _1200px_Document_print_preview_svg {
+            get {
+                object obj = ResourceManager.GetObject("1200px-Document-print-preview.svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap _13_512 {
             get {
                 object obj = ResourceManager.GetObject("13-512", resourceCulture);
@@ -193,6 +203,16 @@ namespace 智能藥庫系統.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap export_to_csv_icon_11 {
+            get {
+                object obj = ResourceManager.GetObject("export-to-csv-icon-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Files_and_Folders_file_export_arrow_512 {
             get {
                 object obj = ResourceManager.GetObject("Files_and_Folders_file_export_arrow-512", resourceCulture);
@@ -226,6 +246,16 @@ namespace 智能藥庫系統.Properties {
         internal static System.Drawing.Bitmap HOME {
             get {
                 object obj = ResourceManager.GetObject("HOME", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_19 {
+            get {
+                object obj = ResourceManager.GetObject("icon-19", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
