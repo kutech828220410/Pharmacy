@@ -71,8 +71,6 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料_MouseDownEvent;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_匯出選擇資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_匯出選擇資料_MouseDownEvent;
-
 
             this.printerClass_緊急申領.Init();
             this.printerClass_緊急申領.PrintPageEvent += PrinterClass_緊急申領_PrintPageEvent;
@@ -80,7 +78,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_藥局_緊急申領);
         }
 
- 
+    
 
         private void sub_Program_藥庫_撥補_藥局_緊急申領()
         {
@@ -394,45 +392,7 @@ namespace 智能藥庫系統
             {
 
             }
-            for (int i = 0; i < list_value.Count; i++)
-            {
-                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.備藥中.GetEnumName();
-            }
-            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(list_value, false);
-            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.ReplaceExtra(list_value, true);
 
-        }
-        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_匯出選擇資料_MouseDownEvent(MouseEventArgs mevent)
-        {
-            List<class_emg_apply> class_Emg_Applies = new List<class_emg_apply>();
-            List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Get_All_Checked_RowsValues();
-            if (list_value.Count == 0)
-            {
-                MyMessageBox.ShowDialog("未選取有效資料!");
-                return;
-            }
-            DialogResult dialogResult = DialogResult.None;
-            this.Invoke(new Action(delegate { dialogResult = this.saveFileDialog_SaveExcel.ShowDialog(); }));
-            if (dialogResult == DialogResult.OK)
-            {
-                for (int i = 0; i < list_value.Count; i++)
-                {
-                    class_emg_apply class_Emg_Apply = new class_emg_apply();
-                    class_Emg_Apply.成本中心 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥局代碼].ObjectToString();
-                    class_Emg_Apply.藥品碼 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString();
-                    class_Emg_Apply.藥品名稱 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱].ObjectToString();
-                    class_Emg_Apply.撥出量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString();
-                    class_Emg_Applies.Add(class_Emg_Apply);
-
-                                  
-                }
-                string json_in = class_Emg_Applies.JsonSerializationt(true);
-                string json = Basic.Net.WEBApiPostJson($"{dBConfigClass.Emg_apply_ApiURL}", json_in);
-                List<SheetClass> sheetClass = json.JsonDeserializet<List<SheetClass>>();
-
-                sheetClass.NPOI_SaveFile(this.saveFileDialog_SaveExcel.FileName);
-                MyMessageBox.ShowDialog("匯出完成!");
-            }
         }
         private void PrinterClass_緊急申領_PrintPageEvent(object sender, Graphics g, int width, int height, int page_num)
         {
