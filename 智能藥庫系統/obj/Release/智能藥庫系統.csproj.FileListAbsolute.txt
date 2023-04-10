@@ -147,4 +147,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\NPOI.Open
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\MyPrinterlib.dll
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\office.dll
-C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_列印及匯出.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\MyPrinterlib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\office.dll

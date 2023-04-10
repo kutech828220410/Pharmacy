@@ -204,12 +204,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dialog\Dialog_列印及匯出.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Dialog\Dialog_列印及匯出.Designer.cs">
-      <DependentUpon>Dialog_列印及匯出.cs</DependentUpon>
-    </Compile>
     <Compile Include="Dialog\Dialog_輸入批號.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,7 +281,9 @@
     <Compile Include="Program_藥庫_入庫.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program_藥庫_撥補_藥局_緊急申領.cs" />
+    <Compile Include="Program_藥庫_撥補_藥局_緊急申領.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_藥庫_撥補_藥局_自動撥補.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,9 +348,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Dialog\Dialog_列印及匯出.resx">
-      <DependentUpon>Dialog_列印及匯出.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_輸入備註.resx">
       <DependentUpon>Dialog_輸入備註.cs</DependentUpon>
     </EmbeddedResource>
@@ -484,9 +477,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
-    <None Include="Resources\icon-19.png" />
-    <None Include="Resources\export-to-csv-icon-11.jpg" />
-    <None Include="Resources\1200px-Document-print-preview.svg.png" />
     <None Include="Resources\Red_alarm.png" />
     <None Include="Resources\Blue_alarm.png" />
     <None Include="Resources\Green_alarm.png" />

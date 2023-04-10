@@ -20,45 +20,45 @@ using MyPrinterlib;
 using NPOI;
 namespace 智能藥庫系統
 {
-    public class class_emg_apply
-    {
-        [JsonPropertyName("cost_center")]
-        public string 成本中心 { get; set; }
-        [JsonPropertyName("code")]
-        public string 藥品碼 { get; set; }
-        [JsonPropertyName("name")]
-        public string 藥品名稱 { get; set; }
-        [JsonPropertyName("value")]
-        public string 撥出量 { get; set; }
-    }
-    enum enum_藥庫_撥補_藥局_緊急申領_狀態
-    {
-        等待過帳,
-        庫存不足,
-        未建立儲位,
-        過帳完成,
-        找無此藥品,
-        備藥中,
-        撥發完成,
-    }
-    enum enum_藥庫_撥補_藥局_緊急申領
-    {
-        GUID,
-        藥局代碼,
-        藥品碼,
-        藥品名稱,
-        庫存,
-        異動量,
-        結存量,
-        產出時間,
-        過帳時間,
-        狀態,
-        備註,
-    }
     public partial class Form1 : Form
     {
-      
-       
+        public class class_emg_apply
+        {
+            [JsonPropertyName("cost_center")]
+            public string 成本中心 { get; set; }
+            [JsonPropertyName("code")]
+            public string 藥品碼 { get; set; }
+            [JsonPropertyName("name")]
+            public string 藥品名稱 { get; set; }
+            [JsonPropertyName("value")]
+            public string 撥出量 { get; set; }
+
+
+        }
+        enum enum_藥庫_撥補_藥局_緊急申領_狀態
+        {
+            等待過帳,
+            庫存不足,
+            未建立儲位,
+            過帳完成,
+            找無此藥品,
+            備藥中,
+            撥發完成,
+        }
+        enum enum_藥庫_撥補_藥局_緊急申領
+        {
+            GUID,
+            藥局代碼,
+            藥品碼,
+            藥品名稱,
+            庫存,
+            異動量,
+            結存量,
+            產出時間,
+            過帳時間,
+            狀態,
+            備註,
+        }
         private PrinterClass printerClass_緊急申領 = new PrinterClass();
         private void sub_Program_藥庫_撥補_藥局_緊急申領_Init()
         {
@@ -70,8 +70,7 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中_MouseDownEvent;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印及匯出資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印及匯出資料_MouseDownEvent;
-
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料_MouseDownEvent;
 
             this.printerClass_緊急申領.Init();
             this.printerClass_緊急申領.PrintPageEvent += PrinterClass_緊急申領_PrintPageEvent;
@@ -372,18 +371,28 @@ namespace 智能藥庫系統
                 }
             }
         }
-      
-        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印及匯出資料_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印選擇資料_MouseDownEvent(MouseEventArgs mevent)
         {
             List<class_emg_apply> class_Emg_Applies = new List<class_emg_apply>();
             List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Get_All_Checked_RowsValues();
-            if (list_value.Count == 0)
+            for (int i = 0; i < list_value.Count; i++)
             {
-                MyMessageBox.ShowDialog("未選取有效資料!");
-                return;
+                class_emg_apply class_Emg_Apply = new class_emg_apply();
+                class_Emg_Apply.成本中心 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥局代碼].ObjectToString();
+                class_Emg_Apply.藥品碼 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString();
+                class_Emg_Apply.藥品名稱 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱].ObjectToString();
+                class_Emg_Apply.撥出量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString();
+                class_Emg_Applies.Add(class_Emg_Apply);
             }
-            Dialog_列印及匯出 dialog_列印及匯出 = new Dialog_列印及匯出(this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領, dBConfigClass.Emg_apply_ApiURL);
-            dialog_列印及匯出.ShowDialog();
+
+            string json_in = class_Emg_Applies.JsonSerializationt(true);
+            string json = Basic.Net.WEBApiPostJson($"{dBConfigClass.Emg_apply_ApiURL}", json_in);
+            List<SheetClass> sheetClass = json.JsonDeserializet<List<SheetClass>>();
+            if (printerClass_緊急申領.ShowPreviewDialog(sheetClass, MyPrinterlib.PrinterClass.PageSize.A4) == DialogResult.OK)
+            {
+
+            }
+
         }
         private void PrinterClass_緊急申領_PrintPageEvent(object sender, Graphics g, int width, int height, int page_num)
         {
