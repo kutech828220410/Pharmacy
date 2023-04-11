@@ -71,7 +71,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_藥品資料更新一次 == 65500)
             {
                 this.MyTimer_藥品資料更新一次_結束延遲.TickStop();
-                this.MyTimer_藥品資料更新一次_結束延遲.StartTickTime(60*60*24);
+                this.MyTimer_藥品資料更新一次_結束延遲.StartTickTime(60*60*24 * 1000);
                 PLC_Device_藥品資料更新一次.Bool = false;
                 PLC_Device_藥品資料更新一次_OK.Bool = false;
                 cnt_Program_藥品資料更新一次 = 65535;
