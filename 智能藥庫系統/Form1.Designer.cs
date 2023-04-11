@@ -15581,6 +15581,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.音效 = true;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示 = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示狀態 = false;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.顯示讀取位置 = "M8001";
             // 
             // label22
             // 
@@ -24549,16 +24550,16 @@
             this.rJ_GroupBox26.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox26.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox26.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox26.ContentsPanel.Size = new System.Drawing.Size(970, 742);
+            this.rJ_GroupBox26.ContentsPanel.Size = new System.Drawing.Size(891, 742);
             this.rJ_GroupBox26.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox26.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rJ_GroupBox26.Location = new System.Drawing.Point(652, 0);
+            this.rJ_GroupBox26.Location = new System.Drawing.Point(731, 0);
             this.rJ_GroupBox26.Name = "rJ_GroupBox26";
             this.rJ_GroupBox26.PannelBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox26.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox26.PannelBorderRadius = 5;
             this.rJ_GroupBox26.PannelBorderSize = 2;
-            this.rJ_GroupBox26.Size = new System.Drawing.Size(970, 779);
+            this.rJ_GroupBox26.Size = new System.Drawing.Size(891, 779);
             this.rJ_GroupBox26.TabIndex = 4;
             this.rJ_GroupBox26.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox26.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -24612,7 +24613,7 @@
             this.sqL_DataGridView_藥局_緊急申領.RowsHeight = 50;
             this.sqL_DataGridView_藥局_緊急申領.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_藥局_緊急申領.Server = "localhost";
-            this.sqL_DataGridView_藥局_緊急申領.Size = new System.Drawing.Size(960, 732);
+            this.sqL_DataGridView_藥局_緊急申領.Size = new System.Drawing.Size(881, 732);
             this.sqL_DataGridView_藥局_緊急申領.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_藥局_緊急申領.TabIndex = 136;
             this.sqL_DataGridView_藥局_緊急申領.TableName = "emg_application_sd0_opd";
@@ -24638,9 +24639,9 @@
             this.panel63.Controls.Add(this.rJ_Lable77);
             this.panel63.Controls.Add(this.plC_RJ_Button_藥局_緊急申領_顯示資料);
             this.panel63.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel63.Location = new System.Drawing.Point(652, 779);
+            this.panel63.Location = new System.Drawing.Point(731, 779);
             this.panel63.Name = "panel63";
-            this.panel63.Size = new System.Drawing.Size(970, 130);
+            this.panel63.Size = new System.Drawing.Size(891, 130);
             this.panel63.TabIndex = 3;
             // 
             // plC_RJ_Button_藥局_緊急申領_取消申領
@@ -24657,7 +24658,7 @@
             this.plC_RJ_Button_藥局_緊急申領_取消申領.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
             this.plC_RJ_Button_藥局_緊急申領_取消申領.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_緊急申領_取消申領.Location = new System.Drawing.Point(820, 6);
+            this.plC_RJ_Button_藥局_緊急申領_取消申領.Location = new System.Drawing.Point(741, 6);
             this.plC_RJ_Button_藥局_緊急申領_取消申領.Name = "plC_RJ_Button_藥局_緊急申領_取消申領";
             this.plC_RJ_Button_藥局_緊急申領_取消申領.OFF_文字內容 = "取消申領";
             this.plC_RJ_Button_藥局_緊急申領_取消申領.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
@@ -24800,7 +24801,7 @@
             this.rJ_GroupBox25.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox25.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox25.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.rJ_GroupBox25.ContentsPanel.Size = new System.Drawing.Size(652, 872);
+            this.rJ_GroupBox25.ContentsPanel.Size = new System.Drawing.Size(731, 872);
             this.rJ_GroupBox25.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox25.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox25.Location = new System.Drawing.Point(0, 0);
@@ -24809,7 +24810,7 @@
             this.rJ_GroupBox25.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox25.PannelBorderRadius = 5;
             this.rJ_GroupBox25.PannelBorderSize = 2;
-            this.rJ_GroupBox25.Size = new System.Drawing.Size(652, 909);
+            this.rJ_GroupBox25.Size = new System.Drawing.Size(731, 909);
             this.rJ_GroupBox25.TabIndex = 1;
             this.rJ_GroupBox25.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_GroupBox25.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
@@ -24853,7 +24854,7 @@
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.RowsHeight = 60;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.Server = "localhost";
-            this.sqL_DataGridView_藥局_緊急申領_藥品資料.Size = new System.Drawing.Size(642, 603);
+            this.sqL_DataGridView_藥局_緊急申領_藥品資料.Size = new System.Drawing.Size(721, 603);
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.TabIndex = 151;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.TableName = "medicine_page_sd0_opd";
@@ -24884,7 +24885,7 @@
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Location = new System.Drawing.Point(464, 613);
+            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Location = new System.Drawing.Point(543, 613);
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Name = "plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領";
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_文字內容 = "確認申領";
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);

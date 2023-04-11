@@ -66,6 +66,8 @@ namespace 智能藥庫系統
             if (!this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_IsTableCreat()) this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_CreateTable();
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.DataGridRefreshEvent += SqL_DataGridView_藥庫_撥補_藥局_緊急申領_DataGridRefreshEvent;
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_撥補_藥局_緊急申領_DataGridRowsChangeRefEvent;
+            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.RowDoubleClickEvent += SqL_DataGridView_藥庫_撥補_藥局_緊急申領_RowDoubleClickEvent;
+
 
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發_MouseDownEvent;
@@ -79,7 +81,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_藥局_緊急申領);
         }
 
-    
+   
 
         private void sub_Program_藥庫_撥補_藥局_緊急申領()
         {
@@ -93,6 +95,18 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent(MouseEventArgs mevent)
         {
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥庫_撥補_藥局_緊急申領.產出時間, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_起始, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_結束, true);
+        }
+        private void SqL_DataGridView_藥庫_撥補_藥局_緊急申領_RowDoubleClickEvent(object[] RowValue)
+        {
+            if (RowValue[(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString() != enum_藥庫_撥補_藥局_緊急申領_狀態.等待過帳.GetEnumName()) return;
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("請輸入申領數量");
+            if (dialog_NumPannel.ShowDialog() != DialogResult.Yes) return;
+            if (dialog_NumPannel.Value <= 0) return;
+            RowValue[(int)enum_藥庫_撥補_藥局_緊急申領.異動量] = dialog_NumPannel.Value;
+
+            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(RowValue, false);
+            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.ReplaceExtra(RowValue, true);
+
         }
         private void SqL_DataGridView_藥庫_撥補_藥局_緊急申領_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
