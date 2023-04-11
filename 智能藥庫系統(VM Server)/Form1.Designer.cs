@@ -11312,12 +11312,12 @@
             // openFileDialog_LoadExcel
             // 
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
-            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
+            this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
             // saveFileDialog_SaveExcel
             // 
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
-            this.saveFileDialog_SaveExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
+            this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
             // plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單
             // 
@@ -11333,7 +11333,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Location = new System.Drawing.Point(1276, 626);
+            this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Location = new System.Drawing.Point(1308, 626);
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.Name = "plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單";
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_文字內容 = "讀取送出\n[線上訂單]";
             this.plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);

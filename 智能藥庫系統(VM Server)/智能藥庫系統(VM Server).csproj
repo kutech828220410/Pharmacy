@@ -111,7 +111,8 @@
     <Reference Include="MVSDKUI">
       <HintPath>..\0.DLL\MVSDKUI.dll</HintPath>
     </Reference>
-    <Reference Include="MyOffice">
+    <Reference Include="MyOffice, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\MyOffice.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
@@ -129,9 +130,6 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\0.DLL\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="NPOI">
-      <HintPath>..\0.DLL\NPOI.dll</HintPath>
     </Reference>
     <Reference Include="PortControlUI">
       <HintPath>..\0.DLL\PortControlUI.dll</HintPath>

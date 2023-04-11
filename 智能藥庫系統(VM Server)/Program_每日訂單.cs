@@ -18,7 +18,7 @@ using H_Pannel_lib;
 namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
-    {   
+    {
         public enum enum_藥庫_每日訂單 : int
         {
             GUID,
@@ -178,12 +178,12 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單);
         }
 
-    
+
 
         private bool flag_藥庫_每日訂單 = false;
         private void sub_Program_藥庫_每日訂單()
         {
-            if (this.plC_ScreenPage_Main.PageText == "每日訂單" )
+            if (this.plC_ScreenPage_Main.PageText == "每日訂單")
             {
                 if (!this.flag_藥庫_每日訂單)
                 {
@@ -251,9 +251,9 @@ namespace 智能藥庫系統_VM_Server_
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.狀態, enum_過帳狀態.已產生排程.GetEnumName());
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.檔名, "每日訂單送出");
-                if(list_過帳狀態.Count > 0)
+                if (list_過帳狀態.Count > 0)
                 {
-                    if(!Basic.TypeConvert.IsHolidays(DateTime.Now))
+                    if (!Basic.TypeConvert.IsHolidays(DateTime.Now))
                     {
                         if (Task_檢查每日訂單 == null)
                         {
@@ -268,12 +268,12 @@ namespace 智能藥庫系統_VM_Server_
                             Task_檢查每日訂單.Start();
                         }
                     }
-               
+
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                     this.sqL_DataGridView_過帳狀態列表.SQL_ReplaceExtra(list_過帳狀態[0], false);
                 }
-            
+
 
                 cnt++;
             }
@@ -363,7 +363,7 @@ namespace 智能藥庫系統_VM_Server_
                             Task_檢查每日訂單_補足基準量.Start();
                         }
                     }
-                 
+
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                     this.sqL_DataGridView_過帳狀態列表.SQL_ReplaceExtra(list_過帳狀態[0], false);
@@ -482,7 +482,7 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-           
+
             if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
@@ -502,7 +502,7 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_basic_end = dateTime_basic_end.AddDays(1);
             }
 
-            list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);  
+            list_value = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;
         }
@@ -558,7 +558,7 @@ namespace 智能藥庫系統_VM_Server_
                 dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-          
+
             if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
@@ -1036,7 +1036,7 @@ namespace 智能藥庫系統_VM_Server_
             string password = "KuT1Ch@75511";
 
             API_OrderClass aPI_OrderClass_今日訂購數量 = Function_藥庫_每日訂單_取得今日訂購數量();
-            
+
             API_OrderClass aPI_OrderClass = new API_OrderClass();
             for (int i = 0; i < aPI_OrderClass_今日訂購數量.Result.Count; i++)
             {

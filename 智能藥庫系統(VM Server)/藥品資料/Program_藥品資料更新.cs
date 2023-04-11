@@ -71,7 +71,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_藥品資料更新一次 == 65500)
             {
                 this.MyTimer_藥品資料更新一次_結束延遲.TickStop();
-                this.MyTimer_藥品資料更新一次_結束延遲.StartTickTime(60*60*24 * 1000);
+                this.MyTimer_藥品資料更新一次_結束延遲.StartTickTime(60 * 60 * 24 * 1000);
                 PLC_Device_藥品資料更新一次.Bool = false;
                 PLC_Device_藥品資料更新一次_OK.Bool = false;
                 cnt_Program_藥品資料更新一次 = 65535;
@@ -91,8 +91,8 @@ namespace 智能藥庫系統_VM_Server_
             {
                 if (Task_藥品資料更新一次 == null)
                 {
-                    Task_藥品資料更新一次 = new Task(new Action(delegate 
-                    { 
+                    Task_藥品資料更新一次 = new Task(new Action(delegate
+                    {
                         plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
                         PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
                         Function_藥庫_藥品資料_檢查表格();
@@ -104,7 +104,7 @@ namespace 智能藥庫系統_VM_Server_
                 if (Task_藥品資料更新一次.Status == TaskStatus.RanToCompletion)
                 {
                     Task_藥品資料更新一次 = new Task(new Action(delegate
-                    { 
+                    {
                         plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
                         PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
                         Function_藥庫_藥品資料_檢查表格();

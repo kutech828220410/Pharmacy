@@ -91,9 +91,9 @@ namespace 智能藥庫系統_VM_Server_
 
         private void sub_Program_雲端_藥品資料()
         {
-           
+
         }
-        
+
         #region Event
         private void plC_RJ_Button_雲端_藥品資料_檢查重複藥碼_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -135,7 +135,7 @@ namespace 智能藥庫系統_VM_Server_
                 if (UDDRGNO != "")
                 {
 
-                    obj_temp.Add(UDDRGNO); 
+                    obj_temp.Add(UDDRGNO);
                     obj_temp.Add(reader["UDRPNAME"].ToString().Trim());
                     obj_temp.Add(reader["UDPRDNAM"].ToString().Trim());
                     obj_temp.Add(reader["UDCHTNAM"].ToString().Trim());
@@ -343,7 +343,7 @@ namespace 智能藥庫系統_VM_Server_
             {
 
             }
-           
+
 
         }
         private void plC_RJ_Button_雲端_藥品資料_顯示全部_MouseDownEvent(MouseEventArgs mevent)

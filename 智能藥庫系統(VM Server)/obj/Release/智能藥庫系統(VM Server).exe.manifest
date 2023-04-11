@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Basic.dll" size="181248">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Basic.dll" size="183296">
       <assemblyIdentity name="Basic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>OpWpDQQlOjIwY3Q8NjXiSZNjm8laXsEKxK73dzjicEc=</dsig:DigestValue>
+        <dsig:DigestValue>D0FKKmIWZmV4xHw7ll4cP3GBuKJfcOAWZUvV/2JsbZs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -294,14 +294,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyOffice.dll" size="38400">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MyOffice.dll" size="39424">
       <assemblyIdentity name="MyOffice" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rRcbGxXWzS0Geq6KsM4JV+Nn8HEOZL+TH+cm65+Pep8=</dsig:DigestValue>
+        <dsig:DigestValue>cBZMWtVzWnd7KHeoLD7vjg+JazeF0Bv63g0ii3dP6Ms=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -613,7 +613,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aSRI6H8bxpz70fCby6naJF635FyHyyXAL1yMMxYUXNQ=</dsig:DigestValue>
+        <dsig:DigestValue>YVHkmz6UKrU73PXopGRlg7gKCR4gSrFN6CFrpXTD0dU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
