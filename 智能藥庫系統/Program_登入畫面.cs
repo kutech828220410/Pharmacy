@@ -64,6 +64,8 @@ namespace 智能藥庫系統
         {
             plC_RJ_Button_登入畫面_登入.MouseDownEvent += PlC_RJ_Button_登入畫面_登入_MouseDownEvent;
             plC_RJ_Button_登入畫面_登出.MouseDownEvent += PlC_RJ_Button_登入畫面_登出_MouseDownEvent;
+            plC_RJ_Button_登入畫面_更換密碼.MouseDownEvent += PlC_RJ_Button_登入畫面_更換密碼_MouseDownEvent;
+
             textBox_登入畫面_帳號.KeyPress += TextBox_登入畫面_帳號_KeyPress;
             textBox_登入畫面_密碼.KeyPress += TextBox_登入畫面_密碼_KeyPress;
 
@@ -73,6 +75,9 @@ namespace 智能藥庫系統
 
 
         }
+
+  
+
         private void sub_Program_登入畫面()
         {
             PLC_Device_未登入.Bool = !PLC_Device_已登入.Bool;
@@ -324,6 +329,23 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_登入畫面_登出_MouseDownEvent(MouseEventArgs mevent)
         {
             Function_登出();
+        }
+        private void PlC_RJ_Button_登入畫面_更換密碼_MouseDownEvent(MouseEventArgs mevent)
+        {
+            if (rJ_TextBox_登入者ID.Text.StringIsEmpty()) return;
+            Dialog_更換密碼 dialog_更換密碼 = new Dialog_更換密碼();
+            if (dialog_更換密碼.ShowDialog() != DialogResult.Yes) return;
+            List<object[]> list_value = this.sqL_DataGridView_人員資料.SQL_GetRows((int)enum_人員資料.ID, 登入者ID, false);
+            if (list_value.Count == 0) return;
+
+            list_value[0][(int)enum_人員資料.密碼] = dialog_更換密碼.Value;
+
+            this.sqL_DataGridView_人員資料.SQL_ReplaceExtra(list_value[0], false);
+
+            MyMessageBox.ShowDialog("密碼修改成功!請重新登入‧");
+
+            this.Function_登出();
+
         }
         #endregion
     }

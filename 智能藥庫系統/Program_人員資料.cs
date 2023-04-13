@@ -329,8 +329,17 @@ namespace 智能藥庫系統
                 DataTable datatable = new DataTable();
                 datatable = sqL_DataGridView_人員資料.GetDataTable();
                 datatable = datatable.ReorderTable(new enum_人員資料_匯出());
-                CSVHelper.SaveFile(datatable, saveFileDialog_SaveExcel.FileName);
-                MyMessageBox.ShowDialog("匯出完成!");
+                string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                if (Extension == ".txt")
+                {
+                    CSVHelper.SaveFile(datatable, this.saveFileDialog_SaveExcel.FileName);
+                    MyMessageBox.ShowDialog("匯出完成!");
+                }
+                else if (Extension == ".xls")
+                {
+                    MyOffice.ExcelClass.NPOI_SaveFile(datatable, this.saveFileDialog_SaveExcel.FileName);
+                    MyMessageBox.ShowDialog("匯出完成!");
+                }
             }
         }
         private void Function_人員資料_匯入()
@@ -339,7 +348,22 @@ namespace 智能藥庫系統
             {
                 this.Cursor = Cursors.WaitCursor;
                 DataTable dataTable = new DataTable();
-                CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
+                string Extension = System.IO.Path.GetExtension(this.openFileDialog_LoadExcel.FileName);
+
+                if (Extension == ".txt")
+                {
+                    CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
+                }
+                else if (Extension == ".xls")
+                {
+                    dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
+                }
+                if (dataTable == null)
+                {
+                    MyMessageBox.ShowDialog("匯入失敗,請檢查是否檔案開啟中!");
+                    this.Cursor = Cursors.Default;
+                    return;
+                }
                 DataTable datatable_buf = dataTable.ReorderTable(new enum_人員資料_匯入());
                 if (datatable_buf == null)
                 {
@@ -373,6 +397,7 @@ namespace 智能藥庫系統
                     {
                         object[] value_SQL = list_SQL_Value_buf[0];
                         value_load[(int)enum_人員資料.GUID] = value_SQL[(int)enum_人員資料.GUID];
+                        value_load[(int)enum_人員資料.權限等級] = value_SQL[(int)enum_人員資料.權限等級];
                         bool flag_Equal = value_load.IsEqual(value_SQL);
                         if (!flag_Equal)
                         {
@@ -480,9 +505,9 @@ namespace 智能藥庫系統
         {
             for (int i = 0; i < this.sqL_DataGridView_人員資料.dataGridView.Rows.Count; i++)
             {
-                Color color = this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[(int)enum_人員資料.顏色].Value.ObjectToString().ToColor();
-                this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[(int)enum_人員資料.顏色].Style.BackColor = color;
-                this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[(int)enum_人員資料.顏色].Style.ForeColor = color;
+                Color color = this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[enum_人員資料.顏色.GetEnumName()].Value.ObjectToString().ToColor();
+                this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[enum_人員資料.顏色.GetEnumName()].Style.BackColor = color;
+                this.sqL_DataGridView_人員資料.dataGridView.Rows[i].Cells[enum_人員資料.顏色.GetEnumName()].Style.ForeColor = color;
             }
         }
         private void SqL_DataGridView_人員資料_RowEnterEvent(object[] RowValue)

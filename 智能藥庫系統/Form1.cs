@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.39.0")]
-[assembly: AssemblyFileVersion("1.0.39.0")]
+[assembly: AssemblyVersion("1.0.40.0")]
+[assembly: AssemblyFileVersion("1.0.40.0")]
 namespace 智能藥庫系統
 {
 
@@ -167,7 +167,7 @@ namespace 智能藥庫系統
                 Dialog_寫入效期.form = this.FindForm();
                 Dialog_輸入備註.form = this.FindForm();
                 Dialog_寫入藥品碼.form = this.FindForm();
-
+                Dialog_更換密碼.form = this.FindForm();
 
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;

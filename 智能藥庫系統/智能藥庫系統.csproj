@@ -231,6 +231,12 @@
     <Compile Include="Dialog\Dialog_輸入備註.Designer.cs">
       <DependentUpon>Dialog_輸入備註.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_更換密碼.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_更換密碼.Designer.cs">
+      <DependentUpon>Dialog_更換密碼.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +371,9 @@
     <EmbeddedResource Include="Dialog\Dialog_輸入藥品碼.resx" />
     <EmbeddedResource Include="Dialog\Dialog_Prcessbar.resx">
       <DependentUpon>Dialog_Prcessbar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_更換密碼.resx">
+      <DependentUpon>Dialog_更換密碼.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
