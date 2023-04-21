@@ -171,15 +171,15 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量_MouseDownEvent;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.MouseDownEvent += PlC_RJ_Button__藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單_MouseDownEvent;
-
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_下訂單);
         }
 
-       
+   
 
         private bool flag_藥庫_每日訂單_下訂單 = false;
         private void sub_Program_藥庫_每日訂單_下訂單()
@@ -659,7 +659,7 @@ namespace 智能藥庫系統
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
-                PlC_RJ_Button__藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent(null);
+                PlC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent(null);
             }
         }
         private void SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_RowDoubleClickEvent(object[] RowValue)
@@ -900,12 +900,22 @@ namespace 智能藥庫系統
             list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_下訂單.藥品名稱, text);
             this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button__藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             string text = rJ_TextBox_藥庫_每日訂單_下訂單_藥品碼.Text;
             List<object[]> list_value = this.Function_藥庫_每日訂單_下訂單_取得藥品資料();
             list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_下訂單.藥品碼, text);
             this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.RefreshGrid(list_value);
+        }
+        private void PlC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出_MouseDownEvent(MouseEventArgs mevent)
+        {
+            string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
+            string serverfilename = "itinvd0304.txt";
+    
+            string username = "PTVGH\\hsonds01";
+            string password = "KuT1Ch@75511";
+            DateTime dateTime = Basic.FileIO.GetLastWriteTime(serverfilepath, serverfilename, username, password);
+            MyMessageBox.ShowDialog($"最後修改時間{dateTime.ToDateTimeString()}");
         }
         #endregion
         private class ICP_藥庫_每日訂單_下訂單 : IComparer<object[]>

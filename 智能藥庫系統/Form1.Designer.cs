@@ -1179,6 +1179,7 @@
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料 = new MyUI.PLC_RJ_Button();
             this.label43 = new System.Windows.Forms.Label();
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -16094,6 +16095,7 @@
             // 
             // panel36
             // 
+            this.panel36.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出);
             this.panel36.Controls.Add(this.rJ_Lable117);
             this.panel36.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單);
             this.panel36.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量);
@@ -30137,6 +30139,48 @@
             this.label43.TabIndex = 152;
             this.label43.Text = "<申領步驟>\r\n1.雙擊要申領的藥品\r\n2.填入要申領數量\r\n3.送出申領";
             // 
+            // plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Location = new System.Drawing.Point(1438, 565);
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Name = "plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出";
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.OFF_文字內容 = "檢查訂單\n是否送出";
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_文字內容 = "檢查訂單\n是否送出";
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.TabIndex = 199;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Text = "檢查訂單\n是否送出";
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Texts = "檢查訂單\n是否送出";
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.顯示狀態 = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -31691,6 +31735,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_登入畫面_更換密碼;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥局_緊急申領_刪除選取資料;
         private System.Windows.Forms.Label label43;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出;
     }
 }
 
