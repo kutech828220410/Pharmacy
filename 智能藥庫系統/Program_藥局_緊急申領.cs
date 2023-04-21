@@ -44,7 +44,7 @@ namespace 智能藥庫系統
         private void sub_Program_藥局_緊急申領_Init()
         {
             this.sqL_DataGridView_藥局_緊急申領.Init();
-            if(!this.sqL_DataGridView_藥局_緊急申領.SQL_IsTableCreat())
+            if (!this.sqL_DataGridView_藥局_緊急申領.SQL_IsTableCreat())
             {
                 this.sqL_DataGridView_藥局_緊急申領.SQL_CreateTable();
             }
@@ -55,11 +55,11 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.Set_ColumnVisible(false, new enum_藥局_藥品資料().GetEnumNames());
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.Set_ColumnVisible(true, enum_藥局_藥品資料.藥品碼, enum_藥局_藥品資料.藥品名稱, enum_藥局_藥品資料.總庫存, enum_藥局_藥品資料.藥局庫存, enum_藥局_藥品資料.藥庫庫存, enum_藥局_藥品資料.包裝單位, enum_藥局_藥品資料.包裝數量);
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.DataGridRowsChangeRefEvent += SqL_DataGridView_藥局_緊急申領_藥品資料_DataGridRowsChangeRefEvent;
+            this.sqL_DataGridView_藥局_緊急申領_藥品資料.RowDoubleClickEvent += SqL_DataGridView_藥局_緊急申領_藥品資料_RowDoubleClickEvent;
 
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_藥品資料_搜尋_MouseDownEvent;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_藥品資料_確認申領_MouseDownEvent;
 
-
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_確認申領_MouseDownEvent;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_顯示資料_MouseDownEvent;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_取消申領_MouseDownEvent;
 
@@ -72,11 +72,11 @@ namespace 智能藥庫系統
         private bool flag_Program_藥局_緊急申領_Init = false;
         private void sub_Program_藥局_緊急申領()
         {
-            if (this.plC_ScreenPage_Main.PageText == "藥局" && this.plC_ScreenPage_藥局.PageText == "大武院區"  && this.plC_ScreenPage_藥局.PageText == "緊急申領")
+            if (this.plC_ScreenPage_Main.PageText == "藥局" && this.plC_ScreenPage_藥局.PageText == "大武院區" && this.plC_ScreenPage_藥局.PageText == "緊急申領")
             {
                 if (!flag_Program_藥局_緊急申領_Init)
                 {
-     
+
                     flag_Program_藥局_緊急申領_Init = true;
                 }
             }
@@ -91,6 +91,55 @@ namespace 智能藥庫系統
 
         #endregion
         #region Event
+        private void SqL_DataGridView_藥局_緊急申領_藥品資料_RowDoubleClickEvent(object[] RowValue)
+        {
+            string 藥品碼 = RowValue[(int)enum_藥局_藥品資料.藥品碼].ObjectToString();
+            string 藥品名稱 = RowValue[(int)enum_藥局_藥品資料.藥品名稱].ObjectToString();
+
+            List<object[]> list_SQL緊急申領資料 = this.sqL_DataGridView_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥局_緊急申領.產出時間, DateTime.Now, false);
+            List<object[]> list_SQL緊急申領資料_buf = new List<object[]>();
+            list_SQL緊急申領資料_buf = list_SQL緊急申領資料.GetRows((int)enum_藥局_緊急申領.藥品碼, 藥品碼);
+            if (list_SQL緊急申領資料_buf.Count > 0)
+            {
+                string 異動量 = list_SQL緊急申領資料_buf[0][(int)enum_藥局_緊急申領.異動量].ObjectToString();
+                MyMessageBox.ShowDialog($"<{藥品名稱}> ,今日已申領數量<{異動量}>");
+            }
+            List<object[]> list_緊急申領資料 = this.sqL_DataGridView_藥局_緊急申領.GetAllRows();
+            List<object[]> list_緊急申領資料_buf = new List<object[]>();
+            list_緊急申領資料_buf = list_緊急申領資料.GetRows((int)enum_藥局_緊急申領.藥品碼, 藥品碼);
+            if (list_緊急申領資料_buf.Count == 0)
+            {
+                object[] value = new object[new enum_藥局_緊急申領().GetLength()];
+                value[(int)enum_藥局_緊急申領.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_藥局_緊急申領.藥局代碼] = enum_庫別.屏榮藥局.GetEnumName();
+                value[(int)enum_藥局_緊急申領.藥品碼] = 藥品碼;
+                value[(int)enum_藥局_緊急申領.藥品名稱] = 藥品名稱;
+                value[(int)enum_藥局_緊急申領.庫存] = 0;
+                value[(int)enum_藥局_緊急申領.異動量] = "0";
+                value[(int)enum_藥局_緊急申領.結存量] = 0;
+                value[(int)enum_藥局_緊急申領.產出時間] = DateTime.Now.ToDateTimeString_6();
+                value[(int)enum_藥局_緊急申領.過帳時間] = DateTime.MinValue.ToDateTimeString();
+                value[(int)enum_藥局_緊急申領.狀態] = enum_藥局_緊急申領_狀態.等待過帳.GetEnumName();
+                value[(int)enum_藥局_緊急申領.備註] = "";
+                this.sqL_DataGridView_藥局_緊急申領.AddRow(value, true);
+            }
+            else
+            {
+                object[] value = new object[new enum_藥局_緊急申領().GetLength()];
+                value[(int)enum_藥局_緊急申領.GUID] = list_緊急申領資料_buf[0][(int)enum_藥局_緊急申領.GUID].ObjectToString();
+                value[(int)enum_藥局_緊急申領.藥局代碼] = enum_庫別.屏榮藥局.GetEnumName();
+                value[(int)enum_藥局_緊急申領.藥品碼] = 藥品碼;
+                value[(int)enum_藥局_緊急申領.藥品名稱] = 藥品名稱;
+                value[(int)enum_藥局_緊急申領.庫存] = 0;
+                value[(int)enum_藥局_緊急申領.異動量] = "0";
+                value[(int)enum_藥局_緊急申領.結存量] = 0;
+                value[(int)enum_藥局_緊急申領.產出時間] = DateTime.Now.ToDateTimeString_6();
+                value[(int)enum_藥局_緊急申領.過帳時間] = DateTime.MinValue.ToDateTimeString();
+                value[(int)enum_藥局_緊急申領.狀態] = enum_藥局_緊急申領_狀態.等待過帳.GetEnumName();
+                value[(int)enum_藥局_緊急申領.備註] = "";
+                this.sqL_DataGridView_藥局_緊急申領.ReplaceExtra(value, true);
+            }
+        }
         private void SqL_DataGridView_藥局_緊急申領_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
             RowsList.Sort(new ICP_藥局_緊急申領());
@@ -140,18 +189,18 @@ namespace 智能藥庫系統
 
             if (this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品碼.Texts.StringIsEmpty() == false)
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥局_藥品資料.藥品碼, this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品碼.Texts);
+                list_value = list_value.GetRowsStartWithByLike((int)enum_藥局_藥品資料.藥品碼, this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品碼.Texts);
             }
             if (this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品名稱.Texts.StringIsEmpty() == false)
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥局_藥品資料.藥品名稱, this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品名稱.Texts);
+                list_value = list_value.GetRowsStartWithByLike((int)enum_藥局_藥品資料.藥品名稱, this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品名稱.Texts);
             }
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_藥局_緊急申領_藥品資料_確認申領_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_藥局_緊急申領_確認申領_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥局_緊急申領_藥品資料.Get_All_Select_RowsValues();
-            if(list_藥品資料.Count == 0)
+            if (list_藥品資料.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取藥品資料!");
                 return;
@@ -165,7 +214,7 @@ namespace 智能藥庫系統
                 申領數量 = dialog_NumPannel.Value;
             }));
             if (dialogResult != DialogResult.Yes) return;
-            if(申領數量 <= 0)
+            if (申領數量 <= 0)
             {
                 MyMessageBox.ShowDialog("申領數量不得小於'0'");
                 return;
@@ -198,7 +247,7 @@ namespace 智能藥庫系統
                 MyMessageBox.ShowDialog("未選取申領資料!");
                 return;
             }
-            
+
             list_value = (from value in list_value
                           where value[(int)enum_藥局_緊急申領.狀態].ObjectToString() != enum_藥局_緊急申領_狀態.過帳完成.GetEnumName()
                           select value).ToList();

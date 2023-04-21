@@ -987,7 +987,7 @@
             this.plC_RJ_Button_藥局_緊急申領_顯示資料 = new MyUI.PLC_RJ_Button();
             this.rJ_GroupBox25 = new MyUI.RJ_GroupBox();
             this.sqL_DataGridView_藥局_緊急申領_藥品資料 = new SQLUI.SQL_DataGridView();
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_藥局_緊急申領_確認申領 = new MyUI.PLC_RJ_Button();
             this.panel62 = new System.Windows.Forms.Panel();
             this.rJ_Lable76 = new MyUI.RJ_Lable();
             this.rJ_TextBox_藥局_緊急申領_藥品資料_藥品碼 = new MyUI.RJ_TextBox();
@@ -25073,7 +25073,7 @@
             this.rJ_GroupBox25.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox25.ContentsPanel.BorderSize = 2;
             this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.sqL_DataGridView_藥局_緊急申領_藥品資料);
-            this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領);
+            this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.plC_RJ_Button_藥局_緊急申領_確認申領);
             this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.panel62);
             this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.panel64);
             this.rJ_GroupBox25.ContentsPanel.Controls.Add(this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋);
@@ -25153,47 +25153,47 @@
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             // 
-            // plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領
+            // plC_RJ_Button_藥局_緊急申領_確認申領
             // 
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.AutoResetState = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Bool = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.BorderRadius = 5;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.BorderSize = 0;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.but_press = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Location = new System.Drawing.Point(543, 613);
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Name = "plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領";
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_文字內容 = "確認申領";
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.ON_BorderSize = 5;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.ON_文字內容 = "確認申領";
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Size = new System.Drawing.Size(182, 119);
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.State = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.TabIndex = 150;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Text = "確認申領";
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.Texts = "確認申領";
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.字型鎖住 = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.文字鎖住 = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.讀取位元反向 = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.音效 = true;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.顯示 = false;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領.顯示狀態 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.AutoResetState = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Bool = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.but_press = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Location = new System.Drawing.Point(543, 613);
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Name = "plC_RJ_Button_藥局_緊急申領_確認申領";
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.OFF_文字內容 = "確認申領";
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_文字內容 = "確認申領";
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Size = new System.Drawing.Size(182, 119);
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.State = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.TabIndex = 150;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Text = "確認申領";
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.Texts = "確認申領";
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.字型鎖住 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.文字鎖住 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.讀取位元反向 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.音效 = true;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.顯示 = false;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.顯示狀態 = false;
             // 
             // panel62
             // 
@@ -30919,7 +30919,7 @@
         private MyUI.RJ_Lable rJ_Lable77;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥局_緊急申領_顯示資料;
         private MyUI.RJ_GroupBox rJ_GroupBox25;
-        private MyUI.PLC_RJ_Button plC_RJ_Button_藥局_緊急申領_藥品資料_確認申領;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥局_緊急申領_確認申領;
         private System.Windows.Forms.Panel panel62;
         private MyUI.RJ_Lable rJ_Lable76;
         private MyUI.RJ_TextBox rJ_TextBox_藥局_緊急申領_藥品資料_藥品碼;

@@ -149,3 +149,5 @@ C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\Microsoft.
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\office.dll
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_列印及匯出.resources
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_更換密碼.resources
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\Interop.SpeechLib.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\MeasureSystemFunction.dll

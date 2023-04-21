@@ -97,7 +97,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-   
+
 
         private bool flag_藥品過消耗帳_頁面更新 = false;
         private void sub_Program_藥品過消耗帳()
@@ -106,7 +106,7 @@ namespace 智能藥庫系統
             {
                 if (!this.flag_藥品過消耗帳_頁面更新)
                 {
-                    this.Invoke(new Action(delegate 
+                    this.Invoke(new Action(delegate
                     {
                         this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value = DateTime.Now.AddMonths(-1);
                         this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value = DateTime.Now;
@@ -161,12 +161,12 @@ namespace 智能藥庫系統
 
             return list_value;
         }
-        private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(DateTime dateTime1 , DateTime dateTime2)
+        private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(DateTime dateTime1, DateTime dateTime2)
         {
-            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_藥品過消耗帳.報表日期, dateTime1.ToDateString(), dateTime2.ToDateString(), false);
-            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_藥品過消耗帳.報表日期, dateTime1.ToDateString(), dateTime2.ToDateString(), false);
-            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_藥品過消耗帳.報表日期, dateTime1.ToDateString(), dateTime2.ToDateString(), false);
-            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_藥品過消耗帳.報表日期, dateTime1.ToDateString(), dateTime2.ToDateString(), false);
+            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
             List<object[]> list_value = new List<object[]>();
 
             List<object[]> list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
@@ -361,7 +361,7 @@ namespace 智能藥庫系統
             list_藥品過消耗帳_急診 = list_藥品過消耗帳_急診.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_急診_批次過帳明細());
             list_藥品過消耗帳_住院 = list_藥品過消耗帳_住院.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_住院_批次過帳明細());
             list_藥品過消耗帳_公藥 = list_藥品過消耗帳_公藥.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_公藥_批次過帳明細());
-            
+
             this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_門診, false);
             this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_急診, false);
             this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_住院, false);
@@ -423,7 +423,7 @@ namespace 智能藥庫系統
         private void SqL_DataGridView_藥品過消耗帳_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
             List<object[]> list_value = new List<object[]>();
-         
+
             if (checkBox_藥品過消耗帳_門診.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.門診.GetEnumName()));
@@ -445,7 +445,7 @@ namespace 智能藥庫系統
                 list_公藥 = list_公藥.GetRows((int)enum_藥品過消耗帳.藥局代碼, "PHR");
                 list_value.LockAdd(list_公藥);
             }
-       
+
             RowsList = list_value;
         }
         private void PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent(MouseEventArgs mevent)
@@ -493,7 +493,7 @@ namespace 智能藥庫系統
                             list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量] = 數量;
                             double 訂購單價 = list_補給系統藥品資料_buf[0][(int)enum_藥品補給系統_藥品資料.最新訂購單價].StringToDouble();
                             double 訂購總價 = 訂購單價 * 數量;
-                            if(訂購單價 > 0)
+                            if (訂購單價 > 0)
                             {
                                 list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000");
                                 list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗金額] = 訂購總價.ToString("0.000");
@@ -504,7 +504,7 @@ namespace 智能藥庫系統
                     dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出_out());
 
                     string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
-                    if(Extension == ".txt")
+                    if (Extension == ".txt")
                     {
                         CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
@@ -623,7 +623,7 @@ namespace 智能藥庫系統
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
             string 藥品碼 = rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text;
-            if(藥品碼.StringIsEmpty())
+            if (藥品碼.StringIsEmpty())
             {
                 MyMessageBox.ShowDialog("藥品碼空白!");
                 return;
@@ -640,7 +640,7 @@ namespace 智能藥庫系統
                 消耗量 += list_value[i][(int)enum_藥品過消耗帳.異動量].StringToInt32();
             }
             消耗量 *= -1;
-            this.Invoke(new Action(delegate 
+            this.Invoke(new Action(delegate
             {
                 rJ_TextBox_藥品過消耗帳_上月消耗量計算.Text = 消耗量.ToString();
             }));

@@ -40,6 +40,7 @@ namespace 智能藥庫系統
             過帳時間,
             狀態,
             備註,
+
         }
 
         private void sub_Program_批次過帳_門診_Init()
@@ -67,11 +68,11 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(sub_Program_批次過帳_門診);
         }
 
-   
+
 
         private void sub_Program_批次過帳_門診()
         {
-           
+
         }
 
         #region Event
@@ -81,7 +82,7 @@ namespace 智能藥庫系統
             {
                 RowsList = RowsList.GetRowsInDate((int)enum_批次過帳_門診_批次過帳明細.報表日期, this.dateTimePicke_批次過帳_門診_報表日期_起始, this.dateTimePicke_批次過帳_門診_報表日期_結束);
             }
-           
+
             if (plC_RJ_ChechBox_批次過帳_門診_過帳日期.Checked)
             {
                 RowsList = RowsList.GetRowsInDate((int)enum_批次過帳_門診_批次過帳明細.過帳時間, this.dateTimePicke_批次過帳_門診_產出日期_起始, this.dateTimePicke_批次過帳_門診_產出日期_結束);
@@ -131,7 +132,7 @@ namespace 智能藥庫系統
             {
                 this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetAllRows(true);
             }
-           
+
         }
         private void PlC_RJ_Button_批次過帳_門診_狀態_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -142,7 +143,7 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_批次過帳_門診_藥品碼_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             if (this.rJ_TextBox_批次過帳_門診_藥品碼.Texts.StringIsEmpty()) return;
-            List<object[]> list_value =this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetAllRows(false);
+            List<object[]> list_value = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetAllRows(false);
             list_value = list_value.GetRowsByLike((int)enum_批次過帳_門診_批次過帳明細.藥品碼, rJ_TextBox_批次過帳_門診_藥品碼.Texts);
             this.sqL_DataGridView_批次過帳_門診_批次過帳明細.RefreshGrid(list_value);
         }
@@ -184,7 +185,7 @@ namespace 智能藥庫系統
                 //list_value[i] = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRows(list_value[i]);
                 if (list_value[i][(int)enum_批次過帳_門診_批次過帳明細.狀態].ObjectToString() == enum_過帳明細_門診_狀態.過帳完成.GetEnumName())
                 {
-                     continue;
+                    continue;
                 }
                 if (list_value[i][(int)enum_批次過帳_門診_批次過帳明細.狀態].ObjectToString() == enum_過帳明細_門診_狀態.忽略過帳.GetEnumName())
                 {
@@ -219,7 +220,7 @@ namespace 智能藥庫系統
                             list_value[i][(int)enum_批次過帳_門診_批次過帳明細.過帳時間] = DateTime.Now.ToDateTimeString_6();
                             list_value[i][(int)enum_批次過帳_門診_批次過帳明細.備註] = 備註;
 
-                            object[] value_trading= new object[new enum_交易記錄查詢資料().GetLength()];
+                            object[] value_trading = new object[new enum_交易記錄查詢資料().GetLength()];
                             value_trading[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                             value_trading[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
                             value_trading[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.批次過帳.GetEnumName();
@@ -337,7 +338,7 @@ namespace 智能藥庫系統
             {
                 dialog_Prcessbar.Value = i;
                 //list_value[i] = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRows(list_value[i]);
- 
+
                 list_value[i][(int)enum_批次過帳_門診_批次過帳明細.狀態] = enum_過帳明細_門診_狀態.等待過帳.GetEnumName();
 
                 list_ReplaceValue.Add(list_value[i]);

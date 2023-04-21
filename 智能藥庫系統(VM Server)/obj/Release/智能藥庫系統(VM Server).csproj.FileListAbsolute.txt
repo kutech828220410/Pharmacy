@@ -134,3 +134,5 @@ C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release\stdole.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release\Interop.SpeechLib.dll
+C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統(VM Server)\bin\Release\MeasureSystemFunction.dll
