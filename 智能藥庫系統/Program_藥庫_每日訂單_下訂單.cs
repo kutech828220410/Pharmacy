@@ -909,13 +909,9 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出_MouseDownEvent(MouseEventArgs mevent)
         {
-            string serverfilepath = @"HTS81P.ptvgh.gov.tw\MIS\DG";
-            string serverfilename = "itinvd0304.txt";
-    
-            string username = "PTVGH\\hsonds01";
-            string password = "KuT1Ch@75511";
-            DateTime dateTime = Basic.FileIO.GetLastWriteTime(serverfilepath, serverfilename, username, password);
-            MyMessageBox.ShowDialog($"最後修改時間{dateTime.ToDateTimeString()}");
+            string dateTime = Basic.Net.WEBApiGet("https://10.18.1.146:4433/api/test/OrderLastWriteTime");
+
+            MyMessageBox.ShowDialog($"最後送出時間 {dateTime}");
         }
         #endregion
         private class ICP_藥庫_每日訂單_下訂單 : IComparer<object[]>

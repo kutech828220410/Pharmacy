@@ -12,10 +12,10 @@
     <ROW Property="AiSkipExitDlg" Value="1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="鴻森整合機電有限公司"/>
-    <ROW Property="ProductCode" Value="1028:{1FB46671-AA5D-495D-9629-356E9E98C4DC} " Type="16"/>
+    <ROW Property="ProductCode" Value="1028:{42AA54DD-BEBF-4C4A-BFF0-B8DB65E0F3EB} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能藥庫系統 Ver[|ProductVersion]"/>
-    <ROW Property="ProductVersion" Value="1.0.41.0" Type="32" TargetFile="exe"/>
+    <ROW Property="ProductVersion" Value="1.0.42.0" Type="32" TargetFile="exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{DD530B82-8A1C-4702-89C3-1D317BE8BDF9}"/>
