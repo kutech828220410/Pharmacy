@@ -1062,9 +1062,10 @@ namespace 智能藥庫系統_VM_Server_
                 list_texts.Add(text);
             }
             bool flag = Basic.MyFileStream.SaveFile($"{localfilepath}{localfilename}", list_texts);
+            flag = Basic.MyFileStream.SaveFile($"C:\\{localfilename}", list_texts);
             Console.WriteLine($"存至本地 {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
             flag = Basic.MyFileStream.SaveFile($"{serverfilepath}{serverfilename}", list_texts);
-            Console.WriteLine($"上傳檔案至Fileserver {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
+            //Console.WriteLine($"上傳檔案至Fileserver {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
 
         }
         private void PlC_RJ_Button_藥庫_每日訂單_清除選取藥品訂單_MouseDownEvent(MouseEventArgs mevent)
