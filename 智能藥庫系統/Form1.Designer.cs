@@ -23547,7 +23547,7 @@
             this.plC_RJ_ScreenButton28.頁面編號 = 0;
             this.plC_RJ_ScreenButton28.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton28.顯示狀態 = false;
-            this.plC_RJ_ScreenButton28.顯示讀取位置 = "";
+            this.plC_RJ_ScreenButton28.顯示讀取位置 = "S39003";
             // 
             // plC_RJ_ScreenButton25
             // 
@@ -23586,7 +23586,7 @@
             this.plC_RJ_ScreenButton25.頁面編號 = 0;
             this.plC_RJ_ScreenButton25.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton25.顯示狀態 = false;
-            this.plC_RJ_ScreenButton25.顯示讀取位置 = "";
+            this.plC_RJ_ScreenButton25.顯示讀取位置 = "S39032";
             // 
             // plC_RJ_ScreenButton24
             // 
@@ -23625,7 +23625,7 @@
             this.plC_RJ_ScreenButton24.頁面編號 = 0;
             this.plC_RJ_ScreenButton24.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton24.顯示狀態 = false;
-            this.plC_RJ_ScreenButton24.顯示讀取位置 = "";
+            this.plC_RJ_ScreenButton24.顯示讀取位置 = "S39032";
             // 
             // plC_RJ_ScreenButton_藥庫_撥補
             // 
@@ -23664,7 +23664,7 @@
             this.plC_RJ_ScreenButton_藥庫_撥補.頁面編號 = 0;
             this.plC_RJ_ScreenButton_藥庫_撥補.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton_藥庫_撥補.顯示狀態 = false;
-            this.plC_RJ_ScreenButton_藥庫_撥補.顯示讀取位置 = "";
+            this.plC_RJ_ScreenButton_藥庫_撥補.顯示讀取位置 = "S39034";
             // 
             // plC_RJ_ScreenButton_藥庫_藥品資料
             // 
