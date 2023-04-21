@@ -63,5 +63,21 @@ namespace 智慧調劑台管理系統_WebApi
             }
             return list_colname_UDDRGVWA.JsonSerializationt() + list_colname_UDPRDPF.JsonSerializationt();
         }
+
+        [Route("OrderLastWriteTime")]
+        public string Get_OrderLastWriteTime()
+        {
+            string serverfilepath = @"C:\MIS\DG\";
+            string serverfilename = "itinvd0304.txt";
+            string localfilepath = @"C:\Users\hsonds01\Desktop\";
+            string localfilename = "itinvd0304.txt";
+            string username = "hsonds01";
+            string password = "KuT1Ch@75511";
+
+            DateTime dateTime = System.IO.File.GetLastWriteTime($@"{serverfilepath}{serverfilename}");
+            return dateTime.ToDateTimeString();
+        }
     }
+
+ 
 }
