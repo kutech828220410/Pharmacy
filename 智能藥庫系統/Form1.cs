@@ -157,6 +157,10 @@ namespace 智能藥庫系統
                     {
                         this.Invoke(new Action(delegate { this.Update(); }));
                     }
+                    else
+                    {
+                        Application.Exit();
+                    }
                 }
 
 
