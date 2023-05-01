@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.42.0")]
-[assembly: AssemblyFileVersion("1.0.42.0")]
+[assembly: AssemblyVersion("1.0.43.0")]
+[assembly: AssemblyFileVersion("1.0.43.0")]
 namespace 智能藥庫系統
 {
 
@@ -46,6 +46,8 @@ namespace 智能藥庫系統
             private SQL_DataGridView.ConnentionClass dB_order_server = new SQL_DataGridView.ConnentionClass();
 
             private string emg_apply_ApiURL = "";
+            private string medPrice_ApiURL = "";
+
 
             public SQL_DataGridView.ConnentionClass DB_Basic { get => dB_Basic; set => dB_Basic = value; }
             public SQL_DataGridView.ConnentionClass DB_person_page { get => dB_person_page; set => dB_person_page = value; }
@@ -53,6 +55,7 @@ namespace 智能藥庫系統
             public SQL_DataGridView.ConnentionClass DB_posting_server { get => dB_posting_server; set => dB_posting_server = value; }
             public SQL_DataGridView.ConnentionClass DB_order_server { get => dB_order_server; set => dB_order_server = value; }
             public string Emg_apply_ApiURL { get => emg_apply_ApiURL; set => emg_apply_ApiURL = value; }
+            public string MedPrice_ApiURL { get => medPrice_ApiURL; set => medPrice_ApiURL = value; }
         }
         public class MyConfigClass
         {
