@@ -464,9 +464,9 @@ namespace 智能藥庫系統_VM_Server_
             bool isholiday = false;
             if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
                 {
-                    if (Basic.TypeConvert.IsHolidays(dateTime_basic_start.AddDays(-1)))
+                    if (Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
                     {
                         dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                     }
@@ -475,7 +475,7 @@ namespace 智能藥庫系統_VM_Server_
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
                 {
                     break;
                 }
@@ -495,7 +495,7 @@ namespace 智能藥庫系統_VM_Server_
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
                 {
                     break;
                 }
