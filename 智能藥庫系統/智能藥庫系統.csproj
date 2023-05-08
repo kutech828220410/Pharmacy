@@ -253,7 +253,10 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
-    <Compile Include="Program_周邊設備_麻醉部ADC.cs">
+    <Compile Include="Program_周邊設備_麻醉部ADC_抽屜狀態.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program_周邊設備_麻醉部ADC_庫存.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_寫入報表設定.cs">

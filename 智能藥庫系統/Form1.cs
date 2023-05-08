@@ -16,8 +16,8 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 
-[assembly: AssemblyVersion("1.0.43.0")]
-[assembly: AssemblyFileVersion("1.0.43.0")]
+[assembly: AssemblyVersion("1.0.44.0")]
+[assembly: AssemblyFileVersion("1.0.44.0")]
 namespace 智能藥庫系統
 {
 
@@ -200,6 +200,7 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_人員資料, this.plC_ScreenPage_人員資料);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_盤點作業, this.plC_ScreenPage_盤點作業);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備, this.plC_ScreenPage_周邊設備);
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備_麻醉部ADC, this.plC_ScreenPage_周邊設備_麻醉部ADC);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_戰情白板, this.plC_ScreenPage_戰情白板);
 
             
@@ -252,7 +253,8 @@ namespace 智能藥庫系統
 
             this.sub_Program_寫入報表設定_Init();
 
-            this.sub_Program_周邊設備_麻醉部ADC_Init();
+            this.sub_Program_周邊設備_麻醉部ADC_庫存_Init();
+            this.sub_Program_周邊設備_麻醉部ADC_抽屜狀態_Init();
             this.sub_Program_戰情白板_Init();
 
             this.plC_RJ_Button1.MouseDownEvent += PlC_RJ_Button1_MouseDownEvent;
