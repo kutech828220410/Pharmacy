@@ -168,6 +168,18 @@ namespace 智能藥庫系統
                     text += $"可放置盒數: {returnData.Data[i].可放置盒數}\n";
                     rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].Text = text;
                     rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+
+                    if(returnData.Data[i].藥品碼.StringIsEmpty())
+                    {
+                        rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].BackgroundColor = Color.Silver;
+                        continue;
+                    }
+                    if (returnData.Data[i].庫存.StringToInt32() == 0)
+                    {
+                        rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].BackgroundColor = Color.DarkOrange;
+                        continue;
+                    }
+                    rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].BackgroundColor = Color.Green;
                 }
                 
             }));

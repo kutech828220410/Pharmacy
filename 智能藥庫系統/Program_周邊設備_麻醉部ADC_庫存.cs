@@ -115,11 +115,11 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢.Init();
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.Init();
-
+            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent;
             this.plC_UI_Init.Add_Method(sub_Program_周邊設備_麻醉部ADC_庫存);
         }
 
-     
+      
 
         private bool flag_Program_周邊設備_麻醉部ADC_庫存_Init = false;
         private void sub_Program_周邊設備_麻醉部ADC_庫存()
@@ -188,12 +188,34 @@ namespace 智能藥庫系統
                 list_values.Add(values);
             }
             list_values.RemoveRow((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.藥碼, "");
-            list_values.RemoveRow((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.實瓶繳回.GetEnumName());
+            //list_values.RemoveRow((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.實瓶繳回.GetEnumName());
             list_values.Sort(new ICP_周邊設備_麻醉部ADC_庫存_交易記錄查詢());
             return list_values;
         }
         #endregion
         #region Event
+        private void SqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            List<object[]> list_value = new List<object[]>();
+            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.實瓶繳回.GetEnumName()));
+                list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.空瓶繳回.GetEnumName()));
+            }
+            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.手輸領藥.GetEnumName()));
+                list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.掃碼領藥.GetEnumName()));
+
+            }
+            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Checked)
+            {
+                list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.動作, enum_周邊設備_麻醉部ADC_庫存_交易記錄查詢動作.入庫.GetEnumName()));
+
+            }
+            list_value.Sort(new ICP_周邊設備_麻醉部ADC_庫存_交易記錄查詢());
+            RowsList = list_value;
+        }
         private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
         {
             this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
@@ -233,6 +255,8 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_values = this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
+
+         
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.RefreshGrid(list_values);
         }
         private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent(MouseEventArgs mevent)

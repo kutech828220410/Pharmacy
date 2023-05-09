@@ -1031,8 +1031,44 @@
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_API測試 = new MyUI.PLC_RJ_Button();
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢 = new SQLUI.SQL_DataGridView();
             this.tabPage42 = new System.Windows.Forms.TabPage();
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試 = new MyUI.PLC_RJ_Button();
             this.panel121 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1 = new MyUI.RJ_Lable();
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1 = new MyUI.RJ_Lable();
             this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_1 = new MyUI.RJ_Lable();
             this.panel_周邊設備_麻醉部ADC = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton22 = new MyUI.PLC_RJ_ScreenButton();
@@ -1189,42 +1225,9 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6 = new MyUI.RJ_Lable();
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6 = new MyUI.RJ_Lable();
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料 = new MyUI.PLC_RJ_Button();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -25659,6 +25662,9 @@
             this.plC_RJ_GroupBox18.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox18.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox18.ContentsPanel.BorderSize = 2;
+            this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫);
+            this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥);
+            this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥);
             this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋);
             this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.panel123);
             this.plC_RJ_GroupBox18.ContentsPanel.Controls.Add(this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋);
@@ -25707,7 +25713,7 @@
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.Location = new System.Drawing.Point(287, 774);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.Location = new System.Drawing.Point(287, 683);
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋";
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -25738,7 +25744,7 @@
             // 
             this.panel123.Controls.Add(this.rJ_Lable120);
             this.panel123.Controls.Add(this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名);
-            this.panel123.Location = new System.Drawing.Point(6, 774);
+            this.panel123.Location = new System.Drawing.Point(6, 683);
             this.panel123.Name = "panel123";
             this.panel123.Size = new System.Drawing.Size(276, 41);
             this.panel123.TabIndex = 146;
@@ -25798,7 +25804,7 @@
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.Location = new System.Drawing.Point(287, 727);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.Location = new System.Drawing.Point(287, 636);
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋";
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -25829,7 +25835,7 @@
             // 
             this.panel124.Controls.Add(this.rJ_Lable121);
             this.panel124.Controls.Add(this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼);
-            this.panel124.Location = new System.Drawing.Point(6, 727);
+            this.panel124.Location = new System.Drawing.Point(6, 636);
             this.panel124.Name = "panel124";
             this.panel124.Size = new System.Drawing.Size(276, 41);
             this.panel124.TabIndex = 144;
@@ -25998,7 +26004,7 @@
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.RowsHeight = 60;
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.Server = "127.0.0.0";
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.Size = new System.Drawing.Size(828, 714);
+            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.Size = new System.Drawing.Size(828, 623);
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.TabIndex = 136;
             this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.UserName = "root";
@@ -26384,48 +26390,6 @@
             this.tabPage42.TabIndex = 1;
             this.tabPage42.Text = "抽屜狀態";
             // 
-            // plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試
-            // 
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.AutoResetState = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Bool = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderRadius = 5;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderSize = 0;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.but_press = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Location = new System.Drawing.Point(1490, 158);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字內容 = "API測試";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_BorderSize = 5;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字內容 = "API測試";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Size = new System.Drawing.Size(129, 66);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.State = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.TabIndex = 137;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Text = "API測試";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.字型鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.文字鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.讀取位元反向 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.讀寫鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.音效 = true;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示狀態 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示讀取位置 = "S4077";
-            // 
             // panel121
             // 
             this.panel121.Controls.Add(this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料);
@@ -26471,6 +26435,720 @@
             this.panel121.Name = "panel121";
             this.panel121.Size = new System.Drawing.Size(1622, 857);
             this.panel121.TabIndex = 0;
+            // 
+            // plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料
+            // 
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.AutoResetState = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Bool = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderRadius = 5;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderSize = 0;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.but_press = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Location = new System.Drawing.Point(1490, 33);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字內容 = "更新資料";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_BorderSize = 5;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字內容 = "更新資料";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Size = new System.Drawing.Size(129, 66);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.State = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.TabIndex = 138;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Text = "更新資料";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Texts = "更新資料";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.字型鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.文字鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.讀取位元反向 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.讀寫鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.音效 = true;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.顯示 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.顯示狀態 = false;
+            // 
+            // plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試
+            // 
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.AutoResetState = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Bool = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderRadius = 5;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.BorderSize = 0;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.but_press = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Location = new System.Drawing.Point(1490, 158);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字內容 = "API測試";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_BorderSize = 5;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字內容 = "API測試";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Size = new System.Drawing.Size(129, 66);
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.State = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.TabIndex = 137;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.Text = "API測試";
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.字型鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.文字鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.讀取位元反向 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.讀寫鎖住 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.音效 = true;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示狀態 = false;
+            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試.顯示讀取位置 = "S4077";
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Location = new System.Drawing.Point(1247, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TabIndex = 35;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Location = new System.Drawing.Point(1247, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TabIndex = 34;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Text = "rJ_Lable159";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Location = new System.Drawing.Point(1247, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TabIndex = 33;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Location = new System.Drawing.Point(1247, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TabIndex = 32;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Location = new System.Drawing.Point(1247, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TabIndex = 31;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Text = "rJ_Lable162";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Location = new System.Drawing.Point(1247, 33);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TabIndex = 30;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Location = new System.Drawing.Point(1001, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TabIndex = 29;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Location = new System.Drawing.Point(1001, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TabIndex = 28;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Text = "rJ_Lable153";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Location = new System.Drawing.Point(1001, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TabIndex = 27;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Location = new System.Drawing.Point(1001, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TabIndex = 26;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Location = new System.Drawing.Point(1001, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TabIndex = 25;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Text = "rJ_Lable156";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Location = new System.Drawing.Point(1001, 33);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TabIndex = 24;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Location = new System.Drawing.Point(755, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TabIndex = 23;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Location = new System.Drawing.Point(755, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TabIndex = 22;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Text = "rJ_Lable147";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Location = new System.Drawing.Point(755, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TabIndex = 21;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Location = new System.Drawing.Point(755, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TabIndex = 20;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Location = new System.Drawing.Point(755, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TabIndex = 19;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Text = "rJ_Lable150";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Location = new System.Drawing.Point(755, 33);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TabIndex = 18;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Location = new System.Drawing.Point(509, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TabIndex = 17;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Location = new System.Drawing.Point(509, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TabIndex = 16;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Text = "rJ_Lable141";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Location = new System.Drawing.Point(509, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TabIndex = 15;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Location = new System.Drawing.Point(509, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TabIndex = 14;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Location = new System.Drawing.Point(509, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TabIndex = 13;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Text = "rJ_Lable144";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Location = new System.Drawing.Point(509, 33);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TabIndex = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Location = new System.Drawing.Point(263, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TabIndex = 11;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Location = new System.Drawing.Point(263, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TabIndex = 10;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Text = "rJ_Lable135";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Location = new System.Drawing.Point(263, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TabIndex = 9;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Location = new System.Drawing.Point(263, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TabIndex = 8;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Location = new System.Drawing.Point(263, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TabIndex = 7;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Text = "rJ_Lable138";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Location = new System.Drawing.Point(263, 33);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TabIndex = 6;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Location = new System.Drawing.Point(17, 718);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TabIndex = 5;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Location = new System.Drawing.Point(17, 581);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TabIndex = 4;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Text = "rJ_Lable132";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Location = new System.Drawing.Point(17, 444);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TabIndex = 3;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Location = new System.Drawing.Point(17, 307);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TabIndex = 2;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1
+            // 
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderRadius = 12;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderSize = 0;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Location = new System.Drawing.Point(17, 170);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Size = new System.Drawing.Size(240, 127);
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TabIndex = 1;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Text = "rJ_Lable129";
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TextColor = System.Drawing.Color.White;
             // 
             // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_1
             // 
@@ -30464,677 +31142,48 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Location = new System.Drawing.Point(17, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TabIndex = 1;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Location = new System.Drawing.Point(17, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TabIndex = 2;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Location = new System.Drawing.Point(17, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TabIndex = 5;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_1.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Location = new System.Drawing.Point(17, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TabIndex = 4;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.Text = "rJ_Lable132";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_1.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Location = new System.Drawing.Point(17, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TabIndex = 3;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_1.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Location = new System.Drawing.Point(263, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TabIndex = 11;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Location = new System.Drawing.Point(263, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TabIndex = 10;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.Text = "rJ_Lable135";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Location = new System.Drawing.Point(263, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TabIndex = 9;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Location = new System.Drawing.Point(263, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TabIndex = 8;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Location = new System.Drawing.Point(263, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TabIndex = 7;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.Text = "rJ_Lable138";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Location = new System.Drawing.Point(263, 33);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TabIndex = 6;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_2.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Location = new System.Drawing.Point(509, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TabIndex = 17;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Location = new System.Drawing.Point(509, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TabIndex = 16;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.Text = "rJ_Lable141";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Location = new System.Drawing.Point(509, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TabIndex = 15;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Location = new System.Drawing.Point(509, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TabIndex = 14;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Location = new System.Drawing.Point(509, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TabIndex = 13;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.Text = "rJ_Lable144";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Location = new System.Drawing.Point(509, 33);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TabIndex = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_3.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Location = new System.Drawing.Point(755, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TabIndex = 23;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Location = new System.Drawing.Point(755, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TabIndex = 22;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.Text = "rJ_Lable147";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Location = new System.Drawing.Point(755, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TabIndex = 21;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Location = new System.Drawing.Point(755, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TabIndex = 20;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Location = new System.Drawing.Point(755, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TabIndex = 19;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.Text = "rJ_Lable150";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Location = new System.Drawing.Point(755, 33);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TabIndex = 18;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_4.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Location = new System.Drawing.Point(1001, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TabIndex = 29;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Location = new System.Drawing.Point(1001, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TabIndex = 28;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.Text = "rJ_Lable153";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Location = new System.Drawing.Point(1001, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TabIndex = 27;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Location = new System.Drawing.Point(1001, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TabIndex = 26;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Location = new System.Drawing.Point(1001, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TabIndex = 25;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.Text = "rJ_Lable156";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Location = new System.Drawing.Point(1001, 33);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TabIndex = 24;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_5.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Location = new System.Drawing.Point(1247, 718);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TabIndex = 35;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_6_6.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Location = new System.Drawing.Point(1247, 581);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TabIndex = 34;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.Text = "rJ_Lable159";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_5_6.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Location = new System.Drawing.Point(1247, 444);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TabIndex = 33;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_4_6.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Location = new System.Drawing.Point(1247, 307);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TabIndex = 32;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_6.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Location = new System.Drawing.Point(1247, 170);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TabIndex = 31;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.Text = "rJ_Lable162";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_6.TextColor = System.Drawing.Color.White;
-            // 
-            // rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6
-            // 
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BackColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderRadius = 12;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.BorderSize = 0;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.ForeColor = System.Drawing.Color.White;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Location = new System.Drawing.Point(1247, 33);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Name = "rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Size = new System.Drawing.Size(240, 127);
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TabIndex = 30;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.Text = "rJ_Lable129";
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_1_6.TextColor = System.Drawing.Color.White;
-            // 
-            // plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料
-            // 
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.AutoResetState = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Bool = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderRadius = 5;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.BorderSize = 0;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.but_press = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Location = new System.Drawing.Point(1490, 33);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Name = "plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字內容 = "更新資料";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_BorderSize = 5;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字內容 = "更新資料";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Size = new System.Drawing.Size(129, 66);
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.State = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.TabIndex = 138;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Text = "更新資料";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.Texts = "更新資料";
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.字型鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.文字鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.讀取位元反向 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.讀寫鎖住 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.音效 = true;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.顯示 = false;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料.顯示狀態 = false;
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Checked = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Location = new System.Drawing.Point(13, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.TabIndex = 148;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Text = "領藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.UseVisualStyleBackColor = false;
+            // 
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Checked = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Location = new System.Drawing.Point(86, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.TabIndex = 149;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Text = "退藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.UseVisualStyleBackColor = false;
+            // 
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Location = new System.Drawing.Point(159, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.TabIndex = 150;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Text = "入庫";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -31469,6 +31518,7 @@
             this.plC_ScreenPage_周邊設備_麻醉部ADC.ResumeLayout(false);
             this.tabPage41.ResumeLayout(false);
             this.plC_RJ_GroupBox18.ContentsPanel.ResumeLayout(false);
+            this.plC_RJ_GroupBox18.ContentsPanel.PerformLayout();
             this.plC_RJ_GroupBox18.ResumeLayout(false);
             this.panel123.ResumeLayout(false);
             this.panel124.ResumeLayout(false);
@@ -32741,6 +32791,9 @@
         private MyUI.RJ_Lable rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_3_1;
         private MyUI.RJ_Lable rJ_Lable_周邊設備_麻醉部ADC_抽屜狀態_2_1;
         private MyUI.PLC_RJ_Button plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_更新資料;
+        private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥;
+        private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥;
+        private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫;
     }
 }
 

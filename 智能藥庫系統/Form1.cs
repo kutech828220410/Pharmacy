@@ -153,14 +153,15 @@ namespace 智能藥庫系統
                 string updateVersion = this.ftp_DounloadUI.GetFileVersion();
                 if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
                 {
-                    if (Basic.MyMessageBox.ShowDialog(string.Format("有新版本是否更新? (Ver : {0})", updateVersion), "Update", Basic.MyMessageBox.enum_BoxType.Asterisk, Basic.MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
-                    {
-                        this.Invoke(new Action(delegate { this.Update(); }));
-                    }
-                    else
-                    {
-                        Application.Exit();
-                    }
+                    //if (Basic.MyMessageBox.ShowDialog(string.Format("有新版本是否更新? (Ver : {0})", updateVersion), "Update", Basic.MyMessageBox.enum_BoxType.Asterisk, Basic.MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
+                    //{
+                    //    this.Invoke(new Action(delegate { this.Update(); }));
+                    //}
+                    //else
+                    //{
+                    //    Application.Exit();
+                    //}
+                    this.Invoke(new Action(delegate { this.Update(); }));
                 }
 
 
