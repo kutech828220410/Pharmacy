@@ -130,7 +130,7 @@ namespace 智能藥庫系統_VM_Server_
                 else if (藥品碼.Length == 12)
                 {
                     藥品碼 = 藥品碼.Substring(藥品碼.Length - 7, 5);
-                    value[(int)enum_驗收入庫明細.藥品碼] = 料號;
+                    value[(int)enum_驗收入庫明細.藥品碼] = 藥品碼;
                     list_藥庫_驗收入庫_error.Add(value);
                 }
 
