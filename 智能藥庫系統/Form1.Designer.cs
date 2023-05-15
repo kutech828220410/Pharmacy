@@ -1007,6 +1007,9 @@
             this.plC_ScreenPage_周邊設備_麻醉部ADC = new MyUI.PLC_ScreenPage();
             this.tabPage41 = new System.Windows.Forms.TabPage();
             this.plC_RJ_GroupBox18 = new MyUI.PLC_RJ_GroupBox();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫 = new System.Windows.Forms.CheckBox();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥 = new System.Windows.Forms.CheckBox();
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋 = new MyUI.PLC_RJ_Button();
             this.panel123 = new System.Windows.Forms.Panel();
             this.rJ_Lable120 = new MyUI.RJ_Lable();
@@ -1225,9 +1228,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥 = new System.Windows.Forms.CheckBox();
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥 = new System.Windows.Forms.CheckBox();
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -25699,6 +25699,49 @@
             this.plC_RJ_GroupBox18.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.plC_RJ_GroupBox18.TitleTexts = "交易紀錄查詢";
             // 
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Location = new System.Drawing.Point(159, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.TabIndex = 150;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Text = "入庫";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.UseVisualStyleBackColor = false;
+            // 
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Checked = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Location = new System.Drawing.Point(86, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.TabIndex = 149;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Text = "退藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.UseVisualStyleBackColor = false;
+            // 
+            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥
+            // 
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.AutoSize = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.BackColor = System.Drawing.Color.White;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Checked = true;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Location = new System.Drawing.Point(13, 736);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Size = new System.Drawing.Size(67, 28);
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.TabIndex = 148;
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Text = "領藥";
+            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.UseVisualStyleBackColor = false;
+            // 
             // plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋
             // 
             this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.AutoResetState = false;
@@ -31141,49 +31184,6 @@
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥
-            // 
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.AutoSize = true;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.BackColor = System.Drawing.Color.White;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Checked = true;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Location = new System.Drawing.Point(13, 736);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Size = new System.Drawing.Size(67, 28);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.TabIndex = 148;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Text = "領藥";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.UseVisualStyleBackColor = false;
-            // 
-            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥
-            // 
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.AutoSize = true;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.BackColor = System.Drawing.Color.White;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Checked = true;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Location = new System.Drawing.Point(86, 736);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Size = new System.Drawing.Size(67, 28);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.TabIndex = 149;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Text = "退藥";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.UseVisualStyleBackColor = false;
-            // 
-            // checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫
-            // 
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.AutoSize = true;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.BackColor = System.Drawing.Color.White;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Location = new System.Drawing.Point(159, 736);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Name = "checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Size = new System.Drawing.Size(67, 28);
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.TabIndex = 150;
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Text = "入庫";
-            this.checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 

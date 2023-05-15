@@ -76,6 +76,7 @@ namespace 智慧調劑台管理系統_WebApi
 
             for (int i = 0; i < list_value.Count; i++)
             {
+                if (list_value[i][(int)enum_acceptance_med.來源].ObjectToString() != "院內系統") continue;
                 class_acceptance_med_data _class_acceptance_med_data = new class_acceptance_med_data();
                 _class_acceptance_med_data.藥品碼 = list_value[i][(int)enum_acceptance_med.藥品碼].ObjectToString();
                 _class_acceptance_med_data.數量 = list_value[i][(int)enum_acceptance_med.數量].ObjectToString();
@@ -85,7 +86,7 @@ namespace 智慧調劑台管理系統_WebApi
                 _class_acceptance_med_data.狀態 = list_value[i][(int)enum_acceptance_med.狀態].ObjectToString();
                 list_class_acceptance_med_data.Add(_class_acceptance_med_data);
             }
-            
+
 
             string jsonString = list_class_acceptance_med_data.JsonSerializationt();
             return jsonString;
@@ -94,7 +95,7 @@ namespace 智慧調劑台管理系統_WebApi
         public string Post([FromBody] class_acceptance_med_data data)
         {
             string str_out = "";
-            if(data == null)
+            if (data == null)
             {
                 return "無資料可更動";
             }

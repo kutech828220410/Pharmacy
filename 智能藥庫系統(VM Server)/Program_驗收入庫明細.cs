@@ -34,6 +34,20 @@ namespace 智能藥庫系統_VM_Server_
             來源,
             備註,
         }
+        public enum enum_驗收入庫明細_匯出
+        {
+            藥品碼,
+            藥品名稱,
+            包裝單位,
+            數量,
+            效期,
+            批號,
+            驗收時間,
+            加入時間,
+            狀態,
+            來源,
+            備註,
+        }
         public enum enum_驗收入庫明細_狀態
         {
             等待過帳,
@@ -60,10 +74,14 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_驗收入庫明細_顯示等待過帳.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_顯示等待過帳_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品碼篩選_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_藥品名稱篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品名稱篩選_MouseDownEvent;
+            this.plC_RJ_Button_驗收入庫明細_匯出.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_匯出_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(sub_Program_驗收入庫明細);
         }
-  
+
+
+
         private bool flag_驗收入庫明細 = false;
         private void sub_Program_驗收入庫明細()
         {
@@ -87,33 +105,50 @@ namespace 智能藥庫系統_VM_Server_
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
             List<object[]> list_藥品資料_buf = new List<object[]>();
             List<object[]> list_藥庫_驗收入庫 = new List<object[]>();
+            List<object[]> list_藥庫_驗收入庫_error = new List<object[]>();
             for (int i = 0; i < list_補給驗收入庫.Count; i++)
             {
                 object[] value = list_補給驗收入庫[i].CopyRow(new enum_補給驗收入庫(), new enum_驗收入庫明細());
                 string 藥品碼 = value[(int)enum_驗收入庫明細.藥品碼].ObjectToString();
+                string 料號 = value[(int)enum_驗收入庫明細.藥品碼].ObjectToString();
                 DateTime dateTime = value[(int)enum_驗收入庫明細.驗收時間].StringToDateTime();
                 list_補給驗收入庫_buf = list_補給驗收入庫.GetRowsInDate((int)enum_補給驗收入庫.驗收時間, dateTime);
                 list_補給驗收入庫_buf = list_補給驗收入庫_buf.GetRows((int)enum_驗收入庫明細.藥品碼, 藥品碼);
-                if(list_補給驗收入庫_buf.Count == 0)
+                if (list_補給驗收入庫_buf.Count == 0)
                 {
 
                 }
-                else if(list_補給驗收入庫_buf.Count >= 2)
+                else if (list_補給驗收入庫_buf.Count >= 2)
                 {
 
                 }
+                if (藥品碼.Length == 10)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
+                    value[(int)enum_驗收入庫明細.藥品碼] = 藥品碼;
+                }
+                else if (藥品碼.Length == 12)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 7, 5);
+                    value[(int)enum_驗收入庫明細.藥品碼] = 料號;
+                    list_藥庫_驗收入庫_error.Add(value);
+                }
 
-                藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
-                value[(int)enum_驗收入庫明細.藥品碼] = 藥品碼;
+
+
 
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
-                if (list_藥品資料_buf.Count == 0) continue;
+                if (list_藥品資料_buf.Count == 0)
+                {
 
+                    continue;
+                }
                 value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱];
                 value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝單位];
                 list_藥庫_驗收入庫.Add(value);
             }
             list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());
+            list_藥庫_驗收入庫_error.Sort(new ICP_驗收入庫_過帳明細());
             return list_藥庫_驗收入庫;
         }
         private void Function_驗收入庫明細_選取資料過帳(List<object[]> list_驗收入庫明細)
@@ -131,7 +166,7 @@ namespace 智能藥庫系統_VM_Server_
                 if (list_驗收入庫明細[i][(int)enum_驗收入庫明細.狀態].ObjectToString() != enum_驗收入庫明細_狀態.等待過帳.GetEnumName()) continue;
                 string 藥品碼 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.藥品碼].ObjectToString();
                 string 效期 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.效期].ObjectToString();
-                if(效期.StringIsEmpty()) 效期 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.效期].ToDateString();
+                if (效期.StringIsEmpty()) 效期 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.效期].ToDateString();
                 string 批號 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.批號].ObjectToString();
                 string 數量 = list_驗收入庫明細[i][(int)enum_驗收入庫明細.數量].ObjectToString();
 
@@ -220,7 +255,29 @@ namespace 智能藥庫系統_VM_Server_
                 }
             }
         }
-
+        private void PlC_RJ_Button_驗收入庫明細_匯出_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    DataTable dataTable = this.sqL_DataGridView_驗收入庫明細.GetDataTable();
+                    dataTable = dataTable.ReorderTable(new enum_驗收入庫明細_匯出());
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if (Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xls")
+                    {
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    this.Cursor = Cursors.Default;
+                    MyMessageBox.ShowDialog("匯出完成");
+                }
+            }));
+        }
         private void PlC_RJ_Button_驗收入庫明細_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {
             this.sqL_DataGridView_驗收入庫明細.RefreshGrid(this.Function_驗收入庫明細_取得資料());
@@ -241,7 +298,7 @@ namespace 智能藥庫系統_VM_Server_
         }
         private void PlC_RJ_Button_驗收入庫明細_選取資料過帳_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_驗收入庫明細 = this.sqL_DataGridView_驗收入庫明細.Get_All_Checked_RowsValues();    
+            List<object[]> list_驗收入庫明細 = this.sqL_DataGridView_驗收入庫明細.Get_All_Checked_RowsValues();
             if (list_驗收入庫明細.Count == 0)
             {
                 MyMessageBox.ShowDialog("未選取資料!");
