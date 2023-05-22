@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {}
+    "C:\\Users\\HS1T16\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {
+    "C:\\Users\\HS1T16\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\HS1T16\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
         "projectName": "智慧藥庫系統_WebApi",
-        "projectPath": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+        "projectPath": "C:\\Users\\HS1T16\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
         "packagesPath": "C:\\Users\\HS1T16\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HS1T16\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\obj\\",
+        "outputPath": "C:\\Users\\HS1T16\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HS1T16\\AppData\\Roaming\\NuGet\\NuGet.Config",
