@@ -253,21 +253,21 @@ namespace 智能藥庫系統_VM_Server_
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.檔名, "每日訂單送出");
                 if (list_過帳狀態.Count > 0)
                 {
-                    if (!Basic.TypeConvert.IsHolidays(DateTime.Now))
-                    {
-                        if (Task_檢查每日訂單 == null)
-                        {
-                            Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
-                        }
-                        if (Task_檢查每日訂單.Status == TaskStatus.RanToCompletion)
-                        {
-                            Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
-                        }
-                        if (Task_檢查每日訂單.Status == TaskStatus.Created)
-                        {
-                            Task_檢查每日訂單.Start();
-                        }
-                    }
+                    //if (!Basic.TypeConvert.IsHolidays(DateTime.Now))
+                    //{
+                    //    if (Task_檢查每日訂單 == null)
+                    //    {
+                    //        Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
+                    //    }
+                    //    if (Task_檢查每日訂單.Status == TaskStatus.RanToCompletion)
+                    //    {
+                    //        Task_檢查每日訂單 = new Task(new Action(delegate { this.PlC_RJ_Button_藥庫_每日訂單_送出線上訂單_MouseDownEvent(null); }));
+                    //    }
+                    //    if (Task_檢查每日訂單.Status == TaskStatus.Created)
+                    //    {
+                    //        Task_檢查每日訂單.Start();
+                    //    }
+                    //}
 
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
