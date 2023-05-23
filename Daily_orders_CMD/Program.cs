@@ -205,13 +205,12 @@ namespace Daily_orders_CMD
             {
                 try
                 {
-                    if (!Basic.TypeConvert.IsHolidays(DateTime.Now))
+                    if (送出線上訂單())
                     {
-                        送出線上訂單();
+                        break;
                     }
-                    break;
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     Console.WriteLine($"{e.Message}");
                 }
@@ -221,7 +220,7 @@ namespace Daily_orders_CMD
           //  Console.ReadLine(); // 等待用户按下 Enter 键
         }
 
-        static public void 送出線上訂單()
+        static bool 送出線上訂單()
         {
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
@@ -253,10 +252,10 @@ namespace Daily_orders_CMD
                 list_texts.Add(text);
             }
             bool flag = Basic.MyFileStream.SaveFile($"{localfilepath}{localfilename}", list_texts);
-            flag = Basic.MyFileStream.SaveFile($"C:\\{localfilename}", list_texts);
+            //flag = Basic.MyFileStream.SaveFile($"C:\\{localfilename}", list_texts);
             Console.WriteLine($"存至本地 {(flag ? "sucess" : "fail")} ! ,耗時{myTimer.ToString()}");
             flag = Basic.MyFileStream.SaveFile($"{serverfilepath}{serverfilename}", list_texts);
-
+            return flag;
         }
         static public API_OrderClass Function_藥庫_每日訂單_取得今日訂購數量()
         {
@@ -336,9 +335,9 @@ namespace Daily_orders_CMD
             bool isholiday = false;
             if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
+                if (!IsHspitalHolidays(dateTime_basic_start))
                 {
-                    if (Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
+                    if (IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
                     {
                         dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                     }
@@ -347,7 +346,7 @@ namespace Daily_orders_CMD
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
+                if (!IsHspitalHolidays(dateTime_basic_start))
                 {
                     break;
                 }
@@ -367,7 +366,7 @@ namespace Daily_orders_CMD
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
+                if (!IsHspitalHolidays(dateTime_basic_end))
                 {
                     break;
                 }
@@ -377,6 +376,70 @@ namespace Daily_orders_CMD
             list_value = sQLControl_每日訂單.GetAllRows(null);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;
+        }
+        public static bool IsHspitalHolidays(DateTime date)
+        {
+            // 週休二日
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return true;
+            }
+            // 國定假日(國曆)
+            if (date.ToString("MM/dd").Equals("01/01"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("02/28"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("04/05"))
+            {
+                return true;
+            }
+
+            if (date.ToString("MM/dd").Equals("10/10"))
+            {
+                return true;
+            }
+
+            // 國定假日(農曆)
+            System.Globalization.TaiwanLunisolarCalendar TaiwanLunisolarCalendar = new System.Globalization.TaiwanLunisolarCalendar();
+            string LeapDate = string.Format("{0}/{1}", TaiwanLunisolarCalendar.GetMonth(date), TaiwanLunisolarCalendar.GetDayOfMonth(date));
+            //if (LeapDate == "12/30")
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("1/1"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("1/2"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("1/3"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("1/4"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("1/5"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("5/5"))
+            //{
+            //    return true;
+            //}
+            //if (LeapDate == ("8/15"))
+            //{
+            //    return true;
+            //}
+
+            return false;
         }
     }
 }

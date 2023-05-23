@@ -587,6 +587,7 @@ namespace 智能藥庫系統
                 {
                     object[] value = list_value_buf[0];
                     value[(int)enum_每日訂單.今日訂購數量] = 數量[i];
+                    value[(int)enum_每日訂單.訂購時間] = DateTime.Now.ToDateTimeString_6();
                     list_value_replace.Add(value);
                 }
             }

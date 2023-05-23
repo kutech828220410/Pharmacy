@@ -485,8 +485,9 @@ namespace 智能藥庫系統_VM_Server_
 
             if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
-                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_start = dateTime_end.AddDays(-1);
+               
             }
             else
             {
