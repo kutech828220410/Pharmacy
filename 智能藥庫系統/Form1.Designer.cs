@@ -647,7 +647,10 @@
             this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料 = new SQLUI.SQL_DataGridView();
             this.label26 = new System.Windows.Forms.Label();
             this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始 = new MyUI.RJ_DatePicker();
+            this.tabPage43 = new System.Windows.Forms.TabPage();
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量 = new SQLUI.SQL_DataGridView();
             this.panel_藥庫_每日訂單 = new System.Windows.Forms.Panel();
+            this.plC_RJ_ScreenButton40 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton41 = new MyUI.PLC_RJ_ScreenButton();
             this.plC_RJ_ScreenButton44 = new MyUI.PLC_RJ_ScreenButton();
             this.藥庫_緊急訂單 = new System.Windows.Forms.TabPage();
@@ -1214,6 +1217,7 @@
             this.tabPage35 = new System.Windows.Forms.TabPage();
             this.groupBox19 = new System.Windows.Forms.GroupBox();
             this.groupBox15 = new System.Windows.Forms.GroupBox();
+            this.sqL_DataGridView_檢視驗收入庫量 = new SQLUI.SQL_DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.loginUI = new MySQL_Login.LoginUI();
             this.panel_系統 = new System.Windows.Forms.Panel();
@@ -1228,6 +1232,18 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部 = new MyUI.PLC_RJ_Button();
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常 = new System.Windows.Forms.CheckBox();
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量 = new MyUI.PLC_RJ_Button();
+            this.panel152 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable129 = new MyUI.RJ_Lable();
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋 = new MyUI.RJ_TextBox();
+            this.panel153 = new System.Windows.Forms.Panel();
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable130 = new MyUI.RJ_Lable();
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋 = new MyUI.RJ_TextBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1400,6 +1416,7 @@
             this.panel35.SuspendLayout();
             this.plC_RJ_GroupBox16.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox16.SuspendLayout();
+            this.tabPage43.SuspendLayout();
             this.panel_藥庫_每日訂單.SuspendLayout();
             this.藥庫_緊急訂單.SuspendLayout();
             this.plC_ScreenPage_藥庫_緊急訂單.SuspendLayout();
@@ -1586,8 +1603,11 @@
             this.groupBox47.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.tabPage35.SuspendLayout();
+            this.groupBox15.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
+            this.panel152.SuspendLayout();
+            this.panel153.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -16124,6 +16144,7 @@
             this.plC_ScreenPage_藥庫_每日訂單.BackColor = System.Drawing.Color.White;
             this.plC_ScreenPage_藥庫_每日訂單.Controls.Add(this.tabPage36);
             this.plC_ScreenPage_藥庫_每日訂單.Controls.Add(this.tabPage37);
+            this.plC_ScreenPage_藥庫_每日訂單.Controls.Add(this.tabPage43);
             this.plC_ScreenPage_藥庫_每日訂單.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_ScreenPage_藥庫_每日訂單.ForekColor = System.Drawing.Color.Black;
             this.plC_ScreenPage_藥庫_每日訂單.ItemSize = new System.Drawing.Size(54, 21);
@@ -17197,8 +17218,83 @@
             this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TabIndex = 191;
             this.rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始.TextColor = System.Drawing.Color.White;
             // 
+            // tabPage43
+            // 
+            this.tabPage43.Controls.Add(this.panel153);
+            this.tabPage43.Controls.Add(this.panel152);
+            this.tabPage43.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量);
+            this.tabPage43.Controls.Add(this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常);
+            this.tabPage43.Controls.Add(this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常);
+            this.tabPage43.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部);
+            this.tabPage43.Controls.Add(this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量);
+            this.tabPage43.Location = new System.Drawing.Point(4, 25);
+            this.tabPage43.Name = "tabPage43";
+            this.tabPage43.Size = new System.Drawing.Size(1622, 857);
+            this.tabPage43.TabIndex = 2;
+            this.tabPage43.Text = "檢視驗收入庫量";
+            this.tabPage43.UseVisualStyleBackColor = true;
+            // 
+            // sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量
+            // 
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.AutoSelectToDeep = false;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.BorderRadius = 0;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.BorderSize = 2;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.columnHeadersHeight = 23;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns1"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns2"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns3"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns4"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns5"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns6"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns7"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Columns8"))));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.DataBaseName = "storehouse_0";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Dock = System.Windows.Forms.DockStyle.Left;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Font = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.ImageBox = false;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Location = new System.Drawing.Point(0, 0);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Name = "sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Password = "user82822040";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Port = ((uint)(3306u));
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.rowHeaderBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.RowsHeight = 60;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Server = "localhost";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Size = new System.Drawing.Size(1132, 857);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.TabIndex = 160;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.TableName = "post_order_check";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.UserName = "root";
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.可拖曳欄位寬度 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.可選擇多列 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.自動換行 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.表單字體 = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.顯示CheckBox = false;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.顯示首列 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.顯示首行 = true;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            // 
             // panel_藥庫_每日訂單
             // 
+            this.panel_藥庫_每日訂單.Controls.Add(this.plC_RJ_ScreenButton40);
             this.panel_藥庫_每日訂單.Controls.Add(this.plC_RJ_ScreenButton41);
             this.panel_藥庫_每日訂單.Controls.Add(this.plC_RJ_ScreenButton44);
             this.panel_藥庫_每日訂單.Dock = System.Windows.Forms.DockStyle.Top;
@@ -17207,6 +17303,45 @@
             this.panel_藥庫_每日訂單.Padding = new System.Windows.Forms.Padding(2);
             this.panel_藥庫_每日訂單.Size = new System.Drawing.Size(1630, 52);
             this.panel_藥庫_每日訂單.TabIndex = 117;
+            // 
+            // plC_RJ_ScreenButton40
+            // 
+            this.plC_RJ_ScreenButton40.but_press = false;
+            this.plC_RJ_ScreenButton40.Dock = System.Windows.Forms.DockStyle.Left;
+            this.plC_RJ_ScreenButton40.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.plC_RJ_ScreenButton40.IconSize = 40;
+            this.plC_RJ_ScreenButton40.Location = new System.Drawing.Point(334, 2);
+            this.plC_RJ_ScreenButton40.Margin = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_ScreenButton40.Name = "plC_RJ_ScreenButton40";
+            this.plC_RJ_ScreenButton40.OffBackColor = System.Drawing.Color.DodgerBlue;
+            this.plC_RJ_ScreenButton40.OffFont = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
+            this.plC_RJ_ScreenButton40.OffForeColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButton40.OffIconColor = System.Drawing.Color.Black;
+            this.plC_RJ_ScreenButton40.OffText = "檢視驗收入庫量";
+            this.plC_RJ_ScreenButton40.OnBackColor = System.Drawing.Color.White;
+            this.plC_RJ_ScreenButton40.OnFont = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_ScreenButton40.OnForeColor = System.Drawing.Color.DodgerBlue;
+            this.plC_RJ_ScreenButton40.OnIconColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_ScreenButton40.OnText = "檢視驗收入庫量";
+            this.plC_RJ_ScreenButton40.ShowIcon = false;
+            this.plC_RJ_ScreenButton40.Size = new System.Drawing.Size(210, 48);
+            this.plC_RJ_ScreenButton40.TabIndex = 77;
+            this.plC_RJ_ScreenButton40.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
+            this.plC_RJ_ScreenButton40.寫入位置註解 = "";
+            this.plC_RJ_ScreenButton40.寫入元件位置 = "";
+            this.plC_RJ_ScreenButton40.按鈕型態 = MyUI.PLC_RJ_ScreenButton.StatusEnum.保持型;
+            this.plC_RJ_ScreenButton40.控制位址 = "D0";
+            this.plC_RJ_ScreenButton40.換頁選擇方式 = MyUI.PLC_RJ_ScreenButton.換頁選擇方式Enum.名稱;
+            this.plC_RJ_ScreenButton40.致能讀取位置 = "";
+            this.plC_RJ_ScreenButton40.讀取位元反向 = false;
+            this.plC_RJ_ScreenButton40.讀取位置註解 = "";
+            this.plC_RJ_ScreenButton40.讀取元件位置 = "";
+            this.plC_RJ_ScreenButton40.音效 = true;
+            this.plC_RJ_ScreenButton40.頁面名稱 = "檢視驗收入庫量";
+            this.plC_RJ_ScreenButton40.頁面編號 = 0;
+            this.plC_RJ_ScreenButton40.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
+            this.plC_RJ_ScreenButton40.顯示狀態 = false;
+            this.plC_RJ_ScreenButton40.顯示讀取位置 = "";
             // 
             // plC_RJ_ScreenButton41
             // 
@@ -30877,7 +31012,7 @@
             this.tabPage35.Location = new System.Drawing.Point(4, 22);
             this.tabPage35.Name = "tabPage35";
             this.tabPage35.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage35.Size = new System.Drawing.Size(475, 355);
+            this.tabPage35.Size = new System.Drawing.Size(1622, 912);
             this.tabPage35.TabIndex = 1;
             this.tabPage35.Text = "02";
             this.tabPage35.UseVisualStyleBackColor = true;
@@ -30893,12 +31028,70 @@
             // 
             // groupBox15
             // 
+            this.groupBox15.Controls.Add(this.sqL_DataGridView_檢視驗收入庫量);
             this.groupBox15.Location = new System.Drawing.Point(6, 6);
             this.groupBox15.Name = "groupBox15";
-            this.groupBox15.Size = new System.Drawing.Size(800, 289);
+            this.groupBox15.Size = new System.Drawing.Size(1012, 289);
             this.groupBox15.TabIndex = 37;
             this.groupBox15.TabStop = false;
-            this.groupBox15.Text = "藥庫_藥品資料";
+            this.groupBox15.Text = "檢視驗收入庫量";
+            // 
+            // sqL_DataGridView_檢視驗收入庫量
+            // 
+            this.sqL_DataGridView_檢視驗收入庫量.AutoSelectToDeep = false;
+            this.sqL_DataGridView_檢視驗收入庫量.backColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_檢視驗收入庫量.BorderColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_檢視驗收入庫量.BorderRadius = 0;
+            this.sqL_DataGridView_檢視驗收入庫量.BorderSize = 2;
+            this.sqL_DataGridView_檢視驗收入庫量.cellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.cellStylBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_檢視驗收入庫量.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_檢視驗收入庫量.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_檢視驗收入庫量.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
+            this.sqL_DataGridView_檢視驗收入庫量.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.sqL_DataGridView_檢視驗收入庫量.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.columnHeadersHeight = 23;
+            this.sqL_DataGridView_檢視驗收入庫量.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns1"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns2"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns3"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns4"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns5"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns6"))));
+            this.sqL_DataGridView_檢視驗收入庫量.Columns.Add(((SQLUI.SQL_DataGridView.ColumnElement)(resources.GetObject("sqL_DataGridView_檢視驗收入庫量.Columns7"))));
+            this.sqL_DataGridView_檢視驗收入庫量.DataBaseName = "storehouse_0";
+            this.sqL_DataGridView_檢視驗收入庫量.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sqL_DataGridView_檢視驗收入庫量.Font = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_檢視驗收入庫量.ImageBox = false;
+            this.sqL_DataGridView_檢視驗收入庫量.Location = new System.Drawing.Point(3, 18);
+            this.sqL_DataGridView_檢視驗收入庫量.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.sqL_DataGridView_檢視驗收入庫量.Name = "sqL_DataGridView_檢視驗收入庫量";
+            this.sqL_DataGridView_檢視驗收入庫量.OnlineState = SQLUI.SQL_DataGridView.OnlineEnum.Online;
+            this.sqL_DataGridView_檢視驗收入庫量.Password = "user82822040";
+            this.sqL_DataGridView_檢視驗收入庫量.Port = ((uint)(3306u));
+            this.sqL_DataGridView_檢視驗收入庫量.rowHeaderBackColor = System.Drawing.Color.LightBlue;
+            this.sqL_DataGridView_檢視驗收入庫量.rowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.RowsColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sqL_DataGridView_檢視驗收入庫量.RowsHeight = 60;
+            this.sqL_DataGridView_檢視驗收入庫量.SaveFileName = "SQL_DataGridView";
+            this.sqL_DataGridView_檢視驗收入庫量.Server = "localhost";
+            this.sqL_DataGridView_檢視驗收入庫量.Size = new System.Drawing.Size(1006, 268);
+            this.sqL_DataGridView_檢視驗收入庫量.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
+            this.sqL_DataGridView_檢視驗收入庫量.TabIndex = 158;
+            this.sqL_DataGridView_檢視驗收入庫量.TableName = "post_order_check";
+            this.sqL_DataGridView_檢視驗收入庫量.UserName = "root";
+            this.sqL_DataGridView_檢視驗收入庫量.可拖曳欄位寬度 = true;
+            this.sqL_DataGridView_檢視驗收入庫量.可選擇多列 = true;
+            this.sqL_DataGridView_檢視驗收入庫量.單格樣式 = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.自動換行 = true;
+            this.sqL_DataGridView_檢視驗收入庫量.表單字體 = new System.Drawing.Font("新細明體", 12F);
+            this.sqL_DataGridView_檢視驗收入庫量.邊框樣式 = System.Windows.Forms.BorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.顯示CheckBox = false;
+            this.sqL_DataGridView_檢視驗收入庫量.顯示首列 = true;
+            this.sqL_DataGridView_檢視驗收入庫量.顯示首行 = true;
+            this.sqL_DataGridView_檢視驗收入庫量.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.sqL_DataGridView_檢視驗收入庫量.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             // 
             // tabPage5
             // 
@@ -31185,6 +31378,301 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
+            // plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Location = new System.Drawing.Point(1437, 195);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Name = "plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.OFF_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.ON_文字內容 = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.TabIndex = 190;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Text = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.Texts = "顯示全部";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.顯示狀態 = false;
+            // 
+            // checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常
+            // 
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.AutoSize = true;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.Location = new System.Drawing.Point(1157, 16);
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.Name = "checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常";
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.TabIndex = 191;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.Text = "數量正常";
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常
+            // 
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.AutoSize = true;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.Checked = true;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.Location = new System.Drawing.Point(1240, 16);
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.Name = "checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常";
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.TabIndex = 192;
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.Text = "數量異常";
+            this.checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常.UseVisualStyleBackColor = true;
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Location = new System.Drawing.Point(1437, 16);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Name = "plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.OFF_文字內容 = "輸入補償量";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ON_文字內容 = "輸入補償量";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.TabIndex = 193;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Text = "輸入補償量";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Texts = "輸入補償量";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.顯示狀態 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.顯示讀取位置 = "M8001";
+            // 
+            // panel152
+            // 
+            this.panel152.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel152.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋);
+            this.panel152.Controls.Add(this.rJ_Lable129);
+            this.panel152.Controls.Add(this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋);
+            this.panel152.Location = new System.Drawing.Point(1157, 49);
+            this.panel152.Name = "panel152";
+            this.panel152.Size = new System.Drawing.Size(365, 62);
+            this.panel152.TabIndex = 197;
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Location = new System.Drawing.Point(278, 5);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Name = "plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.OFF_文字內容 = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ON_文字內容 = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Size = new System.Drawing.Size(75, 50);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.TabIndex = 144;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Text = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Texts = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.顯示狀態 = false;
+            // 
+            // rJ_Lable129
+            // 
+            this.rJ_Lable129.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable129.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable129.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable129.BorderRadius = 5;
+            this.rJ_Lable129.BorderSize = 0;
+            this.rJ_Lable129.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable129.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.rJ_Lable129.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable129.Location = new System.Drawing.Point(3, 5);
+            this.rJ_Lable129.Name = "rJ_Lable129";
+            this.rJ_Lable129.Size = new System.Drawing.Size(106, 50);
+            this.rJ_Lable129.TabIndex = 143;
+            this.rJ_Lable129.Text = "藥碼";
+            this.rJ_Lable129.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable129.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋
+            // 
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderRadius = 0;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.BorderSize = 2;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Location = new System.Drawing.Point(115, 5);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Multiline = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Name = "rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.PassWordChar = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.PlaceholderText = "";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.ShowTouchPannel = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Size = new System.Drawing.Size(157, 50);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.TabIndex = 142;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.Texts = "";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.UnderlineStyle = false;
+            // 
+            // panel153
+            // 
+            this.panel153.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel153.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋);
+            this.panel153.Controls.Add(this.rJ_Lable130);
+            this.panel153.Controls.Add(this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋);
+            this.panel153.Location = new System.Drawing.Point(1157, 117);
+            this.panel153.Name = "panel153";
+            this.panel153.Size = new System.Drawing.Size(365, 62);
+            this.panel153.TabIndex = 198;
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Location = new System.Drawing.Point(278, 5);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Name = "plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.OFF_文字內容 = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ON_文字內容 = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Size = new System.Drawing.Size(75, 50);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.TabIndex = 144;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Text = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Texts = "搜尋";
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.顯示狀態 = false;
+            // 
+            // rJ_Lable130
+            // 
+            this.rJ_Lable130.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable130.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable130.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable130.BorderRadius = 5;
+            this.rJ_Lable130.BorderSize = 0;
+            this.rJ_Lable130.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable130.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.rJ_Lable130.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable130.Location = new System.Drawing.Point(3, 5);
+            this.rJ_Lable130.Name = "rJ_Lable130";
+            this.rJ_Lable130.Size = new System.Drawing.Size(106, 50);
+            this.rJ_Lable130.TabIndex = 143;
+            this.rJ_Lable130.Text = "藥名";
+            this.rJ_Lable130.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable130.TextColor = System.Drawing.Color.White;
+            // 
+            // rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋
+            // 
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderRadius = 0;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.BorderSize = 2;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ForeColor = System.Drawing.Color.DimGray;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Location = new System.Drawing.Point(115, 5);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Multiline = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Name = "rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.PassWordChar = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.PlaceholderColor = System.Drawing.Color.DarkGray;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.PlaceholderText = "";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.ShowTouchPannel = false;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Size = new System.Drawing.Size(157, 50);
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.TabIndex = 142;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.Texts = "";
+            this.rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.UnderlineStyle = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -31387,6 +31875,8 @@
             this.panel35.ResumeLayout(false);
             this.plC_RJ_GroupBox16.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox16.ResumeLayout(false);
+            this.tabPage43.ResumeLayout(false);
+            this.tabPage43.PerformLayout();
             this.panel_藥庫_每日訂單.ResumeLayout(false);
             this.藥庫_緊急訂單.ResumeLayout(false);
             this.plC_ScreenPage_藥庫_緊急訂單.ResumeLayout(false);
@@ -31588,8 +32078,11 @@
             this.groupBox47.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.tabPage35.ResumeLayout(false);
+            this.groupBox15.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
+            this.panel152.ResumeLayout(false);
+            this.panel153.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -32749,7 +33242,6 @@
         private SQLUI.SQL_DataGridView sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢;
         private System.Windows.Forms.TabPage tabPage42;
         private System.Windows.Forms.Panel panel_周邊設備_麻醉部ADC;
-        private MyUI.RJ_Pannel ContentsPanel;
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton39;
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton22;
         private MyUI.PLC_RJ_Button plC_RJ_Button_周邊設備_麻醉部ADC_抽屜狀態_API測試;
@@ -32794,6 +33286,23 @@
         private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥;
         private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥;
         private System.Windows.Forms.CheckBox checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫;
+        private System.Windows.Forms.TabPage tabPage43;
+        private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton40;
+        private SQLUI.SQL_DataGridView sqL_DataGridView_檢視驗收入庫量;
+        private SQLUI.SQL_DataGridView sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量;
+        private MyUI.RJ_Pannel ContentsPanel;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部;
+        private System.Windows.Forms.CheckBox checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常;
+        private System.Windows.Forms.CheckBox checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量;
+        private System.Windows.Forms.Panel panel153;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋;
+        private MyUI.RJ_Lable rJ_Lable130;
+        private MyUI.RJ_TextBox rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋;
+        private System.Windows.Forms.Panel panel152;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋;
+        private MyUI.RJ_Lable rJ_Lable129;
+        private MyUI.RJ_TextBox rJ_TextBox_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋;
     }
 }
 

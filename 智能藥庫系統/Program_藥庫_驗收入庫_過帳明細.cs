@@ -122,7 +122,11 @@ namespace 智能藥庫系統
             Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(deviceBasics.Count);
             for (int i = 0; i < list_藥庫_驗收入庫_過帳明細.Count; i++)
             {
-                if (list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.狀態].ObjectToString() != enum_藥庫_驗收入庫_過帳明細_狀態.等待過帳.GetEnumName()) continue;
+                bool flag_continue = true;
+                if (list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.狀態].ObjectToString() == enum_藥庫_驗收入庫_過帳明細_狀態.等待過帳.GetEnumName()) flag_continue = false;
+                if (list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.狀態].ObjectToString() == enum_藥庫_驗收入庫_過帳明細_狀態.未建立儲位.GetEnumName()) flag_continue = false;
+                if (list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.狀態].ObjectToString() == enum_藥庫_驗收入庫_過帳明細_狀態.庫存不足.GetEnumName()) flag_continue = false;
+                if (flag_continue) continue;
                 string 藥品碼 = list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.藥品碼].ObjectToString();
                 string 效期 = list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.效期].ObjectToString();
                 if (效期.StringIsEmpty()) 效期 = list_藥庫_驗收入庫_過帳明細[i][(int)enum_藥庫_驗收入庫_過帳明細.效期].ToDateString();

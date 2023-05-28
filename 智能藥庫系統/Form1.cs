@@ -228,6 +228,8 @@ namespace 智能藥庫系統
             this.sub_Program_藥庫_入庫_Init();
             this.sub_Program_藥庫_每日訂單_下訂單_Init();
             this.sub_Program_藥庫_每日訂單_訂單查詢_Init();
+            this.sub_Program_藥庫_每日訂單_檢視驗收入庫量_Init();
+
 
             this.sub_Program_藥庫_撥補_藥局_自動撥補_Init();
             this.sub_Program_藥庫_撥補_藥局_緊急申領_Init();

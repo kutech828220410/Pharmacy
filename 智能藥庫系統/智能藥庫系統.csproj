@@ -300,6 +300,9 @@
     <Compile Include="Program_藥庫_撥補_藥局_自動撥補.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Program_藥庫_每日訂單_檢視驗收入庫量.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_藥庫_每日訂單_訂單查詢.cs">
       <SubType>Form</SubType>
     </Compile>

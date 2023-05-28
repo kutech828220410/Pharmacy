@@ -61,7 +61,17 @@ namespace 智能藥庫系統
             備註,
             
         }
-  
+        public enum enum_檢視驗收入庫量
+        {
+            GUID,
+            藥碼,
+            中文名稱,
+            藥名,
+            已驗收量,
+            在途量,
+            已訂購量,
+            補償量,
+        }
         private void sub_Program_系統_Init()
         {
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_寫入報表設定, dBConfigClass.DB_posting_server);
@@ -74,7 +84,18 @@ namespace 智能藥庫系統
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_補給驗收入庫, dBConfigClass.DB_posting_server);           
             this.sqL_DataGridView_補給驗收入庫.Init();
             if (!this.sqL_DataGridView_補給驗收入庫.SQL_IsTableCreat()) this.sqL_DataGridView_補給驗收入庫.SQL_CreateTable();
-            
+
+
+            SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_檢視驗收入庫量, dBConfigClass.DB_posting_server);
+            this.sqL_DataGridView_檢視驗收入庫量.Init();
+            if(!this.sqL_DataGridView_檢視驗收入庫量.SQL_IsTableCreat())
+            {
+                this.sqL_DataGridView_檢視驗收入庫量.SQL_CreateTable();
+            }
+            else
+            {
+                this.sqL_DataGridView_檢視驗收入庫量.SQL_CheckAllColumnName(true);
+            }
 
             this.plC_UI_Init.Add_Method(this.sub_Program_系統);
         }
