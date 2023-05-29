@@ -120,6 +120,21 @@
   <metadata name="timer_init.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
+  <data name="loginIndex_Pannel.LoginIndex" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAJoBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
+        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9u
+        PTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUB
+        AAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLlN0cmluZwMAAAAGX2l0
+        ZW1zBV9zaXplCF92ZXJzaW9uBgAACAgCAAAACQMAAAAoAAAAQwAAABEDAAAAQAAAAAYEAAAAAjAwBgUA
+        AAACMDEGBgAAAAIwMgYHAAAAAjAzBggAAAACMDQGCQAAAAIwNQYKAAAAAjA2BgsAAAACMDcGDAAAAAIw
+        OAYNAAAAAjA5Bg4AAAACMTAGDwAAAAIxMQYQAAAAAjEyBhEAAAACMTMGEgAAAAIxNAYTAAAAAjE1BhQA
+        AAACMTYGFQAAAAIxNwYWAAAAAjE4BhcAAAACMTkGGAAAAAIyMAYZAAAAAjIxBhoAAAACMjIGGwAAAAIy
+        MwYcAAAAAjI0Bh0AAAACMjUGHgAAAAIyNgYfAAAAAjI3BiAAAAACMjgGIQAAAAIyOQYiAAAAAjMwBiMA
+        AAACMzEGJAAAAAIzMgYlAAAAAjMzBiYAAAACMzQGJwAAAAIzNQYoAAAAAjM2BikAAAACMzcGKgAAAAIz
+        OAYrAAAAAjM5DRgL
+</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="panel186.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -13177,21 +13192,6 @@
         CAIAAABkAAAABfX///8UU1FMVUkuVGFibGUrRGF0ZVR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAABfT/
         //8WU1FMVUkuVGFibGUrU3RyaW5nVHlwZQEAAAAHdmFsdWVfXwAIAgAAAAEAAAAF8////xVTUUxVSS5U
         YWJsZStPdGhlclR5cGUBAAAAB3ZhbHVlX18ACAIAAABkAAAACw==
-</value>
-  </data>
-  <data name="loginIndex_Pannel.LoginIndex" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAJoBbXNjb3JsaWIsIFZlcnNpb249NC4wLjAuMCwgQ3VsdHVyZT1u
-        ZXV0cmFsLCBQdWJsaWNLZXlUb2tlbj1iNzdhNWM1NjE5MzRlMDg5XV0sIG1zY29ybGliLCBWZXJzaW9u
-        PTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUB
-        AAAAMFN5c3RlbS5Db2xsZWN0aW9ucy5HZW5lcmljLkxpc3RgMVtbU3lzdGVtLlN0cmluZwMAAAAGX2l0
-        ZW1zBV9zaXplCF92ZXJzaW9uBgAACAgCAAAACQMAAAAoAAAAQwAAABEDAAAAQAAAAAYEAAAAAjAwBgUA
-        AAACMDEGBgAAAAIwMgYHAAAAAjAzBggAAAACMDQGCQAAAAIwNQYKAAAAAjA2BgsAAAACMDcGDAAAAAIw
-        OAYNAAAAAjA5Bg4AAAACMTAGDwAAAAIxMQYQAAAAAjEyBhEAAAACMTMGEgAAAAIxNAYTAAAAAjE1BhQA
-        AAACMTYGFQAAAAIxNwYWAAAAAjE4BhcAAAACMTkGGAAAAAIyMAYZAAAAAjIxBhoAAAACMjIGGwAAAAIy
-        MwYcAAAAAjI0Bh0AAAACMjUGHgAAAAIyNgYfAAAAAjI3BiAAAAACMjgGIQAAAAIyOQYiAAAAAjMwBiMA
-        AAACMzEGJAAAAAIzMgYlAAAAAjMzBiYAAAACMzQGJwAAAAIzNQYoAAAAAjM2BikAAAACMzcGKgAAAAIz
-        OAYrAAAAAjM5DRgL
 </value>
   </data>
   <data name="sqL_DataGridView_盤點作業_盤點狀態_盤點明細.Columns" mimetype="application/x-microsoft.net.object.binary.base64">

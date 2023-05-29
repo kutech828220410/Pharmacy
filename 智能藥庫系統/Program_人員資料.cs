@@ -101,6 +101,30 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_人員資料_登錄.MouseDownEvent += PlC_RJ_Button_人員資料_登錄_MouseDownEvent;
             this.plC_RJ_Button_人員資料_刪除.MouseDownEvent += PlC_RJ_Button_人員資料_刪除_MouseDownEvent;
             this.plC_RJ_Button_人員資料_清除內容.MouseDownEvent += PlC_RJ_Button_人員資料_清除內容_MouseDownEvent;
+
+
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_交易紀錄頁面, 1);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_批次過帳頁面, 23);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_周邊設備頁面, 30);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_工程模式頁面, 06);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_效期庫存異動, 12);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_戰情白版設定, 31);
+
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_頁面顯示, 2);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_資料更動, 7);
+
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_頁面顯示, 24);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_儲位設定, 5);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_訂單管理, 32);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_撥補功能, 34);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_驗收入庫管理, 33);
+
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥局_頁面顯示, 25);
+
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_頁面顯示, 4);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_資料更動, 14);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_登入權限資料, 17);
+
             this.plC_UI_Init.Add_Method(this.sub_Program_人員資料);
         }
 
@@ -136,7 +160,6 @@ namespace 智能藥庫系統
                     this.List_class_Login_Data_index = this.loginUI.Get_login_data_index();
                     this.loginIndex_Pannel.Set_Login_Data_Index(this.List_class_Login_Data_index, enum_login_data_type.group02);
                     this.loginIndex_Pannel.Set_Login_Data(this.List_class_Login_Data[0]);
-
 
                     this.Invoke(new Action(delegate
                     {

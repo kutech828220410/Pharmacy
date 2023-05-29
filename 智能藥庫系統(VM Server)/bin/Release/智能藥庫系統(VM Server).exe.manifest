@@ -342,14 +342,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySQL_Login.dll" size="82432">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="MySQL_Login.dll" size="83456">
       <assemblyIdentity name="MySQL_Login" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Eb/eUt7NbQtQVPzDCpJounpdKgoHvZGfzN6ICWPtcfc=</dsig:DigestValue>
+        <dsig:DigestValue>oGwNsirSSXEMV/cZbxxoY2xTcW4t+GcO86oOc0MhbhE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
