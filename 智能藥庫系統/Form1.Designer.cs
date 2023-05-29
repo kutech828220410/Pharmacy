@@ -57,7 +57,7 @@
             this.plC_RJ_Pannel4 = new MyUI.PLC_RJ_Pannel();
             this.plC_RJ_GroupBox15 = new MyUI.PLC_RJ_GroupBox();
             this.ftp_DounloadUI = new MyFtpUI.Ftp_DounloadUI();
-            this.plC_RJ_GroupBox14 = new MyUI.PLC_RJ_GroupBox();
+            this.plC_RJ_GroupBox_登入畫面_登入顯示 = new MyUI.PLC_RJ_GroupBox();
             this.plC_RJ_Button_登入畫面_更換密碼 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_登入畫面_登入 = new MyUI.PLC_RJ_Button();
             this.panel185 = new System.Windows.Forms.Panel();
@@ -1130,6 +1130,26 @@
             this.sqL_DataGridView_人員資料 = new SQLUI.SQL_DataGridView();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.panel_權限設定 = new MyUI.RJ_Pannel();
+            this.groupBox26 = new System.Windows.Forms.GroupBox();
+            this.checkBox_權限管理_人員資料_資料更動 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_人員資料_登入權限資料 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_人員資料_頁面顯示 = new System.Windows.Forms.CheckBox();
+            this.groupBox25 = new System.Windows.Forms.GroupBox();
+            this.checkBox_權限管理_藥局_頁面顯示 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_戰情白版設定 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_效期庫存異動 = new System.Windows.Forms.CheckBox();
+            this.groupBox24 = new System.Windows.Forms.GroupBox();
+            this.checkBox_權限管理_藥庫_驗收入庫管理 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_藥庫_撥補功能 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_藥庫_訂單管理 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_藥庫_儲位設定 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_藥庫_頁面顯示 = new System.Windows.Forms.CheckBox();
+            this.groupBox23 = new System.Windows.Forms.GroupBox();
+            this.checkBox_權限管理_藥品資料_資料更動 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_藥品資料_頁面顯示 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_工程模式頁面 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_周邊設備頁面 = new System.Windows.Forms.CheckBox();
+            this.checkBox_權限管理_交易紀錄頁面 = new System.Windows.Forms.CheckBox();
             this.checkBox_權限管理_批次過帳頁面 = new System.Windows.Forms.CheckBox();
             this.loginIndex_Pannel = new MySQL_Login.LoginIndex_Pannel();
             this.panel34 = new System.Windows.Forms.Panel();
@@ -1245,26 +1265,12 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.checkBox_權限管理_交易紀錄頁面 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_周邊設備頁面 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_工程模式頁面 = new System.Windows.Forms.CheckBox();
-            this.groupBox23 = new System.Windows.Forms.GroupBox();
-            this.checkBox_權限管理_藥品資料_頁面顯示 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_藥品資料_資料更動 = new System.Windows.Forms.CheckBox();
-            this.groupBox24 = new System.Windows.Forms.GroupBox();
-            this.checkBox_權限管理_藥庫_儲位設定 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_藥庫_頁面顯示 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_效期庫存異動 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_藥庫_訂單管理 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_藥庫_撥補功能 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_藥庫_驗收入庫管理 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_戰情白版設定 = new System.Windows.Forms.CheckBox();
-            this.groupBox25 = new System.Windows.Forms.GroupBox();
-            this.checkBox_權限管理_藥局_頁面顯示 = new System.Windows.Forms.CheckBox();
-            this.groupBox26 = new System.Windows.Forms.GroupBox();
-            this.checkBox_權限管理_人員資料_登入權限資料 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_人員資料_頁面顯示 = new System.Windows.Forms.CheckBox();
-            this.checkBox_權限管理_人員資料_資料更動 = new System.Windows.Forms.CheckBox();
+            this.rJ_Pannel_登入畫面_登出顯示 = new MyUI.RJ_Pannel();
+            this.plC_RJ_Button_登入畫面_登出顯示_登出 = new MyUI.PLC_RJ_Button();
+            this.rJ_Lable131 = new MyUI.RJ_Lable();
+            this.panel154 = new System.Windows.Forms.Panel();
+            this.panel155 = new System.Windows.Forms.Panel();
+            this.rJ_Lable_登入畫面_登出顯示_姓名 = new MyUI.RJ_Lable();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1272,8 +1278,8 @@
             this.plC_RJ_Pannel4.SuspendLayout();
             this.plC_RJ_GroupBox15.ContentsPanel.SuspendLayout();
             this.plC_RJ_GroupBox15.SuspendLayout();
-            this.plC_RJ_GroupBox14.ContentsPanel.SuspendLayout();
-            this.plC_RJ_GroupBox14.SuspendLayout();
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.SuspendLayout();
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.SuspendLayout();
             this.panel185.SuspendLayout();
             this.panel183.SuspendLayout();
             this.戰情白板.SuspendLayout();
@@ -1583,6 +1589,10 @@
             this.flowLayoutPanel1.SuspendLayout();
             this.tabPage16.SuspendLayout();
             this.panel_權限設定.SuspendLayout();
+            this.groupBox26.SuspendLayout();
+            this.groupBox25.SuspendLayout();
+            this.groupBox24.SuspendLayout();
+            this.groupBox23.SuspendLayout();
             this.panel34.SuspendLayout();
             this.panel_人員資料.SuspendLayout();
             this.盤點作業.SuspendLayout();
@@ -1629,10 +1639,8 @@
             this.groupBox15.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.groupBox23.SuspendLayout();
-            this.groupBox24.SuspendLayout();
-            this.groupBox25.SuspendLayout();
-            this.groupBox26.SuspendLayout();
+            this.rJ_Pannel_登入畫面_登出顯示.SuspendLayout();
+            this.panel154.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -2356,8 +2364,9 @@
             // 登入畫面
             // 
             this.登入畫面.BackColor = System.Drawing.SystemColors.Window;
+            this.登入畫面.Controls.Add(this.rJ_Pannel_登入畫面_登出顯示);
             this.登入畫面.Controls.Add(this.plC_RJ_Pannel4);
-            this.登入畫面.Controls.Add(this.plC_RJ_GroupBox14);
+            this.登入畫面.Controls.Add(this.plC_RJ_GroupBox_登入畫面_登入顯示);
             this.登入畫面.Controls.Add(this.rJ_Lable5);
             this.登入畫面.Location = new System.Drawing.Point(4, 25);
             this.登入畫面.Name = "登入畫面";
@@ -2437,43 +2446,42 @@
             this.ftp_DounloadUI.Username = "test";
             this.ftp_DounloadUI.Username_要顯示 = false;
             // 
-            // plC_RJ_GroupBox14
+            // plC_RJ_GroupBox_登入畫面_登入顯示
             // 
             // 
-            // plC_RJ_GroupBox14.ContentsPanel
+            // plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel
             // 
-            this.plC_RJ_GroupBox14.ContentsPanel.BackColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox14.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox14.ContentsPanel.BorderRadius = 5;
-            this.plC_RJ_GroupBox14.ContentsPanel.BorderSize = 2;
-            this.plC_RJ_GroupBox14.ContentsPanel.Controls.Add(this.plC_RJ_Button_登入畫面_更換密碼);
-            this.plC_RJ_GroupBox14.ContentsPanel.Controls.Add(this.plC_RJ_Button_登入畫面_登入);
-            this.plC_RJ_GroupBox14.ContentsPanel.Controls.Add(this.panel185);
-            this.plC_RJ_GroupBox14.ContentsPanel.Controls.Add(this.panel183);
-            this.plC_RJ_GroupBox14.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.plC_RJ_GroupBox14.ContentsPanel.ForeColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox14.ContentsPanel.IsSelected = false;
-            this.plC_RJ_GroupBox14.ContentsPanel.Location = new System.Drawing.Point(0, 37);
-            this.plC_RJ_GroupBox14.ContentsPanel.Name = "ContentsPanel";
-            this.plC_RJ_GroupBox14.ContentsPanel.Size = new System.Drawing.Size(533, 249);
-            this.plC_RJ_GroupBox14.ContentsPanel.TabIndex = 2;
-            this.plC_RJ_GroupBox14.Location = new System.Drawing.Point(553, 450);
-            this.plC_RJ_GroupBox14.Name = "plC_RJ_GroupBox14";
-            this.plC_RJ_GroupBox14.PannelBackColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox14.PannelBorderColor = System.Drawing.Color.SkyBlue;
-            this.plC_RJ_GroupBox14.PannelBorderRadius = 5;
-            this.plC_RJ_GroupBox14.PannelBorderSize = 2;
-            this.plC_RJ_GroupBox14.Size = new System.Drawing.Size(533, 286);
-            this.plC_RJ_GroupBox14.TabIndex = 110;
-            this.plC_RJ_GroupBox14.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
-            this.plC_RJ_GroupBox14.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_GroupBox14.TitleBorderRadius = 5;
-            this.plC_RJ_GroupBox14.TitleBorderSize = 0;
-            this.plC_RJ_GroupBox14.TitleFont = new System.Drawing.Font("新細明體", 12F);
-            this.plC_RJ_GroupBox14.TitleForeColor = System.Drawing.Color.White;
-            this.plC_RJ_GroupBox14.TitleHeight = 37;
-            this.plC_RJ_GroupBox14.TitleTextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.plC_RJ_GroupBox14.TitleTexts = "    帳號登入";
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderRadius = 5;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderSize = 2;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Controls.Add(this.plC_RJ_Button_登入畫面_登入);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Controls.Add(this.panel185);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Controls.Add(this.panel183);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.ForeColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.IsSelected = false;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Location = new System.Drawing.Point(0, 37);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Size = new System.Drawing.Size(533, 249);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.TabIndex = 2;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.Location = new System.Drawing.Point(553, 450);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.Name = "plC_RJ_GroupBox_登入畫面_登入顯示";
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderColor = System.Drawing.Color.SkyBlue;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderRadius = 5;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderSize = 2;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.Size = new System.Drawing.Size(533, 286);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TabIndex = 110;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleBorderRadius = 5;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleBorderSize = 0;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleFont = new System.Drawing.Font("新細明體", 12F);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleForeColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleHeight = 37;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleTextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.TitleTexts = "    帳號登入";
             // 
             // plC_RJ_Button_登入畫面_更換密碼
             // 
@@ -2489,7 +2497,7 @@
             this.plC_RJ_Button_登入畫面_更換密碼.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.plC_RJ_Button_登入畫面_更換密碼.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_登入畫面_更換密碼.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_登入畫面_更換密碼.Location = new System.Drawing.Point(85, 169);
+            this.plC_RJ_Button_登入畫面_更換密碼.Location = new System.Drawing.Point(54, 228);
             this.plC_RJ_Button_登入畫面_更換密碼.Name = "plC_RJ_Button_登入畫面_更換密碼";
             this.plC_RJ_Button_登入畫面_更換密碼.OFF_文字內容 = "更換密碼";
             this.plC_RJ_Button_登入畫面_更換密碼.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -28635,6 +28643,253 @@
             this.panel_權限設定.Size = new System.Drawing.Size(1630, 857);
             this.panel_權限設定.TabIndex = 122;
             // 
+            // groupBox26
+            // 
+            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_資料更動);
+            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_登入權限資料);
+            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_頁面顯示);
+            this.groupBox26.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox26.ForeColor = System.Drawing.Color.Black;
+            this.groupBox26.Location = new System.Drawing.Point(810, 12);
+            this.groupBox26.Name = "groupBox26";
+            this.groupBox26.Size = new System.Drawing.Size(182, 325);
+            this.groupBox26.TabIndex = 10;
+            this.groupBox26.TabStop = false;
+            this.groupBox26.Text = "人員資料";
+            // 
+            // checkBox_權限管理_人員資料_資料更動
+            // 
+            this.checkBox_權限管理_人員資料_資料更動.AutoSize = true;
+            this.checkBox_權限管理_人員資料_資料更動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_人員資料_資料更動.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_人員資料_資料更動.Location = new System.Drawing.Point(30, 77);
+            this.checkBox_權限管理_人員資料_資料更動.Name = "checkBox_權限管理_人員資料_資料更動";
+            this.checkBox_權限管理_人員資料_資料更動.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_人員資料_資料更動.TabIndex = 4;
+            this.checkBox_權限管理_人員資料_資料更動.Text = "資料更動";
+            this.checkBox_權限管理_人員資料_資料更動.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_人員資料_登入權限資料
+            // 
+            this.checkBox_權限管理_人員資料_登入權限資料.AutoSize = true;
+            this.checkBox_權限管理_人員資料_登入權限資料.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_人員資料_登入權限資料.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_人員資料_登入權限資料.Location = new System.Drawing.Point(30, 111);
+            this.checkBox_權限管理_人員資料_登入權限資料.Name = "checkBox_權限管理_人員資料_登入權限資料";
+            this.checkBox_權限管理_人員資料_登入權限資料.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_人員資料_登入權限資料.TabIndex = 3;
+            this.checkBox_權限管理_人員資料_登入權限資料.Text = "登入權限資料";
+            this.checkBox_權限管理_人員資料_登入權限資料.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_人員資料_頁面顯示
+            // 
+            this.checkBox_權限管理_人員資料_頁面顯示.AutoSize = true;
+            this.checkBox_權限管理_人員資料_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_人員資料_頁面顯示.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_人員資料_頁面顯示.Location = new System.Drawing.Point(30, 43);
+            this.checkBox_權限管理_人員資料_頁面顯示.Name = "checkBox_權限管理_人員資料_頁面顯示";
+            this.checkBox_權限管理_人員資料_頁面顯示.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_人員資料_頁面顯示.TabIndex = 2;
+            this.checkBox_權限管理_人員資料_頁面顯示.Text = "頁面顯示";
+            this.checkBox_權限管理_人員資料_頁面顯示.UseVisualStyleBackColor = true;
+            // 
+            // groupBox25
+            // 
+            this.groupBox25.Controls.Add(this.checkBox_權限管理_藥局_頁面顯示);
+            this.groupBox25.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox25.ForeColor = System.Drawing.Color.Black;
+            this.groupBox25.Location = new System.Drawing.Point(622, 12);
+            this.groupBox25.Name = "groupBox25";
+            this.groupBox25.Size = new System.Drawing.Size(182, 325);
+            this.groupBox25.TabIndex = 9;
+            this.groupBox25.TabStop = false;
+            this.groupBox25.Text = "藥局";
+            // 
+            // checkBox_權限管理_藥局_頁面顯示
+            // 
+            this.checkBox_權限管理_藥局_頁面顯示.AutoSize = true;
+            this.checkBox_權限管理_藥局_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥局_頁面顯示.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥局_頁面顯示.Location = new System.Drawing.Point(30, 43);
+            this.checkBox_權限管理_藥局_頁面顯示.Name = "checkBox_權限管理_藥局_頁面顯示";
+            this.checkBox_權限管理_藥局_頁面顯示.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥局_頁面顯示.TabIndex = 2;
+            this.checkBox_權限管理_藥局_頁面顯示.Text = "頁面顯示";
+            this.checkBox_權限管理_藥局_頁面顯示.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_戰情白版設定
+            // 
+            this.checkBox_權限管理_戰情白版設定.AutoSize = true;
+            this.checkBox_權限管理_戰情白版設定.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_戰情白版設定.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_戰情白版設定.Location = new System.Drawing.Point(66, 232);
+            this.checkBox_權限管理_戰情白版設定.Name = "checkBox_權限管理_戰情白版設定";
+            this.checkBox_權限管理_戰情白版設定.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_戰情白版設定.TabIndex = 8;
+            this.checkBox_權限管理_戰情白版設定.Text = "戰情白版設定";
+            this.checkBox_權限管理_戰情白版設定.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_效期庫存異動
+            // 
+            this.checkBox_權限管理_效期庫存異動.AutoSize = true;
+            this.checkBox_權限管理_效期庫存異動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_效期庫存異動.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_效期庫存異動.Location = new System.Drawing.Point(66, 188);
+            this.checkBox_權限管理_效期庫存異動.Name = "checkBox_權限管理_效期庫存異動";
+            this.checkBox_權限管理_效期庫存異動.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_效期庫存異動.TabIndex = 7;
+            this.checkBox_權限管理_效期庫存異動.Text = "效期庫存異動";
+            this.checkBox_權限管理_效期庫存異動.UseVisualStyleBackColor = true;
+            // 
+            // groupBox24
+            // 
+            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_驗收入庫管理);
+            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_撥補功能);
+            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_訂單管理);
+            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_儲位設定);
+            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_頁面顯示);
+            this.groupBox24.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox24.ForeColor = System.Drawing.Color.Black;
+            this.groupBox24.Location = new System.Drawing.Point(434, 12);
+            this.groupBox24.Name = "groupBox24";
+            this.groupBox24.Size = new System.Drawing.Size(182, 325);
+            this.groupBox24.TabIndex = 6;
+            this.groupBox24.TabStop = false;
+            this.groupBox24.Text = "藥庫";
+            // 
+            // checkBox_權限管理_藥庫_驗收入庫管理
+            // 
+            this.checkBox_權限管理_藥庫_驗收入庫管理.AutoSize = true;
+            this.checkBox_權限管理_藥庫_驗收入庫管理.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥庫_驗收入庫管理.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥庫_驗收入庫管理.Location = new System.Drawing.Point(30, 179);
+            this.checkBox_權限管理_藥庫_驗收入庫管理.Name = "checkBox_權限管理_藥庫_驗收入庫管理";
+            this.checkBox_權限管理_藥庫_驗收入庫管理.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_藥庫_驗收入庫管理.TabIndex = 6;
+            this.checkBox_權限管理_藥庫_驗收入庫管理.Text = "驗收入庫管理";
+            this.checkBox_權限管理_藥庫_驗收入庫管理.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_藥庫_撥補功能
+            // 
+            this.checkBox_權限管理_藥庫_撥補功能.AutoSize = true;
+            this.checkBox_權限管理_藥庫_撥補功能.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥庫_撥補功能.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥庫_撥補功能.Location = new System.Drawing.Point(30, 145);
+            this.checkBox_權限管理_藥庫_撥補功能.Name = "checkBox_權限管理_藥庫_撥補功能";
+            this.checkBox_權限管理_藥庫_撥補功能.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥庫_撥補功能.TabIndex = 5;
+            this.checkBox_權限管理_藥庫_撥補功能.Text = "撥補功能";
+            this.checkBox_權限管理_藥庫_撥補功能.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_藥庫_訂單管理
+            // 
+            this.checkBox_權限管理_藥庫_訂單管理.AutoSize = true;
+            this.checkBox_權限管理_藥庫_訂單管理.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥庫_訂單管理.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥庫_訂單管理.Location = new System.Drawing.Point(30, 111);
+            this.checkBox_權限管理_藥庫_訂單管理.Name = "checkBox_權限管理_藥庫_訂單管理";
+            this.checkBox_權限管理_藥庫_訂單管理.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥庫_訂單管理.TabIndex = 4;
+            this.checkBox_權限管理_藥庫_訂單管理.Text = "訂單管理";
+            this.checkBox_權限管理_藥庫_訂單管理.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_藥庫_儲位設定
+            // 
+            this.checkBox_權限管理_藥庫_儲位設定.AutoSize = true;
+            this.checkBox_權限管理_藥庫_儲位設定.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥庫_儲位設定.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥庫_儲位設定.Location = new System.Drawing.Point(30, 77);
+            this.checkBox_權限管理_藥庫_儲位設定.Name = "checkBox_權限管理_藥庫_儲位設定";
+            this.checkBox_權限管理_藥庫_儲位設定.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥庫_儲位設定.TabIndex = 3;
+            this.checkBox_權限管理_藥庫_儲位設定.Text = "儲位設定";
+            this.checkBox_權限管理_藥庫_儲位設定.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_藥庫_頁面顯示
+            // 
+            this.checkBox_權限管理_藥庫_頁面顯示.AutoSize = true;
+            this.checkBox_權限管理_藥庫_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥庫_頁面顯示.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥庫_頁面顯示.Location = new System.Drawing.Point(30, 43);
+            this.checkBox_權限管理_藥庫_頁面顯示.Name = "checkBox_權限管理_藥庫_頁面顯示";
+            this.checkBox_權限管理_藥庫_頁面顯示.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥庫_頁面顯示.TabIndex = 2;
+            this.checkBox_權限管理_藥庫_頁面顯示.Text = "頁面顯示";
+            this.checkBox_權限管理_藥庫_頁面顯示.UseVisualStyleBackColor = true;
+            // 
+            // groupBox23
+            // 
+            this.groupBox23.Controls.Add(this.checkBox_權限管理_藥品資料_資料更動);
+            this.groupBox23.Controls.Add(this.checkBox_權限管理_藥品資料_頁面顯示);
+            this.groupBox23.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox23.ForeColor = System.Drawing.Color.Black;
+            this.groupBox23.Location = new System.Drawing.Point(246, 12);
+            this.groupBox23.Name = "groupBox23";
+            this.groupBox23.Size = new System.Drawing.Size(182, 325);
+            this.groupBox23.TabIndex = 5;
+            this.groupBox23.TabStop = false;
+            this.groupBox23.Text = "藥品資料";
+            // 
+            // checkBox_權限管理_藥品資料_資料更動
+            // 
+            this.checkBox_權限管理_藥品資料_資料更動.AutoSize = true;
+            this.checkBox_權限管理_藥品資料_資料更動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥品資料_資料更動.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥品資料_資料更動.Location = new System.Drawing.Point(30, 77);
+            this.checkBox_權限管理_藥品資料_資料更動.Name = "checkBox_權限管理_藥品資料_資料更動";
+            this.checkBox_權限管理_藥品資料_資料更動.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥品資料_資料更動.TabIndex = 3;
+            this.checkBox_權限管理_藥品資料_資料更動.Text = "資料更動";
+            this.checkBox_權限管理_藥品資料_資料更動.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_藥品資料_頁面顯示
+            // 
+            this.checkBox_權限管理_藥品資料_頁面顯示.AutoSize = true;
+            this.checkBox_權限管理_藥品資料_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_藥品資料_頁面顯示.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_藥品資料_頁面顯示.Location = new System.Drawing.Point(30, 43);
+            this.checkBox_權限管理_藥品資料_頁面顯示.Name = "checkBox_權限管理_藥品資料_頁面顯示";
+            this.checkBox_權限管理_藥品資料_頁面顯示.Size = new System.Drawing.Size(105, 28);
+            this.checkBox_權限管理_藥品資料_頁面顯示.TabIndex = 2;
+            this.checkBox_權限管理_藥品資料_頁面顯示.Text = "頁面顯示";
+            this.checkBox_權限管理_藥品資料_頁面顯示.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_工程模式頁面
+            // 
+            this.checkBox_權限管理_工程模式頁面.AutoSize = true;
+            this.checkBox_權限管理_工程模式頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_工程模式頁面.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_工程模式頁面.Location = new System.Drawing.Point(66, 144);
+            this.checkBox_權限管理_工程模式頁面.Name = "checkBox_權限管理_工程模式頁面";
+            this.checkBox_權限管理_工程模式頁面.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_工程模式頁面.TabIndex = 4;
+            this.checkBox_權限管理_工程模式頁面.Text = "工程模式頁面";
+            this.checkBox_權限管理_工程模式頁面.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_周邊設備頁面
+            // 
+            this.checkBox_權限管理_周邊設備頁面.AutoSize = true;
+            this.checkBox_權限管理_周邊設備頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_周邊設備頁面.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_周邊設備頁面.Location = new System.Drawing.Point(66, 100);
+            this.checkBox_權限管理_周邊設備頁面.Name = "checkBox_權限管理_周邊設備頁面";
+            this.checkBox_權限管理_周邊設備頁面.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_周邊設備頁面.TabIndex = 3;
+            this.checkBox_權限管理_周邊設備頁面.Text = "周邊設備頁面";
+            this.checkBox_權限管理_周邊設備頁面.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_權限管理_交易紀錄頁面
+            // 
+            this.checkBox_權限管理_交易紀錄頁面.AutoSize = true;
+            this.checkBox_權限管理_交易紀錄頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
+            this.checkBox_權限管理_交易紀錄頁面.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_權限管理_交易紀錄頁面.Location = new System.Drawing.Point(66, 56);
+            this.checkBox_權限管理_交易紀錄頁面.Name = "checkBox_權限管理_交易紀錄頁面";
+            this.checkBox_權限管理_交易紀錄頁面.Size = new System.Drawing.Size(143, 28);
+            this.checkBox_權限管理_交易紀錄頁面.TabIndex = 2;
+            this.checkBox_權限管理_交易紀錄頁面.Text = "交易紀錄頁面";
+            this.checkBox_權限管理_交易紀錄頁面.UseVisualStyleBackColor = true;
+            // 
             // checkBox_權限管理_批次過帳頁面
             // 
             this.checkBox_權限管理_批次過帳頁面.AutoSize = true;
@@ -31723,252 +31978,122 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // checkBox_權限管理_交易紀錄頁面
+            // rJ_Pannel_登入畫面_登出顯示
             // 
-            this.checkBox_權限管理_交易紀錄頁面.AutoSize = true;
-            this.checkBox_權限管理_交易紀錄頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_交易紀錄頁面.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_交易紀錄頁面.Location = new System.Drawing.Point(66, 56);
-            this.checkBox_權限管理_交易紀錄頁面.Name = "checkBox_權限管理_交易紀錄頁面";
-            this.checkBox_權限管理_交易紀錄頁面.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_交易紀錄頁面.TabIndex = 2;
-            this.checkBox_權限管理_交易紀錄頁面.Text = "交易紀錄頁面";
-            this.checkBox_權限管理_交易紀錄頁面.UseVisualStyleBackColor = true;
+            this.rJ_Pannel_登入畫面_登出顯示.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel_登入畫面_登出顯示.BorderColor = System.Drawing.Color.DarkCyan;
+            this.rJ_Pannel_登入畫面_登出顯示.BorderRadius = 10;
+            this.rJ_Pannel_登入畫面_登出顯示.BorderSize = 2;
+            this.rJ_Pannel_登入畫面_登出顯示.Controls.Add(this.plC_RJ_Button_登入畫面_更換密碼);
+            this.rJ_Pannel_登入畫面_登出顯示.Controls.Add(this.panel154);
+            this.rJ_Pannel_登入畫面_登出顯示.Controls.Add(this.rJ_Lable131);
+            this.rJ_Pannel_登入畫面_登出顯示.Controls.Add(this.plC_RJ_Button_登入畫面_登出顯示_登出);
+            this.rJ_Pannel_登入畫面_登出顯示.ForeColor = System.Drawing.Color.White;
+            this.rJ_Pannel_登入畫面_登出顯示.IsSelected = false;
+            this.rJ_Pannel_登入畫面_登出顯示.Location = new System.Drawing.Point(481, 453);
+            this.rJ_Pannel_登入畫面_登出顯示.Name = "rJ_Pannel_登入畫面_登出顯示";
+            this.rJ_Pannel_登入畫面_登出顯示.Size = new System.Drawing.Size(657, 300);
+            this.rJ_Pannel_登入畫面_登出顯示.TabIndex = 114;
+            this.rJ_Pannel_登入畫面_登出顯示.Visible = false;
             // 
-            // checkBox_權限管理_周邊設備頁面
+            // plC_RJ_Button_登入畫面_登出顯示_登出
             // 
-            this.checkBox_權限管理_周邊設備頁面.AutoSize = true;
-            this.checkBox_權限管理_周邊設備頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_周邊設備頁面.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_周邊設備頁面.Location = new System.Drawing.Point(66, 100);
-            this.checkBox_權限管理_周邊設備頁面.Name = "checkBox_權限管理_周邊設備頁面";
-            this.checkBox_權限管理_周邊設備頁面.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_周邊設備頁面.TabIndex = 3;
-            this.checkBox_權限管理_周邊設備頁面.Text = "周邊設備頁面";
-            this.checkBox_權限管理_周邊設備頁面.UseVisualStyleBackColor = true;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.AutoResetState = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Bool = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderRadius = 5;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderSize = 0;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.but_press = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Location = new System.Drawing.Point(513, 228);
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Name = "plC_RJ_Button_登入畫面_登出顯示_登出";
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.OFF_文字內容 = "登出";
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_BorderSize = 5;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_文字內容 = "登出";
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F);
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Size = new System.Drawing.Size(133, 66);
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.State = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.TabIndex = 32;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Text = "登出";
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.Texts = "登出";
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.字型鎖住 = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.文字鎖住 = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.讀取位元反向 = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.讀寫鎖住 = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.音效 = true;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.顯示 = false;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.顯示狀態 = false;
             // 
-            // checkBox_權限管理_工程模式頁面
+            // rJ_Lable131
             // 
-            this.checkBox_權限管理_工程模式頁面.AutoSize = true;
-            this.checkBox_權限管理_工程模式頁面.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_工程模式頁面.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_工程模式頁面.Location = new System.Drawing.Point(66, 144);
-            this.checkBox_權限管理_工程模式頁面.Name = "checkBox_權限管理_工程模式頁面";
-            this.checkBox_權限管理_工程模式頁面.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_工程模式頁面.TabIndex = 4;
-            this.checkBox_權限管理_工程模式頁面.Text = "工程模式頁面";
-            this.checkBox_權限管理_工程模式頁面.UseVisualStyleBackColor = true;
+            this.rJ_Lable131.BackColor = System.Drawing.Color.ForestGreen;
+            this.rJ_Lable131.BackgroundColor = System.Drawing.Color.ForestGreen;
+            this.rJ_Lable131.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable131.BorderRadius = 12;
+            this.rJ_Lable131.BorderSize = 0;
+            this.rJ_Lable131.Dock = System.Windows.Forms.DockStyle.Top;
+            this.rJ_Lable131.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable131.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable131.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable131.Location = new System.Drawing.Point(0, 0);
+            this.rJ_Lable131.Name = "rJ_Lable131";
+            this.rJ_Lable131.Size = new System.Drawing.Size(657, 99);
+            this.rJ_Lable131.TabIndex = 33;
+            this.rJ_Lable131.Text = "歡迎登入";
+            this.rJ_Lable131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable131.TextColor = System.Drawing.Color.White;
             // 
-            // groupBox23
+            // panel154
             // 
-            this.groupBox23.Controls.Add(this.checkBox_權限管理_藥品資料_資料更動);
-            this.groupBox23.Controls.Add(this.checkBox_權限管理_藥品資料_頁面顯示);
-            this.groupBox23.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox23.ForeColor = System.Drawing.Color.Black;
-            this.groupBox23.Location = new System.Drawing.Point(246, 12);
-            this.groupBox23.Name = "groupBox23";
-            this.groupBox23.Size = new System.Drawing.Size(182, 325);
-            this.groupBox23.TabIndex = 5;
-            this.groupBox23.TabStop = false;
-            this.groupBox23.Text = "藥品資料";
+            this.panel154.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel154.Controls.Add(this.rJ_Lable_登入畫面_登出顯示_姓名);
+            this.panel154.Controls.Add(this.panel155);
+            this.panel154.Location = new System.Drawing.Point(54, 130);
+            this.panel154.Name = "panel154";
+            this.panel154.Size = new System.Drawing.Size(550, 92);
+            this.panel154.TabIndex = 34;
             // 
-            // checkBox_權限管理_藥品資料_頁面顯示
+            // panel155
             // 
-            this.checkBox_權限管理_藥品資料_頁面顯示.AutoSize = true;
-            this.checkBox_權限管理_藥品資料_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥品資料_頁面顯示.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥品資料_頁面顯示.Location = new System.Drawing.Point(30, 43);
-            this.checkBox_權限管理_藥品資料_頁面顯示.Name = "checkBox_權限管理_藥品資料_頁面顯示";
-            this.checkBox_權限管理_藥品資料_頁面顯示.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥品資料_頁面顯示.TabIndex = 2;
-            this.checkBox_權限管理_藥品資料_頁面顯示.Text = "頁面顯示";
-            this.checkBox_權限管理_藥品資料_頁面顯示.UseVisualStyleBackColor = true;
+            this.panel155.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel155.BackgroundImage")));
+            this.panel155.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel155.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel155.Location = new System.Drawing.Point(14, 12);
+            this.panel155.Name = "panel155";
+            this.panel155.Size = new System.Drawing.Size(69, 65);
+            this.panel155.TabIndex = 0;
             // 
-            // checkBox_權限管理_藥品資料_資料更動
+            // rJ_Lable_登入畫面_登出顯示_姓名
             // 
-            this.checkBox_權限管理_藥品資料_資料更動.AutoSize = true;
-            this.checkBox_權限管理_藥品資料_資料更動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥品資料_資料更動.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥品資料_資料更動.Location = new System.Drawing.Point(30, 77);
-            this.checkBox_權限管理_藥品資料_資料更動.Name = "checkBox_權限管理_藥品資料_資料更動";
-            this.checkBox_權限管理_藥品資料_資料更動.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥品資料_資料更動.TabIndex = 3;
-            this.checkBox_權限管理_藥品資料_資料更動.Text = "資料更動";
-            this.checkBox_權限管理_藥品資料_資料更動.UseVisualStyleBackColor = true;
-            // 
-            // groupBox24
-            // 
-            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_驗收入庫管理);
-            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_撥補功能);
-            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_訂單管理);
-            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_儲位設定);
-            this.groupBox24.Controls.Add(this.checkBox_權限管理_藥庫_頁面顯示);
-            this.groupBox24.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox24.ForeColor = System.Drawing.Color.Black;
-            this.groupBox24.Location = new System.Drawing.Point(434, 12);
-            this.groupBox24.Name = "groupBox24";
-            this.groupBox24.Size = new System.Drawing.Size(182, 325);
-            this.groupBox24.TabIndex = 6;
-            this.groupBox24.TabStop = false;
-            this.groupBox24.Text = "藥庫";
-            // 
-            // checkBox_權限管理_藥庫_儲位設定
-            // 
-            this.checkBox_權限管理_藥庫_儲位設定.AutoSize = true;
-            this.checkBox_權限管理_藥庫_儲位設定.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥庫_儲位設定.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥庫_儲位設定.Location = new System.Drawing.Point(30, 77);
-            this.checkBox_權限管理_藥庫_儲位設定.Name = "checkBox_權限管理_藥庫_儲位設定";
-            this.checkBox_權限管理_藥庫_儲位設定.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥庫_儲位設定.TabIndex = 3;
-            this.checkBox_權限管理_藥庫_儲位設定.Text = "儲位設定";
-            this.checkBox_權限管理_藥庫_儲位設定.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_藥庫_頁面顯示
-            // 
-            this.checkBox_權限管理_藥庫_頁面顯示.AutoSize = true;
-            this.checkBox_權限管理_藥庫_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥庫_頁面顯示.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥庫_頁面顯示.Location = new System.Drawing.Point(30, 43);
-            this.checkBox_權限管理_藥庫_頁面顯示.Name = "checkBox_權限管理_藥庫_頁面顯示";
-            this.checkBox_權限管理_藥庫_頁面顯示.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥庫_頁面顯示.TabIndex = 2;
-            this.checkBox_權限管理_藥庫_頁面顯示.Text = "頁面顯示";
-            this.checkBox_權限管理_藥庫_頁面顯示.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_效期庫存異動
-            // 
-            this.checkBox_權限管理_效期庫存異動.AutoSize = true;
-            this.checkBox_權限管理_效期庫存異動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_效期庫存異動.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_效期庫存異動.Location = new System.Drawing.Point(66, 188);
-            this.checkBox_權限管理_效期庫存異動.Name = "checkBox_權限管理_效期庫存異動";
-            this.checkBox_權限管理_效期庫存異動.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_效期庫存異動.TabIndex = 7;
-            this.checkBox_權限管理_效期庫存異動.Text = "效期庫存異動";
-            this.checkBox_權限管理_效期庫存異動.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_藥庫_訂單管理
-            // 
-            this.checkBox_權限管理_藥庫_訂單管理.AutoSize = true;
-            this.checkBox_權限管理_藥庫_訂單管理.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥庫_訂單管理.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥庫_訂單管理.Location = new System.Drawing.Point(30, 111);
-            this.checkBox_權限管理_藥庫_訂單管理.Name = "checkBox_權限管理_藥庫_訂單管理";
-            this.checkBox_權限管理_藥庫_訂單管理.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥庫_訂單管理.TabIndex = 4;
-            this.checkBox_權限管理_藥庫_訂單管理.Text = "訂單管理";
-            this.checkBox_權限管理_藥庫_訂單管理.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_藥庫_撥補功能
-            // 
-            this.checkBox_權限管理_藥庫_撥補功能.AutoSize = true;
-            this.checkBox_權限管理_藥庫_撥補功能.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥庫_撥補功能.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥庫_撥補功能.Location = new System.Drawing.Point(30, 145);
-            this.checkBox_權限管理_藥庫_撥補功能.Name = "checkBox_權限管理_藥庫_撥補功能";
-            this.checkBox_權限管理_藥庫_撥補功能.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥庫_撥補功能.TabIndex = 5;
-            this.checkBox_權限管理_藥庫_撥補功能.Text = "撥補功能";
-            this.checkBox_權限管理_藥庫_撥補功能.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_藥庫_驗收入庫管理
-            // 
-            this.checkBox_權限管理_藥庫_驗收入庫管理.AutoSize = true;
-            this.checkBox_權限管理_藥庫_驗收入庫管理.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥庫_驗收入庫管理.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥庫_驗收入庫管理.Location = new System.Drawing.Point(30, 179);
-            this.checkBox_權限管理_藥庫_驗收入庫管理.Name = "checkBox_權限管理_藥庫_驗收入庫管理";
-            this.checkBox_權限管理_藥庫_驗收入庫管理.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_藥庫_驗收入庫管理.TabIndex = 6;
-            this.checkBox_權限管理_藥庫_驗收入庫管理.Text = "驗收入庫管理";
-            this.checkBox_權限管理_藥庫_驗收入庫管理.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_戰情白版設定
-            // 
-            this.checkBox_權限管理_戰情白版設定.AutoSize = true;
-            this.checkBox_權限管理_戰情白版設定.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_戰情白版設定.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_戰情白版設定.Location = new System.Drawing.Point(66, 232);
-            this.checkBox_權限管理_戰情白版設定.Name = "checkBox_權限管理_戰情白版設定";
-            this.checkBox_權限管理_戰情白版設定.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_戰情白版設定.TabIndex = 8;
-            this.checkBox_權限管理_戰情白版設定.Text = "戰情白版設定";
-            this.checkBox_權限管理_戰情白版設定.UseVisualStyleBackColor = true;
-            // 
-            // groupBox25
-            // 
-            this.groupBox25.Controls.Add(this.checkBox_權限管理_藥局_頁面顯示);
-            this.groupBox25.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox25.ForeColor = System.Drawing.Color.Black;
-            this.groupBox25.Location = new System.Drawing.Point(622, 12);
-            this.groupBox25.Name = "groupBox25";
-            this.groupBox25.Size = new System.Drawing.Size(182, 325);
-            this.groupBox25.TabIndex = 9;
-            this.groupBox25.TabStop = false;
-            this.groupBox25.Text = "藥局";
-            // 
-            // checkBox_權限管理_藥局_頁面顯示
-            // 
-            this.checkBox_權限管理_藥局_頁面顯示.AutoSize = true;
-            this.checkBox_權限管理_藥局_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_藥局_頁面顯示.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_藥局_頁面顯示.Location = new System.Drawing.Point(30, 43);
-            this.checkBox_權限管理_藥局_頁面顯示.Name = "checkBox_權限管理_藥局_頁面顯示";
-            this.checkBox_權限管理_藥局_頁面顯示.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_藥局_頁面顯示.TabIndex = 2;
-            this.checkBox_權限管理_藥局_頁面顯示.Text = "頁面顯示";
-            this.checkBox_權限管理_藥局_頁面顯示.UseVisualStyleBackColor = true;
-            // 
-            // groupBox26
-            // 
-            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_資料更動);
-            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_登入權限資料);
-            this.groupBox26.Controls.Add(this.checkBox_權限管理_人員資料_頁面顯示);
-            this.groupBox26.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox26.ForeColor = System.Drawing.Color.Black;
-            this.groupBox26.Location = new System.Drawing.Point(810, 12);
-            this.groupBox26.Name = "groupBox26";
-            this.groupBox26.Size = new System.Drawing.Size(182, 325);
-            this.groupBox26.TabIndex = 10;
-            this.groupBox26.TabStop = false;
-            this.groupBox26.Text = "人員資料";
-            // 
-            // checkBox_權限管理_人員資料_登入權限資料
-            // 
-            this.checkBox_權限管理_人員資料_登入權限資料.AutoSize = true;
-            this.checkBox_權限管理_人員資料_登入權限資料.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_人員資料_登入權限資料.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_人員資料_登入權限資料.Location = new System.Drawing.Point(30, 111);
-            this.checkBox_權限管理_人員資料_登入權限資料.Name = "checkBox_權限管理_人員資料_登入權限資料";
-            this.checkBox_權限管理_人員資料_登入權限資料.Size = new System.Drawing.Size(143, 28);
-            this.checkBox_權限管理_人員資料_登入權限資料.TabIndex = 3;
-            this.checkBox_權限管理_人員資料_登入權限資料.Text = "登入權限資料";
-            this.checkBox_權限管理_人員資料_登入權限資料.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_人員資料_頁面顯示
-            // 
-            this.checkBox_權限管理_人員資料_頁面顯示.AutoSize = true;
-            this.checkBox_權限管理_人員資料_頁面顯示.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_人員資料_頁面顯示.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_人員資料_頁面顯示.Location = new System.Drawing.Point(30, 43);
-            this.checkBox_權限管理_人員資料_頁面顯示.Name = "checkBox_權限管理_人員資料_頁面顯示";
-            this.checkBox_權限管理_人員資料_頁面顯示.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_人員資料_頁面顯示.TabIndex = 2;
-            this.checkBox_權限管理_人員資料_頁面顯示.Text = "頁面顯示";
-            this.checkBox_權限管理_人員資料_頁面顯示.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_權限管理_人員資料_資料更動
-            // 
-            this.checkBox_權限管理_人員資料_資料更動.AutoSize = true;
-            this.checkBox_權限管理_人員資料_資料更動.Font = new System.Drawing.Font("微軟正黑體", 14F, System.Drawing.FontStyle.Bold);
-            this.checkBox_權限管理_人員資料_資料更動.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_權限管理_人員資料_資料更動.Location = new System.Drawing.Point(30, 77);
-            this.checkBox_權限管理_人員資料_資料更動.Name = "checkBox_權限管理_人員資料_資料更動";
-            this.checkBox_權限管理_人員資料_資料更動.Size = new System.Drawing.Size(105, 28);
-            this.checkBox_權限管理_人員資料_資料更動.TabIndex = 4;
-            this.checkBox_權限管理_人員資料_資料更動.Text = "資料更動";
-            this.checkBox_權限管理_人員資料_資料更動.UseVisualStyleBackColor = true;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BackColor = System.Drawing.Color.MidnightBlue;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BackgroundColor = System.Drawing.Color.MidnightBlue;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BorderRadius = 12;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BorderSize = 0;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable_登入畫面_登出顯示_姓名.ForeColor = System.Drawing.Color.White;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.Location = new System.Drawing.Point(106, 12);
+            this.rJ_Lable_登入畫面_登出顯示_姓名.Name = "rJ_Lable_登入畫面_登出顯示_姓名";
+            this.rJ_Lable_登入畫面_登出顯示_姓名.Size = new System.Drawing.Size(428, 63);
+            this.rJ_Lable_登入畫面_登出顯示_姓名.TabIndex = 1;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.Text = "XXXXX";
+            this.rJ_Lable_登入畫面_登出顯示_姓名.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.TextColor = System.Drawing.Color.White;
             // 
             // Form1
             // 
@@ -31989,8 +32114,8 @@
             this.plC_RJ_Pannel4.ResumeLayout(false);
             this.plC_RJ_GroupBox15.ContentsPanel.ResumeLayout(false);
             this.plC_RJ_GroupBox15.ResumeLayout(false);
-            this.plC_RJ_GroupBox14.ContentsPanel.ResumeLayout(false);
-            this.plC_RJ_GroupBox14.ResumeLayout(false);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.ResumeLayout(false);
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ResumeLayout(false);
             this.panel185.ResumeLayout(false);
             this.panel185.PerformLayout();
             this.panel183.ResumeLayout(false);
@@ -32333,6 +32458,14 @@
             this.tabPage16.ResumeLayout(false);
             this.panel_權限設定.ResumeLayout(false);
             this.panel_權限設定.PerformLayout();
+            this.groupBox26.ResumeLayout(false);
+            this.groupBox26.PerformLayout();
+            this.groupBox25.ResumeLayout(false);
+            this.groupBox25.PerformLayout();
+            this.groupBox24.ResumeLayout(false);
+            this.groupBox24.PerformLayout();
+            this.groupBox23.ResumeLayout(false);
+            this.groupBox23.PerformLayout();
             this.panel34.ResumeLayout(false);
             this.panel_人員資料.ResumeLayout(false);
             this.盤點作業.ResumeLayout(false);
@@ -32381,14 +32514,8 @@
             this.groupBox15.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.groupBox23.ResumeLayout(false);
-            this.groupBox23.PerformLayout();
-            this.groupBox24.ResumeLayout(false);
-            this.groupBox24.PerformLayout();
-            this.groupBox25.ResumeLayout(false);
-            this.groupBox25.PerformLayout();
-            this.groupBox26.ResumeLayout(false);
-            this.groupBox26.PerformLayout();
+            this.rJ_Pannel_登入畫面_登出顯示.ResumeLayout(false);
+            this.panel154.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -33221,7 +33348,7 @@
         private System.Windows.Forms.RadioButton radioButton_緊急訂單_訂單管理_類別_緊急;
         private System.Windows.Forms.RadioButton radioButton_緊急訂單_訂單管理_類別_一般;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_測試清除所有效期資料;
-        private MyUI.PLC_RJ_GroupBox plC_RJ_GroupBox14;
+        private MyUI.PLC_RJ_GroupBox plC_RJ_GroupBox_登入畫面_登入顯示;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品;
         private System.Windows.Forms.Label label17;
         private MyUI.PLC_RJ_ChechBox plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_驗收入庫;
@@ -33596,7 +33723,6 @@
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton40;
         private SQLUI.SQL_DataGridView sqL_DataGridView_檢視驗收入庫量;
         private SQLUI.SQL_DataGridView sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量;
-        private MyUI.RJ_Pannel ContentsPanel;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部;
         private System.Windows.Forms.CheckBox checkBox_藥庫_每日訂單_檢視驗收入庫量_數量異常;
         private System.Windows.Forms.CheckBox checkBox_藥庫_每日訂單_檢視驗收入庫量_數量正常;
@@ -33630,6 +33756,13 @@
         private System.Windows.Forms.CheckBox checkBox_權限管理_人員資料_登入權限資料;
         private System.Windows.Forms.CheckBox checkBox_權限管理_人員資料_頁面顯示;
         private System.Windows.Forms.CheckBox checkBox_權限管理_人員資料_資料更動;
+        private MyUI.RJ_Pannel rJ_Pannel_登入畫面_登出顯示;
+        private System.Windows.Forms.Panel panel154;
+        private MyUI.RJ_Lable rJ_Lable_登入畫面_登出顯示_姓名;
+        private System.Windows.Forms.Panel panel155;
+        private MyUI.RJ_Lable rJ_Lable131;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_登入畫面_登出顯示_登出;
+        private MyUI.RJ_Pannel ContentsPanel;
     }
 }
 

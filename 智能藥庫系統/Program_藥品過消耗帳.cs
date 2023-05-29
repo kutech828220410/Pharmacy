@@ -525,9 +525,9 @@ namespace 智能藥庫系統
                     {
                         CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
-                    else if (Extension == ".xls")
+                    else if (Extension == ".xls" || Extension == ".xlsx")
                     {
-                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥品過消耗帳_匯出.訂購單價, (int)enum_藥品過消耗帳_匯出.消耗金額, (int)enum_藥品過消耗帳_匯出.異動量);
                     }
 
                     this.Cursor = Cursors.Default;

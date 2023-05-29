@@ -65,6 +65,8 @@ namespace 智能藥庫系統
             plC_RJ_Button_登入畫面_登入.MouseDownEvent += PlC_RJ_Button_登入畫面_登入_MouseDownEvent;
             plC_RJ_Button_登入畫面_登出.MouseDownEvent += PlC_RJ_Button_登入畫面_登出_MouseDownEvent;
             plC_RJ_Button_登入畫面_更換密碼.MouseDownEvent += PlC_RJ_Button_登入畫面_更換密碼_MouseDownEvent;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.MouseDownEvent += PlC_RJ_Button_登入畫面_登出顯示_登出_MouseDownEvent;
+
 
             textBox_登入畫面_帳號.KeyPress += TextBox_登入畫面_帳號_KeyPress;
             textBox_登入畫面_密碼.KeyPress += TextBox_登入畫面_密碼_KeyPress;
@@ -114,7 +116,40 @@ namespace 智能藥庫系統
             {
                 rJ_ProgressBar_閒置登出時間.Value = (int)this.myTimer_登出計時.GetTickTime();
             }
-            
+            if (PLC_Device_已登入.Bool)
+            {
+                if(plC_RJ_GroupBox_登入畫面_登入顯示.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        plC_RJ_GroupBox_登入畫面_登入顯示.Visible = false;
+                    }));
+                }
+                if(!rJ_Pannel_登入畫面_登出顯示.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        rJ_Pannel_登入畫面_登出顯示.Visible = true;
+                    }));
+                }
+            }
+            else
+            {
+                if (!plC_RJ_GroupBox_登入畫面_登入顯示.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        plC_RJ_GroupBox_登入畫面_登入顯示.Visible = true;
+                    }));
+                }
+                if (rJ_Pannel_登入畫面_登出顯示.Visible)
+                {
+                    this.Invoke(new Action(delegate
+                    {
+                        rJ_Pannel_登入畫面_登出顯示.Visible = false;
+                    }));
+                }
+            }
 
             this.sub_Program_登入畫面_RFID登入();
         }
@@ -248,6 +283,7 @@ namespace 智能藥庫系統
                         this.Function_登入權限資料_最高權限();
                         this.PLC_Device_已登入.Bool = true;
                         this.Text = $"{this.FormText}         [登入者名稱 : {登入者名稱}] [登入者ID : {登入者ID}]";
+                        this.rJ_Lable_登入畫面_登出顯示_姓名.Text = 登入者名稱;
                         flag = true;
                         return;
                     }
@@ -327,6 +363,10 @@ namespace 智能藥庫系統
             Function_登入();
         }
         private void PlC_RJ_Button_登入畫面_登出_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Function_登出();
+        }
+        private void PlC_RJ_Button_登入畫面_登出顯示_登出_MouseDownEvent(MouseEventArgs mevent)
         {
             Function_登出();
         }
