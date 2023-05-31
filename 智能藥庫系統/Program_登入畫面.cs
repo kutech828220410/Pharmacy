@@ -32,6 +32,7 @@ namespace 智能藥庫系統
             set
             {
                 this.rJ_TextBox_登入者姓名.Texts = value;
+                this.rJ_Lable_登入畫面_登出顯示_姓名.Text = value;
             }
         }
         private string 登入者ID
