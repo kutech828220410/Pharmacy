@@ -32,23 +32,48 @@ namespace 智能藥庫系統
             補償量,
             差異量,
         }
-
+        public enum enum_藥庫_每日訂單_檢視驗收入庫量_匯出
+        {
+            藥碼,
+            中文名稱,
+            藥名,
+            已驗收量,
+            在途量,
+            已訂購量,
+            差異量,
+        }
+        public enum enum_檢視驗收入庫量_請購細節
+        {
+            請購數量,
+            請購時間,
+        }
+        public enum enum_檢視驗收入庫量_驗收細節
+        {
+            驗收數量,
+            效期,
+            批號,
+            驗收時間,
+        }
         private void sub_Program_藥庫_每日訂單_檢視驗收入庫量_Init()
         {
 
             this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.Init();
             this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.CellValidatingEvent += SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_CellValidatingEvent;
             this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.RowEndEditEvent += SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_RowEndEditEvent;
+            this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.RowEnterEvent += SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_RowEnterEvent;
+
+            this.sqL_DataGridView_檢視驗收入庫量_請購細節.Init();
+            this.sqL_DataGridView_檢視驗收入庫量_驗收細節.Init();
 
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_藥名搜尋_MouseDownEvent;
-
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_匯出.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_匯出_MouseDownEvent;
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_檢視驗收入庫量);
         }
 
-     
+ 
 
         private bool flag_藥庫_每日訂單_檢視驗收入庫量 = false;
         private void sub_Program_藥庫_每日訂單_檢視驗收入庫量()
@@ -173,6 +198,52 @@ namespace 智能藥庫系統
         }
         #endregion
         #region Event
+        private void SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_RowEnterEvent(object[] RowValue)
+        {
+            string 藥品碼 = RowValue[(int)enum_藥庫_每日訂單_檢視驗收入庫量.藥碼].ObjectToString();
+            List<object[]> list_訂單資料 = this.sqL_DataGridView_每日訂單.SQL_GetRows((int)enum_每日訂單.藥品碼, 藥品碼, false);
+            List<object[]> list_檢視驗收入庫量_請購細節 = new List<object[]>();
+            int 請購數量 = 0;
+            for (int i = 0; i < list_訂單資料.Count; i++)
+            {
+                object[] value = new object[new enum_檢視驗收入庫量_請購細節().GetLength()];
+                value[(int)enum_檢視驗收入庫量_請購細節.請購數量] = list_訂單資料[i][(int)enum_每日訂單.今日訂購數量];
+                value[(int)enum_檢視驗收入庫量_請購細節.請購時間] = list_訂單資料[i][(int)enum_每日訂單.訂購時間].ToDateTimeString();
+                請購數量 = value[(int)enum_檢視驗收入庫量_請購細節.請購數量].StringToInt32() + 請購數量;
+                list_檢視驗收入庫量_請購細節.Add(value);
+            }
+            this.Invoke(new Action(delegate 
+            {
+                rJ_TextBox_檢視驗收入庫量_請購細節_藥碼.Text = 藥品碼;
+                rJ_TextBox_檢視驗收入庫量_請購細節_總量.Text = 請購數量.ToString();
+            }));
+            sqL_DataGridView_檢視驗收入庫量_請購細節.RefreshGrid(list_檢視驗收入庫量_請購細節);
+
+
+            List<object[]> list_檢視驗收入庫量_驗收細節 = new List<object[]>();
+            List<object[]> list_藥庫_驗收入庫_過帳明細 = this.Function_藥庫_驗收入庫_過帳明細_取得資料();
+            List<object[]> list_藥庫_驗收入庫_過帳明細_buf = new List<object[]>();
+            int 驗收數量 = 0;
+            list_藥庫_驗收入庫_過帳明細_buf = list_藥庫_驗收入庫_過帳明細.GetRows((int)enum_藥庫_驗收入庫_過帳明細.藥品碼, 藥品碼);
+            list_藥庫_驗收入庫_過帳明細_buf = list_藥庫_驗收入庫_過帳明細_buf.GetRows((int)enum_藥庫_驗收入庫_過帳明細.來源, "院內系統");
+            for (int i = 0; i < list_藥庫_驗收入庫_過帳明細_buf.Count; i++)
+            {
+                object[] value = new object[new enum_檢視驗收入庫量_驗收細節().GetLength()];
+                value[(int)enum_檢視驗收入庫量_驗收細節.驗收數量] = list_藥庫_驗收入庫_過帳明細_buf[i][(int)enum_藥庫_驗收入庫_過帳明細.數量];
+                value[(int)enum_檢視驗收入庫量_驗收細節.驗收時間] = list_藥庫_驗收入庫_過帳明細_buf[i][(int)enum_藥庫_驗收入庫_過帳明細.驗收時間].ToDateTimeString();
+                value[(int)enum_檢視驗收入庫量_驗收細節.效期] = list_藥庫_驗收入庫_過帳明細_buf[i][(int)enum_藥庫_驗收入庫_過帳明細.效期].ToDateString();
+                value[(int)enum_檢視驗收入庫量_驗收細節.批號] = list_藥庫_驗收入庫_過帳明細_buf[i][(int)enum_藥庫_驗收入庫_過帳明細.批號];
+                驗收數量 = value[(int)enum_檢視驗收入庫量_驗收細節.驗收數量].StringToInt32() + 驗收數量;
+                list_檢視驗收入庫量_驗收細節.Add(value);
+            }
+            this.Invoke(new Action(delegate
+            {
+                rJ_TextBox_檢視驗收入庫量_驗收細節_藥碼.Text = 藥品碼;
+                rJ_TextBox_檢視驗收入庫量_驗收細節_總量.Text = 驗收數量.ToString();
+            }));
+            sqL_DataGridView_檢視驗收入庫量_驗收細節.RefreshGrid(list_檢視驗收入庫量_驗收細節);
+
+        }
         private void SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_RowEndEditEvent(object[] RowValue, int rowIndex, int colIndex, string valueS)
         {
             List<object[]> list_檢視驗收入庫量 = new List<object[]>();
@@ -215,19 +286,52 @@ namespace 智能藥庫系統
 
                 list_檢視驗收入庫量[i][(int)enum_藥庫_每日訂單_檢視驗收入庫量.差異量] = 差異量_src;
             }
-            
+         
             this.sqL_DataGridView_檢視驗收入庫量.SQL_AddRows(list_SQL_檢視驗收入庫量_add, false);
             this.sqL_DataGridView_檢視驗收入庫量.SQL_ReplaceExtra(list_SQL_檢視驗收入庫量_replace, false);
             this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.ReplaceExtra(list_檢視驗收入庫量, true);
         }
+        private void PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_匯出_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DialogResult dialogResult = DialogResult.None;
+            this.Invoke(new Action(delegate
+            {
+                dialogResult = this.saveFileDialog_SaveExcel.ShowDialog();
+            }));
+            if (dialogResult == DialogResult.OK)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                }));
+                List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量.GetAllRows();
+                DataTable dataTable = list_value.ToDataTable(new enum_藥庫_每日訂單_檢視驗收入庫量());
+                dataTable = dataTable.ReorderTable(new enum_藥庫_每日訂單_檢視驗收入庫量_匯出());
+
+                string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                if (Extension == ".txt")
+                {
+                    CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                }
+                else if (Extension == ".xls" || Extension == ".xlsx")
+                {
+                    MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥庫_每日訂單_檢視驗收入庫量_匯出.在途量, (int)enum_藥庫_每日訂單_檢視驗收入庫量_匯出.差異量, (int)enum_藥庫_每日訂單_檢視驗收入庫量_匯出.已訂購量, (int)enum_藥庫_每日訂單_檢視驗收入庫量_匯出.已驗收量);
+                }
+                this.Invoke(new Action(delegate
+                {
+                    this.Cursor = Cursors.Default;
+                }));
+                MyMessageBox.ShowDialog("完成!");
+            }
+        }
         private void SqL_DataGridView_藥庫_每日訂單_檢視驗收入庫量_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
         {
-            string 異動量 = value;
-            if (異動量.StringIsInt32()==false)
-            {
-                MyMessageBox.ShowDialog("請輸入正確數字!");
-                e.Cancel = true;
-            }
+            //string 異動量 = value;
+            //if (異動量.StringIsInt32()==false)
+            //{
+            //    MyMessageBox.ShowDialog("請輸入正確數字!");
+            //    e.Cancel = true;
+            //}
         }
         private void PlC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
