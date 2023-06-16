@@ -406,38 +406,38 @@ namespace Daily_orders_CMD
             // 國定假日(農曆)
             System.Globalization.TaiwanLunisolarCalendar TaiwanLunisolarCalendar = new System.Globalization.TaiwanLunisolarCalendar();
             string LeapDate = string.Format("{0}/{1}", TaiwanLunisolarCalendar.GetMonth(date), TaiwanLunisolarCalendar.GetDayOfMonth(date));
-            //if (LeapDate == "12/30")
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("1/1"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("1/2"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("1/3"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("1/4"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("1/5"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("5/5"))
-            //{
-            //    return true;
-            //}
-            //if (LeapDate == ("8/15"))
-            //{
-            //    return true;
-            //}
+            if (LeapDate == "12/30")
+            {
+                return true;
+            }
+            if (LeapDate == ("1/1"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/2"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/3"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/4"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("5/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("8/15"))
+            {
+                return true;
+            }
 
             return false;
         }
