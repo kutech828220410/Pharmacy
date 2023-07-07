@@ -394,7 +394,7 @@ namespace 智能藥庫系統_VM_Server_
             List<object[]> list_自動撥補_buf = new List<object[]>();
             List<object[]> list_自動撥補_Add = new List<object[]>();
             List<object[]> list_自動撥補_Replace = new List<object[]>();
-
+            List<object[]> list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥局_藥品資料.藥品碼, "09208");
             List<object[]> list_value = new List<object[]>();
             string 藥品碼 = "";
             string 藥品名稱 = "";
@@ -428,6 +428,7 @@ namespace 智能藥庫系統_VM_Server_
                 }
                 異動量 = 基準量 - 庫存量;
                 結存量 = 庫存量 + 異動量;
+           
                 list_自動撥補_buf = list_自動撥補.GetRows((int)enum_藥庫_撥補_藥局_自動撥補.藥品碼, 藥品碼);
                 if (list_自動撥補_buf.Count == 0)
                 {

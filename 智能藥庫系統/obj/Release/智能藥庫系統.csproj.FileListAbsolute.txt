@@ -239,3 +239,4 @@ C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥�
 C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe
 C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\ICSharpCode.SharpZipLib.dll

@@ -348,7 +348,7 @@ namespace 智能藥庫系統
             }
             for (int i = 0; i < list_value.Count; i++)
             {
-                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.備藥中.GetEnumName();
+                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.等待過帳.GetEnumName();
             }
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(list_value, false);
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.ReplaceExtra(list_value, true);

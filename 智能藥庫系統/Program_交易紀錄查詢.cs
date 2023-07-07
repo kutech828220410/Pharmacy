@@ -79,7 +79,7 @@ namespace 智能藥庫系統
                 {
                     this.Invoke(new Action(delegate
                     {
-                        this.dateTimePicker_交易記錄查詢_操作時間_起始.Value = DateTime.Now.AddHours(-1);
+                        this.dateTimePicker_交易記錄查詢_操作時間_起始.Value = DateTime.Now.AddMonths(-1);
                         this.dateTimePicker_交易記錄查詢_操作時間_結束.Value = DateTime.Now;
 
                     }));
