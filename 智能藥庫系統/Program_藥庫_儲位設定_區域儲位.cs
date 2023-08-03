@@ -52,7 +52,7 @@ namespace 智能藥庫系統
             {
                 if (!this.flag_藥庫_儲位設定_區域儲位)
                 {
-                    this.Function_藥庫_儲位設定_區域儲位_檢查表格合理性();
+                    //if (myConfigClass.主機模式) this.Function_藥庫_儲位設定_區域儲位_檢查表格合理性();
                     this.flag_藥庫_儲位設定_區域儲位 = true;
                 }
             }
