@@ -48,6 +48,7 @@ namespace 智能藥庫系統
             {
                 this.sqL_DataGridView_藥局_緊急申領.SQL_CreateTable();
             }
+            this.sqL_DataGridView_藥局_緊急申領_資料查詢.Init();
             this.sqL_DataGridView_藥局_緊急申領.DataGridRefreshEvent += SqL_DataGridView_藥局_緊急申領_DataGridRefreshEvent;
             this.sqL_DataGridView_藥局_緊急申領.DataGridRowsChangeRefEvent += SqL_DataGridView_藥局_緊急申領_DataGridRowsChangeRefEvent;
             this.sqL_DataGridView_藥局_緊急申領.CellValidatingEvent += SqL_DataGridView_藥局_緊急申領_CellValidatingEvent;
@@ -65,11 +66,13 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_顯示資料_MouseDownEvent;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_取消申領_MouseDownEvent;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_刪除選取資料_MouseDownEvent;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_資料查詢_藥碼_MouseDownEvent;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.MouseDownEvent += PlC_RJ_Button_藥局_緊急申領_資料查詢_申領單位_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_藥局_緊急申領);
         }
 
-    
+ 
 
         private bool flag_Program_藥局_緊急申領_Init = false;
         private void sub_Program_藥局_緊急申領()
@@ -95,6 +98,12 @@ namespace 智能藥庫系統
         #region Event
         private void SqL_DataGridView_藥局_緊急申領_藥品資料_RowDoubleClickEvent(object[] RowValue)
         {
+            string 申領單位 = comboBox_藥局_緊急申領_申領單位.Text;
+            if(申領單位.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("未選擇申領單位!");
+                return;
+            }
             string 藥品碼 = RowValue[(int)enum_藥局_藥品資料.藥品碼].ObjectToString();
             string 藥品名稱 = RowValue[(int)enum_藥局_藥品資料.藥品名稱].ObjectToString();
 
@@ -103,7 +112,12 @@ namespace 智能藥庫系統
             list_SQL緊急申領資料_buf = list_SQL緊急申領資料.GetRows((int)enum_藥局_緊急申領.藥品碼, 藥品碼);
             if (list_SQL緊急申領資料_buf.Count > 0)
             {
-                string 異動量 = list_SQL緊急申領資料_buf[0][(int)enum_藥局_緊急申領.異動量].ObjectToString();
+                int temp = 0;
+                for (int i = 0; i < list_SQL緊急申領資料_buf.Count; i++)
+                {
+                    temp += list_SQL緊急申領資料_buf[0][(int)enum_藥局_緊急申領.異動量].StringToInt32();
+                }
+                string 異動量 = temp.ToString();
                 MyMessageBox.ShowDialog($"<{藥品名稱}> ,今日已申領數量<{異動量}>");
             }
             List<object[]> list_緊急申領資料 = this.sqL_DataGridView_藥局_緊急申領.GetAllRows();
@@ -122,7 +136,7 @@ namespace 智能藥庫系統
                 value[(int)enum_藥局_緊急申領.產出時間] = DateTime.Now.ToDateTimeString_6();
                 value[(int)enum_藥局_緊急申領.過帳時間] = DateTime.MinValue.ToDateTimeString();
                 value[(int)enum_藥局_緊急申領.狀態] = enum_藥局_緊急申領_狀態.等待過帳.GetEnumName();
-                value[(int)enum_藥局_緊急申領.備註] = "";
+                value[(int)enum_藥局_緊急申領.備註] = $"申領單位:{申領單位},申領人:{登入者名稱}\n";
                 this.sqL_DataGridView_藥局_緊急申領.AddRow(value, true);
             }
             else
@@ -138,14 +152,14 @@ namespace 智能藥庫系統
                 value[(int)enum_藥局_緊急申領.產出時間] = DateTime.Now.ToDateTimeString_6();
                 value[(int)enum_藥局_緊急申領.過帳時間] = DateTime.MinValue.ToDateTimeString();
                 value[(int)enum_藥局_緊急申領.狀態] = enum_藥局_緊急申領_狀態.等待過帳.GetEnumName();
-                value[(int)enum_藥局_緊急申領.備註] = "";
+                value[(int)enum_藥局_緊急申領.備註] = $"申領單位:{申領單位},申領人:{登入者名稱}\n";
                 this.sqL_DataGridView_藥局_緊急申領.ReplaceExtra(value, true);
             }
         }
         private void SqL_DataGridView_藥局_緊急申領_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
         {
             string 異動量 = value;
-            if (異動量.StringToInt32() <= 0)
+            if (異動量.StringToInt32() < 0)
             {
                 MyMessageBox.ShowDialog("請輸入正確數字(大於'0')!");
                 e.Cancel = true;
@@ -282,6 +296,51 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_藥局_緊急申領.SQL_DeleteExtra(list_value, false);
             this.sqL_DataGridView_藥局_緊急申領.DeleteExtra(list_value, true);
+        }
+        private void PlC_RJ_Button_藥局_緊急申領_資料查詢_申領單位_MouseDownEvent(MouseEventArgs mevent)
+        {
+            string 申領單位 = "";
+            this.Invoke(new Action(delegate 
+            {
+                申領單位 = comboBox_藥局_緊急申領_資料查詢_申領單位.Text;
+     
+            }));
+            if (申領單位.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("請選擇申領單位!");
+                return;
+            }
+            List<object[]> list_value = this.sqL_DataGridView_藥局_緊急申領_資料查詢.SQL_GetRowsByBetween((int)enum_藥局_緊急申領.產出時間, rJ_DatePicker_藥局_緊急申領_產出日期_起始, rJ_DatePicker_藥局_緊急申領_產出日期_結束, false);
+            List<object[]> list_value_buf = new List<object[]>();
+        
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 備註 = list_value[i][(int)enum_藥局_緊急申領.備註].ObjectToString();
+                if (備註.Contains(申領單位)) list_value_buf.Add(list_value[i]);
+            }
+            if (list_value_buf.Count == 0)
+            {
+                MyMessageBox.ShowDialog("查無資料!");
+                return;
+            }
+            this.sqL_DataGridView_藥局_緊急申領_資料查詢.RefreshGrid(list_value_buf);
+        }
+        private void PlC_RJ_Button_藥局_緊急申領_資料查詢_藥碼_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_藥局_緊急申領_資料查詢.SQL_GetRowsByBetween((int)enum_藥局_緊急申領.產出時間, rJ_DatePicker_藥局_緊急申領_產出日期_起始, rJ_DatePicker_藥局_緊急申領_產出日期_結束, false);
+            List<object[]> list_value_buf = new List<object[]>();
+            if(rJ_TextBox_藥局_緊急申領_資料查詢_藥碼.Texts.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("藥碼空白!");
+                return;
+            }
+            list_value_buf = list_value.GetRows((int)enum_藥局_緊急申領.藥品碼, rJ_TextBox_藥局_緊急申領_資料查詢_藥碼.Texts);
+            if (list_value_buf.Count == 0)
+            {
+                MyMessageBox.ShowDialog("查無資料!");
+                return;
+            }
+            this.sqL_DataGridView_藥局_緊急申領_資料查詢.RefreshGrid(list_value_buf);
         }
         #endregion
 

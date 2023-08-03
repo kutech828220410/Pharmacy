@@ -73,7 +73,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥局_藥品資料_效期及庫存.Init();
             this.sqL_DataGridView_藥局_藥品資料.Init();
             if (!this.sqL_DataGridView_藥局_藥品資料.SQL_IsTableCreat()) this.sqL_DataGridView_藥局_藥品資料.SQL_CreateTable();
-
+            this.sqL_DataGridView_藥局_藥品資料.DataGridRefreshEvent += SqL_DataGridView_藥局_藥品資料_DataGridRefreshEvent;
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.健保碼);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.中文名稱);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.最小包裝單位);
@@ -104,7 +104,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(sub_Program_藥局_藥品資料);
         }
 
-    
+   
 
         private bool flag_Program_藥局_藥品資料_Init = false;
         private void sub_Program_藥局_藥品資料()
@@ -246,6 +246,25 @@ namespace 智能藥庫系統
         }
         #endregion
         #region Event
+        private void SqL_DataGridView_藥局_藥品資料_DataGridRefreshEvent()
+        {
+            int 藥庫庫存 = 0;
+            int 藥局庫存 = 0;
+            int 庫存 = 0;
+            int 基準量 = 0;
+            for (int i = 0; i < this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows.Count; i++)
+            {
+                藥庫庫存 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.藥庫庫存.GetEnumName()].Value.ToString().StringToInt32();
+                藥局庫存 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.藥局庫存.GetEnumName()].Value.ToString().StringToInt32();
+                庫存 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.總庫存.GetEnumName()].Value.ToString().StringToInt32();
+                基準量 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.基準量.GetEnumName()].Value.ToString().StringToInt32();
+                if (庫存 < 基準量)
+                {
+                    this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                }
+            }
+        }
         private void SqL_DataGridView_藥局_藥品資料_RowEnterEvent(object[] RowValue)
         {
             this.sqL_DataGridView_藥局_藥品資料_效期及庫存.ClearGrid();
@@ -302,9 +321,48 @@ namespace 智能藥庫系統
                 value[(int)enum_藥局_藥品資料.藥局庫存] = 藥局庫存;
                 value[(int)enum_藥局_藥品資料.總庫存] = 總庫存;
             });
+            if (checkBox_藥局_藥品資料_近8個月效期.Checked)
+            {
+                List<object[]> RowsList_buf = new List<object[]>();
+                Parallel.ForEach(RowsList, value =>
+                {
+                    string 藥品碼 = value[(int)enum_藥局_藥品資料.藥品碼].ObjectToString();
+                    bool flag_近效期 = false;
+                    int 總庫存 = 0;
+                    int 藥庫庫存 = 0;
+                    int 藥局庫存 = 0;
+                    List<DeviceBasic> deviceBasic_藥庫_buf = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
+                    List<DeviceBasic> deviceBasic_藥局_buf = this.List_藥局_DeviceBasic.SortByCode(藥品碼);
 
+                    for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
+                    {
+                        for (int k = 0; k < deviceBasic_藥庫_buf[i].List_Validity_period.Count; k++)
+                        {
+                            DateTime dateTime = deviceBasic_藥庫_buf[i].List_Validity_period[k].StringToDateTime();
+                            int month = GetMonthsDifference(DateTime.Now, dateTime);
+                            if (month <= 8)
+                            {
+                                flag_近效期 = true;
+                            }
+                        }
+                    }
+                    for (int i = 0; i < deviceBasic_藥局_buf.Count; i++)
+                    {
+                        for (int k = 0; k < deviceBasic_藥局_buf[i].List_Validity_period.Count; k++)
+                        {
+                            DateTime dateTime = deviceBasic_藥局_buf[i].List_Validity_period[k].StringToDateTime();
+                            int month = GetMonthsDifference(DateTime.Now, dateTime);
+                            if (month <= 8)
+                            {
+                                flag_近效期 = true;
+                            }
+                        }
+                    }
+                    if (flag_近效期) RowsList_buf.LockAdd(value);
+                });
+                RowsList = RowsList_buf;
+            }
             Finction_藥品資料_藥品群組_序號轉名稱(RowsList, (int)enum_藥局_藥品資料.藥品群組);
-            RowsList.Sort(new ICP_藥庫_藥品資料());
             RowsList.Sort(new ICP_藥局_藥品資料());
         }
         private void PlC_RJ_ComboBox_藥局_藥品資料_藥品群組_Enter(object sender, EventArgs e)
