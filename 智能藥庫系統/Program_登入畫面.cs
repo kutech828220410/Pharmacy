@@ -316,6 +316,12 @@ namespace 智能藥庫系統
                     flag = true;
                     return;
                 }
+                else
+                {
+                    MyMessageBox.ShowDialog("查無此帳號");
+                    flag = false;
+                    return;
+                }
                 flag = false;
             }));
             return flag;
@@ -353,6 +359,7 @@ namespace 智能藥庫系統
                 if (!this.Function_登入())
                 {                
                     textBox_登入畫面_帳號.Focus();
+                    return;
                 }
                 else
                 {
