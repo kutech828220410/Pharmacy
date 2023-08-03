@@ -15,7 +15,7 @@ using MySql.Data.MySqlClient;
 using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
-
+using System.IO;
 [assembly: AssemblyVersion("1.0.46.0")]
 [assembly: AssemblyFileVersion("1.0.46.0")]
 namespace 智能藥庫系統
@@ -36,7 +36,8 @@ namespace 智能藥庫系統
         private PLC_Device PLC_Device_滑鼠左鍵按下 = new PLC_Device("S4600");
         private PLC_Device PLC_Device_M8013 = new PLC_Device("M8013");
         private PLC_Device PLC_Device_主頁面頁碼 = new PLC_Device("D0");
-        
+        public static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+
         public class DBConfigClass
         {
             private SQL_DataGridView.ConnentionClass dB_Basic = new SQL_DataGridView.ConnentionClass();
@@ -80,7 +81,7 @@ namespace 智能藥庫系統
         }
         private void LoadDBConfig()
         {
-            string jsonstr = MyFileStream.LoadFileAllText($".//{DBConfigFileName}");
+            string jsonstr = MyFileStream.LoadFileAllText($"{currentDirectory}/{DBConfigFileName}");
             if (jsonstr.StringIsEmpty())
             {
                 jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(new DBConfigClass() ,true);
@@ -109,7 +110,7 @@ namespace 智能藥庫系統
         }
         private void LoadMyConfig()
         {
-            string jsonstr = MyFileStream.LoadFileAllText($".//{MyConfigFileName}");
+            string jsonstr = MyFileStream.LoadFileAllText($"{currentDirectory}/{MyConfigFileName}");
             if (jsonstr.StringIsEmpty())
             {
                 jsonstr = Basic.Net.JsonSerializationt<MyConfigClass>(new MyConfigClass(), true);

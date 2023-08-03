@@ -300,6 +300,7 @@ namespace 智能藥庫系統
                 {
                     if (password != list_人員資料_buf[0][(int)enum_人員資料.密碼].ObjectToString())
                     {
+                        MyMessageBox.ShowDialog("密碼錯誤");
                         flag = false;
                         return;
                     }
