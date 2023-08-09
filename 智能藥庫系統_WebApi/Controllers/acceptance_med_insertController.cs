@@ -125,7 +125,7 @@ namespace 智慧調劑台管理系統_WebApi
             list_value_buf = list_value.GetRows((int)enum_acceptance_med.藥品碼, data.藥品碼);
             list_value_buf = list_value_buf.GetRows((int)enum_acceptance_med.批號, data.批號);
             list_value_buf = (from value in list_value_buf
-                              where value[(int)enum_acceptance_med.效期].ToDateString() == data.效期
+                              where value[(int)enum_acceptance_med.效期].ToDateString() == data.效期.StringToDateTime().ToDateString()
                               select value).ToList();
             list_value_buf = (from value in list_value_buf
                               where (DateTime)value[(int)enum_acceptance_med.驗收時間] == data.驗收時間.StringToDateTime()

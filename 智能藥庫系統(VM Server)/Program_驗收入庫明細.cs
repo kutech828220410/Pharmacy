@@ -19,6 +19,22 @@ namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
+        public class class_acceptance_med_data
+        {
+            [JsonPropertyName("code")]
+            public string 藥品碼 { get; set; }
+            [JsonPropertyName("value")]
+            public string 數量 { get; set; }
+            [JsonPropertyName("validity_period")]
+            public string 效期 { get; set; }
+            [JsonPropertyName("lot_number")]
+            public string 批號 { get; set; }
+            [JsonPropertyName("acceptance_date")]
+            public string 驗收時間 { get; set; }
+            [JsonPropertyName("state")]
+            public string 狀態 { get; set; }
+
+        }
         public enum enum_驗收入庫明細
         {
             GUID,
@@ -48,6 +64,18 @@ namespace 智能藥庫系統_VM_Server_
             來源,
             備註,
         }
+        public enum enum_驗收入庫明細_匯入
+        {
+            院內碼,
+            藥碼,
+            中文品名,
+            英文品名,
+            驗收量,
+            批號,
+            效期,
+            驗收日期及時間,
+
+        }
         public enum enum_驗收入庫明細_狀態
         {
             等待過帳,
@@ -75,12 +103,12 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_驗收入庫明細_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品碼篩選_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_藥品名稱篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品名稱篩選_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_匯出.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_匯出_MouseDownEvent;
-
+            this.plC_RJ_Button_驗收入庫明細_匯入.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_匯入_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_驗收入庫明細);
         }
 
-
+  
 
         private bool flag_驗收入庫明細 = false;
         private void sub_Program_驗收入庫明細()
@@ -121,6 +149,10 @@ namespace 智能藥庫系統_VM_Server_
                 else if (list_補給驗收入庫_buf.Count >= 2)
                 {
 
+                }
+                if (list_補給驗收入庫_buf[0][(int)enum_補給驗收入庫.來源].ObjectToString() == "院內系統")
+                { 
+                
                 }
                 if (藥品碼.Length == 10)
                 {
@@ -281,6 +313,64 @@ namespace 智能藥庫系統_VM_Server_
                     MyMessageBox.ShowDialog("匯出完成");
                 }
             }));
+        }
+        private void PlC_RJ_Button_驗收入庫明細_匯入_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate 
+            {
+                if (openFileDialog_LoadExcel.ShowDialog(this) == DialogResult.OK)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+                    DataTable dataTable = new DataTable();
+                    string Extension = System.IO.Path.GetExtension(this.openFileDialog_LoadExcel.FileName);
+
+                    if (Extension == ".txt")
+                    {
+                        dataTable = CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
+                    }
+                    else if (Extension == ".xls")
+                    {
+                        dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
+                    }
+                    if (dataTable == null)
+                    {
+                        MyMessageBox.ShowDialog("匯入失敗,請檢查是否檔案開啟中!");
+                        this.Cursor = Cursors.Default;
+                        return;
+                    }
+                    DataTable datatable_buf = dataTable.ReorderTable(new enum_驗收入庫明細_匯入());
+                  
+                    if (datatable_buf == null)
+                    {
+                        MyMessageBox.ShowDialog("匯入檔案,資料錯誤!");
+                        this.Cursor = Cursors.Default;
+                        return;
+                    }
+                    List<object[]> list_value = datatable_buf.DataTableToRowList();
+                    for (int i = 0; i < list_value.Count; i++)
+                    {
+                        class_acceptance_med_data class_Acceptance_Med_Data = new class_acceptance_med_data();
+                        class_Acceptance_Med_Data.藥品碼 = list_value[i][(int)enum_驗收入庫明細_匯入.院內碼].ObjectToString();
+                        class_Acceptance_Med_Data.數量 = list_value[i][(int)enum_驗收入庫明細_匯入.驗收量].ObjectToString();
+                        class_Acceptance_Med_Data.效期 = list_value[i][(int)enum_驗收入庫明細_匯入.效期].ObjectToString();
+                        class_Acceptance_Med_Data.批號 = list_value[i][(int)enum_驗收入庫明細_匯入.批號].ObjectToString();
+                        class_Acceptance_Med_Data.驗收時間 = list_value[i][(int)enum_驗收入庫明細_匯入.驗收日期及時間].ObjectToString();
+                        class_Acceptance_Med_Data.狀態 = "";
+                        string json_in = class_Acceptance_Med_Data.JsonSerializationt();
+                        string json_result = Basic.Net.WEBApiPostJson("https://10.18.1.146:8082/api/acceptance_med_insert", json_in);
+                        if(json_result != "OK")
+                        {
+                            MyMessageBox.ShowDialog($"{json_in}");
+                        }
+                    }
+
+
+                    this.Cursor = Cursors.Default;
+                }
+                this.Cursor = Cursors.Default;
+                MyMessageBox.ShowDialog("匯入完成!");
+            }));
+           
         }
         private void PlC_RJ_Button_驗收入庫明細_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {

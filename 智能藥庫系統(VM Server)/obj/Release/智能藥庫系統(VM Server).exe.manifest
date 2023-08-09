@@ -642,14 +642,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="智能藥庫系統(VM Server).exe" size="815104">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="智能藥庫系統(VM Server).exe" size="818176">
       <assemblyIdentity name="智能藥庫系統(VM Server)" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>bRgUa331acsiwGDpiNrGCc8z4VdN6z5YcOU3sLToJJU=</dsig:DigestValue>
+        <dsig:DigestValue>wz0XD7JRsVeeGQKut+XaIHTrLhJB7iArclyFfWT2bwM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

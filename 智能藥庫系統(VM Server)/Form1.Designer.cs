@@ -349,6 +349,7 @@
             this.驗收入庫 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_驗收入庫 = new MyUI.PLC_ScreenPage();
             this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_驗收入庫明細_匯出 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_驗收入庫明細_藥品名稱篩選 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_驗收入庫明細_藥品碼篩選 = new MyUI.PLC_RJ_Button();
             this.rJ_TextBox_驗收入庫明細_藥品碼篩選 = new MyUI.RJ_TextBox();
@@ -462,7 +463,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
-            this.plC_RJ_Button_驗收入庫明細_匯出 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_驗收入庫明細_匯入 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.藥品資料.SuspendLayout();
@@ -8474,6 +8475,7 @@
             // tabPage9
             // 
             this.tabPage9.BackColor = System.Drawing.Color.White;
+            this.tabPage9.Controls.Add(this.plC_RJ_Button_驗收入庫明細_匯入);
             this.tabPage9.Controls.Add(this.plC_RJ_Button_驗收入庫明細_匯出);
             this.tabPage9.Controls.Add(this.plC_RJ_Button_驗收入庫明細_藥品名稱篩選);
             this.tabPage9.Controls.Add(this.plC_RJ_Button_驗收入庫明細_藥品碼篩選);
@@ -8494,6 +8496,49 @@
             this.tabPage9.Size = new System.Drawing.Size(1668, 703);
             this.tabPage9.TabIndex = 0;
             this.tabPage9.Text = "過帳明細";
+            // 
+            // plC_RJ_Button_驗收入庫明細_匯出
+            // 
+            this.plC_RJ_Button_驗收入庫明細_匯出.AutoResetState = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Bool = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫明細_匯出.BorderRadius = 5;
+            this.plC_RJ_Button_驗收入庫明細_匯出.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫明細_匯出.but_press = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_驗收入庫明細_匯出.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫明細_匯出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫明細_匯出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Location = new System.Drawing.Point(5, 491);
+            this.plC_RJ_Button_驗收入庫明細_匯出.Name = "plC_RJ_Button_驗收入庫明細_匯出";
+            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字內容 = "匯出";
+            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫明細_匯出.ON_BorderSize = 5;
+            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字內容 = "匯出";
+            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_驗收入庫明細_匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Size = new System.Drawing.Size(201, 101);
+            this.plC_RJ_Button_驗收入庫明細_匯出.State = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.TabIndex = 243;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Text = "匯出";
+            this.plC_RJ_Button_驗收入庫明細_匯出.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫明細_匯出.Texts = "匯出";
+            this.plC_RJ_Button_驗收入庫明細_匯出.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.字型鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_驗收入庫明細_匯出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_驗收入庫明細_匯出.文字鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.致能讀取位置 = "S4077";
+            this.plC_RJ_Button_驗收入庫明細_匯出.讀取位元反向 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.讀寫鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.音效 = true;
+            this.plC_RJ_Button_驗收入庫明細_匯出.顯示 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯出.顯示狀態 = false;
             // 
             // plC_RJ_Button_驗收入庫明細_藥品名稱篩選
             // 
@@ -9504,7 +9549,7 @@
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11458,55 +11503,55 @@
             // openFileDialog_LoadExcel
             // 
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
-            this.openFileDialog_LoadExcel.Filter = "txt File (*.txt)|*.txt;";
+            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
             // 
             // saveFileDialog_SaveExcel
             // 
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
             this.saveFileDialog_SaveExcel.Filter = "txt File (*.txt)|*.txt;";
             // 
-            // plC_RJ_Button_驗收入庫明細_匯出
+            // plC_RJ_Button_驗收入庫明細_匯入
             // 
-            this.plC_RJ_Button_驗收入庫明細_匯出.AutoResetState = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.BackgroundColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Bool = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_驗收入庫明細_匯出.BorderRadius = 5;
-            this.plC_RJ_Button_驗收入庫明細_匯出.BorderSize = 0;
-            this.plC_RJ_Button_驗收入庫明細_匯出.but_press = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_驗收入庫明細_匯出.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_驗收入庫明細_匯出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_驗收入庫明細_匯出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Location = new System.Drawing.Point(5, 491);
-            this.plC_RJ_Button_驗收入庫明細_匯出.Name = "plC_RJ_Button_驗收入庫明細_匯出";
-            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字內容 = "匯出";
-            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_驗收入庫明細_匯出.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_驗收入庫明細_匯出.ON_BorderSize = 5;
-            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字內容 = "匯出";
-            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button_驗收入庫明細_匯出.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_驗收入庫明細_匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Size = new System.Drawing.Size(201, 101);
-            this.plC_RJ_Button_驗收入庫明細_匯出.State = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.TabIndex = 243;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Text = "匯出";
-            this.plC_RJ_Button_驗收入庫明細_匯出.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_驗收入庫明細_匯出.Texts = "匯出";
-            this.plC_RJ_Button_驗收入庫明細_匯出.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.字型鎖住 = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_驗收入庫明細_匯出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_驗收入庫明細_匯出.文字鎖住 = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.致能讀取位置 = "S4077";
-            this.plC_RJ_Button_驗收入庫明細_匯出.讀取位元反向 = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.讀寫鎖住 = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.音效 = true;
-            this.plC_RJ_Button_驗收入庫明細_匯出.顯示 = false;
-            this.plC_RJ_Button_驗收入庫明細_匯出.顯示狀態 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.AutoResetState = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.BackgroundColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Bool = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_驗收入庫明細_匯入.BorderRadius = 5;
+            this.plC_RJ_Button_驗收入庫明細_匯入.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫明細_匯入.but_press = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_驗收入庫明細_匯入.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_驗收入庫明細_匯入.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫明細_匯入.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Location = new System.Drawing.Point(219, 491);
+            this.plC_RJ_Button_驗收入庫明細_匯入.Name = "plC_RJ_Button_驗收入庫明細_匯入";
+            this.plC_RJ_Button_驗收入庫明細_匯入.OFF_文字內容 = "匯入";
+            this.plC_RJ_Button_驗收入庫明細_匯入.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_驗收入庫明細_匯入.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫明細_匯入.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫明細_匯入.ON_BorderSize = 5;
+            this.plC_RJ_Button_驗收入庫明細_匯入.ON_文字內容 = "匯入";
+            this.plC_RJ_Button_驗收入庫明細_匯入.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_驗收入庫明細_匯入.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_驗收入庫明細_匯入.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Size = new System.Drawing.Size(201, 101);
+            this.plC_RJ_Button_驗收入庫明細_匯入.State = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.TabIndex = 244;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Text = "匯入";
+            this.plC_RJ_Button_驗收入庫明細_匯入.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_驗收入庫明細_匯入.Texts = "匯入";
+            this.plC_RJ_Button_驗收入庫明細_匯入.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.字型鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_驗收入庫明細_匯入.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_驗收入庫明細_匯入.文字鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.致能讀取位置 = "S4077";
+            this.plC_RJ_Button_驗收入庫明細_匯入.讀取位元反向 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.讀寫鎖住 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.音效 = true;
+            this.plC_RJ_Button_驗收入庫明細_匯入.顯示 = false;
+            this.plC_RJ_Button_驗收入庫明細_匯入.顯示狀態 = false;
             // 
             // Form1
             // 
@@ -12069,6 +12114,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_讀取送出線上訂單;
         private MyUI.PLC_RJ_Button plC_RJ_Button_驗收入庫明細_匯出;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_驗收入庫明細_匯入;
     }
 }
 
