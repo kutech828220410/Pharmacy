@@ -175,7 +175,91 @@ namespace 智慧調劑台管理系統_WebApi
 
             return "OK";
         }
+        [Route("test")]
+        [HttpPost]
+        public string Post_test([FromBody] class_acceptance_med_data data)
+        {
+            string str_out = "";
+            if (data == null)
+            {
+                return "無資料可更動";
+            }
+            List<object[]> list_value = sQLControl_acceptance_med.GetAllRows(null);
+            List<object[]> list_value_buf = new List<object[]>();
+            List<object[]> list_value_add = new List<object[]>();
+            List<object[]> list_value_replace = new List<object[]>();
+            try
+            {
+                var options = new JsonSerializerOptions
+                {
+                    WriteIndented = true,
+                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+                };
+                string jsonString = JsonSerializer.Serialize<class_acceptance_med_data>(data, options);
+            }
+            catch
+            {
+                return "JsonSerializer fail!";
+            }
 
+            //if (data.GUID.StringIsEmpty()) continue;
+            if (data.藥品碼.StringIsEmpty()) return "資料錯誤";
+            if (!data.數量.StringIsInt32()) return "資料錯誤";
+            if (!data.效期.Check_Date_String()) return "資料錯誤";
+            if (!data.驗收時間.Check_Date_String()) return "資料錯誤";
+            list_value_buf = list_value.GetRows((int)enum_acceptance_med.藥品碼, data.藥品碼);
+            list_value_buf = list_value_buf.GetRows((int)enum_acceptance_med.批號, data.批號);
+            list_value_buf = (from value in list_value_buf
+                              where value[(int)enum_acceptance_med.效期].ToDateString() == data.效期.StringToDateTime().ToDateString()
+                              select value).ToList();
+            list_value_buf = (from value in list_value_buf
+                              where (DateTime)value[(int)enum_acceptance_med.驗收時間] == data.驗收時間.StringToDateTime()
+                              select value).ToList();
+            list_value_buf = (from value in list_value_buf
+                              where value[(int)enum_acceptance_med.來源].ObjectToString() == "院內系統"
+                              select value).ToList();
+
+            if (list_value_buf.Count == 0)
+            {
+                object[] value = new object[new enum_acceptance_med().GetLength()];
+                value[(int)enum_acceptance_med.GUID] = Guid.NewGuid().ToString();
+                value[(int)enum_acceptance_med.藥品碼] = data.藥品碼;
+                value[(int)enum_acceptance_med.數量] = data.數量;
+                value[(int)enum_acceptance_med.效期] = data.效期;
+                value[(int)enum_acceptance_med.批號] = data.批號;
+                value[(int)enum_acceptance_med.驗收時間] = data.驗收時間;
+                value[(int)enum_acceptance_med.加入時間] = DateTime.Now.ToDateTimeString_6();
+                value[(int)enum_acceptance_med.狀態] = enum_狀態.等待過帳.GetEnumName();
+                value[(int)enum_acceptance_med.來源] = "院內系統";
+                value[(int)enum_acceptance_med.備註] = "";
+                list_value_add.LockAdd(value);
+            }
+            else
+            {
+                string 狀態 = list_value_buf[0][(int)enum_acceptance_med.狀態].ObjectToString();
+                if (狀態 != enum_狀態.過帳完成.GetEnumName())
+                {
+                    object[] value = new object[new enum_acceptance_med().GetLength()];
+                    value[(int)enum_acceptance_med.GUID] = list_value_buf[0][(int)enum_acceptance_med.GUID];
+                    value[(int)enum_acceptance_med.藥品碼] = data.藥品碼;
+                    value[(int)enum_acceptance_med.數量] = data.數量;
+                    value[(int)enum_acceptance_med.效期] = data.效期;
+                    value[(int)enum_acceptance_med.批號] = data.批號;
+                    value[(int)enum_acceptance_med.驗收時間] = data.驗收時間;
+                    value[(int)enum_acceptance_med.加入時間] = DateTime.Now.ToDateTimeString_6();
+                    value[(int)enum_acceptance_med.狀態] = list_value_buf[0][(int)enum_acceptance_med.狀態];
+                    value[(int)enum_acceptance_med.來源] = "院內系統";
+                    value[(int)enum_acceptance_med.備註] = "";
+
+                    list_value_replace.LockAdd(value);
+                }
+
+            }
+            //sQLControl_acceptance_med.AddRows(null, list_value_add);
+            //sQLControl_acceptance_med.UpdateByDefulteExtra(null, list_value_replace);
+
+            return "OK";
+        }
         private class ICP_acceptance_med : IComparer<object[]>
         {
             public int Compare(object[] x, object[] y)

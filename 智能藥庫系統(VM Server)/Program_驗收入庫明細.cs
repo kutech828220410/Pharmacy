@@ -168,7 +168,7 @@ namespace 智能藥庫系統_VM_Server_
 
 
 
-
+                list_藥庫_驗收入庫.Add(value);
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
                 if (list_藥品資料_buf.Count == 0)
                 {
@@ -177,7 +177,7 @@ namespace 智能藥庫系統_VM_Server_
                 }
                 value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱];
                 value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝單位];
-                list_藥庫_驗收入庫.Add(value);
+             
             }
             list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());
             list_藥庫_驗收入庫_error.Sort(new ICP_驗收入庫_過帳明細());
@@ -208,6 +208,7 @@ namespace 智能藥庫系統_VM_Server_
 
                 object[] value = list_驗收入庫明細[i].CopyRow(new enum_驗收入庫明細(), new enum_補給驗收入庫());
                 value[(int)enum_驗收入庫明細.藥品碼] = $"A0000{藥品碼}";
+                if (value[(int)enum_驗收入庫明細.藥品碼].ObjectToString().Length >= 50) continue;
                 List<DeviceBasic> deviceBasics_buf = deviceBasics.SortByCode(藥品碼);
 
                 if (deviceBasics_buf.Count > 0)
@@ -255,10 +256,12 @@ namespace 智能藥庫系統_VM_Server_
                 list_補給驗收入庫_replace.Add(value);
             }
             dialog_Prcessbar.State = "上傳儲位資料...";
-            this.DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_replace);
             this.sqL_DataGridView_補給驗收入庫.SQL_ReplaceExtra(list_補給驗收入庫_replace, false);
             this.sqL_DataGridView_驗收入庫明細.ReplaceExtra(list_驗收入庫明細_replace, true);
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_add, false);
+            this.DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_replace);
+ 
+
             dialog_Prcessbar.Close();
         }
         #endregion

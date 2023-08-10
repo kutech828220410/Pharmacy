@@ -650,6 +650,10 @@ namespace 智能藥庫系統_VM_Server_
             for (int i = 0; i < aPI_OrderClass.Result.Count; i++)
             {
                 aPI_OrderClass.Result[i].code = Function_藥庫_每日訂單_藥品碼轉換(aPI_OrderClass.Result[i].code);
+                if (aPI_OrderClass.Result[i].code == "06005")
+                {
+
+                }
             }
 
 
