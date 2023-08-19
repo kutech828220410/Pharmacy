@@ -477,7 +477,11 @@ namespace 智能藥庫系統
         {
             if (value.Length == 10)
             {
-                value = value.Substring(5, 5);
+                value = value.Substring(value.Length - 5, 5);
+            }
+            else if (value.Length == 12)
+            {
+                value = value.Substring(value.Length - 7, 5);
             }
             return value;
         }

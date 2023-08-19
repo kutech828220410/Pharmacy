@@ -113,7 +113,7 @@ namespace 智能藥庫系統
             if (RowValue[(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString() == enum_藥庫_撥補_藥局_緊急申領_狀態.過帳完成.GetEnumName()) return;
             Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("請輸入申領數量");
             if (dialog_NumPannel.ShowDialog() != DialogResult.Yes) return;
-            if (dialog_NumPannel.Value <= 0) return;
+            if (dialog_NumPannel.Value < 0) return;
             RowValue[(int)enum_藥庫_撥補_藥局_緊急申領.異動量] = dialog_NumPannel.Value;
 
             this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(RowValue, false);

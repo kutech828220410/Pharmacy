@@ -111,7 +111,7 @@ namespace 智能藥庫系統_VM_Server_
             if (this.MyTimer_檢查自動撥補至藥局_結束延遲.IsTimeOut())
             {
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
+                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
                 List<object[]> list_過帳明細_Add = new List<object[]>();
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());
@@ -267,8 +267,6 @@ namespace 智能藥庫系統_VM_Server_
                     }
 
 
-
-
                     輸出備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * -1}";
                     if (k != list_儲位資料.Count - 1) 輸出備註 += "\n";
 
@@ -327,7 +325,6 @@ namespace 智能藥庫系統_VM_Server_
             this.DeviceBasicClass_藥局.SQL_ReplaceDeviceBasic(deviceBasics_藥局_replace);
             this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.SQL_ReplaceExtra(list_value, false);
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_Add, false);
-            //this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.RefreshGrid(list_value);
             dialog_Prcessbar.Close();
         }
         #endregion
@@ -389,12 +386,12 @@ namespace 智能藥庫系統_VM_Server_
         private void PlC_RJ_Button_藥庫_撥補_藥局_自動撥補_產出今日撥補表_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥局_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥庫_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
             List<DeviceBasic> deviceBasics = this.DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
             List<object[]> list_自動撥補 = this.sqL_DataGridView_藥庫_撥補_藥局_自動撥補.SQL_GetRowsByBetween((int)enum_藥庫_撥補_藥局_自動撥補.產出時間, DateTime.Now, false);
             List<object[]> list_自動撥補_buf = new List<object[]>();
             List<object[]> list_自動撥補_Add = new List<object[]>();
             List<object[]> list_自動撥補_Replace = new List<object[]>();
-            List<object[]> list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥局_藥品資料.藥品碼, "09208");
             List<object[]> list_value = new List<object[]>();
             string 藥品碼 = "";
             string 藥品名稱 = "";
@@ -403,7 +400,7 @@ namespace 智能藥庫系統_VM_Server_
             int 庫存量 = 0;
             int 異動量 = 0;
             int 結存量 = 0;
-
+            int 包裝數量 = 0;
             Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(list_藥品資料.Count);
             dialog_Prcessbar.State = "掃描藥品庫存...";
             for (int i = 0; i < list_藥品資料.Count; i++)
@@ -417,6 +414,7 @@ namespace 智能藥庫系統_VM_Server_
                 if (deviceBasic_buf.Count == 0) continue;
                 安全量 = list_藥品資料[i][(int)enum_藥局_藥品資料.安全庫存].ObjectToString().StringToInt32();
                 基準量 = list_藥品資料[i][(int)enum_藥局_藥品資料.基準量].ObjectToString().StringToInt32();
+                包裝數量 = list_藥庫_藥品資料[i][(int)enum_藥庫_藥品資料.包裝數量].ObjectToString().StringToInt32();
                 庫存量 = deviceBasic_buf[0].Inventory.StringToInt32();
                 if (基準量 <= 0)
                 {
@@ -426,7 +424,13 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     continue;
                 }
+
                 異動量 = 基準量 - 庫存量;
+                if (包裝數量 > 1)
+                {
+                    int temp = 異動量 / 包裝數量;
+                    異動量 = 包裝數量 * temp;
+                }
                 結存量 = 庫存量 + 異動量;
            
                 list_自動撥補_buf = list_自動撥補.GetRows((int)enum_藥庫_撥補_藥局_自動撥補.藥品碼, 藥品碼);

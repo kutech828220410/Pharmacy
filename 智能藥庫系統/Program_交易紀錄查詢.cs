@@ -71,6 +71,7 @@ namespace 智能藥庫系統
 
 
         private bool flag_交易紀錄查詢_頁面更新 = false;
+        private bool flag_交易紀錄查詢_頁面更新_init = false;
         private void sub_Program_交易紀錄查詢()
         {
             if (this.plC_ScreenPage_Main.PageText == "交易紀錄查詢" && this.plC_ScreenPage_批次過帳.PageText == "交易紀錄查詢")
@@ -79,11 +80,15 @@ namespace 智能藥庫系統
                 {
                     this.Invoke(new Action(delegate
                     {
-                        this.dateTimePicker_交易記錄查詢_操作時間_起始.Value = DateTime.Now.AddMonths(-1);
-                        this.dateTimePicker_交易記錄查詢_操作時間_結束.Value = DateTime.Now;
+                        if(flag_交易紀錄查詢_頁面更新_init == false)
+                        {
+                            this.dateTimePicker_交易記錄查詢_操作時間_起始.Value = DateTime.Now.AddMonths(-1);
+                            this.dateTimePicker_交易記錄查詢_操作時間_結束.Value = DateTime.Now;
+                        }
+         
 
                     }));
-
+                    flag_交易紀錄查詢_頁面更新_init = true;
                     this.flag_交易紀錄查詢_頁面更新 = true;
                 }
             }
@@ -94,7 +99,34 @@ namespace 智能藥庫系統
         }
 
         #region Function
-        void Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作 enum_交易記錄查詢動作, string 操作人, string 備註)
+        private void Funnction_交易記錄查詢_取得指定藥碼批號期效期(string 藥碼, ref List<string> list_效期, ref List<string> list_批號)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            List<string> list_效期_buf = new List<string>();
+            if (藥碼.StringIsEmpty()) return;
+            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼 , false);
+            Console.WriteLine($"搜尋藥碼: {藥碼} , {myTimerBasic.ToString()}");
+            string 備註 = "";
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                備註 = list_value[i][(int)enum_交易記錄查詢資料.備註].ObjectToString();
+                string[] temp_ary = 備註.Split('\n');
+                for (int k = 0; k < temp_ary.Length; k++)
+                {
+                    string 效期 = temp_ary[k].GetTextValue("效期");
+                    string 批號 = temp_ary[k].GetTextValue("批號");
+                    if (效期.StringIsEmpty() == true) continue;
+                    list_效期_buf = (from temp in list_效期
+                                   where temp == 效期
+                                   select temp).ToList();
+                    if (list_效期_buf.Count > 0) continue;
+                    list_效期.Add(效期);
+                    list_批號.Add(批號);
+                }
+            }
+
+        }
+        private void Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作 enum_交易記錄查詢動作, string 操作人, string 備註)
         {
             if (操作人.StringIsEmpty()) return;
             string GUID = Guid.NewGuid().ToString();

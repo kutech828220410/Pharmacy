@@ -258,10 +258,10 @@ namespace 智能藥庫系統
                 藥局庫存 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.藥局庫存.GetEnumName()].Value.ToString().StringToInt32();
                 庫存 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.總庫存.GetEnumName()].Value.ToString().StringToInt32();
                 基準量 = this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].Cells[enum_藥局_藥品資料.基準量.GetEnumName()].Value.ToString().StringToInt32();
-                if (庫存 < 基準量)
+                if (庫存 <= 基準量)
                 {
-                    this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Red;
-                    this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.White;
+                    //this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Red;
+                    //this.sqL_DataGridView_藥局_藥品資料.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.White;
                 }
             }
         }

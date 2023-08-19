@@ -131,8 +131,15 @@ namespace 智能藥庫系統_VM_Server_
         }
         private void PlC_RJ_Button_交易紀錄查詢_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
-
+            List<object[]> list_value = new List<object[]>();
+            if (textBox_交易記錄查詢_藥品碼.Texts.StringIsEmpty() == false)
+            {
+                list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, textBox_交易記錄查詢_藥品碼.Text, false);
+            }
+            else
+            {
+                list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
+            }
             List<List<object[]>> list_list_value_buf = new List<List<object[]>>();
             List<object[]> list_value_buf = new List<object[]>();
 

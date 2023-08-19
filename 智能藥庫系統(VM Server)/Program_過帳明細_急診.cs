@@ -173,7 +173,7 @@ namespace 智能藥庫系統_VM_Server_
 
             List<object[]> list_寫入報表設定 = this.sqL_DataGridView_寫入報表設定.SQL_GetAllRows(false);
             List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-            List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
             List<object[]> list_藥品資料_buf = new List<object[]>();
             List<object[]> list_過帳明細_Add = new List<object[]>();
             list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.PHER_消耗帳.GetEnumName());
@@ -201,7 +201,7 @@ namespace 智能藥庫系統_VM_Server_
 
                     object[] value = new object[new enum_過帳明細_急診().GetLength()];
                     this.Function_過帳明細_急診_解析TXT(list_text[k], ref 藥品碼, ref 藥局代碼, ref 報表產出日期, ref 異動量);
-                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端_藥品資料.藥品碼, 藥品碼);
+                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端_藥品資料_old.藥品碼, 藥品碼);
     
                     if (異動量.StringIsInt32() == false)
                     {
@@ -223,7 +223,7 @@ namespace 智能藥庫系統_VM_Server_
                     value[(int)enum_過帳明細_急診.過帳時間] = DateTime.MinValue.ToDateTimeString_6();
                     value[(int)enum_過帳明細_急診.狀態] = enum_過帳明細_急診_狀態.等待過帳.GetEnumName();
 
-                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端_藥品資料.藥品碼, 藥品碼);
+                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端_藥品資料_old.藥品碼, 藥品碼);
                     if (list_藥品資料_buf.Count == 0)
                     {
                         object[] log = new object[new enum_Log().GetLength()];
@@ -235,7 +235,7 @@ namespace 智能藥庫系統_VM_Server_
                     }
                     else
                     {
-                        value[(int)enum_過帳明細_急診.藥品名稱] = list_藥品資料_buf[0][(int)enum_雲端_藥品資料.藥品名稱];
+                        value[(int)enum_過帳明細_急診.藥品名稱] = list_藥品資料_buf[0][(int)enum_雲端_藥品資料_old.藥品名稱];
 
                     }
                     list_過帳明細_Add.Add(value);

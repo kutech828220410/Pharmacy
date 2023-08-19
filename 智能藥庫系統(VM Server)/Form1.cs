@@ -61,7 +61,6 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     MyMessageBox.ShowDialog($"建立{DBConfigFileName}檔案失敗!");
                 }
-
             }
         }
         public Form1()
@@ -97,7 +96,7 @@ namespace 智能藥庫系統_VM_Server_
                 PLC_UI_Init.Set_PLC_ScreenPage(this.panel_驗收入庫, this.plC_ScreenPage_驗收入庫);
 
                 this.Function_Init();
-
+                this.sub_Program_雲端藥檔NEW_Init();
                 this.sub_Program_雲端_藥品資料_Init();
                 this.sub_Program_本地_藥品資料_Init();
                 this.sub_Program_藥局_藥品資料_Init();

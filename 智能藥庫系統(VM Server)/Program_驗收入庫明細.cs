@@ -21,6 +21,10 @@ namespace 智能藥庫系統_VM_Server_
     {
         public class class_acceptance_med_data
         {
+            [JsonPropertyName("PRN_SN")]
+            public string 請購單號 { get; set; }
+            [JsonPropertyName("ACP_SN")]
+            public string 驗收單號 { get; set; }
             [JsonPropertyName("code")]
             public string 藥品碼 { get; set; }
             [JsonPropertyName("value")]
@@ -31,6 +35,8 @@ namespace 智能藥庫系統_VM_Server_
             public string 批號 { get; set; }
             [JsonPropertyName("acceptance_date")]
             public string 驗收時間 { get; set; }
+            [JsonPropertyName("OP_TIME")]
+            public string 加入時間 { get; set; }
             [JsonPropertyName("state")]
             public string 狀態 { get; set; }
 
@@ -38,6 +44,8 @@ namespace 智能藥庫系統_VM_Server_
         public enum enum_驗收入庫明細
         {
             GUID,
+            請購單號,
+            驗收單號,
             藥品碼,
             藥品名稱,
             包裝單位,
@@ -108,8 +116,6 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_UI_Init.Add_Method(sub_Program_驗收入庫明細);
         }
 
-  
-
         private bool flag_驗收入庫明細 = false;
         private void sub_Program_驗收入庫明細()
         {
@@ -165,9 +171,6 @@ namespace 智能藥庫系統_VM_Server_
                     value[(int)enum_驗收入庫明細.藥品碼] = 藥品碼;
                     list_藥庫_驗收入庫_error.Add(value);
                 }
-
-
-
                 list_藥庫_驗收入庫.Add(value);
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
                 if (list_藥品資料_buf.Count == 0)

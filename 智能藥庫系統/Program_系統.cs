@@ -50,6 +50,8 @@ namespace 智能藥庫系統
         public enum enum_補給驗收入庫
         {
             GUID,
+            請購單號,
+            驗收單號,
             藥品碼,
             數量,
             效期,

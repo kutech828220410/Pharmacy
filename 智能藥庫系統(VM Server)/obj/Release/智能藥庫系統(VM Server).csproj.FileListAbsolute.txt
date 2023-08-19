@@ -222,3 +222,4 @@ C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HIS_DB_Lib.dll

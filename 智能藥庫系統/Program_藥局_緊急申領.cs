@@ -158,11 +158,26 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥局_緊急申領_CellValidatingEvent(object[] RowValue, int rowIndex, int colIndex, string value, DataGridViewCellValidatingEventArgs e)
         {
+            string 藥碼 = RowValue[(int)enum_藥局_緊急申領.藥品碼].ObjectToString();
             string 異動量 = value;
             if (異動量.StringToInt32() < 0)
             {
                 MyMessageBox.ShowDialog("請輸入正確數字(大於'0')!");
                 e.Cancel = true;
+            }
+            List<object[]> list_藥庫_藥品資料 = sqL_DataGridView_藥庫_藥品資料.SQL_GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥碼, false);
+            if (list_藥庫_藥品資料.Count > 0)
+            {
+                string 包裝數量 = list_藥庫_藥品資料[0][(int)enum_藥庫_藥品資料.包裝數量].ObjectToString();
+                if (包裝數量.StringIsInt32() == true)
+                {
+                    int temp = 包裝數量.StringToInt32();
+                    if (異動量.StringToInt32() % temp != 0)
+                    {
+                        MyMessageBox.ShowDialog($"藥品包裝量為<{temp}> , 請填入可整除數量!");
+                        e.Cancel = true;
+                    }
+                }
             }
         }
         private void SqL_DataGridView_藥局_緊急申領_RowEndEditEvent(object[] RowValue, int rowIndex, int colIndex, string value)

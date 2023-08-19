@@ -80,6 +80,9 @@
     <Reference Include="HCGUI">
       <HintPath>..\0.DLL\HCGUI.dll</HintPath>
     </Reference>
+    <Reference Include="HIS_DB_Lib">
+      <HintPath>..\0.DLL\HIS_DB_Lib.dll</HintPath>
+    </Reference>
     <Reference Include="H_Pannel_lib">
       <HintPath>..\0.DLL\H_Pannel_lib.dll</HintPath>
     </Reference>
@@ -215,6 +218,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_補給驗收入庫.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="藥品資料\Program_雲端藥檔NEW.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_驗收入庫明細.cs">

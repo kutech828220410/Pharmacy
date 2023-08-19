@@ -24,6 +24,8 @@ namespace 智能藥庫系統
         public enum enum_藥庫_驗收入庫_過帳明細
         {
             GUID,
+            請購單號,
+            驗收單號,
             藥品碼,
             藥品名稱,
             包裝單位,
@@ -97,7 +99,14 @@ namespace 智能藥庫系統
                 object[] value = list_補給驗收入庫[i].CopyRow(new enum_補給驗收入庫(),new enum_藥庫_驗收入庫_過帳明細());
 
                 string 藥品碼 = value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼].ObjectToString();
-                藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
+                if (藥品碼.Length == 10)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
+                }
+                else if (藥品碼.Length == 12)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 7, 5);
+                }
                 value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼] = 藥品碼;
 
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);

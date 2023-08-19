@@ -22,6 +22,8 @@ namespace 智能藥庫系統_VM_Server_
         public enum enum_補給驗收入庫
         {
             GUID,
+            請購單號,
+            驗收單號,
             藥品碼,
             數量,
             效期,
@@ -94,7 +96,7 @@ namespace 智能藥庫系統_VM_Server_
             if (this.MyTimer_檢查補給驗收入庫_結束延遲.IsTimeOut())
             {
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
+                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
                 List<object[]> list_過帳明細_Add = new List<object[]>();
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());

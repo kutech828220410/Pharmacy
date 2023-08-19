@@ -110,6 +110,7 @@ namespace 智能藥庫系統
 
 
         private bool flag_藥品過消耗帳_頁面更新 = false;
+        private bool flag__藥品過消耗帳_頁面更新_init = false;
         private void sub_Program_藥品過消耗帳()
         {
             if (this.plC_ScreenPage_Main.PageText == "批次過帳" && this.plC_ScreenPage_批次過帳.PageText == "藥品過消耗帳")
@@ -118,8 +119,13 @@ namespace 智能藥庫系統
                 {
                     this.Invoke(new Action(delegate
                     {
-                        this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value = DateTime.Now.AddMonths(-1);
-                        this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value = DateTime.Now;
+                        if (flag__藥品過消耗帳_頁面更新_init == false)
+                        {
+                            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_起始.Value = DateTime.Now.AddMonths(-1);
+                            this.rJ_DatePicker_藥品過消耗帳_指定報表日期_結束.Value = DateTime.Now;
+                        }
+                
+                        flag__藥品過消耗帳_頁面更新_init = true;
 
                     }));
 

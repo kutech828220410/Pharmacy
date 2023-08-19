@@ -70,11 +70,13 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_藥品過消耗帳_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_藥品碼篩選_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示異常過帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent;
+            this.plC_RJ_Button_藥品過消耗帳_無效期可入帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_無效期可入帳_MouseDownEvent;
+            this.plC_RJ_Button_藥品過消耗帳_測試.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_測試_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-
+    
 
         private void sub_Program_藥品過消耗帳()
         {
@@ -128,7 +130,7 @@ namespace 智能藥庫系統_VM_Server_
             if (this.MyTimer_檢查藥品過消耗帳_結束延遲.IsTimeOut())
             {
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
+                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
                 List<object[]> list_過帳明細_Add = new List<object[]>();
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());
@@ -211,7 +213,7 @@ namespace 智能藥庫系統_VM_Server_
             if (this.MyTimer_檢查異常消耗帳過帳_結束延遲.IsTimeOut())
             {
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料.SQL_GetAllRows(false);
+                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
                 List<object[]> list_藥品資料_buf = new List<object[]>();
                 List<object[]> list_過帳明細_Add = new List<object[]>();
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());
@@ -252,10 +254,16 @@ namespace 智能藥庫系統_VM_Server_
         #region Fucntion
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細()
         {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            myTimerBasic.StartTickTime(50000);
             List<object[]> list_門診 = this.sqL_DataGridView_過帳明細_門診.SQL_GetAllRows(false);
+            Console.WriteLine($"取得門診所有過帳資料,{myTimerBasic.ToString()}");
             List<object[]> list_急診 = this.sqL_DataGridView_過帳明細_急診.SQL_GetAllRows(false);
+            Console.WriteLine($"取得急診所有過帳資料,{myTimerBasic.ToString()}");
             List<object[]> list_住院 = this.sqL_DataGridView_過帳明細_住院.SQL_GetAllRows(false);
+            Console.WriteLine($"取得住院所有過帳資料,{myTimerBasic.ToString()}");
             List<object[]> list_公藥 = this.sqL_DataGridView_過帳明細_公藥.SQL_GetAllRows(false);
+            Console.WriteLine($"取得公藥所有過帳資料,{myTimerBasic.ToString()}");
             List<object[]> list_value = new List<object[]>();
 
             List<object[]> list_門診_buf = list_門診.CopyRows(new enum_過帳明細_門診(), new enum_藥品過消耗帳());
@@ -536,6 +544,15 @@ namespace 智能藥庫系統_VM_Server_
             list_value.Sort(new ICP_藥品過消耗帳());
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
         }
+        private void PlC_RJ_Button_藥品過消耗帳_無效期可入帳_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細();
+            list_value = (from value in list_value
+                          where value[(int)enum_藥品過消耗帳.狀態].ObjectToString() == enum_藥品過消耗帳_狀態.無效期可入帳.GetEnumName()
+                          select value).ToList();
+            list_value.Sort(new ICP_藥品過消耗帳());
+            this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
+        }
         private void PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細();
@@ -653,6 +670,17 @@ namespace 智能藥庫系統_VM_Server_
             list_value.Sort(new ICP_藥品過消耗帳());
 
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_測試_MouseDownEvent(MouseEventArgs mevent)
+        {
+            string 備註 = "";
+            備註 += "[效期]:2024/09/27,[批號]:250D54E,[數量]:-3\n";
+            備註 += "[效期]:2024/10/02,[批號]:250D56E,[數量]:-15";
+            string[] ary_space = 備註.Split('\n');
+            for (int i = 0; i < ary_space.Length; i++)
+            {
+                
+            }
         }
         #endregion
         private class ICP_藥品過消耗帳 : IComparer<object[]>
