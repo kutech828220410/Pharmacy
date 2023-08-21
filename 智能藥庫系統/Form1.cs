@@ -16,14 +16,16 @@ using SQLUI;
 using H_Pannel_lib;
 using System.Net.Http;
 using System.IO;
-[assembly: AssemblyVersion("1.0.50.0")]
-[assembly: AssemblyFileVersion("1.0.50.0")]
+using HIS_DB_Lib;
+
+[assembly: AssemblyVersion("1.0.51.1")]
+[assembly: AssemblyFileVersion("1.0.51.1")]
 namespace 智能藥庫系統
 {
 
     public partial class Form1 : Form
     {
-        
+        private string Api_URL = "http://10.18.1.146:4433";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -139,6 +141,31 @@ namespace 智能藥庫系統
 
             //this.ftp_DounloadUI1.FTP_Server = myConfigClass.FTP_Server;
         }
+        private void ApiServerSetting(string Name)
+        {
+            string json_result = Basic.Net.WEBApiGet($"{Api_URL}/api/ServerSetting");
+            if (json_result.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("API Server 連結失敗!");
+                return;
+            }
+            Console.WriteLine(json_result);
+            returnData returnData = json_result.JsonDeserializet<returnData>();
+            List<HIS_DB_Lib.ServerSettingClass> serverSettingClasses = returnData.Data.ObjToListClass<ServerSettingClass>();
+            HIS_DB_Lib.ServerSettingClass serverSettingClass;
+            string ServerName = Name;
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, ServerName);        
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_調劑台.藥檔資料);
+            if (serverSettingClass != null)
+            {
+                dBConfigClass.DB_Medicine_Cloud.IP = serverSettingClass.Server;
+                dBConfigClass.DB_Medicine_Cloud.Port = (uint)(serverSettingClass.Port.StringToInt32());
+                dBConfigClass.DB_Medicine_Cloud.DataBaseName = serverSettingClass.DBName;
+                dBConfigClass.DB_Medicine_Cloud.UserName = serverSettingClass.User;
+                dBConfigClass.DB_Medicine_Cloud.Password = serverSettingClass.Password;
+            }
+          
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
          
@@ -154,14 +181,6 @@ namespace 智能藥庫系統
                 string updateVersion = this.ftp_DounloadUI.GetFileVersion();
                 if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
                 {
-                    //if (Basic.MyMessageBox.ShowDialog(string.Format("有新版本是否更新? (Ver : {0})", updateVersion), "Update", Basic.MyMessageBox.enum_BoxType.Asterisk, Basic.MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
-                    //{
-                    //    this.Invoke(new Action(delegate { this.Update(); }));
-                    //}
-                    //else
-                    //{
-                    //    Application.Exit();
-                    //}
                     this.Invoke(new Action(delegate { this.Update(); }));
                 }
 
@@ -179,7 +198,7 @@ namespace 智能藥庫系統
                 Dialog_更換密碼.form = this.FindForm();
                 Dialog_藥品資料設定.form = this.FindForm();
                 Dialog_效期批號歷史紀錄.form = this.FindForm();
-
+                ApiServerSetting("DS01");
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;
             }
@@ -187,7 +206,6 @@ namespace 智能藥庫系統
     
         private void PlC_UI_Init_UI_Finished_Event()
         {
-
             PLC_UI_Init.Set_PLC_ScreenPage(panel_Main, this.plC_ScreenPage_Main);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫, this.plC_ScreenPage_藥庫);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_儲位設定, this.plC_ScreenPage_藥庫_儲位設定);
@@ -205,10 +223,7 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_盤點作業, this.plC_ScreenPage_盤點作業);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備, this.plC_ScreenPage_周邊設備);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_周邊設備_麻醉部ADC, this.plC_ScreenPage_周邊設備_麻醉部ADC);
-            PLC_UI_Init.Set_PLC_ScreenPage(panel_戰情白板, this.plC_ScreenPage_戰情白板);
-
-            
-
+            PLC_UI_Init.Set_PLC_ScreenPage(panel_戰情白板, this.plC_ScreenPage_戰情白板);           
 
             SQLUI.SQL_DataGridView.SQL_Set_Properties(dBConfigClass.DB_Basic.DataBaseName, dBConfigClass.DB_Basic.UserName, dBConfigClass.DB_Basic.Password, dBConfigClass.DB_Basic.IP, dBConfigClass.DB_Basic.Port, dBConfigClass.DB_Basic.MySqlSslMode, this.FindForm());
 

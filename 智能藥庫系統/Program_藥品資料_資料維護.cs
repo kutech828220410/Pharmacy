@@ -11,12 +11,14 @@ using System.Diagnostics;
 using MyUI;
 using Basic;
 using System.Text.RegularExpressions;
+using HIS_DB_Lib;
+using SQLUI;
 namespace 智能藥庫系統
 {
 
     public partial class Form1 : Form
     {
-        public enum enum_藥品資料_資料維護_雲端藥檔
+        public enum enum_雲端藥檔
         {
             GUID,
             藥品碼,
@@ -34,7 +36,7 @@ namespace 智能藥庫系統
             管制級別,
             類別
         }
-        public enum enum_藥品資料_資料維護_雲端藥檔_匯出
+        public enum enum_雲端藥檔_匯出
         {
             藥品碼,
             中文名稱,
@@ -48,7 +50,7 @@ namespace 智能藥庫系統
             藥品條碼1,
             藥品條碼2,
         }
-        public enum enum_藥品資料_資料維護_雲端藥檔_匯入
+        public enum enum_雲端藥檔_匯入
         {
             藥品碼,
             中文名稱,
@@ -90,14 +92,23 @@ namespace 智能藥庫系統
   
         private void sub_Program_藥品資料_資料維護_Init()
         {
-            SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔, dBConfigClass.DB_Medicine_Cloud);
-
-            this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.Init();
-            if(!this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_IsTableCreat())
+            SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_雲端藥檔, dBConfigClass.DB_Medicine_Cloud);
+            string url = $"{Api_URL}/api/MED_page/init";
+            returnData returnData = new returnData();
+            returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
+            returnData.ServerName = $"{"DS01"}";
+            returnData.TableName = "medicine_page_cloud";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            Table table = json.JsonDeserializet<Table>();
+            if (table == null)
             {
-                this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_CreateTable();
+                MyMessageBox.ShowDialog($"雲端藥檔表單建立失敗!! Api_URL:{Api_URL}");
+                return;
             }
-            this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.DataGridRefreshEvent += SqL_DataGridView_藥品資料_資料維護_雲端藥檔_DataGridRefreshEvent;
+            this.sqL_DataGridView_雲端藥檔.Init(table);
+            this.sqL_DataGridView_雲端藥檔.Set_ColumnVisible(true, new enum_雲端藥檔().GetEnumNames());
+            this.sqL_DataGridView_雲端藥檔.DataGridRefreshEvent += SqL_DataGridView_雲端藥檔_DataGridRefreshEvent;
 
             this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.Init();
             if (!this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_IsTableCreat())
@@ -105,25 +116,21 @@ namespace 智能藥庫系統
                 this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_CreateTable();
             }
             this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.DataGridRowsChangeEvent += SqL_DataGridView_藥品資料_資料維護_本地藥檔_DataGridRowsChangeEvent;
-            this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.DataGridRefreshEvent += SqL_DataGridView_藥品資料_資料維護_本地藥檔_DataGridRefreshEvent;
+            this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.DataGridRefreshEvent += SqL_DataGridView_藥品資料_資料維護_本地藥檔_DataGridRefreshEvent;       
 
-        
-
-
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_搜尋.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_搜尋_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_選取資料刪除.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_選取資料刪除_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯入.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯入_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯出.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯出_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_全部顯示.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_全部顯示_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼1設定.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼1設定_MouseDownEvent;
-            this.plC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼2設定.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼2設定_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_搜尋.MouseDownEvent += PlC_RJ_Button_雲端藥檔_搜尋_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_選取資料刪除.MouseDownEvent += PlC_RJ_Button_雲端藥檔_選取資料刪除_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_匯入.MouseDownEvent += PlC_RJ_Button_雲端藥檔_匯入_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_匯出.MouseDownEvent += PlC_RJ_Button_雲端藥檔_匯出_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_全部顯示.MouseDownEvent += PlC_RJ_Button_雲端藥檔_全部顯示_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_藥品條碼1設定.MouseDownEvent += PlC_RJ_Button_雲端藥檔_藥品條碼1設定_MouseDownEvent;
+            this.plC_RJ_Button_雲端藥檔_藥品條碼2設定.MouseDownEvent += PlC_RJ_Button_雲端藥檔_藥品條碼2設定_MouseDownEvent;
 
             this.plC_RJ_Button_藥品資料_資料維護_本地藥檔_搜尋.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_本地藥檔_搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥品資料_資料維護_本地藥檔_全部顯示.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_本地藥檔_全部顯示_MouseDownEvent;
             this.plC_RJ_Button_藥品資料_資料維護_本地藥檔_選取資料刪除.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_本地藥檔_選取資料刪除_MouseDownEvent;
             this.plC_RJ_Button_藥品資料_資料維護_本地藥檔_修正全部藥品.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_本地藥檔_修正全部藥品_MouseDownEvent;
             this.plC_RJ_Button_藥品資料_資料維護_本地藥檔_藥品群組設定.MouseDownEvent += PlC_RJ_Button_藥品資料_資料維護_本地藥檔_藥品群組設定_MouseDownEvent;
-
 
             this.plC_UI_Init.Add_Method(sub_Program_藥品資料_資料維護);
         }
@@ -147,25 +154,25 @@ namespace 智能藥庫系統
         #region Function
 
         #region 雲端藥檔
-        private List<object[]> Function_藥品資料_資料維護_雲端藥檔_列出異動藥品()
+        private List<object[]> Function_雲端藥檔_列出異動藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_value = this.Function_藥品資料_資料維護_本地藥檔_列出異動藥品(list_雲端藥檔, list_本地藥檔);
             return list_value;
         }
-        private List<object[]> Function_藥品資料_資料維護_雲端藥檔_列出異動藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
+        private List<object[]> Function_雲端藥檔_列出異動藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
         {
             List<object[]> list_雲端藥檔_buf = new List<object[]>();
             List<object[]> list_本地藥檔_buf = new List<object[]>();
             bool flag_IsEqual = false;
             for (int i = 0; i < list_本地藥檔.Count; i++)
             {
-                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
+                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
                 if (list_雲端藥檔_buf.Count != 0)
                 {
                     object[] value_dst = LINQ.CopyRow(list_本地藥檔[i], new enum_藥品資料_資料維護_本地藥檔(), new enum_藥品資料_資料維護_本地藥檔());
-                    value_dst = LINQ.CopyRow(list_雲端藥檔_buf[0], new enum_藥品資料_資料維護_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
+                    value_dst = LINQ.CopyRow(list_雲端藥檔_buf[0], new enum_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
                     flag_IsEqual = list_本地藥檔[i].IsEqual(value_dst, (int)enum_藥品資料_資料維護_本地藥檔.GUID, (int)enum_藥品資料_資料維護_本地藥檔.藥品群組);
                     if (!flag_IsEqual)
                     {
@@ -175,16 +182,16 @@ namespace 智能藥庫系統
             }
             return list_本地藥檔_buf;
         }
-        private List<object[]> Function_藥品資料_資料維護_雲端藥檔_列出新增藥品()
+        private List<object[]> Function_雲端藥檔_列出新增藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_雲端藥檔_buf = new List<object[]>();
             List<object[]> list_本地藥檔_buf = new List<object[]>();
             List<object[]> list_value = new List<object[]>();
             for (int i = 0; i < list_雲端藥檔.Count; i++)
             {
-                list_本地藥檔_buf = list_本地藥檔.GetRows((int)enum_藥品資料_資料維護_本地藥檔.藥品碼, list_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].ObjectToString());
+                list_本地藥檔_buf = list_本地藥檔.GetRows((int)enum_藥品資料_資料維護_本地藥檔.藥品碼, list_雲端藥檔[i][(int)enum_雲端藥檔.藥品碼].ObjectToString());
                 if (list_本地藥檔_buf.Count == 0)
                 {
                     list_value.Add(list_雲端藥檔[i]);
@@ -198,7 +205,7 @@ namespace 智能藥庫系統
         #region 本地藥檔
         private List<object[]> Function_藥品資料_資料維護_本地藥檔_列出DC藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_value = this.Function_藥品資料_資料維護_本地藥檔_列出DC藥品(list_雲端藥檔 , list_本地藥檔);
             return list_value;
@@ -213,7 +220,7 @@ namespace 智能藥庫系統
                 List<object[]> list_雲端藥檔_buf = new List<object[]>();
                 List<object[]> list_本地藥檔_buf = new List<object[]>();
 
-                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
+                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
                 if (list_雲端藥檔_buf.Count == 0)
                 {
                     list_value.LockAdd(value);
@@ -225,7 +232,7 @@ namespace 智能藥庫系統
         }
         private List<object[]> Function_藥品資料_資料維護_本地藥檔_列出異動藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_value = this.Function_藥品資料_資料維護_本地藥檔_列出異動藥品(list_雲端藥檔, list_本地藥檔);
             return list_value;
@@ -239,15 +246,15 @@ namespace 智能藥庫系統
             {
                 List<object[]> list_雲端藥檔_buf = new List<object[]>();
            
-                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
+                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
                 if (list_雲端藥檔_buf.Count != 0)
                 {
-                    object[] value_dst = LINQ.CopyRow(list_雲端藥檔_buf[0], new enum_藥品資料_資料維護_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
+                    object[] value_dst = LINQ.CopyRow(list_雲端藥檔_buf[0], new enum_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
                     flag_IsEqual = value.IsEqual(value_dst, (int)enum_藥品資料_資料維護_本地藥檔.GUID, (int)enum_藥品資料_資料維護_本地藥檔.藥品群組);
                     if (!flag_IsEqual)
                     {
-                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品名稱];
-                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品學名] = list_雲端藥檔_buf[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品學名];
+                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品名稱];
+                        value[(int)enum_藥品資料_資料維護_本地藥檔.藥品學名] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品學名];
 
                         list_本地藥檔_buf.LockAdd(value);
                     }
@@ -258,7 +265,7 @@ namespace 智能藥庫系統
         }
         private List<object[]> Function_藥品資料_資料維護_本地藥檔_列出新增藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_value = this.Function_藥品資料_資料維護_本地藥檔_列出新增藥品(list_雲端藥檔, list_本地藥檔);
             return list_value;
@@ -278,7 +285,7 @@ namespace 智能藥庫系統
                 }
                 List<object[]> list_雲端藥檔_buf = new List<object[]>();
                 List<object[]> list_本地藥檔_buf = new List<object[]>();
-                list_本地藥檔_buf = list_本地藥檔.GetRows((int)enum_藥品資料_資料維護_本地藥檔.藥品碼, value[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].ObjectToString());
+                list_本地藥檔_buf = list_本地藥檔.GetRows((int)enum_藥品資料_資料維護_本地藥檔.藥品碼, value[(int)enum_雲端藥檔.藥品碼].ObjectToString());
                 if (list_本地藥檔_buf.Count == 0)
                 {
 
@@ -290,7 +297,7 @@ namespace 智能藥庫系統
        
             for (int i = 0; i < list_雲端藥檔_新增藥品.Count; i++)
             {
-                object[] value_dst = LINQ.CopyRow(list_雲端藥檔_新增藥品[i], new enum_藥品資料_資料維護_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
+                object[] value_dst = LINQ.CopyRow(list_雲端藥檔_新增藥品[i], new enum_雲端藥檔(), new enum_藥品資料_資料維護_本地藥檔());
                 list_本地藥檔_新增藥品.Add(value_dst);
             }
             return list_本地藥檔_新增藥品;
@@ -298,7 +305,7 @@ namespace 智能藥庫系統
         }
         private void Function_藥品資料_資料維護_本地藥檔_搜尋選取藥品()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.Get_All_Select_RowsValues();
             List<object[]> list_value = new List<object[]>();
             List<object[]> list_雲端藥檔_buf = new List<object[]>();
@@ -306,13 +313,13 @@ namespace 智能藥庫系統
 
             for (int i = 0; i < list_本地藥檔.Count; i++)
             {
-                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
+                list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
                 if (list_雲端藥檔_buf.Count > 0)
                 {
                     list_value.Add(list_雲端藥檔_buf[0]);
                 }
             }
-            sqL_DataGridView_藥品資料_資料維護_雲端藥檔.RefreshGrid(list_value);
+            sqL_DataGridView_雲端藥檔.RefreshGrid(list_value);
         }
         private DialogResult Function_藥品資料_資料維護_本地藥檔_藥品群組設定()
         {
@@ -355,52 +362,52 @@ namespace 智能藥庫系統
         #region Event
 
         #region 雲端藥檔
-        private void SqL_DataGridView_藥品資料_資料維護_雲端藥檔_DataGridRefreshEvent()
+        private void SqL_DataGridView_雲端藥檔_DataGridRefreshEvent()
         {
-            List<object[]> list_新增藥品 = this.Function_藥品資料_資料維護_雲端藥檔_列出新增藥品();
+            List<object[]> list_新增藥品 = this.Function_雲端藥檔_列出新增藥品();
             List<object[]> list_新增藥品_buf = new List<object[]>();
             string 藥品碼 = "";
-            for (int i = 0; i < this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.dataGridView.Rows.Count; i++)
+            for (int i = 0; i < this.sqL_DataGridView_雲端藥檔.dataGridView.Rows.Count; i++)
             {
-                藥品碼 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.dataGridView.Rows[i].Cells[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].Value.ObjectToString();
+                藥品碼 = this.sqL_DataGridView_雲端藥檔.dataGridView.Rows[i].Cells[(int)enum_雲端藥檔.藥品碼].Value.ObjectToString();
       
-                list_新增藥品_buf = list_新增藥品.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, 藥品碼);
+                list_新增藥品_buf = list_新增藥品.GetRows((int)enum_雲端藥檔.藥品碼, 藥品碼);
                 if (list_新增藥品_buf.Count > 0)
                 {
-                    this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
-                    this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
+                    this.sqL_DataGridView_雲端藥檔.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
+                    this.sqL_DataGridView_雲端藥檔.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
 
             }
         }
-        private void sqL_DataGridView_藥品資料_資料維護_雲端藥檔_MouseDown(object sender, MouseEventArgs e)
+        private void sqL_DataGridView_雲端藥檔_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
             {
                 
             }
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_選取資料刪除_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_選取資料刪除_MouseDownEvent(MouseEventArgs mevent)
         {
             this.Invoke(new Action(delegate
             {
                 if (MyMessageBox.ShowDialog("是否刪除選取資料", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) == DialogResult.Yes)
                 {
                     this.Cursor = Cursors.WaitCursor;
-                    List<object[]> list_value = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.Get_All_Select_RowsValues();
+                    List<object[]> list_value = this.sqL_DataGridView_雲端藥檔.Get_All_Select_RowsValues();
                     List<object> list_delete_serchValue = new List<object>();
                     for (int i = 0; i < list_value.Count; i++)
                     {
-                        string GUID = list_value[i][(int)enum_藥品資料_資料維護_雲端藥檔.GUID].ObjectToString();
+                        string GUID = list_value[i][(int)enum_雲端藥檔.GUID].ObjectToString();
                         list_delete_serchValue.Add(GUID);
                     }
-                    this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_DeleteExtra(enum_藥品資料_資料維護_雲端藥檔.GUID.GetEnumName(), list_delete_serchValue, true);
+                    this.sqL_DataGridView_雲端藥檔.SQL_DeleteExtra(enum_雲端藥檔.GUID.GetEnumName(), list_delete_serchValue, true);
                     this.Cursor = Cursors.Default;
                 }
             }));
    
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯出_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_匯出_MouseDownEvent(MouseEventArgs mevent)
         {
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate
@@ -413,8 +420,8 @@ namespace 智能藥庫系統
                 {
                     this.Cursor = Cursors.WaitCursor;
                 }));
-                DataTable dataTable = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.GetDataTable();
-                dataTable = dataTable.ReorderTable(new enum_藥品資料_資料維護_雲端藥檔_匯出());
+                DataTable dataTable = this.sqL_DataGridView_雲端藥檔.GetDataTable();
+                dataTable = dataTable.ReorderTable(new enum_雲端藥檔_匯出());
                 CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                 this.Invoke(new Action(delegate
                 {
@@ -423,7 +430,7 @@ namespace 智能藥庫系統
          
             }
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_匯入_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_匯入_MouseDownEvent(MouseEventArgs mevent)
         {
             DialogResult dialogResult = DialogResult.None;
             this.Invoke(new Action(delegate
@@ -439,7 +446,7 @@ namespace 智能藥庫系統
          
                 DataTable dataTable = new DataTable();
                 CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
-                DataTable datatable_buf = dataTable.ReorderTable(new enum_藥品資料_資料維護_雲端藥檔_匯入());
+                DataTable datatable_buf = dataTable.ReorderTable(new enum_雲端藥檔_匯入());
                 if (datatable_buf == null)
                 {
                     this.Invoke(new Action(delegate
@@ -451,7 +458,7 @@ namespace 智能藥庫系統
                     return;
                 }
                 List<object[]> list_LoadValue = datatable_buf.DataTableToRowList();
-                List<object[]> list_SQL_Value = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+                List<object[]> list_SQL_Value = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
                 List<object[]> list_Add = new List<object[]>();
                 List<object[]> list_Add_buf = new List<object[]>();
                 List<object[]> list_Delete_ColumnName = new List<object[]>();
@@ -462,26 +469,26 @@ namespace 智能藥庫系統
                 for (int i = 0; i < list_LoadValue.Count; i++)
                 {
                     object[] value_load = list_LoadValue[i];
-                    value_load = value_load.CopyRow(new enum_藥品資料_資料維護_雲端藥檔_匯入(), new enum_藥品資料_資料維護_雲端藥檔());
-                    value_load[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼] = this.Function_藥品碼檢查(value_load[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].ObjectToString());
-                    list_SQL_Value_buf = list_SQL_Value.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, value_load[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].ObjectToString());
+                    value_load = value_load.CopyRow(new enum_雲端藥檔_匯入(), new enum_雲端藥檔());
+                    value_load[(int)enum_雲端藥檔.藥品碼] = this.Function_藥品碼檢查(value_load[(int)enum_雲端藥檔.藥品碼].ObjectToString());
+                    list_SQL_Value_buf = list_SQL_Value.GetRows((int)enum_雲端藥檔.藥品碼, value_load[(int)enum_雲端藥檔.藥品碼].ObjectToString());
                     if (list_SQL_Value_buf.Count > 0)
                     {
                         object[] value_SQL = list_SQL_Value_buf[0];
-                        value_load[(int)enum_藥品資料_資料維護_雲端藥檔.GUID] = value_SQL[(int)enum_藥品資料_資料維護_雲端藥檔.GUID];
-                        value_load[(int)enum_藥品資料_資料維護_雲端藥檔.包裝數量] = Regex.Replace(value_load[(int)enum_藥品資料_資料維護_雲端藥檔.包裝數量].ObjectToString(), "[^0-9]", "");
+                        value_load[(int)enum_雲端藥檔.GUID] = value_SQL[(int)enum_雲端藥檔.GUID];
+                        value_load[(int)enum_雲端藥檔.包裝數量] = Regex.Replace(value_load[(int)enum_雲端藥檔.包裝數量].ObjectToString(), "[^0-9]", "");
                         bool flag_Equal = value_load.IsEqual(value_SQL);
                         if (!flag_Equal)
                         {
-                            list_Replace_SerchValue.Add(value_load[(int)enum_藥品資料_資料維護_雲端藥檔.GUID].ObjectToString());
+                            list_Replace_SerchValue.Add(value_load[(int)enum_雲端藥檔.GUID].ObjectToString());
                             list_Replace_Value.Add(value_load);
                         }
                     }
                     else
                     {
-                        value_load[(int)enum_藥品資料_資料維護_雲端藥檔.GUID] = Guid.NewGuid().ToString();
-                        value_load[(int)enum_藥品資料_資料維護_雲端藥檔.包裝數量] = Regex.Replace(value_load[(int)enum_藥品資料_資料維護_雲端藥檔.包裝數量].ObjectToString(), "[^0-9]", "");
-                        list_Add_buf = list_Add.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, value_load[(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼].ObjectToString());
+                        value_load[(int)enum_雲端藥檔.GUID] = Guid.NewGuid().ToString();
+                        value_load[(int)enum_雲端藥檔.包裝數量] = Regex.Replace(value_load[(int)enum_雲端藥檔.包裝數量].ObjectToString(), "[^0-9]", "");
+                        list_Add_buf = list_Add.GetRows((int)enum_雲端藥檔.藥品碼, value_load[(int)enum_雲端藥檔.藥品碼].ObjectToString());
 
                         if (list_Add_buf.Count == 0)
                         {
@@ -490,10 +497,10 @@ namespace 智能藥庫系統
                        
                     }
                 }
-                this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_AddRows(list_Add, false);
-                this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_ReplaceExtra(enum_藥品資料_資料維護_雲端藥檔.GUID.GetEnumName(), list_Replace_SerchValue, list_Replace_Value, false);
+                this.sqL_DataGridView_雲端藥檔.SQL_AddRows(list_Add, false);
+                this.sqL_DataGridView_雲端藥檔.SQL_ReplaceExtra(enum_雲端藥檔.GUID.GetEnumName(), list_Replace_SerchValue, list_Replace_Value, false);
          
-                this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(true);
+                this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(true);
                 this.Invoke(new Action(delegate
                 {
                     this.Cursor = Cursors.Default;
@@ -501,35 +508,35 @@ namespace 智能藥庫系統
                 }));
             }
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
-            if (!this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品碼.Text.StringIsEmpty())
+            List<object[]> list_value = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
+            if (!this.rJ_TextBox_雲端藥檔_藥品碼.Text.StringIsEmpty())
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品碼.Text);
+                list_value = list_value.GetRowsByLike((int)enum_雲端藥檔.藥品碼, this.rJ_TextBox_雲端藥檔_藥品碼.Text);
             }
-            if (!this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_中文名稱.Text.StringIsEmpty())
+            if (!this.rJ_TextBox_雲端藥檔_中文名稱.Text.StringIsEmpty())
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥品資料_資料維護_雲端藥檔.中文名稱, this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_中文名稱.Text);
+                list_value = list_value.GetRowsByLike((int)enum_雲端藥檔.中文名稱, this.rJ_TextBox_雲端藥檔_中文名稱.Text);
             }
-            if (!this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_中文名稱.Text.StringIsEmpty())
+            if (!this.rJ_TextBox_雲端藥檔_中文名稱.Text.StringIsEmpty())
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥品資料_資料維護_雲端藥檔.中文名稱, this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_中文名稱.Text);
+                list_value = list_value.GetRowsByLike((int)enum_雲端藥檔.中文名稱, this.rJ_TextBox_雲端藥檔_中文名稱.Text);
             }
-            if (!this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品名稱.Text.StringIsEmpty())
+            if (!this.rJ_TextBox_雲端藥檔_藥品名稱.Text.StringIsEmpty())
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥品資料_資料維護_雲端藥檔.藥品名稱, this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品名稱.Text);
+                list_value = list_value.GetRowsByLike((int)enum_雲端藥檔.藥品名稱, this.rJ_TextBox_雲端藥檔_藥品名稱.Text);
             }
-            if (!this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品學名.Text.StringIsEmpty())
+            if (!this.rJ_TextBox_雲端藥檔_藥品學名.Text.StringIsEmpty())
             {
-                list_value = list_value.GetRowsByLike((int)enum_藥品資料_資料維護_雲端藥檔.藥品學名, this.rJ_TextBox_藥品資料_資料維護_雲端藥檔_藥品學名.Text);
+                list_value = list_value.GetRowsByLike((int)enum_雲端藥檔.藥品學名, this.rJ_TextBox_雲端藥檔_藥品學名.Text);
             }
          
-            this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.RefreshGrid(list_value);
+            this.sqL_DataGridView_雲端藥檔.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_選取資料寫入本地端_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_選取資料寫入本地端_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.Get_All_Select_RowsValues();
+            List<object[]> list_value_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.Get_All_Select_RowsValues();
             List<object[]> list_value_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_value_本地藥檔_buf = new List<object[]>();
             List<object[]> list_Add = new List<object[]>();
@@ -542,16 +549,16 @@ namespace 智能藥庫系統
             for (int i = 0; i < list_value_雲端藥檔.Count; i++)
             {
                 object[] value = new object[new enum_藥品資料_資料維護_本地藥檔().GetEnumNames().Length];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.中文名稱] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.中文名稱];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品名稱] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.藥品名稱];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品學名] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.藥品學名];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.健保碼] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.健保碼];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.包裝單位] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.包裝單位];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.包裝數量] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.包裝數量];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.藥品碼];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.最小包裝單位] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.最小包裝單位];
-                value[(int)enum_藥品資料_資料維護_本地藥檔.最小包裝數量] = list_value_雲端藥檔[i][(int)enum_藥品資料_資料維護_雲端藥檔.最小包裝數量];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.藥品碼];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.中文名稱] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.中文名稱];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品名稱] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.藥品名稱];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品學名] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.藥品學名];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.健保碼] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.健保碼];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.包裝單位] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.包裝單位];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.包裝數量] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.包裝數量];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.藥品碼];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.最小包裝單位] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.最小包裝單位];
+                value[(int)enum_藥品資料_資料維護_本地藥檔.最小包裝數量] = list_value_雲端藥檔[i][(int)enum_雲端藥檔.最小包裝數量];
 
                 藥品碼 = value[(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString();
                 list_value_本地藥檔_buf = list_value_本地藥檔.GetRows((int)enum_藥品資料_資料維護_本地藥檔.藥品碼, 藥品碼);
@@ -584,25 +591,25 @@ namespace 智能藥庫系統
             sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_ReplaceExtra(Replace_ColumnName, list_Replace_SerchValue, list_Replace_Value, false);
             sqL_DataGridView_藥品資料_資料維護_本地藥檔.ClearGrid();
 
-            this.PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_列出新增藥品_MouseDownEvent(null);
+            this.PlC_RJ_Button_雲端藥檔_列出新增藥品_MouseDownEvent(null);
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_列出新增藥品_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_列出新增藥品_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_藥品資料_資料維護_雲端藥檔_列出新增藥品();
-            sqL_DataGridView_藥品資料_資料維護_雲端藥檔.RefreshGrid(list_value);
+            List<object[]> list_value = this.Function_雲端藥檔_列出新增藥品();
+            sqL_DataGridView_雲端藥檔.RefreshGrid(list_value);
             
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_列出異動藥品_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_列出異動藥品_MouseDownEvent(MouseEventArgs mevent)
         {
 
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_全部顯示_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {
-            sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(true);
+            sqL_DataGridView_雲端藥檔.SQL_GetAllRows(true);
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼1設定_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_藥品條碼1設定_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.Get_All_Select_RowsValues();
+            List<object[]> list_value = this.sqL_DataGridView_雲端藥檔.Get_All_Select_RowsValues();
             if (list_value.Count == 0)
             {
                 this.Invoke(new Action(delegate
@@ -616,16 +623,16 @@ namespace 智能藥庫系統
                 Dialog_TextBox dialog_TextBox = new Dialog_TextBox("藥品條碼1");
                 if (dialog_TextBox.ShowDialog() == DialogResult.Yes)
                 {
-                    list_value[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品條碼1] = dialog_TextBox.Value;
-                    this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_Replace(list_value[0], true);
+                    list_value[0][(int)enum_雲端藥檔.藥品條碼1] = dialog_TextBox.Value;
+                    this.sqL_DataGridView_雲端藥檔.SQL_Replace(list_value[0], true);
                 }
             }));
 
 
         }
-        private void PlC_RJ_Button_藥品資料_資料維護_雲端藥檔_藥品條碼2設定_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_雲端藥檔_藥品條碼2設定_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.Get_All_Select_RowsValues();
+            List<object[]> list_value = this.sqL_DataGridView_雲端藥檔.Get_All_Select_RowsValues();
             if (list_value.Count == 0)
             {
                 this.Invoke(new Action(delegate
@@ -639,8 +646,8 @@ namespace 智能藥庫系統
                 Dialog_TextBox dialog_TextBox = new Dialog_TextBox("藥品條碼2");
                 if (dialog_TextBox.ShowDialog() == DialogResult.Yes)
                 {
-                    list_value[0][(int)enum_藥品資料_資料維護_雲端藥檔.藥品條碼2] = dialog_TextBox.Value;
-                    this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_Replace(list_value[0], true);
+                    list_value[0][(int)enum_雲端藥檔.藥品條碼2] = dialog_TextBox.Value;
+                    this.sqL_DataGridView_雲端藥檔.SQL_Replace(list_value[0], true);
                 }
             }));
         }
@@ -653,7 +660,7 @@ namespace 智能藥庫系統
         private void SqL_DataGridView_藥品資料_資料維護_本地藥檔_DataGridRowsChangeEvent(List<object[]> RowsList)
         {
             this.Finction_藥品資料_藥品群組_序號轉名稱(RowsList, (int)enum_藥品資料_資料維護_本地藥檔.藥品群組);
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
             List<object[]> list_新增藥品 = this.Function_藥品資料_資料維護_本地藥檔_列出新增藥品(list_雲端藥檔, list_本地藥檔);
             List<object[]> list_異動藥品 = this.Function_藥品資料_資料維護_本地藥檔_列出異動藥品(list_雲端藥檔, list_本地藥檔);
@@ -693,7 +700,7 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥品資料_資料維護_本地藥檔_DataGridRefreshEvent()
         {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_本地藥檔 = this.sqL_DataGridView_藥品資料_資料維護_本地藥檔.SQL_GetAllRows(false);
 
             List<object[]> list_新增藥品 = this.Function_藥品資料_資料維護_本地藥檔_列出新增藥品(list_雲端藥檔, list_本地藥檔);
@@ -792,17 +799,17 @@ namespace 智能藥庫系統
                     else if (dialog_ContextMenuStrip.Value == ContextMenuStrip_藥品資料_資料維護_本地藥檔.列出異動藥品.GetEnumName())
                     {
                         List<object[]> list_本地藥檔 = this.Function_藥品資料_資料維護_本地藥檔_列出異動藥品();
-                        List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+                        List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
                         List<object[]> list_雲端藥檔_buf = new List<object[]>();
                         List<object[]> list_value = new List<object[]>();
                         for (int i = 0; i < list_本地藥檔.Count; i++)
                         {
-                            list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_藥品資料_資料維護_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
+                            list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, list_本地藥檔[i][(int)enum_藥品資料_資料維護_本地藥檔.藥品碼].ObjectToString());
                             if (list_雲端藥檔_buf.Count > 0) list_value.Add(list_雲端藥檔_buf[0]);
                         }
 
                         sqL_DataGridView_藥品資料_資料維護_本地藥檔.RefreshGrid(list_本地藥檔);
-                        sqL_DataGridView_藥品資料_資料維護_雲端藥檔.RefreshGrid(list_value);
+                        sqL_DataGridView_雲端藥檔.RefreshGrid(list_value);
                     }
                     else if (dialog_ContextMenuStrip.Value == ContextMenuStrip_藥品資料_資料維護_本地藥檔.搜尋選取藥品.GetEnumName())
                     {
@@ -883,7 +890,7 @@ namespace 智能藥庫系統
             MyTimer myTimer = new MyTimer();
             myTimer.TickStop();
             myTimer.StartTickTime(50000);         
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_藥品資料_資料維護_雲端藥檔.SQL_GetAllRows(false);
+            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             Console.WriteLine($"取得雲端藥檔 耗時 :{myTimer.GetTickTime().ToString("0.000")}");
             myTimer.TickStop();
             myTimer.StartTickTime(50000);

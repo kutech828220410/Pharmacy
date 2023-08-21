@@ -422,6 +422,7 @@ namespace 智能藥庫系統_VM_Server_
                 value[(int)enum_補給驗收入庫.狀態] = enum_驗收入庫明細_狀態.等待過帳.GetEnumName();
                 list_補給驗收入庫_replace.Add(value);
 
+                list_驗收入庫明細[i][(int)enum_驗收入庫明細.來源] = "院內系統";
                 list_驗收入庫明細[i][(int)enum_驗收入庫明細.狀態] = enum_驗收入庫明細_狀態.等待過帳.GetEnumName();
                 list_驗收入庫明細_replace.Add(list_驗收入庫明細[i]);
             }

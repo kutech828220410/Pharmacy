@@ -12,7 +12,7 @@ using System.Text.Json.Serialization;
 using System.Configuration;
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
-namespace 智慧調劑台管理系統_WebApi
+namespace 智慧藥庫系統_WebApi
 {
 
 
@@ -89,6 +89,13 @@ namespace 智慧調劑台管理系統_WebApi
             來源,
             備註,
         }
+        private readonly Logger _logger;
+
+        public acceptance_med_insertController(Microsoft.AspNetCore.Hosting.IWebHostEnvironment env)
+        {
+            _logger = new Logger(env);
+        }
+
         [Route("test")]
         [HttpGet]
         public string Get_test()
@@ -208,7 +215,12 @@ namespace 智慧調劑台管理系統_WebApi
             }
             sQLControl_acceptance_med.AddRows(null, list_value_add);
             sQLControl_acceptance_med.UpdateByDefulteExtra(null, list_value_replace);
-            return $"新增<{list_value_add.Count}筆,修改{list_value_replace.Count}>筆資料/n{data.JsonSerializationt()}";
+            string result = "==========call acceptance_med begin==========\n";
+            result += $"新增<{list_value_add.Count}筆,修改{list_value_replace.Count}>筆資料\n";
+            result += $"jsonRecive:{data.JsonSerializationt()}\n";
+            result += "==========call acceptance_med end==========\n";
+            _logger.WriteLog("acceptance_med_test", result);
+            return result;
         }
 
         [HttpGet]
@@ -217,12 +229,17 @@ namespace 智慧調劑台管理系統_WebApi
             sQLControl_acceptance_med = new SQLControl(IP, DataBaseName, "acceptance_med", UserName, Password, Port, SSLMode);
             List<object[]> list_value = sQLControl_acceptance_med.GetAllRows(null);
             List<class_acceptance_med_data> list_class_acceptance_med_data = new List<class_acceptance_med_data>();
-
+            List<object[]> list_value_replace = new List<object[]>();
             list_value.Sort(new ICP_acceptance_med());
 
             for (int i = 0; i < list_value.Count; i++)
             {
-                if (list_value[i][(int)enum_acceptance_med.來源].ObjectToString() != "院內系統") continue;
+                //if (list_value[i][(int)enum_acceptance_med.來源].ObjectToString() == "測試資料")
+                //{
+                //    list_value[i][(int)enum_acceptance_med.來源] = "院內系統";
+                //    list_value_replace.Add(list_value[i]);
+                //    continue;
+                //}
                 class_acceptance_med_data _class_acceptance_med_data = new class_acceptance_med_data();
                 _class_acceptance_med_data.請購單號 = list_value[i][(int)enum_acceptance_med.請購單號].ObjectToString();
                 _class_acceptance_med_data.驗收單號 = list_value[i][(int)enum_acceptance_med.驗收單號].ObjectToString();
@@ -236,7 +253,7 @@ namespace 智慧調劑台管理系統_WebApi
                 list_class_acceptance_med_data.Add(_class_acceptance_med_data);
             }
 
-
+            //sQLControl_acceptance_med.UpdateByDefulteExtra(null, list_value_replace);
             string jsonString = list_class_acceptance_med_data.JsonSerializationt(true);
             return jsonString;
         }
@@ -298,7 +315,7 @@ namespace 智慧調劑台管理系統_WebApi
                 DateTime dateTime = data.加入時間.StringToDateTime();
                 value[(int)enum_acceptance_med.加入時間] = dateTime.ToDateTimeString_6();
                 value[(int)enum_acceptance_med.狀態] = enum_狀態.等待過帳.GetEnumName();
-                value[(int)enum_acceptance_med.來源] = "測試資料";
+                value[(int)enum_acceptance_med.來源] = "院內系統";
                 value[(int)enum_acceptance_med.備註] = "";
                 list_value_add.LockAdd(value);
             }
@@ -328,6 +345,13 @@ namespace 智慧調劑台管理系統_WebApi
             }
             sQLControl_acceptance_med.AddRows(null, list_value_add);
             sQLControl_acceptance_med.UpdateByDefulteExtra(null, list_value_replace);
+
+            string result = "==========call acceptance_med begin==========\n";
+            result += $"新增<{list_value_add.Count}筆,修改{list_value_replace.Count}>筆資料\n";
+            result += $"jsonRecive:{data.JsonSerializationt()}\n";
+            result += "==========call acceptance_med end==========\n";
+            _logger.WriteLog("acceptance_med", result);
+
             return $"新增<{list_value_add.Count}筆,修改{list_value_replace.Count}>筆資料/n{data.JsonSerializationt()}";
         }
   

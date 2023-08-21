@@ -75,7 +75,6 @@ namespace 智能藥庫系統
             if (!this.sqL_DataGridView_藥局_藥品資料.SQL_IsTableCreat()) this.sqL_DataGridView_藥局_藥品資料.SQL_CreateTable();
             this.sqL_DataGridView_藥局_藥品資料.DataGridRefreshEvent += SqL_DataGridView_藥局_藥品資料_DataGridRefreshEvent;
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.健保碼);
-            this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.中文名稱);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.最小包裝單位);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, enum_藥局_藥品資料.最小包裝數量);          
                         

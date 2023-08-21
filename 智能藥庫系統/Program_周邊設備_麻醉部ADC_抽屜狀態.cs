@@ -21,7 +21,7 @@ namespace 智能藥庫系統
     public partial class Form1 : Form
     {
         private List<RJ_Lable[]> rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態 = new List<RJ_Lable[]>();
-        private class returnData
+        private class m_returnData
         {
             private string result = "";
             private int code = 0;
@@ -152,29 +152,29 @@ namespace 智能藥庫系統
             myTimer.StartTickTime(50000);
             string result = Basic.Net.WEBApiGet("http://10.18.28.17/api/medicine_page/storage_list");
 
-            returnData returnData = result.JsonDeserializet<returnData>();
+            m_returnData m_returnData = result.JsonDeserializet<m_returnData>();
             this.Invoke(new Action(delegate 
             {
-                for (int i = 0; i < returnData.Data.Count; i++)
+                for (int i = 0; i < m_returnData.Data.Count; i++)
                 {
                     string text = "";
-                    string[] 位置 = returnData.Data[i].位置.Split('-');
+                    string[] 位置 = m_returnData.Data[i].位置.Split('-');
                     int X = 位置[0].StringToInt32() - 1;
                     int Y = 位置[1].StringToInt32() - 1;
-                    text += $"藥碼:{returnData.Data[i].藥品碼} 位置:{returnData.Data[i].位置}\n";
-                    text += $"藥名:{returnData.Data[i].藥品名稱}\n";
-                    text += $"庫存: [{returnData.Data[i].庫存}]\n";
-                    text += $"最小單位: {returnData.Data[i].最小包裝量}\n";
-                    text += $"可放置盒數: {returnData.Data[i].可放置盒數}\n";
+                    text += $"藥碼:{m_returnData.Data[i].藥品碼} 位置:{m_returnData.Data[i].位置}\n";
+                    text += $"藥名:{m_returnData.Data[i].藥品名稱}\n";
+                    text += $"庫存: [{m_returnData.Data[i].庫存}]\n";
+                    text += $"最小單位: {m_returnData.Data[i].最小包裝量}\n";
+                    text += $"可放置盒數: {m_returnData.Data[i].可放置盒數}\n";
                     rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].Text = text;
                     rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
 
-                    if(returnData.Data[i].藥品碼.StringIsEmpty())
+                    if(m_returnData.Data[i].藥品碼.StringIsEmpty())
                     {
                         rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].BackgroundColor = Color.Silver;
                         continue;
                     }
-                    if (returnData.Data[i].庫存.StringToInt32() == 0)
+                    if (m_returnData.Data[i].庫存.StringToInt32() == 0)
                     {
                         rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態[X][Y].BackgroundColor = Color.DarkOrange;
                         continue;

@@ -74,7 +74,57 @@ namespace 智能藥庫系統_VM_Server_
 
         }
         #region Function
-        void Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作 enum_交易記錄查詢動作, string 操作人, string 備註)
+        private void Funnction_交易記錄查詢_取得指定藥碼批號期效期(string 藥碼, ref List<string> list_效期, ref List<string> list_批號)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            List<string> list_效期_buf = new List<string>();
+            List<string> list_操作時間 = new List<string>();
+            if (藥碼.StringIsEmpty()) return;
+            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
+            Console.WriteLine($"搜尋藥碼: {藥碼} , {myTimerBasic.ToString()}");
+            string 備註 = "";
+            string 操作時間 = "";
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                備註 = list_value[i][(int)enum_交易記錄查詢資料.備註].ObjectToString();
+                string[] temp_ary = 備註.Split('\n');
+                for (int k = 0; k < temp_ary.Length; k++)
+                {
+                    string 效期 = temp_ary[k].GetTextValue("效期");
+                    string 批號 = temp_ary[k].GetTextValue("批號");
+                    操作時間 = list_value[i][(int)enum_交易記錄查詢資料.操作時間].ToDateTimeString();
+                    if (效期.StringIsEmpty() == true) continue;
+                    list_效期_buf = (from temp in list_效期
+                                   where temp == 效期
+                                   select temp).ToList();
+                    if (list_效期_buf.Count > 0) continue;
+                    list_效期.Add(效期);
+                    list_批號.Add(批號);
+                    list_操作時間.Add(操作時間);
+                }
+            }
+            // 組合效期、批號和操作時間
+            List<Tuple<string, string, DateTime>> combinedList = new List<Tuple<string, string, DateTime>>();
+            for (int i = 0; i < list_效期.Count; i++)
+            {
+                combinedList.Add(new Tuple<string, string, DateTime>(list_效期[i], list_批號[i], DateTime.Parse(list_操作時間[i])));
+            }
+
+            // 根據操作時間排序
+            combinedList.Sort((x, y) => DateTime.Compare(y.Item3, x.Item3));
+
+            // 更新list_效期、list_批號和list_操作時間
+            list_效期.Clear();
+            list_批號.Clear();
+            list_操作時間.Clear();
+            foreach (var item in combinedList)
+            {
+                list_效期.Add(item.Item1);
+                list_批號.Add(item.Item2);
+                list_操作時間.Add(item.Item3.ToString());
+            }
+        }
+        private void Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作 enum_交易記錄查詢動作, string 操作人, string 備註)
         {
             if (操作人.StringIsEmpty()) return;
             string GUID = Guid.NewGuid().ToString();

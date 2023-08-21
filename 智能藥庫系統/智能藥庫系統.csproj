@@ -79,6 +79,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\HCGUI.dll</HintPath>
     </Reference>
+    <Reference Include="HIS_DB_Lib">
+      <HintPath>..\0.DLL\HIS_DB_Lib.dll</HintPath>
+    </Reference>
     <Reference Include="H_Pannel_lib">
       <HintPath>..\0.DLL\H_Pannel_lib.dll</HintPath>
     </Reference>
@@ -246,10 +249,10 @@
     <Compile Include="Dialog\Dialog_藥品資料設定.Designer.cs">
       <DependentUpon>Dialog_藥品資料設定.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog_效期批號歷史紀錄.cs">
+    <Compile Include="Dialog\Dialog_效期批號歷史紀錄.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog_效期批號歷史紀錄.Designer.cs">
+    <Compile Include="Dialog\Dialog_效期批號歷史紀錄.Designer.cs">
       <DependentUpon>Dialog_效期批號歷史紀錄.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -399,7 +402,7 @@
     <EmbeddedResource Include="Dialog\Dialog_藥品資料設定.resx">
       <DependentUpon>Dialog_藥品資料設定.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog_效期批號歷史紀錄.resx">
+    <EmbeddedResource Include="Dialog\Dialog_效期批號歷史紀錄.resx">
       <DependentUpon>Dialog_效期批號歷史紀錄.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
