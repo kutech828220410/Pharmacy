@@ -287,10 +287,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_盤點作業.cs" />
-    <Compile Include="Program_盤點作業_盤點狀態.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Program_盤點狀態_新增盤點.cs">
+    <Compile Include="Program_盤點狀態_定盤.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_藥品補給系統.cs">

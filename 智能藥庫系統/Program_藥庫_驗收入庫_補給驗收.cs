@@ -16,7 +16,7 @@ using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 using H_Pannel_lib;
 using System.Collections;
-
+using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
     public partial class Form1 : Form

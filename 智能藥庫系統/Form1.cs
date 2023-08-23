@@ -25,7 +25,7 @@ namespace 智能藥庫系統
 
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://10.18.1.146:4433";
+        private string Api_URL = "http://127.0.0.1:4433";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -67,7 +67,6 @@ namespace 智能藥庫系統
             private string fTP_password = "";
             private int _貨架數量 = 8;
             private bool _主機模式 = false;
-
 
             public string FTP_Server { get => fTP_Server; set => fTP_Server = value; }
             public int 貨架數量 { get => _貨架數量; set => _貨架數量 = value; }
@@ -154,8 +153,7 @@ namespace 智能藥庫系統
             List<HIS_DB_Lib.ServerSettingClass> serverSettingClasses = returnData.Data.ObjToListClass<ServerSettingClass>();
             HIS_DB_Lib.ServerSettingClass serverSettingClass;
             string ServerName = Name;
-            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, ServerName);        
-            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_調劑台.藥檔資料);
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_藥庫.藥檔資料);
             if (serverSettingClass != null)
             {
                 dBConfigClass.DB_Medicine_Cloud.IP = serverSettingClass.Server;
@@ -164,7 +162,15 @@ namespace 智能藥庫系統
                 dBConfigClass.DB_Medicine_Cloud.UserName = serverSettingClass.User;
                 dBConfigClass.DB_Medicine_Cloud.Password = serverSettingClass.Password;
             }
-          
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_藥庫.本地端);
+            if (serverSettingClass != null)
+            {
+                dBConfigClass.DB_Basic.IP = serverSettingClass.Server;
+                dBConfigClass.DB_Basic.Port = (uint)(serverSettingClass.Port.StringToInt32());
+                dBConfigClass.DB_Basic.DataBaseName = serverSettingClass.DBName;
+                dBConfigClass.DB_Basic.UserName = serverSettingClass.User;
+                dBConfigClass.DB_Basic.Password = serverSettingClass.Password;
+            }
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -178,11 +184,11 @@ namespace 智能藥庫系統
                 this.ftp_DounloadUI.FTP_Server = myConfigClass.FTP_Server;
                 this.ftp_DounloadUI.Username = myConfigClass.FTP_username;
                 this.ftp_DounloadUI.Password = myConfigClass.FTP_password;
-                string updateVersion = this.ftp_DounloadUI.GetFileVersion();
-                if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
-                {
-                    this.Invoke(new Action(delegate { this.Update(); }));
-                }
+                //string updateVersion = this.ftp_DounloadUI.GetFileVersion();
+                //if (this.ftp_DounloadUI.CheckUpdate(this.ProductVersion, updateVersion))
+                //{
+                //    this.Invoke(new Action(delegate { this.Update(); }));
+                //}
 
 
                 this.Text += "Ver" + this.ProductVersion;
@@ -233,8 +239,7 @@ namespace 智能藥庫系統
 
             this.sub_Program_系統_Init();
             this.sub_Program_人員資料_Init();
-            this.sub_Program_盤點作業_盤點狀態_Init();
-            this.sub_Program_盤點作業_新增盤點_Init();
+            this.sub_Program_盤點作業_定盤_Init();
             this.sub_Program_登入畫面_Init();
             this.sub_Program_交易紀錄查詢_Init();
             this.sub_Program_藥品資料_資料維護_Init();
@@ -278,7 +283,6 @@ namespace 智能藥庫系統
             this.sub_Program_周邊設備_麻醉部ADC_抽屜狀態_Init();
             this.sub_Program_戰情白板_Init();
 
-            this.plC_RJ_Button1.MouseDownEvent += PlC_RJ_Button1_MouseDownEvent;
 
             this.Function_堆疊資料_刪除指定調劑台名稱母資料("藥庫");
             this.WindowState = FormWindowState.Maximized;
@@ -432,28 +436,28 @@ namespace 智能藥庫系統
 
         private void Update()
         {
-            try
-            {
-                if (this.ftp_DounloadUI.DownloadFile())
-                {
-                    if (this.ftp_DounloadUI.SaveFile())
-                    {
-                        this.ftp_DounloadUI.RunFile(this.FindForm());
-                    }
-                    else
-                    {
-                        Basic.MyMessageBox.ShowDialog("安裝檔存檔失敗!");
-                    }
-                }
-                else
-                {
-                    Basic.MyMessageBox.ShowDialog("下載失敗!");
-                }
-            }
-            catch
-            {
-                Application.Exit();
-            }
+            //try
+            //{
+            //    if (this.ftp_DounloadUI.DownloadFile())
+            //    {
+            //        if (this.ftp_DounloadUI.SaveFile())
+            //        {
+            //            this.ftp_DounloadUI.RunFile(this.FindForm());
+            //        }
+            //        else
+            //        {
+            //            Basic.MyMessageBox.ShowDialog("安裝檔存檔失敗!");
+            //        }
+            //    }
+            //    else
+            //    {
+            //        Basic.MyMessageBox.ShowDialog("下載失敗!");
+            //    }
+            //}
+            //catch
+            //{
+            //    Application.Exit();
+            //}
       
 
         }

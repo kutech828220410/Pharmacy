@@ -18,6 +18,7 @@ using H_Pannel_lib;
 using MyOffice;
 using MyPrinterlib;
 using NPOI;
+using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
     public class class_emg_apply

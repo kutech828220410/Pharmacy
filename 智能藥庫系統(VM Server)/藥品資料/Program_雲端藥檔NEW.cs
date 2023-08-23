@@ -17,21 +17,20 @@ namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
-        private string API_URL = "http://10.18.1.146:4433";
         private void sub_Program_雲端藥檔NEW_Init()
         {
 
-            string url = $"{API_URL}/api/MED_page/init";
+            string url = $"{Api_URL}/api/MED_page/init";
             returnData returnData = new returnData();
-            returnData.ServerType = enum_ServerSetting_Type.調劑台.GetEnumName();
-            returnData.ServerName = $"{"口服1"}";
+            returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
+            returnData.ServerName = $"{"DS01"}";
             returnData.TableName = "medicine_page_cloud";
             string json_in = returnData.JsonSerializationt();
             string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
             Table table = json.JsonDeserializet<Table>();
             if (table == null)
             {
-                MyMessageBox.ShowDialog($"雲端藥檔表單建立失敗!! Api_URL:{API_URL}");
+                MyMessageBox.ShowDialog($"雲端藥檔表單建立失敗!! Api_URL:{Api_URL}");
                 return;
             }
             SQLUI.SQL_DataGridView.ConnentionClass connentionClass = new SQL_DataGridView.ConnentionClass();
@@ -114,8 +113,8 @@ namespace 智能藥庫系統_VM_Server_
 
                 for (int i = 0; i < obj_temp_array.Count; i++)
                 {
-                    string 藥品碼 = obj_temp_array[i][(int)enum_雲端_藥品資料_DB2.藥品碼].ObjectToString();
-                    obj_temp_array_buf = obj_temp_array_result.GetRows((int)enum_雲端_藥品資料_DB2.藥品碼, 藥品碼);
+                    string 藥品碼 = obj_temp_array[i][(int)enum_雲端藥檔_DB2.藥品碼].ObjectToString();
+                    obj_temp_array_buf = obj_temp_array_result.GetRows((int)enum_雲端藥檔_DB2.藥品碼, 藥品碼);
                     if (obj_temp_array_buf.Count == 0)
                     {
                         obj_temp_array_result.Add(obj_temp_array[i]);
@@ -132,12 +131,12 @@ namespace 智能藥庫系統_VM_Server_
 
                 for (int i = 0; i < obj_temp_array_result.Count; i++)
                 {
-                    string 藥品碼 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.藥品碼].ObjectToString();
-                    string 藥品名稱 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.藥品名稱].ObjectToString();
-                    string 藥品學名 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.藥品學名].ObjectToString();
-                    string 中文名稱 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.中文名稱].ObjectToString();
-                    string 包裝單位 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.包裝單位].ObjectToString();
-                    string 包裝數量 = obj_temp_array_result[i][(int)enum_雲端_藥品資料_DB2.包裝數量].ObjectToString();
+                    string 藥品碼 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.藥品碼].ObjectToString();
+                    string 藥品名稱 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.藥品名稱].ObjectToString();
+                    string 藥品學名 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.藥品學名].ObjectToString();
+                    string 中文名稱 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.中文名稱].ObjectToString();
+                    string 包裝單位 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.包裝單位].ObjectToString();
+                    string 包裝數量 = obj_temp_array_result[i][(int)enum_雲端藥檔_DB2.包裝數量].ObjectToString();
                     string 最小包裝數量 = "1";
                     if (!包裝數量.StringIsInt32())
                     {

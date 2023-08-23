@@ -12,10 +12,13 @@ using SQLUI;
 using Basic;
 using MyUI;
 using System.Text.RegularExpressions;
+using HIS_DB_Lib;
 namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
+        private string Api_URL = "http://127.0.0.1:4433";
+
         private string 登入者名稱 = "系統";
         private PLC_Device PLC_Device_最高權限 = new PLC_Device("S4077");
 
@@ -28,12 +31,12 @@ namespace 智能藥庫系統_VM_Server_
             private SQL_DataGridView.ConnentionClass dB_Basic = new SQL_DataGridView.ConnentionClass();
             private SQL_DataGridView.ConnentionClass dB_order_server = new SQL_DataGridView.ConnentionClass();
             private SQL_DataGridView.ConnentionClass dB_DS01 = new SQL_DataGridView.ConnentionClass();
-            private SQL_DataGridView.ConnentionClass dB_Medicine_page = new SQL_DataGridView.ConnentionClass();
+            private SQL_DataGridView.ConnentionClass dB_Medicine_Cloud = new SQL_DataGridView.ConnentionClass();
 
             public SQL_DataGridView.ConnentionClass DB_Basic { get => dB_Basic; set => dB_Basic = value; }
-            public SQL_DataGridView.ConnentionClass DB_Medicine_page { get => dB_Medicine_page; set => dB_Medicine_page = value; }
             public SQL_DataGridView.ConnentionClass DB_order_server { get => dB_order_server; set => dB_order_server = value; }
             public SQL_DataGridView.ConnentionClass DB_DS01 { get => dB_DS01; set => dB_DS01 = value; }
+            public SQL_DataGridView.ConnentionClass DB_Medicine_Cloud { get => dB_Medicine_Cloud; set => dB_Medicine_Cloud = value; }
         }
         private void LoadDBConfig()
         {
@@ -82,13 +85,46 @@ namespace 智能藥庫系統_VM_Server_
             } 
         }
 
-      
 
+        private void ApiServerSetting(string Name)
+        {
+            string json_result = Basic.Net.WEBApiGet($"{Api_URL}/api/ServerSetting");
+            if (json_result.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("API Server 連結失敗!");
+                return;
+            }
+            Console.WriteLine(json_result);
+            returnData returnData = json_result.JsonDeserializet<returnData>();
+            List<HIS_DB_Lib.ServerSettingClass> serverSettingClasses = returnData.Data.ObjToListClass<ServerSettingClass>();
+            HIS_DB_Lib.ServerSettingClass serverSettingClass;
+            string ServerName = Name;
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_藥庫.藥檔資料);
+            if (serverSettingClass != null)
+            {
+                dBConfigClass.DB_Medicine_Cloud.IP = serverSettingClass.Server;
+                dBConfigClass.DB_Medicine_Cloud.Port = (uint)(serverSettingClass.Port.StringToInt32());
+                dBConfigClass.DB_Medicine_Cloud.DataBaseName = serverSettingClass.DBName;
+                dBConfigClass.DB_Medicine_Cloud.UserName = serverSettingClass.User;
+                dBConfigClass.DB_Medicine_Cloud.Password = serverSettingClass.Password;
+            }
+            serverSettingClass = serverSettingClasses.MyFind(Name, enum_ServerSetting_Type.藥庫, enum_ServerSetting_藥庫.VM端);
+            if (serverSettingClass != null)
+            {
+                dBConfigClass.DB_Basic.IP = serverSettingClass.Server;
+                dBConfigClass.DB_Basic.Port = (uint)(serverSettingClass.Port.StringToInt32());
+                dBConfigClass.DB_Basic.DataBaseName = serverSettingClass.DBName;
+                dBConfigClass.DB_Basic.UserName = serverSettingClass.User;
+                dBConfigClass.DB_Basic.Password = serverSettingClass.Password;
+            }
+        }
         private void PlC_UI_Init_UI_Finished_Event()
         {
             if(!this.DesignMode)
             {
                 this.PLC_Device_最高權限.Bool = true;
+
+                ApiServerSetting("DS01");
 
                 PLC_UI_Init.Set_PLC_ScreenPage(this.panel_Main, this.plC_ScreenPage_Main);
                 PLC_UI_Init.Set_PLC_ScreenPage(this.panel_過帳明細, this.plC_ScreenPage_過帳明細);

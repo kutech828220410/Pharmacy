@@ -15,7 +15,7 @@ using Basic;
 using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 using H_Pannel_lib;
-
+using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
     public partial class Form1 : Form
@@ -1478,18 +1478,23 @@ namespace 智能藥庫系統
                 list_可入賬母資料[i][(int)enum_堆疊母資料.狀態] = enum_堆疊母資料_狀態.入賬完成.GetEnumName();
                 list_堆疊母資料_ReplaceValue.Add(list_可入賬母資料[i]);
 
-
-                //新增交易紀錄資料
                 for (int k = 0; k < List_效期.Count; k++)
                 {
-                    備註 += $"效期[{List_效期[k]}]";
+                    if (List_批號[k].StringIsEmpty() == true) List_批號[k] = "無";
+                    備註 += $"[{List_效期[k]}:{List_效期[k]}]";
                     if (k != List_效期.Count - 1) 備註 += ",";
                 }
-                for (int k = 0; k < List_批號.Count; k++)
-                {
-                    備註 += $"批號[{List_批號[k]}]";
-                    if (k != List_批號.Count - 1) 備註 += ",";
-                }
+                //新增交易紀錄資料
+                //for (int k = 0; k < List_效期.Count; k++)
+                //{
+                //    備註 += $"效期[{List_效期[k]}]";
+                //    if (k != List_效期.Count - 1) 備註 += ",";
+                //}
+                //for (int k = 0; k < List_批號.Count; k++)
+                //{
+                //    備註 += $"批號[{List_批號[k]}]";
+                //    if (k != List_批號.Count - 1) 備註 += ",";
+                //}
                 object[] value_trading = new object[new enum_交易記錄查詢資料().GetLength()];
                 value_trading[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                 value_trading[(int)enum_交易記錄查詢資料.動作] = 動作;

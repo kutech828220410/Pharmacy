@@ -11,6 +11,8 @@ using System.Diagnostics;
 using SQLUI;
 using Basic;
 using MyUI;
+using HIS_DB_Lib;
+using SQLUI;
 namespace 智能藥庫系統_VM_Server_
 {
     enum enum_庫別
@@ -18,46 +20,37 @@ namespace 智能藥庫系統_VM_Server_
         藥庫,
         屏榮藥局,
     }
-    enum enum_交易記錄查詢動作
-    {
-        批次過帳,
-        驗收入庫,
-        自動撥補,
-        緊急申領,
-        入庫作業,
-        一維碼登入,
-        人臉識別登入,
-        RFID登入,
-        密碼登入,
-        登出,
-        操作工程模式,
-        新增效期,
-        修正庫存,
-        修正批號,
-        None,
-    }
-    enum enum_交易記錄查詢資料
-    {
-        GUID,
-        動作,
-        庫別,
-        藥品碼,
-        藥品名稱,
-        庫存量,
-        交易量,
-        結存量,
-        操作人,
-        操作時間,
-        備註,
-    }
+
 
     public partial class Form1 : Form
     {
         private void sub_Program_交易紀錄查詢_Init()
         {
             SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_交易記錄查詢, this.dBConfigClass.DB_DS01);
-            this.sqL_DataGridView_交易記錄查詢.Init();
-            if (!this.sqL_DataGridView_交易記錄查詢.SQL_IsTableCreat()) this.sqL_DataGridView_交易記錄查詢.SQL_CreateTable();
+            string url = $"{Api_URL}/api/transactions/init";
+            returnData returnData = new returnData();
+            returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
+            returnData.ServerName = $"{"DS01"}";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            Table table = json.JsonDeserializet<Table>();
+            if (table == null)
+            {
+                MyMessageBox.ShowDialog($"交易紀錄表單建立失敗!! Api_URL:{Api_URL}");
+                return;
+            }
+            this.sqL_DataGridView_交易記錄查詢.Init(table);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnVisible(false, new enum_交易記錄查詢資料().GetEnumNames());
+
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(120, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.動作);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, enum_交易記錄查詢資料.藥品碼);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(250, DataGridViewContentAlignment.MiddleLeft, enum_交易記錄查詢資料.藥品名稱);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleRight, enum_交易記錄查詢資料.庫存量);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleRight, enum_交易記錄查詢資料.交易量);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleRight, enum_交易記錄查詢資料.結存量);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.操作人);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(180, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.操作時間);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, enum_交易記錄查詢資料.備註);
 
             this.sqL_DataGridView_交易記錄查詢.DataGridRefreshEvent += SqL_DataGridView_交易記錄查詢_DataGridRefreshEvent;
             this.sqL_DataGridView_交易記錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_交易記錄查詢_DataGridRowsChangeRefEvent;

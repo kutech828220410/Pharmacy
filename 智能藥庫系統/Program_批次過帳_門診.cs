@@ -12,6 +12,8 @@ using SQLUI;
 using MyUI;
 using Basic;
 using H_Pannel_lib;
+using HIS_DB_Lib;
+
 namespace 智能藥庫系統
 {
     public partial class Form1 : Form

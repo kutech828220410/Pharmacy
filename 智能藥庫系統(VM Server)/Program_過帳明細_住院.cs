@@ -11,6 +11,8 @@ using System.Diagnostics;
 using SQLUI;
 using Basic;
 using MyUI;
+using HIS_DB_Lib;
+
 namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
@@ -224,7 +226,7 @@ namespace 智能藥庫系統_VM_Server_
                     value[(int)enum_過帳明細_住院.過帳時間] = DateTime.MinValue.ToDateTimeString_6();
                     value[(int)enum_過帳明細_住院.狀態] = enum_過帳明細_住院_狀態.等待過帳.GetEnumName();
 
-                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端_藥品資料_old.藥品碼, 藥品碼);
+                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端藥檔.藥品碼, 藥品碼);
                     if (list_藥品資料_buf.Count == 0)
                     {
                         object[] log = new object[new enum_Log().GetLength()];
@@ -236,7 +238,7 @@ namespace 智能藥庫系統_VM_Server_
                     }
                     else
                     {
-                        value[(int)enum_過帳明細_住院.藥品名稱] = list_藥品資料_buf[0][(int)enum_雲端_藥品資料_old.藥品名稱];
+                        value[(int)enum_過帳明細_住院.藥品名稱] = list_藥品資料_buf[0][(int)enum_雲端藥檔.藥品名稱];
                     }
 
                     list_過帳明細_Add.Add(value);

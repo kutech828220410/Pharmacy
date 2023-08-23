@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using MyUI;
 using Basic;
-
+using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
 
@@ -23,23 +23,27 @@ namespace 智能藥庫系統
         private PLC_Device PLC_Device_已登入 = new PLC_Device("S4000");
         private PLC_Device PLC_Device_未登入 = new PLC_Device("S4001");
         private PLC_Device PLC_Device_最高權限 = new PLC_Device("S4077");
+
+        private string _登入者名稱 = "";
         private string 登入者名稱
         {
             get
             {
-                return this.rJ_TextBox_登入者姓名.Texts;
+                return this._登入者名稱;
             }
             set
             {
+                _登入者名稱 = value;
                 this.rJ_TextBox_登入者姓名.Texts = value;
                 this.rJ_Lable_登入畫面_登出顯示_姓名.Text = value;
             }
         }
+        private string _登入者ID = "";
         private string 登入者ID
         {
             get
             {
-                return this.rJ_TextBox_登入者ID.Texts;
+                return this._登入者ID;
             }
             set
             {
@@ -286,6 +290,7 @@ namespace 智能藥庫系統
                         this.Text = $"{this.FormText}         [登入者名稱 : {登入者名稱}] [登入者ID : {登入者ID}]";
                         this.rJ_Lable_登入畫面_登出顯示_姓名.Text = 登入者名稱;
                         flag = true;
+                        Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作.密碼登入, this.登入者名稱, "登入畫面");
                         return;
                     }
                 }
@@ -314,6 +319,7 @@ namespace 智能藥庫系統
                     this.PLC_Device_已登入.Bool = true;
                     this.Text = $"{this.FormText}         [登入者名稱 : {登入者名稱}] [登入者ID : {登入者ID}]";
                     flag = true;
+                    Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作.密碼登入, this.登入者名稱, "登入畫面");
                     return;
                 }
                 else
@@ -363,7 +369,6 @@ namespace 智能藥庫系統
                 }
                 else
                 {
-                    Funnction_交易記錄查詢_動作紀錄新增(enum_交易記錄查詢動作.密碼登入, this.登入者名稱, "登入畫面");
                 }
             }
         }

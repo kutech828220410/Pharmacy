@@ -15,36 +15,43 @@ using Basic;
 using System.Diagnostics;//記得取用 FileVersionInfo繼承
 using System.Reflection;//記得取用 Assembly繼承
 using H_Pannel_lib;
+using HIS_DB_Lib;
+using SQLUI;
 namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
-        public enum enum_藥庫_藥品資料
-        {
-            GUID,
-            藥品碼,
-            中文名稱,
-            藥品名稱,
-            藥品學名,
-            藥品群組,
-            健保碼,
-            包裝單位,
-            包裝數量,
-            最小包裝單位,
-            最小包裝數量,
-            藥局庫存,
-            藥庫庫存,
-            總庫存,
-            基準量,
-            安全庫存,
-            藥品條碼1,
-            藥品條碼2,
-            狀態,
-        }
+    
         private void sub_Program_藥庫_藥品資料_Init()
         {
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_藥庫_藥品資料, dBConfigClass.DB_DS01);
-            this.sqL_DataGridView_藥庫_藥品資料.Init();
+            string url = $"{Api_URL}/api/MED_page/init";
+            returnData returnData = new returnData();
+            returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
+            returnData.ServerName = $"{"DS01"}";
+            returnData.TableName = "medicine_page_firstclass";
+            string json_in = returnData.JsonSerializationt();
+            string json = Basic.Net.WEBApiPostJson($"{url}", json_in);
+            Table table = json.JsonDeserializet<Table>();
+            if (table == null)
+            {
+                MyMessageBox.ShowDialog($"藥庫藥檔表單建立失敗!! Api_URL:{Api_URL}");
+                return;
+            }
+            this.sqL_DataGridView_藥庫_藥品資料.Init(table);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnVisible(false, new enum_藥庫_藥品資料().GetEnumNames());
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品碼);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.中文名稱);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品名稱);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品學名);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.包裝單位);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.包裝數量);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥庫庫存);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥庫庫存);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.總庫存);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.基準量);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.安全庫存);
+
             this.sqL_DataGridView_藥庫_藥品資料.DataGridRowsChangeEvent += SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent;
 
             this.plC_RJ_Button_藥庫_藥品資料_顯示全部.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_顯示全部_MouseDownEvent;

@@ -256,6 +256,7 @@ namespace 智能藥庫系統
         }
         private void Function_緊急訂單_信箱設定_伺服器參數讀檔()
         {
+            if (sqL_DataGridView_藥品補給系統_參數資料.SQL_IsTableCreat() == false) sqL_DataGridView_藥品補給系統_參數資料.SQL_CreateTable();
             List<object[]> list_value = this.sqL_DataGridView_藥品補給系統_參數資料.SQL_GetAllRows(false);
             List<object[]> list_value_buf = new List<object[]>();
 

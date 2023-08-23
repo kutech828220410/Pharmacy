@@ -8,15 +8,6 @@
     "MySqlSslMode": 0,
     "TableName": ""
   },
-  "DB_Medicine_page": {
-    "DataBaseName": "dbvm",
-    "IP": "localhost",
-    "UserName": "user",
-    "Password": "66437068",
-    "Port": 3306,
-    "MySqlSslMode": 0,
-    "TableName": ""
-  },
   "DB_order_server": {
     "DataBaseName": "order_000",
     "IP": "localhost",
@@ -32,6 +23,15 @@
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
+    "MySqlSslMode": 0,
+    "TableName": ""
+  },
+  "DB_Medicine_Cloud": {
+    "DataBaseName": "",
+    "IP": "",
+    "UserName": "",
+    "Password": "",
+    "Port": 0,
     "MySqlSslMode": 0,
     "TableName": ""
   }
