@@ -54,9 +54,7 @@ namespace 智慧調劑台管理系統_WebApi
             int NumOfRow = 0;
             int page_num = 0;
 
-            SheetClass sheetClass = loadText.JsonDeserializet<SheetClass>();
-            sheetClass.ReplaceCell(1, 2, $"{DateTime.Now.ToDateString()}");
-            sheetClasses.Add(sheetClass);
+  
        
             for (int m = 0; m < list_note.Count; m++)
             {
@@ -64,6 +62,9 @@ namespace 智慧調劑台管理系統_WebApi
                                              where temp.備註 == list_note[m]
                                              select temp).ToList();
                 class_Emg_Applies_Distinct = sub_class_Emg_Applies_buf.Distinct(new Distinct_class_Emg_Applies()).ToList();
+                SheetClass sheetClass = loadText.JsonDeserializet<SheetClass>();
+                sheetClass.ReplaceCell(1, 2, $"{DateTime.Now.ToDateString()} {list_note[m]}");
+                sheetClasses.Add(sheetClass);
                 NumOfRow = 0;
                 for (int i = 0; i < class_Emg_Applies_Distinct.Count; i++)
                 {
