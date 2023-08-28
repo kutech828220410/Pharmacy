@@ -255,6 +255,24 @@
     <Compile Include="Dialog\Dialog_效期批號歷史紀錄.Designer.cs">
       <DependentUpon>Dialog_效期批號歷史紀錄.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_合併盤點單.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_合併盤點單.Designer.cs">
+      <DependentUpon>Dialog_合併盤點單.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\Dialog_盤點處方量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_盤點處方量.Designer.cs">
+      <DependentUpon>Dialog_盤點處方量.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\Dialog_補給系統藥品建置.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_補給系統藥品建置.Designer.cs">
+      <DependentUpon>Dialog_補給系統藥品建置.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +305,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_盤點作業.cs" />
+    <Compile Include="Program_盤點合併.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_盤點狀態_定盤.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -382,6 +403,9 @@
     <EmbeddedResource Include="Dialog\Dialog_列印及匯出.resx">
       <DependentUpon>Dialog_列印及匯出.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_補給系統藥品建置.resx">
+      <DependentUpon>Dialog_補給系統藥品建置.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_輸入備註.resx">
       <DependentUpon>Dialog_輸入備註.cs</DependentUpon>
     </EmbeddedResource>
@@ -401,6 +425,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_效期批號歷史紀錄.resx">
       <DependentUpon>Dialog_效期批號歷史紀錄.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_合併盤點單.resx">
+      <DependentUpon>Dialog_合併盤點單.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_盤點處方量.resx">
+      <DependentUpon>Dialog_盤點處方量.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -202,6 +202,7 @@ namespace 智能藥庫系統
                 Dialog_更換密碼.form = this.FindForm();
                 Dialog_藥品資料設定.form = this.FindForm();
                 Dialog_效期批號歷史紀錄.form = this.FindForm();
+                Dialog_補給系統藥品建置.form = this.FindForm();
                 ApiServerSetting("DS01");
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;
@@ -238,6 +239,7 @@ namespace 智能藥庫系統
             this.sub_Program_系統_Init();
             this.sub_Program_人員資料_Init();
             this.sub_Program_盤點作業_定盤_Init();
+            this.sub_Program_盤點合併_Init();
             this.sub_Program_登入畫面_Init();
             this.sub_Program_交易紀錄查詢_Init();
             this.sub_Program_藥品資料_資料維護_Init();
