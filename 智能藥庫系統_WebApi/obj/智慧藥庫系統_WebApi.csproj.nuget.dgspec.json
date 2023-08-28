@@ -1,20 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\HS\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {}
+    "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\HS\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {
+    "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\HS\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+        "projectUniqueName": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
         "projectName": "智慧藥庫系統_WebApi",
-        "projectPath": "C:\\Users\\HS\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
-        "packagesPath": "C:\\Users\\HS\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\HS\\Source\\Repos\\Pharmacy\\智能藥庫系統_WebApi\\obj\\",
+        "projectPath": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\智慧藥庫系統_WebApi.csproj",
+        "packagesPath": "C:\\Users\\hsonds01\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\hsonds01\\source\\repos\\Pharmacy\\智能藥庫系統_WebApi\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\HS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\hsonds01\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -71,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.415\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.413\\RuntimeIdentifierGraph.json"
         }
       }
     }

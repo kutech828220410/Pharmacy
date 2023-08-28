@@ -69,6 +69,7 @@ namespace 智能藥庫系統
                 class_Emg_Apply.藥品碼 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString();
                 class_Emg_Apply.藥品名稱 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱].ObjectToString();
                 class_Emg_Apply.撥出量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString();
+                class_Emg_Apply.備註 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.備註].ObjectToString();
                 class_Emg_Applies.Add(class_Emg_Apply);
             }
 

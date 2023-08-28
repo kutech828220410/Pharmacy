@@ -31,6 +31,8 @@ namespace 智能藥庫系統
         public string 藥品名稱 { get; set; }
         [JsonPropertyName("value")]
         public string 撥出量 { get; set; }
+        [JsonPropertyName("note")]
+        public string 備註 { get; set; }
     }
     enum enum_藥庫_撥補_藥局_緊急申領_狀態
     {
