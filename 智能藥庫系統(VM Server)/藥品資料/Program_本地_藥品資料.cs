@@ -105,21 +105,37 @@ namespace 智能藥庫系統_VM_Server_
         private List<object[]> Function_本地_藥品資料_列出異動藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
         {
 
-            bool flag_IsEqual = false;
             List<object[]> list_本地藥檔_buf = new List<object[]>();
             Parallel.ForEach(list_本地藥檔, value =>
             {
                 List<object[]> list_雲端藥檔_buf = new List<object[]>();
-
+               
                 list_雲端藥檔_buf = list_雲端藥檔.GetRows((int)enum_雲端藥檔.藥品碼, value[(int)enum_本地_藥品資料.藥品碼].ObjectToString());
                 if (list_雲端藥檔_buf.Count != 0)
                 {
+         
+                    bool flag_IsEqual = true;
                     object[] value_dst = LINQ.CopyRow(list_雲端藥檔_buf[0], new enum_雲端藥檔(), new enum_本地_藥品資料());
-                    flag_IsEqual = value.IsEqual(value_dst, (int)enum_本地_藥品資料.GUID, (int)enum_本地_藥品資料.藥品群組);
+                    string src_藥品名稱 = value[(int)enum_本地_藥品資料.藥品名稱].ObjectToString();
+                    string src_中文名稱 = value[(int)enum_本地_藥品資料.中文名稱].ObjectToString();
+                    string src_藥品學名 = value[(int)enum_本地_藥品資料.藥品學名].ObjectToString();
+                    string src_包裝單位 = value[(int)enum_本地_藥品資料.包裝單位].ObjectToString();
+
+                    string dst_藥品名稱 = value_dst[(int)enum_本地_藥品資料.藥品名稱].ObjectToString();
+                    string dst_中文名稱 = value_dst[(int)enum_本地_藥品資料.中文名稱].ObjectToString();
+                    string dst_藥品學名 = value_dst[(int)enum_本地_藥品資料.藥品學名].ObjectToString();
+                    string dst_包裝單位 = value_dst[(int)enum_本地_藥品資料.包裝單位].ObjectToString();
+
+                    if (src_藥品名稱 != dst_藥品名稱) flag_IsEqual = false;
+                    if (src_中文名稱 != dst_中文名稱) flag_IsEqual = false;
+                    if (src_藥品學名 != dst_藥品學名) flag_IsEqual = false;
+                    if (src_包裝單位 != dst_包裝單位) flag_IsEqual = false;
                     if (!flag_IsEqual)
                     {
                         value[(int)enum_本地_藥品資料.藥品名稱] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品名稱];
+                        value[(int)enum_本地_藥品資料.中文名稱] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.中文名稱];
                         value[(int)enum_本地_藥品資料.藥品學名] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.藥品學名];
+                        value[(int)enum_本地_藥品資料.包裝單位] = list_雲端藥檔_buf[0][(int)enum_雲端藥檔.包裝單位];
 
                         list_本地藥檔_buf.LockAdd(value);
                     }
@@ -194,8 +210,14 @@ namespace 智能藥庫系統_VM_Server_
             List<object[]> list_Delete_buf = new List<object[]>();
 
             List<object[]> list_value = list_雲端藥檔;
+          
             for (int i = 0; i < list_value.Count; i++)
             {
+                string Code = list_value[i][(int)enum_本地_藥品資料.藥品碼].ObjectToString();
+                if (Code == "16707")
+                {
+
+                }
                 list_新增藥品_buf = list_新增藥品.GetRows((int)enum_本地_藥品資料.藥品碼, list_value[i][(int)enum_本地_藥品資料.藥品碼].ObjectToString());
                 if (list_新增藥品_buf.Count == 1)
                 {
@@ -205,7 +227,6 @@ namespace 智能藥庫系統_VM_Server_
                 list_異動藥品_buf = list_異動藥品.GetRows((int)enum_本地_藥品資料.藥品碼, list_value[i][(int)enum_本地_藥品資料.藥品碼].ObjectToString());
                 if (list_異動藥品_buf.Count > 0)
                 {
-                    list_異動藥品_buf[0][(int)enum_本地_藥品資料.GUID] = list_value[i][(int)enum_本地_藥品資料.GUID];
                     list_ReplaceValue_buf.Add(list_異動藥品_buf[0]);
                     continue;
                 }
@@ -224,6 +245,7 @@ namespace 智能藥庫系統_VM_Server_
             this.sqL_DataGridView_本地_藥品資料.SQL_AddRows(list_AddValue_buf, false);
             this.sqL_DataGridView_本地_藥品資料.SQL_ReplaceExtra(list_ReplaceValue_buf, false);
             this.sqL_DataGridView_本地_藥品資料.SQL_DeleteExtra(list_Delete_buf, false);
+            this.sqL_DataGridView_本地_藥品資料.RefreshGrid(list_ReplaceValue_buf);
         }
         #endregion
     }

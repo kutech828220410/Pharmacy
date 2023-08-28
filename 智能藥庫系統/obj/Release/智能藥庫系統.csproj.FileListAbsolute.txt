@@ -120,7 +120,6 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Te
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Text.Json.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.ValueTuple.xml
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe.config
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog.Dialog_輸入批號.resources
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog.Dialog_輸入效期.resources
@@ -327,3 +326,4 @@ C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache

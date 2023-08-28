@@ -418,6 +418,8 @@
             this.rJ_Lable28 = new MyUI.RJ_Lable();
             this.dateTimePicker_交易記錄查詢_操作時間_起始 = new MyUI.RJ_DatePicker();
             this.rJ_GroupBox6 = new MyUI.RJ_GroupBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧 = new MyUI.PLC_RJ_ChechBox();
             this.panel118 = new System.Windows.Forms.Panel();
             this.rJ_RatioButton_交易記錄查詢_庫別_藥局 = new MyUI.RJ_RatioButton();
             this.rJ_RatioButton_交易記錄查詢_庫別_藥庫 = new MyUI.RJ_RatioButton();
@@ -1287,8 +1289,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.label48 = new System.Windows.Forms.Label();
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧 = new MyUI.PLC_RJ_ChechBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -11103,6 +11103,41 @@
             this.rJ_GroupBox6.TitleHeight = 37;
             this.rJ_GroupBox6.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_GroupBox6.TitleTexts = "查詢條件選擇";
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("新細明體", 12F);
+            this.label48.ForeColor = System.Drawing.Color.Black;
+            this.label48.Location = new System.Drawing.Point(256, 14);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(72, 16);
+            this.label48.TabIndex = 48;
+            this.label48.Text = "盤存盈虧";
+            // 
+            // plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧
+            // 
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Bool = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.ForeColor = System.Drawing.Color.Black;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.GUID = "";
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Location = new System.Drawing.Point(188, 8);
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.MinimumSize = new System.Drawing.Size(45, 22);
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Name = "plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧";
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OffBackColor = System.Drawing.Color.Gray;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OffToggleColor = System.Drawing.Color.Gainsboro;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OnBackColor = System.Drawing.Color.MediumSlateBlue;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OnToggleColor = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Size = new System.Drawing.Size(62, 29);
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.SolidStyle = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.TabIndex = 47;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.UseVisualStyleBackColor = true;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.寫入元件位置 = "S4118";
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.讀取元件位置 = "S4118";
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.讀寫鎖住 = false;
+            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.音效 = true;
             // 
             // panel118
             // 
@@ -31629,7 +31664,7 @@
             this.tabPage7.BackColor = System.Drawing.Color.White;
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(475, 301);
+            this.tabPage7.Size = new System.Drawing.Size(1622, 858);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "EPD266";
             // 
@@ -31638,7 +31673,7 @@
             this.tabPage8.BackColor = System.Drawing.Color.White;
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(475, 301);
+            this.tabPage8.Size = new System.Drawing.Size(1622, 858);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "RowsLED";
             // 
@@ -31648,7 +31683,7 @@
             this.tabPage9.Controls.Add(this.rfiD_UI);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(475, 301);
+            this.tabPage9.Size = new System.Drawing.Size(1622, 858);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "RFID";
             // 
@@ -31670,7 +31705,7 @@
             this.rfiD_UI.RFID_Enable = "0";
             this.rfiD_UI.Server_IP_Adress = "0.0.0.0";
             this.rfiD_UI.Server_Port = "0";
-            this.rfiD_UI.Size = new System.Drawing.Size(475, 301);
+            this.rfiD_UI.Size = new System.Drawing.Size(1622, 858);
             this.rfiD_UI.SSID = "";
             this.rfiD_UI.Station = "0";
             this.rfiD_UI.Subnet = "0.0.0.0";
@@ -31686,7 +31721,7 @@
             this.tabPage10.Controls.Add(this.storageUI_WT32);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(475, 301);
+            this.tabPage10.Size = new System.Drawing.Size(1622, 858);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "WT32";
             // 
@@ -31706,7 +31741,7 @@
             this.storageUI_WT32.Port = ((uint)(3306u));
             this.storageUI_WT32.Server_IP_Adress = "0.0.0.0";
             this.storageUI_WT32.Server_Port = "0";
-            this.storageUI_WT32.Size = new System.Drawing.Size(475, 301);
+            this.storageUI_WT32.Size = new System.Drawing.Size(1622, 858);
             this.storageUI_WT32.SSID = "";
             this.storageUI_WT32.Station = "0";
             this.storageUI_WT32.Subnet = "0.0.0.0";
@@ -32541,7 +32576,7 @@
             this.tabPage35.Location = new System.Drawing.Point(4, 22);
             this.tabPage35.Name = "tabPage35";
             this.tabPage35.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage35.Size = new System.Drawing.Size(475, 355);
+            this.tabPage35.Size = new System.Drawing.Size(1622, 912);
             this.tabPage35.TabIndex = 1;
             this.tabPage35.Text = "02";
             this.tabPage35.UseVisualStyleBackColor = true;
@@ -32906,41 +32941,6 @@
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Font = new System.Drawing.Font("新細明體", 12F);
-            this.label48.ForeColor = System.Drawing.Color.Black;
-            this.label48.Location = new System.Drawing.Point(256, 14);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(72, 16);
-            this.label48.TabIndex = 48;
-            this.label48.Text = "盤存盈虧";
-            // 
-            // plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧
-            // 
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Bool = false;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.ForeColor = System.Drawing.Color.Black;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.GUID = "";
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Location = new System.Drawing.Point(188, 8);
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.MinimumSize = new System.Drawing.Size(45, 22);
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Name = "plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧";
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OffBackColor = System.Drawing.Color.Gray;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OffToggleColor = System.Drawing.Color.Gainsboro;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OnBackColor = System.Drawing.Color.MediumSlateBlue;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.OnToggleColor = System.Drawing.Color.WhiteSmoke;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Size = new System.Drawing.Size(62, 29);
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.SolidStyle = true;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.TabIndex = 47;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.UseVisualStyleBackColor = true;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.寫入元件位置 = "S4118";
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.文字字體 = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.讀取元件位置 = "S4118";
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.讀寫鎖住 = false;
-            this.plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.音效 = true;
             // 
             // Form1
             // 

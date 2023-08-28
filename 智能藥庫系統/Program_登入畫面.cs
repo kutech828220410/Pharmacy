@@ -47,6 +47,7 @@ namespace 智能藥庫系統
             }
             set
             {
+                this._登入者ID = value;
                 this.rJ_TextBox_登入者ID.Texts = value;
             }
         }

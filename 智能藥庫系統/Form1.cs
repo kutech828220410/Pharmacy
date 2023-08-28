@@ -18,14 +18,14 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.1")]
-[assembly: AssemblyFileVersion("1.0.51.1")]
+[assembly: AssemblyVersion("1.0.51.4")]
+[assembly: AssemblyFileVersion("1.0.51.4")]
 namespace 智能藥庫系統
 {
 
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://127.0.0.1:4433";
+        private string Api_URL = "http://10.18.1.146:4433";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -74,8 +74,6 @@ namespace 智能藥庫系統
             public string FTP_username { get => fTP_username; set => fTP_username = value; }
             public string FTP_password { get => fTP_password; set => fTP_password = value; }
         }
- 
-     
         public Form1()
         {
             InitializeComponent();

@@ -80,17 +80,22 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_藥品資料.Init(table);
             this.sqL_DataGridView_藥庫_藥品資料.DataGridRefreshEvent += SqL_DataGridView_藥庫_藥品資料_DataGridRefreshEvent;
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnVisible(false, new enum_藥庫_藥品資料().GetEnumNames());
+         
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品碼);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.中文名稱);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品名稱);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(280, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥品學名);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.包裝單位);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.包裝數量);
-            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥庫庫存);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥局庫存);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.藥庫庫存);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.總庫存);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.基準量);
             this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnWidth(90, DataGridViewContentAlignment.MiddleLeft, enum_藥庫_藥品資料.安全庫存);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnText("藥碼", enum_藥庫_藥品資料.藥品碼);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnText("藥名", enum_藥庫_藥品資料.藥品名稱);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnText("中文名", enum_藥庫_藥品資料.中文名稱);
+            this.sqL_DataGridView_藥庫_藥品資料.Set_ColumnText("商品名", enum_藥庫_藥品資料.藥品學名);
 
             this.sqL_DataGridView_藥庫_藥品資料.DataGridRowsChangeEvent += SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent;
             this.sqL_DataGridView_藥庫_藥品資料.DataGridRefreshEvent += SqL_DataGridView_藥庫_藥品資料_DataGridRefreshEvent;
