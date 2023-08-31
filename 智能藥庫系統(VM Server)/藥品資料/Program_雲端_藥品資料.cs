@@ -189,7 +189,8 @@ namespace 智能藥庫系統_VM_Server_
                 MyDb2Connection.Open();
                 Console.WriteLine($"DB2連線成功!耗時{myTimer.ToString()}ms");
                 IBM.Data.DB2.DB2Command MyDB2Command = MyDb2Connection.CreateCommand();
-                MyDB2Command.CommandText = "SELECT A.UDCONVER ,A.UDUNFORM, A.UDRPNAME,A.UDSCNAME,A.UDSTOKNO,A.UDCHTNAM,A.UDDRGNO,B.UDPRDNAM FROM UD.UDDRGVWA A LEFT OUTER JOIN UD.UDPRDPF B ON A.UDDRGNO = B.UDDRGNO AND A.HID = B.HID WHERE A.HID = '2A0' WITH UR";
+                MyDB2Command.CommandText = "SELECT * FROM UD.UDDRGVWA A LEFT OUTER JOIN UD.UDPRDPF B ON A.UDDRGNO = B.UDDRGNO AND A.HID = B.HID WHERE A.HID = '2A0' WITH UR";
+                //MyDB2Command.CommandText = "SELECT * FROM UD.UDDRGVWA WHERE A.HID = '2A0'";
 
                 var reader = MyDB2Command.ExecuteReader();
                 Console.WriteLine($"取得DB2資料!耗時{myTimer.ToString()}ms");
@@ -225,7 +226,14 @@ namespace 智能藥庫系統_VM_Server_
                         obj_temp.Add(reader["UDUNFORM"].ToString().Trim());
                         obj_temp.Add(reader["UDCONVER"].ToString().Trim());
 
-
+                        //if (UDDRGNO.Contains("3223"))
+                        //{
+                        //    object[] value = new object[reader.FieldCount];
+                        //    for (int i = 0; i < reader.FieldCount; i++)
+                        //    {
+                        //        value[i] = reader[i];
+                        //    }
+                        //}
                         obj_temp_array.Add(obj_temp.ToArray());
                     }
                 }
@@ -235,6 +243,7 @@ namespace 智能藥庫系統_VM_Server_
                 for (int i = 0; i < obj_temp_array.Count; i++)
                 {
                     string 藥品碼 = obj_temp_array[i][(int)enum_雲端藥檔_DB2.藥品碼].ObjectToString();
+        
                     obj_temp_array_buf = obj_temp_array_result.GetRows((int)enum_雲端藥檔_DB2.藥品碼, 藥品碼);
                     if (obj_temp_array_buf.Count == 0)
                     {
@@ -280,7 +289,7 @@ namespace 智能藥庫系統_VM_Server_
                         value[(int)enum_雲端藥檔.藥品學名] = 藥品學名;
                         value[(int)enum_雲端藥檔.中文名稱] = 中文名稱;
                         value[(int)enum_雲端藥檔.包裝單位] = 包裝單位;
-                        value[(int)enum_雲端藥檔.包裝數量] = 包裝數量;
+                        //value[(int)enum_雲端藥檔.包裝數量] = 包裝數量;
                         value[(int)enum_雲端藥檔.最小包裝數量] = 最小包裝數量;
 
                         list_藥品資料_add.Add(value);
