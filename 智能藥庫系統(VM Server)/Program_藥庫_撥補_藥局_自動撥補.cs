@@ -210,7 +210,7 @@ namespace 智能藥庫系統_VM_Server_
                 藥品碼 = list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.藥品碼].ObjectToString();
                 藥品名稱 = list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.藥品名稱].ObjectToString();
                 deviceBasics_藥局_buf = deviceBasics_藥局.SortByCode(藥品碼);
-                if (deviceBasics_藥局.Count == 0) continue;
+                if (deviceBasics_藥局_buf.Count == 0) continue;
 
                 來源庫存量 = this.Function_從本地資料取得庫存(藥品碼);
                 輸出異動量 = list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.異動量].ObjectToString().StringToInt32();

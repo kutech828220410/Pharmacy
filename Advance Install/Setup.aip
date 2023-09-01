@@ -12,10 +12,10 @@
     <ROW Property="AiSkipExitDlg" Value="1"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="鴻森整合機電有限公司"/>
-    <ROW Property="ProductCode" Value="1028:{9BCC7D14-A671-473B-AC7C-3911603965F4} " Type="16"/>
+    <ROW Property="ProductCode" Value="1028:{5C6AD2C4-09DF-450D-A430-6E896E66BDBE} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能藥庫系統 Ver[|ProductVersion]"/>
-    <ROW Property="ProductVersion" Value="1.0.48.0" Type="32" TargetFile="exe"/>
+    <ROW Property="ProductVersion" Value="1.0.51.6" Type="32" TargetFile="exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{DD530B82-8A1C-4702-89C3-1D317BE8BDF9}"/>
@@ -46,13 +46,17 @@
     <ROW Component="DrawingClass.dll" ComponentId="{99777126-B91E-4553-84B6-169ADF352D54}" Directory_="APPDIR" Attributes="0" KeyPath="DrawingClass.dll"/>
     <ROW Component="FontAwesome.Sharp.dll" ComponentId="{4BB98A29-EB5D-48CF-B96E-9A2EEFE1484E}" Directory_="APPDIR" Attributes="0" KeyPath="FontAwesome.Sharp.dll"/>
     <ROW Component="HCGUI.dll" ComponentId="{2368A7A6-3DF3-4A2E-B3EF-80301044DE89}" Directory_="APPDIR" Attributes="0" KeyPath="HCGUI.dll"/>
+    <ROW Component="HIS_DB_Lib.dll" ComponentId="{B9710819-3D9F-4C44-8979-EC4B4A236012}" Directory_="APPDIR" Attributes="0" KeyPath="HIS_DB_Lib.dll"/>
     <ROW Component="H_Pannel_lib.dll" ComponentId="{E35AAB69-2F80-4125-8CF1-66D2C5DE6B52}" Directory_="APPDIR" Attributes="0" KeyPath="H_Pannel_lib.dll"/>
+    <ROW Component="ICSharpCode.SharpZipLib.dll" ComponentId="{270E855F-7897-4FCE-AE64-E8D8F1A4C2CB}" Directory_="APPDIR" Attributes="0" KeyPath="ICSharpCode.SharpZipLib.dll"/>
+    <ROW Component="Interop.SpeechLib.dll" ComponentId="{7480ABC1-F76F-47A1-8170-F9D4B1F5CC29}" Directory_="APPDIR" Attributes="0" KeyPath="Interop.SpeechLib.dll"/>
     <ROW Component="LadderUI.dll" ComponentId="{2AEA8163-CEF4-4895-81C8-F9A4B6B98DF7}" Directory_="APPDIR" Attributes="0" KeyPath="LadderUI.dll"/>
     <ROW Component="LeadShineUI.dll" ComponentId="{A0721F30-30D4-449D-9C9E-29A71EC051BF}" Directory_="APPDIR" Attributes="0" KeyPath="LeadShineUI.dll"/>
     <ROW Component="LicenseLib.dll" ComponentId="{B4908BE0-B4F2-4F45-898C-07C6CB002B5C}" Directory_="APPDIR" Attributes="0" KeyPath="LicenseLib.dll"/>
     <ROW Component="LightControlUI.dll" ComponentId="{459C2C6C-0209-4D4E-93EC-FB52259A9AD9}" Directory_="APPDIR" Attributes="0" KeyPath="LightControlUI.dll"/>
     <ROW Component="MVSDK.dll" ComponentId="{5C1E58E6-8D92-425A-9856-281BD07CECD4}" Directory_="APPDIR" Attributes="0" KeyPath="MVSDK.dll"/>
     <ROW Component="MVSDKUI.dll" ComponentId="{DDC5E61F-642C-4390-A36B-2EB51D62F290}" Directory_="APPDIR" Attributes="0" KeyPath="MVSDKUI.dll"/>
+    <ROW Component="MeasureSystemFunction.dll" ComponentId="{C552F421-4617-4569-911B-9D56A7A9E0F2}" Directory_="APPDIR" Attributes="0" KeyPath="MeasureSystemFunction.dll"/>
     <ROW Component="MeasureSystemUI.dll" ComponentId="{901F321A-E858-47F9-8C70-09606CEB8407}" Directory_="APPDIR" Attributes="0" KeyPath="MeasureSystemUI.dll"/>
     <ROW Component="Microsoft.Bcl.AsyncInterfaces.dll" ComponentId="{7E3152EC-4409-4791-9E61-2B8C0F2A3566}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Bcl.AsyncInterfaces.dll"/>
     <ROW Component="Microsoft.Office.Interop.Excel.dll" ComponentId="{519EBFC3-54A6-41C8-A42E-F41CF40EEACA}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Office.Interop.Excel.dll"/>
@@ -87,10 +91,11 @@
     <ROW Component="TCP.dll" ComponentId="{EB8F5C5D-1118-4374-965F-792F6AEB5845}" Directory_="APPDIR" Attributes="0" KeyPath="TCP.dll"/>
     <ROW Component="ZealTechUI.dll" ComponentId="{A94FC9F0-A78A-4761-B8E7-3C978CB1B251}" Directory_="APPDIR" Attributes="0" KeyPath="ZealTechUI.dll"/>
     <ROW Component="exe" ComponentId="{13632CB0-8E16-4F48-BB0A-387B92F3445E}" Directory_="APPDIR" Attributes="0" KeyPath="exe"/>
+    <ROW Component="stdole.dll" ComponentId="{E13F7541-3792-4292-B508-F94FB53CF3FE}" Directory_="APPDIR" Attributes="0" KeyPath="stdole.dll"/>
     <ROW Component="zxing.dll" ComponentId="{119153CB-89B2-4013-AB18-6AF790123096}" Directory_="APPDIR" Attributes="0" KeyPath="zxing.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AxAltairUDrv.dll AxAltairUDrvAsm4.5.dll AxOvkBase.dll AxOvkBaseAsm4.5.dll AxOvkMsr.dll Basic.dll CallBackUI.dll DBConfig.txt DrawingClass.dll FontAwesome.Sharp.dll HCGUI.dll H_Pannel_lib.dll LadderUI.dll LeadShineUI.dll LicenseLib.dll LightControlUI.dll MVSDK.dll MVSDKUI.dll MeasureSystemUI.dll Microsoft.Bcl.AsyncInterfaces.dll Microsoft.Office.Interop.Excel.dll Microsoft.Office.Interop.Word.dll MyEmail.dll MyFtpUI.dll MyOffice.dll MyPrinterlib.dll MySQL_Login.dll MySql.Data.dll MySqlBackup.dll MyUI.dll NPOI.OOXML.dll NPOI.OpenXml4Net.dll NPOI.OpenXmlFormats.dll NPOI.dll Office.dll PortControlUI.dll ProductInformation RFID_FX600lib.dll SHORTCUTDIR SLDUI.dll SQLUI.dll System.Buffers.dll System.Memory.dll System.Numerics.Vectors.dll System.Runtime.CompilerServices.Unsafe.dll System.Text.Encodings.Web.dll System.Text.Json.dll System.Threading.Tasks.Extensions.dll System.ValueTuple.dll TCP.dll ZealTechUI.dll exe zxing.dll"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="AxAltairUDrv.dll AxAltairUDrvAsm4.5.dll AxOvkBase.dll AxOvkBaseAsm4.5.dll AxOvkMsr.dll Basic.dll CallBackUI.dll DBConfig.txt DrawingClass.dll FontAwesome.Sharp.dll HCGUI.dll HIS_DB_Lib.dll H_Pannel_lib.dll ICSharpCode.SharpZipLib.dll Interop.SpeechLib.dll LadderUI.dll LeadShineUI.dll LicenseLib.dll LightControlUI.dll MVSDK.dll MVSDKUI.dll MeasureSystemFunction.dll MeasureSystemUI.dll Microsoft.Bcl.AsyncInterfaces.dll Microsoft.Office.Interop.Excel.dll Microsoft.Office.Interop.Word.dll MyEmail.dll MyFtpUI.dll MyOffice.dll MyPrinterlib.dll MySQL_Login.dll MySql.Data.dll MySqlBackup.dll MyUI.dll NPOI.OOXML.dll NPOI.OpenXml4Net.dll NPOI.OpenXmlFormats.dll NPOI.dll Office.dll PortControlUI.dll ProductInformation RFID_FX600lib.dll SHORTCUTDIR SLDUI.dll SQLUI.dll System.Buffers.dll System.Memory.dll System.Numerics.Vectors.dll System.Runtime.CompilerServices.Unsafe.dll System.Text.Encodings.Web.dll System.Text.Json.dll System.Threading.Tasks.Extensions.dll System.ValueTuple.dll TCP.dll ZealTechUI.dll exe stdole.dll zxing.dll"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
@@ -105,13 +110,17 @@
     <ROW File="DrawingClass.dll" Component_="DrawingClass.dll" FileName="DRAWIN~1.DLL|DrawingClass.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\DrawingClass.dll" SelfReg="false" NextFile="FontAwesome.Sharp.dll"/>
     <ROW File="FontAwesome.Sharp.dll" Component_="FontAwesome.Sharp.dll" FileName="FONTAW~1.DLL|FontAwesome.Sharp.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\FontAwesome.Sharp.dll" SelfReg="false" NextFile="H_Pannel_lib.dll"/>
     <ROW File="HCGUI.dll" Component_="HCGUI.dll" FileName="HCGUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\HCGUI.dll" SelfReg="false" NextFile="LadderUI.dll"/>
+    <ROW File="HIS_DB_Lib.dll" Component_="HIS_DB_Lib.dll" FileName="HIS_DB~1.DLL|HIS_DB_Lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\HIS_DB_Lib.dll" SelfReg="false" NextFile="ICSharpCode.SharpZipLib.dll"/>
     <ROW File="H_Pannel_lib.dll" Component_="H_Pannel_lib.dll" FileName="H_PANN~1.DLL|H_Pannel_lib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\H_Pannel_lib.dll" SelfReg="false" NextFile="HCGUI.dll"/>
+    <ROW File="ICSharpCode.SharpZipLib.dll" Component_="ICSharpCode.SharpZipLib.dll" FileName="ICSHAR~1.DLL|ICSharpCode.SharpZipLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\ICSharpCode.SharpZipLib.dll" SelfReg="false" NextFile="Interop.SpeechLib.dll"/>
+    <ROW File="Interop.SpeechLib.dll" Component_="Interop.SpeechLib.dll" FileName="INTERO~1.DLL|Interop.SpeechLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Interop.SpeechLib.dll" SelfReg="false" NextFile="MeasureSystemFunction.dll"/>
     <ROW File="LadderUI.dll" Component_="LadderUI.dll" FileName="LadderUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LadderUI.dll" SelfReg="false" NextFile="LeadShineUI.dll"/>
     <ROW File="LeadShineUI.dll" Component_="LeadShineUI.dll" FileName="LEADSH~1.DLL|LeadShineUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LeadShineUI.dll" SelfReg="false" NextFile="LicenseLib.dll"/>
     <ROW File="LicenseLib.dll" Component_="LicenseLib.dll" FileName="LICENS~1.DLL|LicenseLib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LicenseLib.dll" SelfReg="false" NextFile="LightControlUI.dll"/>
     <ROW File="LightControlUI.dll" Component_="LightControlUI.dll" FileName="LIGHTC~1.DLL|LightControlUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\LightControlUI.dll" SelfReg="false" NextFile="MeasureSystemUI.dll"/>
     <ROW File="MVSDK.dll" Component_="MVSDK.dll" FileName="MVSDK.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDK.dll" SelfReg="false" NextFile="MVSDKUI.dll"/>
     <ROW File="MVSDKUI.dll" Component_="MVSDKUI.dll" FileName="MVSDKUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MVSDKUI.dll" SelfReg="false" NextFile="MyConfig.txt"/>
+    <ROW File="MeasureSystemFunction.dll" Component_="MeasureSystemFunction.dll" FileName="MEASUR~2.DLL|MeasureSystemFunction.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MeasureSystemFunction.dll" SelfReg="false" NextFile="speak.mp3"/>
     <ROW File="MeasureSystemUI.dll" Component_="MeasureSystemUI.dll" FileName="MEASUR~1.DLL|MeasureSystemUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MeasureSystemUI.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.dll"/>
     <ROW File="Microsoft.Bcl.AsyncInterfaces.dll" Component_="Microsoft.Bcl.AsyncInterfaces.dll" FileName="MICROS~1.DLL|Microsoft.Bcl.AsyncInterfaces.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll" SelfReg="false" NextFile="Microsoft.Bcl.AsyncInterfaces.xml"/>
     <ROW File="Microsoft.Bcl.AsyncInterfaces.xml" Component_="DBConfig.txt" FileName="MICROS~1.XML|Microsoft.Bcl.AsyncInterfaces.xml" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml" SelfReg="false" NextFile="MVSDK.dll"/>
@@ -121,7 +130,7 @@
     <ROW File="MyEmail.dll" Component_="MyEmail.dll" FileName="MyEmail.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyEmail.dll" SelfReg="false" NextFile="MyFtpUI.dll"/>
     <ROW File="MyFtpUI.dll" Component_="MyFtpUI.dll" FileName="MyFtpUI.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyFtpUI.dll" SelfReg="false" NextFile="MySql.Data.dll"/>
     <ROW File="MyOffice.dll" Component_="MyOffice.dll" FileName="MyOffice.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyOffice.dll" SelfReg="false" NextFile="MyPrinterlib.dll"/>
-    <ROW File="MyPrinterlib.dll" Component_="MyPrinterlib.dll" FileName="MYPRIN~1.DLL|MyPrinterlib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\0.DLL\MyPrinterlib.dll" SelfReg="false"/>
+    <ROW File="MyPrinterlib.dll" Component_="MyPrinterlib.dll" FileName="MYPRIN~1.DLL|MyPrinterlib.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MyPrinterlib.dll" SelfReg="false" NextFile="HIS_DB_Lib.dll"/>
     <ROW File="MySQL_Login.dll" Component_="MySQL_Login.dll" FileName="MYSQL_~1.DLL|MySQL_Login.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySQL_Login.dll" SelfReg="false" NextFile="MySqlBackup.dll"/>
     <ROW File="MySql.Data.dll" Component_="MySql.Data.dll" FileName="MYSQLD~1.DLL|MySql.Data.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySql.Data.dll" SelfReg="false" NextFile="MySQL_Login.dll"/>
     <ROW File="MySqlBackup.dll" Component_="MySqlBackup.dll" FileName="MYSQLB~1.DLL|MySqlBackup.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\MySqlBackup.dll" SelfReg="false" NextFile="MyUI.dll"/>
@@ -158,6 +167,8 @@
     <ROW File="exe.config" Component_="DBConfig.txt" FileName="智能藥庫系統~1.CON|智能藥庫系統.exe.config" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.exe.config" SelfReg="false" NextFile="pdb"/>
     <ROW File="pdb" Component_="exe" FileName="智能藥庫系統.pdb" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\智能藥庫系統.pdb" SelfReg="false" NextFile="Microsoft.Office.Interop.Excel.dll"/>
     <ROW File="program.stp" Component_="DBConfig.txt" FileName="program.stp" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\program.stp" SelfReg="false" NextFile="RFID_FX600lib.dll"/>
+    <ROW File="speak.mp3" Component_="DBConfig.txt" FileName="speak.mp3" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\speak.mp3" SelfReg="false" NextFile="stdole.dll"/>
+    <ROW File="stdole.dll" Component_="stdole.dll" FileName="stdole.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\stdole.dll" SelfReg="false"/>
     <ROW File="zxing.dll" Component_="zxing.dll" FileName="zxing.dll" Version="65535.65535.65535.65535" Attributes="0" SourcePath="..\智能藥庫系統\bin\Release\zxing.dll" SelfReg="false" NextFile="exe.config"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BootstrOptComponent">
