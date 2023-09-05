@@ -275,6 +275,13 @@ namespace 智能藥庫系統_VM_Server_
                     來源備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * 1}";
                     if (k != list_儲位資料.Count - 1) 來源備註 += "\n";
                 }
+
+                if (list_儲位資料.Count > 3)
+                {
+                    輸出備註 = "";
+                    來源備註 = "";
+                }
+
                 list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.庫存] = 輸出庫存量;
                 list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.異動量] = 輸出異動量;
                 list_value[i][(int)enum_藥庫_撥補_藥局_自動撥補.結存量] = 輸出結存量;
@@ -288,7 +295,7 @@ namespace 智能藥庫系統_VM_Server_
                 }
                 list_value_buf.Add(list_value[i]);
 
-
+             
 
                 object[] value_src = new object[new enum_交易記錄查詢資料().GetLength()];
                 value_src[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
@@ -318,6 +325,7 @@ namespace 智能藥庫系統_VM_Server_
 
                 list_交易紀錄_Add.Add(value_src);
                 list_交易紀錄_Add.Add(value_out);
+
 
             }
 
@@ -418,14 +426,16 @@ namespace 智能藥庫系統_VM_Server_
                 基準量 = list_藥品資料[i][(int)enum_藥局_藥品資料.基準量].ObjectToString().StringToInt32();
                 包裝數量 = list_藥庫_藥品資料[i][(int)enum_藥庫_藥品資料.包裝數量].ObjectToString().StringToInt32();
                 庫存量 = deviceBasic_buf[0].Inventory.StringToInt32();
+                Console.WriteLine($"{i}.(自動撥補) 藥碼:{藥品碼} ,安全量:{安全量},基準量:{基準量},庫存量:{庫存量},包裝數量:{包裝數量}");
+                基準量 = 9999999;
                 if (基準量 <= 0)
                 {
                     continue;
                 }
-                if (庫存量 >= 安全量)
-                {
-                    continue;
-                }
+                //if (庫存量 >= 安全量)
+                //{
+                //    continue;
+                //}
 
                 異動量 = 基準量 - 庫存量;
                 if (包裝數量 > 1)

@@ -150,14 +150,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="H_Pannel_lib.dll" size="717312">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="H_Pannel_lib.dll" size="718336">
       <assemblyIdentity name="H_Pannel_lib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>eFGfJS/9Uxi2n6tsvzkii8nQH3Qh2L/3eNg3jo5fs9A=</dsig:DigestValue>
+        <dsig:DigestValue>8RGBn9KOqhIm+bL5/xA6sx3wDEW7N+2VLZTSLgG1alg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -661,7 +661,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>+zitK9EacDONXg3DWjaoseqXIMntvIz4UqPi+Y0RCDs=</dsig:DigestValue>
+        <dsig:DigestValue>RXuBggGsB/UWvpDAk5wIHmB+kfJA9zTQUMg5h9zPZ8w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

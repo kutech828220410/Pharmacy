@@ -502,6 +502,7 @@ namespace 智能藥庫系統_VM_Server_
                             if (k != list_儲位資訊.Count - 1) 備註 += "\n";
                             異動量 += 儲位資訊_異動量.StringToInt32();
                         }
+             
                         結存量 = 庫存量 + 異動量;
                         if (庫存量 == 0)
                         {
@@ -531,6 +532,10 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.狀態] = enum_藥品過消耗帳_狀態.未建立儲位.GetEnumName();
                     list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.備註] = 備註;
+                }
+                if(備註.Length > 500)
+                {
+
                 }
                 deviceBasics_buf = (from value in deviceBasics_Replace
                                     where value.Code == 藥品碼
