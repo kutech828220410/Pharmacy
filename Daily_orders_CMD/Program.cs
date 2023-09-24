@@ -379,6 +379,10 @@ namespace Daily_orders_CMD
         }
         public static bool IsHspitalHolidays(DateTime date)
         {
+            if (date.ToString("MM/dd").Equals("09/23"))
+            {
+                return false;
+            }
             // 週休二日
             if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
             {

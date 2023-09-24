@@ -97,7 +97,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_檢查過帳明細_門診 == 65500)
             {
                 this.MyTimer_檢查過帳明細_門診_結束延遲.TickStop();
-                this.MyTimer_檢查過帳明細_門診_結束延遲.StartTickTime(60000);
+                this.MyTimer_檢查過帳明細_門診_結束延遲.StartTickTime(300000);
                 PLC_Device_檢查過帳明細_門診.Bool = false;
                 PLC_Device_檢查過帳明細_門診_OK.Bool = false;
                 cnt_Program_檢查過帳明細_門診 = 65535;

@@ -351,7 +351,7 @@ namespace 智能藥庫系統
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
                 {
                     break;
                 }
@@ -371,7 +371,7 @@ namespace 智能藥庫系統
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
                 {
                     break;
                 }

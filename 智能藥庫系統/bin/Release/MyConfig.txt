@@ -1,7 +1,7 @@
 {
   "FTP_Server": "https://github.com/kutech828220410/Pharmacy/raw/master/Advance%20Install/",
   "貨架數量": 15,
-  "主機模式": true,
+  "主機模式": false,
   "FTP_username": "user",
   "FTP_password": "66437068"
 }

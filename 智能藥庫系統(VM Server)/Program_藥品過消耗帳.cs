@@ -43,6 +43,13 @@ namespace 智能藥庫系統_VM_Server_
             狀態,
             備註,           
         }
+        private enum enum_藥品過消耗帳_匯出
+        {
+            藥碼,
+            來源,
+            藥名,
+            消耗量,
+        }
         enum enum_藥品過消耗帳_狀態
         {
             等待過帳,
@@ -71,12 +78,11 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_藥品過消耗帳_顯示異常過帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示異常過帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_無效期可入帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_無效期可入帳_MouseDownEvent;
-            this.plC_RJ_Button_藥品過消耗帳_測試.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_測試_MouseDownEvent;
-
+            this.plC_RJ_Button_藥品過消耗帳_匯出藥局消耗帳_匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_匯出藥局消耗帳_匯出_MouseDownEvent;
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-    
+  
 
         private void sub_Program_藥品過消耗帳()
         {
@@ -111,7 +117,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_檢查藥品過消耗帳 == 65500)
             {
                 this.MyTimer_檢查藥品過消耗帳_結束延遲.TickStop();
-                this.MyTimer_檢查藥品過消耗帳_結束延遲.StartTickTime(60000);
+                this.MyTimer_檢查藥品過消耗帳_結束延遲.StartTickTime(300000);
                 PLC_Device_檢查藥品過消耗帳.Bool = false;
                 PLC_Device_檢查藥品過消耗帳_OK.Bool = false;
                 cnt_Program_檢查藥品過消耗帳 = 65535;
@@ -194,7 +200,7 @@ namespace 智能藥庫系統_VM_Server_
             if (cnt_Program_檢查異常消耗帳過帳 == 65500)
             {
                 this.MyTimer_檢查異常消耗帳過帳_結束延遲.TickStop();
-                this.MyTimer_檢查異常消耗帳過帳_結束延遲.StartTickTime(60000);
+                this.MyTimer_檢查異常消耗帳過帳_結束延遲.StartTickTime(300000);
                 PLC_Device_檢查異常消耗帳過帳.Bool = false;
                 PLC_Device_檢查異常消耗帳過帳_OK.Bool = false;
                 cnt_Program_檢查異常消耗帳過帳 = 65535;
@@ -264,6 +270,49 @@ namespace 智能藥庫系統_VM_Server_
             Console.WriteLine($"取得住院所有過帳資料,{myTimerBasic.ToString()}");
             List<object[]> list_公藥 = this.sqL_DataGridView_過帳明細_公藥.SQL_GetRows((int)enum_過帳明細_公藥.藥品碼, 藥品碼, false);
             Console.WriteLine($"取得公藥所有過帳資料,{myTimerBasic.ToString()}");
+            List<object[]> list_value = new List<object[]>();
+
+            List<object[]> list_門診_buf = list_門診.CopyRows(new enum_過帳明細_門診(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_門診_buf.Count; i++)
+            {
+                list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+            }
+            List<object[]> list_急診_buf = list_急診.CopyRows(new enum_過帳明細_急診(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_急診_buf.Count; i++)
+            {
+                list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+            }
+            List<object[]> list_住院_buf = list_住院.CopyRows(new enum_過帳明細_住院(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_住院_buf.Count; i++)
+            {
+                list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+            }
+            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_過帳明細_公藥(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_公藥_buf.Count; i++)
+            {
+                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+            }
+
+
+            list_value.LockAdd(list_門診_buf);
+            list_value.LockAdd(list_急診_buf);
+            list_value.LockAdd(list_住院_buf);
+            list_value.LockAdd(list_公藥_buf);
+
+            return list_value;
+        }
+        private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(DateTime st_time , DateTime end_time)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            myTimerBasic.StartTickTime(50000);
+            List<object[]> list_門診 = this.sqL_DataGridView_過帳明細_門診.SQL_GetRowsByBetween((int)enum_過帳明細_門診.報表日期, st_time, end_time, false);
+            Console.WriteLine($"取得門診過帳資料 {st_time} - {end_time},{myTimerBasic.ToString()}");
+            List<object[]> list_急診 = this.sqL_DataGridView_過帳明細_急診.SQL_GetRowsByBetween((int)enum_過帳明細_急診.報表日期, st_time, end_time, false);
+            Console.WriteLine($"取得急診過帳資料 {st_time} - {end_time},{myTimerBasic.ToString()}");
+            List<object[]> list_住院 = this.sqL_DataGridView_過帳明細_住院.SQL_GetRowsByBetween((int)enum_過帳明細_住院.報表日期, st_time, end_time, false);
+            Console.WriteLine($"取得住院過帳資料 {st_time} - {end_time},{myTimerBasic.ToString()}");
+            List<object[]> list_公藥 = this.sqL_DataGridView_過帳明細_公藥.SQL_GetRowsByBetween((int)enum_過帳明細_公藥.報表日期, st_time, end_time, false);
+            Console.WriteLine($"取得公藥過帳資料 {st_time} - {end_time},{myTimerBasic.ToString()}");
             List<object[]> list_value = new List<object[]>();
 
             List<object[]> list_門診_buf = list_門診.CopyRows(new enum_過帳明細_門診(), new enum_藥品過消耗帳());
@@ -477,6 +526,10 @@ namespace 智能藥庫系統_VM_Server_
                                 value_trading[(int)enum_交易記錄查詢資料.交易量] = 異動量;
                                 value_trading[(int)enum_交易記錄查詢資料.結存量] = 結存量;
                                 value_trading[(int)enum_交易記錄查詢資料.備註] = 備註;
+                                if (備註.Length > 250)
+                                {
+                                    value_trading[(int)enum_交易記錄查詢資料.備註] = "";
+                                }
                                 value_trading[(int)enum_交易記錄查詢資料.庫別] = enum_庫別.屏榮藥局.GetEnumName();
                                 value_trading[(int)enum_交易記錄查詢資料.操作人] = "系統";
                                 value_trading[(int)enum_交易記錄查詢資料.操作時間] = DateTime.Now.ToDateTimeString_6();
@@ -486,6 +539,10 @@ namespace 智能藥庫系統_VM_Server_
                             {
                                 list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.狀態] = enum_藥品過消耗帳_狀態.無效期可入帳.GetEnumName();
                                 list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.備註] = 備註;
+                                if (備註.Length > 250)
+                                {
+                                    list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.備註] = "";
+                                }
                             }
                     
                         }
@@ -533,10 +590,7 @@ namespace 智能藥庫系統_VM_Server_
                     list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.狀態] = enum_藥品過消耗帳_狀態.未建立儲位.GetEnumName();
                     list_藥品過消耗帳[i][(int)enum_藥品過消耗帳.備註] = 備註;
                 }
-                if(備註.Length > 500)
-                {
-
-                }
+        
                 deviceBasics_buf = (from value in deviceBasics_Replace
                                     where value.Code == 藥品碼
                                     select value).ToList();
@@ -763,6 +817,217 @@ namespace 智能藥庫系統_VM_Server_
             {
                 
             }
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_匯出藥局消耗帳_匯出_MouseDownEvent(MouseEventArgs mevent)
+        {
+            this.Invoke(new Action(delegate
+            {
+                if (comboBox_藥品過消耗帳_匯出藥局消耗帳_藥局選擇.SelectedIndex == -1) comboBox_藥品過消耗帳_匯出藥局消耗帳_藥局選擇.SelectedIndex = 0;
+                DateTime st_datetime = $"{rJ_DatePicker_藥品過消耗帳_匯出藥局消耗帳_起始時間.Value.ToDateString()} 00:00:00".StringToDateTime();
+                DateTime end_datetime = $"{rJ_DatePicker_藥品過消耗帳_匯出藥局消耗帳_結束時間.Value.ToDateString()} 23:59:59".StringToDateTime();
+                string 藥局名稱 = comboBox_藥品過消耗帳_匯出藥局消耗帳_藥局選擇.Text;
+                List<object[]> list_value = Function_藥品過消耗帳_取得所有過帳明細(st_datetime, end_datetime);
+                List<object[]> list_value_門診 = new List<object[]>();
+                List<object[]> list_value_急診 = new List<object[]>();
+                List<object[]> list_value_住院 = new List<object[]>();
+                List<object[]> list_匯出資料_門診 = new List<object[]>();
+                List<object[]> list_匯出資料_門診_buf = new List<object[]>();
+                List<object[]> list_匯出資料_急診 = new List<object[]>();
+                List<object[]> list_匯出資料_急診_buf = new List<object[]>();
+                List<object[]> list_匯出資料_住院 = new List<object[]>();
+                List<object[]> list_匯出資料_住院_buf = new List<object[]>();
+
+                list_value_門診 = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥局代碼, "OPD");
+                for (int i = 0; i < list_value_門診.Count; i++)
+                {
+                    string 藥碼 = list_value_門診[i][(int)enum_藥品過消耗帳.藥品碼].ObjectToString();
+                    string 藥名 = list_value_門診[i][(int)enum_藥品過消耗帳.藥品名稱].ObjectToString();
+                    string 來源名稱 = list_value_門診[i][(int)enum_藥品過消耗帳.來源名稱].ObjectToString();
+                    藥名 = 藥名.Replace(",", " ");
+                    int 消耗量_temp = list_value_門診[i][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    list_匯出資料_門診_buf = list_匯出資料_門診.GetRows((int)enum_藥品過消耗帳_匯出.藥碼, 藥碼);
+                    if (list_匯出資料_門診_buf.Count == 0)
+                    {
+                        object[] value = new object[new enum_藥品過消耗帳_匯出().GetLength()];
+                        value[(int)enum_藥品過消耗帳_匯出.藥碼] = 藥碼;
+                        value[(int)enum_藥品過消耗帳_匯出.藥名] = 藥名;
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = 消耗量_temp.ToString();
+                        list_匯出資料_門診.Add(value);
+                    }
+                    else
+                    {
+                        object[] value = list_匯出資料_門診_buf[0];
+                        int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = (消耗量_temp + temp).ToString();
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                    }
+                }
+                for (int i = 0; i < list_匯出資料_門診.Count; i++)
+                {
+                    object[] value = list_匯出資料_門診[i];
+                    int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                    value[(int)enum_藥品過消耗帳_匯出.消耗量] = (temp * -1).ToString();
+                }
+
+
+                list_value_急診 = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥局代碼, "PHER");
+                for (int i = 0; i < list_value_急診.Count; i++)
+                {
+                    string 藥碼 = list_value_急診[i][(int)enum_藥品過消耗帳.藥品碼].ObjectToString();
+                    string 藥名 = list_value_急診[i][(int)enum_藥品過消耗帳.藥品名稱].ObjectToString();
+                    string 來源名稱 = list_value_急診[i][(int)enum_藥品過消耗帳.來源名稱].ObjectToString();
+                    藥名 = 藥名.Replace(",", " ");
+                    int 消耗量_temp = list_value_急診[i][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    list_匯出資料_急診_buf = list_匯出資料_急診.GetRows((int)enum_藥品過消耗帳_匯出.藥碼, 藥碼);
+                    if (list_匯出資料_急診_buf.Count == 0)
+                    {
+                        object[] value = new object[new enum_藥品過消耗帳_匯出().GetLength()];
+                        value[(int)enum_藥品過消耗帳_匯出.藥碼] = 藥碼;
+                        value[(int)enum_藥品過消耗帳_匯出.藥名] = 藥名;
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = 消耗量_temp.ToString();
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                        list_匯出資料_急診.Add(value);
+                    }
+                    else
+                    {
+                        object[] value = list_匯出資料_急診_buf[0];
+                        int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = (消耗量_temp + temp).ToString();
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                    }
+                }
+                for (int i = 0; i < list_匯出資料_急診.Count; i++)
+                {
+                    object[] value = list_匯出資料_急診[i];
+                    int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                    value[(int)enum_藥品過消耗帳_匯出.消耗量] = (temp * -1).ToString();
+                }
+
+
+                list_value_住院 = list_value.GetRowsByLike((int)enum_藥品過消耗帳.藥局代碼, "PHR");
+                for (int i = 0; i < list_value_住院.Count; i++)
+                {
+                    string 藥碼 = list_value_住院[i][(int)enum_藥品過消耗帳.藥品碼].ObjectToString();
+                    string 藥名 = list_value_住院[i][(int)enum_藥品過消耗帳.藥品名稱].ObjectToString();
+                    string 來源名稱 = list_value_住院[i][(int)enum_藥品過消耗帳.來源名稱].ObjectToString();
+                    string 藥局代碼 = list_value_住院[i][(int)enum_藥品過消耗帳.藥局代碼].ObjectToString();
+                    藥名 = 藥名.Replace(",", " ");
+                    int 消耗量_temp = list_value_住院[i][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    list_匯出資料_住院_buf = list_匯出資料_住院.GetRows((int)enum_藥品過消耗帳_匯出.藥碼, 藥碼);
+                    if (list_匯出資料_住院_buf.Count == 0)
+                    {
+                        object[] value = new object[new enum_藥品過消耗帳_匯出().GetLength()];
+                        value[(int)enum_藥品過消耗帳_匯出.藥碼] = 藥碼;
+                        value[(int)enum_藥品過消耗帳_匯出.藥名] = 藥名;
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = 消耗量_temp.ToString();
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if(來源名稱 != "住院" && 藥局代碼 != "PHRM")
+                        {
+
+                        }
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                        list_匯出資料_住院.Add(value);
+                    }
+                    else
+                    {
+                        object[] value = list_匯出資料_住院_buf[0];
+                        int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                        value[(int)enum_藥品過消耗帳_匯出.消耗量] = (消耗量_temp + temp).ToString();
+                        string 來源 = value[(int)enum_藥品過消耗帳_匯出.來源].ObjectToString();
+                        if (來源.Contains(來源名稱) == false)
+                        {
+                            if (來源.StringIsEmpty())
+                            {
+                                來源 = $"{來源名稱}";
+                            }
+                            else
+                            {
+                                來源 = $"{來源};{來源名稱}";
+                            }
+                        }
+                        value[(int)enum_藥品過消耗帳_匯出.來源] = 來源;
+                    }
+                }
+                for (int i = 0; i < list_匯出資料_住院.Count; i++)
+                {
+                    object[] value = list_匯出資料_住院[i];
+                    int temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                    value[(int)enum_藥品過消耗帳_匯出.消耗量] = (temp * -1).ToString();
+                }
+
+                Console.WriteLine($"共有 門診<{list_匯出資料_門診.Count}>筆資料");
+                Console.WriteLine($"共有 急診<{list_匯出資料_急診.Count}>筆資料");
+                Console.WriteLine($"共有 住院<{list_匯出資料_住院.Count}>筆資料");
+
+                if (saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    string filepath = Basic.FileIO.GetFilePath(saveFileDialog_SaveExcel.FileName);
+                    Basic.CSVHelper.SaveFile(list_匯出資料_門診.ToDataTable(new enum_藥品過消耗帳_匯出()), $"{filepath}//{st_datetime.ToDateTinyString()}-{end_datetime.ToDateTinyString()}(門診).csv", ',');
+                    Basic.CSVHelper.SaveFile(list_匯出資料_急診.ToDataTable(new enum_藥品過消耗帳_匯出()), $"{filepath}//{st_datetime.ToDateTinyString()}-{end_datetime.ToDateTinyString()}(急診).csv", ',');
+                    Basic.CSVHelper.SaveFile(list_匯出資料_住院.ToDataTable(new enum_藥品過消耗帳_匯出()), $"{filepath}//{st_datetime.ToDateTinyString()}-{end_datetime.ToDateTinyString()}(住院).csv", ',');
+                    MyMessageBox.ShowDialog("匯出完成");
+                }
+            }));
         }
         #endregion
         private class ICP_藥品過消耗帳 : IComparer<object[]>

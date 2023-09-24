@@ -93,6 +93,10 @@ namespace 智能藥庫系統_VM_Server_
             Parallel.ForEach(list_本地藥檔, value =>
             {
                 List<object[]> list_藥品資料_buf = new List<object[]>();
+                if (value[(int)enum_本地_藥品資料.藥品碼].ObjectToString() == "04606")
+                {
+
+                }
                 list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, value[(int)enum_本地_藥品資料.藥品碼].ObjectToString());
                 object[] src_value = LINQ.CopyRow(value, new enum_本地_藥品資料(), new enum_藥庫_藥品資料());
                 if (list_藥品資料_buf.Count > 0)

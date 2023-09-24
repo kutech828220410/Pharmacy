@@ -455,27 +455,12 @@ namespace 智能藥庫系統_VM_Server_
             int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
-            DateTime dateTime_temp = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 00);
-            dateTime_temp = dateTime_temp.AddMinutes(20);
-
-
             DateTime dateTime_start;
             DateTime dateTime_end;
 
             DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
+            DateTime dateTime_basic_end = dateTime_basic_start.AddDays(1);
             bool isholiday = false;
-            if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
-            {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
-                {
-                    if (Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
-                    {
-                        dateTime_basic_start = dateTime_basic_start.AddDays(-1);
-                    }
-                }
-
-            }
             while (true)
             {
                 if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
@@ -486,11 +471,10 @@ namespace 智能藥庫系統_VM_Server_
                 isholiday = true;
             }
 
-            if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
+            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
             {
+                dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
                 dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_start = dateTime_end.AddDays(-1);
-               
             }
             else
             {
@@ -555,7 +539,7 @@ namespace 智能藥庫系統_VM_Server_
             bool isholiday = false;
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_start))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
                 {
                     break;
                 }
@@ -576,7 +560,7 @@ namespace 智能藥庫系統_VM_Server_
 
             while (true)
             {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic_end))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
                 {
                     break;
                 }

@@ -214,7 +214,7 @@ namespace 智能藥庫系統_VM_Server_
             for (int i = 0; i < list_value.Count; i++)
             {
                 string Code = list_value[i][(int)enum_本地_藥品資料.藥品碼].ObjectToString();
-                if (Code == "16707")
+                if (Code == "04606")
                 {
 
                 }
