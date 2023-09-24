@@ -15,7 +15,7 @@
     <ROW Property="ProductCode" Value="1028:{5C6AD2C4-09DF-450D-A430-6E896E66BDBE} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1028"/>
     <ROW Property="ProductName" Value="智能藥庫系統 Ver[|ProductVersion]"/>
-    <ROW Property="ProductVersion" Value="1.0.51.6" Type="32" TargetFile="exe"/>
+    <ROW Property="ProductVersion" Value="1.0.51.7" Type="32" TargetFile="exe"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{DD530B82-8A1C-4702-89C3-1D317BE8BDF9}"/>
