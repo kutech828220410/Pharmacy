@@ -33,6 +33,15 @@ namespace 智能藥庫系統
         誤差量,
         誤差金額
     }
+    public class class_MedPrice
+    {
+        public string 藥品碼 { get; set; }
+        public string 售價 { get; set; }
+        public string 成本價 { get; set; }
+        public string 最近一次售價 { get; set; }
+        public string 最近一次成本價 { get; set; }
+
+    }
 
     public partial class Form1 : Form
     {
@@ -46,6 +55,8 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_盤點合併_計算庫存差異量.MouseDownEvent += PlC_RJ_Button_盤點合併_計算庫存差異量_MouseDownEvent;
             this.plC_RJ_Button_盤點合併_計算誤差量.MouseDownEvent += PlC_RJ_Button_盤點合併_計算誤差量_MouseDownEvent;
             this.plC_RJ_Button_盤點合併_匯出Excel.MouseDownEvent += PlC_RJ_Button_盤點合併_匯出Excel_MouseDownEvent;
+            this.plC_RJ_Button_盤點合併_載入單價.MouseDownEvent += PlC_RJ_Button_盤點合併_載入單價_MouseDownEvent;
+            this.plC_RJ_Button_盤點合併_計算消耗量.MouseDownEvent += PlC_RJ_Button_盤點合併_計算消耗量_MouseDownEvent;
 
             Table table = new Table("");
             table.AddColumnList("藥碼", Table.StringType.VARCHAR, Table.IndexType.None);
@@ -82,12 +93,42 @@ namespace 智能藥庫系統
             plC_UI_Init.Add_Method(sub_Program_盤點合併);
         }
 
-  
+    
+
         private void sub_Program_盤點合併()
         {
 
         }
         #region Event
+        private void PlC_RJ_Button_盤點合併_計算消耗量_MouseDownEvent(MouseEventArgs mevent)
+        {
+    
+            DateTime dateTime_st = rJ_DatePicker_盤點合併_計算庫存差異量.Value;
+    
+            dateTime_st = new DateTime(dateTime_st.Year, 8, 25, 00, 00, 00);
+            DateTime dateTime_end = rJ_DatePicker_盤點合併_計算庫存差異量.Value;
+            dateTime_end = new DateTime(dateTime_end.Year, 10, 27, 23, 59, 59);
+            List<object[]> list_藥品消耗帳 = Function_藥品過消耗帳_取得所有過帳明細(dateTime_st, dateTime_end);
+            List<object[]> list_藥品消耗帳_buf = new List<object[]>();
+            List<object[]> list_value = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                list_藥品消耗帳_buf = list_藥品消耗帳.GetRows((int)enum_藥品過消耗帳.藥品碼, 藥碼);
+                list_value[i][(int)enum_盤點定盤_Excel.消耗量] = "0";
+                if (list_藥品消耗帳_buf.Count > 0)
+                {
+                    int temp = 0;
+                    for (int k = 0; k < list_藥品消耗帳_buf.Count; k++)
+                    {
+                        temp += list_藥品消耗帳_buf[k][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    }
+                    list_value[i][(int)enum_盤點定盤_Excel.消耗量] = (temp * -1).ToString();
+                }
+            }
+            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value);
+            MyMessageBox.ShowDialog("完成!");
+        }
         private void PlC_RJ_Button_盤點合併_上傳Excel_MouseDownEvent(MouseEventArgs mevent)
         {
             DialogResult dialogResult = DialogResult.None;
@@ -95,6 +136,7 @@ namespace 智能藥庫系統
             {
                 dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
             }));
+            if (dialogResult != DialogResult.OK) return;
             DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
             dataTable = dataTable.ReorderTable(new enum_盤點定盤_Excel());
             if (dataTable == null)
@@ -107,6 +149,32 @@ namespace 智能藥庫系統
 
             }
             sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value_load);
+        }
+        private void PlC_RJ_Button_盤點合併_載入單價_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DialogResult dialogResult = DialogResult.None;
+            this.Invoke(new Action(delegate
+            {
+                dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
+            }));
+            if (dialogResult != DialogResult.OK) return;
+
+            string jsonstr = MyFileStream.LoadFileAllText($"{this.openFileDialog_LoadExcel.FileName}");
+            List<class_MedPrice> class_MedPrices = jsonstr.JsonDeserializet<List<class_MedPrice>>();
+            List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+            List<object[]> list_value = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                class_MedPrices_buf = (from temp in class_MedPrices
+                                       where temp.藥品碼 == 藥碼
+                                       select temp).ToList();
+                if(class_MedPrices_buf.Count > 0)
+                {
+                    list_value[i][(int)enum_盤點定盤_Excel.單價] = class_MedPrices_buf[0].成本價;
+                }
+            }
+            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value);
         }
         private void PlC_RJ_Button_盤點合併_庫存帶入_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -157,6 +225,8 @@ namespace 智能藥庫系統
 
                 }
             }));
+            MyMessageBox.ShowDialog("完成!");
+            
         }
         private void PlC_RJ_Button_盤點合併_計算誤差量_MouseDownEvent(MouseEventArgs mevent)
         {
