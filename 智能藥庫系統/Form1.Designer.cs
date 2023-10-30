@@ -31665,7 +31665,7 @@
             this.rfiD_FX600_UI.Size = new System.Drawing.Size(373, 158);
             this.rfiD_FX600_UI.TabIndex = 25;
             this.rfiD_FX600_UI.從站數量 = 3;
-            this.rfiD_FX600_UI.掃描速度 = 1;
+            this.rfiD_FX600_UI.掃描速度 = 100;
             this.rfiD_FX600_UI.是否自動通訊 = true;
             // 
             // lowerMachine_Panel1
@@ -31685,7 +31685,7 @@
             this.plC_UI_Init.TabIndex = 3;
             this.plC_UI_Init.光道視覺元件初始化 = false;
             this.plC_UI_Init.全螢幕顯示 = false;
-            this.plC_UI_Init.掃描速度 = 1;
+            this.plC_UI_Init.掃描速度 = 100;
             this.plC_UI_Init.起始畫面標題內容 = "鴻森整合機電有限公司";
             this.plC_UI_Init.起始畫面標題字體 = new System.Drawing.Font("標楷體", 20F, System.Drawing.FontStyle.Bold);
             this.plC_UI_Init.起始畫面背景 = ((System.Drawing.Image)(resources.GetObject("plC_UI_Init.起始畫面背景")));

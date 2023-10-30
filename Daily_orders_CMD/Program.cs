@@ -222,6 +222,7 @@ namespace Daily_orders_CMD
 
         static bool 送出線上訂單()
         {
+            if (IsHspitalHolidays(DateTime.Now)) return true;
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
             string serverfilepath = @"C:\MIS\DG\";
@@ -247,6 +248,7 @@ namespace Daily_orders_CMD
                 string 藥品碼 = aPI_OrderClass.Result[i].code;
                 string 數量 = aPI_OrderClass.Result[i].value;
                 string 訂購日期 = DateTime.Now.ToDateString();
+       
                 string text = Function_藥庫_每日訂單_已訂購字串轉換(藥品碼, 數量, 訂購日期);
                 if (數量.StringToInt32() <= 0) continue;
                 list_texts.Add(text);
@@ -323,15 +325,17 @@ namespace Daily_orders_CMD
             int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
-            DateTime dateTime_temp = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, hour, min, 00);
+            DateTime dateNow =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+            //dateNow = new DateTime(DateTime.Now.Year,10,1, 11, 50, 00);
+            DateTime dateTime_temp = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, hour, min, 00);
             dateTime_temp = dateTime_temp.AddMinutes(20);
 
 
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = DateTime.Now.AddDays(1);
+            DateTime dateTime_basic_start = dateNow;
+            DateTime dateTime_basic_end = dateNow.AddDays(1);
             bool isholiday = false;
             if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
             {
