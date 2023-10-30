@@ -67,7 +67,7 @@ namespace 智能藥庫系統
                 dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
             }));
             DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
-            dataTable = dataTable.ReorderTable(new enum_盤點管理_盤點表());
+            dataTable = dataTable.ReorderTable(new enum_盤點定盤_Excel());
             if (dataTable == null)
             {
                 return;
@@ -75,10 +75,7 @@ namespace 智能藥庫系統
             List<object[]> list_value_load = dataTable.DataTableToRowList();
             for (int i = 0; i < list_value_load.Count; i++)
             {
-                int 庫存量 = list_value_load[i][(int)enum_盤點管理_盤點表.庫存量].StringToInt32();
-                int 盤點量 = list_value_load[i][(int)enum_盤點管理_盤點表.盤點量].StringToInt32();
-                int 差異量 = 盤點量 - 庫存量;
-                list_value_load[i][(int)enum_盤點管理_盤點表.差異量] = 差異量;
+              
             }
             this.Value = list_value_load;
             sqL_DataGridView_盤點表.RefreshGrid(list_value_load);

@@ -16,16 +16,24 @@ using HIS_DB_Lib;
 
 namespace 智能藥庫系統
 {
-    public enum enum_盤點管理_盤點表
+    public enum enum_盤點定盤_Excel
     {
         藥碼,
+        料號,
         藥名,
-        中文名稱,
         單位,
+        單價,
         庫存量,
+        庫存金額,
         盤點量,
-        差異量
+        庫存差異量,
+        異動後結存量,
+        消耗量,
+        結存金額,
+        誤差量,
+        誤差金額
     }
+
     public partial class Form1 : Form
     {
      
@@ -34,15 +42,47 @@ namespace 智能藥庫系統
         private void sub_Program_盤點合併_Init()
         {
             this.plC_RJ_Button_盤點合併_上傳Excel.MouseDownEvent += PlC_RJ_Button_盤點合併_上傳Excel_MouseDownEvent;
-            this.plC_RJ_Button_盤點合併_合併盤點單.MouseDownEvent += PlC_RJ_Button_盤點合併_合併盤點單_MouseDownEvent;
-            this.plC_RJ_Button_盤點合併_合併處方量.MouseDownEvent += PlC_RJ_Button_盤點合併_合併處方量_MouseDownEvent;
+            this.plC_RJ_Button_盤點合併_庫存帶入.MouseDownEvent += PlC_RJ_Button_盤點合併_庫存帶入_MouseDownEvent;
+            this.plC_RJ_Button_盤點合併_計算庫存差異量.MouseDownEvent += PlC_RJ_Button_盤點合併_計算庫存差異量_MouseDownEvent;
+            this.plC_RJ_Button_盤點合併_計算誤差量.MouseDownEvent += PlC_RJ_Button_盤點合併_計算誤差量_MouseDownEvent;
             this.plC_RJ_Button_盤點合併_匯出Excel.MouseDownEvent += PlC_RJ_Button_盤點合併_匯出Excel_MouseDownEvent;
-            this.sqL_DataGridView_盤點合併_盤點表.Init();
+
+            Table table = new Table("");
+            table.AddColumnList("藥碼", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("料號", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("藥名", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("單位", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("單價", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("庫存量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("庫存金額", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("盤點量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("庫存差異量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("異動後結存量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("消耗量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("結存金額", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("誤差量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("誤差金額", Table.StringType.VARCHAR, Table.IndexType.None);
+            this.sqL_DataGridView_盤點合併_盤點表.Init(table);
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnVisible(false, new enum_盤點定盤_Excel().GetEnumNames());
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "藥碼");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, "藥名");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "單位");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "單價");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "庫存量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "庫存金額");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "盤點量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "庫存差異量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "異動後結存量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "消耗量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "結存金額");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "誤差量");
+            this.sqL_DataGridView_盤點合併_盤點表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "誤差金額");
+
+
             plC_UI_Init.Add_Method(sub_Program_盤點合併);
         }
 
- 
-
+  
         private void sub_Program_盤點合併()
         {
 
@@ -56,110 +96,56 @@ namespace 智能藥庫系統
                 dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
             }));
             DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
+            dataTable = dataTable.ReorderTable(new enum_盤點定盤_Excel());
             if (dataTable == null)
             {
                 return;
             }
-            dataTable = dataTable.ReorderTable(new enum_盤點管理_盤點表());
-           
             List<object[]> list_value_load = dataTable.DataTableToRowList();
-            for(int i = 0; i < list_value_load.Count; i++)
+            for (int i = 0; i < list_value_load.Count; i++)
             {
-                int 庫存量 = list_value_load[i][(int)enum_盤點管理_盤點表.庫存量].StringToInt32();
-                int 盤點量 = list_value_load[i][(int)enum_盤點管理_盤點表.盤點量].StringToInt32();
-                int 差異量 = 盤點量 - 庫存量;
-                list_value_load[i][(int)enum_盤點管理_盤點表.差異量] = 差異量;
+
             }
-         
             sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value_load);
         }
-        private void PlC_RJ_Button_盤點合併_合併盤點單_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_盤點合併_庫存帶入_MouseDownEvent(MouseEventArgs mevent)
         {
-            DialogResult dialogResult = DialogResult.None;
-            List<object[]> list_讀取盤點單 = new List<object[]>();
-            List<object[]> list_盤點單 = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
-            List<object[]> list_盤點單_buf = new List<object[]>();
-            List<object[]> list_盤點單_result = new List<object[]>();
-            this.Invoke(new Action(delegate
+            string 庫別 = "";
+            this.Invoke(new Action(delegate 
             {
-                Dialog_合併盤點單 dialog_合併盤點單 = new Dialog_合併盤點單();
-                dialogResult = dialog_合併盤點單.ShowDialog();
-                list_讀取盤點單 = dialog_合併盤點單.Value;
+                庫別 = comboBox_盤點合併_庫別選擇.Text;
             }));
-            for(int i = 0; i < list_讀取盤點單.Count; i++)
+            if(庫別 != "藥庫" && 庫別 != "藥局")
             {
-                string 藥碼 = list_讀取盤點單[i][(int)enum_盤點管理_盤點表.藥碼].ObjectToString();
-                list_盤點單_buf = list_盤點單.GetRows((int)enum_盤點管理_盤點表.藥碼, 藥碼);
-                if (list_盤點單_buf.Count == 0)
+                MyMessageBox.ShowDialog("請選擇庫別!");
+                return;
+            }
+            Function_從SQL取得儲位到本地資料();
+            List<object[]> list_value = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                if (庫別 == "藥庫")
                 {
-                    int 庫存量 = list_讀取盤點單[i][(int)enum_盤點管理_盤點表.庫存量].StringToInt32();
-                    int 盤點量 = list_讀取盤點單[i][(int)enum_盤點管理_盤點表.盤點量].StringToInt32();
-                    int 差異量 = 盤點量 - 庫存量;
-                    list_讀取盤點單[i][(int)enum_盤點管理_盤點表.庫存量] = 庫存量;
-                    list_讀取盤點單[i][(int)enum_盤點管理_盤點表.盤點量] = 盤點量;
-                    list_讀取盤點單[i][(int)enum_盤點管理_盤點表.差異量] = 差異量;
-                    list_盤點單.Add(list_讀取盤點單[i]);
-                }
-                else
-                {
-                    if(藥碼 == "50090")
+                    List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
+                    if(deviceBasics.Count > 0)
                     {
-
+                        list_value[i][(int)enum_盤點定盤_Excel.庫存量] = deviceBasics[0].Inventory;
                     }
-                    int 庫存量 = list_盤點單_buf[0][(int)enum_盤點管理_盤點表.庫存量].StringToInt32();
-                    int 盤點量 = list_盤點單_buf[0][(int)enum_盤點管理_盤點表.盤點量].StringToInt32() + list_讀取盤點單[i][(int)enum_盤點管理_盤點表.盤點量].StringToInt32();
-                    int 差異量 = 盤點量 - 庫存量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.庫存量] = 庫存量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.盤點量] = 盤點量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.差異量] = 差異量;
                 }
-
-            }
-            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_盤點單);
-        }
-        private void PlC_RJ_Button_盤點合併_合併處方量_MouseDownEvent(MouseEventArgs mevent)
-        {
-            DialogResult dialogResult = DialogResult.None;
-            List<object[]> list_處方量 = new List<object[]>();
-            List<object[]> list_盤點單 = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
-            List<object[]> list_盤點單_buf = new List<object[]>();
-            this.Invoke(new Action(delegate
-            {
-                Dialog_盤點處方量 dialog_盤點處方量 = new Dialog_盤點處方量();
-                dialogResult = dialog_盤點處方量.ShowDialog();
-                list_處方量 = dialog_盤點處方量.Value;
-            }));
-            for (int i = 0; i < list_處方量.Count; i++)
-            {
-                string 藥碼 = list_處方量[i][(int)enum_盤點處方量.藥碼].ObjectToString();
-                list_盤點單_buf = list_盤點單.GetRows((int)enum_盤點管理_盤點表.藥碼, 藥碼);
-                if (list_盤點單_buf.Count == 0)
+                else if (庫別 == "藥局")
                 {
-                    object[] value = new object[new enum_盤點管理_盤點表().GetLength()];
-                    int 處方量 = list_處方量[i][(int)enum_盤點處方量.處方量].StringToInt32();
-                    int 庫存量 = - 處方量;
-                    int 盤點量 = 0;
-                    int 差異量 = 盤點量 - 庫存量;
-                    value[(int)enum_盤點管理_盤點表.藥碼] = 藥碼;
-                    value[(int)enum_盤點管理_盤點表.庫存量] = 庫存量;
-                    value[(int)enum_盤點管理_盤點表.盤點量] = 盤點量;
-                    value[(int)enum_盤點管理_盤點表.差異量] = 差異量;
-                    list_盤點單.Add(value);
+                    List<DeviceBasic> deviceBasics = this.List_藥局_DeviceBasic.SortByCode(藥碼);
+                    if (deviceBasics.Count > 0)
+                    {
+                        list_value[i][(int)enum_盤點定盤_Excel.庫存量] = deviceBasics[0].Inventory;
+                    }
                 }
-                else
-                {
-                    int 處方量 = list_處方量[i][(int)enum_盤點處方量.處方量].StringToInt32();
-                    int 庫存量 = list_盤點單_buf[0][(int)enum_盤點管理_盤點表.庫存量].StringToInt32() - 處方量;
-                    int 盤點量 = list_盤點單_buf[0][(int)enum_盤點管理_盤點表.盤點量].StringToInt32();
-                    int 差異量 = 盤點量 - 庫存量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.庫存量] = 庫存量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.盤點量] = 盤點量;
-                    list_盤點單_buf[0][(int)enum_盤點管理_盤點表.差異量] = 差異量;
-                }
-
             }
-            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_盤點單);
+            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value);
+            MyMessageBox.ShowDialog("完成!");
         }
+   
         private void PlC_RJ_Button_盤點合併_匯出Excel_MouseDownEvent(MouseEventArgs mevent)
         {
             DataTable dataTable = this.sqL_DataGridView_盤點合併_盤點表.GetDataTable();
@@ -171,6 +157,48 @@ namespace 智能藥庫系統
 
                 }
             }));
+        }
+        private void PlC_RJ_Button_盤點合併_計算誤差量_MouseDownEvent(MouseEventArgs mevent)
+        {
+
+        }
+        private void PlC_RJ_Button_盤點合併_計算庫存差異量_MouseDownEvent(MouseEventArgs mevent)
+        {
+            string 庫別 = "";
+            this.Invoke(new Action(delegate
+            {
+                庫別 = comboBox_盤點合併_庫別選擇.Text;
+            }));
+            if (庫別 != "藥庫" && 庫別 != "藥局")
+            {
+                MyMessageBox.ShowDialog("請選擇庫別!");
+                return;
+            }
+            DateTime dateTime_st = rJ_DatePicker_盤點合併_計算庫存差異量.Value;
+            dateTime_st = new DateTime(dateTime_st.Year, dateTime_st.Month, dateTime_st.Day, 17, 00, 00);
+            DateTime dateTime_end = rJ_DatePicker_盤點合併_計算庫存差異量.Value;
+            dateTime_end = new DateTime(dateTime_st.Year, dateTime_st.Month, dateTime_st.Day, 23, 59, 59);
+            List<object[]> list_交易紀錄 = sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.開方時間, dateTime_st, dateTime_end, false);
+            List<object[]> list_交易紀錄_buf = new List<object[]>();
+            List<object[]> list_value = this.sqL_DataGridView_盤點合併_盤點表.GetAllRows();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                list_交易紀錄_buf = list_交易紀錄.GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼);
+                list_交易紀錄_buf = list_交易紀錄_buf.GetRows((int)enum_交易記錄查詢資料.庫別, 庫別);
+                list_value[i][(int)enum_盤點定盤_Excel.庫存差異量] = "0";
+                if (list_交易紀錄_buf.Count > 0)
+                {
+                    int temp = 0;
+                    for(int  k = 0; k < list_交易紀錄_buf.Count; k++)
+                    {
+                        temp += list_交易紀錄_buf[k][(int)enum_交易記錄查詢資料.交易量].StringToInt32();
+                    }
+                    list_value[i][(int)enum_盤點定盤_Excel.庫存差異量] = temp.ToString();
+                }
+            }
+            this.sqL_DataGridView_盤點合併_盤點表.RefreshGrid(list_value);
+            MyMessageBox.ShowDialog("完成!");
         }
         #endregion
     }
