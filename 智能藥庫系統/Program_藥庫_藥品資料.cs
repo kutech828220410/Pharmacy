@@ -27,10 +27,8 @@ namespace 智能藥庫系統
         }
         public enum enum_藥庫_藥品資料_匯出
         {
-            藥品碼,
-            中文名稱,
-            藥品名稱,
-            藥品學名,
+            藥碼,
+            藥名,
             總庫存,
             包裝單位,
             包裝數量,
@@ -39,17 +37,16 @@ namespace 智能藥庫系統
         }
         public enum enum_藥庫_藥品資料_匯入
         {
-            藥品碼,
+            藥碼,
             基準量,
-            安全庫存,
+            安全量,
             包裝數量,
         }
         public enum enum_藥庫_藥品資料_匯入_安全基準量
         {
-            藥品碼,
+            藥碼,
             基準量,
-            安全庫存,
-
+            安全量,
         }
   
         public enum ContextMenuStrip_藥庫_藥品資料
@@ -249,7 +246,7 @@ namespace 智能藥庫系統
                 for (int i = 0; i < list_LoadValue.Count; i++)
                 {
                     object[] value_load = list_LoadValue[i];
-                    list_SQL_Value_buf = list_SQL_Value.GetRows((int)enum_藥庫_藥品資料.藥品碼, value_load[(int)enum_藥庫_藥品資料_匯入.藥品碼].ObjectToString());
+                    list_SQL_Value_buf = list_SQL_Value.GetRows((int)enum_藥庫_藥品資料.藥品碼, value_load[(int)enum_藥庫_藥品資料_匯入.藥碼].ObjectToString());
                     if (list_SQL_Value_buf.Count > 0)
                     {
                         object[] value_SQL = list_SQL_Value_buf[0];
@@ -615,7 +612,7 @@ namespace 智能藥庫系統
                     {
                         CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
-                    else if (Extension == ".xls")
+                    else if (Extension == ".xlsx")
                     {
                         MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
@@ -951,33 +948,25 @@ namespace 智能藥庫系統
                         return;
                     }
                     List<object[]> list_LoadValue = datatable_buf.DataTableToRowList();
-
-                    List<object[]> list_SQL_Value = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-                    List<object[]> list_Add = new List<object[]>();
-                    List<object[]> list_Delete_ColumnName = new List<object[]>();
-                    List<object[]> list_Delete_SerchValue = new List<object[]>();
-                    List<string> list_Replace_SerchValue = new List<string>();
-                    List<object[]> list_Replace_Value = new List<object[]>();
-                    List<object[]> list_SQL_Value_buf = new List<object[]>();
-
-                    for (int i = 0; i < list_LoadValue.Count; i++)
+                    List<object[]> list_LoadValue_buf = new List<object[]>();
+                    List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+                    List<object[]> list_藥品資料_replace = new List<object[]>();
+                    for (int i = 0; i < list_藥品資料.Count; i++)
                     {
-                        object[] value_load = list_LoadValue[i];
-                        list_SQL_Value_buf = list_SQL_Value.GetRows((int)enum_藥庫_藥品資料.藥品碼, value_load[(int)enum_藥庫_藥品資料_匯入_安全基準量.藥品碼].ObjectToString());
-                        if (list_SQL_Value_buf.Count > 0)
+                        string 藥品碼 = list_藥品資料[i][(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+                        list_LoadValue_buf = list_LoadValue.GetRows((int)enum_藥庫_藥品資料_匯入_安全基準量.藥碼, 藥品碼);
+                        if(list_LoadValue_buf.Count > 0)
                         {
-                            object[] value_SQL = list_SQL_Value_buf[0];
-                            value_load = value_load.CopyRow(new enum_藥庫_藥品資料_匯入_安全基準量(), new enum_藥庫_藥品資料());
-                            value_SQL.CopyRow(ref value_load, new enum_藥庫_藥品資料(), new enum_藥庫_藥品資料(), (int)enum_藥庫_藥品資料.總庫存, (int)enum_藥庫_藥品資料.藥庫庫存, (int)enum_藥庫_藥品資料.藥局庫存, (int)enum_藥庫_藥品資料.安全庫存, (int)enum_藥庫_藥品資料.基準量, (int)enum_藥庫_藥品資料.藥品條碼1, (int)enum_藥庫_藥品資料.藥品條碼2);
-                            bool flag_Equal = value_load.IsEqual(value_SQL);
-                            if (!flag_Equal)
-                            {
-                                list_Replace_SerchValue.Add(value_load[(int)enum_藥庫_藥品資料.GUID].ObjectToString());
-                                list_Replace_Value.Add(value_load);
-                            }
+                            list_藥品資料[i][(int)enum_藥庫_藥品資料.安全庫存] = list_LoadValue_buf[0][(int)enum_藥庫_藥品資料_匯入_安全基準量.安全量].ObjectToString();
+                            list_藥品資料[i][(int)enum_藥庫_藥品資料.基準量] = list_LoadValue_buf[0][(int)enum_藥庫_藥品資料_匯入_安全基準量.基準量].ObjectToString();
+                            list_藥品資料_replace.Add(list_藥品資料[i]);
                         }
                     }
-                    this.sqL_DataGridView_藥庫_藥品資料.SQL_ReplaceExtra(enum_藥庫_藥品資料.GUID.GetEnumName(), list_Replace_SerchValue, list_Replace_Value, true);
+                    this.sqL_DataGridView_藥庫_藥品資料.SQL_ReplaceExtra(list_藥品資料_replace, false);
+                    this.sqL_DataGridView_藥庫_藥品資料.ReplaceExtra(list_藥品資料_replace, true);
+
+                    MyMessageBox.ShowDialog($"匯入藥品安全量及基準量成功!共修改<{list_藥品資料_replace.Count}>筆資料");
+               
                 }
             }));
         }

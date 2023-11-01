@@ -1208,6 +1208,8 @@
             this.sqL_DataGridView_定盤_盤點明細 = new SQLUI.SQL_DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.rJ_GroupBox10 = new MyUI.RJ_GroupBox();
+            this.plC_RJ_Button_盤點合併_計算消耗量 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_盤點合併_載入單價 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點合併_計算誤差量 = new MyUI.PLC_RJ_Button();
             this.rJ_DatePicker_盤點合併_計算庫存差異量 = new MyUI.RJ_DatePicker();
             this.plC_RJ_Button_盤點合併_計算庫存差異量 = new MyUI.PLC_RJ_Button();
@@ -1297,8 +1299,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_盤點合併_載入單價 = new MyUI.PLC_RJ_Button();
-            this.plC_RJ_Button_盤點合併_計算消耗量 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -30868,6 +30868,92 @@
             this.rJ_GroupBox10.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_GroupBox10.TitleTexts = "盤點表";
             // 
+            // plC_RJ_Button_盤點合併_計算消耗量
+            // 
+            this.plC_RJ_Button_盤點合併_計算消耗量.AutoResetState = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Bool = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_盤點合併_計算消耗量.BorderRadius = 5;
+            this.plC_RJ_Button_盤點合併_計算消耗量.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_計算消耗量.but_press = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點合併_計算消耗量.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_計算消耗量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_計算消耗量.GUID = "";
+            this.plC_RJ_Button_盤點合併_計算消耗量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Location = new System.Drawing.Point(898, 799);
+            this.plC_RJ_Button_盤點合併_計算消耗量.Name = "plC_RJ_Button_盤點合併_計算消耗量";
+            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字內容 = "計算消耗量";
+            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_計算消耗量.ON_BorderSize = 5;
+            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字內容 = "計算消耗量";
+            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點合併_計算消耗量.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Size = new System.Drawing.Size(132, 59);
+            this.plC_RJ_Button_盤點合併_計算消耗量.State = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.TabIndex = 231;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Text = "計算消耗量";
+            this.plC_RJ_Button_盤點合併_計算消耗量.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_計算消耗量.Texts = "計算消耗量";
+            this.plC_RJ_Button_盤點合併_計算消耗量.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.字型鎖住 = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點合併_計算消耗量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點合併_計算消耗量.文字鎖住 = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.音效 = true;
+            this.plC_RJ_Button_盤點合併_計算消耗量.顯示 = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.顯示狀態 = false;
+            // 
+            // plC_RJ_Button_盤點合併_載入單價
+            // 
+            this.plC_RJ_Button_盤點合併_載入單價.AutoResetState = false;
+            this.plC_RJ_Button_盤點合併_載入單價.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_盤點合併_載入單價.Bool = false;
+            this.plC_RJ_Button_盤點合併_載入單價.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_盤點合併_載入單價.BorderRadius = 5;
+            this.plC_RJ_Button_盤點合併_載入單價.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_載入單價.but_press = false;
+            this.plC_RJ_Button_盤點合併_載入單價.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點合併_載入單價.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_載入單價.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點合併_載入單價.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入單價.GUID = "";
+            this.plC_RJ_Button_盤點合併_載入單價.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點合併_載入單價.Location = new System.Drawing.Point(898, 735);
+            this.plC_RJ_Button_盤點合併_載入單價.Name = "plC_RJ_Button_盤點合併_載入單價";
+            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字內容 = "載入單價";
+            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_載入單價.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_載入單價.ON_BorderSize = 5;
+            this.plC_RJ_Button_盤點合併_載入單價.ON_文字內容 = "載入單價";
+            this.plC_RJ_Button_盤點合併_載入單價.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入單價.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點合併_載入單價.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_載入單價.Size = new System.Drawing.Size(132, 59);
+            this.plC_RJ_Button_盤點合併_載入單價.State = false;
+            this.plC_RJ_Button_盤點合併_載入單價.TabIndex = 230;
+            this.plC_RJ_Button_盤點合併_載入單價.Text = "載入單價";
+            this.plC_RJ_Button_盤點合併_載入單價.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_載入單價.Texts = "載入單價";
+            this.plC_RJ_Button_盤點合併_載入單價.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點合併_載入單價.字型鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入單價.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點合併_載入單價.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點合併_載入單價.文字鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入單價.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點合併_載入單價.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入單價.音效 = true;
+            this.plC_RJ_Button_盤點合併_載入單價.顯示 = false;
+            this.plC_RJ_Button_盤點合併_載入單價.顯示狀態 = false;
+            // 
             // plC_RJ_Button_盤點合併_計算誤差量
             // 
             this.plC_RJ_Button_盤點合併_計算誤差量.AutoResetState = false;
@@ -31826,7 +31912,7 @@
             this.tabPage7.BackColor = System.Drawing.Color.White;
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(475, 301);
+            this.tabPage7.Size = new System.Drawing.Size(1622, 858);
             this.tabPage7.TabIndex = 1;
             this.tabPage7.Text = "EPD266";
             // 
@@ -31835,7 +31921,7 @@
             this.tabPage8.BackColor = System.Drawing.Color.White;
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(475, 301);
+            this.tabPage8.Size = new System.Drawing.Size(1622, 858);
             this.tabPage8.TabIndex = 2;
             this.tabPage8.Text = "RowsLED";
             // 
@@ -31845,7 +31931,7 @@
             this.tabPage9.Controls.Add(this.rfiD_UI);
             this.tabPage9.Location = new System.Drawing.Point(4, 25);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(475, 301);
+            this.tabPage9.Size = new System.Drawing.Size(1622, 858);
             this.tabPage9.TabIndex = 3;
             this.tabPage9.Text = "RFID";
             // 
@@ -31867,7 +31953,7 @@
             this.rfiD_UI.RFID_Enable = "0";
             this.rfiD_UI.Server_IP_Adress = "0.0.0.0";
             this.rfiD_UI.Server_Port = "0";
-            this.rfiD_UI.Size = new System.Drawing.Size(475, 301);
+            this.rfiD_UI.Size = new System.Drawing.Size(1622, 858);
             this.rfiD_UI.SSID = "";
             this.rfiD_UI.Station = "0";
             this.rfiD_UI.Subnet = "0.0.0.0";
@@ -31883,7 +31969,7 @@
             this.tabPage10.Controls.Add(this.storageUI_WT32);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(475, 301);
+            this.tabPage10.Size = new System.Drawing.Size(1622, 858);
             this.tabPage10.TabIndex = 4;
             this.tabPage10.Text = "WT32";
             // 
@@ -31903,7 +31989,7 @@
             this.storageUI_WT32.Port = ((uint)(3306u));
             this.storageUI_WT32.Server_IP_Adress = "0.0.0.0";
             this.storageUI_WT32.Server_Port = "0";
-            this.storageUI_WT32.Size = new System.Drawing.Size(475, 301);
+            this.storageUI_WT32.Size = new System.Drawing.Size(1622, 858);
             this.storageUI_WT32.SSID = "";
             this.storageUI_WT32.Station = "0";
             this.storageUI_WT32.Subnet = "0.0.0.0";
@@ -32738,7 +32824,7 @@
             this.tabPage35.Location = new System.Drawing.Point(4, 22);
             this.tabPage35.Name = "tabPage35";
             this.tabPage35.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage35.Size = new System.Drawing.Size(475, 355);
+            this.tabPage35.Size = new System.Drawing.Size(1622, 912);
             this.tabPage35.TabIndex = 1;
             this.tabPage35.Text = "02";
             this.tabPage35.UseVisualStyleBackColor = true;
@@ -33082,7 +33168,7 @@
             // openFileDialog_LoadExcel
             // 
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
-            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xlsx)|*.xlsx|txt File (*.txt)|*.txt;";
+            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xlsx)|*.xlsx|Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
             // 
             // saveFileDialog_SaveExcel
             // 
@@ -33103,92 +33189,6 @@
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // plC_RJ_Button_盤點合併_載入單價
-            // 
-            this.plC_RJ_Button_盤點合併_載入單價.AutoResetState = false;
-            this.plC_RJ_Button_盤點合併_載入單價.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_盤點合併_載入單價.Bool = false;
-            this.plC_RJ_Button_盤點合併_載入單價.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_盤點合併_載入單價.BorderRadius = 5;
-            this.plC_RJ_Button_盤點合併_載入單價.BorderSize = 0;
-            this.plC_RJ_Button_盤點合併_載入單價.but_press = false;
-            this.plC_RJ_Button_盤點合併_載入單價.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_盤點合併_載入單價.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_盤點合併_載入單價.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_盤點合併_載入單價.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_載入單價.GUID = "";
-            this.plC_RJ_Button_盤點合併_載入單價.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_盤點合併_載入單價.Location = new System.Drawing.Point(898, 735);
-            this.plC_RJ_Button_盤點合併_載入單價.Name = "plC_RJ_Button_盤點合併_載入單價";
-            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字內容 = "載入單價";
-            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_載入單價.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_盤點合併_載入單價.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_盤點合併_載入單價.ON_BorderSize = 5;
-            this.plC_RJ_Button_盤點合併_載入單價.ON_文字內容 = "載入單價";
-            this.plC_RJ_Button_盤點合併_載入單價.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_載入單價.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_盤點合併_載入單價.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_盤點合併_載入單價.Size = new System.Drawing.Size(132, 59);
-            this.plC_RJ_Button_盤點合併_載入單價.State = false;
-            this.plC_RJ_Button_盤點合併_載入單價.TabIndex = 230;
-            this.plC_RJ_Button_盤點合併_載入單價.Text = "載入單價";
-            this.plC_RJ_Button_盤點合併_載入單價.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_盤點合併_載入單價.Texts = "載入單價";
-            this.plC_RJ_Button_盤點合併_載入單價.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_盤點合併_載入單價.字型鎖住 = false;
-            this.plC_RJ_Button_盤點合併_載入單價.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_盤點合併_載入單價.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_盤點合併_載入單價.文字鎖住 = false;
-            this.plC_RJ_Button_盤點合併_載入單價.讀取位元反向 = false;
-            this.plC_RJ_Button_盤點合併_載入單價.讀寫鎖住 = false;
-            this.plC_RJ_Button_盤點合併_載入單價.音效 = true;
-            this.plC_RJ_Button_盤點合併_載入單價.顯示 = false;
-            this.plC_RJ_Button_盤點合併_載入單價.顯示狀態 = false;
-            // 
-            // plC_RJ_Button_盤點合併_計算消耗量
-            // 
-            this.plC_RJ_Button_盤點合併_計算消耗量.AutoResetState = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Bool = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_盤點合併_計算消耗量.BorderRadius = 5;
-            this.plC_RJ_Button_盤點合併_計算消耗量.BorderSize = 0;
-            this.plC_RJ_Button_盤點合併_計算消耗量.but_press = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_盤點合併_計算消耗量.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_盤點合併_計算消耗量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_計算消耗量.GUID = "";
-            this.plC_RJ_Button_盤點合併_計算消耗量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Location = new System.Drawing.Point(898, 799);
-            this.plC_RJ_Button_盤點合併_計算消耗量.Name = "plC_RJ_Button_盤點合併_計算消耗量";
-            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字內容 = "計算消耗量";
-            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_盤點合併_計算消耗量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_盤點合併_計算消耗量.ON_BorderSize = 5;
-            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字內容 = "計算消耗量";
-            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_盤點合併_計算消耗量.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_盤點合併_計算消耗量.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Size = new System.Drawing.Size(132, 59);
-            this.plC_RJ_Button_盤點合併_計算消耗量.State = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.TabIndex = 231;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Text = "計算消耗量";
-            this.plC_RJ_Button_盤點合併_計算消耗量.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_盤點合併_計算消耗量.Texts = "計算消耗量";
-            this.plC_RJ_Button_盤點合併_計算消耗量.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.字型鎖住 = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_盤點合併_計算消耗量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_盤點合併_計算消耗量.文字鎖住 = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.讀取位元反向 = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.讀寫鎖住 = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.音效 = true;
-            this.plC_RJ_Button_盤點合併_計算消耗量.顯示 = false;
-            this.plC_RJ_Button_盤點合併_計算消耗量.顯示狀態 = false;
             // 
             // Form1
             // 
