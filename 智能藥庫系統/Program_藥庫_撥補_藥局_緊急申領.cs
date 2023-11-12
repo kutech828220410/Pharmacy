@@ -42,7 +42,7 @@ namespace 智能藥庫系統
         過帳完成,
         找無此藥品,
         備藥中,
-        撥發完成,
+        已列印,
     }
     enum enum_藥庫_撥補_藥局_緊急申領
     {
@@ -145,7 +145,7 @@ namespace 智能藥庫系統
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_過帳完成.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.過帳完成.GetEnumName()));
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_等待過帳.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.等待過帳.GetEnumName()));
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_未建立儲位.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.未建立儲位.GetEnumName()));
-            if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_撥發完成.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.撥發完成.GetEnumName()));
+            if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_已列印.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.已列印.GetEnumName()));
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_找無此藥品.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.找無此藥品.GetEnumName()));
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_庫存不足.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName()));
             if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_顯示設定_備藥中.Checked) RowsList_buf.LockAdd(RowsList.GetRows((int)enum_藥庫_撥補_藥局_緊急申領.狀態, enum_藥庫_撥補_藥局_緊急申領_狀態.備藥中.GetEnumName()));
@@ -166,7 +166,7 @@ namespace 智能藥庫系統
                 {
                     MyMessageBox.ShowDialog("未選取有效資料!");
                 }
-                if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Checked)
+                if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Checked || true)
                 {
                     List<object[]> list_value_buf = new List<object[]>();
                     List<object[]> list_交易紀錄_Add = new List<object[]>();
@@ -237,7 +237,7 @@ namespace 智能藥庫系統
                         list_儲位資料 = Function_取得異動儲位資訊從本地資料(藥品碼, 來源異動量);
                         if (list_儲位資料.Count == 0)
                         {
-                            list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.未建立儲位.GetEnumName();
+                            list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName();
                             continue;
                         }
                         //if ((來源結存量) < 0)
@@ -345,7 +345,12 @@ namespace 智能藥庫系統
                 {
                     for (int i = 0; i < list_value.Count; i++)
                     {
-                        list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.撥發完成.GetEnumName();
+                        string 狀態 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString();
+                        if (狀態 != enum_藥庫_撥補_藥局_緊急申領_狀態.過帳完成.GetEnumName()|| 狀態 != enum_藥庫_撥補_藥局_緊急申領_狀態.未建立儲位.GetEnumName()|| 狀態 != enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName())
+                        {
+                            list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.已列印.GetEnumName();
+                        }
+                       
                     }
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(list_value, false);
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.ReplaceExtra(list_value, true);
@@ -398,11 +403,7 @@ namespace 智能藥庫系統
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
-                if (狀態 == enum_藥庫_撥補_藥局_緊急申領_狀態.撥發完成.GetEnumName())
-                {
-                    this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Lime;
-                    this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
-                }
+      
             }
         }
       

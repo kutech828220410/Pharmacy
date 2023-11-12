@@ -128,6 +128,11 @@ namespace 智能藥庫系統
                     {
                         taskList.Add(Task.Run(() =>
                         {
+                            storages_buf[0].Code_Title = "藥碼";
+                            storages_buf[0].Name_Title = "藥名(學名)";
+                            storages_buf[0].ChineseName_Title = "中文名";
+                            storages_buf[0].Scientific_Name_Title = "商品名";
+                            storages_buf[0].StorageName_Title = "None";
                             this.storageUI_WT32.Set_DrawPannelJEPG(storages_buf[0]);
                         }));
                     }

@@ -132,13 +132,13 @@ namespace 智能藥庫系統
                 this.Function_戰情白板_即時公告(戰情白板_公告內容);
                 this.Function_戰情白板_藥品庫存量及安全量即時資訊();
 
-                rJ_ProgressBar_戰情白版_一般藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新一般藥品_結束延遲.TickTime;
+                rJ_ProgressBar_戰情白版_一般藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新一般藥品_結束延遲.GetTickTime();
                 if ((int)this.MyTimer_戰情白板_刷新一般藥品_結束延遲.GetTickTime() < rJ_ProgressBar_戰情白版_一般藥品刷新條.Maximum)
                 {
                     rJ_ProgressBar_戰情白版_一般藥品刷新條.Value = (int)this.MyTimer_戰情白板_刷新一般藥品_結束延遲.GetTickTime();
                 }
 
-                rJ_ProgressBar_戰情白版_自選藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新自選藥品_結束延遲.TickTime;
+                rJ_ProgressBar_戰情白版_自選藥品刷新條.Maximum = (int)MyTimer_戰情白板_刷新自選藥品_結束延遲.GetTickTime();
                 if ((int)this.MyTimer_戰情白板_刷新自選藥品_結束延遲.GetTickTime() < rJ_ProgressBar_戰情白版_自選藥品刷新條.Maximum)
                 {
                     rJ_ProgressBar_戰情白版_自選藥品刷新條.Value = (int)this.MyTimer_戰情白板_刷新自選藥品_結束延遲.GetTickTime();

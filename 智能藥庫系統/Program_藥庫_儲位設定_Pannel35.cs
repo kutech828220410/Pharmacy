@@ -267,6 +267,12 @@ namespace 智能藥庫系統
                 value[(int)enum_藥庫_儲位設定_Pannel35_儲位資料.藥品條碼1] = List_Pannel35_本地資料[i].GetValue(Device.ValueName.BarCode, Device.ValueType.Value).ObjectToString(); ;
                 value[(int)enum_藥庫_儲位設定_Pannel35_儲位資料.庫存] = List_Pannel35_本地資料[i].GetValue(Device.ValueName.庫存, Device.ValueType.Value).ObjectToString();
 
+                List_Pannel35_本地資料[i].Code_Title = "藥碼";
+                List_Pannel35_本地資料[i].Name_Title = "藥名(學名)";
+                List_Pannel35_本地資料[i].ChineseName_Title = "中文名";
+                List_Pannel35_本地資料[i].Scientific_Name_Title = "商品名";
+                List_Pannel35_本地資料[i].StorageName_Title = "None";
+
                 string Master_GUID = List_Pannel35_本地資料[i].Master_GUID;
 
                 list_區域儲位_buf = list_區域儲位.GetRows((int)enum_藥庫_儲位設定_區域儲位.GUID, Master_GUID);

@@ -21,42 +21,7 @@ namespace 智能藥庫系統
     public partial class Form1 : Form
     {
         private List<RJ_Lable[]> rJ_Lables_周邊設備_麻醉部ADC_抽屜狀態 = new List<RJ_Lable[]>();
-        private class m_returnData
-        {
-            private string result = "";
-            private int code = 0;
-            private List<class_儲位總庫存表> data = new List<class_儲位總庫存表>();
-
-            public string Result { get => result; set => result = value; }
-            public int Code { get => code; set => code = value; }
-            public List<class_儲位總庫存表> Data { get => data; set => data = value; }
-        }
-
-
-        public class class_儲位總庫存表
-        {
-            [JsonPropertyName("IP")]
-            public string IP { get; set; }
-            [JsonPropertyName("storage_name")]
-            public string 儲位名稱 { get; set; }
-            [JsonPropertyName("Code")]
-            public string 藥品碼 { get; set; }
-            [JsonPropertyName("Neme")]
-            public string 藥品名稱 { get; set; }
-            [JsonPropertyName("min_package")]
-            public string 最小包裝量 { get; set; }
-            [JsonPropertyName("package")]
-            public string 單位 { get; set; }
-            [JsonPropertyName("inventory")]
-            public string 庫存 { get; set; }
-            [JsonPropertyName("storage_type")]
-            public string 儲位型式 { get; set; }
-            [JsonPropertyName("max_inventory")]
-            public string 可放置盒數 { get; set; }
-            [JsonPropertyName("position")]
-            public string 位置 { get; set; }
-
-        }
+       
 
         private void sub_Program_周邊設備_麻醉部ADC_抽屜狀態_Init()
         {

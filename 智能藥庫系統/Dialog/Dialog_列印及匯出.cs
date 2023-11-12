@@ -79,7 +79,7 @@ namespace 智能藥庫系統
 
             for (int i = 0; i < list_value.Count; i++)
             {
-                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.撥發完成.GetEnumName();
+                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.已列印.GetEnumName();
             }
             this.sQL_DataGridView.SQL_ReplaceExtra(list_value, false);
             this.sQL_DataGridView.ReplaceExtra(list_value, true);

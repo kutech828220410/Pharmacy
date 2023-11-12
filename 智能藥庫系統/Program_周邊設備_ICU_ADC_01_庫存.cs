@@ -20,62 +20,62 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
-       
-       
 
-        private void sub_Program_周邊設備_麻醉部ADC_庫存_Init()
+
+
+        private void sub_Program_周邊設備_ICU_ADC_01_庫存_Init()
         {
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_API測試_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_顯示全部.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_顯示全部_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥碼搜尋_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥名搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥名搜尋_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_API測試_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_顯示全部.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_顯示全部_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥碼搜尋_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥名搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥名搜尋_MouseDownEvent;
 
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_API測試_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_顯示全部.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_顯示全部_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋_MouseDownEvent;
-            this.plC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_API測試_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_顯示全部.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_顯示全部_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼搜尋_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent;
 
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢.Init();
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.Init();
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent;
-            this.plC_UI_Init.Add_Method(sub_Program_周邊設備_麻醉部ADC_庫存);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_庫存查詢.Init();
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.Init();
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent;
+            this.plC_UI_Init.Add_Method(sub_Program_周邊設備_ICU_ADC_01_庫存);
         }
 
-      
 
-        private bool flag_Program_周邊設備_麻醉部ADC_庫存_Init = false;
-        private void sub_Program_周邊設備_麻醉部ADC_庫存()
-        { 
-            if (this.plC_ScreenPage_Main.PageText == "周邊設備" && this.plC_ScreenPage_周邊設備.PageText == "麻醉部ADC" && this.plC_ScreenPage_周邊設備_麻醉部ADC.PageText == "庫存")
+
+        private bool flag_Program_周邊設備_ICU_ADC_01_庫存_Init = false;
+        private void sub_Program_周邊設備_ICU_ADC_01_庫存()
+        {
+            if (this.plC_ScreenPage_Main.PageText == "周邊設備" && this.plC_ScreenPage_周邊設備.PageText == "ICU_ADC_01" && this.plC_ScreenPage_周邊設備_ICU_ADC_01.PageText == "庫存")
             {
-                if (!flag_Program_周邊設備_麻醉部ADC_庫存_Init)
+                if (!flag_Program_周邊設備_ICU_ADC_01_庫存_Init)
                 {
 
-                    flag_Program_周邊設備_麻醉部ADC_庫存_Init = true;
+                    flag_Program_周邊設備_ICU_ADC_01_庫存_Init = true;
                 }
             }
             else
             {
-                flag_Program_周邊設備_麻醉部ADC_庫存_Init = false;
+                flag_Program_周邊設備_ICU_ADC_01_庫存_Init = false;
             }
 
         }
 
         #region Function
-        private List<object[]> Function_周邊設備_麻醉部ADC_庫存_庫存查詢_取得資料()
+        private List<object[]> Function_周邊設備_ICU_ADC_01_庫存_庫存查詢_取得資料()
         {
             List<API_medicine_page_ADC> list_API_medicine_page_ADC = new List<API_medicine_page_ADC>();
             List<object[]> list_values = new List<object[]>();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            string result_medicine_page = Basic.Net.WEBApiGet("http://10.18.28.17/api/medicine_page");
+            string result_medicine_page = Basic.Net.WEBApiGet("http://10.18.28.61/api/medicine_page");
             list_API_medicine_page_ADC = result_medicine_page.JsonDeserializet<List<API_medicine_page_ADC>>();
 
 
-            string result = Basic.Net.WEBApiGet("http://10.18.28.17/api/medicine_page/storage_list");
+            string result = Basic.Net.WEBApiGet("http://10.18.28.61/api/medicine_page/storage_list");
             m_returnData m_returnData = result.JsonDeserializet<m_returnData>();
 
- 
+
             List<class_儲位總庫存表> class_儲位總庫存表_buf = new List<class_儲位總庫存表>();
             for (int i = 0; i < list_API_medicine_page_ADC.Count; i++)
             {
@@ -92,21 +92,21 @@ namespace 智能藥庫系統
                                     select temp).ToList();
                 for (int k = 0; k < class_儲位總庫存表_buf.Count; k++)
                 {
-                    庫存+= class_儲位總庫存表_buf[k].庫存.StringToInt32() * class_儲位總庫存表_buf[k].最小包裝量.StringToInt32();
+                    庫存 += class_儲位總庫存表_buf[k].庫存.StringToInt32() * class_儲位總庫存表_buf[k].最小包裝量.StringToInt32();
                 }
                 values[(int)enum_周邊設備_庫存_庫存查詢.庫存] = 庫存;
-               list_values.Add(values);
+                list_values.Add(values);
             }
 
             return list_values;
         }
-        private List<object[]> Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料()
+        private List<object[]> Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料()
         {
             List<API_trading_ADC> list_API_trading_ADC = new List<API_trading_ADC>();
             List<object[]> list_values = new List<object[]>();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            string result = Basic.Net.WEBApiGet("http://10.18.28.17/api/trading");
+            string result = Basic.Net.WEBApiGet("http://10.18.28.61/api/trading");
 
             list_API_trading_ADC = result.JsonDeserializet<List<API_trading_ADC>>();
             for (int i = 0; i < list_API_trading_ADC.Count; i++)
@@ -126,103 +126,103 @@ namespace 智能藥庫系統
             }
             //list_values.RemoveRow((int)enum_周邊設備_庫存_交易紀錄查詢.藥碼, "");
             //list_values.RemoveRow((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.實瓶繳回.GetEnumName());
-            list_values.Sort(new ICP_周邊設備_麻醉部ADC_庫存_交易記錄查詢());
+            list_values.Sort(new ICP_周邊設備_ICU_ADC_01_庫存_交易記錄查詢());
             return list_values;
         }
         #endregion
         #region Event
-        private void SqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        private void SqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
             List<object[]> list_value = new List<object[]>();
-            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_退藥.Checked)
+            if (checkBox_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_退藥.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.實瓶繳回.GetEnumName()));
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.空瓶繳回.GetEnumName()));
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.退藥回收.GetEnumName()));
             }
-            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_領藥.Checked)
+            if (checkBox_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_領藥.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.手輸領藥.GetEnumName()));
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.掃碼領藥.GetEnumName()));
 
             }
-            if (checkBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_入庫.Checked)
+            if (checkBox_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_入庫.Checked)
             {
                 list_value.LockAdd(RowsList.GetRows((int)enum_周邊設備_庫存_交易紀錄查詢.動作, enum_周邊設備_庫存_交易記錄查詢動作.入庫.GetEnumName()));
 
             }
-            list_value.Sort(new ICP_周邊設備_麻醉部ADC_庫存_交易記錄查詢());
-            for(int i = 0; i < list_value.Count; i++)
+            list_value.Sort(new ICP_周邊設備_ICU_ADC_01_庫存_交易記錄查詢());
+            for (int i = 0; i < list_value.Count; i++)
             {
-                if(list_value[i][(int)enum_周邊設備_庫存_交易紀錄查詢.交易量].ObjectToString().StringIsInt32())
+                if (list_value[i][(int)enum_周邊設備_庫存_交易紀錄查詢.交易量].ObjectToString().StringIsInt32())
                 {
                     list_value[i][(int)enum_周邊設備_庫存_交易紀錄查詢.交易量] = list_value[i][(int)enum_周邊設備_庫存_交易紀錄查詢.交易量].ObjectToString().StringToInt32() * -1;
                 }
             }
             RowsList = list_value;
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
         {
-            this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
+            this.Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料();
         }
 
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_周邊設備_麻醉部ADC_庫存_庫存查詢_取得資料();
+            List<object[]> list_value = this.Function_周邊設備_ICU_ADC_01_庫存_庫存查詢_取得資料();
 
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢.RefreshGrid(list_value);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_庫存查詢.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥碼搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥碼搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_周邊設備_麻醉部ADC_庫存_庫存查詢_取得資料();
-            string code = this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_庫存查詢_藥碼.Text;
+            List<object[]> list_value = this.Function_周邊設備_ICU_ADC_01_庫存_庫存查詢_取得資料();
+            string code = this.rJ_TextBox_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥碼.Text;
             if (code.StringIsEmpty()) return;
             list_value = list_value.GetRowsByLike((int)enum_周邊設備_庫存_庫存查詢.藥碼, code);
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢.RefreshGrid(list_value);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_庫存查詢.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_藥名搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥名搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_周邊設備_麻醉部ADC_庫存_庫存查詢_取得資料();
-            string name = this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_庫存查詢_藥名.Text;
+            List<object[]> list_value = this.Function_周邊設備_ICU_ADC_01_庫存_庫存查詢_取得資料();
+            string name = this.rJ_TextBox_周邊設備_ICU_ADC_01_庫存_庫存查詢_藥名.Text;
             if (name.StringIsEmpty()) return;
             list_value = list_value.GetRowsByLike((int)enum_周邊設備_庫存_庫存查詢.藥名, name);
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_庫存查詢.RefreshGrid(list_value);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_庫存查詢.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_庫存查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
         {
             List<API_medicine_page_ADC> list_API_medicine_page_ADC = new List<API_medicine_page_ADC>();
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
-            string result = Basic.Net.WEBApiGet("http://10.18.28.17//api/medicine_page");
+            string result = Basic.Net.WEBApiGet("http://10.18.28.61//api/medicine_page");
 
             list_API_medicine_page_ADC = result.JsonDeserializet<List<API_medicine_page_ADC>>();
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_values = this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
+            List<object[]> list_values = this.Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料();
 
-         
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.RefreshGrid(list_values);
+
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.RefreshGrid(list_values);
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
-            string name = this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥名.Text;
+            List<object[]> list_value = this.Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料();
+            string name = this.rJ_TextBox_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名.Text;
             if (name.StringIsEmpty()) return;
             list_value = list_value.GetRowsByLike((int)enum_周邊設備_庫存_交易紀錄查詢.藥名, name);
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.RefreshGrid(list_value);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.RefreshGrid(list_value);
         }
-        private void PlC_RJ_Button_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼搜尋_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_取得資料();
-            string code = this.rJ_TextBox_周邊設備_麻醉部ADC_庫存_交易紀錄查詢_藥碼.Text;
+            List<object[]> list_value = this.Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料();
+            string code = this.rJ_TextBox_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼.Text;
             if (code.StringIsEmpty()) return;
             list_value = list_value.GetRowsByLike((int)enum_周邊設備_庫存_交易紀錄查詢.藥碼, code);
-            this.sqL_DataGridView_周邊設備_麻醉部ADC_庫存_交易紀錄查詢.RefreshGrid(list_value);
+            this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.RefreshGrid(list_value);
         }
         #endregion
 
-        public class ICP_周邊設備_麻醉部ADC_庫存_交易記錄查詢 : IComparer<object[]>
+        public class ICP_周邊設備_ICU_ADC_01_庫存_交易記錄查詢 : IComparer<object[]>
         {
             //實作Compare方法
             //依Speed由小排到大。
@@ -232,7 +232,7 @@ namespace 智能藥庫系統
                 DateTime datetime2 = y[(int)enum_周邊設備_庫存_交易紀錄查詢.操作時間].StringToDateTime();
                 int compare = DateTime.Compare(datetime1, datetime2);
                 return compare;
-            
+
 
             }
         }
