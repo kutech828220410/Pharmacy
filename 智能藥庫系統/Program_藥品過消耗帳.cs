@@ -92,6 +92,13 @@ namespace 智能藥庫系統
             無效期可入帳,
             忽略過帳,
         }
+
+        private enum enum_藥品過消耗帳_消耗量匯出
+        {
+            藥碼,
+            藥名,
+            消耗量,
+        }
         private void sub_Program_藥品過消耗帳_Init()
         {
 
@@ -105,6 +112,8 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥品過消耗帳_搜尋.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_顯示全部_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_全部資料匯出_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_上月消耗量計算_MouseDownEvent;
+            this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
@@ -144,78 +153,190 @@ namespace 智能藥庫系統
         #region Fucntion
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(string 藥品碼)
         {
-            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
-            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
-            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
-            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+            MyTimer myTimer = new MyTimer(500000);
             List<object[]> list_value = new List<object[]>();
 
-            List<object[]> list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_門診_buf.Count; i++)
-            {
-                list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
-            }
-            List<object[]> list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_急診_buf.Count; i++)
-            {
-                list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
-            }
-            List<object[]> list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_住院_buf.Count; i++)
-            {
-                list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
-            }
-            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_公藥_buf.Count; i++)
-            {
-                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
-            }
+            List<object[]> list_門診_buf = new List<object[]>();
+            List<object[]> list_急診_buf = new List<object[]>();
+            List<object[]> list_住院_buf = new List<object[]>();
+            List<object[]> list_公藥_buf = new List<object[]>();
+            List<Task> tasks = new List<Task>();
 
+            tasks.Add(Task.Run(new Action(delegate 
+            {
+                List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+                list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_門診_buf.Count; i++)
+                {
+                    list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+                list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_急診_buf.Count; i++)
+                {
+                    list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+                list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_住院_buf.Count; i++)
+                {
+                    list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRows(enum_藥品過消耗帳.藥品碼.GetEnumName(), 藥品碼, false);
+                list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_公藥_buf.Count; i++)
+                {
+                    list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+                }
+            })));
+            Task.WhenAll(tasks).Wait();
 
             list_value.LockAdd(list_門診_buf);
             list_value.LockAdd(list_急診_buf);
             list_value.LockAdd(list_住院_buf);
             list_value.LockAdd(list_公藥_buf);
-
+            Console.WriteLine($"取得過賬明細 ,耗時{myTimer.ToString()} {DateTime.Now.ToDateTimeString()}");
             return list_value;
         }
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細(DateTime dateTime1, DateTime dateTime2)
         {
-            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
-            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
-            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
-            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+            MyTimer myTimer = new MyTimer(500000);
             List<object[]> list_value = new List<object[]>();
 
-            List<object[]> list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_門診_buf.Count; i++)
+            List<object[]> list_門診_buf = new List<object[]>();
+            List<object[]> list_急診_buf = new List<object[]>();
+            List<object[]> list_住院_buf = new List<object[]>();
+            List<object[]> list_公藥_buf = new List<object[]>();
+
+            List<Task> tasks = new List<Task>();
+
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
-            }
-            List<object[]> list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_急診_buf.Count; i++)
+                List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_門診_buf.Count; i++)
+                {
+                    list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
-            }
-            List<object[]> list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_住院_buf.Count; i++)
+                List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_急診_buf.Count; i++)
+                {
+                    list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
-            }
-            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_公藥_buf.Count; i++)
+                List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_住院_buf.Count; i++)
+                {
+                    list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
-            }
+                List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.報表日期, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_公藥_buf.Count; i++)
+                {
+                    list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+                }
+            })));
+            Task.WhenAll(tasks).Wait();
 
 
             list_value.LockAdd(list_門診_buf);
             list_value.LockAdd(list_急診_buf);
             list_value.LockAdd(list_住院_buf);
             list_value.LockAdd(list_公藥_buf);
-
+            Console.WriteLine($"取得過賬明細 ,耗時{myTimer.ToString()} {DateTime.Now.ToDateTimeString()}");
             return list_value;
         }
+        private List<object[]> Function_藥品過消耗帳_取得所有過帳明細以過賬時間(DateTime dateTime1, DateTime dateTime2)
+        {
+            MyTimer myTimer = new MyTimer(500000);
+            List<object[]> list_value = new List<object[]>();
+
+            List<object[]> list_門診_buf = new List<object[]>();
+            List<object[]> list_急診_buf = new List<object[]>();
+            List<object[]> list_住院_buf = new List<object[]>();
+            List<object[]> list_公藥_buf = new List<object[]>();
+
+            List<Task> tasks = new List<Task>();
+
+
+            dateTime1 = new DateTime(dateTime1.Year, dateTime1.Month, dateTime1.Day, 00, 00, 00);
+            dateTime2 = new DateTime(dateTime2.Year, dateTime2.Month, dateTime2.Day, 23, 59, 59);
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.過帳時間, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_門診_buf.Count; i++)
+                {
+                    list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.過帳時間, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_急診_buf.Count; i++)
+                {
+                    list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.過帳時間, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_住院_buf.Count; i++)
+                {
+                    list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+                }
+            })));
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.過帳時間, dateTime1.ToDateString(), dateTime2.AddDays(0).ToDateString(), false);
+                list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_公藥_buf.Count; i++)
+                {
+                    list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+                }
+            })));
+            Task.WhenAll(tasks).Wait();
+
+
+            list_value.LockAdd(list_門診_buf);
+            list_value.LockAdd(list_急診_buf);
+            list_value.LockAdd(list_住院_buf);
+            list_value.LockAdd(list_公藥_buf);
+            Console.WriteLine($"取得過賬明細 ,耗時{myTimer.ToString()} {DateTime.Now.ToDateTimeString()}");
+            return list_value;
+        }
+
+
 
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細()
         {
@@ -397,6 +518,28 @@ namespace 智能藥庫系統
             List<object[]> list_藥品過消耗帳 = this.Function_藥品過消耗帳_取得所有過帳明細();
             list_藥品過消耗帳.GetRowsInDate((int)enum_藥品過消耗帳.報表日期, dateTime);
             this.Function_藥品過消耗帳_設定過帳完成(list_藥品過消耗帳);
+        }
+        private int Function_藥品過消耗帳_取得已消耗量(object[] value)
+        {
+            int value_out = 0;
+            List<string> 效期 = new List<string>();
+            List<string> 數量 = new List<string>();
+            this.Function_藥品過消耗帳_取得效期數量(value, ref 效期, ref 數量);
+            for (int i = 0; i < 數量.Count; i++)
+            {
+                if (數量[i].StringIsInt32())
+                {
+                    value_out += 數量[i].StringToInt32();
+                }
+            }
+            return value_out;
+        }
+        private void Function_藥品過消耗帳_取得效期數量(object[] value, ref List<string> 效期, ref List<string> 數量)
+        {
+            string 備註 = value[(int)enum_藥品過消耗帳.備註].ObjectToString();
+            備註 = 備註.Replace('\n', ',');
+            效期 = 備註.GetTextValues("效期");
+            數量 = 備註.GetTextValues("數量");
         }
         #endregion
         #region Event
@@ -669,6 +812,88 @@ namespace 智能藥庫系統
             {
                 rJ_TextBox_藥品過消耗帳_上月消耗量計算.Text = 消耗量.ToString();
             }));
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_日期選擇 dialog_日期選擇 = new Dialog_日期選擇("請選擇盤點日期...");
+            if (dialog_日期選擇.ShowDialog() != DialogResult.Yes)
+            {
+                return;
+            }
+            DateTime dateTime_盤點日期 = dialog_日期選擇.Value;
+
+            dialog_日期選擇 = new Dialog_日期選擇("請選截止日期...");
+            if (dialog_日期選擇.ShowDialog() != DialogResult.Yes)
+            {
+                return;
+            }
+            DateTime dateTime_截止日期 = dialog_日期選擇.Value;
+
+
+            List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細以過賬時間(dateTime_盤點日期, dateTime_截止日期);
+            List<object[]> list_過帳明細 = new List<object[]>();
+            List<object[]> list_過帳明細_buf = new List<object[]>();
+            List<object[]> list_匯出資料 = new List<object[]>();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                if (list_value[i][(int)enum_藥品過消耗帳.狀態].ObjectToString() != enum_藥品過消耗帳_狀態.過帳完成.GetEnumName() && list_value[i][(int)enum_藥品過消耗帳.狀態].ObjectToString() != enum_藥品過消耗帳_狀態.庫存不足.GetEnumName()) continue;
+                DateTime dateTime_報表日期 = list_value[i][(int)enum_藥品過消耗帳.報表日期].ToDateString().StringToDateTime();
+                DateTime dateTime_過帳時間 = list_value[i][(int)enum_藥品過消耗帳.過帳時間].ToDateString().StringToDateTime();
+                
+                if (dateTime_報表日期 < dateTime_盤點日期.AddDays(-1))
+                {
+                    list_過帳明細.Add(list_value[i]);
+                }
+            }
+            List<string> Codes = (from temp in list_過帳明細
+                                  select temp[(int)enum_藥品過消耗帳.藥品碼].ObjectToString()).Distinct().ToList();
+            for(int i = 0; i < Codes.Count; i++)
+            {
+                string 藥碼 = Codes[i];
+                int 消耗量 = 0;
+                list_過帳明細_buf = list_過帳明細.GetRows((int)enum_藥品過消耗帳.藥品碼, Codes[i]);
+                if (list_過帳明細_buf.Count == 0) continue;
+                string 藥名 = list_過帳明細_buf[0][(int)enum_藥品過消耗帳.藥品名稱].ObjectToString();
+                for (int k = 0; k < list_過帳明細_buf.Count; k++)
+                {
+
+                    消耗量 += Function_藥品過消耗帳_取得已消耗量(list_過帳明細_buf[k]);
+
+                }
+                object[] value = new object[new enum_藥品過消耗帳_消耗量匯出().GetLength()];
+                value[(int)enum_藥品過消耗帳_消耗量匯出.藥碼] = 藥碼;
+                value[(int)enum_藥品過消耗帳_消耗量匯出.藥名] = 藥名;
+                value[(int)enum_藥品過消耗帳_消耗量匯出.消耗量] = 消耗量 * -1;
+
+
+                list_匯出資料.Add(value);
+            }
+
+            this.Invoke(new Action(delegate
+            {
+                if(this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable dataTable = list_匯出資料.ToDataTable(new enum_藥品過消耗帳_消耗量匯出());
+                    dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_消耗量匯出());
+
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if (Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xls" || Extension == ".xlsx")
+                    {
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥品過消耗帳_消耗量匯出.消耗量);
+                    }
+
+                    MyMessageBox.ShowDialog("匯出完成");
+
+                }
+             
+            }));
+
+            this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_過帳明細);
+
         }
         #endregion
 

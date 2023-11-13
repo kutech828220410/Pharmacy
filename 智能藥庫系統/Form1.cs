@@ -25,7 +25,7 @@ namespace 智能藥庫系統
 
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://10.18.1.146:4433";
+        private string Api_URL = "http://127.0.0.1:4435";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -203,6 +203,7 @@ namespace 智能藥庫系統
                 Dialog_藥品資料設定.form = this.FindForm();
                 Dialog_效期批號歷史紀錄.form = this.FindForm();
                 Dialog_補給系統藥品建置.form = this.FindForm();
+                Dialog_日期選擇.form = this.FindForm();
                 ApiServerSetting("DS01");
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;
