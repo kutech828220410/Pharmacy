@@ -66,7 +66,7 @@ namespace 智能藥庫系統
         private bool flag_交易紀錄查詢_頁面更新_init = false;
         private void sub_Program_交易紀錄查詢()
         {
-            if (this.plC_ScreenPage_Main.PageText == "交易紀錄查詢" && this.plC_ScreenPage_批次過帳.PageText == "交易紀錄查詢")
+            if (this.plC_ScreenPage_Main.PageText == "交易紀錄查詢")
             {
                 if (!this.flag_交易紀錄查詢_頁面更新)
                 {
