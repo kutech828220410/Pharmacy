@@ -51,6 +51,7 @@ namespace 智能藥庫系統
         {
             this.Text = title;
             this.rJ_Button_確認.MouseDownEvent += RJ_Button_確認_MouseDownEvent;
+            this.dateTimeComList.Height = 50;
         }
 
         private void RJ_Button_確認_MouseDownEvent(MouseEventArgs mevent)

@@ -113,12 +113,12 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_全部資料匯出_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_上月消耗量計算_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量_MouseDownEvent;
-
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-
+   
 
         private bool flag_藥品過消耗帳_頁面更新 = false;
         private bool flag__藥品過消耗帳_頁面更新_init = false;
@@ -711,7 +711,7 @@ namespace 智能藥庫系統
             this.Function_藥品過消耗帳_設定過帳完成(list_藥品過消耗帳);
 
 
-        }
+        }      
         private void PlC_RJ_Button_藥品過消耗帳_選取資料等待過帳_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_藥品過消耗帳 = this.sqL_DataGridView_藥品過消耗帳.Get_All_Checked_RowsValues();
@@ -894,6 +894,49 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_過帳明細);
 
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_日期選擇 dialog_日期選擇 = new Dialog_日期選擇("請選擇強制過賬起始日期...");
+            if (dialog_日期選擇.ShowDialog() != DialogResult.Yes)
+            {
+                return;
+            }
+            DateTime dateTime_起始日期 = dialog_日期選擇.Value;
+
+            dialog_日期選擇 = new Dialog_日期選擇("請選擇強制過賬截止日期...");
+            if (dialog_日期選擇.ShowDialog() != DialogResult.Yes)
+            {
+                return;
+            }
+            DateTime dateTime_截止日期 = dialog_日期選擇.Value;
+            List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細(dateTime_起始日期, dateTime_截止日期);
+
+            List<object[]> list_value_buf = (from temp in list_value
+                                             where temp[(int)enum_藥品過消耗帳.狀態].ObjectToString() != enum_藥品過消耗帳_狀態.過帳完成.GetEnumName()
+                                             select temp).ToList();
+
+            foreach(object[] temp in list_value_buf)
+            {
+                temp[(int)enum_藥品過消耗帳.狀態] = enum_藥品過消耗帳_狀態.過帳完成.GetEnumName();
+                temp[(int)enum_藥品過消耗帳.備註] = "強制過賬";
+            }
+            List<object[]> list_藥品過消耗帳_門診 = list_value_buf.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.門診.GetEnumName());
+            List<object[]> list_藥品過消耗帳_急診 = list_value_buf.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.急診.GetEnumName());
+            List<object[]> list_藥品過消耗帳_住院 = list_value_buf.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.住院.GetEnumName());
+            List<object[]> list_藥品過消耗帳_公藥 = list_value_buf.GetRows((int)enum_藥品過消耗帳.來源名稱, enum_藥品過消耗帳_來源名稱.公藥.GetEnumName());
+
+            list_藥品過消耗帳_門診 = list_藥品過消耗帳_門診.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_門診_批次過帳明細());
+            list_藥品過消耗帳_急診 = list_藥品過消耗帳_急診.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_急診_批次過帳明細());
+            list_藥品過消耗帳_住院 = list_藥品過消耗帳_住院.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_住院_批次過帳明細());
+            list_藥品過消耗帳_公藥 = list_藥品過消耗帳_公藥.CopyRows(new enum_藥品過消耗帳(), new enum_批次過帳_公藥_批次過帳明細());
+
+            this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_門診, false);
+            this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_急診, false);
+            this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_住院, false);
+            this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_ReplaceExtra(list_藥品過消耗帳_公藥, false);
+
+            MyMessageBox.ShowDialog($"共強制過賬<{list_value_buf.Count}>筆資料,從[{dateTime_起始日期.ToDateString()}]至[{dateTime_截止日期.ToDateString()}]");
         }
         #endregion
 

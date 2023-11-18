@@ -36,22 +36,22 @@ namespace 智能藥庫系統
             // dateTimeComList
             // 
             this.dateTimeComList.BackColor = System.Drawing.SystemColors.Window;
-            this.dateTimeComList.Day = 13;
+            this.dateTimeComList.Day = 1;
             this.dateTimeComList.End_Year = 2030;
-            this.dateTimeComList.Location = new System.Drawing.Point(28, 19);
+            this.dateTimeComList.Location = new System.Drawing.Point(26, 22);
             this.dateTimeComList.mFont = new System.Drawing.Font("標楷體", 18F);
-            this.dateTimeComList.Month = 11;
+            this.dateTimeComList.Month = 1;
             this.dateTimeComList.Name = "dateTimeComList";
-            this.dateTimeComList.Size = new System.Drawing.Size(314, 75);
-            this.dateTimeComList.Start_Year = 2022;
+            this.dateTimeComList.Size = new System.Drawing.Size(314, 70);
+            this.dateTimeComList.Start_Year = 2021;
             this.dateTimeComList.TabIndex = 0;
-            this.dateTimeComList.Value = new System.DateTime(2023, 11, 13, 0, 0, 0, 0);
+            this.dateTimeComList.Value = new System.DateTime(((long)(0)));
             this.dateTimeComList.Year = 2023;
             // 
             // rJ_Button_確認
             // 
             this.rJ_Button_確認.AutoResetState = false;
-            this.rJ_Button_確認.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_確認.BackColor = System.Drawing.Color.Transparent;
             this.rJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_確認.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Button_確認.BorderRadius = 10;
@@ -64,6 +64,8 @@ namespace 智能藥庫系統
             this.rJ_Button_確認.GUID = "";
             this.rJ_Button_確認.Location = new System.Drawing.Point(367, 19);
             this.rJ_Button_確認.Name = "rJ_Button_確認";
+            this.rJ_Button_確認.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_確認.ShadowSize = 3;
             this.rJ_Button_確認.ShowLoadingForm = false;
             this.rJ_Button_確認.Size = new System.Drawing.Size(103, 55);
             this.rJ_Button_確認.State = false;

@@ -225,7 +225,7 @@ namespace 智能藥庫系統
 
             if(rJ_RatioButton_交易記錄查詢_庫別_藥局.Checked)
             {
-                list_value = list_value.GetRows((int)enum_交易記錄查詢資料.庫別, enum_庫別.屏榮藥局.GetEnumName());
+                list_value = list_value.GetRowsByLike((int)enum_交易記錄查詢資料.庫別, "藥局");
             }
             if (rJ_RatioButton_交易記錄查詢_庫別_藥庫.Checked)
             {

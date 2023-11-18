@@ -78,6 +78,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.盤點量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.消耗量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.異動量);
+            this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.效期及批號);
 
             this.sqL_DataGridView_定盤_盤點明細.DataGridRefreshEvent += SqL_DataGridView_定盤_盤點明細_DataGridRefreshEvent;
 
@@ -339,6 +340,10 @@ namespace 智能藥庫系統
                 if (list_value_buf.Count > 0)
                 {
                     list_value_buf[0][(int)enum_定盤_盤點明細.盤點量] = 盤點量;
+                    if (list_value_buf[0][(int)enum_定盤_盤點明細.消耗量].ObjectToString().StringIsInt32() == false)
+                    {
+                        list_value_buf[0][(int)enum_定盤_盤點明細.消耗量] = "0";
+                    }
                     list_value_replace.Add(list_value_buf[0]);
                 }
                 else
@@ -354,7 +359,6 @@ namespace 智能藥庫系統
                         value[(int)enum_定盤_盤點明細.藥名] = 藥名;
                         value[(int)enum_定盤_盤點明細.庫存量] = "0";
                         value[(int)enum_定盤_盤點明細.盤點量] = 盤點量;
-                        value[(int)enum_定盤_盤點明細.異動量] = "0";
                         value[(int)enum_定盤_盤點明細.消耗量] = "0";
 
                         list_value_add.Add(value);
@@ -364,6 +368,12 @@ namespace 智能藥庫系統
 
             this.sqL_DataGridView_定盤_盤點明細.ReplaceExtra(list_value_replace, true);
             this.sqL_DataGridView_定盤_盤點明細.AddRows(list_value_add, true);
+            this.Invoke(new Action(delegate 
+            {
+                plC_RJ_Button_定盤_盤點明細_計算定盤結果.Enabled = true;
+                comboBox_定盤_盤點明細_庫別.Enabled = true;
+            }));
+  
         }
   
     
@@ -403,6 +413,7 @@ namespace 智能藥庫系統
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
                     int 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
@@ -412,7 +423,7 @@ namespace 智能藥庫系統
                         continue;
                     }
                     庫存量 = deviceBasics[0].Inventory.StringToInt32();
-                    異動量 = 盤點量 - 庫存量;
+                    異動量 = (盤點量 - 庫存量) + 消耗量;
                     list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量] = 庫存量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.異動量] = 異動量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] = "";
@@ -465,6 +476,7 @@ namespace 智能藥庫系統
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
                     int 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥局_DeviceBasic.SortByCode(藥碼);
@@ -474,7 +486,7 @@ namespace 智能藥庫系統
                         continue;
                     }
                     庫存量 = deviceBasics[0].Inventory.StringToInt32();
-                    異動量 = 盤點量 - 庫存量;
+                    異動量 = (盤點量 - 庫存量) + 消耗量;
                     list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量] = 庫存量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.異動量] = 異動量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] = "";
@@ -560,7 +572,9 @@ namespace 智能藥庫系統
                     dialog_Prcessbar.Value = i;
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
+                    string 藥名 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥名].ObjectToString();
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
                     int 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
@@ -570,7 +584,7 @@ namespace 智能藥庫系統
                         continue;
                     }
                     庫存量 = deviceBasics[0].Inventory.StringToInt32();
-                    異動量 = 盤點量 - 庫存量;
+                    異動量 = (盤點量 - 庫存量) + 消耗量;
                     list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量] = 庫存量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.異動量] = 異動量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] = "";
@@ -579,7 +593,7 @@ namespace 智能藥庫系統
                     List<string> list_異動量 = new List<string>();
                     if (異動量 == 0)
                     {
-                        continue;
+                        //continue;
                     }
                     if (庫存量 == 0 || 異動量 > 0)
                     {
@@ -611,9 +625,11 @@ namespace 智能藥庫系統
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
                     transactionsClass.動作 = enum_交易記錄查詢動作.盤存盈虧.GetEnumName();
+                    transactionsClass.藥品碼 = 藥碼;
+                    transactionsClass.藥品名稱 = 藥名.ToString();
                     transactionsClass.庫存量 = 庫存量.ToString();
                     transactionsClass.交易量 = 異動量.ToString();
-                    transactionsClass.結存量 = 盤點量.ToString();
+                    transactionsClass.結存量 = (庫存量 + 異動量).ToString();
                     transactionsClass.庫別 = "藥庫";
                     transactionsClass.操作人 = 登入者名稱;
                     transactionsClass.操作時間 = DateTime.Now.ToDateTimeString_6();
@@ -638,7 +654,9 @@ namespace 智能藥庫系統
                     dialog_Prcessbar.Value = i;
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
+                    string 藥名 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥名].ObjectToString();
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
                     int 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥局_DeviceBasic.SortByCode(藥碼);
@@ -648,7 +666,7 @@ namespace 智能藥庫系統
                         continue;
                     }
                     庫存量 = deviceBasics[0].Inventory.StringToInt32();
-                    異動量 = 盤點量 - 庫存量;
+                    異動量 = (盤點量 - 庫存量) + 消耗量;
                     list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量] = 庫存量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.異動量] = 異動量.ToString();
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] = "";
@@ -657,7 +675,7 @@ namespace 智能藥庫系統
                     List<string> list_異動量 = new List<string>();
                     if (異動量 == 0)
                     {
-                        continue;
+                        //continue;
                     }
                     if (庫存量 == 0 || 異動量 > 0)
                     {
@@ -689,9 +707,11 @@ namespace 智能藥庫系統
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
                     transactionsClass.動作 = enum_交易記錄查詢動作.盤存盈虧.GetEnumName();
+                    transactionsClass.藥品碼 = 藥碼;
+                    transactionsClass.藥品名稱 = 藥名.ToString();
                     transactionsClass.庫存量 = 庫存量.ToString();
                     transactionsClass.交易量 = 異動量.ToString();
-                    transactionsClass.結存量 = 盤點量.ToString();
+                    transactionsClass.結存量 = (庫存量 + 異動量).ToString();
                     transactionsClass.庫別 = "藥局";
                     transactionsClass.操作人 = 登入者名稱;
                     transactionsClass.操作時間 = DateTime.Now.ToDateTimeString_6();
