@@ -1,7 +1,7 @@
 {
   "DB_Basic": {
     "DataBaseName": "ds01",
-    "IP": "127.0.0.1",
+    "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
@@ -10,7 +10,7 @@
   },
   "DB_person_page": {
     "DataBaseName": "ds01_vm",
-    "IP": "127.0.0.1",
+    "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
@@ -19,7 +19,7 @@
   },
   "DB_Medicine_Cloud": {
     "DataBaseName": "dbvm",
-    "IP": "127.0.0.1",
+    "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
@@ -28,7 +28,7 @@
   },
   "DB_posting_server": {
     "DataBaseName": "ds01_vm",
-    "IP": "127.0.0.1",
+    "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
@@ -37,13 +37,13 @@
   },
   "DB_order_server": {
     "DataBaseName": "order_000",
-    "IP": "127.0.0.1",
+    "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",
     "Port": 3306,
     "MySqlSslMode": 0,
     "TableName": ""
   },
-  "Emg_apply_ApiURL": "https://127.0.0.1:4434/api/excel/emg_apply/",
-  "MedPrice_ApiURL": "https://127.0.0.1:4434/api/MedPrice"
+  "Emg_apply_ApiURL": "https://10.18.1.146:4434/api/excel/emg_apply/",
+  "MedPrice_ApiURL": "https://10.18.1.146:4434/api/MedPrice"
 }

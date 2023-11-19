@@ -165,6 +165,7 @@
             this.批次過帳 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_批次過帳 = new MyUI.PLC_ScreenPage();
             this.tabPage33 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量 = new MyUI.PLC_RJ_Button();
             this.groupBox21 = new System.Windows.Forms.GroupBox();
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算 = new MyUI.PLC_RJ_Button();
@@ -1377,7 +1378,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -2353,7 +2353,7 @@
             this.plC_RJ_Button_登入畫面_登出.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_登入畫面_登出.Bool = false;
             this.plC_RJ_Button_登入畫面_登出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_登入畫面_登出.BorderRadius = 5;
+            this.plC_RJ_Button_登入畫面_登出.BorderRadius = 10;
             this.plC_RJ_Button_登入畫面_登出.BorderSize = 0;
             this.plC_RJ_Button_登入畫面_登出.but_press = false;
             this.plC_RJ_Button_登入畫面_登出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -2373,7 +2373,7 @@
             this.plC_RJ_Button_登入畫面_登出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
             this.plC_RJ_Button_登入畫面_登出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_登入畫面_登出.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_登入畫面_登出.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_登入畫面_登出.ShadowColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_Button_登入畫面_登出.ShadowSize = 0;
             this.plC_RJ_Button_登入畫面_登出.ShowLoadingForm = false;
             this.plC_RJ_Button_登入畫面_登出.Size = new System.Drawing.Size(66, 66);
@@ -2529,8 +2529,9 @@
             this.rJ_Pannel_登入畫面_登出顯示.Controls.Add(this.plC_RJ_Button_登入畫面_登出顯示_登出);
             this.rJ_Pannel_登入畫面_登出顯示.ForeColor = System.Drawing.Color.White;
             this.rJ_Pannel_登入畫面_登出顯示.IsSelected = false;
-            this.rJ_Pannel_登入畫面_登出顯示.Location = new System.Drawing.Point(481, 453);
+            this.rJ_Pannel_登入畫面_登出顯示.Location = new System.Drawing.Point(490, 453);
             this.rJ_Pannel_登入畫面_登出顯示.Name = "rJ_Pannel_登入畫面_登出顯示";
+            this.rJ_Pannel_登入畫面_登出顯示.Padding = new System.Windows.Forms.Padding(3);
             this.rJ_Pannel_登入畫面_登出顯示.Size = new System.Drawing.Size(657, 300);
             this.rJ_Pannel_登入畫面_登出顯示.TabIndex = 114;
             this.rJ_Pannel_登入畫面_登出顯示.Visible = false;
@@ -2541,7 +2542,7 @@
             this.plC_RJ_Button_登入畫面_更換密碼.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_登入畫面_更換密碼.Bool = false;
             this.plC_RJ_Button_登入畫面_更換密碼.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_登入畫面_更換密碼.BorderRadius = 5;
+            this.plC_RJ_Button_登入畫面_更換密碼.BorderRadius = 20;
             this.plC_RJ_Button_登入畫面_更換密碼.BorderSize = 0;
             this.plC_RJ_Button_登入畫面_更換密碼.but_press = false;
             this.plC_RJ_Button_登入畫面_更換密碼.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -2562,7 +2563,7 @@
             this.plC_RJ_Button_登入畫面_更換密碼.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_登入畫面_更換密碼.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_登入畫面_更換密碼.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_登入畫面_更換密碼.ShadowSize = 0;
+            this.plC_RJ_Button_登入畫面_更換密碼.ShadowSize = 3;
             this.plC_RJ_Button_登入畫面_更換密碼.ShowLoadingForm = false;
             this.plC_RJ_Button_登入畫面_更換密碼.Size = new System.Drawing.Size(133, 66);
             this.plC_RJ_Button_登入畫面_更換密碼.State = false;
@@ -2593,7 +2594,7 @@
             // 
             // rJ_Lable_登入畫面_登出顯示_姓名
             // 
-            this.rJ_Lable_登入畫面_登出顯示_姓名.BackColor = System.Drawing.Color.MidnightBlue;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BackColor = System.Drawing.Color.White;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BackgroundColor = System.Drawing.Color.MidnightBlue;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BorderRadius = 12;
@@ -2634,11 +2635,11 @@
             this.rJ_Lable131.Font = new System.Drawing.Font("微軟正黑體", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable131.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable131.GUID = "";
-            this.rJ_Lable131.Location = new System.Drawing.Point(0, 0);
+            this.rJ_Lable131.Location = new System.Drawing.Point(3, 3);
             this.rJ_Lable131.Name = "rJ_Lable131";
             this.rJ_Lable131.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable131.ShadowSize = 0;
-            this.rJ_Lable131.Size = new System.Drawing.Size(657, 99);
+            this.rJ_Lable131.Size = new System.Drawing.Size(651, 99);
             this.rJ_Lable131.TabIndex = 33;
             this.rJ_Lable131.Text = "歡迎登入";
             this.rJ_Lable131.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2650,7 +2651,7 @@
             this.plC_RJ_Button_登入畫面_登出顯示_登出.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.Bool = false;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderRadius = 5;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderRadius = 20;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.BorderSize = 0;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.but_press = false;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -2671,7 +2672,7 @@
             this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_登入畫面_登出顯示_登出.ShadowSize = 0;
+            this.plC_RJ_Button_登入畫面_登出顯示_登出.ShadowSize = 3;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.ShowLoadingForm = false;
             this.plC_RJ_Button_登入畫面_登出顯示_登出.Size = new System.Drawing.Size(133, 66);
             this.plC_RJ_Button_登入畫面_登出顯示_登出.State = false;
@@ -2733,7 +2734,7 @@
             this.plC_RJ_GroupBox15.PannelBorderSize = 0;
             this.plC_RJ_GroupBox15.Size = new System.Drawing.Size(430, 300);
             this.plC_RJ_GroupBox15.TabIndex = 112;
-            this.plC_RJ_GroupBox15.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox15.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox15.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox15.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox15.TitleBorderSize = 0;
@@ -2807,7 +2808,7 @@
             this.plC_RJ_Button_登入畫面_登入.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_登入畫面_登入.Bool = false;
             this.plC_RJ_Button_登入畫面_登入.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_登入畫面_登入.BorderRadius = 5;
+            this.plC_RJ_Button_登入畫面_登入.BorderRadius = 20;
             this.plC_RJ_Button_登入畫面_登入.BorderSize = 0;
             this.plC_RJ_Button_登入畫面_登入.but_press = false;
             this.plC_RJ_Button_登入畫面_登入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -2828,7 +2829,7 @@
             this.plC_RJ_Button_登入畫面_登入.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_登入畫面_登入.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_登入畫面_登入.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_登入畫面_登入.ShadowSize = 0;
+            this.plC_RJ_Button_登入畫面_登入.ShadowSize = 3;
             this.plC_RJ_Button_登入畫面_登入.ShowLoadingForm = false;
             this.plC_RJ_Button_登入畫面_登入.Size = new System.Drawing.Size(133, 66);
             this.plC_RJ_Button_登入畫面_登入.State = false;
@@ -2918,10 +2919,10 @@
             this.rJ_Lable5.Location = new System.Drawing.Point(319, 301);
             this.rJ_Lable5.Name = "rJ_Lable5";
             this.rJ_Lable5.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable5.ShadowSize = 0;
+            this.rJ_Lable5.ShadowSize = 3;
             this.rJ_Lable5.Size = new System.Drawing.Size(1001, 103);
             this.rJ_Lable5.TabIndex = 108;
-            this.rJ_Lable5.Text = "智能藥庫系統";
+            this.rJ_Lable5.Text = "智 能 藥 庫 系 統";
             this.rJ_Lable5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable5.TextColor = System.Drawing.Color.White;
             // 
@@ -5039,6 +5040,53 @@
             this.tabPage33.TabIndex = 4;
             this.tabPage33.Text = "藥品過消耗帳";
             // 
+            // plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬
+            // 
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.AutoResetState = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Bool = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.but_press = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.GUID = "";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Location = new System.Drawing.Point(1263, 748);
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Name = "plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字內容 = "選取日期範圍\n強制過賬";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字內容 = "選取日期範圍\n強制過賬";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShadowSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.State = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.TabIndex = 233;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Text = "選取日期範圍\n強制過賬";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Texts = "選取日期範圍\n強制過賬";
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.字型鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.文字鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.讀取位元反向 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.音效 = true;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示狀態 = false;
+            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示讀取位置 = "S4077";
+            // 
             // plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量
             // 
             this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量.AutoResetState = false;
@@ -5104,7 +5152,7 @@
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.Bool = false;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.BorderRadius = 20;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.BorderSize = 0;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.but_press = false;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -5125,7 +5173,7 @@
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ShadowSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ShadowSize = 3;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.ShowLoadingForm = false;
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.Size = new System.Drawing.Size(81, 57);
             this.plC_RJ_Button_藥品過消耗帳_上月消耗量計算.State = false;
@@ -5262,7 +5310,7 @@
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Bool = false;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderRadius = 20;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.BorderSize = 0;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.but_press = false;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -5283,7 +5331,7 @@
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ShadowSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ShadowSize = 3;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.ShowLoadingForm = false;
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥品過消耗帳_全部資料匯出.State = false;
@@ -5308,7 +5356,7 @@
             this.plC_RJ_Button_藥品過消耗帳_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.Bool = false;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.but_press = false;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -5329,7 +5377,7 @@
             this.plC_RJ_Button_藥品過消耗帳_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥品過消耗帳_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.ShowLoadingForm = true;
             this.plC_RJ_Button_藥品過消耗帳_搜尋.Size = new System.Drawing.Size(123, 57);
             this.plC_RJ_Button_藥品過消耗帳_搜尋.State = false;
@@ -5353,7 +5401,7 @@
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BorderRadius = 1;
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.BorderSize = 2;
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥品過消耗帳_藥品碼篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -5377,7 +5425,7 @@
             this.rJ_Lable105.BackColor = System.Drawing.Color.White;
             this.rJ_Lable105.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable105.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable105.BorderRadius = 8;
+            this.rJ_Lable105.BorderRadius = 10;
             this.rJ_Lable105.BorderSize = 0;
             this.rJ_Lable105.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable105.Font = new System.Drawing.Font("新細明體", 12F);
@@ -5386,7 +5434,7 @@
             this.rJ_Lable105.Location = new System.Drawing.Point(239, 782);
             this.rJ_Lable105.Name = "rJ_Lable105";
             this.rJ_Lable105.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable105.ShadowSize = 0;
+            this.rJ_Lable105.ShadowSize = 3;
             this.rJ_Lable105.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable105.TabIndex = 219;
             this.rJ_Lable105.Text = "藥品碼";
@@ -5398,7 +5446,7 @@
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BorderRadius = 1;
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.BorderSize = 2;
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥品過消耗帳_藥品名稱篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -5422,7 +5470,7 @@
             this.rJ_Lable106.BackColor = System.Drawing.Color.White;
             this.rJ_Lable106.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable106.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable106.BorderRadius = 8;
+            this.rJ_Lable106.BorderRadius = 10;
             this.rJ_Lable106.BorderSize = 0;
             this.rJ_Lable106.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable106.Font = new System.Drawing.Font("新細明體", 12F);
@@ -5431,7 +5479,7 @@
             this.rJ_Lable106.Location = new System.Drawing.Point(239, 837);
             this.rJ_Lable106.Name = "rJ_Lable106";
             this.rJ_Lable106.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable106.ShadowSize = 0;
+            this.rJ_Lable106.ShadowSize = 3;
             this.rJ_Lable106.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable106.TabIndex = 221;
             this.rJ_Lable106.Text = "藥品名稱";
@@ -9130,6 +9178,7 @@
             this.plC_RJ_ScreenButton35.ShowIcon = false;
             this.plC_RJ_ScreenButton35.Size = new System.Drawing.Size(166, 48);
             this.plC_RJ_ScreenButton35.TabIndex = 84;
+            this.plC_RJ_ScreenButton35.Visible = false;
             this.plC_RJ_ScreenButton35.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton35.寫入位置註解 = "";
             this.plC_RJ_ScreenButton35.寫入元件位置 = "";
@@ -9169,6 +9218,7 @@
             this.plC_RJ_ScreenButton18.ShowIcon = false;
             this.plC_RJ_ScreenButton18.Size = new System.Drawing.Size(166, 48);
             this.plC_RJ_ScreenButton18.TabIndex = 83;
+            this.plC_RJ_ScreenButton18.Visible = false;
             this.plC_RJ_ScreenButton18.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton18.寫入位置註解 = "";
             this.plC_RJ_ScreenButton18.寫入元件位置 = "";
@@ -9208,6 +9258,7 @@
             this.plC_RJ_ScreenButton16.ShowIcon = false;
             this.plC_RJ_ScreenButton16.Size = new System.Drawing.Size(166, 48);
             this.plC_RJ_ScreenButton16.TabIndex = 82;
+            this.plC_RJ_ScreenButton16.Visible = false;
             this.plC_RJ_ScreenButton16.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton16.寫入位置註解 = "";
             this.plC_RJ_ScreenButton16.寫入元件位置 = "";
@@ -9247,6 +9298,7 @@
             this.plC_RJ_ScreenButton19.ShowIcon = false;
             this.plC_RJ_ScreenButton19.Size = new System.Drawing.Size(166, 48);
             this.plC_RJ_ScreenButton19.TabIndex = 81;
+            this.plC_RJ_ScreenButton19.Visible = false;
             this.plC_RJ_ScreenButton19.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton19.寫入位置註解 = "";
             this.plC_RJ_ScreenButton19.寫入元件位置 = "";
@@ -9385,7 +9437,7 @@
             this.rJ_GroupBox2.PannelBorderSize = 2;
             this.rJ_GroupBox2.Size = new System.Drawing.Size(1630, 453);
             this.rJ_GroupBox2.TabIndex = 119;
-            this.rJ_GroupBox2.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox2.TitleBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox2.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox2.TitleBorderRadius = 5;
             this.rJ_GroupBox2.TitleBorderSize = 0;
@@ -10087,7 +10139,7 @@
             this.rJ_GroupBox1.PannelBorderSize = 2;
             this.rJ_GroupBox1.Size = new System.Drawing.Size(1630, 938);
             this.rJ_GroupBox1.TabIndex = 118;
-            this.rJ_GroupBox1.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox1.TitleBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox1.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox1.TitleBorderRadius = 5;
             this.rJ_GroupBox1.TitleBorderSize = 0;
@@ -11200,10 +11252,10 @@
             // plC_RJ_Button_交易紀錄查詢_全部顯示
             // 
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.AutoResetState = false;
-            this.plC_RJ_Button_交易紀錄查詢_全部顯示.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.plC_RJ_Button_交易紀錄查詢_全部顯示.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.Bool = false;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_交易紀錄查詢_全部顯示.BorderRadius = 5;
+            this.plC_RJ_Button_交易紀錄查詢_全部顯示.BorderRadius = 20;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.BorderSize = 0;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.but_press = false;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -11224,7 +11276,7 @@
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_交易紀錄查詢_全部顯示.ShadowSize = 0;
+            this.plC_RJ_Button_交易紀錄查詢_全部顯示.ShadowSize = 3;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.ShowLoadingForm = true;
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.Size = new System.Drawing.Size(119, 101);
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.State = false;
@@ -11254,7 +11306,7 @@
             // 
             // rJ_Lable41
             // 
-            this.rJ_Lable41.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable41.BackColor = System.Drawing.Color.White;
             this.rJ_Lable41.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable41.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable41.BorderRadius = 8;
@@ -11309,7 +11361,7 @@
             this.rJ_GroupBox18.PannelBorderSize = 2;
             this.rJ_GroupBox18.Size = new System.Drawing.Size(502, 319);
             this.rJ_GroupBox18.TabIndex = 126;
-            this.rJ_GroupBox18.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox18.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox18.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox18.TitleBorderRadius = 5;
             this.rJ_GroupBox18.TitleBorderSize = 0;
@@ -11324,7 +11376,7 @@
             this.textBox_交易記錄查詢_藥品碼.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_交易記錄查詢_藥品碼.BorderColor = System.Drawing.Color.SkyBlue;
             this.textBox_交易記錄查詢_藥品碼.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox_交易記錄查詢_藥品碼.BorderRadius = 5;
+            this.textBox_交易記錄查詢_藥品碼.BorderRadius = 1;
             this.textBox_交易記錄查詢_藥品碼.BorderSize = 2;
             this.textBox_交易記錄查詢_藥品碼.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.textBox_交易記錄查詢_藥品碼.ForeColor = System.Drawing.Color.DimGray;
@@ -11345,10 +11397,10 @@
             // 
             // rJ_Lable26
             // 
-            this.rJ_Lable26.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable26.BackColor = System.Drawing.Color.White;
             this.rJ_Lable26.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable26.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable26.BorderRadius = 8;
+            this.rJ_Lable26.BorderRadius = 10;
             this.rJ_Lable26.BorderSize = 0;
             this.rJ_Lable26.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable26.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11357,7 +11409,7 @@
             this.rJ_Lable26.Location = new System.Drawing.Point(24, 72);
             this.rJ_Lable26.Name = "rJ_Lable26";
             this.rJ_Lable26.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable26.ShadowSize = 0;
+            this.rJ_Lable26.ShadowSize = 3;
             this.rJ_Lable26.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable26.TabIndex = 44;
             this.rJ_Lable26.Text = "藥碼";
@@ -11366,10 +11418,10 @@
             // 
             // rJ_Lable30
             // 
-            this.rJ_Lable30.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable30.BackColor = System.Drawing.Color.White;
             this.rJ_Lable30.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable30.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable30.BorderRadius = 8;
+            this.rJ_Lable30.BorderRadius = 10;
             this.rJ_Lable30.BorderSize = 0;
             this.rJ_Lable30.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable30.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11378,7 +11430,7 @@
             this.rJ_Lable30.Location = new System.Drawing.Point(24, 13);
             this.rJ_Lable30.Name = "rJ_Lable30";
             this.rJ_Lable30.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable30.ShadowSize = 0;
+            this.rJ_Lable30.ShadowSize = 3;
             this.rJ_Lable30.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable30.TabIndex = 52;
             this.rJ_Lable30.Text = "時間";
@@ -11404,7 +11456,7 @@
             this.textBox_交易記錄查詢_藥品名稱.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_交易記錄查詢_藥品名稱.BorderColor = System.Drawing.Color.SkyBlue;
             this.textBox_交易記錄查詢_藥品名稱.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox_交易記錄查詢_藥品名稱.BorderRadius = 5;
+            this.textBox_交易記錄查詢_藥品名稱.BorderRadius = 1;
             this.textBox_交易記錄查詢_藥品名稱.BorderSize = 2;
             this.textBox_交易記錄查詢_藥品名稱.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.textBox_交易記錄查詢_藥品名稱.ForeColor = System.Drawing.Color.DimGray;
@@ -11428,7 +11480,7 @@
             this.textBox_交易記錄查詢_藥品條碼.BackColor = System.Drawing.SystemColors.Window;
             this.textBox_交易記錄查詢_藥品條碼.BorderColor = System.Drawing.Color.SkyBlue;
             this.textBox_交易記錄查詢_藥品條碼.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.textBox_交易記錄查詢_藥品條碼.BorderRadius = 5;
+            this.textBox_交易記錄查詢_藥品條碼.BorderRadius = 1;
             this.textBox_交易記錄查詢_藥品條碼.BorderSize = 2;
             this.textBox_交易記錄查詢_藥品條碼.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.textBox_交易記錄查詢_藥品條碼.ForeColor = System.Drawing.Color.DimGray;
@@ -11459,10 +11511,10 @@
             // 
             // rJ_Lable27
             // 
-            this.rJ_Lable27.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable27.BackColor = System.Drawing.Color.White;
             this.rJ_Lable27.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable27.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable27.BorderRadius = 8;
+            this.rJ_Lable27.BorderRadius = 10;
             this.rJ_Lable27.BorderSize = 0;
             this.rJ_Lable27.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable27.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11471,7 +11523,7 @@
             this.rJ_Lable27.Location = new System.Drawing.Point(24, 127);
             this.rJ_Lable27.Name = "rJ_Lable27";
             this.rJ_Lable27.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable27.ShadowSize = 0;
+            this.rJ_Lable27.ShadowSize = 3;
             this.rJ_Lable27.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable27.TabIndex = 46;
             this.rJ_Lable27.Text = "藥名";
@@ -11480,10 +11532,10 @@
             // 
             // rJ_Lable28
             // 
-            this.rJ_Lable28.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable28.BackColor = System.Drawing.Color.White;
             this.rJ_Lable28.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable28.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable28.BorderRadius = 8;
+            this.rJ_Lable28.BorderRadius = 10;
             this.rJ_Lable28.BorderSize = 0;
             this.rJ_Lable28.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable28.Font = new System.Drawing.Font("新細明體", 12F);
@@ -11492,7 +11544,7 @@
             this.rJ_Lable28.Location = new System.Drawing.Point(24, 182);
             this.rJ_Lable28.Name = "rJ_Lable28";
             this.rJ_Lable28.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable28.ShadowSize = 0;
+            this.rJ_Lable28.ShadowSize = 3;
             this.rJ_Lable28.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable28.TabIndex = 48;
             this.rJ_Lable28.Text = "藥品條碼";
@@ -11555,7 +11607,7 @@
             this.rJ_GroupBox6.PannelBorderSize = 2;
             this.rJ_GroupBox6.Size = new System.Drawing.Size(474, 319);
             this.rJ_GroupBox6.TabIndex = 120;
-            this.rJ_GroupBox6.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox6.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox6.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox6.TitleBorderRadius = 5;
             this.rJ_GroupBox6.TitleBorderSize = 0;
@@ -11955,7 +12007,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -11976,7 +12028,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.Size = new System.Drawing.Size(183, 76);
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.State = false;
@@ -12001,7 +12053,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12022,7 +12074,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.Size = new System.Drawing.Size(183, 76);
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.State = false;
@@ -12119,7 +12171,7 @@
             this.plC_RJ_GroupBox3.PannelBorderSize = 2;
             this.plC_RJ_GroupBox3.Size = new System.Drawing.Size(532, 348);
             this.plC_RJ_GroupBox3.TabIndex = 155;
-            this.plC_RJ_GroupBox3.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox3.TitleBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox3.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox3.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox3.TitleBorderSize = 0;
@@ -12186,7 +12238,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_修正批號.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_修正批號.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12195,7 +12247,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.GUID = "";
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_藥品資料_修正批號.Location = new System.Drawing.Point(409, 108);
+            this.plC_RJ_Button_藥庫_藥品資料_修正批號.Location = new System.Drawing.Point(409, 142);
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.Name = "plC_RJ_Button_藥庫_藥品資料_修正批號";
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.OFF_文字內容 = "修正批號";
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -12207,9 +12259,9 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_修正批號.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_修正批號.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_藥品資料_修正批號.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_藥品資料_修正批號.Size = new System.Drawing.Size(111, 58);
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.State = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.TabIndex = 132;
             this.plC_RJ_Button_藥庫_藥品資料_修正批號.Text = "修正批號";
@@ -12232,7 +12284,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12241,7 +12293,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.GUID = "";
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Location = new System.Drawing.Point(409, 61);
+            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Location = new System.Drawing.Point(409, 78);
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Name = "plC_RJ_Button_藥庫_藥品資料_修正庫存";
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.OFF_文字內容 = "修正庫存";
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -12253,9 +12305,9 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Size = new System.Drawing.Size(111, 58);
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.State = false;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.TabIndex = 129;
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存.Text = "修正庫存";
@@ -12277,7 +12329,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_新增效期.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_新增效期.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12298,9 +12350,9 @@
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_新增效期.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_新增效期.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_藥品資料_新增效期.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_藥品資料_新增效期.Size = new System.Drawing.Size(111, 58);
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.State = false;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.TabIndex = 128;
             this.plC_RJ_Button_藥庫_藥品資料_新增效期.Text = "新增效期";
@@ -12349,7 +12401,7 @@
             this.rJ_GroupBox3.PannelBorderSize = 2;
             this.rJ_GroupBox3.Size = new System.Drawing.Size(481, 348);
             this.rJ_GroupBox3.TabIndex = 152;
-            this.rJ_GroupBox3.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox3.TitleBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox3.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox3.TitleBorderRadius = 5;
             this.rJ_GroupBox3.TitleBorderSize = 0;
@@ -12382,7 +12434,7 @@
             // 
             // rJ_Lable17
             // 
-            this.rJ_Lable17.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable17.BackColor = System.Drawing.Color.White;
             this.rJ_Lable17.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable17.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable17.BorderRadius = 12;
@@ -12436,7 +12488,7 @@
             // 
             // rJ_Lable16
             // 
-            this.rJ_Lable16.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable16.BackColor = System.Drawing.Color.White;
             this.rJ_Lable16.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable16.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable16.BorderRadius = 12;
@@ -12490,7 +12542,7 @@
             // 
             // rJ_Lable15
             // 
-            this.rJ_Lable15.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable15.BackColor = System.Drawing.Color.White;
             this.rJ_Lable15.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable15.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable15.BorderRadius = 12;
@@ -12544,7 +12596,7 @@
             // 
             // rJ_Lable14
             // 
-            this.rJ_Lable14.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable14.BackColor = System.Drawing.Color.White;
             this.rJ_Lable14.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable14.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable14.BorderRadius = 12;
@@ -12593,7 +12645,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12602,7 +12654,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.GUID = "";
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_藥品資料_搜尋.Location = new System.Drawing.Point(314, 188);
+            this.plC_RJ_Button_藥庫_藥品資料_搜尋.Location = new System.Drawing.Point(314, 184);
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.Name = "plC_RJ_Button_藥庫_藥品資料_搜尋";
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
@@ -12614,9 +12666,9 @@
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_藥品資料_搜尋.Size = new System.Drawing.Size(75, 46);
+            this.plC_RJ_Button_藥庫_藥品資料_搜尋.Size = new System.Drawing.Size(89, 58);
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.State = false;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.TabIndex = 143;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.Text = "搜尋";
@@ -12667,7 +12719,7 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable1.BackColor = System.Drawing.Color.White;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 12;
@@ -12714,7 +12766,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_匯出.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.Bool = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_藥品資料_匯出.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_藥品資料_匯出.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.BorderSize = 0;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.but_press = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -12735,7 +12787,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_匯出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_藥品資料_匯出.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_藥品資料_匯出.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_藥品資料_匯出.Size = new System.Drawing.Size(183, 76);
             this.plC_RJ_Button_藥庫_藥品資料_匯出.State = false;
@@ -12977,7 +13029,7 @@
             this.plC_RJ_GroupBox1.PannelBorderSize = 2;
             this.plC_RJ_GroupBox1.Size = new System.Drawing.Size(1111, 857);
             this.plC_RJ_GroupBox1.TabIndex = 0;
-            this.plC_RJ_GroupBox1.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox1.TitleBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox1.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox1.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox1.TitleBorderSize = 0;
@@ -13207,7 +13259,7 @@
             // 
             // rJ_Lable39
             // 
-            this.rJ_Lable39.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable39.BackColor = System.Drawing.Color.White;
             this.rJ_Lable39.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable39.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable39.BorderRadius = 5;
@@ -13283,7 +13335,7 @@
             // 
             // rJ_Lable19
             // 
-            this.rJ_Lable19.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable19.BackColor = System.Drawing.Color.White;
             this.rJ_Lable19.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable19.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable19.BorderRadius = 5;
@@ -13337,7 +13389,7 @@
             // 
             // rJ_Lable18
             // 
-            this.rJ_Lable18.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable18.BackColor = System.Drawing.Color.White;
             this.rJ_Lable18.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable18.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable18.BorderRadius = 5;
@@ -13503,7 +13555,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13524,7 +13576,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除儲位.State = false;
@@ -13549,7 +13601,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13570,7 +13622,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.Size = new System.Drawing.Size(139, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_測試初始化.State = false;
@@ -13596,7 +13648,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13617,7 +13669,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_清除燈號.State = false;
@@ -13641,7 +13693,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13662,7 +13714,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_面板亮燈.State = false;
@@ -13762,7 +13814,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13783,7 +13835,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_更新畫面.State = false;
@@ -13808,7 +13860,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13829,7 +13881,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_顯示全部.State = false;
@@ -13854,7 +13906,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13875,7 +13927,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.Size = new System.Drawing.Size(82, 44);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_區域儲位_搜尋.State = false;
@@ -13896,19 +13948,19 @@
             // 
             // rJ_Lable22
             // 
-            this.rJ_Lable22.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable22.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable22.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable22.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable22.BorderRadius = 12;
+            this.rJ_Lable22.BorderRadius = 10;
             this.rJ_Lable22.BorderSize = 0;
             this.rJ_Lable22.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable22.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable22.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable22.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable22.GUID = "";
             this.rJ_Lable22.Location = new System.Drawing.Point(620, 420);
             this.rJ_Lable22.Name = "rJ_Lable22";
             this.rJ_Lable22.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable22.ShadowSize = 0;
+            this.rJ_Lable22.ShadowSize = 3;
             this.rJ_Lable22.Size = new System.Drawing.Size(92, 40);
             this.rJ_Lable22.TabIndex = 156;
             this.rJ_Lable22.Text = "區域儲位";
@@ -13921,7 +13973,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -13942,7 +13994,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.Size = new System.Drawing.Size(82, 44);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品名稱_搜尋.State = false;
@@ -13963,19 +14015,19 @@
             // 
             // rJ_Lable21
             // 
-            this.rJ_Lable21.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable21.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable21.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable21.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable21.BorderRadius = 12;
+            this.rJ_Lable21.BorderRadius = 10;
             this.rJ_Lable21.BorderSize = 0;
             this.rJ_Lable21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable21.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable21.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable21.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable21.GUID = "";
             this.rJ_Lable21.Location = new System.Drawing.Point(316, 420);
             this.rJ_Lable21.Name = "rJ_Lable21";
             this.rJ_Lable21.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable21.ShadowSize = 0;
+            this.rJ_Lable21.ShadowSize = 3;
             this.rJ_Lable21.Size = new System.Drawing.Size(92, 40);
             this.rJ_Lable21.TabIndex = 153;
             this.rJ_Lable21.Text = "藥品名稱";
@@ -14033,7 +14085,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14054,7 +14106,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.Size = new System.Drawing.Size(82, 44);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品碼_搜尋.State = false;
@@ -14075,19 +14127,19 @@
             // 
             // rJ_Lable20
             // 
-            this.rJ_Lable20.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable20.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable20.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable20.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable20.BorderRadius = 12;
+            this.rJ_Lable20.BorderRadius = 10;
             this.rJ_Lable20.BorderSize = 0;
             this.rJ_Lable20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable20.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable20.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable20.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable20.GUID = "";
             this.rJ_Lable20.Location = new System.Drawing.Point(9, 420);
             this.rJ_Lable20.Name = "rJ_Lable20";
             this.rJ_Lable20.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable20.ShadowSize = 0;
+            this.rJ_Lable20.ShadowSize = 3;
             this.rJ_Lable20.Size = new System.Drawing.Size(92, 40);
             this.rJ_Lable20.TabIndex = 146;
             this.rJ_Lable20.Text = "藥品碼";
@@ -14124,7 +14176,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14145,7 +14197,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.Size = new System.Drawing.Size(159, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_區域儲位設定.State = false;
@@ -14170,7 +14222,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14191,7 +14243,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_貼上格式.State = false;
@@ -14216,7 +14268,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14237,7 +14289,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.Size = new System.Drawing.Size(112, 52);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_複製格式.State = false;
@@ -14262,7 +14314,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14283,7 +14335,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.Size = new System.Drawing.Size(82, 44);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_儲位名稱_輸入.State = false;
@@ -14304,19 +14356,19 @@
             // 
             // rJ_Lable33
             // 
-            this.rJ_Lable33.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable33.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable33.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable33.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable33.BorderRadius = 12;
+            this.rJ_Lable33.BorderRadius = 10;
             this.rJ_Lable33.BorderSize = 0;
             this.rJ_Lable33.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rJ_Lable33.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_Lable33.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable33.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable33.GUID = "";
             this.rJ_Lable33.Location = new System.Drawing.Point(11, 257);
             this.rJ_Lable33.Name = "rJ_Lable33";
             this.rJ_Lable33.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable33.ShadowSize = 0;
+            this.rJ_Lable33.ShadowSize = 3;
             this.rJ_Lable33.Size = new System.Drawing.Size(116, 40);
             this.rJ_Lable33.TabIndex = 140;
             this.rJ_Lable33.Text = "儲位名稱";
@@ -14377,7 +14429,7 @@
             this.plC_RJ_GroupBox21.PannelBorderSize = 2;
             this.plC_RJ_GroupBox21.Size = new System.Drawing.Size(526, 295);
             this.plC_RJ_GroupBox21.TabIndex = 139;
-            this.plC_RJ_GroupBox21.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox21.TitleBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox21.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox21.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox21.TitleBorderSize = 0;
@@ -14444,7 +14496,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14453,7 +14505,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.GUID = "";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Location = new System.Drawing.Point(409, 108);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Location = new System.Drawing.Point(409, 132);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Name = "plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.OFF_文字內容 = "修正批號";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -14465,9 +14517,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.TabIndex = 132;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正批號.Text = "修正批號";
@@ -14490,7 +14542,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14499,7 +14551,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.GUID = "";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Location = new System.Drawing.Point(409, 61);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Location = new System.Drawing.Point(409, 73);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Name = "plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.OFF_文字內容 = "修正庫存";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -14511,9 +14563,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.TabIndex = 129;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_修正庫存.Text = "修正庫存";
@@ -14535,7 +14587,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14556,9 +14608,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.TabIndex = 128;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_新增效期.Text = "新增效期";
@@ -14618,7 +14670,7 @@
             this.plC_RJ_GroupBox22.PannelBorderSize = 2;
             this.plC_RJ_GroupBox22.Size = new System.Drawing.Size(689, 466);
             this.plC_RJ_GroupBox22.TabIndex = 54;
-            this.plC_RJ_GroupBox22.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox22.TitleBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox22.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox22.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox22.TitleBorderSize = 0;
@@ -14634,7 +14686,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14655,9 +14707,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.Size = new System.Drawing.Size(119, 46);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.Size = new System.Drawing.Size(119, 68);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.TabIndex = 135;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_填入資料.Text = "填入資料";
@@ -14679,7 +14731,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14688,7 +14740,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.GUID = "";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Location = new System.Drawing.Point(460, 284);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Location = new System.Drawing.Point(223, 282);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Name = "plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -14700,9 +14752,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Size = new System.Drawing.Size(79, 37);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Size = new System.Drawing.Size(90, 43);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.TabIndex = 134;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱_搜尋.Text = "搜尋";
@@ -14728,7 +14780,7 @@
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.ForeColor = System.Drawing.Color.DimGray;
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.GUID = "";
-            this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Location = new System.Drawing.Point(345, 287);
+            this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Location = new System.Drawing.Point(108, 288);
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Multiline = false;
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Name = "rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱";
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品名稱.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -14744,19 +14796,20 @@
             // 
             // rJ_Lable109
             // 
-            this.rJ_Lable109.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable109.BackColor = System.Drawing.Color.White;
             this.rJ_Lable109.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable109.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable109.BorderRadius = 12;
+            this.rJ_Lable109.BorderRadius = 10;
             this.rJ_Lable109.BorderSize = 0;
             this.rJ_Lable109.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable109.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable109.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable109.GUID = "";
-            this.rJ_Lable109.Location = new System.Drawing.Point(249, 287);
+            this.rJ_Lable109.Location = new System.Drawing.Point(12, 282);
             this.rJ_Lable109.Name = "rJ_Lable109";
             this.rJ_Lable109.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable109.ShadowSize = 0;
-            this.rJ_Lable109.Size = new System.Drawing.Size(90, 30);
+            this.rJ_Lable109.ShadowSize = 3;
+            this.rJ_Lable109.Size = new System.Drawing.Size(90, 43);
             this.rJ_Lable109.TabIndex = 132;
             this.rJ_Lable109.Text = "藥名";
             this.rJ_Lable109.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -14768,7 +14821,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -14777,7 +14830,7 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.GUID = "";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Location = new System.Drawing.Point(460, 327);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Location = new System.Drawing.Point(223, 327);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Name = "plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -14789,9 +14842,9 @@
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Size = new System.Drawing.Size(79, 37);
+            this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Size = new System.Drawing.Size(90, 43);
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.State = false;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.TabIndex = 131;
             this.plC_RJ_Button_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼_搜尋.Text = "搜尋";
@@ -14817,7 +14870,7 @@
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Font = new System.Drawing.Font("新細明體", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.ForeColor = System.Drawing.Color.DimGray;
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.GUID = "";
-            this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Location = new System.Drawing.Point(345, 330);
+            this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Location = new System.Drawing.Point(108, 333);
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Multiline = false;
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Name = "rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼";
             this.rJ_TextBox_藥庫_儲位設定_Pannel35_藥品搜尋_藥品碼.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -14833,19 +14886,20 @@
             // 
             // rJ_Lable110
             // 
-            this.rJ_Lable110.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.rJ_Lable110.BackColor = System.Drawing.Color.White;
             this.rJ_Lable110.BackgroundColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_Lable110.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable110.BorderRadius = 12;
+            this.rJ_Lable110.BorderRadius = 10;
             this.rJ_Lable110.BorderSize = 0;
             this.rJ_Lable110.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rJ_Lable110.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable110.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable110.GUID = "";
-            this.rJ_Lable110.Location = new System.Drawing.Point(249, 330);
+            this.rJ_Lable110.Location = new System.Drawing.Point(12, 327);
             this.rJ_Lable110.Name = "rJ_Lable110";
             this.rJ_Lable110.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable110.ShadowSize = 0;
-            this.rJ_Lable110.Size = new System.Drawing.Size(90, 30);
+            this.rJ_Lable110.ShadowSize = 3;
+            this.rJ_Lable110.Size = new System.Drawing.Size(90, 43);
             this.rJ_Lable110.TabIndex = 129;
             this.rJ_Lable110.Text = "藥碼";
             this.rJ_Lable110.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -15212,7 +15266,7 @@
             this.rJ_GroupBox4.PannelBorderSize = 2;
             this.rJ_GroupBox4.Size = new System.Drawing.Size(762, 938);
             this.rJ_GroupBox4.TabIndex = 118;
-            this.rJ_GroupBox4.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox4.TitleBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox4.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox4.TitleBorderRadius = 5;
             this.rJ_GroupBox4.TitleBorderSize = 0;
@@ -15813,7 +15867,7 @@
             this.rJ_GroupBox21.PannelBorderSize = 2;
             this.rJ_GroupBox21.Size = new System.Drawing.Size(1608, 599);
             this.rJ_GroupBox21.TabIndex = 1;
-            this.rJ_GroupBox21.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox21.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox21.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox21.TitleBorderRadius = 5;
             this.rJ_GroupBox21.TitleBorderSize = 0;
@@ -15912,7 +15966,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -15933,7 +15987,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.Size = new System.Drawing.Size(93, 46);
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.State = false;
@@ -15958,7 +16012,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -15979,7 +16033,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.Size = new System.Drawing.Size(93, 46);
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_藥品碼篩選.State = false;
@@ -16003,7 +16057,7 @@
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderRadius = 1;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.BorderSize = 2;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品碼篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -16024,10 +16078,10 @@
             // 
             // rJ_Lable107
             // 
-            this.rJ_Lable107.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable107.BackColor = System.Drawing.Color.White;
             this.rJ_Lable107.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable107.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable107.BorderRadius = 8;
+            this.rJ_Lable107.BorderRadius = 10;
             this.rJ_Lable107.BorderSize = 0;
             this.rJ_Lable107.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable107.Font = new System.Drawing.Font("新細明體", 12F);
@@ -16036,7 +16090,7 @@
             this.rJ_Lable107.Location = new System.Drawing.Point(258, 62);
             this.rJ_Lable107.Name = "rJ_Lable107";
             this.rJ_Lable107.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable107.ShadowSize = 0;
+            this.rJ_Lable107.ShadowSize = 3;
             this.rJ_Lable107.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable107.TabIndex = 225;
             this.rJ_Lable107.Text = "藥碼";
@@ -16048,7 +16102,7 @@
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderRadius = 1;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.BorderSize = 2;
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥庫_撥補_藥局_自動撥補_藥品名稱篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -16069,10 +16123,10 @@
             // 
             // rJ_Lable108
             // 
-            this.rJ_Lable108.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable108.BackColor = System.Drawing.Color.White;
             this.rJ_Lable108.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable108.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable108.BorderRadius = 8;
+            this.rJ_Lable108.BorderRadius = 10;
             this.rJ_Lable108.BorderSize = 0;
             this.rJ_Lable108.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable108.Font = new System.Drawing.Font("新細明體", 12F);
@@ -16081,7 +16135,7 @@
             this.rJ_Lable108.Location = new System.Drawing.Point(258, 117);
             this.rJ_Lable108.Name = "rJ_Lable108";
             this.rJ_Lable108.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable108.ShadowSize = 0;
+            this.rJ_Lable108.ShadowSize = 3;
             this.rJ_Lable108.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable108.TabIndex = 227;
             this.rJ_Lable108.Text = "藥名";
@@ -16116,7 +16170,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(592, 25);
+            this.label18.Location = new System.Drawing.Point(592, 24);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(11, 12);
             this.label18.TabIndex = 189;
@@ -16152,10 +16206,10 @@
             // 
             // rJ_Lable73
             // 
-            this.rJ_Lable73.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable73.BackColor = System.Drawing.Color.White;
             this.rJ_Lable73.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable73.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable73.BorderRadius = 8;
+            this.rJ_Lable73.BorderRadius = 10;
             this.rJ_Lable73.BorderSize = 0;
             this.rJ_Lable73.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable73.Font = new System.Drawing.Font("新細明體", 12F);
@@ -16164,7 +16218,7 @@
             this.rJ_Lable73.Location = new System.Drawing.Point(258, 7);
             this.rJ_Lable73.Name = "rJ_Lable73";
             this.rJ_Lable73.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable73.ShadowSize = 0;
+            this.rJ_Lable73.ShadowSize = 3;
             this.rJ_Lable73.Size = new System.Drawing.Size(172, 46);
             this.rJ_Lable73.TabIndex = 187;
             this.rJ_Lable73.Text = "顯示日期";
@@ -16222,10 +16276,10 @@
             // plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料
             // 
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BackgroundColor = System.Drawing.Color.SteelBlue;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -16246,7 +16300,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.Size = new System.Drawing.Size(238, 101);
             this.plC_RJ_Button_藥庫_撥補_藥局_自動撥補_顯示資料.State = false;
@@ -16400,7 +16454,7 @@
             this.rJ_GroupBox27.PannelBorderSize = 2;
             this.rJ_GroupBox27.Size = new System.Drawing.Size(1608, 620);
             this.rJ_GroupBox27.TabIndex = 2;
-            this.rJ_GroupBox27.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox27.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox27.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox27.TitleBorderRadius = 5;
             this.rJ_GroupBox27.TitleBorderSize = 0;
@@ -16763,7 +16817,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -16784,7 +16838,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.Size = new System.Drawing.Size(175, 83);
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_備藥中.State = false;
@@ -16844,19 +16898,19 @@
             // 
             // rJ_Lable79
             // 
-            this.rJ_Lable79.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable79.BackColor = System.Drawing.Color.White;
             this.rJ_Lable79.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable79.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable79.BorderRadius = 8;
+            this.rJ_Lable79.BorderRadius = 10;
             this.rJ_Lable79.BorderSize = 0;
             this.rJ_Lable79.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable79.Font = new System.Drawing.Font("新細明體", 12F);
             this.rJ_Lable79.ForeColor = System.Drawing.Color.Black;
             this.rJ_Lable79.GUID = "";
-            this.rJ_Lable79.Location = new System.Drawing.Point(14, 16);
+            this.rJ_Lable79.Location = new System.Drawing.Point(14, 17);
             this.rJ_Lable79.Name = "rJ_Lable79";
             this.rJ_Lable79.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable79.ShadowSize = 0;
+            this.rJ_Lable79.ShadowSize = 3;
             this.rJ_Lable79.Size = new System.Drawing.Size(172, 46);
             this.rJ_Lable79.TabIndex = 187;
             this.rJ_Lable79.Text = "顯示日期";
@@ -16869,7 +16923,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -16890,7 +16944,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.Size = new System.Drawing.Size(175, 83);
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料.State = false;
@@ -16915,7 +16969,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.Bool = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.BorderSize = 0;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.but_press = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -16936,7 +16990,7 @@
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.Size = new System.Drawing.Size(175, 83);
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_撥發.State = false;
@@ -17160,7 +17214,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17181,7 +17235,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出.State = false;
@@ -17202,7 +17256,7 @@
             // 
             // rJ_Lable117
             // 
-            this.rJ_Lable117.BackColor = System.Drawing.Color.DeepPink;
+            this.rJ_Lable117.BackColor = System.Drawing.Color.White;
             this.rJ_Lable117.BackgroundColor = System.Drawing.Color.DeepPink;
             this.rJ_Lable117.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable117.BorderRadius = 12;
@@ -17215,10 +17269,10 @@
             this.rJ_Lable117.Location = new System.Drawing.Point(1250, 649);
             this.rJ_Lable117.Name = "rJ_Lable117";
             this.rJ_Lable117.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable117.ShadowSize = 0;
+            this.rJ_Lable117.ShadowSize = 3;
             this.rJ_Lable117.Size = new System.Drawing.Size(372, 208);
             this.rJ_Lable117.TabIndex = 198;
-            this.rJ_Lable117.Text = "需與每日< 11:50 >完成請購動作\r\n\r\n系統將於< 12:00 >時發送請購資料至高榮補給系統\r\n\r\n若有修正請購數量,需重新按[確認請購]";
+            this.rJ_Lable117.Text = "需與每日< 11:50 >完成請購動作\r\n\r\n系統將於< 12:00 >時發送請購資料至\r\n高榮補給系統\r\n\r\n若有修正請購數量,需重新按[確認請購]";
             this.rJ_Lable117.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.rJ_Lable117.TextColor = System.Drawing.Color.White;
             // 
@@ -17228,7 +17282,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17249,7 +17303,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_送出線上訂單.State = false;
@@ -17274,7 +17328,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.BackgroundColor = System.Drawing.Color.SlateGray;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17295,7 +17349,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_選取藥品補足基準量.State = false;
@@ -17320,7 +17374,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.BackgroundColor = System.Drawing.Color.SlateGray;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17341,7 +17395,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單.State = false;
@@ -17377,7 +17431,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17398,7 +17452,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品名稱搜尋.State = false;
@@ -17419,10 +17473,10 @@
             // 
             // rJ_Lable47
             // 
-            this.rJ_Lable47.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable47.BackColor = System.Drawing.Color.White;
             this.rJ_Lable47.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable47.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable47.BorderRadius = 5;
+            this.rJ_Lable47.BorderRadius = 10;
             this.rJ_Lable47.BorderSize = 0;
             this.rJ_Lable47.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable47.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -17431,7 +17485,7 @@
             this.rJ_Lable47.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable47.Name = "rJ_Lable47";
             this.rJ_Lable47.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable47.ShadowSize = 0;
+            this.rJ_Lable47.ShadowSize = 3;
             this.rJ_Lable47.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable47.TabIndex = 143;
             this.rJ_Lable47.Text = "藥名";
@@ -17490,7 +17544,7 @@
             this.plC_RJ_GroupBox7.PannelBorderSize = 2;
             this.plC_RJ_GroupBox7.Size = new System.Drawing.Size(1250, 857);
             this.plC_RJ_GroupBox7.TabIndex = 187;
-            this.plC_RJ_GroupBox7.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox7.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox7.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox7.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox7.TitleBorderSize = 0;
@@ -17579,7 +17633,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17600,7 +17654,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_藥品碼搜尋.State = false;
@@ -17621,10 +17675,10 @@
             // 
             // rJ_Lable46
             // 
-            this.rJ_Lable46.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable46.BackColor = System.Drawing.Color.White;
             this.rJ_Lable46.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable46.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable46.BorderRadius = 5;
+            this.rJ_Lable46.BorderRadius = 10;
             this.rJ_Lable46.BorderSize = 0;
             this.rJ_Lable46.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable46.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -17633,7 +17687,7 @@
             this.rJ_Lable46.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable46.Name = "rJ_Lable46";
             this.rJ_Lable46.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable46.ShadowSize = 0;
+            this.rJ_Lable46.ShadowSize = 3;
             this.rJ_Lable46.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable46.TabIndex = 143;
             this.rJ_Lable46.Text = "藥碼";
@@ -17670,7 +17724,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17691,7 +17745,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部.State = false;
@@ -17716,7 +17770,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17737,7 +17791,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_清除所有線上訂單.State = false;
@@ -17763,7 +17817,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17784,7 +17838,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示在途藥品.State = false;
@@ -17809,7 +17863,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17830,7 +17884,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量.State = false;
@@ -17855,7 +17909,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17876,7 +17930,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品.State = false;
@@ -17929,7 +17983,7 @@
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Bool = false;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderRadius = 20;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.BorderSize = 0;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.but_press = false;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -17950,7 +18004,7 @@
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShadowSize = 0;
+            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShadowSize = 3;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.ShowLoadingForm = false;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.State = false;
@@ -17971,10 +18025,10 @@
             // 
             // rJ_Lable116
             // 
-            this.rJ_Lable116.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable116.BackColor = System.Drawing.Color.White;
             this.rJ_Lable116.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable116.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable116.BorderRadius = 5;
+            this.rJ_Lable116.BorderRadius = 10;
             this.rJ_Lable116.BorderSize = 0;
             this.rJ_Lable116.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable116.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -17983,7 +18037,7 @@
             this.rJ_Lable116.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable116.Name = "rJ_Lable116";
             this.rJ_Lable116.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable116.ShadowSize = 0;
+            this.rJ_Lable116.ShadowSize = 3;
             this.rJ_Lable116.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable116.TabIndex = 143;
             this.rJ_Lable116.Text = "藥碼";
@@ -18020,7 +18074,7 @@
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Bool = false;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderRadius = 5;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderRadius = 20;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.BorderSize = 0;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.but_press = false;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -18041,7 +18095,7 @@
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ShadowSize = 0;
+            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ShadowSize = 3;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.ShowLoadingForm = false;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.Size = new System.Drawing.Size(79, 46);
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.State = false;
@@ -18062,10 +18116,10 @@
             // 
             // rJ_Lable115
             // 
-            this.rJ_Lable115.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable115.BackColor = System.Drawing.Color.White;
             this.rJ_Lable115.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable115.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable115.BorderRadius = 8;
+            this.rJ_Lable115.BorderRadius = 10;
             this.rJ_Lable115.BorderSize = 0;
             this.rJ_Lable115.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable115.Font = new System.Drawing.Font("新細明體", 12F);
@@ -18074,7 +18128,7 @@
             this.rJ_Lable115.Location = new System.Drawing.Point(1050, 16);
             this.rJ_Lable115.Name = "rJ_Lable115";
             this.rJ_Lable115.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable115.ShadowSize = 0;
+            this.rJ_Lable115.ShadowSize = 3;
             this.rJ_Lable115.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable115.TabIndex = 190;
             this.rJ_Lable115.Text = "請購時間";
@@ -18101,7 +18155,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Bool = false;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.BorderSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.but_press = false;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -18122,7 +18176,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.Size = new System.Drawing.Size(168, 81);
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.State = false;
@@ -18169,7 +18223,7 @@
             this.plC_RJ_GroupBox16.PannelBorderSize = 2;
             this.plC_RJ_GroupBox16.Size = new System.Drawing.Size(1029, 857);
             this.plC_RJ_GroupBox16.TabIndex = 188;
-            this.plC_RJ_GroupBox16.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox16.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox16.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox16.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox16.TitleBorderSize = 0;
@@ -18304,7 +18358,7 @@
             this.rJ_GroupBox23.PannelBorderSize = 1;
             this.rJ_GroupBox23.Size = new System.Drawing.Size(605, 406);
             this.rJ_GroupBox23.TabIndex = 201;
-            this.rJ_GroupBox23.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox23.TitleBackColor = System.Drawing.SystemColors.Control;
             this.rJ_GroupBox23.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox23.TitleBorderRadius = 5;
             this.rJ_GroupBox23.TitleBorderSize = 0;
@@ -18316,7 +18370,7 @@
             // 
             // rJ_Lable134
             // 
-            this.rJ_Lable134.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable134.BackColor = System.Drawing.Color.White;
             this.rJ_Lable134.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable134.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable134.BorderRadius = 5;
@@ -18362,7 +18416,7 @@
             // 
             // rJ_Lable135
             // 
-            this.rJ_Lable135.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable135.BackColor = System.Drawing.Color.White;
             this.rJ_Lable135.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable135.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable135.BorderRadius = 5;
@@ -18491,7 +18545,7 @@
             this.rJ_GroupBox20.PannelBorderSize = 1;
             this.rJ_GroupBox20.Size = new System.Drawing.Size(605, 406);
             this.rJ_GroupBox20.TabIndex = 200;
-            this.rJ_GroupBox20.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox20.TitleBackColor = System.Drawing.SystemColors.Control;
             this.rJ_GroupBox20.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox20.TitleBorderRadius = 5;
             this.rJ_GroupBox20.TitleBorderSize = 0;
@@ -18503,7 +18557,7 @@
             // 
             // rJ_Lable133
             // 
-            this.rJ_Lable133.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable133.BackColor = System.Drawing.Color.White;
             this.rJ_Lable133.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable133.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable133.BorderRadius = 5;
@@ -18549,7 +18603,7 @@
             // 
             // rJ_Lable132
             // 
-            this.rJ_Lable132.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable132.BackColor = System.Drawing.Color.White;
             this.rJ_Lable132.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable132.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable132.BorderRadius = 5;
@@ -18679,7 +18733,7 @@
             this.rJ_GroupBox19.PannelBorderSize = 0;
             this.rJ_GroupBox19.Size = new System.Drawing.Size(1017, 857);
             this.rJ_GroupBox19.TabIndex = 199;
-            this.rJ_GroupBox19.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox19.TitleBackColor = System.Drawing.SystemColors.Control;
             this.rJ_GroupBox19.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox19.TitleBorderRadius = 5;
             this.rJ_GroupBox19.TitleBorderSize = 0;
@@ -18764,7 +18818,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ShadowSize = 0;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Size = new System.Drawing.Size(61, 111);
+            this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Size = new System.Drawing.Size(126, 111);
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.State = false;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.TabIndex = 193;
             this.plC_RJ_Button_藥庫_每日訂單_檢視驗收入庫量_輸入補償量.Text = "輸入補償量";
@@ -18899,7 +18953,7 @@
             // 
             // rJ_Lable130
             // 
-            this.rJ_Lable130.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable130.BackColor = System.Drawing.Color.White;
             this.rJ_Lable130.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable130.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable130.BorderRadius = 5;
@@ -19057,7 +19111,7 @@
             // 
             // rJ_Lable129
             // 
-            this.rJ_Lable129.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable129.BackColor = System.Drawing.Color.White;
             this.rJ_Lable129.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable129.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable129.BorderRadius = 5;
@@ -19304,7 +19358,7 @@
             // 
             // rJ_Lable_下訂單_發送中
             // 
-            this.rJ_Lable_下訂單_發送中.BackColor = System.Drawing.Color.Crimson;
+            this.rJ_Lable_下訂單_發送中.BackColor = System.Drawing.Color.White;
             this.rJ_Lable_下訂單_發送中.BackgroundColor = System.Drawing.Color.Crimson;
             this.rJ_Lable_下訂單_發送中.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable_下訂單_發送中.BorderRadius = 12;
@@ -19492,7 +19546,7 @@
             this.plC_RJ_GroupBox10.PannelBorderSize = 2;
             this.plC_RJ_GroupBox10.Size = new System.Drawing.Size(770, 432);
             this.plC_RJ_GroupBox10.TabIndex = 7;
-            this.plC_RJ_GroupBox10.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox10.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox10.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox10.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox10.TitleBorderSize = 0;
@@ -19531,7 +19585,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -19552,7 +19606,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.Size = new System.Drawing.Size(53, 68);
             this.plC_RJ_Button_緊急訂單_下訂單_新增訂單內容.State = false;
@@ -19577,7 +19631,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -19598,7 +19652,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.Size = new System.Drawing.Size(53, 68);
             this.plC_RJ_Button_緊急訂單_下訂單_刪除訂單內容.State = false;
@@ -19663,10 +19717,10 @@
             // 
             // rJ_Lable94
             // 
-            this.rJ_Lable94.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable94.BackColor = System.Drawing.Color.White;
             this.rJ_Lable94.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable94.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable94.BorderRadius = 12;
+            this.rJ_Lable94.BorderRadius = 5;
             this.rJ_Lable94.BorderSize = 0;
             this.rJ_Lable94.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable94.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -19676,7 +19730,7 @@
             this.rJ_Lable94.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable94.Name = "rJ_Lable94";
             this.rJ_Lable94.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable94.ShadowSize = 0;
+            this.rJ_Lable94.ShadowSize = 3;
             this.rJ_Lable94.Size = new System.Drawing.Size(96, 33);
             this.rJ_Lable94.TabIndex = 123;
             this.rJ_Lable94.Text = "已訂購總量";
@@ -19729,10 +19783,10 @@
             // 
             // rJ_Lable93
             // 
-            this.rJ_Lable93.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable93.BackColor = System.Drawing.Color.White;
             this.rJ_Lable93.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable93.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable93.BorderRadius = 12;
+            this.rJ_Lable93.BorderRadius = 5;
             this.rJ_Lable93.BorderSize = 0;
             this.rJ_Lable93.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable93.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -19742,7 +19796,7 @@
             this.rJ_Lable93.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable93.Name = "rJ_Lable93";
             this.rJ_Lable93.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable93.ShadowSize = 0;
+            this.rJ_Lable93.ShadowSize = 3;
             this.rJ_Lable93.Size = new System.Drawing.Size(96, 33);
             this.rJ_Lable93.TabIndex = 123;
             this.rJ_Lable93.Text = "已訂購總價";
@@ -19795,10 +19849,10 @@
             // 
             // rJ_Lable92
             // 
-            this.rJ_Lable92.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable92.BackColor = System.Drawing.Color.White;
             this.rJ_Lable92.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable92.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable92.BorderRadius = 12;
+            this.rJ_Lable92.BorderRadius = 5;
             this.rJ_Lable92.BorderSize = 0;
             this.rJ_Lable92.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable92.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -19808,7 +19862,7 @@
             this.rJ_Lable92.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable92.Name = "rJ_Lable92";
             this.rJ_Lable92.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable92.ShadowSize = 0;
+            this.rJ_Lable92.ShadowSize = 3;
             this.rJ_Lable92.Size = new System.Drawing.Size(76, 33);
             this.rJ_Lable92.TabIndex = 123;
             this.rJ_Lable92.Text = "前次單價";
@@ -19861,10 +19915,10 @@
             // 
             // rJ_Lable91
             // 
-            this.rJ_Lable91.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable91.BackColor = System.Drawing.Color.White;
             this.rJ_Lable91.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable91.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable91.BorderRadius = 12;
+            this.rJ_Lable91.BorderRadius = 5;
             this.rJ_Lable91.BorderSize = 0;
             this.rJ_Lable91.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable91.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -19874,7 +19928,7 @@
             this.rJ_Lable91.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable91.Name = "rJ_Lable91";
             this.rJ_Lable91.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable91.ShadowSize = 0;
+            this.rJ_Lable91.ShadowSize = 3;
             this.rJ_Lable91.Size = new System.Drawing.Size(76, 33);
             this.rJ_Lable91.TabIndex = 123;
             this.rJ_Lable91.Text = "總價";
@@ -19926,10 +19980,10 @@
             // 
             // rJ_Lable90
             // 
-            this.rJ_Lable90.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable90.BackColor = System.Drawing.Color.White;
             this.rJ_Lable90.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable90.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable90.BorderRadius = 12;
+            this.rJ_Lable90.BorderRadius = 5;
             this.rJ_Lable90.BorderSize = 0;
             this.rJ_Lable90.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable90.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -19939,7 +19993,7 @@
             this.rJ_Lable90.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable90.Name = "rJ_Lable90";
             this.rJ_Lable90.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable90.ShadowSize = 0;
+            this.rJ_Lable90.ShadowSize = 3;
             this.rJ_Lable90.Size = new System.Drawing.Size(76, 33);
             this.rJ_Lable90.TabIndex = 123;
             this.rJ_Lable90.Text = "數量";
@@ -19991,10 +20045,10 @@
             // 
             // rJ_Lable88
             // 
-            this.rJ_Lable88.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable88.BackColor = System.Drawing.Color.White;
             this.rJ_Lable88.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable88.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable88.BorderRadius = 12;
+            this.rJ_Lable88.BorderRadius = 5;
             this.rJ_Lable88.BorderSize = 0;
             this.rJ_Lable88.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable88.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20004,7 +20058,7 @@
             this.rJ_Lable88.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable88.Name = "rJ_Lable88";
             this.rJ_Lable88.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable88.ShadowSize = 0;
+            this.rJ_Lable88.ShadowSize = 3;
             this.rJ_Lable88.Size = new System.Drawing.Size(76, 33);
             this.rJ_Lable88.TabIndex = 123;
             this.rJ_Lable88.Text = "單價";
@@ -20057,10 +20111,10 @@
             // 
             // rJ_Lable87
             // 
-            this.rJ_Lable87.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable87.BackColor = System.Drawing.Color.White;
             this.rJ_Lable87.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable87.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable87.BorderRadius = 12;
+            this.rJ_Lable87.BorderRadius = 5;
             this.rJ_Lable87.BorderSize = 0;
             this.rJ_Lable87.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable87.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20070,7 +20124,7 @@
             this.rJ_Lable87.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable87.Name = "rJ_Lable87";
             this.rJ_Lable87.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable87.ShadowSize = 0;
+            this.rJ_Lable87.ShadowSize = 3;
             this.rJ_Lable87.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable87.TabIndex = 123;
             this.rJ_Lable87.Text = "包裝單位";
@@ -20123,10 +20177,10 @@
             // 
             // rJ_Lable86
             // 
-            this.rJ_Lable86.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable86.BackColor = System.Drawing.Color.White;
             this.rJ_Lable86.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable86.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable86.BorderRadius = 12;
+            this.rJ_Lable86.BorderRadius = 5;
             this.rJ_Lable86.BorderSize = 0;
             this.rJ_Lable86.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable86.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20136,7 +20190,7 @@
             this.rJ_Lable86.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable86.Name = "rJ_Lable86";
             this.rJ_Lable86.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable86.ShadowSize = 0;
+            this.rJ_Lable86.ShadowSize = 3;
             this.rJ_Lable86.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable86.TabIndex = 123;
             this.rJ_Lable86.Text = "藥名";
@@ -20189,10 +20243,10 @@
             // 
             // rJ_Lable89
             // 
-            this.rJ_Lable89.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable89.BackColor = System.Drawing.Color.White;
             this.rJ_Lable89.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable89.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable89.BorderRadius = 12;
+            this.rJ_Lable89.BorderRadius = 5;
             this.rJ_Lable89.BorderSize = 0;
             this.rJ_Lable89.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable89.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20202,7 +20256,7 @@
             this.rJ_Lable89.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable89.Name = "rJ_Lable89";
             this.rJ_Lable89.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable89.ShadowSize = 0;
+            this.rJ_Lable89.ShadowSize = 3;
             this.rJ_Lable89.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable89.TabIndex = 123;
             this.rJ_Lable89.Text = "藥碼";
@@ -20280,10 +20334,10 @@
             // 
             // rJ_Lable85
             // 
-            this.rJ_Lable85.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable85.BackColor = System.Drawing.Color.White;
             this.rJ_Lable85.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable85.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable85.BorderRadius = 12;
+            this.rJ_Lable85.BorderRadius = 5;
             this.rJ_Lable85.BorderSize = 0;
             this.rJ_Lable85.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable85.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20293,7 +20347,7 @@
             this.rJ_Lable85.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable85.Name = "rJ_Lable85";
             this.rJ_Lable85.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable85.ShadowSize = 0;
+            this.rJ_Lable85.ShadowSize = 3;
             this.rJ_Lable85.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable85.TabIndex = 123;
             this.rJ_Lable85.Text = "電話";
@@ -20346,10 +20400,10 @@
             // 
             // rJ_Lable84
             // 
-            this.rJ_Lable84.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable84.BackColor = System.Drawing.Color.White;
             this.rJ_Lable84.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable84.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable84.BorderRadius = 12;
+            this.rJ_Lable84.BorderRadius = 5;
             this.rJ_Lable84.BorderSize = 0;
             this.rJ_Lable84.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable84.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20359,7 +20413,7 @@
             this.rJ_Lable84.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable84.Name = "rJ_Lable84";
             this.rJ_Lable84.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable84.ShadowSize = 0;
+            this.rJ_Lable84.ShadowSize = 3;
             this.rJ_Lable84.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable84.TabIndex = 123;
             this.rJ_Lable84.Text = "聯絡人";
@@ -20412,10 +20466,10 @@
             // 
             // rJ_Lable83
             // 
-            this.rJ_Lable83.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable83.BackColor = System.Drawing.Color.White;
             this.rJ_Lable83.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable83.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable83.BorderRadius = 12;
+            this.rJ_Lable83.BorderRadius = 5;
             this.rJ_Lable83.BorderSize = 0;
             this.rJ_Lable83.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable83.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20425,7 +20479,7 @@
             this.rJ_Lable83.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable83.Name = "rJ_Lable83";
             this.rJ_Lable83.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable83.ShadowSize = 0;
+            this.rJ_Lable83.ShadowSize = 3;
             this.rJ_Lable83.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable83.TabIndex = 123;
             this.rJ_Lable83.Text = "Email";
@@ -20478,10 +20532,10 @@
             // 
             // rJ_Lable82
             // 
-            this.rJ_Lable82.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable82.BackColor = System.Drawing.Color.White;
             this.rJ_Lable82.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable82.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable82.BorderRadius = 12;
+            this.rJ_Lable82.BorderRadius = 5;
             this.rJ_Lable82.BorderSize = 0;
             this.rJ_Lable82.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable82.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20491,7 +20545,7 @@
             this.rJ_Lable82.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable82.Name = "rJ_Lable82";
             this.rJ_Lable82.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable82.ShadowSize = 0;
+            this.rJ_Lable82.ShadowSize = 3;
             this.rJ_Lable82.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable82.TabIndex = 123;
             this.rJ_Lable82.Text = "全名";
@@ -20603,10 +20657,10 @@
             // 
             // rJ_Lable50
             // 
-            this.rJ_Lable50.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable50.BackColor = System.Drawing.Color.White;
             this.rJ_Lable50.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable50.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable50.BorderRadius = 12;
+            this.rJ_Lable50.BorderRadius = 5;
             this.rJ_Lable50.BorderSize = 0;
             this.rJ_Lable50.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable50.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20616,7 +20670,7 @@
             this.rJ_Lable50.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable50.Name = "rJ_Lable50";
             this.rJ_Lable50.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable50.ShadowSize = 0;
+            this.rJ_Lable50.ShadowSize = 3;
             this.rJ_Lable50.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable50.TabIndex = 123;
             this.rJ_Lable50.Text = "訂單編號";
@@ -20669,10 +20723,10 @@
             // 
             // rJ_Lable81
             // 
-            this.rJ_Lable81.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable81.BackColor = System.Drawing.Color.White;
             this.rJ_Lable81.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable81.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable81.BorderRadius = 12;
+            this.rJ_Lable81.BorderRadius = 5;
             this.rJ_Lable81.BorderSize = 0;
             this.rJ_Lable81.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable81.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20682,7 +20736,7 @@
             this.rJ_Lable81.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable81.Name = "rJ_Lable81";
             this.rJ_Lable81.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable81.ShadowSize = 0;
+            this.rJ_Lable81.ShadowSize = 3;
             this.rJ_Lable81.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable81.TabIndex = 123;
             this.rJ_Lable81.Text = "應驗收日期";
@@ -20735,10 +20789,10 @@
             // 
             // rJ_Lable64
             // 
-            this.rJ_Lable64.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable64.BackColor = System.Drawing.Color.White;
             this.rJ_Lable64.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable64.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable64.BorderRadius = 12;
+            this.rJ_Lable64.BorderRadius = 5;
             this.rJ_Lable64.BorderSize = 0;
             this.rJ_Lable64.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable64.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20748,7 +20802,7 @@
             this.rJ_Lable64.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable64.Name = "rJ_Lable64";
             this.rJ_Lable64.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable64.ShadowSize = 0;
+            this.rJ_Lable64.ShadowSize = 3;
             this.rJ_Lable64.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable64.TabIndex = 123;
             this.rJ_Lable64.Text = "訂購人";
@@ -20801,10 +20855,10 @@
             // 
             // rJ_Lable75
             // 
-            this.rJ_Lable75.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable75.BackColor = System.Drawing.Color.White;
             this.rJ_Lable75.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable75.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable75.BorderRadius = 12;
+            this.rJ_Lable75.BorderRadius = 5;
             this.rJ_Lable75.BorderSize = 0;
             this.rJ_Lable75.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable75.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20814,7 +20868,7 @@
             this.rJ_Lable75.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable75.Name = "rJ_Lable75";
             this.rJ_Lable75.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable75.ShadowSize = 0;
+            this.rJ_Lable75.ShadowSize = 3;
             this.rJ_Lable75.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable75.TabIndex = 123;
             this.rJ_Lable75.Text = "訂購日期";
@@ -20866,10 +20920,10 @@
             // 
             // rJ_Lable74
             // 
-            this.rJ_Lable74.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable74.BackColor = System.Drawing.Color.White;
             this.rJ_Lable74.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable74.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable74.BorderRadius = 12;
+            this.rJ_Lable74.BorderRadius = 5;
             this.rJ_Lable74.BorderSize = 0;
             this.rJ_Lable74.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_Lable74.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -20879,7 +20933,7 @@
             this.rJ_Lable74.Location = new System.Drawing.Point(0, 0);
             this.rJ_Lable74.Name = "rJ_Lable74";
             this.rJ_Lable74.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable74.ShadowSize = 0;
+            this.rJ_Lable74.ShadowSize = 3;
             this.rJ_Lable74.Size = new System.Drawing.Size(91, 33);
             this.rJ_Lable74.TabIndex = 123;
             this.rJ_Lable74.Text = "院所名稱";
@@ -20972,7 +21026,7 @@
             this.plC_RJ_GroupBox9.PannelBorderSize = 2;
             this.plC_RJ_GroupBox9.Size = new System.Drawing.Size(877, 214);
             this.plC_RJ_GroupBox9.TabIndex = 6;
-            this.plC_RJ_GroupBox9.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox9.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox9.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox9.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox9.TitleBorderSize = 0;
@@ -20989,7 +21043,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21010,7 +21064,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.Size = new System.Drawing.Size(88, 48);
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_填入.State = false;
@@ -21035,7 +21089,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21056,7 +21110,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.Size = new System.Drawing.Size(75, 46);
             this.plC_RJ_Button_緊急訂單_下訂單_供應商搜尋_全名搜尋.State = false;
@@ -21086,7 +21140,7 @@
             // 
             // rJ_Lable51
             // 
-            this.rJ_Lable51.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable51.BackColor = System.Drawing.Color.White;
             this.rJ_Lable51.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable51.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable51.BorderRadius = 12;
@@ -21211,7 +21265,7 @@
             this.plC_RJ_GroupBox8.PannelBorderSize = 2;
             this.plC_RJ_GroupBox8.Size = new System.Drawing.Size(877, 211);
             this.plC_RJ_GroupBox8.TabIndex = 5;
-            this.plC_RJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox8.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox8.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox8.TitleBorderSize = 0;
@@ -21228,7 +21282,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21249,7 +21303,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.Size = new System.Drawing.Size(88, 48);
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_填入.State = false;
@@ -21274,7 +21328,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21295,7 +21349,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.Size = new System.Drawing.Size(75, 46);
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品名稱搜尋.State = false;
@@ -21320,7 +21374,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21341,7 +21395,7 @@
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.Size = new System.Drawing.Size(75, 46);
             this.plC_RJ_Button_緊急訂單_下訂單_藥品搜尋_藥品碼搜尋.State = false;
@@ -21371,7 +21425,7 @@
             // 
             // rJ_Lable49
             // 
-            this.rJ_Lable49.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable49.BackColor = System.Drawing.Color.White;
             this.rJ_Lable49.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable49.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable49.BorderRadius = 12;
@@ -21425,7 +21479,7 @@
             // 
             // rJ_Lable48
             // 
-            this.rJ_Lable48.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable48.BackColor = System.Drawing.Color.White;
             this.rJ_Lable48.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable48.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable48.BorderRadius = 12;
@@ -21586,7 +21640,7 @@
             this.plC_RJ_GroupBox13.PannelBorderSize = 2;
             this.plC_RJ_GroupBox13.Size = new System.Drawing.Size(1622, 265);
             this.plC_RJ_GroupBox13.TabIndex = 11;
-            this.plC_RJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox13.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox13.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox13.TitleBorderSize = 0;
@@ -21680,7 +21734,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21701,7 +21755,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.Size = new System.Drawing.Size(124, 65);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正訂購時間.State = false;
@@ -21727,7 +21781,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21748,7 +21802,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.Size = new System.Drawing.Size(124, 65);
             this.plC_RJ_Button_緊急訂單_訂單管理_修正備註.State = false;
@@ -21818,7 +21872,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21839,7 +21893,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.Size = new System.Drawing.Size(145, 66);
             this.plC_RJ_Button_緊急訂單_訂單管理_刪除訂單.State = false;
@@ -21920,7 +21974,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -21941,7 +21995,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_緊急訂單_訂單管理_訂單編號搜尋.State = false;
@@ -21962,10 +22016,10 @@
             // 
             // rJ_Lable98
             // 
-            this.rJ_Lable98.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable98.BackColor = System.Drawing.Color.White;
             this.rJ_Lable98.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable98.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable98.BorderRadius = 5;
+            this.rJ_Lable98.BorderRadius = 10;
             this.rJ_Lable98.BorderSize = 0;
             this.rJ_Lable98.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable98.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -21974,7 +22028,7 @@
             this.rJ_Lable98.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable98.Name = "rJ_Lable98";
             this.rJ_Lable98.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable98.ShadowSize = 0;
+            this.rJ_Lable98.ShadowSize = 3;
             this.rJ_Lable98.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable98.TabIndex = 143;
             this.rJ_Lable98.Text = "訂單編號";
@@ -22022,7 +22076,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -22043,7 +22097,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品碼搜尋.State = false;
@@ -22064,10 +22118,10 @@
             // 
             // rJ_Lable96
             // 
-            this.rJ_Lable96.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable96.BackColor = System.Drawing.Color.White;
             this.rJ_Lable96.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable96.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable96.BorderRadius = 5;
+            this.rJ_Lable96.BorderRadius = 10;
             this.rJ_Lable96.BorderSize = 0;
             this.rJ_Lable96.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable96.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -22076,7 +22130,7 @@
             this.rJ_Lable96.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable96.Name = "rJ_Lable96";
             this.rJ_Lable96.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable96.ShadowSize = 0;
+            this.rJ_Lable96.ShadowSize = 3;
             this.rJ_Lable96.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable96.TabIndex = 143;
             this.rJ_Lable96.Text = "藥品碼";
@@ -22124,7 +22178,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -22145,7 +22199,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_緊急訂單_訂單管理_供應商名稱搜尋.State = false;
@@ -22166,10 +22220,10 @@
             // 
             // rJ_Lable97
             // 
-            this.rJ_Lable97.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable97.BackColor = System.Drawing.Color.White;
             this.rJ_Lable97.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable97.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable97.BorderRadius = 5;
+            this.rJ_Lable97.BorderRadius = 10;
             this.rJ_Lable97.BorderSize = 0;
             this.rJ_Lable97.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable97.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -22178,7 +22232,7 @@
             this.rJ_Lable97.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable97.Name = "rJ_Lable97";
             this.rJ_Lable97.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable97.ShadowSize = 0;
+            this.rJ_Lable97.ShadowSize = 3;
             this.rJ_Lable97.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable97.TabIndex = 143;
             this.rJ_Lable97.Text = "廠商名";
@@ -22226,7 +22280,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -22247,7 +22301,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_緊急訂單_訂單管理_藥品名稱搜尋.State = false;
@@ -22268,10 +22322,10 @@
             // 
             // rJ_Lable95
             // 
-            this.rJ_Lable95.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable95.BackColor = System.Drawing.Color.White;
             this.rJ_Lable95.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable95.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable95.BorderRadius = 5;
+            this.rJ_Lable95.BorderRadius = 10;
             this.rJ_Lable95.BorderSize = 0;
             this.rJ_Lable95.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable95.Font = new System.Drawing.Font("微軟正黑體", 14F);
@@ -22280,7 +22334,7 @@
             this.rJ_Lable95.Location = new System.Drawing.Point(3, 5);
             this.rJ_Lable95.Name = "rJ_Lable95";
             this.rJ_Lable95.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable95.ShadowSize = 0;
+            this.rJ_Lable95.ShadowSize = 3;
             this.rJ_Lable95.Size = new System.Drawing.Size(106, 50);
             this.rJ_Lable95.TabIndex = 143;
             this.rJ_Lable95.Text = "藥品名稱";
@@ -22317,7 +22371,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -22338,7 +22392,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.Size = new System.Drawing.Size(145, 66);
             this.plC_RJ_Button_緊急訂單_訂單管理_顯示全部.State = false;
@@ -22377,7 +22431,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.Bool = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.BorderRadius = 10;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.BorderSize = 0;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.but_press = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -22398,7 +22452,7 @@
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ShadowSize = 3;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.Size = new System.Drawing.Size(75, 50);
             this.plC_RJ_Button_緊急訂單_訂單管理_訂購時間搜尋.State = false;
@@ -22492,7 +22546,7 @@
             this.plC_RJ_GroupBox12.PannelBorderSize = 2;
             this.plC_RJ_GroupBox12.Size = new System.Drawing.Size(1264, 248);
             this.plC_RJ_GroupBox12.TabIndex = 8;
-            this.plC_RJ_GroupBox12.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox12.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox12.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox12.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox12.TitleBorderSize = 0;
@@ -22579,7 +22633,7 @@
             this.plC_RJ_GroupBox11.PannelBorderSize = 2;
             this.plC_RJ_GroupBox11.Size = new System.Drawing.Size(1264, 340);
             this.plC_RJ_GroupBox11.TabIndex = 7;
-            this.plC_RJ_GroupBox11.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox11.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox11.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox11.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox11.TitleBorderSize = 0;
@@ -24554,7 +24608,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -24575,7 +24629,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.Size = new System.Drawing.Size(93, 46);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.State = false;
@@ -24600,7 +24654,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -24621,7 +24675,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.Size = new System.Drawing.Size(93, 46);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.State = false;
@@ -24645,7 +24699,7 @@
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderRadius = 1;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.BorderSize = 2;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品碼篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -24666,10 +24720,10 @@
             // 
             // rJ_Lable111
             // 
-            this.rJ_Lable111.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable111.BackColor = System.Drawing.Color.White;
             this.rJ_Lable111.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable111.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable111.BorderRadius = 8;
+            this.rJ_Lable111.BorderRadius = 10;
             this.rJ_Lable111.BorderSize = 0;
             this.rJ_Lable111.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable111.Font = new System.Drawing.Font("新細明體", 12F);
@@ -24678,7 +24732,7 @@
             this.rJ_Lable111.Location = new System.Drawing.Point(1235, 639);
             this.rJ_Lable111.Name = "rJ_Lable111";
             this.rJ_Lable111.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable111.ShadowSize = 0;
+            this.rJ_Lable111.ShadowSize = 3;
             this.rJ_Lable111.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable111.TabIndex = 231;
             this.rJ_Lable111.Text = "藥碼";
@@ -24690,7 +24744,7 @@
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderRadius = 5;
+            this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderRadius = 1;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.BorderSize = 2;
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.Font = new System.Drawing.Font("微軟正黑體", 12F);
             this.rJ_TextBox_藥庫_驗收入庫_過帳明細_藥品名稱篩選.ForeColor = System.Drawing.Color.DimGray;
@@ -24711,10 +24765,10 @@
             // 
             // rJ_Lable112
             // 
-            this.rJ_Lable112.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable112.BackColor = System.Drawing.Color.White;
             this.rJ_Lable112.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable112.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable112.BorderRadius = 8;
+            this.rJ_Lable112.BorderRadius = 10;
             this.rJ_Lable112.BorderSize = 0;
             this.rJ_Lable112.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable112.Font = new System.Drawing.Font("新細明體", 12F);
@@ -24723,7 +24777,7 @@
             this.rJ_Lable112.Location = new System.Drawing.Point(1235, 694);
             this.rJ_Lable112.Name = "rJ_Lable112";
             this.rJ_Lable112.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable112.ShadowSize = 0;
+            this.rJ_Lable112.ShadowSize = 3;
             this.rJ_Lable112.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable112.TabIndex = 233;
             this.rJ_Lable112.Text = "藥名";
@@ -24736,7 +24790,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -24757,7 +24811,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.Size = new System.Drawing.Size(201, 101);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示等待過帳.State = false;
@@ -24782,7 +24836,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -24803,7 +24857,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.Size = new System.Drawing.Size(201, 101);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_顯示異常過帳.State = false;
@@ -24972,7 +25026,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -24993,7 +25047,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.Size = new System.Drawing.Size(201, 101);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_選取資料過帳.State = false;
@@ -25019,7 +25073,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.Bool = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.BorderRadius = 5;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.BorderRadius = 20;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.BorderSize = 0;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.but_press = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -25040,7 +25094,7 @@
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ShadowSize = 0;
+            this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ShadowSize = 3;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.ShowLoadingForm = false;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.Size = new System.Drawing.Size(201, 101);
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示.State = false;
@@ -25087,7 +25141,7 @@
             this.rJ_GroupBox13.PannelBorderSize = 2;
             this.rJ_GroupBox13.Size = new System.Drawing.Size(1622, 629);
             this.rJ_GroupBox13.TabIndex = 139;
-            this.rJ_GroupBox13.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox13.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox13.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox13.TitleBorderRadius = 5;
             this.rJ_GroupBox13.TitleBorderSize = 0;
@@ -26154,7 +26208,7 @@
             this.rJ_GroupBox8.PannelBorderSize = 2;
             this.rJ_GroupBox8.Size = new System.Drawing.Size(1622, 628);
             this.rJ_GroupBox8.TabIndex = 0;
-            this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox8.TitleBorderRadius = 5;
             this.rJ_GroupBox8.TitleBorderSize = 0;
@@ -26237,7 +26291,7 @@
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26258,9 +26312,9 @@
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.Size = new System.Drawing.Size(139, 76);
+            this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.Size = new System.Drawing.Size(176, 76);
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.State = false;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.TabIndex = 164;
             this.plC_RJ_Button_藥局_藥品資料_顯示有庫存藥品.Text = "顯示\n[有庫存藥品]";
@@ -26283,7 +26337,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_設定安全量.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_設定安全量.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26304,7 +26358,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_設定安全量.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_設定安全量.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.Size = new System.Drawing.Size(137, 76);
             this.plC_RJ_Button_藥局_藥品資料_設定安全量.State = false;
@@ -26330,7 +26384,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_設定基準量.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_設定基準量.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26351,7 +26405,7 @@
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_設定基準量.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_設定基準量.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.Size = new System.Drawing.Size(137, 76);
             this.plC_RJ_Button_藥局_藥品資料_設定基準量.State = false;
@@ -26377,7 +26431,7 @@
             this.plC_RJ_Button_藥局_藥品資料_匯出.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_藥局_藥品資料_匯出.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_匯出.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_匯出.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_匯出.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_匯出.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26398,7 +26452,7 @@
             this.plC_RJ_Button_藥局_藥品資料_匯出.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_匯出.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_匯出.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_匯出.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_匯出.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_匯出.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_匯出.Size = new System.Drawing.Size(137, 76);
             this.plC_RJ_Button_藥局_藥品資料_匯出.State = false;
@@ -26423,7 +26477,7 @@
             this.plC_RJ_Button_藥局_藥品資料_匯入.BackgroundColor = System.Drawing.Color.SteelBlue;
             this.plC_RJ_Button_藥局_藥品資料_匯入.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_匯入.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_匯入.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_匯入.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_匯入.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_匯入.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_匯入.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26444,7 +26498,7 @@
             this.plC_RJ_Button_藥局_藥品資料_匯入.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_匯入.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_匯入.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_匯入.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_匯入.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_匯入.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_匯入.Size = new System.Drawing.Size(137, 76);
             this.plC_RJ_Button_藥局_藥品資料_匯入.State = false;
@@ -26470,7 +26524,7 @@
             this.plC_RJ_Button_藥局_藥品資料_更新.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_更新.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_更新.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_更新.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_更新.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_更新.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_更新.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_更新.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26491,9 +26545,9 @@
             this.plC_RJ_Button_藥局_藥品資料_更新.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_更新.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_更新.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_更新.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_更新.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_更新.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_更新.Size = new System.Drawing.Size(137, 76);
+            this.plC_RJ_Button_藥局_藥品資料_更新.Size = new System.Drawing.Size(176, 76);
             this.plC_RJ_Button_藥局_藥品資料_更新.State = false;
             this.plC_RJ_Button_藥局_藥品資料_更新.TabIndex = 157;
             this.plC_RJ_Button_藥局_藥品資料_更新.Text = "更新";
@@ -26516,7 +26570,7 @@
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26537,7 +26591,7 @@
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.Size = new System.Drawing.Size(139, 76);
             this.plC_RJ_Button_藥局_藥品資料_測試清除所有效期資料.State = false;
@@ -26563,7 +26617,7 @@
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.BackgroundColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_測試初始化.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_測試初始化.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26584,7 +26638,7 @@
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_測試初始化.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_測試初始化.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.Size = new System.Drawing.Size(139, 76);
             this.plC_RJ_Button_藥局_藥品資料_測試初始化.State = false;
@@ -26635,7 +26689,7 @@
             this.plC_RJ_GroupBox4.PannelBorderSize = 2;
             this.plC_RJ_GroupBox4.Size = new System.Drawing.Size(526, 281);
             this.plC_RJ_GroupBox4.TabIndex = 154;
-            this.plC_RJ_GroupBox4.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.plC_RJ_GroupBox4.TitleBackColor = System.Drawing.Color.White;
             this.plC_RJ_GroupBox4.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox4.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox4.TitleBorderSize = 0;
@@ -26702,7 +26756,7 @@
             this.plC_RJ_Button_藥局_藥品資料_修正批號.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_修正批號.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_修正批號.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26711,7 +26765,7 @@
             this.plC_RJ_Button_藥局_藥品資料_修正批號.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥局_藥品資料_修正批號.GUID = "";
             this.plC_RJ_Button_藥局_藥品資料_修正批號.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_藥品資料_修正批號.Location = new System.Drawing.Point(409, 108);
+            this.plC_RJ_Button_藥局_藥品資料_修正批號.Location = new System.Drawing.Point(409, 132);
             this.plC_RJ_Button_藥局_藥品資料_修正批號.Name = "plC_RJ_Button_藥局_藥品資料_修正批號";
             this.plC_RJ_Button_藥局_藥品資料_修正批號.OFF_文字內容 = "修正批號";
             this.plC_RJ_Button_藥局_藥品資料_修正批號.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -26723,9 +26777,9 @@
             this.plC_RJ_Button_藥局_藥品資料_修正批號.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_修正批號.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_修正批號.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_修正批號.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥局_藥品資料_修正批號.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥局_藥品資料_修正批號.State = false;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.TabIndex = 132;
             this.plC_RJ_Button_藥局_藥品資料_修正批號.Text = "修正批號";
@@ -26748,7 +26802,7 @@
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_修正庫存.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_修正庫存.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26757,7 +26811,7 @@
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.GUID = "";
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_藥品資料_修正庫存.Location = new System.Drawing.Point(409, 61);
+            this.plC_RJ_Button_藥局_藥品資料_修正庫存.Location = new System.Drawing.Point(409, 73);
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.Name = "plC_RJ_Button_藥局_藥品資料_修正庫存";
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.OFF_文字內容 = "修正庫存";
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -26769,9 +26823,9 @@
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_修正庫存.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_修正庫存.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_修正庫存.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥局_藥品資料_修正庫存.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.State = false;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.TabIndex = 129;
             this.plC_RJ_Button_藥局_藥品資料_修正庫存.Text = "修正庫存";
@@ -26793,7 +26847,7 @@
             this.plC_RJ_Button_藥局_藥品資料_新增效期.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_新增效期.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_新增效期.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -26814,9 +26868,9 @@
             this.plC_RJ_Button_藥局_藥品資料_新增效期.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_新增效期.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_新增效期.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_新增效期.Size = new System.Drawing.Size(111, 44);
+            this.plC_RJ_Button_藥局_藥品資料_新增效期.Size = new System.Drawing.Size(111, 53);
             this.plC_RJ_Button_藥局_藥品資料_新增效期.State = false;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.TabIndex = 128;
             this.plC_RJ_Button_藥局_藥品資料_新增效期.Text = "新增效期";
@@ -26865,7 +26919,7 @@
             this.rJ_GroupBox11.PannelBorderSize = 2;
             this.rJ_GroupBox11.Size = new System.Drawing.Size(481, 281);
             this.rJ_GroupBox11.TabIndex = 153;
-            this.rJ_GroupBox11.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox11.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox11.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox11.TitleBorderRadius = 5;
             this.rJ_GroupBox11.TitleBorderSize = 0;
@@ -26898,10 +26952,10 @@
             // 
             // rJ_Lable32
             // 
-            this.rJ_Lable32.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable32.BackColor = System.Drawing.Color.White;
             this.rJ_Lable32.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable32.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable32.BorderRadius = 12;
+            this.rJ_Lable32.BorderRadius = 5;
             this.rJ_Lable32.BorderSize = 0;
             this.rJ_Lable32.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable32.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -26910,7 +26964,7 @@
             this.rJ_Lable32.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable32.Name = "rJ_Lable32";
             this.rJ_Lable32.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable32.ShadowSize = 0;
+            this.rJ_Lable32.ShadowSize = 3;
             this.rJ_Lable32.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable32.TabIndex = 122;
             this.rJ_Lable32.Text = "藥碼";
@@ -26952,10 +27006,10 @@
             // 
             // rJ_Lable34
             // 
-            this.rJ_Lable34.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable34.BackColor = System.Drawing.Color.White;
             this.rJ_Lable34.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable34.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable34.BorderRadius = 12;
+            this.rJ_Lable34.BorderRadius = 5;
             this.rJ_Lable34.BorderSize = 0;
             this.rJ_Lable34.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable34.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -26964,7 +27018,7 @@
             this.rJ_Lable34.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable34.Name = "rJ_Lable34";
             this.rJ_Lable34.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable34.ShadowSize = 0;
+            this.rJ_Lable34.ShadowSize = 3;
             this.rJ_Lable34.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable34.TabIndex = 122;
             this.rJ_Lable34.Text = "中文名稱";
@@ -27006,10 +27060,10 @@
             // 
             // rJ_Lable35
             // 
-            this.rJ_Lable35.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable35.BackColor = System.Drawing.Color.White;
             this.rJ_Lable35.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable35.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable35.BorderRadius = 12;
+            this.rJ_Lable35.BorderRadius = 5;
             this.rJ_Lable35.BorderSize = 0;
             this.rJ_Lable35.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable35.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27018,7 +27072,7 @@
             this.rJ_Lable35.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable35.Name = "rJ_Lable35";
             this.rJ_Lable35.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable35.ShadowSize = 0;
+            this.rJ_Lable35.ShadowSize = 3;
             this.rJ_Lable35.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable35.TabIndex = 122;
             this.rJ_Lable35.Text = "藥名";
@@ -27060,10 +27114,10 @@
             // 
             // rJ_Lable36
             // 
-            this.rJ_Lable36.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable36.BackColor = System.Drawing.Color.White;
             this.rJ_Lable36.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable36.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable36.BorderRadius = 12;
+            this.rJ_Lable36.BorderRadius = 5;
             this.rJ_Lable36.BorderSize = 0;
             this.rJ_Lable36.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable36.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27072,7 +27126,7 @@
             this.rJ_Lable36.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable36.Name = "rJ_Lable36";
             this.rJ_Lable36.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable36.ShadowSize = 0;
+            this.rJ_Lable36.ShadowSize = 3;
             this.rJ_Lable36.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable36.TabIndex = 122;
             this.rJ_Lable36.Text = "商品名";
@@ -27109,7 +27163,7 @@
             this.plC_RJ_Button_藥局_藥品資料_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.Bool = false;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_藥品資料_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_藥品資料_搜尋.BorderRadius = 10;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.but_press = false;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -27118,7 +27172,7 @@
             this.plC_RJ_Button_藥局_藥品資料_搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_藥局_藥品資料_搜尋.GUID = "";
             this.plC_RJ_Button_藥局_藥品資料_搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_藥品資料_搜尋.Location = new System.Drawing.Point(383, 189);
+            this.plC_RJ_Button_藥局_藥品資料_搜尋.Location = new System.Drawing.Point(368, 176);
             this.plC_RJ_Button_藥局_藥品資料_搜尋.Name = "plC_RJ_Button_藥局_藥品資料_搜尋";
             this.plC_RJ_Button_藥局_藥品資料_搜尋.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥局_藥品資料_搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
@@ -27130,9 +27184,9 @@
             this.plC_RJ_Button_藥局_藥品資料_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_藥品資料_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_藥品資料_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_藥品資料_搜尋.Size = new System.Drawing.Size(75, 46);
+            this.plC_RJ_Button_藥局_藥品資料_搜尋.Size = new System.Drawing.Size(90, 59);
             this.plC_RJ_Button_藥局_藥品資料_搜尋.State = false;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.TabIndex = 143;
             this.plC_RJ_Button_藥局_藥品資料_搜尋.Text = "搜尋";
@@ -27183,10 +27237,10 @@
             // 
             // rJ_Lable37
             // 
-            this.rJ_Lable37.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable37.BackColor = System.Drawing.Color.White;
             this.rJ_Lable37.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable37.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable37.BorderRadius = 12;
+            this.rJ_Lable37.BorderRadius = 5;
             this.rJ_Lable37.BorderSize = 0;
             this.rJ_Lable37.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable37.Font = new System.Drawing.Font("微軟正黑體", 12F);
@@ -27195,7 +27249,7 @@
             this.rJ_Lable37.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable37.Name = "rJ_Lable37";
             this.rJ_Lable37.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable37.ShadowSize = 0;
+            this.rJ_Lable37.ShadowSize = 3;
             this.rJ_Lable37.Size = new System.Drawing.Size(103, 40);
             this.rJ_Lable37.TabIndex = 122;
             this.rJ_Lable37.Text = "藥品群組";
@@ -27270,7 +27324,7 @@
             this.rJ_GroupBox24.PannelBorderSize = 2;
             this.rJ_GroupBox24.Size = new System.Drawing.Size(891, 473);
             this.rJ_GroupBox24.TabIndex = 196;
-            this.rJ_GroupBox24.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox24.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox24.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox24.TitleBorderRadius = 5;
             this.rJ_GroupBox24.TitleBorderSize = 0;
@@ -27286,7 +27340,7 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -27295,7 +27349,7 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.GUID = "";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Location = new System.Drawing.Point(696, 360);
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Location = new System.Drawing.Point(696, 354);
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Name = "plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27307,9 +27361,9 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Size = new System.Drawing.Size(76, 40);
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Size = new System.Drawing.Size(76, 55);
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.State = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.TabIndex = 203;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_申領單位.Text = "搜尋";
@@ -27332,7 +27386,7 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -27341,7 +27395,7 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.GUID = "";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Location = new System.Drawing.Point(292, 361);
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Location = new System.Drawing.Point(294, 354);
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Name = "plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.OFF_文字內容 = "搜尋";
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27353,9 +27407,9 @@
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Size = new System.Drawing.Size(76, 40);
+            this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Size = new System.Drawing.Size(76, 55);
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.State = false;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.TabIndex = 202;
             this.plC_RJ_Button_藥局_緊急申領_資料查詢_藥碼.Text = "搜尋";
@@ -27404,10 +27458,10 @@
             // 
             // rJ_Lable138
             // 
-            this.rJ_Lable138.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable138.BackColor = System.Drawing.Color.White;
             this.rJ_Lable138.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable138.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable138.BorderRadius = 12;
+            this.rJ_Lable138.BorderRadius = 5;
             this.rJ_Lable138.BorderSize = 0;
             this.rJ_Lable138.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable138.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27416,7 +27470,7 @@
             this.rJ_Lable138.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable138.Name = "rJ_Lable138";
             this.rJ_Lable138.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable138.ShadowSize = 0;
+            this.rJ_Lable138.ShadowSize = 3;
             this.rJ_Lable138.Size = new System.Drawing.Size(132, 40);
             this.rJ_Lable138.TabIndex = 122;
             this.rJ_Lable138.Text = "申領單位";
@@ -27434,10 +27488,10 @@
             // 
             // rJ_Lable137
             // 
-            this.rJ_Lable137.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable137.BackColor = System.Drawing.Color.White;
             this.rJ_Lable137.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable137.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable137.BorderRadius = 12;
+            this.rJ_Lable137.BorderRadius = 5;
             this.rJ_Lable137.BorderSize = 0;
             this.rJ_Lable137.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable137.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27446,7 +27500,7 @@
             this.rJ_Lable137.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable137.Name = "rJ_Lable137";
             this.rJ_Lable137.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable137.ShadowSize = 0;
+            this.rJ_Lable137.ShadowSize = 3;
             this.rJ_Lable137.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable137.TabIndex = 122;
             this.rJ_Lable137.Text = "藥碼";
@@ -27481,7 +27535,7 @@
             // 
             this.label21.AutoSize = true;
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(329, 326);
+            this.label21.Location = new System.Drawing.Point(338, 326);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(11, 12);
             this.label21.TabIndex = 198;
@@ -27489,10 +27543,10 @@
             // 
             // rJ_Lable77
             // 
-            this.rJ_Lable77.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable77.BackColor = System.Drawing.Color.White;
             this.rJ_Lable77.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable77.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable77.BorderRadius = 8;
+            this.rJ_Lable77.BorderRadius = 10;
             this.rJ_Lable77.BorderSize = 0;
             this.rJ_Lable77.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable77.Font = new System.Drawing.Font("新細明體", 12F);
@@ -27501,7 +27555,7 @@
             this.rJ_Lable77.Location = new System.Drawing.Point(13, 309);
             this.rJ_Lable77.Name = "rJ_Lable77";
             this.rJ_Lable77.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable77.ShadowSize = 0;
+            this.rJ_Lable77.ShadowSize = 3;
             this.rJ_Lable77.Size = new System.Drawing.Size(172, 46);
             this.rJ_Lable77.TabIndex = 196;
             this.rJ_Lable77.Text = "申領日期";
@@ -27517,7 +27571,7 @@
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.Location = new System.Drawing.Point(191, 315);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.MinimumSize = new System.Drawing.Size(100, 35);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.Name = "rJ_DatePicker_藥局_緊急申領_產出日期_起始";
-            this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.Size = new System.Drawing.Size(132, 35);
+            this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.Size = new System.Drawing.Size(142, 35);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.SkinColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.TabIndex = 197;
             this.rJ_DatePicker_藥局_緊急申領_產出日期_起始.TextColor = System.Drawing.Color.White;
@@ -27528,10 +27582,10 @@
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.BorderSize = 0;
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Font = new System.Drawing.Font("新細明體", 15.75F);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Location = new System.Drawing.Point(346, 315);
+            this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Location = new System.Drawing.Point(355, 315);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.MinimumSize = new System.Drawing.Size(100, 35);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Name = "rJ_DatePicker_藥局_緊急申領_產出日期_結束";
-            this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Size = new System.Drawing.Size(131, 35);
+            this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.Size = new System.Drawing.Size(141, 35);
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.SkinColor = System.Drawing.Color.CornflowerBlue;
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.TabIndex = 199;
             this.rJ_DatePicker_藥局_緊急申領_產出日期_結束.TextColor = System.Drawing.Color.White;
@@ -27628,7 +27682,7 @@
             this.rJ_GroupBox25.PannelBorderSize = 2;
             this.rJ_GroupBox25.Size = new System.Drawing.Size(731, 909);
             this.rJ_GroupBox25.TabIndex = 1;
-            this.rJ_GroupBox25.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox25.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox25.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox25.TitleBorderRadius = 5;
             this.rJ_GroupBox25.TitleBorderSize = 0;
@@ -27670,10 +27724,10 @@
             // 
             // rJ_Lable136
             // 
-            this.rJ_Lable136.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable136.BackColor = System.Drawing.Color.White;
             this.rJ_Lable136.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable136.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable136.BorderRadius = 12;
+            this.rJ_Lable136.BorderRadius = 5;
             this.rJ_Lable136.BorderSize = 0;
             this.rJ_Lable136.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable136.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27682,7 +27736,7 @@
             this.rJ_Lable136.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable136.Name = "rJ_Lable136";
             this.rJ_Lable136.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable136.ShadowSize = 0;
+            this.rJ_Lable136.ShadowSize = 3;
             this.rJ_Lable136.Size = new System.Drawing.Size(132, 40);
             this.rJ_Lable136.TabIndex = 122;
             this.rJ_Lable136.Text = "申領單位";
@@ -27759,10 +27813,10 @@
             // 
             // rJ_Lable76
             // 
-            this.rJ_Lable76.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable76.BackColor = System.Drawing.Color.White;
             this.rJ_Lable76.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable76.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable76.BorderRadius = 12;
+            this.rJ_Lable76.BorderRadius = 5;
             this.rJ_Lable76.BorderSize = 0;
             this.rJ_Lable76.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable76.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27771,7 +27825,7 @@
             this.rJ_Lable76.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable76.Name = "rJ_Lable76";
             this.rJ_Lable76.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable76.ShadowSize = 0;
+            this.rJ_Lable76.ShadowSize = 3;
             this.rJ_Lable76.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable76.TabIndex = 122;
             this.rJ_Lable76.Text = "藥碼";
@@ -27813,10 +27867,10 @@
             // 
             // rJ_Lable78
             // 
-            this.rJ_Lable78.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_Lable78.BackColor = System.Drawing.Color.White;
             this.rJ_Lable78.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable78.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Lable78.BorderRadius = 12;
+            this.rJ_Lable78.BorderRadius = 5;
             this.rJ_Lable78.BorderSize = 0;
             this.rJ_Lable78.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Lable78.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
@@ -27825,7 +27879,7 @@
             this.rJ_Lable78.Location = new System.Drawing.Point(3, 0);
             this.rJ_Lable78.Name = "rJ_Lable78";
             this.rJ_Lable78.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Lable78.ShadowSize = 0;
+            this.rJ_Lable78.ShadowSize = 3;
             this.rJ_Lable78.Size = new System.Drawing.Size(102, 40);
             this.rJ_Lable78.TabIndex = 122;
             this.rJ_Lable78.Text = "藥名";
@@ -27862,7 +27916,7 @@
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -27883,7 +27937,7 @@
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.Size = new System.Drawing.Size(95, 58);
             this.plC_RJ_Button_藥局_緊急申領_藥品資料_搜尋.State = false;
@@ -27933,7 +27987,7 @@
             this.rJ_GroupBox26.PannelBorderSize = 2;
             this.rJ_GroupBox26.Size = new System.Drawing.Size(891, 427);
             this.rJ_GroupBox26.TabIndex = 4;
-            this.rJ_GroupBox26.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox26.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox26.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox26.TitleBorderRadius = 5;
             this.rJ_GroupBox26.TitleBorderSize = 0;
@@ -27949,7 +28003,7 @@
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -27970,7 +28024,7 @@
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.Size = new System.Drawing.Size(180, 68);
             this.plC_RJ_Button_藥局_緊急申領_刪除選取資料.State = false;
@@ -28054,7 +28108,7 @@
             this.plC_RJ_Button_藥局_緊急申領_取消申領.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_取消申領.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_取消申領.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -28075,7 +28129,7 @@
             this.plC_RJ_Button_藥局_緊急申領_取消申領.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_取消申領.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_取消申領.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_緊急申領_取消申領.Size = new System.Drawing.Size(145, 68);
             this.plC_RJ_Button_藥局_緊急申領_取消申領.State = false;
@@ -28101,7 +28155,7 @@
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_顯示資料.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_顯示資料.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -28122,7 +28176,7 @@
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_顯示資料.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_顯示資料.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.Size = new System.Drawing.Size(145, 68);
             this.plC_RJ_Button_藥局_緊急申領_顯示資料.State = false;
@@ -28148,7 +28202,7 @@
             this.plC_RJ_Button_藥局_緊急申領_確認申領.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.Bool = false;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderRadius = 5;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderRadius = 20;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.BorderSize = 0;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.but_press = false;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
@@ -28169,7 +28223,7 @@
             this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_文字顏色 = System.Drawing.Color.Black;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥局_緊急申領_確認申領.ShadowSize = 0;
+            this.plC_RJ_Button_藥局_緊急申領_確認申領.ShadowSize = 3;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.ShowLoadingForm = false;
             this.plC_RJ_Button_藥局_緊急申領_確認申領.Size = new System.Drawing.Size(145, 68);
             this.plC_RJ_Button_藥局_緊急申領_確認申領.State = false;
@@ -32221,7 +32275,7 @@
             this.rJ_GroupBox9.PannelBorderSize = 2;
             this.rJ_GroupBox9.Size = new System.Drawing.Size(529, 381);
             this.rJ_GroupBox9.TabIndex = 108;
-            this.rJ_GroupBox9.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox9.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox9.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox9.TitleBorderRadius = 5;
             this.rJ_GroupBox9.TitleBorderSize = 0;
@@ -36345,53 +36399,6 @@
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬
-            // 
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.AutoResetState = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Bool = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderRadius = 5;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.but_press = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.GUID = "";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Location = new System.Drawing.Point(1263, 748);
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Name = "plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字內容 = "選取日期範圍\n強制過賬";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_BorderSize = 5;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字內容 = "選取日期範圍\n強制過賬";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShadowSize = 0;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Size = new System.Drawing.Size(168, 81);
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.State = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.TabIndex = 233;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Text = "選取日期範圍\n強制過賬";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.Texts = "選取日期範圍\n強制過賬";
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.字型鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.文字鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.讀取位元反向 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.音效 = true;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示狀態 = false;
-            this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬.顯示讀取位置 = "S4077";
             // 
             // Form1
             // 
