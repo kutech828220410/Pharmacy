@@ -627,7 +627,7 @@ namespace 智能藥庫系統
                 int 總庫存 = list_value[i][(int)enum_藥庫_每日訂單_下訂單.總庫存].ObjectToString().StringToInt32();
                 int 在途量 = list_value[i][(int)enum_藥庫_每日訂單_下訂單.在途量].ObjectToString().StringToInt32();
                 int 訂購量 = 0;
-                if (總庫存 >= 安全量) continue;
+                if (總庫存 > 安全量) continue;
                 if (安全量 <= 0) continue;
                 if (基準量 <= 0) continue;
                 if (總庫存 < 0) continue;
@@ -756,7 +756,7 @@ namespace 智能藥庫系統
                 int 基準量 = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.基準量].ObjectToString().StringToInt32();
                 int 總庫存 = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.總庫存].ObjectToString().StringToInt32();
                 int 訂購量 = 0;
-                if (總庫存 >= 安全量) continue;
+                if (總庫存 > 安全量) continue;
                 if (安全量 <= 0) continue;
                 if (基準量 <= 0) continue;
                 if (總庫存 < 0) continue;

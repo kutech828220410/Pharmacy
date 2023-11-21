@@ -23,6 +23,28 @@ namespace 智能藥庫系統
 
     public partial class Form1 : Form
     {
+        public enum enum_待扣量匯出
+        {
+            藥碼,
+            藥名,
+            總庫存,
+            待扣量,
+            扣除後總庫存,
+            藥庫盤點量,
+            藥庫現在庫存,
+            藥庫調整量,
+            藥庫結存量,
+            藥局現在庫存,
+            藥局調整量,
+            藥局結存量,
+        }
+        public enum enum_藥庫盤點量匯入
+        {
+            藥碼,
+            藥庫盤點量,
+        }
+
+
         private void sub_Program_交易紀錄查詢_Init()
         {
             string url = $"{Api_URL}/api/transactions/init";
@@ -51,16 +73,21 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(180, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.操作時間);
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, enum_交易記錄查詢資料.備註);
 
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_交易記錄查詢資料.藥品碼);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_交易記錄查詢資料.交易量);
+
             this.sqL_DataGridView_交易記錄查詢.DataGridRefreshEvent += SqL_DataGridView_交易記錄查詢_DataGridRefreshEvent;
             this.sqL_DataGridView_交易記錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_交易記錄查詢_DataGridRowsChangeRefEvent;
 
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_全部顯示_MouseDownEvent;
             this.plC_RJ_Button_交易紀錄查詢_刪除選取資料.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_刪除選取資料_MouseDownEvent;
+            this.plC_RJ_Button_交易紀錄查詢_測試.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_測試_MouseDownEvent;
 
 
             this.plC_UI_Init.Add_Method(this.sub_Program_交易紀錄查詢);
         }
 
+     
 
         private bool flag_交易紀錄查詢_頁面更新 = false;
         private bool flag_交易紀錄查詢_頁面更新_init = false;
@@ -218,7 +245,19 @@ namespace 智能藥庫系統
                 return;
             }
 
-            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
+            List<object[]> list_value = new List<object[]>();
+
+            if (textBox_交易記錄查詢_藥品碼.Text.StringIsEmpty() == true)
+            {
+                list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
+            }
+            else
+            {
+                list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, textBox_交易記錄查詢_藥品碼.Text,false);
+                list_value = list_value.GetRowsInDate((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束);
+            }
+
+
 
             List<List<object[]>> list_list_value_buf = new List<List<object[]>>();
             List<object[]> list_value_buf = new List<object[]>();
@@ -234,6 +273,7 @@ namespace 智能藥庫系統
             if(plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_盤存盈虧.Checked)
             {
                 list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.盤存盈虧.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.盤點調整.GetEnumName()));
 
             }
             if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_批次過帳.Bool)
@@ -305,6 +345,134 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_交易記錄查詢.SQL_DeleteExtra(list_value, false);
             this.sqL_DataGridView_交易記錄查詢.DeleteExtra(list_value, true);
             MyMessageBox.ShowDialog("刪除完成!");
+        }
+        private void PlC_RJ_Button_交易紀錄查詢_測試_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_藥庫盤點量匯入 = new List<object[]>();
+            List<object[]> list_藥庫盤點量匯入_buf = new List<object[]>();
+            this.Invoke(new Action(delegate
+            {
+                if (this.openFileDialog_LoadExcel.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable dataTable = MyOffice.ExcelClass.LoadFile(this.openFileDialog_LoadExcel.FileName);
+                    if (dataTable == null)
+                    {
+                        MyMessageBox.ShowDialog("讀取失敗!");
+                        return;
+                    }
+                    dataTable = dataTable.ReorderTable(new enum_藥庫盤點量匯入());
+                    if (dataTable == null)
+                    {
+                        MyMessageBox.ShowDialog("讀取失敗!");
+                        return;
+                    }
+                    list_藥庫盤點量匯入 = dataTable.DataTableToRowList();
+                }
+            }));
+
+
+            List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.SQL_GetRowsByBetween((int)enum_交易記錄查詢資料.操作時間, dateTimePicker_交易記錄查詢_操作時間_起始, dateTimePicker_交易記錄查詢_操作時間_結束, false);
+            List<object[]> list_匯出資料 = new List<object[]>();
+            List<object[]> list_value_buf = new List<object[]>();
+            List<object[]> list_value_buf1 = new List<object[]>();
+            list_value_buf.LockAdd(list_value.GetRows((int)enum_交易記錄查詢資料.動作, "盤存盈虧"));
+            list_value_buf.LockAdd(list_value.GetRows((int)enum_交易記錄查詢資料.動作, "盤點調整"));
+            list_value_buf = (from temp in list_value_buf
+                              where temp[(int)enum_交易記錄查詢資料.結存量].StringToInt32() < 0
+                               where temp[(int)enum_交易記錄查詢資料.庫別].ObjectToString().Contains("藥局") == true
+                               select temp).ToList();
+          
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥局_藥品資料.SQL_GetAllRows(false);
+            this.sqL_DataGridView_藥局_藥品資料.RowsChangeFunction(list_藥品資料);
+            List<object[]> list_藥品資料_buf = new List<object[]>();
+            List<string> Codes = (from temp in list_value_buf
+                                  select temp[(int)enum_交易記錄查詢資料.藥品碼].ObjectToString()).Distinct().ToList();
+            for (int i = 0; i < Codes.Count; i++)
+            {
+                string 藥碼 = Codes[i];
+                int 消耗量 = 0;
+                int 藥局庫存 = 0;
+                int 藥庫庫存 = 0;
+                int 總庫存 = 0;
+
+                list_value_buf1 = list_value_buf.GetRows((int)enum_交易記錄查詢資料.藥品碼, Codes[i]);
+     
+                if (list_value_buf1.Count == 0) continue;
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥局_藥品資料.藥品碼, 藥碼);
+                if (list_藥品資料_buf.Count > 0)
+                {
+                    list_value_buf1[0][(int)enum_交易記錄查詢資料.藥品名稱] = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.藥品名稱].ObjectToString();
+                    藥庫庫存 = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.藥庫庫存].StringToInt32();
+                    藥局庫存 = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.藥局庫存].StringToInt32();
+                    總庫存 = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.總庫存].StringToInt32();
+                }
+                string 藥名 = list_value_buf1[0][(int)enum_交易記錄查詢資料.藥品名稱].ObjectToString();
+         
+                for (int k = 0; k < list_value_buf1.Count; k++)
+                {
+                    消耗量 += list_value_buf1[k][(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                }
+
+                int 藥局結存量 = 0;
+                int 藥局調整量 = 0;
+                int 藥庫結存量 = 0;
+                int 藥庫調整量 = 0;
+                int 藥庫盤點量 = 0;
+                int 扣除後總庫存 = 總庫存 + 消耗量;
+                object[] value = new object[new enum_待扣量匯出().GetLength()];
+                value[(int)enum_待扣量匯出.藥碼] = 藥碼;
+                value[(int)enum_待扣量匯出.藥名] = 藥名;
+                value[(int)enum_待扣量匯出.待扣量] = 消耗量 * -1;
+                value[(int)enum_待扣量匯出.藥庫現在庫存] = 藥庫庫存;
+                value[(int)enum_待扣量匯出.藥局現在庫存] = 藥局庫存;
+                value[(int)enum_待扣量匯出.總庫存] = 總庫存;
+                value[(int)enum_待扣量匯出.扣除後總庫存] = 總庫存 + 消耗量;
+        
+                list_藥庫盤點量匯入_buf = list_藥庫盤點量匯入.GetRows((int)enum_藥庫盤點量匯入.藥碼, 藥碼);
+                if(list_藥庫盤點量匯入_buf.Count > 0)
+                {
+                    藥庫盤點量 = list_藥庫盤點量匯入_buf[0][(int)enum_藥庫盤點量匯入.藥庫盤點量].StringToInt32();
+                    value[(int)enum_待扣量匯出.藥庫盤點量] = 藥庫盤點量;               
+                    藥局結存量 = 扣除後總庫存 - 藥庫盤點量;
+                    value[(int)enum_待扣量匯出.藥局結存量] = 藥局結存量;
+                    藥局調整量 = 藥局結存量 - 藥局庫存;
+                    value[(int)enum_待扣量匯出.藥局調整量] = 藥局調整量;
+                    藥庫調整量 = 藥庫盤點量 - 藥庫庫存;
+                    value[(int)enum_待扣量匯出.藥庫調整量] = 藥庫調整量;
+                    藥庫結存量 = 藥庫庫存 + 藥庫調整量;
+                    value[(int)enum_待扣量匯出.藥庫結存量] = 藥庫結存量;
+
+                }
+                list_匯出資料.Add(value);
+            }
+
+            this.Invoke(new Action(delegate
+            {
+                if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    DataTable dataTable = list_匯出資料.ToDataTable(new enum_待扣量匯出());
+                    dataTable = dataTable.ReorderTable(new enum_待扣量匯出());
+
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if (Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xls" || Extension == ".xlsx")
+                    {
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName
+                            , (int)enum_待扣量匯出.待扣量, (int)enum_待扣量匯出.藥庫現在庫存, (int)enum_待扣量匯出.藥局現在庫存
+                            , (int)enum_待扣量匯出.總庫存, (int)enum_待扣量匯出.扣除後總庫存);
+                    }
+
+                    MyMessageBox.ShowDialog("匯出完成");
+
+                }
+
+            }));
+
+            this.sqL_DataGridView_交易記錄查詢.RefreshGrid(list_value_buf);
+            MyMessageBox.ShowDialog("完成");
         }
         #endregion
 

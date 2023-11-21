@@ -20,85 +20,85 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
-        private List<RJ_Lable[]> rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態 = new List<RJ_Lable[]>();
+        private List<RJ_Lable[]> rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢 = new List<RJ_Lable[]>();
 
 
-        private void sub_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init()
+        private void sub_Program_周邊設備_ICU_ADC_01_庫存查詢_Init()
         {
 
-            this.plC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_API測試_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_API測試.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_API測試_MouseDownEvent;
 
             List<RJ_Lable> rJ_Lables_1 = new List<RJ_Lable>();
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_1);
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_2);
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_3);
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_4);
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_5);
-            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_1_6);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_1);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_2);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_3);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_4);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_5);
+            rJ_Lables_1.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_1_6);
             List<RJ_Lable> rJ_Lables_2 = new List<RJ_Lable>();
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_1);
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_2);
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_3);
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_4);
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_5);
-            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_2_6);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_1);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_2);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_3);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_4);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_5);
+            rJ_Lables_2.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_2_6);
             List<RJ_Lable> rJ_Lables_3 = new List<RJ_Lable>();
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_1);
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_2);
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_3);
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_4);
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_5);
-            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_3_6);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_1);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_2);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_3);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_4);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_5);
+            rJ_Lables_3.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_3_6);
             List<RJ_Lable> rJ_Lables_4 = new List<RJ_Lable>();
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_1);
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_2);
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_3);
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_4);
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_5);
-            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_4_6);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_1);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_2);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_3);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_4);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_5);
+            rJ_Lables_4.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_4_6);
             List<RJ_Lable> rJ_Lables_5 = new List<RJ_Lable>();
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_1);
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_2);
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_3);
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_4);
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_5);
-            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_5_6);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_1);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_2);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_3);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_4);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_5);
+            rJ_Lables_5.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_5_6);
             List<RJ_Lable> rJ_Lables_6 = new List<RJ_Lable>();
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_1);
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_2);
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_3);
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_4);
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_5);
-            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_抽屜狀態_6_6);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_1);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_2);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_3);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_4);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_5);
+            rJ_Lables_6.Add(this.rJ_Lable_周邊設備_ICU_ADC_01_庫存查詢_6_6);
 
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_1.ToArray());
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_2.ToArray());
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_3.ToArray());
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_4.ToArray());
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_5.ToArray());
-            rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態.Add(rJ_Lables_6.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_1.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_2.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_3.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_4.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_5.ToArray());
+            rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢.Add(rJ_Lables_6.ToArray());
 
-            this.plC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_更新資料.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_更新資料_MouseDownEvent;
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_更新資料.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_更新資料_MouseDownEvent;
 
-            this.plC_UI_Init.Add_Method(sub_Program_周邊設備_ICU_ADC_01_抽屜狀態);
+            this.plC_UI_Init.Add_Method(sub_Program_周邊設備_ICU_ADC_01_庫存查詢);
         }
 
 
 
-        private bool flag_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init = false;
-        private void sub_Program_周邊設備_ICU_ADC_01_抽屜狀態()
+        private bool flag_Program_周邊設備_ICU_ADC_01_庫存查詢_Init = false;
+        private void sub_Program_周邊設備_ICU_ADC_01_庫存查詢()
         {
-            if (this.plC_ScreenPage_Main.PageText == "周邊設備" && this.plC_ScreenPage_周邊設備.PageText == "ICU_ADC_01" && this.plC_ScreenPage_周邊設備_ICU_ADC_01.PageText == "抽屜狀態")
+            if (this.plC_ScreenPage_Main.PageText == "周邊設備" && this.plC_ScreenPage_周邊設備.PageText == "ICU_ADC_01" && this.plC_ScreenPage_周邊設備_ICU_ADC_01.PageText == "庫存查詢")
             {
-                if (!flag_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init)
+                if (!flag_Program_周邊設備_ICU_ADC_01_庫存查詢_Init)
                 {
-                    PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_更新資料_MouseDownEvent(null);
-                    flag_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init = true;
+                    PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_更新資料_MouseDownEvent(null);
+                    flag_Program_周邊設備_ICU_ADC_01_庫存查詢_Init = true;
                 }
             }
             else
             {
-                flag_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init = false;
+                flag_Program_周邊設備_ICU_ADC_01_庫存查詢_Init = false;
             }
 
         }
@@ -107,11 +107,11 @@ namespace 智能藥庫系統
 
         #endregion
         #region Event
-        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_更新資料_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_更新資料_MouseDownEvent(MouseEventArgs mevent)
         {
-            PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_API測試_MouseDownEvent(null);
+            PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_API測試_MouseDownEvent(null);
         }
-        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_抽屜狀態_API測試_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存查詢_API測試_MouseDownEvent(MouseEventArgs mevent)
         {
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
@@ -130,21 +130,21 @@ namespace 智能藥庫系統
                     text += $"藥名:{m_returnData.Data[i].藥品名稱}\n";
                     text += $"庫存: [{m_returnData.Data[i].庫存}]\n";
                     text += $"最小單位: {m_returnData.Data[i].最小包裝量}\n";
-                    text += $"可放置盒數: {m_returnData.Data[i].可放置盒數}\n";
-                    rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態[X][Y].Text = text;
-                    rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態[X][Y].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+                    text += $"最大存量: {m_returnData.Data[i].可放置盒數}\n";
+                    rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢[X][Y].Text = text;
+                    rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢[X][Y].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
 
                     if (m_returnData.Data[i].藥品碼.StringIsEmpty())
                     {
-                        rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態[X][Y].BackgroundColor = Color.Silver;
+                        rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢[X][Y].BackgroundColor = Color.Silver;
                         continue;
                     }
                     if (m_returnData.Data[i].庫存.StringToInt32() == 0)
                     {
-                        rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態[X][Y].BackgroundColor = Color.DarkOrange;
+                        rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢[X][Y].BackgroundColor = Color.DarkOrange;
                         continue;
                     }
-                    rJ_Lables_周邊設備_ICU_ADC_01_抽屜狀態[X][Y].BackgroundColor = Color.Green;
+                    rJ_Lables_周邊設備_ICU_ADC_01_庫存查詢[X][Y].BackgroundColor = Color.Green;
                 }
 
             }));

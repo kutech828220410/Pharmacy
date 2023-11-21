@@ -235,10 +235,36 @@ namespace 智能藥庫系統
                         來源備註 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.備註].ObjectToString();
 
                         list_儲位資料 = Function_取得異動儲位資訊從本地資料(藥品碼, 來源異動量);
+                     
                         if (list_儲位資料.Count == 0)
                         {
-                            list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName();
-                            continue;
+                            if (來源異動量 < 0)
+                            {
+                                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName();
+                                continue;
+                            }
+
+                            //藥局申領量小於零
+                            List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
+                            if(deviceBasics.Count == 0)
+                            {
+                                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.未建立儲位.GetEnumName();
+                                continue;
+                            }
+                            List<string> list_效期 = new List<string>();
+                            List<string> list_批號 = new List<string>();
+                            Funnction_交易記錄查詢_取得指定藥碼批號期效期(藥品碼, ref list_效期, ref list_批號);
+                            if (list_效期.Count == 0)
+                            {
+                                deviceBasics[0].新增效期(list_效期[0], list_批號[0], "00");
+                            }
+                            else 
+                            {
+                                deviceBasics[0].新增效期("2000/12/31", "系統代入", "00");
+                            }
+
+                            list_儲位資料 = Function_取得異動儲位資訊從本地資料(藥品碼, 來源異動量);
+
                         }
                         //if ((來源結存量) < 0)
                         //{

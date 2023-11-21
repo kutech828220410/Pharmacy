@@ -161,11 +161,11 @@ namespace 智能藥庫系統
         {
             string 藥碼 = RowValue[(int)enum_藥局_緊急申領.藥品碼].ObjectToString();
             string 異動量 = value;
-            if (異動量.StringToInt32() < 0)
-            {
-                MyMessageBox.ShowDialog("請輸入正確數字(大於'0')!");
-                e.Cancel = true;
-            }
+            //if (異動量.StringToInt32() < 0)
+            //{
+            //    MyMessageBox.ShowDialog("請輸入正確數字(大於'0')!");
+            //    e.Cancel = true;
+            //}
             List<object[]> list_藥庫_藥品資料 = sqL_DataGridView_藥庫_藥品資料.SQL_GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥碼, false);
             if (list_藥庫_藥品資料.Count > 0)
             {
@@ -177,6 +177,22 @@ namespace 智能藥庫系統
                     {
                         MyMessageBox.ShowDialog($"藥品包裝量為<{temp}> , 請填入可整除數量!");
                         e.Cancel = true;
+                        return;
+                    }
+                    if (異動量.StringToInt32() < 0)
+                    {
+                        List<object[]> list_value = this.sqL_DataGridView_藥局_緊急申領_藥品資料.SQL_GetRows((int)enum_藥局_藥品資料.藥品碼, 藥碼, false);
+                        this.sqL_DataGridView_藥局_藥品資料.RowsChangeFunction(list_value);
+                        if(list_value.Count > 0)
+                        {
+                            int 藥局庫存 = list_value[0][(int)enum_藥局_藥品資料.藥局庫存].StringToInt32();
+                            if(異動量.StringToInt32() + 藥局庫存 < 0)
+                            {
+                                MyMessageBox.ShowDialog($"藥局庫存<{藥局庫存}>,不夠退回藥庫數量!");
+                                e.Cancel = true;
+                                return;
+                            }
+                        }
                     }
                 }
             }

@@ -18,8 +18,8 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.13")]
-[assembly: AssemblyFileVersion("1.0.51.13")]
+[assembly: AssemblyVersion("1.0.51.16")]
+[assembly: AssemblyFileVersion("1.0.51.16")]
 namespace 智能藥庫系統
 {
 
@@ -282,9 +282,9 @@ namespace 智能藥庫系統
             this.sub_Program_寫入報表設定_Init();
 
             this.sub_Program_周邊設備_麻醉部ADC_庫存_Init();
-            this.sub_Program_周邊設備_麻醉部ADC_抽屜狀態_Init(); 
+            this.sub_Program_周邊設備_麻醉部ADC_庫存查詢_Init(); 
             this.sub_Program_周邊設備_ICU_ADC_01_庫存_Init();
-            this.sub_Program_周邊設備_ICU_ADC_01_抽屜狀態_Init();
+            this.sub_Program_周邊設備_ICU_ADC_01_庫存查詢_Init();
             this.sub_Program_戰情白板_Init();
 
 

@@ -372,7 +372,7 @@ namespace 智能藥庫系統
             for (int i = 0; i < deviceBasics.Count; i++)
             {
                 DeviceBasic deviceBasic = this.DeviceBasicClass_藥庫.SQL_GetDeviceBasic(deviceBasics[i]);
-                this.List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasic);
+                this.List_藥庫_DeviceBasic.Add_NewDeviceBasic(deviceBasic);
                 list_value.Add(deviceBasic);
             }
             return list_value;
@@ -536,24 +536,7 @@ namespace 智能藥庫系統
             for (int k = 0; k < 儲位.Count; k++)
             {
                 object value_device = 儲位[k];
-                if (value_device is Device)
-                {
-                    Device device = (Device)value_device;
-                    for (int i = 0; i < device.List_Validity_period.Count; i++)
-                    {
-                        object[] value = new object[new enum_儲位資訊().GetLength()];
-                        value[(int)enum_儲位資訊.GUID] = device.GUID;
-                        value[(int)enum_儲位資訊.IP] = device.IP;
-                        value[(int)enum_儲位資訊.TYPE] = 儲位_TYPE[k];
-                        value[(int)enum_儲位資訊.效期] = device.List_Validity_period[i];
-                        value[(int)enum_儲位資訊.批號] = device.List_Lot_number[i];
-                        value[(int)enum_儲位資訊.庫存] = device.List_Inventory[i];
-                        value[(int)enum_儲位資訊.異動量] = "0";
-                        value[(int)enum_儲位資訊.Value] = value_device;
-                        儲位資訊.Add(value);
-                    }
-                }
-                else if (value_device is DeviceBasic)
+                if (value_device is DeviceBasic)
                 {
                     DeviceBasic device = (DeviceBasic)value_device;
                     for (int i = 0; i < device.List_Validity_period.Count; i++)
