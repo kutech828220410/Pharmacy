@@ -397,7 +397,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>rqyXSDu2i4Jqz7avCX1n/vNCONl4hCD+0AB8hpz6EzU=</dsig:DigestValue>
+        <dsig:DigestValue>qRf9BE8DI+rA/pX3Gbg69tDKieAMgxBmo0Lk+jfyLzY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -498,14 +498,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SQLUI.dll" size="138752">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="SQLUI.dll" size="139264">
       <assemblyIdentity name="SQLUI" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ASab5utiJL8AlhARv9Ybxh+khxFpMLu9wf543Pb9RrY=</dsig:DigestValue>
+        <dsig:DigestValue>GUtGdgnTpcKFzYqky/dPe3gJabnUI/mDR5tmegB7qZ0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

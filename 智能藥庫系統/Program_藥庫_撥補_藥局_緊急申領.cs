@@ -135,7 +135,7 @@ namespace 智能藥庫系統
                 list_藥庫庫存資料_buf = list_藥庫庫存資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString());
                 if(list_藥庫庫存資料_buf.Count > 0)
                 {
-                    //RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = list_藥庫庫存資料_buf[0][(int)enum_藥庫_藥品資料.藥庫庫存];
+                    RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = list_藥庫庫存資料_buf[0][(int)enum_藥庫_藥品資料.藥庫庫存];
                 }
                 
             }
@@ -217,6 +217,7 @@ namespace 智能藥庫系統
                         if (deviceBasics_藥局_buf.Count == 0) continue;
 
                         來源庫存量 = this.Function_從本地資料取得庫存(藥品碼);
+                        int 異動量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString().StringToInt32();
                         輸出異動量 = list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString().StringToInt32();
                         if (來源庫存量 + (輸出異動量 * -1) < 0)
                         {
@@ -238,7 +239,7 @@ namespace 智能藥庫系統
                      
                         if (list_儲位資料.Count == 0)
                         {
-                            if (來源異動量 < 0)
+                            if (異動量 > 0)
                             {
                                 list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.庫存不足.GetEnumName();
                                 continue;
@@ -254,7 +255,7 @@ namespace 智能藥庫系統
                             List<string> list_效期 = new List<string>();
                             List<string> list_批號 = new List<string>();
                             Funnction_交易記錄查詢_取得指定藥碼批號期效期(藥品碼, ref list_效期, ref list_批號);
-                            if (list_效期.Count == 0)
+                            if (list_效期.Count != 0)
                             {
                                 deviceBasics[0].新增效期(list_效期[0], list_批號[0], "00");
                             }

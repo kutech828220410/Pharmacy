@@ -57,7 +57,7 @@ namespace 智能藥庫系統
 
 
 
-        private List<SheetClass> GetSheetClasses()
+        private List<SheetClass> GetSheetClasses(bool 設定已列印)
         {
             List<object[]> list_value = this.sQL_DataGridView.Get_All_Checked_RowsValues();
 
@@ -77,12 +77,17 @@ namespace 智能藥庫系統
             string json = Basic.Net.WEBApiPostJson($"{emg_apply_ApiURL}", json_in);
             List<SheetClass> sheetClass = json.JsonDeserializet<List<SheetClass>>();
 
-            for (int i = 0; i < list_value.Count; i++)
+            if (設定已列印)
             {
-                list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.已列印.GetEnumName();
+                for (int i = 0; i < list_value.Count; i++)
+                {
+                    list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = enum_藥庫_撥補_藥局_緊急申領_狀態.已列印.GetEnumName();
+                }
+                this.sQL_DataGridView.SQL_ReplaceExtra(list_value, false);
+                this.sQL_DataGridView.ReplaceExtra(list_value, true);
             }
-            this.sQL_DataGridView.SQL_ReplaceExtra(list_value, false);
-            this.sQL_DataGridView.ReplaceExtra(list_value, true);
+         
+
 
             return sheetClass;
         }
@@ -95,7 +100,7 @@ namespace 智能藥庫系統
             if (dialogResult == DialogResult.OK)
             {
 
-                List<SheetClass> sheetClass = this.GetSheetClasses();
+                List<SheetClass> sheetClass = this.GetSheetClasses(false);
 
                 sheetClass.NPOI_SaveFile(this.saveFileDialog_SaveExcel.FileName);
                 MyMessageBox.ShowDialog("匯出完成!");
@@ -116,16 +121,17 @@ namespace 智能藥庫系統
         private void Button_預覽列印_Click(object sender, EventArgs e)
         {
 
-            List<SheetClass> sheetClass = this.GetSheetClasses();
+            List<SheetClass> sheetClass = this.GetSheetClasses(false);
+            this.GetSheetClasses(true);
             if (printerClass.ShowPreviewDialog(sheetClass, MyPrinterlib.PrinterClass.PageSize.A4) == DialogResult.OK)
             {
-
+               
             }
             RJ_Button_取消_MouseDownEvent(null);
         }
         private void Button_列印_Click(object sender, EventArgs e)
         {
-            List<SheetClass> sheetClass = this.GetSheetClasses();
+            List<SheetClass> sheetClass = this.GetSheetClasses(true);
 
             printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
             RJ_Button_取消_MouseDownEvent(null);

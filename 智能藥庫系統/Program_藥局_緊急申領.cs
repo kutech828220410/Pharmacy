@@ -175,9 +175,29 @@ namespace 智能藥庫系統
                     int temp = 包裝數量.StringToInt32();
                     if (異動量.StringToInt32() % temp != 0)
                     {
-                        MyMessageBox.ShowDialog($"藥品包裝量為<{temp}> , 請填入可整除數量!");
-                        e.Cancel = true;
-                        return;
+                        MyMessageBox.ShowDialog($"【提醒】藥品包裝量為<{temp}>,此非可整除包裝量");
+       
+                    }
+                    if (異動量.StringToInt32() > 0)
+                    {
+                        this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_藥庫_藥品資料);
+                        if (list_藥庫_藥品資料.Count > 0)
+                        {
+                            int 藥庫庫存 = list_藥庫_藥品資料[0][(int)enum_藥庫_藥品資料.藥庫庫存].StringToInt32();
+                            List<object[]> list_緊急申領 = this.sqL_DataGridView_藥局_緊急申領_資料查詢.SQL_GetRows((int)enum_藥局_緊急申領.藥品碼, 藥碼, false);
+                            list_緊急申領 = list_緊急申領.GetRowsInDate((int)enum_藥局_緊急申領.產出時間, DateTime.Now);
+                            int 申領數量 = 0;
+                            for (int i = 0; i < list_緊急申領.Count; i++)
+                            {
+                                申領數量 += list_緊急申領[i][(int)enum_藥局_緊急申領.異動量].ObjectToString().StringToInt32();
+                            }
+                            if ((申領數量 + 異動量.StringToInt32()) > 藥庫庫存)
+                            {
+                                MyMessageBox.ShowDialog($"今日已申領數量<{申領數量}>,藥庫庫存<{藥庫庫存}>,短缺<{(藥庫庫存 - (申領數量 + 異動量.StringToInt32())) * -1}>無法申領!");
+                                e.Cancel = true;
+                                return;
+                            }
+                        }
                     }
                     if (異動量.StringToInt32() < 0)
                     {

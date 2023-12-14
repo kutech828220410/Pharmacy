@@ -34,6 +34,8 @@ namespace 智能藥庫系統
             包裝數量,
             基準量,
             安全庫存,
+            採購單價,
+            庫存金額,
         }
         public enum enum_藥庫_藥品資料_匯入
         {
@@ -605,7 +607,38 @@ namespace 智能藥庫系統
                 if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
                 {
                     this.Cursor = Cursors.WaitCursor;
-                    DataTable dataTable = this.sqL_DataGridView_藥庫_藥品資料.GetDataTable();
+
+
+                    string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
+                    List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+                    List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+                    List<object[]> list_value_src = this.sqL_DataGridView_藥庫_藥品資料.GetAllRows();
+                    List<object[]> list_value_out = list_value_src.CopyRows(new enum_藥庫_藥品資料(), new enum_藥庫_藥品資料_匯出());
+
+                    for (int i = 0; i < list_value_out.Count; i++)
+                    {
+                        list_value_out[i][(int)enum_藥庫_藥品資料_匯出.藥碼] = list_value_src[i][(int)enum_藥庫_藥品資料.藥品碼];
+                        list_value_out[i][(int)enum_藥庫_藥品資料_匯出.藥名] = list_value_src[i][(int)enum_藥庫_藥品資料.藥品名稱];
+
+
+                        string 藥品碼 = list_value_out[i][(int)enum_藥庫_藥品資料_匯出.藥碼].ObjectToString();
+                        class_MedPrices_buf = (from value in class_MedPrices
+                                               where value.藥品碼 == 藥品碼
+                                               select value).ToList();
+                        if (class_MedPrices_buf.Count > 0)
+                        {
+                            int 數量 = list_value_out[i][(int)enum_藥庫_藥品資料_匯出.總庫存].ObjectToString().StringToInt32();
+                            double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                            double 訂購總價 = 訂購單價 * 數量;
+                            if (訂購單價 > 0)
+                            {
+                                list_value_out[i][(int)enum_藥庫_藥品資料_匯出.採購單價] = 訂購單價.ToString("0.000").StringToDouble();
+                                list_value_out[i][(int)enum_藥庫_藥品資料_匯出.庫存金額] = 訂購總價.ToString("0.000").StringToDouble();
+                            }
+                        }
+                    }
+
+                    DataTable dataTable = list_value_out.ToDataTable(new enum_藥庫_藥品資料_匯出());
                     dataTable = dataTable.ReorderTable(new enum_藥庫_藥品資料_匯出());
                     string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
                     if (Extension == ".txt")

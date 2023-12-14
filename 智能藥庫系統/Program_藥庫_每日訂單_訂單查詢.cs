@@ -31,7 +31,18 @@ namespace 智能藥庫系統
             緊急訂購數量,
             訂購時間,
         }
-
+        public enum enum_藥庫_每日訂單_訂單查詢_匯出 : int
+        {
+            藥品碼,
+            中文名稱,
+            藥品名稱,
+            包裝單位,
+            今日訂購數量,
+            緊急訂購數量,
+            採購單價,
+            採購總價,
+            訂購時間,
+        }
         private void sub_Program_藥庫_每日訂單_訂單查詢_Init()
         {
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_每日訂單, dBConfigClass.DB_posting_server);
@@ -45,11 +56,12 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部_MouseDownEvent;
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.MouseDownEvent += PlC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋_MouseDownEvent;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.MouseDownEvent += PlC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋_MouseDownEvent;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_匯出_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_訂單查詢);
         }
 
-    
+
 
         private bool flag_藥庫_每日訂單_訂單查詢 = false;
         private void sub_Program_藥庫_每日訂單_訂單查詢()
@@ -130,6 +142,67 @@ namespace 智能藥庫系統
                 RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間] = RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間].ToDateTimeString();
             }
             RowsList.Sort(new ICP_藥庫_每日訂單_訂單查詢());
+        }
+        private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_匯出_MouseDownEvent(MouseEventArgs mevent)
+        {
+           
+
+            this.Invoke(new Action(delegate
+            {
+                if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    this.Cursor = Cursors.WaitCursor;
+
+
+                    string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
+                    List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+                    List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+
+
+                    List<object[]> list_訂單資料_src = this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.GetAllRows();
+                    List<object[]> list_訂單資料_out = list_訂單資料_src.CopyRows(new enum_藥庫_每日訂單_訂單查詢(), new enum_藥庫_每日訂單_訂單查詢_匯出());
+
+
+                    for (int i = 0; i < list_訂單資料_out.Count; i++)
+                    {
+                        string 藥品碼 = list_訂單資料_out[i][(int)enum_藥庫_每日訂單_訂單查詢_匯出.藥品碼].ObjectToString();
+                        class_MedPrices_buf = (from value in class_MedPrices
+                                               where value.藥品碼 == 藥品碼
+                                               select value).ToList();
+                        if (class_MedPrices_buf.Count > 0)
+                        {
+                            int 數量 = 0;
+                            int 今日訂購數量 = list_訂單資料_out[i][(int)enum_藥庫_每日訂單_訂單查詢_匯出.今日訂購數量].ObjectToString().StringToInt32();
+                            int 緊急訂購數量 = list_訂單資料_out[i][(int)enum_藥庫_每日訂單_訂單查詢_匯出.緊急訂購數量].ObjectToString().StringToInt32();
+                            if (今日訂購數量 > 0) 數量 += 今日訂購數量;
+                            if (緊急訂購數量 > 0) 數量 += 緊急訂購數量;
+                            double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                            double 訂購總價 = 訂購單價 * 數量;
+                            if (訂購單價 > 0)
+                            {
+                                list_訂單資料_out[i][(int)enum_藥庫_每日訂單_訂單查詢_匯出.採購單價] = 訂購單價.ToString("0.000").StringToDouble();
+                                list_訂單資料_out[i][(int)enum_藥庫_每日訂單_訂單查詢_匯出.採購總價] = 訂購總價.ToString("0.000").StringToDouble();
+                            }
+                        }
+                    }
+                    DataTable dataTable = list_訂單資料_out.ToDataTable(new enum_藥庫_每日訂單_訂單查詢_匯出());
+                    dataTable = dataTable.ReorderTable(new enum_藥庫_每日訂單_訂單查詢_匯出());
+
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if (Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xls" || Extension == ".xlsx")
+                    {
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥庫_每日訂單_訂單查詢_匯出.今日訂購數量
+                            , (int)enum_藥庫_每日訂單_訂單查詢_匯出.採購單價, (int)enum_藥庫_每日訂單_訂單查詢_匯出.採購總價, (int)enum_藥庫_每日訂單_訂單查詢_匯出.緊急訂購數量);
+                    }
+
+                    this.Cursor = Cursors.Default;
+                    MyMessageBox.ShowDialog("匯出完成");
+                }
+            }));
         }
         private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {

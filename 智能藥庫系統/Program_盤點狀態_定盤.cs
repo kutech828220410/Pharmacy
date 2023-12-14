@@ -724,7 +724,7 @@ namespace 智能藥庫系統
 
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
-                    transactionsClass.動作 = enum_交易記錄查詢動作.盤點調整.GetEnumName();
+                    transactionsClass.動作 = enum_交易記錄查詢動作.盤存盈虧.GetEnumName();
                     transactionsClass.藥品碼 = 藥碼;
                     transactionsClass.藥品名稱 = 藥名.ToString();
                     transactionsClass.庫存量 = 現有庫存量.ToString();
@@ -733,7 +733,7 @@ namespace 智能藥庫系統
                     transactionsClass.庫別 = "藥庫";
                     transactionsClass.操作人 = 登入者名稱;
                     transactionsClass.操作時間 = DateTime.Now.ToDateTimeString_6();
-                    transactionsClass.備註 = $"{備註}\n異常量藥庫盤後調整";
+                    transactionsClass.備註 = $"{備註}";
                     object[] trading_value = transactionsClass.ClassToSQL<transactionsClass , enum_交易記錄查詢資料>();
 
                     list_交易紀錄_Add.Add(trading_value);
@@ -810,7 +810,7 @@ namespace 智能藥庫系統
 
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
-                    transactionsClass.動作 = enum_交易記錄查詢動作.盤點調整.GetEnumName();
+                    transactionsClass.動作 = enum_交易記錄查詢動作.盤存盈虧.GetEnumName();
                     transactionsClass.藥品碼 = 藥碼;
                     transactionsClass.藥品名稱 = 藥名.ToString();
                     transactionsClass.庫存量 = 現有庫存量.ToString();
@@ -819,7 +819,7 @@ namespace 智能藥庫系統
                     transactionsClass.庫別 = "藥局";
                     transactionsClass.操作人 = 登入者名稱;
                     transactionsClass.操作時間 = DateTime.Now.ToDateTimeString_6();
-                    transactionsClass.備註 = $"{備註}\n異常量藥庫盤後調整";
+                    transactionsClass.備註 = $"{備註}";
                     object[] trading_value = transactionsClass.ClassToSQL<transactionsClass, enum_交易記錄查詢資料>();
 
                     list_交易紀錄_Add.Add(trading_value);

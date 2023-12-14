@@ -57,7 +57,7 @@ namespace 智能藥庫系統
             藥局代碼,
             藥品碼,
             藥品名稱,
-            異動量,
+            消耗量,
             訂購單價,
             消耗金額,
             報表日期,
@@ -716,15 +716,16 @@ namespace 智能藥庫系統
                     List<object[]> list_藥品過消耗帳_out = list_藥品過消耗帳_src.CopyRows(new enum_藥品過消耗帳(), new enum_藥品過消耗帳_匯出());
                     for (int i = 0; i < list_藥品過消耗帳_out.Count; i++)
                     {
+                        list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = list_藥品過消耗帳_src[i][(int)enum_藥品過消耗帳.異動量];
                         string 藥品碼 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
                         class_MedPrices_buf = (from value in class_MedPrices
                                                where value.藥品碼 == 藥品碼
                                                select value).ToList();
                         if (class_MedPrices_buf.Count > 0)
                         {
-                            int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量].ObjectToString().StringToInt32();
+                            int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
                             數量 *= -1;
-                            list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.異動量] = 數量;
+                            list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = 數量;
                             double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
                             double 訂購總價 = 訂購單價 * 數量;
                             if (訂購單價 > 0)
@@ -744,7 +745,7 @@ namespace 智能藥庫系統
                     }
                     else if (Extension == ".xls" || Extension == ".xlsx")
                     {
-                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥品過消耗帳_匯出.訂購單價, (int)enum_藥品過消耗帳_匯出.消耗金額, (int)enum_藥品過消耗帳_匯出.異動量);
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName, (int)enum_藥品過消耗帳_匯出.訂購單價, (int)enum_藥品過消耗帳_匯出.消耗金額, (int)enum_藥品過消耗帳_匯出.消耗量);
                     }
 
                     this.Cursor = Cursors.Default;
