@@ -136,8 +136,7 @@ namespace 智能藥庫系統_VM_Server_
             if (this.MyTimer_檢查藥品過消耗帳_結束延遲.IsTimeOut())
             {
                 List<object[]> list_過帳狀態 = this.sqL_DataGridView_過帳狀態列表.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
-                List<object[]> list_藥品資料_buf = new List<object[]>();
+      
                 List<object[]> list_過帳明細_Add = new List<object[]>();
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.類別, enum_寫入報表設定_類別.其他.GetEnumName());
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.狀態, enum_過帳狀態.已產生排程.GetEnumName());

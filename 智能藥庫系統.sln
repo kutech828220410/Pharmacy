@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "智慧藥庫系統_WebApi",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Daily_orders_CMD", "Daily_orders_CMD\Daily_orders_CMD.csproj", "{73E22838-FF7F-4C31-98CA-A13C2294811B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "drug_consumption", "drug_consumption\drug_consumption.csproj", "{20426473-0782-4134-A9A0-A5B862A616C2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{73E22838-FF7F-4C31-98CA-A13C2294811B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{73E22838-FF7F-4C31-98CA-A13C2294811B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{73E22838-FF7F-4C31-98CA-A13C2294811B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20426473-0782-4134-A9A0-A5B862A616C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20426473-0782-4134-A9A0-A5B862A616C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20426473-0782-4134-A9A0-A5B862A616C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20426473-0782-4134-A9A0-A5B862A616C2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
