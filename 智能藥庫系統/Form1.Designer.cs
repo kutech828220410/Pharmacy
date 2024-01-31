@@ -645,6 +645,7 @@
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示低於安全量 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥庫_每日訂單_下訂單_顯示已訂購藥品 = new MyUI.PLC_RJ_Button();
             this.tabPage37 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出 = new MyUI.PLC_RJ_Button();
             this.panel35 = new System.Windows.Forms.Panel();
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋 = new MyUI.PLC_RJ_Button();
@@ -1373,7 +1374,6 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -5755,7 +5755,7 @@
             this.sqL_DataGridView_藥品過消耗帳.RowsHeight = 60;
             this.sqL_DataGridView_藥品過消耗帳.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_藥品過消耗帳.Server = "localhost";
-            this.sqL_DataGridView_藥品過消耗帳.Size = new System.Drawing.Size(1630, 731);
+            this.sqL_DataGridView_藥品過消耗帳.Size = new System.Drawing.Size(1630, 730);
             this.sqL_DataGridView_藥品過消耗帳.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_藥品過消耗帳.TabIndex = 138;
             this.sqL_DataGridView_藥品過消耗帳.TableName = "posting_sd0_opd";
@@ -10203,7 +10203,7 @@
             // 
             // rJ_GroupBox1.ContentsPanel
             // 
-            this.rJ_GroupBox1.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox1.ContentsPanel.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox1.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox1.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox1.ContentsPanel.BorderRadius = 5;
@@ -10234,7 +10234,7 @@
             this.rJ_GroupBox1.GUID = "";
             this.rJ_GroupBox1.Location = new System.Drawing.Point(0, 0);
             this.rJ_GroupBox1.Name = "rJ_GroupBox1";
-            this.rJ_GroupBox1.PannelBackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox1.PannelBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox1.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox1.PannelBorderRadius = 5;
             this.rJ_GroupBox1.PannelBorderSize = 2;
@@ -18168,6 +18168,53 @@
             this.tabPage37.Size = new System.Drawing.Size(1622, 857);
             this.tabPage37.TabIndex = 1;
             this.tabPage37.Text = "訂單查詢";
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderRadius = 20;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.GUID = "";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Location = new System.Drawing.Point(1262, 260);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Name = "plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字內容 = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字內容 = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowSize = 3;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TabIndex = 198;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Text = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Texts = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示狀態 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示讀取位置 = "S4077";
             // 
             // plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出
             // 
@@ -36417,53 +36464,6 @@
             this.ContentsPanel.ShadowSize = 0;
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
-            // 
-            // plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除
-            // 
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.AutoResetState = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Bool = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderRadius = 20;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.but_press = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Font = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.GUID = "";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Location = new System.Drawing.Point(1262, 260);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Name = "plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字內容 = "刪除";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_BorderSize = 5;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字內容 = "刪除";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowSize = 3;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShowLoadingForm = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Size = new System.Drawing.Size(168, 81);
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.State = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TabIndex = 198;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Text = "刪除";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Texts = "刪除";
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.字型鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.文字鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀取位元反向 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀寫鎖住 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.音效 = true;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示狀態 = false;
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示讀取位置 = "S4077";
             // 
             // Form1
             // 
