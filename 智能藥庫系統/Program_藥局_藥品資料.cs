@@ -794,11 +794,26 @@ namespace 智能藥庫系統
                 if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
                 {
                     this.Cursor = Cursors.WaitCursor;
-                    DataTable dataTable = this.sqL_DataGridView_藥局_藥品資料.GetDataTable();
+                    List<object[]> list_value = this.sqL_DataGridView_藥局_藥品資料.Get_All_Select_RowsValues();
+                    if(list_value.Count ==0)
+                    {
+                        MyMessageBox.ShowDialog("未選取資料!");
+                        return;
+                    }
+                    DataTable dataTable = list_value.ToDataTable(new enum_藥庫_藥品資料());
                     dataTable = dataTable.ReorderTable(new enum_藥局_藥品資料_匯出());
-                    CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    string Extension = System.IO.Path.GetExtension(this.saveFileDialog_SaveExcel.FileName);
+                    if (Extension == ".txt")
+                    {
+                        CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
+                    else if (Extension == ".xlsx"|| Extension == ".xls")
+                    {
+                        MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
+                    }
                     this.Cursor = Cursors.Default;
                     MyMessageBox.ShowDialog("匯出完成");
+          
                 }
             }));
         }

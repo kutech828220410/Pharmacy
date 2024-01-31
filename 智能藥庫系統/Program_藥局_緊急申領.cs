@@ -186,6 +186,11 @@ namespace 智能藥庫系統
                             int 藥庫庫存 = list_藥庫_藥品資料[0][(int)enum_藥庫_藥品資料.藥庫庫存].StringToInt32();
                             List<object[]> list_緊急申領 = this.sqL_DataGridView_藥局_緊急申領_資料查詢.SQL_GetRows((int)enum_藥局_緊急申領.藥品碼, 藥碼, false);
                             list_緊急申領 = list_緊急申領.GetRowsInDate((int)enum_藥局_緊急申領.產出時間, DateTime.Now);
+
+                            list_緊急申領 = (from temp0 in list_緊急申領
+                                         where temp0[(int)enum_藥局_緊急申領.狀態].ObjectToString() != "過帳完成"
+                                         select temp0).ToList();
+
                             int 申領數量 = 0;
                             for (int i = 0; i < list_緊急申領.Count; i++)
                             {

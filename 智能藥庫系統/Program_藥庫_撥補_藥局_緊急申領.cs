@@ -292,25 +292,57 @@ namespace 智能藥庫系統
                             }
                             if (deviceBasic_藥庫 != null)
                             {
+
                                 deviceBasic_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_異動量);
                                 deviceBasics_藥庫_replace.Add(deviceBasic_藥庫);
                                 List_藥庫_DeviceBasic.Add_NewDeviceBasic(deviceBasic_藥庫);
                             }
                             if (deviceBasics_藥局_buf[0] != null)
                             {
-                                deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_異動量 * -1);
-                                deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
-                                List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
+                                if ((輸出異動量) > 0)
+                                {
+                                    deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_異動量 * -1);
+                                    deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
+                                    List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
+                                    輸出備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * -1}";
+                                    if (k != list_儲位資料.Count - 1) 輸出備註 += "\n";
+                                }
+                                else
+                                {
+
+                                }
+                               
+                           
                             }
 
 
 
 
-                            輸出備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * -1}";
-                            if (k != list_儲位資料.Count - 1) 輸出備註 += "\n";
+                           
 
                             來源備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * 1}";
                             if (k != list_儲位資料.Count - 1) 來源備註 += "\n";
+                        }
+
+                        if ((輸出異動量 ) <= 0)
+                        {
+                            List<string> list_藥局效期 = new List<string>();
+                            List<string> list_藥局批號 = new List<string>();
+                            List<string> list_藥局異動量 = new List<string>();
+
+                            deviceBasics_藥局_buf[0].庫存異動(輸出異動量 , out list_藥局效期, out list_藥局批號, out list_藥局異動量);
+                            deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
+                            List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
+                            for(int k = 0; k < list_藥局效期.Count; k++)
+                            {
+                                輸出備註 += $"[效期]:{list_藥局效期[k]},[批號]:{list_藥局批號[k]},[數量]:{list_藥局異動量[k]}";
+                                if (k != list_藥局效期.Count - 1) 輸出備註 += "\n";
+                            }
+           
+                        }
+                        else
+                        {
+
                         }
                         list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = 輸出庫存量;
                         list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量] = 輸出異動量;

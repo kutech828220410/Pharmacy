@@ -79,10 +79,12 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_無效期可入帳.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_無效期可入帳_MouseDownEvent;
             this.plC_RJ_Button_藥品過消耗帳_匯出藥局消耗帳_匯出.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_匯出藥局消耗帳_匯出_MouseDownEvent;
+
+            this.plC_RJ_Button_藥品過消耗帳_測試.MouseDownEvent += PlC_RJ_Button_藥品過消耗帳_測試_MouseDownEvent1;
             this.plC_UI_Init.Add_Method(this.sub_Program_藥品過消耗帳);
         }
 
-  
+     
 
         private void sub_Program_藥品過消耗帳()
         {
@@ -145,11 +147,11 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     if (Task_檢查藥品過消耗帳 == null)
                     {
-                        Task_檢查藥品過消耗帳 = new Task(new Action(delegate { this.Function_藥品過消耗帳_指定日期過帳(DateTime.Now); }));
+                        Task_檢查藥品過消耗帳 = new Task(new Action(delegate { /*this.Function_藥品過消耗帳_指定日期過帳(DateTime.Now);*/ }));
                     }
                     if (Task_檢查藥品過消耗帳.Status == TaskStatus.RanToCompletion)
                     {
-                        Task_檢查藥品過消耗帳 = new Task(new Action(delegate { this.Function_藥品過消耗帳_指定日期過帳(DateTime.Now); }));
+                        Task_檢查藥品過消耗帳 = new Task(new Action(delegate { /*this.Function_藥品過消耗帳_指定日期過帳(DateTime.Now);*/ }));
                     }
                     if (Task_檢查藥品過消耗帳.Status == TaskStatus.Created)
                     {
@@ -228,11 +230,11 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     if (Task_檢查異常消耗帳過帳 == null)
                     {
-                        Task_檢查異常消耗帳過帳 = new Task(new Action(delegate { this.PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent(null); }));
+                        Task_檢查異常消耗帳過帳 = new Task(new Action(delegate { /*this.PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent(null);*/ }));
                     }
                     if (Task_檢查異常消耗帳過帳.Status == TaskStatus.RanToCompletion)
                     {
-                        Task_檢查異常消耗帳過帳 = new Task(new Action(delegate { this.PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent(null); }));
+                        Task_檢查異常消耗帳過帳 = new Task(new Action(delegate { /*this.PlC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成_MouseDownEvent(null);*/ }));
                     }
                     if (Task_檢查異常消耗帳過帳.Status == TaskStatus.Created)
                     {
@@ -1318,6 +1320,221 @@ namespace 智能藥庫系統_VM_Server_
                     MyMessageBox.ShowDialog("匯出完成");
                 }
             }));
+        }
+
+
+        public class codes_temp
+        {
+            public string code = "";
+            public string name = "";
+            public int cost = 0;
+        }
+        private void PlC_RJ_Button_藥品過消耗帳_測試_MouseDownEvent1(MouseEventArgs mevent)
+        {
+            MyTimerBasic myTimerBasic = new MyTimerBasic();
+            myTimerBasic.StartTickTime(50000);
+            DateTime dateTime_st = new DateTime(2023, 12, 17, 21, 55, 50);
+            DateTime dateTime_end = new DateTime(2023, 12, 17, 21, 59, 55);
+
+
+            List<object[]> list_公藥 = this.sqL_DataGridView_過帳明細_公藥.SQL_GetAllRows(false);
+
+            list_公藥 = list_公藥.GetRowsInDate((int)enum_過帳明細_門診.產出時間, dateTime_st, dateTime_end);
+
+
+
+            list_公藥 = list_公藥.GetRowsInDate((int)enum_過帳明細_門診.報表日期, "2023-12-16".StringToDateTime());
+
+
+            Console.WriteLine($"取得公藥所有過帳資料 ({list_公藥.Count}),{myTimerBasic.ToString()}");
+
+        
+            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_過帳明細_公藥(), new enum_藥品過消耗帳());
+            for (int i = 0; i < list_公藥_buf.Count; i++)
+            {
+                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+            }
+            List<object[]> list_trading_value = new List<object[]>();
+
+            List<object[]> list_藥品過消耗帳_公 = new List<object[]>();
+            List<object[]> list_藥品過消耗帳_公_buf = new List<object[]>();
+            list_藥品過消耗帳_公.LockAdd(list_公藥_buf);
+            //list_value.LockAdd(list_公藥_buf);
+            List<DeviceBasic> deviceBasics = this.DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+            List<DeviceBasic> deviceBasics_buf = new List<DeviceBasic>();
+            List<DeviceBasic> deviceBasics_Replace = new List<DeviceBasic>();
+            List<object[]> list_ReplaceValue = new List<object[]>();
+            List<object[]> list_儲位資訊 = new List<object[]>();
+            string 儲位資訊_TYPE = "";
+            string 儲位資訊_IP = "";
+            string 儲位資訊_Num = "";
+            string 儲位資訊_效期 = "";
+            string 儲位資訊_批號 = "";
+            string 儲位資訊_庫存 = "";
+            string 儲位資訊_異動量 = "";
+            string 儲位資訊_GUID = "";
+            int 庫存不足 = 0;
+            List<string> Codes = new List<string>();
+            List<codes_temp> codes_temps = new List<codes_temp>();
+            List<codes_temp> codes_temps_buf = new List<codes_temp>();
+            Codes = (from temp in list_藥品過消耗帳_公
+                     select temp[(int)enum_藥品過消耗帳.藥品碼].ObjectToString()).Distinct().ToList();
+            for (int i = 0; i < Codes.Count; i++)
+            {
+                codes_temp codes_Temp = new codes_temp();
+                codes_Temp.code = Codes[i];
+                codes_temps.Add(codes_Temp);
+            }
+            for (int i = 0; i < Codes.Count; i++)
+            {
+                list_公藥_buf = list_藥品過消耗帳_公.GetRows((int)enum_藥品過消耗帳.藥品碼, Codes[i]);
+                codes_temps_buf = (from temp in codes_temps
+                                   where temp.code == Codes[i]
+                                   select temp).ToList();
+                for (int k = 0; k < list_公藥_buf.Count; k++)
+                {
+                    int 已消耗量 = this.Function_藥品過消耗帳_取得已消耗量(list_公藥_buf[k]);
+                    codes_temps_buf[0].cost += (已消耗量 * -1);
+                    codes_temps_buf[0].name += list_公藥_buf[k][(int)enum_藥品過消耗帳.藥品名稱].ObjectToString();
+                }
+            }
+            for (int i = 0; i < codes_temps.Count; i++)
+            {
+                int 異動量 = codes_temps[i].cost;
+                if (異動量 == 0)
+                {
+
+                    continue;
+                }
+                string 藥品碼 = codes_temps[i].code.ObjectToString();
+                string 藥品名稱 = codes_temps[i].name.ObjectToString();
+                List<DeviceBasic> deviceBasic_buf = deviceBasics.SortByCode(藥品碼);
+                int 庫存量 = deviceBasic_buf[0].Inventory.StringToInt32();
+                int 結存量 = 庫存量 + 異動量;
+                list_儲位資訊 = this.Function_取得異動儲位資訊(deviceBasic_buf[0], 異動量);
+                string 備註 = "";
+                if (deviceBasic_buf[0] != null)
+                {
+                    if (結存量 > 0)
+                    {
+                        if (庫存量 > 0)
+                        {
+                            for (int k = 0; k < list_儲位資訊.Count; k++)
+                            {
+                                this.Function_庫存異動(list_儲位資訊[k]);
+                                this.Function_堆疊資料_取得儲位資訊內容(list_儲位資訊[k], ref 儲位資訊_GUID, ref 儲位資訊_TYPE, ref 儲位資訊_IP, ref 儲位資訊_Num, ref 儲位資訊_效期, ref 儲位資訊_批號, ref 儲位資訊_庫存, ref 儲位資訊_異動量);
+                                if (儲位資訊_批號.StringIsEmpty()) 儲位資訊_批號 = "None";
+                                備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量}";
+                                if (k != list_儲位資訊.Count - 1) 備註 += "\n";
+                            }
+  
+
+                            object[] value_trading = new object[new enum_交易記錄查詢資料().GetLength()];
+                            value_trading[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
+                            value_trading[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
+                            value_trading[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.批次過帳.GetEnumName();
+                            value_trading[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
+                            value_trading[(int)enum_交易記錄查詢資料.庫存量] = 庫存量;
+                            value_trading[(int)enum_交易記錄查詢資料.交易量] = 異動量;
+                            value_trading[(int)enum_交易記錄查詢資料.結存量] = 結存量;
+                            value_trading[(int)enum_交易記錄查詢資料.備註] = "[庫存調整]";
+                            value_trading[(int)enum_交易記錄查詢資料.庫別] = enum_庫別.藥庫.GetEnumName();
+                            value_trading[(int)enum_交易記錄查詢資料.操作人] = "系統";
+                            value_trading[(int)enum_交易記錄查詢資料.操作時間] = DateTime.Now.ToDateTimeString_6();
+                            list_trading_value.Add(value_trading);
+                        }
+                        else
+                        {
+                            List<string> list_效期 = new List<string>();
+                            List<string> list_批號 = new List<string>();
+
+                            Funnction_交易記錄查詢_取得指定藥碼批號期效期(藥品碼, ref list_效期, ref list_批號);
+                            if (list_效期.Count > 0)
+                            {
+                                儲位資訊_效期 = list_效期[0];
+                                儲位資訊_批號 = list_批號[0];
+                                儲位資訊_異動量 = 異動量.ToString();
+                                庫存量 = deviceBasic_buf[0].Inventory.StringToInt32();
+                                結存量 = 庫存量 + 異動量;
+                                deviceBasic_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_批號, 儲位資訊_異動量, false);
+                                備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量}";
+                      
+
+                                object[] value_trading = new object[new enum_交易記錄查詢資料().GetLength()];
+                                value_trading[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
+                                value_trading[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
+                                value_trading[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.批次過帳.GetEnumName();
+                                value_trading[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
+                                value_trading[(int)enum_交易記錄查詢資料.庫存量] = 庫存量;
+                                value_trading[(int)enum_交易記錄查詢資料.交易量] = 異動量;
+                                value_trading[(int)enum_交易記錄查詢資料.結存量] = 結存量;
+                                value_trading[(int)enum_交易記錄查詢資料.備註] = "[庫存調整]";
+                                if (備註.Length > 250)
+                                {
+                                    value_trading[(int)enum_交易記錄查詢資料.備註] = "";
+                                }
+                                value_trading[(int)enum_交易記錄查詢資料.庫別] = enum_庫別.藥庫.GetEnumName();
+                                value_trading[(int)enum_交易記錄查詢資料.操作人] = "系統";
+                                value_trading[(int)enum_交易記錄查詢資料.操作時間] = DateTime.Now.ToDateTimeString_6();
+                                list_trading_value.Add(value_trading);
+                            }
+                            else
+                            {
+
+              
+                            }
+
+                        }
+                    }
+                    else
+                    {
+                        異動量 = 0;
+                        for (int k = 0; k < list_儲位資訊.Count; k++)
+                        {
+                            this.Function_庫存異動(list_儲位資訊[k]);
+                            this.Function_堆疊資料_取得儲位資訊內容(list_儲位資訊[k], ref 儲位資訊_GUID, ref 儲位資訊_TYPE, ref 儲位資訊_IP, ref 儲位資訊_Num, ref 儲位資訊_效期, ref 儲位資訊_批號, ref 儲位資訊_庫存, ref 儲位資訊_異動量);
+                            if (儲位資訊_批號.StringIsEmpty()) 儲位資訊_批號 = "None";
+                            備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量}";
+                            if (k != list_儲位資訊.Count - 1) 備註 += "\n";
+                            異動量 += 儲位資訊_異動量.StringToInt32();
+                        }
+
+                        結存量 = 庫存量 + 異動量;
+                        if (庫存量 == 0)
+                        {
+                            continue;
+                        }
+
+                        object[] value_trading = new object[new enum_交易記錄查詢資料().GetLength()];
+                        value_trading[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
+                        value_trading[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
+                        value_trading[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.批次過帳.GetEnumName();
+                        value_trading[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
+                        value_trading[(int)enum_交易記錄查詢資料.庫存量] = 庫存量;
+                        value_trading[(int)enum_交易記錄查詢資料.交易量] = 異動量;
+                        value_trading[(int)enum_交易記錄查詢資料.結存量] = 結存量;
+                        value_trading[(int)enum_交易記錄查詢資料.備註] = 備註;
+                        value_trading[(int)enum_交易記錄查詢資料.庫別] = enum_庫別.藥庫.GetEnumName();
+                        value_trading[(int)enum_交易記錄查詢資料.操作人] = "系統";
+                        value_trading[(int)enum_交易記錄查詢資料.操作時間] = DateTime.Now.ToDateTimeString_6();
+                        list_trading_value.Add(value_trading);
+                    }
+                }
+                deviceBasics_buf = (from value in deviceBasics_Replace
+                                    where value.Code == 藥品碼
+                                    select value).ToList();
+                if (deviceBasics_buf.Count == 0)
+                {
+                    deviceBasics_Replace.Add(deviceBasic_buf[0]);
+                }
+            }
+            //this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_trading_value, false);
+            //this.DeviceBasicClass_藥局.SQL_ReplaceDeviceBasic(deviceBasics_Replace);
+            this.sqL_DataGridView_過帳明細_公藥.SQL_DeleteExtra(list_公藥, false);
+            MyMessageBox.ShowDialog("完成");
+                
+
+
         }
         #endregion
         private class ICP_藥品過消耗帳 : IComparer<object[]>

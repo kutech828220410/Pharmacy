@@ -241,7 +241,6 @@ C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統\bin\Release\ICSharpCode
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\ICSharpCode.SharpZipLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_藥品資料設定.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_效期批號歷史紀錄.resources
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_DB_Lib.dll
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.exe.config
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.exe
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.pdb
@@ -326,7 +325,6 @@ C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_合併盤點單.resources
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點處方量.resources
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_補給系統藥品建置.resources
@@ -335,3 +333,5 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點處方量.resources
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_日期選擇.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_日期選擇.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_DB_Lib.dll

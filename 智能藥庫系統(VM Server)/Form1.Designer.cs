@@ -476,6 +476,7 @@
             this.openFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.openFileDialog_LoadExcel = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
+            this.plC_RJ_Button_藥品過消耗帳_測試 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
             this.藥品資料.SuspendLayout();
@@ -1303,7 +1304,7 @@
             this.sqL_DataGridView_雲端_藥品資料_old.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_雲端_藥品資料_old.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_雲端_藥品資料_old.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_雲端_藥品資料_old.columnHeadersHeight = 18;
+            this.sqL_DataGridView_雲端_藥品資料_old.columnHeadersHeight = 15;
             this.sqL_DataGridView_雲端_藥品資料_old.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_雲端_藥品資料_old.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_雲端_藥品資料_old.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1345,7 +1346,7 @@
             this.tabPage8.Controls.Add(this.sqL_DataGridView_本地_藥品資料);
             this.tabPage8.Location = new System.Drawing.Point(4, 25);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1668, 703);
+            this.tabPage8.Size = new System.Drawing.Size(1668, 793);
             this.tabPage8.TabIndex = 3;
             this.tabPage8.Text = "本地";
             // 
@@ -1440,7 +1441,7 @@
             this.sqL_DataGridView_本地_藥品資料.RowsHeight = 60;
             this.sqL_DataGridView_本地_藥品資料.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_本地_藥品資料.Server = "localhost";
-            this.sqL_DataGridView_本地_藥品資料.Size = new System.Drawing.Size(1245, 703);
+            this.sqL_DataGridView_本地_藥品資料.Size = new System.Drawing.Size(1245, 793);
             this.sqL_DataGridView_本地_藥品資料.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_本地_藥品資料.TabIndex = 141;
             this.sqL_DataGridView_本地_藥品資料.TableName = "medicine_page_local";
@@ -1464,7 +1465,7 @@
             this.tabPage6.Controls.Add(this.sqL_DataGridView_藥庫_藥品資料);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1668, 703);
+            this.tabPage6.Size = new System.Drawing.Size(1668, 793);
             this.tabPage6.TabIndex = 1;
             this.tabPage6.Text = "藥庫";
             // 
@@ -1528,7 +1529,7 @@
             this.sqL_DataGridView_藥庫_藥品資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_藥庫_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥庫_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥庫_藥品資料.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_藥庫_藥品資料.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1569,7 +1570,7 @@
             this.tabPage7.Controls.Add(this.sqL_DataGridView_藥局_藥品資料);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1668, 703);
+            this.tabPage7.Size = new System.Drawing.Size(1668, 793);
             this.tabPage7.TabIndex = 2;
             this.tabPage7.Text = "藥局";
             // 
@@ -1587,7 +1588,7 @@
             this.sqL_DataGridView_藥局_藥品資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_藥局_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥局_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥局_藥品資料.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_藥局_藥品資料.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1629,7 +1630,7 @@
             this.tabPage11.Controls.Add(this.sqL_DataGridView_雲端藥檔NEW);
             this.tabPage11.Location = new System.Drawing.Point(4, 25);
             this.tabPage11.Name = "tabPage11";
-            this.tabPage11.Size = new System.Drawing.Size(1668, 703);
+            this.tabPage11.Size = new System.Drawing.Size(1668, 793);
             this.tabPage11.TabIndex = 4;
             this.tabPage11.Text = "雲端NEW";
             this.tabPage11.UseVisualStyleBackColor = true;
@@ -1740,7 +1741,7 @@
             this.sqL_DataGridView_雲端藥檔NEW.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_雲端藥檔NEW.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_雲端藥檔NEW.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_雲端藥檔NEW.columnHeadersHeight = 18;
+            this.sqL_DataGridView_雲端藥檔NEW.columnHeadersHeight = 15;
             this.sqL_DataGridView_雲端藥檔NEW.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_雲端藥檔NEW.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_雲端藥檔NEW.Dock = System.Windows.Forms.DockStyle.Left;
@@ -1758,7 +1759,7 @@
             this.sqL_DataGridView_雲端藥檔NEW.RowsHeight = 60;
             this.sqL_DataGridView_雲端藥檔NEW.SaveFileName = "SQL_DataGridView";
             this.sqL_DataGridView_雲端藥檔NEW.Server = "localhost";
-            this.sqL_DataGridView_雲端藥檔NEW.Size = new System.Drawing.Size(1454, 703);
+            this.sqL_DataGridView_雲端藥檔NEW.Size = new System.Drawing.Size(1454, 793);
             this.sqL_DataGridView_雲端藥檔NEW.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_雲端藥檔NEW.TabIndex = 147;
             this.sqL_DataGridView_雲端藥檔NEW.TableName = "medicine_page_cloud";
@@ -2893,6 +2894,7 @@
             // rJ_GroupBox2.ContentsPanel
             // 
             this.rJ_GroupBox2.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox2.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox2.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox2.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox2.ContentsPanel.BorderSize = 2;
@@ -2904,6 +2906,8 @@
             this.rJ_GroupBox2.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox2.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox2.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox2.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox2.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(515, 233);
             this.rJ_GroupBox2.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox2.GUID = "";
@@ -3721,6 +3725,7 @@
             // rJ_GroupBox1.ContentsPanel
             // 
             this.rJ_GroupBox1.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox1.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox1.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox1.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox1.ContentsPanel.BorderSize = 2;
@@ -3731,6 +3736,8 @@
             this.rJ_GroupBox1.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox1.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox1.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox1.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox1.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox1.ContentsPanel.Size = new System.Drawing.Size(1676, 467);
             this.rJ_GroupBox1.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -3978,6 +3985,7 @@
             // rJ_GroupBox4.ContentsPanel
             // 
             this.rJ_GroupBox4.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox4.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox4.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox4.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox4.ContentsPanel.BorderSize = 2;
@@ -3988,6 +3996,8 @@
             this.rJ_GroupBox4.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox4.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox4.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox4.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox4.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox4.ContentsPanel.Size = new System.Drawing.Size(342, 72);
             this.rJ_GroupBox4.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox4.GUID = "";
@@ -4486,6 +4496,7 @@
             // rJ_GroupBox3.ContentsPanel
             // 
             this.rJ_GroupBox3.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox3.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox3.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox3.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox3.ContentsPanel.BorderSize = 2;
@@ -4496,6 +4507,8 @@
             this.rJ_GroupBox3.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox3.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox3.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox3.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox3.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(1676, 555);
             this.rJ_GroupBox3.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -5221,6 +5234,7 @@
             // plC_RJ_GroupBox7.ContentsPanel
             // 
             this.plC_RJ_GroupBox7.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox7.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderSize = 2;
@@ -5231,6 +5245,8 @@
             this.plC_RJ_GroupBox7.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox7.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox7.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.plC_RJ_GroupBox7.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox7.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox7.ContentsPanel.Size = new System.Drawing.Size(1676, 583);
             this.plC_RJ_GroupBox7.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -5349,6 +5365,7 @@
             // 藥品過消耗帳
             // 
             this.藥品過消耗帳.BackColor = System.Drawing.Color.White;
+            this.藥品過消耗帳.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_測試);
             this.藥品過消耗帳.Controls.Add(this.rJ_GroupBox8);
             this.藥品過消耗帳.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_無效期可入帳);
             this.藥品過消耗帳.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_異常過帳設定過帳完成);
@@ -5375,6 +5392,7 @@
             // rJ_GroupBox8.ContentsPanel
             // 
             this.rJ_GroupBox8.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox8.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox8.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox8.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox8.ContentsPanel.BorderSize = 2;
@@ -5388,6 +5406,8 @@
             this.rJ_GroupBox8.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox8.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox8.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox8.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox8.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(573, 72);
             this.rJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox8.GUID = "";
@@ -5399,7 +5419,7 @@
             this.rJ_GroupBox8.PannelBorderSize = 2;
             this.rJ_GroupBox8.Size = new System.Drawing.Size(573, 109);
             this.rJ_GroupBox8.TabIndex = 236;
-            this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox8.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox8.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox8.TitleBorderRadius = 5;
             this.rJ_GroupBox8.TitleBorderSize = 0;
@@ -5718,7 +5738,7 @@
             // 
             // rJ_Lable45
             // 
-            this.rJ_Lable45.BackColor = System.Drawing.Color.SkyBlue;
+            this.rJ_Lable45.BackColor = System.Drawing.Color.White;
             this.rJ_Lable45.BackgroundColor = System.Drawing.Color.SkyBlue;
             this.rJ_Lable45.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable45.BorderRadius = 8;
@@ -5927,6 +5947,7 @@
             // rJ_GroupBox5.ContentsPanel
             // 
             this.rJ_GroupBox5.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox5.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox5.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox5.ContentsPanel.BorderSize = 2;
@@ -5937,6 +5958,8 @@
             this.rJ_GroupBox5.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox5.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox5.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(289, 72);
             this.rJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox5.GUID = "";
@@ -5948,7 +5971,7 @@
             this.rJ_GroupBox5.PannelBorderSize = 2;
             this.rJ_GroupBox5.Size = new System.Drawing.Size(289, 109);
             this.rJ_GroupBox5.TabIndex = 188;
-            this.rJ_GroupBox5.TitleBackColor = System.Drawing.Color.DeepSkyBlue;
+            this.rJ_GroupBox5.TitleBackColor = System.Drawing.Color.White;
             this.rJ_GroupBox5.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_GroupBox5.TitleBorderRadius = 5;
             this.rJ_GroupBox5.TitleBorderSize = 0;
@@ -8651,6 +8674,7 @@
             // rJ_GroupBox21.ContentsPanel
             // 
             this.rJ_GroupBox21.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox21.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox21.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox21.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox21.ContentsPanel.BorderSize = 2;
@@ -8661,6 +8685,8 @@
             this.rJ_GroupBox21.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox21.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox21.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox21.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox21.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox21.ContentsPanel.Size = new System.Drawing.Size(1676, 694);
             this.rJ_GroupBox21.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -9878,6 +9904,7 @@
             // rJ_GroupBox13.ContentsPanel
             // 
             this.rJ_GroupBox13.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox13.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox13.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox13.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox13.ContentsPanel.BorderSize = 2;
@@ -9888,6 +9915,8 @@
             this.rJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox13.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox13.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1668, 448);
             this.rJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Top;
@@ -9988,7 +10017,7 @@
             this.tabPage10.Controls.Add(this.rJ_GroupBox7);
             this.tabPage10.Location = new System.Drawing.Point(4, 25);
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Size = new System.Drawing.Size(1668, 703);
+            this.tabPage10.Size = new System.Drawing.Size(1668, 793);
             this.tabPage10.TabIndex = 1;
             this.tabPage10.Text = "補給驗收";
             // 
@@ -10412,6 +10441,7 @@
             // rJ_GroupBox7.ContentsPanel
             // 
             this.rJ_GroupBox7.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox7.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox7.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox7.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox7.ContentsPanel.BorderSize = 2;
@@ -10422,6 +10452,8 @@
             this.rJ_GroupBox7.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox7.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox7.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox7.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox7.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox7.ContentsPanel.Size = new System.Drawing.Size(1668, 426);
             this.rJ_GroupBox7.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -10458,7 +10490,7 @@
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Dock = System.Windows.Forms.DockStyle.Fill;
             this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.Font = new System.Drawing.Font("新細明體", 12F);
@@ -10601,6 +10633,7 @@
             // rJ_GroupBox23.ContentsPanel
             // 
             this.rJ_GroupBox23.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox23.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox23.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox23.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox23.ContentsPanel.BorderSize = 2;
@@ -10614,6 +10647,8 @@
             this.rJ_GroupBox23.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox23.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox23.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox23.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox23.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox23.ContentsPanel.Size = new System.Drawing.Size(548, 80);
             this.rJ_GroupBox23.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox23.GUID = "";
@@ -10771,6 +10806,7 @@
             // rJ_GroupBox19.ContentsPanel
             // 
             this.rJ_GroupBox19.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox19.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox19.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox19.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox19.ContentsPanel.BorderSize = 2;
@@ -10781,6 +10817,8 @@
             this.rJ_GroupBox19.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox19.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox19.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox19.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox19.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox19.ContentsPanel.Size = new System.Drawing.Size(294, 189);
             this.rJ_GroupBox19.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox19.GUID = "";
@@ -10853,6 +10891,7 @@
             // rJ_GroupBox18.ContentsPanel
             // 
             this.rJ_GroupBox18.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox18.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox18.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox18.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox18.ContentsPanel.BorderSize = 2;
@@ -10867,6 +10906,8 @@
             this.rJ_GroupBox18.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox18.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox18.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox18.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox18.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox18.ContentsPanel.Size = new System.Drawing.Size(294, 188);
             this.rJ_GroupBox18.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox18.GUID = "";
@@ -11029,6 +11070,7 @@
             // rJ_GroupBox6.ContentsPanel
             // 
             this.rJ_GroupBox6.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox6.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox6.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox6.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox6.ContentsPanel.BorderSize = 2;
@@ -11051,6 +11093,8 @@
             this.rJ_GroupBox6.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox6.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox6.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox6.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox6.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox6.ContentsPanel.Size = new System.Drawing.Size(402, 189);
             this.rJ_GroupBox6.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox6.GUID = "";
@@ -11331,7 +11375,7 @@
             this.sqL_DataGridView_交易記錄查詢.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_交易記錄查詢.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_交易記錄查詢.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_交易記錄查詢.columnHeadersHeight = 18;
+            this.sqL_DataGridView_交易記錄查詢.columnHeadersHeight = 15;
             this.sqL_DataGridView_交易記錄查詢.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_交易記錄查詢.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_交易記錄查詢.Font = new System.Drawing.Font("新細明體", 12F);
@@ -12504,6 +12548,52 @@
             this.saveFileDialog_SaveExcel.DefaultExt = "csv";
             this.saveFileDialog_SaveExcel.Filter = "csv File (*.csv)|*.csv;";
             // 
+            // plC_RJ_Button_藥品過消耗帳_測試
+            // 
+            this.plC_RJ_Button_藥品過消耗帳_測試.AutoResetState = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Bool = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥品過消耗帳_測試.BorderRadius = 5;
+            this.plC_RJ_Button_藥品過消耗帳_測試.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_測試.but_press = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥品過消耗帳_測試.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_測試.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_測試.GUID = "";
+            this.plC_RJ_Button_藥品過消耗帳_測試.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Location = new System.Drawing.Point(667, 699);
+            this.plC_RJ_Button_藥品過消耗帳_測試.Name = "plC_RJ_Button_藥品過消耗帳_測試";
+            this.plC_RJ_Button_藥品過消耗帳_測試.OFF_文字內容 = "選取資料設定\n[測試]";
+            this.plC_RJ_Button_藥品過消耗帳_測試.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_測試.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_測試.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ON_文字內容 = "選取資料設定\n[測試]";
+            this.plC_RJ_Button_藥品過消耗帳_測試.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥品過消耗帳_測試.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ShadowSize = 0;
+            this.plC_RJ_Button_藥品過消耗帳_測試.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥品過消耗帳_測試.State = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.TabIndex = 237;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Text = "選取資料設定\n[測試]";
+            this.plC_RJ_Button_藥品過消耗帳_測試.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥品過消耗帳_測試.Texts = "選取資料設定\n[測試]";
+            this.plC_RJ_Button_藥品過消耗帳_測試.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.字型鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥品過消耗帳_測試.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥品過消耗帳_測試.文字鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.讀取位元反向 = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.音效 = true;
+            this.plC_RJ_Button_藥品過消耗帳_測試.顯示 = false;
+            this.plC_RJ_Button_藥品過消耗帳_測試.顯示狀態 = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -13082,6 +13172,7 @@
         private System.Windows.Forms.Label label16;
         private MyUI.RJ_DatePicker rJ_DatePicker_藥品過消耗帳_匯出藥局消耗帳_結束時間;
         private MyUI.RJ_DatePicker rJ_DatePicker_藥品過消耗帳_匯出藥局消耗帳_起始時間;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥品過消耗帳_測試;
     }
 }
 

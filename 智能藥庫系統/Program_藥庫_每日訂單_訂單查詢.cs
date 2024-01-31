@@ -57,11 +57,11 @@ namespace 智能藥庫系統
             this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.MouseDownEvent += PlC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋_MouseDownEvent;
             this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.MouseDownEvent += PlC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_匯出_MouseDownEvent;
-
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_刪除_MouseDownEvent;
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_訂單查詢);
         }
 
-
+     
 
         private bool flag_藥庫_每日訂單_訂單查詢 = false;
         private void sub_Program_藥庫_每日訂單_訂單查詢()
@@ -142,6 +142,20 @@ namespace 智能藥庫系統
                 RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間] = RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間].ToDateTimeString();
             }
             RowsList.Sort(new ICP_藥庫_每日訂單_訂單查詢());
+        }
+        private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_刪除_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Get_All_Select_RowsValues();
+            if(list_value.Count == 0)
+            {
+                MyMessageBox.ShowDialog("未選取資料!");
+                return;
+            }
+            if (MyMessageBox.ShowDialog($"是否刪除選取<{list_value.Count}>筆資料", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+            List<object[]> list_訂單資料 = list_value.CopyRows(new enum_藥庫_每日訂單_訂單查詢(), new enum_每日訂單());
+
+            this.sqL_DataGridView_每日訂單.SQL_DeleteExtra(list_訂單資料, false);
+            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.DeleteExtra(list_value, true);
         }
         private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_匯出_MouseDownEvent(MouseEventArgs mevent)
         {

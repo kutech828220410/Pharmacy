@@ -36,6 +36,8 @@ namespace 智能藥庫系統
             安全庫存,
             採購單價,
             庫存金額,
+            藥庫庫存,
+            藥局庫存
         }
         public enum enum_藥庫_藥品資料_匯入
         {
@@ -329,8 +331,17 @@ namespace 智能藥庫系統
             string 安全庫存 = list_value[0][(int)enum_藥庫_藥品資料.安全庫存].ObjectToString();
             string 基準量 = list_value[0][(int)enum_藥庫_藥品資料.基準量].ObjectToString();
             string 包裝數量 = list_value[0][(int)enum_藥庫_藥品資料.包裝數量].ObjectToString();
+            string 儲位名稱 = "";
 
-            Dialog_藥品資料設定 dialog_藥品資料設定 = new Dialog_藥品資料設定(藥品名稱, 安全庫存.StringToInt32(), 基準量.StringToInt32(), 包裝數量.StringToInt32());
+            List<DeviceBasic> list_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+            List<DeviceBasic> devices_buf = (from Value in list_藥庫_DeviceBasic
+                                             where Value.Code == 藥品碼
+                                             select Value).ToList();
+            if (devices_buf.Count > 0)
+            {
+                儲位名稱 = devices_buf[0].StorageName;
+            }
+            Dialog_藥品資料設定 dialog_藥品資料設定 = new Dialog_藥品資料設定(藥品名稱, 安全庫存.StringToInt32(), 基準量.StringToInt32(), 包裝數量.StringToInt32(), 儲位名稱);
             if (dialog_藥品資料設定.ShowDialog() != DialogResult.Yes) return;
 
             list_value[0][(int)enum_藥庫_藥品資料.安全庫存] = dialog_藥品資料設定.安全量;
@@ -338,6 +349,14 @@ namespace 智能藥庫系統
             list_value[0][(int)enum_藥庫_藥品資料.包裝數量] = dialog_藥品資料設定.包裝數量;
             this.sqL_DataGridView_藥庫_藥品資料.SQL_ReplaceExtra(list_value[0], false);
             this.sqL_DataGridView_藥庫_藥品資料.ReplaceExtra(list_value[0], true);
+
+            if (devices_buf.Count > 0)
+            {
+                儲位名稱 = dialog_藥品資料設定.儲位名稱;
+                devices_buf[0] = DeviceBasicClass_藥庫.SQL_GetDeviceBasic(devices_buf[0]);
+                devices_buf[0].StorageName = 儲位名稱;
+                DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(devices_buf[0]);
+            }
         }
         private void Function_藥庫_藥品資料_補給系統藥品建置()
         {
@@ -645,7 +664,7 @@ namespace 智能藥庫系統
                     {
                         CSVHelper.SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
-                    else if (Extension == ".xlsx")
+                    else if (Extension == ".xlsx" || Extension == ".xls")
                     {
                         MyOffice.ExcelClass.NPOI_SaveFile(dataTable, this.saveFileDialog_SaveExcel.FileName);
                     }
@@ -973,7 +992,10 @@ namespace 智能藥庫系統
                 if (this.openFileDialog_LoadExcel.ShowDialog() == DialogResult.OK)
                 {
                     DataTable dataTable = new DataTable();
-                    CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
+                    string Extension = System.IO.Path.GetExtension(this.openFileDialog_LoadExcel.FileName);
+
+                    if (Extension == ".txt") CSVHelper.LoadFile(this.openFileDialog_LoadExcel.FileName, 0, dataTable);
+                    else if (Extension == ".xls" || Extension == ".xlsx") dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
                     DataTable datatable_buf = dataTable.ReorderTable(new enum_藥庫_藥品資料_匯入_安全基準量());
                     if (datatable_buf == null)
                     {

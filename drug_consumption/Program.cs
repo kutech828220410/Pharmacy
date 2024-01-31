@@ -154,15 +154,16 @@ namespace drug_consumption
 
         static void Main(string[] args)
         {
-            mutex = new System.Threading.Mutex(true, "OnlyRun");
-            if (mutex.WaitOne(0, false))
-            {
+            bool isNewInstance;
+            System.Threading.Mutex mutex = new System.Threading.Mutex(true, "drug_consumption", out isNewInstance);
 
-            }
-            else
+            if (!isNewInstance)
             {
+                Console.WriteLine("程式已經在運行中...");
                 return;
             }
+
+         
             MyTimerBasic myTimer = new MyTimerBasic();
 
             try
@@ -181,7 +182,11 @@ namespace drug_consumption
             {
                 Console.WriteLine($"{e.Message})");
 
-                Console.ReadLine(); // 等待使用者按下 Enter
+                //Console.ReadLine(); // 等待使用者按下 Enter
+            }
+            finally
+            {
+                mutex.ReleaseMutex(); // 釋放互斥鎖
             }
         }
 

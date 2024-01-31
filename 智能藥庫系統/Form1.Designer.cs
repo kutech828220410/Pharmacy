@@ -165,6 +165,7 @@
             this.批次過帳 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_批次過帳 = new MyUI.PLC_ScreenPage();
             this.tabPage33 = new System.Windows.Forms.TabPage();
+            this.checkBox_藥品過消耗帳_合併藥品 = new System.Windows.Forms.CheckBox();
             this.plC_RJ_Button1 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量 = new MyUI.PLC_RJ_Button();
@@ -1279,6 +1280,8 @@
             this.sqL_DataGridView_定盤_盤點明細 = new SQLUI.SQL_DataGridView();
             this.tabPage17 = new System.Windows.Forms.TabPage();
             this.rJ_GroupBox10 = new MyUI.RJ_GroupBox();
+            this.plC_RJ_Button_盤點合併_製作盤點總表 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_盤點合併_載入庫存差異量 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點合併_計算消耗量 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點合併_載入單價 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點合併_計算誤差量 = new MyUI.PLC_RJ_Button();
@@ -1370,6 +1373,7 @@
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除 = new MyUI.PLC_RJ_Button();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -2503,7 +2507,8 @@
             // 
             // rJ_Pannel_登入畫面_登出顯示
             // 
-            this.rJ_Pannel_登入畫面_登出顯示.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel_登入畫面_登出顯示.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_Pannel_登入畫面_登出顯示.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_Pannel_登入畫面_登出顯示.BorderColor = System.Drawing.Color.DarkCyan;
             this.rJ_Pannel_登入畫面_登出顯示.BorderRadius = 10;
             this.rJ_Pannel_登入畫面_登出顯示.BorderSize = 2;
@@ -2516,6 +2521,8 @@
             this.rJ_Pannel_登入畫面_登出顯示.Location = new System.Drawing.Point(490, 453);
             this.rJ_Pannel_登入畫面_登出顯示.Name = "rJ_Pannel_登入畫面_登出顯示";
             this.rJ_Pannel_登入畫面_登出顯示.Padding = new System.Windows.Forms.Padding(3);
+            this.rJ_Pannel_登入畫面_登出顯示.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Pannel_登入畫面_登出顯示.ShadowSize = 0;
             this.rJ_Pannel_登入畫面_登出顯示.Size = new System.Drawing.Size(657, 300);
             this.rJ_Pannel_登入畫面_登出顯示.TabIndex = 114;
             this.rJ_Pannel_登入畫面_登出顯示.Visible = false;
@@ -2578,7 +2585,7 @@
             // 
             // rJ_Lable_登入畫面_登出顯示_姓名
             // 
-            this.rJ_Lable_登入畫面_登出顯示_姓名.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable_登入畫面_登出顯示_姓名.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BackgroundColor = System.Drawing.Color.MidnightBlue;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable_登入畫面_登出顯示_姓名.BorderRadius = 12;
@@ -2609,7 +2616,7 @@
             // 
             // rJ_Lable131
             // 
-            this.rJ_Lable131.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable131.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable131.BackgroundColor = System.Drawing.Color.ForestGreen;
             this.rJ_Lable131.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable131.BorderRadius = 12;
@@ -2677,7 +2684,8 @@
             // 
             // plC_RJ_Pannel4
             // 
-            this.plC_RJ_Pannel4.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel4.BackColor = System.Drawing.SystemColors.Window;
+            this.plC_RJ_Pannel4.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_Pannel4.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_Pannel4.BorderRadius = 10;
             this.plC_RJ_Pannel4.BorderSize = 2;
@@ -2686,6 +2694,8 @@
             this.plC_RJ_Pannel4.IsSelected = false;
             this.plC_RJ_Pannel4.Location = new System.Drawing.Point(3, 716);
             this.plC_RJ_Pannel4.Name = "plC_RJ_Pannel4";
+            this.plC_RJ_Pannel4.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Pannel4.ShadowSize = 0;
             this.plC_RJ_Pannel4.Size = new System.Drawing.Size(430, 300);
             this.plC_RJ_Pannel4.TabIndex = 113;
             this.plC_RJ_Pannel4.Visible = false;
@@ -2696,7 +2706,8 @@
             // 
             // plC_RJ_GroupBox15.ContentsPanel
             // 
-            this.plC_RJ_GroupBox15.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox15.ContentsPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.plC_RJ_GroupBox15.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox15.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox15.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox15.ContentsPanel.BorderSize = 0;
@@ -2706,19 +2717,21 @@
             this.plC_RJ_GroupBox15.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox15.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox15.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox15.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox15.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox15.ContentsPanel.Size = new System.Drawing.Size(430, 263);
             this.plC_RJ_GroupBox15.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.plC_RJ_GroupBox15.GUID = "";
             this.plC_RJ_GroupBox15.Location = new System.Drawing.Point(0, 0);
             this.plC_RJ_GroupBox15.Name = "plC_RJ_GroupBox15";
-            this.plC_RJ_GroupBox15.PannelBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox15.PannelBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox15.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox15.PannelBorderRadius = 5;
             this.plC_RJ_GroupBox15.PannelBorderSize = 0;
             this.plC_RJ_GroupBox15.Size = new System.Drawing.Size(430, 300);
             this.plC_RJ_GroupBox15.TabIndex = 112;
-            this.plC_RJ_GroupBox15.TitleBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox15.TitleBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox15.TitleBorderColor = System.Drawing.Color.PaleVioletRed;
             this.plC_RJ_GroupBox15.TitleBorderRadius = 5;
             this.plC_RJ_GroupBox15.TitleBorderSize = 0;
@@ -2753,7 +2766,8 @@
             // 
             // plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel
             // 
-            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.BorderSize = 2;
@@ -2765,12 +2779,14 @@
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.Size = new System.Drawing.Size(533, 249);
             this.plC_RJ_GroupBox_登入畫面_登入顯示.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.GUID = "";
             this.plC_RJ_GroupBox_登入畫面_登入顯示.Location = new System.Drawing.Point(553, 450);
             this.plC_RJ_GroupBox_登入畫面_登入顯示.Name = "plC_RJ_GroupBox_登入畫面_登入顯示";
-            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderRadius = 5;
             this.plC_RJ_GroupBox_登入畫面_登入顯示.PannelBorderSize = 2;
@@ -3209,6 +3225,7 @@
             // rJ_Pannel4
             // 
             this.rJ_Pannel4.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel4.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_Pannel4.BorderColor = System.Drawing.Color.DodgerBlue;
             this.rJ_Pannel4.BorderRadius = 10;
             this.rJ_Pannel4.BorderSize = 2;
@@ -3218,6 +3235,8 @@
             this.rJ_Pannel4.IsSelected = false;
             this.rJ_Pannel4.Location = new System.Drawing.Point(0, 0);
             this.rJ_Pannel4.Name = "rJ_Pannel4";
+            this.rJ_Pannel4.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Pannel4.ShadowSize = 0;
             this.rJ_Pannel4.Size = new System.Drawing.Size(200, 79);
             this.rJ_Pannel4.TabIndex = 0;
             // 
@@ -3257,6 +3276,7 @@
             // rJ_Pannel3
             // 
             this.rJ_Pannel3.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel3.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_Pannel3.BorderColor = System.Drawing.Color.DodgerBlue;
             this.rJ_Pannel3.BorderRadius = 10;
             this.rJ_Pannel3.BorderSize = 2;
@@ -3266,6 +3286,8 @@
             this.rJ_Pannel3.IsSelected = false;
             this.rJ_Pannel3.Location = new System.Drawing.Point(0, 0);
             this.rJ_Pannel3.Name = "rJ_Pannel3";
+            this.rJ_Pannel3.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Pannel3.ShadowSize = 0;
             this.rJ_Pannel3.Size = new System.Drawing.Size(200, 79);
             this.rJ_Pannel3.TabIndex = 0;
             // 
@@ -3304,6 +3326,7 @@
             // rJ_Pannel2
             // 
             this.rJ_Pannel2.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel2.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_Pannel2.BorderColor = System.Drawing.Color.Lime;
             this.rJ_Pannel2.BorderRadius = 10;
             this.rJ_Pannel2.BorderSize = 2;
@@ -3313,6 +3336,8 @@
             this.rJ_Pannel2.IsSelected = false;
             this.rJ_Pannel2.Location = new System.Drawing.Point(0, 0);
             this.rJ_Pannel2.Name = "rJ_Pannel2";
+            this.rJ_Pannel2.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Pannel2.ShadowSize = 0;
             this.rJ_Pannel2.Size = new System.Drawing.Size(200, 79);
             this.rJ_Pannel2.TabIndex = 0;
             // 
@@ -3448,6 +3473,7 @@
             // plC_RJ_GroupBox23.ContentsPanel
             // 
             this.plC_RJ_GroupBox23.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox23.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox23.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox23.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox23.ContentsPanel.BorderSize = 2;
@@ -3465,6 +3491,8 @@
             this.plC_RJ_GroupBox23.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox23.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox23.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox23.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox23.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox23.ContentsPanel.Size = new System.Drawing.Size(1615, 488);
             this.plC_RJ_GroupBox23.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox23.GUID = "";
@@ -3492,6 +3520,7 @@
             // plC_RJ_GroupBox25.ContentsPanel
             // 
             this.plC_RJ_GroupBox25.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox25.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox25.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox25.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox25.ContentsPanel.BorderSize = 2;
@@ -3503,6 +3532,8 @@
             this.plC_RJ_GroupBox25.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox25.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox25.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox25.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox25.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox25.ContentsPanel.Size = new System.Drawing.Size(578, 451);
             this.plC_RJ_GroupBox25.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox25.Dock = System.Windows.Forms.DockStyle.Left;
@@ -3865,6 +3896,7 @@
             // plC_RJ_GroupBox24.ContentsPanel
             // 
             this.plC_RJ_GroupBox24.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox24.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox24.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox24.ContentsPanel.BorderRadius = 2;
             this.plC_RJ_GroupBox24.ContentsPanel.BorderSize = 2;
@@ -3882,6 +3914,8 @@
             this.plC_RJ_GroupBox24.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox24.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox24.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox24.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox24.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox24.ContentsPanel.Size = new System.Drawing.Size(689, 451);
             this.plC_RJ_GroupBox24.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox24.Dock = System.Windows.Forms.DockStyle.Left;
@@ -4182,6 +4216,7 @@
             // plC_RJ_GroupBox20.ContentsPanel
             // 
             this.plC_RJ_GroupBox20.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox20.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox20.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox20.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox20.ContentsPanel.BorderSize = 2;
@@ -4195,6 +4230,8 @@
             this.plC_RJ_GroupBox20.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox20.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox20.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox20.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox20.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox20.ContentsPanel.Size = new System.Drawing.Size(899, 364);
             this.plC_RJ_GroupBox20.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox20.GUID = "";
@@ -4412,6 +4449,7 @@
             // plC_RJ_GroupBox19.ContentsPanel
             // 
             this.plC_RJ_GroupBox19.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox19.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox19.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox19.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox19.ContentsPanel.BorderSize = 2;
@@ -4427,6 +4465,8 @@
             this.plC_RJ_GroupBox19.ContentsPanel.IsSelected = false;
             this.plC_RJ_GroupBox19.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox19.ContentsPanel.Name = "ContentsPanel";
+            this.plC_RJ_GroupBox19.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox19.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox19.ContentsPanel.Size = new System.Drawing.Size(392, 364);
             this.plC_RJ_GroupBox19.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox19.GUID = "";
@@ -5001,6 +5041,7 @@
             // tabPage33
             // 
             this.tabPage33.BackColor = System.Drawing.Color.White;
+            this.tabPage33.Controls.Add(this.checkBox_藥品過消耗帳_合併藥品);
             this.tabPage33.Controls.Add(this.plC_RJ_Button1);
             this.tabPage33.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_選取日期範圍強制過賬);
             this.tabPage33.Controls.Add(this.plC_RJ_Button_藥品過消耗帳_匯出日期範圍異常消耗量);
@@ -5024,6 +5065,16 @@
             this.tabPage33.Size = new System.Drawing.Size(1630, 938);
             this.tabPage33.TabIndex = 4;
             this.tabPage33.Text = "藥品過消耗帳";
+            // 
+            // checkBox_藥品過消耗帳_合併藥品
+            // 
+            this.checkBox_藥品過消耗帳_合併藥品.AutoSize = true;
+            this.checkBox_藥品過消耗帳_合併藥品.Location = new System.Drawing.Point(798, 900);
+            this.checkBox_藥品過消耗帳_合併藥品.Name = "checkBox_藥品過消耗帳_合併藥品";
+            this.checkBox_藥品過消耗帳_合併藥品.Size = new System.Drawing.Size(72, 16);
+            this.checkBox_藥品過消耗帳_合併藥品.TabIndex = 235;
+            this.checkBox_藥品過消耗帳_合併藥品.Text = "合併藥品";
+            this.checkBox_藥品過消耗帳_合併藥品.UseVisualStyleBackColor = true;
             // 
             // plC_RJ_Button1
             // 
@@ -6496,6 +6547,7 @@
             // rJ_GroupBox14.ContentsPanel
             // 
             this.rJ_GroupBox14.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox14.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox14.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox14.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox14.ContentsPanel.BorderSize = 2;
@@ -6506,6 +6558,8 @@
             this.rJ_GroupBox14.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox14.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox14.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox14.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox14.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox14.ContentsPanel.Size = new System.Drawing.Size(1630, 673);
             this.rJ_GroupBox14.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox14.Dock = System.Windows.Forms.DockStyle.Top;
@@ -7362,6 +7416,7 @@
             // rJ_GroupBox16.ContentsPanel
             // 
             this.rJ_GroupBox16.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox16.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox16.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox16.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox16.ContentsPanel.BorderSize = 2;
@@ -7372,6 +7427,8 @@
             this.rJ_GroupBox16.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox16.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox16.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox16.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox16.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox16.ContentsPanel.Size = new System.Drawing.Size(1630, 673);
             this.rJ_GroupBox16.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox16.Dock = System.Windows.Forms.DockStyle.Top;
@@ -8228,6 +8285,7 @@
             // rJ_GroupBox15.ContentsPanel
             // 
             this.rJ_GroupBox15.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox15.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox15.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox15.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox15.ContentsPanel.BorderSize = 2;
@@ -8238,6 +8296,8 @@
             this.rJ_GroupBox15.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox15.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox15.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox15.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox15.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox15.ContentsPanel.Size = new System.Drawing.Size(1630, 673);
             this.rJ_GroupBox15.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox15.Dock = System.Windows.Forms.DockStyle.Top;
@@ -9094,6 +9154,7 @@
             // rJ_GroupBox17.ContentsPanel
             // 
             this.rJ_GroupBox17.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox17.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox17.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox17.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox17.ContentsPanel.BorderSize = 2;
@@ -9104,6 +9165,8 @@
             this.rJ_GroupBox17.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox17.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox17.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox17.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox17.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox17.ContentsPanel.Size = new System.Drawing.Size(1630, 673);
             this.rJ_GroupBox17.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox17.Dock = System.Windows.Forms.DockStyle.Top;
@@ -9438,6 +9501,7 @@
             // rJ_GroupBox2.ContentsPanel
             // 
             this.rJ_GroupBox2.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox2.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox2.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox2.ContentsPanel.BorderRadius = 0;
             this.rJ_GroupBox2.ContentsPanel.BorderSize = 2;
@@ -9458,6 +9522,8 @@
             this.rJ_GroupBox2.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox2.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox2.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox2.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox2.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(1630, 416);
             this.rJ_GroupBox2.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox2.GUID = "";
@@ -10138,6 +10204,7 @@
             // rJ_GroupBox1.ContentsPanel
             // 
             this.rJ_GroupBox1.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox1.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox1.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox1.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox1.ContentsPanel.BorderSize = 2;
@@ -10159,6 +10226,8 @@
             this.rJ_GroupBox1.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox1.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox1.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox1.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox1.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox1.ContentsPanel.Size = new System.Drawing.Size(1630, 901);
             this.rJ_GroupBox1.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -10787,6 +10856,7 @@
             // plC_RJ_GroupBox2.ContentsPanel
             // 
             this.plC_RJ_GroupBox2.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox2.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox2.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox2.ContentsPanel.BorderRadius = 2;
             this.plC_RJ_GroupBox2.ContentsPanel.BorderSize = 2;
@@ -10800,6 +10870,8 @@
             this.plC_RJ_GroupBox2.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox2.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox2.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox2.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox2.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox2.ContentsPanel.Size = new System.Drawing.Size(849, 901);
             this.plC_RJ_GroupBox2.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox2.Dock = System.Windows.Forms.DockStyle.Left;
@@ -11413,6 +11485,7 @@
             // rJ_GroupBox18.ContentsPanel
             // 
             this.rJ_GroupBox18.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox18.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox18.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox18.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox18.ContentsPanel.BorderSize = 2;
@@ -11431,6 +11504,8 @@
             this.rJ_GroupBox18.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox18.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox18.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox18.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox18.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox18.ContentsPanel.Size = new System.Drawing.Size(502, 282);
             this.rJ_GroupBox18.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox18.GUID = "";
@@ -11652,6 +11727,7 @@
             // rJ_GroupBox6.ContentsPanel
             // 
             this.rJ_GroupBox6.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox6.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox6.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox6.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox6.ContentsPanel.BorderSize = 2;
@@ -11677,6 +11753,8 @@
             this.rJ_GroupBox6.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox6.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox6.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox6.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox6.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox6.ContentsPanel.Size = new System.Drawing.Size(474, 282);
             this.rJ_GroupBox6.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox6.GUID = "";
@@ -12226,7 +12304,8 @@
             // 
             // plC_RJ_GroupBox3.ContentsPanel
             // 
-            this.plC_RJ_GroupBox3.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox3.ContentsPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.plC_RJ_GroupBox3.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox3.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox3.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox3.ContentsPanel.BorderSize = 2;
@@ -12240,13 +12319,15 @@
             this.plC_RJ_GroupBox3.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox3.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox3.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox3.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox3.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(532, 311);
             this.plC_RJ_GroupBox3.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.plC_RJ_GroupBox3.GUID = "";
             this.plC_RJ_GroupBox3.Location = new System.Drawing.Point(481, 590);
             this.plC_RJ_GroupBox3.Name = "plC_RJ_GroupBox3";
-            this.plC_RJ_GroupBox3.PannelBackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox3.PannelBackColor = System.Drawing.SystemColors.Window;
             this.plC_RJ_GroupBox3.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox3.PannelBorderRadius = 5;
             this.plC_RJ_GroupBox3.PannelBorderSize = 2;
@@ -12454,7 +12535,8 @@
             // 
             // rJ_GroupBox3.ContentsPanel
             // 
-            this.rJ_GroupBox3.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox3.ContentsPanel.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_GroupBox3.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox3.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox3.ContentsPanel.BorderRadius = 2;
             this.rJ_GroupBox3.ContentsPanel.BorderSize = 2;
@@ -12470,13 +12552,15 @@
             this.rJ_GroupBox3.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox3.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox3.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox3.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox3.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox3.ContentsPanel.Size = new System.Drawing.Size(481, 311);
             this.rJ_GroupBox3.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox3.Dock = System.Windows.Forms.DockStyle.Left;
             this.rJ_GroupBox3.GUID = "";
             this.rJ_GroupBox3.Location = new System.Drawing.Point(0, 590);
             this.rJ_GroupBox3.Name = "rJ_GroupBox3";
-            this.rJ_GroupBox3.PannelBackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox3.PannelBackColor = System.Drawing.SystemColors.Window;
             this.rJ_GroupBox3.PannelBorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox3.PannelBorderRadius = 2;
             this.rJ_GroupBox3.PannelBorderSize = 2;
@@ -12515,7 +12599,7 @@
             // 
             // rJ_Lable17
             // 
-            this.rJ_Lable17.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable17.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable17.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable17.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable17.BorderRadius = 12;
@@ -12562,14 +12646,14 @@
             // 
             this.panel15.Controls.Add(this.rJ_Lable16);
             this.panel15.Controls.Add(this.rJ_TextBox_藥庫_藥品資料_中文名稱);
-            this.panel15.Location = new System.Drawing.Point(12, 53);
+            this.panel15.Location = new System.Drawing.Point(12, 100);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(276, 41);
             this.panel15.TabIndex = 140;
             // 
             // rJ_Lable16
             // 
-            this.rJ_Lable16.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable16.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable16.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable16.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable16.BorderRadius = 12;
@@ -12616,14 +12700,14 @@
             // 
             this.panel14.Controls.Add(this.rJ_Lable15);
             this.panel14.Controls.Add(this.rJ_TextBox_藥庫_藥品資料_藥品名稱);
-            this.panel14.Location = new System.Drawing.Point(12, 100);
+            this.panel14.Location = new System.Drawing.Point(12, 53);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(276, 41);
             this.panel14.TabIndex = 141;
             // 
             // rJ_Lable15
             // 
-            this.rJ_Lable15.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable15.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable15.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable15.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable15.BorderRadius = 12;
@@ -12677,7 +12761,7 @@
             // 
             // rJ_Lable14
             // 
-            this.rJ_Lable14.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable14.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable14.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable14.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable14.BorderRadius = 12;
@@ -12800,7 +12884,7 @@
             // 
             // rJ_Lable1
             // 
-            this.rJ_Lable1.BackColor = System.Drawing.Color.White;
+            this.rJ_Lable1.BackColor = System.Drawing.SystemColors.Window;
             this.rJ_Lable1.BackgroundColor = System.Drawing.Color.DeepSkyBlue;
             this.rJ_Lable1.BorderColor = System.Drawing.Color.PaleVioletRed;
             this.rJ_Lable1.BorderRadius = 12;
@@ -13082,6 +13166,7 @@
             // plC_RJ_GroupBox1.ContentsPanel
             // 
             this.plC_RJ_GroupBox1.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox1.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox1.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox1.ContentsPanel.BorderRadius = 2;
             this.plC_RJ_GroupBox1.ContentsPanel.BorderSize = 2;
@@ -13098,6 +13183,8 @@
             this.plC_RJ_GroupBox1.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox1.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox1.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox1.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox1.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox1.ContentsPanel.Size = new System.Drawing.Size(1111, 820);
             this.plC_RJ_GroupBox1.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -13176,6 +13263,7 @@
             // plC_RJ_Pannel3
             // 
             this.plC_RJ_Pannel3.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel3.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_Pannel3.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_Pannel3.BorderRadius = 10;
             this.plC_RJ_Pannel3.BorderSize = 0;
@@ -13185,6 +13273,8 @@
             this.plC_RJ_Pannel3.IsSelected = false;
             this.plC_RJ_Pannel3.Location = new System.Drawing.Point(630, 353);
             this.plC_RJ_Pannel3.Name = "plC_RJ_Pannel3";
+            this.plC_RJ_Pannel3.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Pannel3.ShadowSize = 0;
             this.plC_RJ_Pannel3.Size = new System.Drawing.Size(475, 62);
             this.plC_RJ_Pannel3.TabIndex = 145;
             this.plC_RJ_Pannel3.Visible = false;
@@ -13238,6 +13328,7 @@
             // plC_RJ_Pannel2
             // 
             this.plC_RJ_Pannel2.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel2.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_Pannel2.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_Pannel2.BorderRadius = 10;
             this.plC_RJ_Pannel2.BorderSize = 0;
@@ -13247,6 +13338,8 @@
             this.plC_RJ_Pannel2.IsSelected = false;
             this.plC_RJ_Pannel2.Location = new System.Drawing.Point(630, 285);
             this.plC_RJ_Pannel2.Name = "plC_RJ_Pannel2";
+            this.plC_RJ_Pannel2.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Pannel2.ShadowSize = 0;
             this.plC_RJ_Pannel2.Size = new System.Drawing.Size(475, 62);
             this.plC_RJ_Pannel2.TabIndex = 144;
             this.plC_RJ_Pannel2.Visible = false;
@@ -13300,6 +13393,7 @@
             // plC_RJ_Pannel1
             // 
             this.plC_RJ_Pannel1.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_Pannel1.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_Pannel1.BorderRadius = 10;
             this.plC_RJ_Pannel1.BorderSize = 0;
@@ -13309,6 +13403,8 @@
             this.plC_RJ_Pannel1.IsSelected = false;
             this.plC_RJ_Pannel1.Location = new System.Drawing.Point(630, 217);
             this.plC_RJ_Pannel1.Name = "plC_RJ_Pannel1";
+            this.plC_RJ_Pannel1.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Pannel1.ShadowSize = 0;
             this.plC_RJ_Pannel1.Size = new System.Drawing.Size(475, 62);
             this.plC_RJ_Pannel1.TabIndex = 143;
             this.plC_RJ_Pannel1.Visible = false;
@@ -13817,6 +13913,7 @@
             // rJ_Pannel1
             // 
             this.rJ_Pannel1.BackColor = System.Drawing.Color.White;
+            this.rJ_Pannel1.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_Pannel1.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_Pannel1.BorderRadius = 8;
             this.rJ_Pannel1.BorderSize = 2;
@@ -13828,6 +13925,8 @@
             this.rJ_Pannel1.IsSelected = false;
             this.rJ_Pannel1.Location = new System.Drawing.Point(15, 357);
             this.rJ_Pannel1.Name = "rJ_Pannel1";
+            this.rJ_Pannel1.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Pannel1.ShadowSize = 0;
             this.rJ_Pannel1.Size = new System.Drawing.Size(123, 62);
             this.rJ_Pannel1.TabIndex = 160;
             // 
@@ -14486,6 +14585,7 @@
             // plC_RJ_GroupBox21.ContentsPanel
             // 
             this.plC_RJ_GroupBox21.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox21.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox21.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox21.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox21.ContentsPanel.BorderSize = 2;
@@ -14499,6 +14599,8 @@
             this.plC_RJ_GroupBox21.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox21.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox21.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox21.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox21.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox21.ContentsPanel.Size = new System.Drawing.Size(526, 258);
             this.plC_RJ_GroupBox21.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox21.GUID = "";
@@ -14722,6 +14824,7 @@
             // plC_RJ_GroupBox22.ContentsPanel
             // 
             this.plC_RJ_GroupBox22.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox22.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox22.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox22.ContentsPanel.BorderRadius = 2;
             this.plC_RJ_GroupBox22.ContentsPanel.BorderSize = 2;
@@ -14739,6 +14842,8 @@
             this.plC_RJ_GroupBox22.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox22.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox22.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox22.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox22.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox22.ContentsPanel.Size = new System.Drawing.Size(689, 429);
             this.plC_RJ_GroupBox22.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox22.Dock = System.Windows.Forms.DockStyle.Right;
@@ -15141,6 +15246,7 @@
             // rJ_GroupBox5.ContentsPanel
             // 
             this.rJ_GroupBox5.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox5.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox5.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox5.ContentsPanel.BorderSize = 2;
@@ -15153,6 +15259,8 @@
             this.rJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.rJ_GroupBox5.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox5.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(868, 478);
             this.rJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -15318,6 +15426,7 @@
             // rJ_GroupBox4.ContentsPanel
             // 
             this.rJ_GroupBox4.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox4.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox4.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox4.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox4.ContentsPanel.BorderSize = 2;
@@ -15335,6 +15444,8 @@
             this.rJ_GroupBox4.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox4.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox4.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.rJ_GroupBox4.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox4.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox4.ContentsPanel.Size = new System.Drawing.Size(762, 901);
             this.rJ_GroupBox4.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -15926,6 +16037,7 @@
             // rJ_GroupBox21.ContentsPanel
             // 
             this.rJ_GroupBox21.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox21.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox21.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox21.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox21.ContentsPanel.BorderSize = 2;
@@ -15936,6 +16048,8 @@
             this.rJ_GroupBox21.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox21.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox21.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox21.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox21.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox21.ContentsPanel.Size = new System.Drawing.Size(1608, 562);
             this.rJ_GroupBox21.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox21.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -16513,6 +16627,7 @@
             // rJ_GroupBox27.ContentsPanel
             // 
             this.rJ_GroupBox27.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox27.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox27.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox27.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox27.ContentsPanel.BorderSize = 2;
@@ -16523,6 +16638,8 @@
             this.rJ_GroupBox27.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox27.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox27.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox27.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox27.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox27.ContentsPanel.Size = new System.Drawing.Size(1608, 583);
             this.rJ_GroupBox27.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox27.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -17603,6 +17720,7 @@
             // plC_RJ_GroupBox7.ContentsPanel
             // 
             this.plC_RJ_GroupBox7.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox7.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox7.ContentsPanel.BorderSize = 2;
@@ -17613,6 +17731,8 @@
             this.plC_RJ_GroupBox7.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox7.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox7.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.plC_RJ_GroupBox7.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox7.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox7.ContentsPanel.Size = new System.Drawing.Size(1250, 820);
             this.plC_RJ_GroupBox7.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox7.Dock = System.Windows.Forms.DockStyle.Left;
@@ -18033,6 +18153,7 @@
             // tabPage37
             // 
             this.tabPage37.BackColor = System.Drawing.Color.White;
+            this.tabPage37.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除);
             this.tabPage37.Controls.Add(this.plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出);
             this.tabPage37.Controls.Add(this.panel35);
             this.tabPage37.Controls.Add(this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋);
@@ -18329,6 +18450,7 @@
             // plC_RJ_GroupBox16.ContentsPanel
             // 
             this.plC_RJ_GroupBox16.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox16.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox16.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox16.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox16.ContentsPanel.BorderSize = 2;
@@ -18339,6 +18461,8 @@
             this.plC_RJ_GroupBox16.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox16.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox16.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.plC_RJ_GroupBox16.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox16.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox16.ContentsPanel.Size = new System.Drawing.Size(1029, 820);
             this.plC_RJ_GroupBox16.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox16.Dock = System.Windows.Forms.DockStyle.Left;
@@ -18460,6 +18584,7 @@
             // rJ_GroupBox23.ContentsPanel
             // 
             this.rJ_GroupBox23.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox23.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox23.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox23.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox23.ContentsPanel.BorderSize = 1;
@@ -18474,6 +18599,8 @@
             this.rJ_GroupBox23.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox23.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox23.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox23.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox23.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox23.ContentsPanel.Size = new System.Drawing.Size(605, 369);
             this.rJ_GroupBox23.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox23.Dock = System.Windows.Forms.DockStyle.Top;
@@ -18647,6 +18774,7 @@
             // rJ_GroupBox20.ContentsPanel
             // 
             this.rJ_GroupBox20.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox20.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox20.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox20.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox20.ContentsPanel.BorderSize = 1;
@@ -18661,6 +18789,8 @@
             this.rJ_GroupBox20.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox20.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox20.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox20.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox20.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox20.ContentsPanel.Size = new System.Drawing.Size(605, 369);
             this.rJ_GroupBox20.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox20.Dock = System.Windows.Forms.DockStyle.Top;
@@ -18832,6 +18962,7 @@
             // rJ_GroupBox19.ContentsPanel
             // 
             this.rJ_GroupBox19.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox19.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox19.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox19.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox19.ContentsPanel.BorderSize = 0;
@@ -18849,6 +18980,8 @@
             this.rJ_GroupBox19.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox19.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox19.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox19.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox19.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox19.ContentsPanel.Size = new System.Drawing.Size(1017, 820);
             this.rJ_GroupBox19.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox19.Dock = System.Windows.Forms.DockStyle.Left;
@@ -19650,6 +19783,7 @@
             // plC_RJ_GroupBox10.ContentsPanel
             // 
             this.plC_RJ_GroupBox10.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox10.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox10.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox10.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox10.ContentsPanel.BorderSize = 2;
@@ -19662,6 +19796,8 @@
             this.plC_RJ_GroupBox10.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox10.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox10.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox10.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox10.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox10.ContentsPanel.Size = new System.Drawing.Size(770, 395);
             this.plC_RJ_GroupBox10.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox10.Dock = System.Windows.Forms.DockStyle.Left;
@@ -21129,6 +21265,7 @@
             // plC_RJ_GroupBox9.ContentsPanel
             // 
             this.plC_RJ_GroupBox9.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox9.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox9.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox9.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox9.ContentsPanel.BorderSize = 2;
@@ -21142,6 +21279,8 @@
             this.plC_RJ_GroupBox9.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox9.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox9.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox9.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox9.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox9.ContentsPanel.Size = new System.Drawing.Size(877, 177);
             this.plC_RJ_GroupBox9.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox9.Dock = System.Windows.Forms.DockStyle.Top;
@@ -21366,6 +21505,7 @@
             // plC_RJ_GroupBox8.ContentsPanel
             // 
             this.plC_RJ_GroupBox8.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox8.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox8.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox8.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox8.ContentsPanel.BorderSize = 2;
@@ -21381,6 +21521,8 @@
             this.plC_RJ_GroupBox8.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox8.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox8.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox8.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox8.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(877, 174);
             this.plC_RJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox8.Dock = System.Windows.Forms.DockStyle.Top;
@@ -21746,6 +21888,7 @@
             // plC_RJ_GroupBox13.ContentsPanel
             // 
             this.plC_RJ_GroupBox13.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox13.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox13.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox13.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox13.ContentsPanel.BorderSize = 2;
@@ -21756,6 +21899,8 @@
             this.plC_RJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox13.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox13.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1622, 228);
             this.plC_RJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -22652,6 +22797,7 @@
             // plC_RJ_GroupBox12.ContentsPanel
             // 
             this.plC_RJ_GroupBox12.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox12.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox12.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox12.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox12.ContentsPanel.BorderSize = 2;
@@ -22662,6 +22808,8 @@
             this.plC_RJ_GroupBox12.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox12.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox12.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox12.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox12.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox12.ContentsPanel.Size = new System.Drawing.Size(1264, 211);
             this.plC_RJ_GroupBox12.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox12.Dock = System.Windows.Forms.DockStyle.Top;
@@ -22739,6 +22887,7 @@
             // plC_RJ_GroupBox11.ContentsPanel
             // 
             this.plC_RJ_GroupBox11.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox11.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox11.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox11.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox11.ContentsPanel.BorderSize = 2;
@@ -22749,6 +22898,8 @@
             this.plC_RJ_GroupBox11.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox11.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox11.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox11.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox11.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox11.ContentsPanel.Size = new System.Drawing.Size(1264, 303);
             this.plC_RJ_GroupBox11.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox11.Dock = System.Windows.Forms.DockStyle.Top;
@@ -25247,6 +25398,7 @@
             // rJ_GroupBox13.ContentsPanel
             // 
             this.rJ_GroupBox13.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox13.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox13.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox13.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox13.ContentsPanel.BorderSize = 2;
@@ -25257,6 +25409,8 @@
             this.rJ_GroupBox13.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox13.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox13.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox13.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox13.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox13.ContentsPanel.Size = new System.Drawing.Size(1622, 592);
             this.rJ_GroupBox13.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox13.Dock = System.Windows.Forms.DockStyle.Top;
@@ -25783,6 +25937,7 @@
             // rJ_GroupBox7.ContentsPanel
             // 
             this.rJ_GroupBox7.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox7.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox7.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox7.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox7.ContentsPanel.BorderSize = 2;
@@ -25793,6 +25948,8 @@
             this.rJ_GroupBox7.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox7.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox7.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox7.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox7.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox7.ContentsPanel.Size = new System.Drawing.Size(1622, 583);
             this.rJ_GroupBox7.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox7.Dock = System.Windows.Forms.DockStyle.Top;
@@ -26314,6 +26471,7 @@
             // rJ_GroupBox8.ContentsPanel
             // 
             this.rJ_GroupBox8.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox8.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox8.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox8.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox8.ContentsPanel.BorderSize = 2;
@@ -26324,6 +26482,8 @@
             this.rJ_GroupBox8.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox8.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox8.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox8.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox8.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox8.ContentsPanel.Size = new System.Drawing.Size(1622, 591);
             this.rJ_GroupBox8.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox8.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -26792,6 +26952,7 @@
             // plC_RJ_GroupBox4.ContentsPanel
             // 
             this.plC_RJ_GroupBox4.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox4.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox4.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox4.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox4.ContentsPanel.BorderSize = 2;
@@ -26805,6 +26966,8 @@
             this.plC_RJ_GroupBox4.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox4.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox4.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox4.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox4.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox4.ContentsPanel.Size = new System.Drawing.Size(526, 244);
             this.plC_RJ_GroupBox4.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox4.Dock = System.Windows.Forms.DockStyle.Left;
@@ -27020,6 +27183,7 @@
             // rJ_GroupBox11.ContentsPanel
             // 
             this.rJ_GroupBox11.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox11.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox11.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox11.ContentsPanel.BorderRadius = 2;
             this.rJ_GroupBox11.ContentsPanel.BorderSize = 2;
@@ -27035,6 +27199,8 @@
             this.rJ_GroupBox11.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox11.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox11.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox11.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox11.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox11.ContentsPanel.Size = new System.Drawing.Size(481, 244);
             this.rJ_GroupBox11.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox11.Dock = System.Windows.Forms.DockStyle.Left;
@@ -27423,6 +27589,7 @@
             // rJ_GroupBox24.ContentsPanel
             // 
             this.rJ_GroupBox24.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox24.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox24.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox24.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox24.ContentsPanel.BorderSize = 2;
@@ -27441,6 +27608,8 @@
             this.rJ_GroupBox24.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox24.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox24.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox24.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox24.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox24.ContentsPanel.Size = new System.Drawing.Size(891, 436);
             this.rJ_GroupBox24.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox24.GUID = "";
@@ -27783,6 +27952,7 @@
             // rJ_GroupBox25.ContentsPanel
             // 
             this.rJ_GroupBox25.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox25.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox25.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox25.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox25.ContentsPanel.BorderSize = 2;
@@ -27798,6 +27968,8 @@
             this.rJ_GroupBox25.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox25.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox25.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox25.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox25.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox25.ContentsPanel.Size = new System.Drawing.Size(731, 872);
             this.rJ_GroupBox25.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox25.Dock = System.Windows.Forms.DockStyle.Left;
@@ -28090,6 +28262,7 @@
             // rJ_GroupBox26.ContentsPanel
             // 
             this.rJ_GroupBox26.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox26.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox26.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox26.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox26.ContentsPanel.BorderSize = 2;
@@ -28104,6 +28277,8 @@
             this.rJ_GroupBox26.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox26.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox26.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox26.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox26.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox26.ContentsPanel.Size = new System.Drawing.Size(891, 390);
             this.rJ_GroupBox26.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox26.GUID = "";
@@ -28533,6 +28708,7 @@
             // plC_RJ_GroupBox18.ContentsPanel
             // 
             this.plC_RJ_GroupBox18.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox18.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox18.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox18.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox18.ContentsPanel.BorderSize = 2;
@@ -28557,6 +28733,8 @@
             this.plC_RJ_GroupBox18.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox18.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox18.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox18.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox18.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox18.ContentsPanel.Size = new System.Drawing.Size(1622, 820);
             this.plC_RJ_GroupBox18.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox18.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -30109,6 +30287,7 @@
             // plC_RJ_GroupBox6.ContentsPanel
             // 
             this.plC_RJ_GroupBox6.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox6.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox6.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox6.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox6.ContentsPanel.BorderSize = 2;
@@ -30133,6 +30312,8 @@
             this.plC_RJ_GroupBox6.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox6.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox6.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox6.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox6.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox6.ContentsPanel.Size = new System.Drawing.Size(1622, 820);
             this.plC_RJ_GroupBox6.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -31827,6 +32008,7 @@
             // rJ_GroupBox9.ContentsPanel
             // 
             this.rJ_GroupBox9.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox9.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox9.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox9.ContentsPanel.BorderRadius = 2;
             this.rJ_GroupBox9.ContentsPanel.BorderSize = 2;
@@ -31838,6 +32020,8 @@
             this.rJ_GroupBox9.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox9.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox9.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.rJ_GroupBox9.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox9.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox9.ContentsPanel.Size = new System.Drawing.Size(529, 344);
             this.rJ_GroupBox9.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox9.Dock = System.Windows.Forms.DockStyle.Left;
@@ -32554,6 +32738,7 @@
             // panel_權限設定
             // 
             this.panel_權限設定.BackColor = System.Drawing.Color.White;
+            this.panel_權限設定.BackgroundColor = System.Drawing.Color.Transparent;
             this.panel_權限設定.BorderColor = System.Drawing.Color.SkyBlue;
             this.panel_權限設定.BorderRadius = 10;
             this.panel_權限設定.BorderSize = 2;
@@ -32574,6 +32759,8 @@
             this.panel_權限設定.Location = new System.Drawing.Point(0, 82);
             this.panel_權限設定.Name = "panel_權限設定";
             this.panel_權限設定.Padding = new System.Windows.Forms.Padding(5);
+            this.panel_權限設定.ShadowColor = System.Drawing.Color.DimGray;
+            this.panel_權限設定.ShadowSize = 0;
             this.panel_權限設定.Size = new System.Drawing.Size(1630, 857);
             this.panel_權限設定.TabIndex = 122;
             // 
@@ -33120,6 +33307,7 @@
             // plC_RJ_GroupBox5.ContentsPanel
             // 
             this.plC_RJ_GroupBox5.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.plC_RJ_GroupBox5.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderRadius = 5;
             this.plC_RJ_GroupBox5.ContentsPanel.BorderSize = 2;
@@ -33140,6 +33328,8 @@
             this.plC_RJ_GroupBox5.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.plC_RJ_GroupBox5.ContentsPanel.Name = "ContentsPanel";
             this.plC_RJ_GroupBox5.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.plC_RJ_GroupBox5.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_GroupBox5.ContentsPanel.ShadowSize = 0;
             this.plC_RJ_GroupBox5.ContentsPanel.Size = new System.Drawing.Size(1630, 901);
             this.plC_RJ_GroupBox5.ContentsPanel.TabIndex = 2;
             this.plC_RJ_GroupBox5.Dock = System.Windows.Forms.DockStyle.Top;
@@ -33719,9 +33909,12 @@
             // rJ_GroupBox10.ContentsPanel
             // 
             this.rJ_GroupBox10.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox10.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox10.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox10.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox10.ContentsPanel.BorderSize = 2;
+            this.rJ_GroupBox10.ContentsPanel.Controls.Add(this.plC_RJ_Button_盤點合併_製作盤點總表);
+            this.rJ_GroupBox10.ContentsPanel.Controls.Add(this.plC_RJ_Button_盤點合併_載入庫存差異量);
             this.rJ_GroupBox10.ContentsPanel.Controls.Add(this.plC_RJ_Button_盤點合併_計算消耗量);
             this.rJ_GroupBox10.ContentsPanel.Controls.Add(this.plC_RJ_Button_盤點合併_載入單價);
             this.rJ_GroupBox10.ContentsPanel.Controls.Add(this.plC_RJ_Button_盤點合併_計算誤差量);
@@ -33741,6 +33934,8 @@
             this.rJ_GroupBox10.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox10.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox10.ContentsPanel.Padding = new System.Windows.Forms.Padding(3);
+            this.rJ_GroupBox10.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox10.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox10.ContentsPanel.Size = new System.Drawing.Size(1630, 901);
             this.rJ_GroupBox10.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox10.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -33762,6 +33957,98 @@
             this.rJ_GroupBox10.TitleHeight = 37;
             this.rJ_GroupBox10.TitleTextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_GroupBox10.TitleTexts = "盤點表";
+            // 
+            // plC_RJ_Button_盤點合併_製作盤點總表
+            // 
+            this.plC_RJ_Button_盤點合併_製作盤點總表.AutoResetState = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Bool = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.BorderRadius = 5;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.but_press = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_製作盤點總表.GUID = "";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Location = new System.Drawing.Point(336, 723);
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Name = "plC_RJ_Button_盤點合併_製作盤點總表";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.OFF_文字內容 = "製作盤點總表";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_製作盤點總表.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ON_BorderSize = 5;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ON_文字內容 = "製作盤點總表";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ShadowSize = 0;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.ShowLoadingForm = true;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Size = new System.Drawing.Size(132, 59);
+            this.plC_RJ_Button_盤點合併_製作盤點總表.State = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.TabIndex = 233;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Text = "製作盤點總表";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.Texts = "製作盤點總表";
+            this.plC_RJ_Button_盤點合併_製作盤點總表.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.字型鎖住 = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.文字鎖住 = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.音效 = true;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.顯示 = false;
+            this.plC_RJ_Button_盤點合併_製作盤點總表.顯示狀態 = false;
+            // 
+            // plC_RJ_Button_盤點合併_載入庫存差異量
+            // 
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.AutoResetState = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Bool = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.BorderRadius = 5;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.but_press = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.GUID = "";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Location = new System.Drawing.Point(1036, 735);
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Name = "plC_RJ_Button_盤點合併_載入庫存差異量";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.OFF_文字內容 = "載入\n庫存差異量";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ON_BorderSize = 5;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ON_文字內容 = "載入\n庫存差異量";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ShadowSize = 0;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.ShowLoadingForm = true;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Size = new System.Drawing.Size(132, 59);
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.State = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.TabIndex = 232;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Text = "載入\n庫存差異量";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.Texts = "載入\n庫存差異量";
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.字型鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.文字鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.音效 = true;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.顯示 = false;
+            this.plC_RJ_Button_盤點合併_載入庫存差異量.顯示狀態 = false;
             // 
             // plC_RJ_Button_盤點合併_計算消耗量
             // 
@@ -33791,7 +34078,7 @@
             this.plC_RJ_Button_盤點合併_計算消耗量.ON_背景顏色 = System.Drawing.SystemColors.Control;
             this.plC_RJ_Button_盤點合併_計算消耗量.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_盤點合併_計算消耗量.ShadowSize = 0;
-            this.plC_RJ_Button_盤點合併_計算消耗量.ShowLoadingForm = false;
+            this.plC_RJ_Button_盤點合併_計算消耗量.ShowLoadingForm = true;
             this.plC_RJ_Button_盤點合併_計算消耗量.Size = new System.Drawing.Size(132, 59);
             this.plC_RJ_Button_盤點合併_計算消耗量.State = false;
             this.plC_RJ_Button_盤點合併_計算消耗量.TabIndex = 231;
@@ -34060,7 +34347,7 @@
             this.plC_RJ_Button_盤點合併_匯出Excel.Font = new System.Drawing.Font("微軟正黑體", 14F);
             this.plC_RJ_Button_盤點合併_匯出Excel.GUID = "";
             this.plC_RJ_Button_盤點合併_匯出Excel.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_盤點合併_匯出Excel.Location = new System.Drawing.Point(1388, 799);
+            this.plC_RJ_Button_盤點合併_匯出Excel.Location = new System.Drawing.Point(1184, 735);
             this.plC_RJ_Button_盤點合併_匯出Excel.Name = "plC_RJ_Button_盤點合併_匯出Excel";
             this.plC_RJ_Button_盤點合併_匯出Excel.OFF_文字內容 = "匯出Excel";
             this.plC_RJ_Button_盤點合併_匯出Excel.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
@@ -34403,6 +34690,7 @@
             // rJ_GroupBox29.ContentsPanel
             // 
             this.rJ_GroupBox29.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox29.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox29.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox29.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox29.ContentsPanel.BorderSize = 2;
@@ -34417,6 +34705,8 @@
             this.rJ_GroupBox29.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox29.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox29.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox29.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox29.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox29.ContentsPanel.Size = new System.Drawing.Size(393, 678);
             this.rJ_GroupBox29.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox29.GUID = "";
@@ -35153,6 +35443,7 @@
             // rJ_GroupBox28.ContentsPanel
             // 
             this.rJ_GroupBox28.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox28.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox28.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox28.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox28.ContentsPanel.BorderSize = 0;
@@ -35162,6 +35453,8 @@
             this.rJ_GroupBox28.ContentsPanel.IsSelected = false;
             this.rJ_GroupBox28.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox28.ContentsPanel.Name = "ContentsPanel";
+            this.rJ_GroupBox28.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox28.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox28.ContentsPanel.Size = new System.Drawing.Size(696, 901);
             this.rJ_GroupBox28.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox28.Dock = System.Windows.Forms.DockStyle.Left;
@@ -35360,6 +35653,7 @@
             // rJ_GroupBox22.ContentsPanel
             // 
             this.rJ_GroupBox22.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.rJ_GroupBox22.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.rJ_GroupBox22.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.rJ_GroupBox22.ContentsPanel.BorderRadius = 5;
             this.rJ_GroupBox22.ContentsPanel.BorderSize = 2;
@@ -35370,6 +35664,8 @@
             this.rJ_GroupBox22.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.rJ_GroupBox22.ContentsPanel.Name = "ContentsPanel";
             this.rJ_GroupBox22.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.rJ_GroupBox22.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_GroupBox22.ContentsPanel.ShadowSize = 0;
             this.rJ_GroupBox22.ContentsPanel.Size = new System.Drawing.Size(800, 252);
             this.rJ_GroupBox22.ContentsPanel.TabIndex = 2;
             this.rJ_GroupBox22.GUID = "";
@@ -36097,16 +36393,17 @@
             // openFileDialog_LoadExcel
             // 
             this.openFileDialog_LoadExcel.DefaultExt = "txt";
-            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xlsx)|*.xlsx|Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
+            this.openFileDialog_LoadExcel.Filter = "Excel File (*.xls)|*.xls|txt File (*.txt)|*.txt;";
             // 
             // saveFileDialog_SaveExcel
             // 
             this.saveFileDialog_SaveExcel.DefaultExt = "txt";
-            this.saveFileDialog_SaveExcel.Filter = "Excel File (*.xlsx)|*.xlsx|txt File (*.txt)|*.txt;";
+            this.saveFileDialog_SaveExcel.Filter = "Excel File (*.xls)|*.xls|Excel File (*.xlsx)|*.xlsx|txt File (*.txt)|*.txt;";
             // 
             // ContentsPanel
             // 
             this.ContentsPanel.BackColor = System.Drawing.Color.White;
+            this.ContentsPanel.BackgroundColor = System.Drawing.Color.Transparent;
             this.ContentsPanel.BorderColor = System.Drawing.Color.SkyBlue;
             this.ContentsPanel.BorderRadius = 5;
             this.ContentsPanel.BorderSize = 2;
@@ -36116,8 +36413,57 @@
             this.ContentsPanel.Location = new System.Drawing.Point(0, 37);
             this.ContentsPanel.Name = "ContentsPanel";
             this.ContentsPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.ContentsPanel.ShadowColor = System.Drawing.Color.DimGray;
+            this.ContentsPanel.ShadowSize = 0;
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
+            // 
+            // plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除
+            // 
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Bool = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderRadius = 20;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.but_press = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.GUID = "";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Location = new System.Drawing.Point(1262, 260);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Name = "plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字內容 = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.OFF_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字內容 = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ON_背景顏色 = System.Drawing.SystemColors.Control;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShadowSize = 3;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Size = new System.Drawing.Size(168, 81);
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.State = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TabIndex = 198;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Text = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.Texts = "刪除";
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.音效 = true;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示狀態 = false;
+            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.顯示讀取位置 = "S4077";
             // 
             // Form1
             // 
@@ -37906,6 +38252,10 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_定盤_盤點明細_重置作業;
         private MyUI.PLC_RJ_Button plC_RJ_Button_交易紀錄查詢_測試;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_盤點合併_載入庫存差異量;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_盤點合併_製作盤點總表;
+        private System.Windows.Forms.CheckBox checkBox_藥品過消耗帳_合併藥品;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除;
     }
 }
 

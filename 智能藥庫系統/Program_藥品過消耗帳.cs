@@ -714,26 +714,81 @@ namespace 智能藥庫系統
 
                     List<object[]> list_藥品過消耗帳_src = this.sqL_DataGridView_藥品過消耗帳.GetAllRows();
                     List<object[]> list_藥品過消耗帳_out = list_藥品過消耗帳_src.CopyRows(new enum_藥品過消耗帳(), new enum_藥品過消耗帳_匯出());
+                    List<object[]> list_藥品過消耗帳_buf = new List<object[]>();
+                    List<object[]> list_藥品過消耗帳_temp = new List<object[]>();
                     for (int i = 0; i < list_藥品過消耗帳_out.Count; i++)
                     {
                         list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = list_藥品過消耗帳_src[i][(int)enum_藥品過消耗帳.異動量];
-                        string 藥品碼 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
-                        class_MedPrices_buf = (from value in class_MedPrices
-                                               where value.藥品碼 == 藥品碼
-                                               select value).ToList();
-                        if (class_MedPrices_buf.Count > 0)
+           
+                    }
+                    if (checkBox_藥品過消耗帳_合併藥品.Checked == false)
+                    {
+                        for (int i = 0; i < list_藥品過消耗帳_out.Count; i++)
                         {
-                            int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
-                            數量 *= -1;
-                            list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = 數量;
-                            double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
-                            double 訂購總價 = 訂購單價 * 數量;
-                            if (訂購單價 > 0)
+                            string 藥品碼 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
+                            class_MedPrices_buf = (from value in class_MedPrices
+                                                   where value.藥品碼 == 藥品碼
+                                                   select value).ToList();
+                            if (class_MedPrices_buf.Count > 0)
                             {
-                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000").StringToDouble();
-                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗金額] = 訂購總價.ToString("0.000").StringToDouble();
+                                int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
+                                數量 *= -1;
+                                list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = 數量;
+                                double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                                double 訂購總價 = 訂購單價 * 數量;
+                                if (訂購單價 > 0)
+                                {
+                                    list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000").StringToDouble();
+                                    list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗金額] = 訂購總價.ToString("0.000").StringToDouble();
+                                }
                             }
                         }
+                    }
+                    else
+                    {
+                        for (int i = 0; i < list_藥品過消耗帳_out.Count; i++)
+                        {
+                            string 藥品碼 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
+                            int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
+                            數量 *= -1;
+
+                            list_藥品過消耗帳_buf = list_藥品過消耗帳_temp.GetRows((int)enum_藥品過消耗帳_匯出.藥品碼, 藥品碼);
+                       
+                            if (list_藥品過消耗帳_buf.Count == 0)
+                            {
+                                object[] value = new object[new enum_藥品過消耗帳_匯出().GetLength()];
+                                value[(int)enum_藥品過消耗帳_匯出.藥品碼] = 藥品碼;
+                                value[(int)enum_藥品過消耗帳_匯出.藥品名稱] = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.藥品名稱].ObjectToString();
+                                value[(int)enum_藥品過消耗帳_匯出.消耗量] = 數量;
+                                list_藥品過消耗帳_temp.Add(value);
+                            }
+                            else
+                            {
+                                object[] value = list_藥品過消耗帳_buf[0];
+                                int 數量temp = value[(int)enum_藥品過消耗帳_匯出.消耗量].StringToInt32();
+                                value[(int)enum_藥品過消耗帳_匯出.消耗量] = 數量 + 數量temp;
+
+                            }
+                        }
+                        for (int i = 0; i < list_藥品過消耗帳_temp.Count; i++)
+                        {
+                            string 藥品碼 = list_藥品過消耗帳_temp[i][(int)enum_藥品過消耗帳_匯出.藥品碼].ObjectToString();
+                            class_MedPrices_buf = (from value in class_MedPrices
+                                                   where value.藥品碼 == 藥品碼
+                                                   select value).ToList();
+                            if (class_MedPrices_buf.Count > 0)
+                            {
+                                int 數量 = list_藥品過消耗帳_temp[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
+                                double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                                double 訂購總價 = 訂購單價 * 數量;
+                                if (訂購單價 > 0)
+                                {
+                                    list_藥品過消耗帳_temp[i][(int)enum_藥品過消耗帳_匯出.訂購單價] = 訂購單價.ToString("0.000").StringToDouble();
+                                    list_藥品過消耗帳_temp[i][(int)enum_藥品過消耗帳_匯出.消耗金額] = 訂購總價.ToString("0.000").StringToDouble();
+                                }
+                            }
+                        }
+                        list_藥品過消耗帳_out = list_藥品過消耗帳_temp;
                     }
                     DataTable dataTable = list_藥品過消耗帳_out.ToDataTable(new enum_藥品過消耗帳_匯出_out());
                     dataTable = dataTable.ReorderTable(new enum_藥品過消耗帳_匯出_out());
@@ -866,7 +921,7 @@ namespace 智能藥庫系統
 
             List<object[]> list_value = Function_藥品過消耗帳_取得所有過帳明細(藥品碼);
             Console.WriteLine($"藥品過消耗帳 ,從資料庫取得<{藥品碼}>資料 <{list_value.Count}>筆 , 耗時{myTimer.ToString()}ms");
-            list_value = list_value.GetRowsInMonth((int)enum_藥品過消耗帳.報表日期, DateTime.Now.AddMonths(-1).Month);
+            list_value = list_value.GetRowsInMonth((int)enum_藥品過消耗帳.報表日期, DateTime.Now.AddMonths(-1).Year, DateTime.Now.AddMonths(-1).Month);
             Console.WriteLine($"藥品過消耗帳 ,篩選<{ DateTime.Now.AddMonths(-1).Month}>月份資料 <{list_value.Count}>筆 , 耗時{myTimer.ToString()}ms");
 
             int 消耗量 = 0;

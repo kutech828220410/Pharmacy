@@ -61,6 +61,18 @@ namespace 智能藥庫系統
                 this.rJ_TextBox_安全量.Texts = value;
             }
         }
+        private string _儲位名稱 = "0";
+        public string 儲位名稱
+        {
+            get
+            {
+                return this.rJ_TextBox_儲位名稱.Texts;
+            }
+            set
+            {
+                this.rJ_TextBox_儲位名稱.Texts = value;
+            }
+        }
         public static Form form;
         public new DialogResult ShowDialog()
         {
@@ -79,7 +91,7 @@ namespace 智能藥庫系統
             return this.DialogResult;
         }
 
-        public Dialog_藥品資料設定(string 藥名,int 安全量, int 基準量 ,int 包裝數量)
+        public Dialog_藥品資料設定(string 藥名,int 安全量, int 基準量 ,int 包裝數量, string 儲位名稱)
         {
             InitializeComponent();
             this.Load += Dialog_藥品資料設定_Load;
@@ -87,6 +99,7 @@ namespace 智能藥庫系統
             _安全量 = 安全量.ToString();
             _基準量 = 基準量.ToString();
             _包裝數量 = 包裝數量.ToString();
+            _儲位名稱 = 儲位名稱;
         }
 
         private void Dialog_藥品資料設定_Load(object sender, EventArgs e)
@@ -97,6 +110,7 @@ namespace 智能藥庫系統
             this.rJ_TextBox_基準量.Texts = _基準量;
             this.rJ_TextBox_安全量.Texts = _安全量;
             this.rJ_TextBox_包裝數量.Texts = _包裝數量;
+            this.rJ_TextBox_儲位名稱.Texts = _儲位名稱;
         }
 
         private void RJ_Button_確認_MouseDownEvent(MouseEventArgs mevent)
