@@ -318,7 +318,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_盤點作業.cs" />
-    <Compile Include="Program_盤點合併.cs">
+    <Compile Include="Program_盤點報表.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_盤點狀態_定盤.cs">
@@ -410,6 +410,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program_藥庫_驗收入庫_過帳明細.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program_覆盤報表.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

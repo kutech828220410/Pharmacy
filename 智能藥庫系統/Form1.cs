@@ -18,8 +18,8 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.26")]
-[assembly: AssemblyFileVersion("1.0.51.26")]
+[assembly: AssemblyVersion("1.0.51.27")]
+[assembly: AssemblyFileVersion("1.0.51.27")]
 namespace 智能藥庫系統
 {
 
@@ -241,7 +241,8 @@ namespace 智能藥庫系統
             this.sub_Program_系統_Init();
             this.sub_Program_人員資料_Init();
             this.sub_Program_盤點作業_定盤_Init();
-            this.sub_Program_盤點合併_Init();
+            this.sub_Program_盤點報表_Init();
+            this.sub_Program_覆盤報表_Init();
             this.sub_Program_登入畫面_Init();
             this.sub_Program_交易紀錄查詢_Init();
             this.sub_Program_藥品資料_資料維護_Init();
@@ -254,7 +255,6 @@ namespace 智能藥庫系統
             this.sub_Program_藥庫_每日訂單_下訂單_Init();
             this.sub_Program_藥庫_每日訂單_訂單查詢_Init();
             this.sub_Program_藥庫_每日訂單_檢視驗收入庫量_Init();
-
 
             this.sub_Program_藥庫_撥補_藥局_自動撥補_Init();
             this.sub_Program_藥庫_撥補_藥局_緊急申領_Init();
@@ -271,10 +271,8 @@ namespace 智能藥庫系統
             this.sub_Program_批次過帳_公藥_Init();
             this.sub_Program_藥品過消耗帳_Init();
 
-
             this.sub_Program_藥局_藥品資料_Init();
             this.sub_Program_藥局_緊急申領_Init();
-
 
             this.sun_Program_堆疊資料_Init();
             this.sub_Program_工程模式_Init();

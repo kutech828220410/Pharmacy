@@ -28,7 +28,7 @@ namespace 智能藥庫系統
             藥碼,
             藥名,
             庫存量,
-            消耗量,
+            庫存差異量,
             盤點量,
             異動量,                  
             效期及批號,
@@ -59,7 +59,7 @@ namespace 智能藥庫系統
             table.AddColumnList("藥碼", Table.StringType.VARCHAR, Table.IndexType.None);
             table.AddColumnList("藥名", Table.StringType.VARCHAR, Table.IndexType.None);
             table.AddColumnList("庫存量", Table.StringType.VARCHAR, Table.IndexType.None);
-            table.AddColumnList("消耗量", Table.StringType.VARCHAR, Table.IndexType.None);
+            table.AddColumnList("庫存差異量", Table.StringType.VARCHAR, Table.IndexType.None);
             table.AddColumnList("盤點量", Table.StringType.VARCHAR, Table.IndexType.None);
             table.AddColumnList("異動量", Table.StringType.VARCHAR, Table.IndexType.None);
             table.AddColumnList("效期及批號", Table.StringType.VARCHAR, Table.IndexType.None);
@@ -69,7 +69,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.藥碼);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.藥名);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.庫存量);
-            this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.消耗量);
+            this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.庫存差異量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.盤點量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.異動量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, enum_定盤_盤點明細.效期及批號);
@@ -77,7 +77,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.藥碼);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.庫存量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.盤點量);
-            this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.消耗量);
+            this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.庫存差異量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.異動量);
             this.sqL_DataGridView_定盤_盤點明細.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_定盤_盤點明細.效期及批號);
 
@@ -125,7 +125,7 @@ namespace 智能藥庫系統
             {
                 DataGridViewCellCollection cells = this.sqL_DataGridView_定盤_盤點明細.dataGridView.Rows[i].Cells;
                 string 庫存量 = cells[enum_定盤_盤點明細.庫存量.GetEnumName()].Value.ToString();
-                string 消耗量 = cells[enum_定盤_盤點明細.消耗量.GetEnumName()].Value.ToString();
+                string 消耗量 = cells[enum_定盤_盤點明細.庫存差異量.GetEnumName()].Value.ToString();
                 string 異動量 = cells[enum_定盤_盤點明細.異動量.GetEnumName()].Value.ToString();
                 string 盤點量 = cells[enum_定盤_盤點明細.盤點量.GetEnumName()].Value.ToString();
 
@@ -135,7 +135,7 @@ namespace 智能藥庫系統
                 }
                 if (消耗量.StringIsEmpty())
                 {
-                    cells[enum_定盤_盤點明細.消耗量.GetEnumName()].Value = "-";
+                    cells[enum_定盤_盤點明細.庫存差異量.GetEnumName()].Value = "-";
                 }
                 if (異動量.StringIsEmpty())
                 {
@@ -190,7 +190,7 @@ namespace 智能藥庫系統
             }));
             if (dialogResult != DialogResult.OK) return;
 
-            DataTable dataTable = MyOffice.ExcelClass.LoadFile(this.openFileDialog_LoadExcel.FileName);
+            DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
             if (dataTable == null)
             {
                 MyMessageBox.ShowDialog("讀取失敗!");
@@ -247,13 +247,13 @@ namespace 智能藥庫系統
             }));
             if (dialogResult != DialogResult.OK) return;
 
-            DataTable dataTable = MyOffice.ExcelClass.LoadFile(this.openFileDialog_LoadExcel.FileName);
+            DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
             if (dataTable == null)
             {
                 MyMessageBox.ShowDialog("讀取失敗!");
                 return;
             }
-            dataTable = dataTable.ReorderTable(new string[] { enum_定盤_盤點明細.藥碼.GetEnumName(), enum_定盤_盤點明細.消耗量.GetEnumName() });
+            dataTable = dataTable.ReorderTable(new string[] { enum_定盤_盤點明細.藥碼.GetEnumName(), enum_定盤_盤點明細.庫存差異量.GetEnumName() });
             if (dataTable == null)
             {
                 return;
@@ -265,7 +265,7 @@ namespace 智能藥庫系統
 
             for(int i = 0; i < list_value.Count; i++)
             {
-                list_value[i][(int)enum_定盤_盤點明細.消耗量] = "0";
+                list_value[i][(int)enum_定盤_盤點明細.庫存差異量] = "0";
             }
             List<object[]> list_藥品資料 = this.sqL_DataGridView_雲端藥檔.SQL_GetAllRows(false);
             List<object[]> list_藥品資料_buf = new List<object[]>();
@@ -281,13 +281,17 @@ namespace 智能藥庫系統
                 list_value_匯入_buf = list_value_匯入.GetRows(0, 藥碼);
                 for(int k = 0; k < list_value_匯入_buf.Count; k++)
                 {
-                    消耗量 += list_value_匯入_buf[k][1].StringToInt32();
+                    if(list_value_匯入_buf[k][1].ObjectToString().StringIsInt32())
+                    {
+                        消耗量 += list_value_匯入_buf[k][1].StringToInt32();
+                    }
+                   
                 }
 
                 list_value_buf = list_value.GetRows((int)enum_定盤_盤點明細.藥碼, 藥碼);
                 if(list_value_buf.Count > 0)
                 {
-                    list_value_buf[0][(int)enum_定盤_盤點明細.消耗量] = 消耗量;
+                    list_value_buf[0][(int)enum_定盤_盤點明細.庫存差異量] = 消耗量;
                     list_value_replace.Add(list_value_buf[0]);
                 }
                 else
@@ -302,7 +306,7 @@ namespace 智能藥庫系統
                         value[(int)enum_定盤_盤點明細.藥碼] = 藥碼;
                         value[(int)enum_定盤_盤點明細.藥名] = 藥名;
                         value[(int)enum_定盤_盤點明細.庫存量] = "0";
-                        value[(int)enum_定盤_盤點明細.消耗量] = 消耗量;
+                        value[(int)enum_定盤_盤點明細.庫存差異量] = 消耗量;
                         value[(int)enum_定盤_盤點明細.異動量] = "0";
                         value[(int)enum_定盤_盤點明細.盤點量] = "0";
 
@@ -326,7 +330,7 @@ namespace 智能藥庫系統
             }));
             if (dialogResult != DialogResult.OK) return;
 
-            DataTable dataTable = MyOffice.ExcelClass.LoadFile(this.openFileDialog_LoadExcel.FileName);
+            DataTable dataTable = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
             if (dataTable == null)
             {
                 MyMessageBox.ShowDialog("讀取失敗!");
@@ -367,9 +371,9 @@ namespace 智能藥庫系統
                 if (list_value_buf.Count > 0)
                 {
                     list_value_buf[0][(int)enum_定盤_盤點明細.盤點量] = 盤點量;
-                    if (list_value_buf[0][(int)enum_定盤_盤點明細.消耗量].ObjectToString().StringIsInt32() == false)
+                    if (list_value_buf[0][(int)enum_定盤_盤點明細.庫存差異量].ObjectToString().StringIsInt32() == false)
                     {
-                        list_value_buf[0][(int)enum_定盤_盤點明細.消耗量] = "0";
+                        list_value_buf[0][(int)enum_定盤_盤點明細.庫存差異量] = "0";
                     }
                     list_value_replace.Add(list_value_buf[0]);
                 }
@@ -386,7 +390,7 @@ namespace 智能藥庫系統
                         value[(int)enum_定盤_盤點明細.藥名] = 藥名;
                         value[(int)enum_定盤_盤點明細.庫存量] = "0";
                         value[(int)enum_定盤_盤點明細.盤點量] = 盤點量;
-                        value[(int)enum_定盤_盤點明細.消耗量] = "0";
+                        value[(int)enum_定盤_盤點明細.庫存差異量] = "0";
 
                         list_value_add.Add(value);
                     }
@@ -497,9 +501,12 @@ namespace 智能藥庫系統
                     dialog_Prcessbar.Value = i;
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
-                    int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
-                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
+                    int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();               
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存差異量].StringToInt32();
                     int 庫存量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量].StringToInt32();
+                    if (盤點量 < 0) 盤點量 = 0;
+                    if (消耗量 < 0) 消耗量 = 0;
+                    if (庫存量 < 0) 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
                     if (deviceBasics.Count == 0)
@@ -562,8 +569,11 @@ namespace 智能藥庫系統
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
-                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存差異量].StringToInt32();
                     int 庫存量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量].StringToInt32();
+                    if (盤點量 < 0) 盤點量 = 0;
+                    if (消耗量 < 0) 消耗量 = 0;
+                    if (庫存量 < 0) 庫存量 = 0;
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥局_DeviceBasic.SortByCode(藥碼);
                     if (deviceBasics.Count == 0)
@@ -675,7 +685,7 @@ namespace 智能藥庫系統
                     string 藥名 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥名].ObjectToString();
                   
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
-                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存差異量].StringToInt32();
                     int 庫存量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量].StringToInt32();
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
@@ -761,7 +771,7 @@ namespace 智能藥庫系統
                     }
                     string 藥名 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥名].ObjectToString();                
                     int 盤點量 = list_盤點明細[i][(int)enum_定盤_盤點明細.盤點量].StringToInt32();
-                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.消耗量].StringToInt32();
+                    int 消耗量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存差異量].StringToInt32();
                     int 庫存量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量].StringToInt32();
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥局_DeviceBasic.SortByCode(藥碼);
