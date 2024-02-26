@@ -18,7 +18,7 @@ namespace 智能藥庫系統
 {
     public partial class Form1 : Form
     {
-  
+
         public enum enum_人員資料_匯出
         {
             ID,
@@ -94,7 +94,7 @@ namespace 智能藥庫系統
             this.loginUI.Set_login_data_index_DB(dBConfigClass.DB_person_page);
             this.loginUI.Init();
 
-            
+
             this.sqL_DataGridView_人員資料.DataGridRefreshEvent += SqL_DataGridView_人員資料_DataGridRefreshEvent;
             this.sqL_DataGridView_人員資料.RowEnterEvent += SqL_DataGridView_人員資料_RowEnterEvent;
             this.sqL_DataGridView_人員資料.RowDoubleClickEvent += SqL_DataGridView_人員資料_RowDoubleClickEvent;
@@ -119,32 +119,32 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_人員資料_清除內容.MouseDownEvent += PlC_RJ_Button_人員資料_清除內容_MouseDownEvent;
 
 
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_交易紀錄頁面, 1);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_批次過帳頁面, 23);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_周邊設備頁面, 30);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_工程模式頁面, 06);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_效期庫存異動, 12);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_戰情白版設定, 31);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_交易紀錄頁面, 87);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_批次過帳頁面, 70);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_周邊設備頁面, 77);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_工程模式頁面, 82);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_效期庫存異動, 84);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_戰情白版設定, 78);
 
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_頁面顯示, 2);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_資料更動, 7);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_頁面顯示, 79);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥品資料_資料更動, 79);
 
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_頁面顯示, 24);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_儲位設定, 5);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_訂單管理, 32);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_撥補功能, 34);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_驗收入庫管理, 33);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_頁面顯示, 71);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_儲位設定, 81);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_訂單管理, 88);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_撥補功能, 89);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥庫_驗收入庫管理, 90);
 
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥局_頁面顯示, 25);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_藥局_頁面顯示, 72);
 
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_頁面顯示, 4);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_資料更動, 14);
-            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_登入權限資料, 17);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_頁面顯示, 80);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_資料更動, 85);
+            this.loginIndex_Pannel.Set_CheckBox(this.checkBox_權限管理_人員資料_登入權限資料, 86);
 
             this.plC_UI_Init.Add_Method(this.sub_Program_人員資料);
         }
 
- 
+
 
         bool flag_人員資料_資料維護_頁面更新 = false;
         bool flag_人員資料_權限管理_頁面更新 = false;
@@ -174,7 +174,7 @@ namespace 智能藥庫系統
                 {
                     this.List_class_Login_Data = this.loginUI.Get_login_data();
                     this.List_class_Login_Data_index = this.loginUI.Get_login_data_index();
-                    this.loginIndex_Pannel.Set_Login_Data_Index(this.List_class_Login_Data_index, enum_login_data_type.group02);
+                    this.loginIndex_Pannel.Set_Login_Data_Index(this.List_class_Login_Data_index, enum_login_data_type.藥庫);
                     this.loginIndex_Pannel.Set_Login_Data(this.List_class_Login_Data[0]);
 
                     this.Invoke(new Action(delegate
@@ -242,7 +242,7 @@ namespace 智能藥庫系統
                 }));
 
             }
-           
+
             cnt++;
         }
 
@@ -457,7 +457,7 @@ namespace 智能藥庫系統
                 MyMessageBox.ShowDialog("匯入完成!");
             }
             this.Cursor = Cursors.Default;
-        
+
         }
 
         private void Function_登入權限資料_取得權限(int level)

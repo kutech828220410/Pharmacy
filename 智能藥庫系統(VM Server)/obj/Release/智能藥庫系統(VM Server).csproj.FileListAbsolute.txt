@@ -140,12 +140,9 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MeasureSystemFunction.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OOXML.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXmlFormats.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).exe.config
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).exe.manifest
 C:\Users\HS1T16\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).application
@@ -299,3 +296,7 @@ C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智�
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe
 C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HIS_DB_Lib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\CSkin.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.mshtml.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\PopupControl.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HIS_DB_Lib.xml

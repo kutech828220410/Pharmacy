@@ -9,7 +9,7 @@
     "TableName": ""
   },
   "DB_person_page": {
-    "DataBaseName": "ds01_vm",
+    "DataBaseName": "dbvm",
     "IP": "10.18.1.146",
     "UserName": "user",
     "Password": "66437068",

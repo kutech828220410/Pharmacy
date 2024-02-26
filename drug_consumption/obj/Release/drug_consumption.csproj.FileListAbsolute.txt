@@ -106,3 +106,7 @@ C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\obj\Release\drug_consum
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\obj\Release\drug_consumption.exe
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\obj\Release\drug_consumption.pdb
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\HIS_DB_Lib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\PopupControl.dll
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\CSkin.dll
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\Microsoft.mshtml.dll
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\HIS_DB_Lib.xml

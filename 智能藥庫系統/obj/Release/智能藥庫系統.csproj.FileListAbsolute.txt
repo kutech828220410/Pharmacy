@@ -110,7 +110,6 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairU
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkBaseAsm4.5.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkMsr.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairUDrv.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\stdole.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Buffers.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Memory.xml
@@ -153,8 +152,6 @@ C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\MeasureSys
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\MyPrinterlib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\MeasureSystemFunction.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\office.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_列印及匯出.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_更換密碼.resources
 C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.exe.config
@@ -335,3 +332,7 @@ C:\Users\HS\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_日期選擇.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_DB_Lib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\CSkin.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.mshtml.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\PopupControl.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_DB_Lib.xml
