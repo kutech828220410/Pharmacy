@@ -119,7 +119,7 @@ namespace 智能藥庫系統
             退藥回收,
             None,
         }
-        private enum enum_周邊設備_庫存_庫存查詢
+        public enum enum_周邊設備_庫存_庫存查詢
         {
             藥碼,
             藥名,
@@ -127,7 +127,7 @@ namespace 智能藥庫系統
             單位,
             庫存,
         }
-        private enum enum_周邊設備_庫存_交易紀錄查詢
+        public enum enum_周邊設備_庫存_交易紀錄查詢
         {
             動作,
             藥碼,

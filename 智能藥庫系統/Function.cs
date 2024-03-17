@@ -678,5 +678,44 @@ namespace 智能藥庫系統
             if (Code.Length < 5) Code = "0" + Code;
             return Code;
         }
+
+        static public List<object[]> Function_周邊設備_庫存查詢(string IP)
+        {
+            List<API_medicine_page_ADC> list_API_medicine_page_ADC = new List<API_medicine_page_ADC>();
+            List<object[]> list_values = new List<object[]>();
+            MyTimer myTimer = new MyTimer();
+            myTimer.StartTickTime(50000);
+            string result_medicine_page = Basic.Net.WEBApiGet($"http://{IP}/api/medicine_page");
+            list_API_medicine_page_ADC = result_medicine_page.JsonDeserializet<List<API_medicine_page_ADC>>();
+
+
+            string result = Basic.Net.WEBApiGet($"http://{IP}/api/medicine_page/storage_list");
+            m_returnData m_returnData = result.JsonDeserializet<m_returnData>();
+
+
+            List<class_儲位總庫存表> class_儲位總庫存表_buf = new List<class_儲位總庫存表>();
+            for (int i = 0; i < list_API_medicine_page_ADC.Count; i++)
+            {
+                int 庫存 = 0;
+                object[] values = new object[new enum_周邊設備_庫存_庫存查詢().GetLength()];
+                values[(int)enum_周邊設備_庫存_庫存查詢.藥碼] = list_API_medicine_page_ADC[i].code;
+                values[(int)enum_周邊設備_庫存_庫存查詢.藥名] = list_API_medicine_page_ADC[i].name;
+                values[(int)enum_周邊設備_庫存_庫存查詢.中文名稱] = list_API_medicine_page_ADC[i].chinese_name;
+                values[(int)enum_周邊設備_庫存_庫存查詢.單位] = list_API_medicine_page_ADC[i].package;
+                values[(int)enum_周邊設備_庫存_庫存查詢.庫存] = list_API_medicine_page_ADC[i].inventory;
+
+                class_儲位總庫存表_buf = (from temp in m_returnData.Data
+                                    where temp.藥品碼 == list_API_medicine_page_ADC[i].code
+                                    select temp).ToList();
+                for (int k = 0; k < class_儲位總庫存表_buf.Count; k++)
+                {
+                    庫存 += class_儲位總庫存表_buf[k].庫存.StringToInt32() * class_儲位總庫存表_buf[k].最小包裝量.StringToInt32();
+                }
+                values[(int)enum_周邊設備_庫存_庫存查詢.庫存] = 庫存;
+                list_values.Add(values);
+            }
+
+            return list_values;
+        }
     }
 }

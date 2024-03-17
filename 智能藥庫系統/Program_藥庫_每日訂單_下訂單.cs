@@ -38,6 +38,7 @@ namespace 智能藥庫系統
             今日訂購數量,
             緊急訂購數量,
             在途量,
+            未消耗量,
         }
         public enum enum_每日訂單
         {
@@ -213,51 +214,66 @@ namespace 智能藥庫系統
             list_藥品資料_每日訂單 = list_藥品資料.CopyRows(new enum_藥庫_藥品資料(), new enum_藥庫_每日訂單_下訂單());
             Console.WriteLine($"轉換藥品資料成每日訂單藥品資料,耗時{myTimer.ToString()}");
 
-            //取得今日訂購數量
-            API_OrderClass api_今日訂購數量 = this.Function_藥庫_每日訂單_下訂單_取得今日訂購數量();
-            for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
+            List<Task> tasks = new List<Task>();
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = "0";
-                string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
-                List<API_OrderClass.resultClass> resultClasses = (from value in api_今日訂購數量.Result
-                                                                  where value.code == Code
-                                                                  select value).ToList();
-                if (resultClasses.Count > 0)
+                //取得今日訂購數量
+                API_OrderClass api_今日訂購數量 = this.Function_藥庫_每日訂單_下訂單_取得今日訂購數量();
+                for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
                 {
-                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = resultClasses[0].value;
+                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = "0";
+                    string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                    List<API_OrderClass.resultClass> resultClasses = (from value in api_今日訂購數量.Result
+                                                                      where value.code == Code
+                                                                      select value).ToList();
+                    if (resultClasses.Count > 0)
+                    {
+                        list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = resultClasses[0].value;
+                    }
                 }
-            }
-            Console.WriteLine($"取得今日訂購數量資料,耗時{myTimer.ToString()}");
-            //取得緊急訂購數量
-            API_OrderClass api_緊急訂購數量 = this.Function_藥庫_每日訂單_下訂單_取得緊急訂購數量();
-            for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
+                Console.WriteLine($"取得今日訂購數量資料,耗時{myTimer.ToString()}");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = "0";
-                string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
-                List<API_OrderClass.resultClass> resultClasses = (from value in api_緊急訂購數量.Result
-                                                                  where value.code == Code
-                                                                  select value).ToList();
-                if (resultClasses.Count > 0)
+                //取得緊急訂購數量
+                API_OrderClass api_緊急訂購數量 = this.Function_藥庫_每日訂單_下訂單_取得緊急訂購數量();
+                for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
                 {
-                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = resultClasses[0].value;
+                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = "0";
+                    string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                    List<API_OrderClass.resultClass> resultClasses = (from value in api_緊急訂購數量.Result
+                                                                      where value.code == Code
+                                                                      select value).ToList();
+                    if (resultClasses.Count > 0)
+                    {
+                        list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = resultClasses[0].value;
+                    }
                 }
-            }
-            Console.WriteLine($"取得緊急訂購數量資料,耗時{myTimer.ToString()}");
-            //取得在途量
-            API_OrderClass api_在途量 = this.Function_藥庫_每日訂單_下訂單_取得在途量();
-            for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
+                Console.WriteLine($"取得緊急訂購數量資料,耗時{myTimer.ToString()}");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
             {
-                list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.在途量] = "0";
-                string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
-                List<API_OrderClass.resultClass> resultClasses = (from value in api_在途量.Result
-                                                                  where value.code == Code
-                                                                  select value).ToList();
-                if (resultClasses.Count > 0)
+
+                //取得在途量
+                API_OrderClass api_在途量 = this.Function_藥庫_每日訂單_下訂單_取得在途量();
+                for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
                 {
-                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.在途量] = resultClasses[0].value;
+                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.在途量] = "0";
+                    string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                    List<API_OrderClass.resultClass> resultClasses = (from value in api_在途量.Result
+                                                                      where value.code == Code
+                                                                      select value).ToList();
+                    if (resultClasses.Count > 0)
+                    {
+                        list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.在途量] = resultClasses[0].value;
+                    }
                 }
-            }
-            Console.WriteLine($"取得在途量資料,耗時{myTimer.ToString()}");
+                Console.WriteLine($"取得在途量資料,耗時{myTimer.ToString()}");
+            })));
+            Task.WhenAll(tasks).Wait();
+
+           
+         
 
             return list_藥品資料_每日訂單;
         }
@@ -683,6 +699,29 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
+            List<object[]> rowsList = RowsList;
+            List<Task> tasks = new List<Task>();
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                string Code = "";
+                int 未消耗量 = 0;
+                List<object[]> list_消耗帳 = Function_藥品過消耗帳_取得未過帳明細();
+                List<object[]> list_消耗帳_buf = new List<object[]>();
+                for(int i = 0; i < rowsList.Count; i ++)
+                {
+                    未消耗量 = 0;
+                    Code = rowsList[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                    list_消耗帳_buf = list_消耗帳.GetRows((int)enum_藥品過消耗帳.藥品碼, Code);
+                    for (int k = 0; k < list_消耗帳_buf.Count; k++)
+                    {
+                        未消耗量 +=  list_消耗帳_buf[k][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    }
+                    未消耗量 *= -1;
+                    rowsList[i][(int)enum_藥庫_每日訂單_下訂單.未消耗量] = 未消耗量;
+                }
+            })));
+      
+            Task.WhenAll(tasks).Wait();
             RowsList.Sort(new ICP_藥庫_每日訂單_下訂單());
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_顯示全部_MouseDownEvent(MouseEventArgs mevent)

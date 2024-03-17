@@ -31,14 +31,14 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名搜尋.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_藥名搜尋_MouseDownEvent;
             this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_匯出.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_匯出_MouseDownEvent;
-
+            this.plC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存顯示.MouseDownEvent += PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存顯示_MouseDownEvent;
 
             this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.Init();
             this.sqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢.DataGridRowsChangeRefEvent += SqL_DataGridView_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_DataGridRowsChangeRefEvent;
             this.plC_UI_Init.Add_Method(sub_Program_周邊設備_ICU_ADC_01_庫存);
         }
 
-      
+    
 
         private bool flag_Program_周邊設備_ICU_ADC_01_庫存_Init = false;
         private void sub_Program_周邊設備_ICU_ADC_01_庫存()
@@ -59,44 +59,6 @@ namespace 智能藥庫系統
         }
 
         #region Function
-        private List<object[]> Function_周邊設備_ICU_ADC_01_庫存_庫存查詢_取得資料()
-        {
-            List<API_medicine_page_ADC> list_API_medicine_page_ADC = new List<API_medicine_page_ADC>();
-            List<object[]> list_values = new List<object[]>();
-            MyTimer myTimer = new MyTimer();
-            myTimer.StartTickTime(50000);
-            string result_medicine_page = Basic.Net.WEBApiGet("http://10.18.28.61/api/medicine_page");
-            list_API_medicine_page_ADC = result_medicine_page.JsonDeserializet<List<API_medicine_page_ADC>>();
-
-
-            string result = Basic.Net.WEBApiGet("http://10.18.28.61/api/medicine_page/storage_list");
-            m_returnData m_returnData = result.JsonDeserializet<m_returnData>();
-
-
-            List<class_儲位總庫存表> class_儲位總庫存表_buf = new List<class_儲位總庫存表>();
-            for (int i = 0; i < list_API_medicine_page_ADC.Count; i++)
-            {
-                int 庫存 = 0;
-                object[] values = new object[new enum_周邊設備_庫存_庫存查詢().GetLength()];
-                values[(int)enum_周邊設備_庫存_庫存查詢.藥碼] = list_API_medicine_page_ADC[i].code;
-                values[(int)enum_周邊設備_庫存_庫存查詢.藥名] = list_API_medicine_page_ADC[i].name;
-                values[(int)enum_周邊設備_庫存_庫存查詢.中文名稱] = list_API_medicine_page_ADC[i].chinese_name;
-                values[(int)enum_周邊設備_庫存_庫存查詢.單位] = list_API_medicine_page_ADC[i].package;
-                values[(int)enum_周邊設備_庫存_庫存查詢.庫存] = list_API_medicine_page_ADC[i].inventory;
-
-                class_儲位總庫存表_buf = (from temp in m_returnData.Data
-                                    where temp.藥品碼 == list_API_medicine_page_ADC[i].code
-                                    select temp).ToList();
-                for (int k = 0; k < class_儲位總庫存表_buf.Count; k++)
-                {
-                    庫存 += class_儲位總庫存表_buf[k].庫存.StringToInt32() * class_儲位總庫存表_buf[k].最小包裝量.StringToInt32();
-                }
-                values[(int)enum_周邊設備_庫存_庫存查詢.庫存] = 庫存;
-                list_values.Add(values);
-            }
-
-            return list_values;
-        }
         private List<object[]> Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料()
         {
             List<API_trading_ADC> list_API_trading_ADC = new List<API_trading_ADC>();
@@ -159,7 +121,11 @@ namespace 智能藥庫系統
             }
             RowsList = list_value;
         }
-
+        private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_庫存顯示_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_周邊設備庫存顯示 dialog_周邊設備庫存顯示 = new Dialog_周邊設備庫存顯示("10.18.28.61");
+            dialog_周邊設備庫存顯示.ShowDialog();
+        }
         private void PlC_RJ_Button_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_顯示全部_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_values = this.Function_周邊設備_ICU_ADC_01_庫存_交易紀錄查詢_取得資料();

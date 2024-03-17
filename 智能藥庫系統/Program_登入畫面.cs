@@ -375,6 +375,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_登入畫面_登入_MouseDownEvent(MouseEventArgs mevent)
         {
+          
             Function_登入();
         }
         private void PlC_RJ_Button_登入畫面_登出_MouseDownEvent(MouseEventArgs mevent)

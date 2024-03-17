@@ -336,3 +336,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\PopupControl.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_DB_Lib.xml
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_周邊設備庫存顯示.resources

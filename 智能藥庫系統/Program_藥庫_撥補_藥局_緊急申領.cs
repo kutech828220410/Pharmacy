@@ -29,6 +29,8 @@ namespace 智能藥庫系統
         public string 藥品碼 { get; set; }
         [JsonPropertyName("name")]
         public string 藥品名稱 { get; set; }
+        [JsonPropertyName("inventory")]
+        public string 庫存量 { get; set; }
         [JsonPropertyName("value")]
         public string 撥出量 { get; set; }
         [JsonPropertyName("note")]
@@ -301,7 +303,7 @@ namespace 智能藥庫系統
                             {
                                 if ((輸出異動量) > 0)
                                 {
-                                    deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_異動量 * -1);
+                                    deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_批號, (儲位資訊_異動量 * -1).ToString());
                                     deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
                                     List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                                     輸出備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * -1}";

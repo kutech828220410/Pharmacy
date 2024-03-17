@@ -18,8 +18,8 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.29")]
-[assembly: AssemblyFileVersion("1.0.51.29")]
+[assembly: AssemblyVersion("1.0.51.33")]
+[assembly: AssemblyFileVersion("1.0.51.33")]
 namespace 智能藥庫系統
 {
 
@@ -187,6 +187,7 @@ namespace 智能藥庫系統
                 //{
                 //    this.Invoke(new Action(delegate { this.Update(); }));
                 //}
+                LoadingForm.form = this.FindForm();
 
 
                 this.Text += "Ver" + this.ProductVersion;

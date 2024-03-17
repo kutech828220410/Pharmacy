@@ -340,18 +340,18 @@ namespace 智能藥庫系統
                     List<DeviceBasic> deviceBasic_藥庫_buf = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
                     List<DeviceBasic> deviceBasic_藥局_buf = this.List_藥局_DeviceBasic.SortByCode(藥品碼);
 
-                    for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
-                    {
-                        for (int k = 0; k < deviceBasic_藥庫_buf[i].List_Validity_period.Count; k++)
-                        {
-                            DateTime dateTime = deviceBasic_藥庫_buf[i].List_Validity_period[k].StringToDateTime();
-                            int month = GetMonthsDifference(DateTime.Now, dateTime);
-                            if (month <= 8)
-                            {
-                                flag_近效期 = true;
-                            }
-                        }
-                    }
+                    //for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
+                    //{
+                    //    for (int k = 0; k < deviceBasic_藥庫_buf[i].List_Validity_period.Count; k++)
+                    //    {
+                    //        DateTime dateTime = deviceBasic_藥庫_buf[i].List_Validity_period[k].StringToDateTime();
+                    //        int month = GetMonthsDifference(DateTime.Now, dateTime);
+                    //        if (month <= 8)
+                    //        {
+                    //            flag_近效期 = true;
+                    //        }
+                    //    }
+                    //}
                     for (int i = 0; i < deviceBasic_藥局_buf.Count; i++)
                     {
                         for (int k = 0; k < deviceBasic_藥局_buf[i].List_Validity_period.Count; k++)

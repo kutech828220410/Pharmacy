@@ -29,6 +29,8 @@ namespace 智慧調劑台管理系統_WebApi
             public string 藥品碼 { get; set; }     
             [JsonPropertyName("name")]
             public string 藥品名稱 { get; set; }
+            [JsonPropertyName("inventory")]
+            public string 庫存量 { get; set; }
             [JsonPropertyName("value")]
             public string 撥出量 { get; set; }
             [JsonPropertyName("note")]
@@ -147,11 +149,13 @@ namespace 智慧調劑台管理系統_WebApi
                         string 藥品碼 = class_Emg_Applies_buf[k].藥品碼;
                         string 藥名 = class_Emg_Applies_buf[k].藥品名稱;
                         string 撥出量 = class_Emg_Applies_buf[k].撥出量;
+                        string 庫存量 = class_Emg_Applies_buf[k].庫存量;
                         總撥出量 += 撥出量.StringToInt32();
                         sheetClass.AddNewCell_Webapi(NumOfRow + 3, 0, $"{成本中心}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
                         sheetClass.AddNewCell_Webapi(NumOfRow + 3, 1, $"{藥品碼}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
                         sheetClass.AddNewCell_Webapi(NumOfRow + 3, 2, $"{藥名}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
-                        sheetClass.AddNewCell_Webapi(NumOfRow + 3, 3, $"{撥出量}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
+                        sheetClass.AddNewCell_Webapi(NumOfRow + 3, 3, $"{庫存量}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
+                        sheetClass.AddNewCell_Webapi(NumOfRow + 3, 4, $"{撥出量}", "微軟正黑體", 14, false, NPOI_Color.BLACK, 430, NPOI.SS.UserModel.HorizontalAlignment.Left, NPOI.SS.UserModel.VerticalAlignment.Bottom, NPOI.SS.UserModel.BorderStyle.Thin);
                         NumOfRow++;
                     }
 
