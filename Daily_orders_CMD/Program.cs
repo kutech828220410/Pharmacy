@@ -248,8 +248,9 @@ namespace Daily_orders_CMD
                 string 藥品碼 = aPI_OrderClass.Result[i].code;
                 string 數量 = aPI_OrderClass.Result[i].value;
                 string 訂購日期 = DateTime.Now.ToDateString();
-       
+             
                 string text = Function_藥庫_每日訂單_已訂購字串轉換(藥品碼, 數量, 訂購日期);
+                if (藥品碼.Length != 5) continue;
                 if (數量.StringToInt32() <= 0) continue;
                 list_texts.Add(text);
             }
