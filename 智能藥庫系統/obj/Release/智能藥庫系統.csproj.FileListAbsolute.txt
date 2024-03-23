@@ -430,3 +430,6 @@ C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智�
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.exe
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.pdb
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點表匯入.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\SunnyUI.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\SunnyUI.Common.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點表匯入.resources

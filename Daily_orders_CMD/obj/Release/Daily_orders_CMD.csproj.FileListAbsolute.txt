@@ -218,3 +218,5 @@ C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.exe
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.pdb
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyUI.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyUI.Common.dll

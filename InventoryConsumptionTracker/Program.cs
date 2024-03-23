@@ -40,6 +40,7 @@ namespace InventoryConsumptionTracker
             結束日期,
             成本價,
             售價,
+            ATC,
         }
         public class class_MedPrice
         {
@@ -48,6 +49,7 @@ namespace InventoryConsumptionTracker
             public string 成本價 { get; set; }
             public string 最近一次售價 { get; set; }
             public string 最近一次成本價 { get; set; }
+            public string ATC { get; set; }
 
         }
         static public string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
@@ -116,6 +118,7 @@ namespace InventoryConsumptionTracker
                     string 結束日期 = "";
                     string 售價 = "0";
                     string 成本價 = "0";
+                    string ATC = "";
                     object[] value = new object[new enum_匯出().GetLength()];
                     if (keyValuePairs_消耗帳.ContainsKey(藥品碼))
                     {
@@ -137,6 +140,7 @@ namespace InventoryConsumptionTracker
                         {
                             售價 = class_MedPrices_buf[0].售價;
                             成本價 = class_MedPrices_buf[0].成本價;
+                            ATC = class_MedPrices_buf[0].ATC;
                         }
 
                         value[(int)enum_匯出.藥碼] = 藥品碼;
@@ -146,6 +150,7 @@ namespace InventoryConsumptionTracker
                         value[(int)enum_匯出.結束日期] = 結束日期;
                         value[(int)enum_匯出.售價] = 售價;
                         value[(int)enum_匯出.成本價] = 成本價;
+                        value[(int)enum_匯出.ATC] = ATC;
 
                         list_匯出資料.Add(value);
                         Console.WriteLine($"藥碼:{藥品碼} ,藥名:{藥名} ,消耗量:{消耗量} ,日期:{起始日期} ~ {結束日期}");

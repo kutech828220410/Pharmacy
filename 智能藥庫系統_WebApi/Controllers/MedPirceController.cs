@@ -28,6 +28,7 @@ namespace 智慧調劑台管理系統_WebApi
             public string 成本價 { get; set; }
             public string 最近一次售價 { get; set; }
             public string 最近一次成本價 { get; set; }
+            public string ATC { get; set; }
 
         }
 
@@ -58,6 +59,9 @@ namespace 智慧調劑台管理系統_WebApi
                 class_MedPrice.成本價 = reader["UDWCOST"].ToString();
                 class_MedPrice.最近一次售價 = reader["UDOLDPRI"].ToString();
                 class_MedPrice.最近一次成本價 = reader["UDOLDWCO"].ToString();
+                class_MedPrice.ATC = reader["UDATCCOD"].ToString();
+
+                
                 class_MedPrices.Add(class_MedPrice);
             }
             reader.Close();

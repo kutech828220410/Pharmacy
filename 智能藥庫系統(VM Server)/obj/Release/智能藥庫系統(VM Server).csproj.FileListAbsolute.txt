@@ -379,3 +379,5 @@ C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\R
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.Common.dll
