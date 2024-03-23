@@ -25,7 +25,7 @@ namespace 智能藥庫系統
 
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://10.18.1.146:4433";
+        private string Api_URL = "http://127.0.0.1:4433";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -195,6 +195,8 @@ namespace 智能藥庫系統
                 this.WindowState = FormWindowState.Maximized;
                 this.plC_RJ_Button_測試.MouseDownEvent += PlC_RJ_Button_測試_MouseDownEvent;
                 MyMessageBox.音效 = false;
+                MyDialog.form = this.FindForm();
+                LoadingForm.form = this.FindForm();
                 Dialog_Prcessbar.form = this.FindForm();
                 Dialog_寫入批號.form = this.FindForm();
                 Dialog_寫入效期.form = this.FindForm();
@@ -241,6 +243,7 @@ namespace 智能藥庫系統
 
             this.sub_Program_系統_Init();
             this.sub_Program_人員資料_Init();
+            this.sub_Program_盤點作業_Init();
             this.sub_Program_盤點作業_定盤_Init();
             this.sub_Program_盤點報表_Init();
             this.sub_Program_覆盤報表_Init();

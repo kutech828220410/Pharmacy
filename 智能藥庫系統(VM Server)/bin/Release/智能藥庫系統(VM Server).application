@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="智能藥庫系統(VM Server).exe.manifest" size="37147">
+    <dependentAssembly dependencyType="install" codebase="智能藥庫系統(VM Server).exe.manifest" size="38496">
       <assemblyIdentity name="智能藥庫系統(VM Server).exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>wsjPR4+mWNzhZjGuqQZN/LLXqOH/jiFcS/CT79OSyjI=</dsig:DigestValue>
+        <dsig:DigestValue>hzZx/z8jjgVcaTJ0SwRp1t/E+arZL6qRHnsZMIqCoz0=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

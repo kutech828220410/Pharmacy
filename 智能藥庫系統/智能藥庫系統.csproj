@@ -227,6 +227,12 @@
     <Compile Include="Dialog\Dialog_日期選擇.Designer.cs">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_盤點表匯入.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_盤點表匯入.Designer.cs">
+      <DependentUpon>Dialog_盤點表匯入.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialog\Dialog_輸入批號.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -435,6 +441,9 @@
     <EmbeddedResource Include="Dialog\Dialog_日期選擇.resx">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_盤點表匯入.resx">
+      <DependentUpon>Dialog_盤點表匯入.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_補給系統藥品建置.resx">
       <DependentUpon>Dialog_補給系統藥品建置.cs</DependentUpon>
     </EmbeddedResource>
@@ -585,6 +594,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
+    <None Include="Resources\匯入資料.png" />
     <None Include="Resources\icon-19.png" />
     <None Include="Resources\export-to-csv-icon-11.jpg" />
     <None Include="Resources\1200px-Document-print-preview.svg.png" />

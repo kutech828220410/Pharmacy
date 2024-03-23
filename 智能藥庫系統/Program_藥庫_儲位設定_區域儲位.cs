@@ -25,12 +25,14 @@ namespace 智能藥庫系統
             Num,
             序號,
             名稱,
+            狀態,
         }
 
         private void sub_Program_藥庫_儲位設定_區域儲位_Init()
         {
             this.sqL_DataGridView_貨架區域儲位列表.Init();
             if (!this.sqL_DataGridView_貨架區域儲位列表.SQL_IsTableCreat()) this.sqL_DataGridView_貨架區域儲位列表.SQL_CreateTable();
+            else this.sqL_DataGridView_貨架區域儲位列表.SQL_CheckAllColumnName(true);
             this.plC_RJ_Button_藥庫_儲位設定_區域儲位_寫入.MouseDownEvent += PlC_RJ_Button_藥庫_儲位設定_區域儲位_寫入_MouseDownEvent;
             this.sqL_DataGridView_貨架區域儲位列表.RowEnterEvent += SqL_DataGridView_貨架區域儲位列表_RowEnterEvent;
             this.sqL_DataGridView_貨架區域儲位列表.DataGridRowsChangeRefEvent += SqL_DataGridView_貨架區域儲位列表_DataGridRowsChangeRefEvent;

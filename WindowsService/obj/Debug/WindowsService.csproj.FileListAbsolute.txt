@@ -1,0 +1,16 @@
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\WindowsService.exe.config
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\WindowsService.exe
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\WindowsService.pdb
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\cjwdev.windowsapi.dll
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.csproj.AssemblyReference.cache
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.ProjectInstaller.resources
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.Service1.resources
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.csproj.GenerateResource.cache
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.csproj.CopyComplete
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.exe
+C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Debug\WindowsService.pdb

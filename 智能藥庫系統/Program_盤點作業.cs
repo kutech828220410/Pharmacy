@@ -8,10 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
-using SQLUI;
 using MyUI;
 using Basic;
 using H_Pannel_lib;
+using SQLUI;
+using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
     public enum enum_盤點狀態
@@ -160,5 +161,17 @@ namespace 智能藥庫系統
     }
     public partial class Form1 : Form
     {
+        private void sub_Program_盤點作業_Init()
+        {
+            this.plC_RJ_Button_盤點作業_盤點表匯入.MouseDownEvent += PlC_RJ_Button_盤點作業_盤點表匯入_MouseDownEvent;
+        }
+
+        private void PlC_RJ_Button_盤點作業_盤點表匯入_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_盤點表匯入 dialog_盤點表匯入 = new Dialog_盤點表匯入();
+            dialog_盤點表匯入.ShowDialog();
+
+
+        }
     }
 }

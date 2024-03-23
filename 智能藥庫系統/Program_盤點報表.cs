@@ -74,7 +74,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_盤點報表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "誤差量");
             this.sqL_DataGridView_盤點報表.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleLeft, "誤差金額");
 
-
+            
             plC_UI_Init.Add_Method(sub_Program_盤點報表);
         }
 
