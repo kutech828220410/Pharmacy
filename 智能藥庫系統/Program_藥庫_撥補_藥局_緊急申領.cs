@@ -60,7 +60,7 @@ namespace 智能藥庫系統
         狀態,
         備註,
     }
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
       
        

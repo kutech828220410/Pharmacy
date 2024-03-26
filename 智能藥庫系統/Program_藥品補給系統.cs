@@ -46,7 +46,7 @@ namespace 智能藥庫系統
         維護到期日,
         最小包裝數量,
     }
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         public enum enum_藥品補給系統_訂單資料 : int
         {

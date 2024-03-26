@@ -13,7 +13,7 @@ using Basic;
 
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         public enum enum_藥品資料_藥品群組
         {

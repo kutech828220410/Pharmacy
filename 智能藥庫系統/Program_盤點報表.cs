@@ -33,7 +33,7 @@ namespace 智能藥庫系統
     }
  
 
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private void sub_Program_盤點報表_Init()
         {

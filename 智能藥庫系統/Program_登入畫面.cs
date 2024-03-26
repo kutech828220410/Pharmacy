@@ -14,7 +14,7 @@ using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
 
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         readonly private string Admin_ID = "admin";
         readonly private string Admoin_Password = "66437068";
@@ -24,12 +24,12 @@ namespace 智能藥庫系統
         private PLC_Device PLC_Device_未登入 = new PLC_Device("S4001");
         private PLC_Device PLC_Device_最高權限 = new PLC_Device("S4077");
 
-        private string _登入者名稱 = "";
-        private string 登入者名稱
+        static public string _登入者名稱 = "";
+        public string 登入者名稱
         {
             get
             {
-                return this._登入者名稱;
+                return _登入者名稱;
             }
             set
             {
@@ -38,16 +38,16 @@ namespace 智能藥庫系統
                 this.rJ_Lable_登入畫面_登出顯示_姓名.Text = value;
             }
         }
-        private string _登入者ID = "";
-        private string 登入者ID
+        static public string _登入者ID = "";
+        public string 登入者ID
         {
             get
             {
-                return this._登入者ID;
+                return _登入者ID;
             }
             set
             {
-                this._登入者ID = value;
+                _登入者ID = value;
                 this.rJ_TextBox_登入者ID.Texts = value;
             }
         }

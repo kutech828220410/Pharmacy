@@ -21,7 +21,7 @@ namespace 智能藥庫系統
         屏榮藥局,
     }
 
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         public enum enum_待調整匯出
         {
@@ -41,7 +41,7 @@ namespace 智能藥庫系統
 
         private void sub_Program_交易紀錄查詢_Init()
         {
-            string url = $"{Api_URL}/api/transactions/init";
+            string url = $"{API_Server}/api/transactions/init";
             returnData returnData = new returnData();
             returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
             returnData.ServerName = $"{"DS01"}";
@@ -50,7 +50,7 @@ namespace 智能藥庫系統
             Table table = json.JsonDeserializet<Table>();
             if (table == null)
             {
-                MyMessageBox.ShowDialog($"交易紀錄表單建立失敗!! Api_URL:{Api_URL}");
+                MyMessageBox.ShowDialog($"交易紀錄表單建立失敗!! API_Server:{API_Server}");
                 return;
             }
             this.sqL_DataGridView_交易記錄查詢.Init(table);

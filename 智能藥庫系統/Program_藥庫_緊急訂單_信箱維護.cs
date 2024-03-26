@@ -18,7 +18,7 @@ using H_Pannel_lib;
 
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         public enum enum_信箱設定_RTF存檔參數
         {
@@ -162,7 +162,7 @@ namespace 智能藥庫系統
             List<object[]> list_value_buf = new List<object[]>();
 
             object[] titles = new object[new enum_信箱設定_RTF存檔參數().GetLength()];
-            titles[(int)enum_信箱設定_RTF存檔參數.使用者ID] = this._登入者ID ;
+            titles[(int)enum_信箱設定_RTF存檔參數.使用者ID] = _登入者ID ;
             titles[(int)enum_信箱設定_RTF存檔參數.參數名稱] = "信箱主旨";
             string 名稱 = Basic.TypeConvert.SetTextValue(new enum_信箱設定_RTF存檔參數().GetEnumNames(), titles);
             list_value_buf = list_value.GetRows((int)enum_藥品補給系統_參數資料.名稱, 名稱);
@@ -180,7 +180,7 @@ namespace 智能藥庫系統
             List<object[]> list_value_buf = new List<object[]>();
 
             object[] titles = new object[new enum_信箱設定_RTF存檔參數().GetLength()];
-            titles[(int)enum_信箱設定_RTF存檔參數.使用者ID] = this._登入者ID;
+            titles[(int)enum_信箱設定_RTF存檔參數.使用者ID] = _登入者ID;
             titles[(int)enum_信箱設定_RTF存檔參數.參數名稱] = "信箱內容";
             string 名稱 = Basic.TypeConvert.SetTextValue(new enum_信箱設定_RTF存檔參數().GetEnumNames(), titles);
             list_value_buf = list_value.GetRows((int)enum_藥品補給系統_參數資料.名稱, 名稱);

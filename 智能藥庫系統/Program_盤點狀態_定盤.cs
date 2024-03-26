@@ -20,7 +20,7 @@ using System.Net.Http.Headers;
 using System.IO;
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         public enum enum_定盤_盤點明細
         {

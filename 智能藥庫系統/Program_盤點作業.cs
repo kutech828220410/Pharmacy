@@ -159,13 +159,19 @@ namespace 智能藥庫系統
             this.code = code;
         }
     }
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private void sub_Program_盤點作業_Init()
         {
             this.plC_RJ_Button_盤點作業_盤點表匯入.MouseDownEvent += PlC_RJ_Button_盤點作業_盤點表匯入_MouseDownEvent;
+            this.plC_RJ_Button_盤點作業_盤點單管理.MouseDownEvent += PlC_RJ_Button_盤點作業_盤點單管理_MouseDownEvent;
         }
 
+        private void PlC_RJ_Button_盤點作業_盤點單管理_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_盤點單管理 dialog_盤點單管理 = new Dialog_盤點單管理();
+            dialog_盤點單管理.ShowDialog();
+        }
         private void PlC_RJ_Button_盤點作業_盤點表匯入_MouseDownEvent(MouseEventArgs mevent)
         {
             Dialog_盤點表匯入 dialog_盤點表匯入 = new Dialog_盤點表匯入();

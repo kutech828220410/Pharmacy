@@ -25,7 +25,7 @@ namespace 智能藥庫系統
             }
             if (num <= 1)
             {
-                Application.Run(new Form1());
+                Application.Run(new Main_Form());
             }
             else
             {

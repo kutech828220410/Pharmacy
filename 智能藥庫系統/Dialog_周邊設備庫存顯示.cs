@@ -55,8 +55,8 @@ namespace 智能藥庫系統
         private void Dialog_周邊設備庫存顯示_LoadFinishedEvent(EventArgs e)
         {
             LoadingForm.ShowLoadingForm();
-            List<object[]> list_庫存查詢 = Form1.Function_周邊設備_庫存查詢(_IP);
-            list_庫存查詢 = list_庫存查詢.CopyRows(new Form1.enum_周邊設備_庫存_庫存查詢(), new enum_庫存查詢());
+            List<object[]> list_庫存查詢 = Main_Form.Function_周邊設備_庫存查詢(_IP);
+            list_庫存查詢 = list_庫存查詢.CopyRows(new Main_Form.enum_周邊設備_庫存_庫存查詢(), new enum_庫存查詢());
             sqL_DataGridView_庫存查詢.RefreshGrid(list_庫存查詢);
             LoadingForm.CloseLoadingForm();
         }

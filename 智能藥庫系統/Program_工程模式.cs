@@ -20,7 +20,7 @@ namespace 智能藥庫系統
         內容,
         登錄日期,
     }
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         MyThread MyThread_檢查Pannel35_主畫面;
         MyThread MyThread_檢查Pannel35_數字鍵盤頁面;

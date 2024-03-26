@@ -87,6 +87,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\0.DLL\HIS_DB_Lib.dll</HintPath>
     </Reference>
+    <Reference Include="HIS_WebApi">
+      <HintPath>..\0.DLL\HIS_WebApi.dll</HintPath>
+    </Reference>
     <Reference Include="H_Pannel_lib">
       <HintPath>..\0.DLL\H_Pannel_lib.dll</HintPath>
     </Reference>
@@ -296,6 +299,12 @@
     <Compile Include="Dialog_周邊設備庫存顯示.Designer.cs">
       <DependentUpon>Dialog_周邊設備庫存顯示.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_盤點單管理.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_盤點單管理.Designer.cs">
+      <DependentUpon>Dialog_盤點單管理.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -476,6 +485,9 @@
     <EmbeddedResource Include="Dialog_周邊設備庫存顯示.resx">
       <DependentUpon>Dialog_周邊設備庫存顯示.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_盤點單管理.resx">
+      <DependentUpon>Dialog_盤點單管理.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -594,6 +606,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
+    <None Include="Resources\盤點單管理.png" />
     <None Include="Resources\匯入資料.png" />
     <None Include="Resources\icon-19.png" />
     <None Include="Resources\export-to-csv-icon-11.jpg" />

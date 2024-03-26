@@ -1,6 +1,6 @@
 ﻿namespace 智能藥庫系統
 {
-    partial class Form1
+    partial class Main_Form
     {
         /// <summary>
         /// 設計工具所需的變數。
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main_Form));
             this.timer_init = new System.Windows.Forms.Timer(this.components);
             this.panel_Main = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton_工程模式 = new MyUI.PLC_RJ_ScreenButton();
@@ -1303,6 +1303,7 @@
             this.plC_RJ_Button_覆盤報表_上傳Excel = new MyUI.PLC_RJ_Button();
             this.sqL_DataGridView_覆點報表 = new SQLUI.SQL_DataGridView();
             this.tabPage48 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_盤點作業_盤點單管理 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點作業_盤點表匯入 = new MyUI.PLC_RJ_Button();
             this.panel_盤點作業 = new System.Windows.Forms.Panel();
             this.plC_RJ_ScreenButton52 = new MyUI.PLC_RJ_ScreenButton();
@@ -36490,12 +36491,66 @@
             // tabPage48
             // 
             this.tabPage48.BackColor = System.Drawing.Color.White;
+            this.tabPage48.Controls.Add(this.plC_RJ_Button_盤點作業_盤點單管理);
             this.tabPage48.Controls.Add(this.plC_RJ_Button_盤點作業_盤點表匯入);
             this.tabPage48.Location = new System.Drawing.Point(4, 25);
             this.tabPage48.Name = "tabPage48";
             this.tabPage48.Size = new System.Drawing.Size(1630, 938);
             this.tabPage48.TabIndex = 4;
             this.tabPage48.Text = "暫存";
+            // 
+            // plC_RJ_Button_盤點作業_盤點單管理
+            // 
+            this.plC_RJ_Button_盤點作業_盤點單管理.AutoResetState = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Bool = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.BorderColor = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單管理.BorderRadius = 12;
+            this.plC_RJ_Button_盤點作業_盤點單管理.BorderSize = 0;
+            this.plC_RJ_Button_盤點作業_盤點單管理.but_press = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點作業_盤點單管理.DisenableColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點作業_盤點單管理.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點作業_盤點單管理.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_盤點作業_盤點單管理.GUID = "";
+            this.plC_RJ_Button_盤點作業_盤點單管理.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Image_padding = new System.Windows.Forms.Padding(23, 10, 26, 7);
+            this.plC_RJ_Button_盤點作業_盤點單管理.Location = new System.Drawing.Point(171, 28);
+            this.plC_RJ_Button_盤點作業_盤點單管理.Name = "plC_RJ_Button_盤點作業_盤點單管理";
+            this.plC_RJ_Button_盤點作業_盤點單管理.OFF_文字內容 = "盤點單管理";
+            this.plC_RJ_Button_盤點作業_盤點單管理.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_盤點作業_盤點單管理.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單管理.OFF_背景顏色 = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ON_BorderSize = 1;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ON_文字內容 = "盤點單管理";
+            this.plC_RJ_Button_盤點作業_盤點單管理.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.plC_RJ_Button_盤點作業_盤點單管理.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ON_背景顏色 = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ProhibitionLineWidth = 6;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ProhibitionSymbolSize = 45;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ShadowSize = 5;
+            this.plC_RJ_Button_盤點作業_盤點單管理.ShowLoadingForm = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Size = new System.Drawing.Size(130, 130);
+            this.plC_RJ_Button_盤點作業_盤點單管理.State = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.TabIndex = 1;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Text = "盤點單管理";
+            this.plC_RJ_Button_盤點作業_盤點單管理.TextColor = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單管理.TextHeight = 35;
+            this.plC_RJ_Button_盤點作業_盤點單管理.Texts = "盤點單管理";
+            this.plC_RJ_Button_盤點作業_盤點單管理.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.字型鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點作業_盤點單管理.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點作業_盤點單管理.文字鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.背景圖片 = global::智能藥庫系統.Properties.Resources.盤點單管理;
+            this.plC_RJ_Button_盤點作業_盤點單管理.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.音效 = true;
+            this.plC_RJ_Button_盤點作業_盤點單管理.顯示 = false;
+            this.plC_RJ_Button_盤點作業_盤點單管理.顯示狀態 = false;
             // 
             // plC_RJ_Button_盤點作業_盤點表匯入
             // 
@@ -36513,7 +36568,7 @@
             this.plC_RJ_Button_盤點作業_盤點表匯入.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.plC_RJ_Button_盤點作業_盤點表匯入.GUID = "";
             this.plC_RJ_Button_盤點作業_盤點表匯入.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button_盤點作業_盤點表匯入.Image_padding = new System.Windows.Forms.Padding(13, 10, 16, 7);
+            this.plC_RJ_Button_盤點作業_盤點表匯入.Image_padding = new System.Windows.Forms.Padding(23, 10, 26, 7);
             this.plC_RJ_Button_盤點作業_盤點表匯入.Location = new System.Drawing.Point(35, 28);
             this.plC_RJ_Button_盤點作業_盤點表匯入.Name = "plC_RJ_Button_盤點作業_盤點表匯入";
             this.plC_RJ_Button_盤點作業_盤點表匯入.OFF_文字內容 = "盤點表匯入";
@@ -36531,7 +36586,7 @@
             this.plC_RJ_Button_盤點作業_盤點表匯入.ShadowColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Button_盤點作業_盤點表匯入.ShadowSize = 5;
             this.plC_RJ_Button_盤點作業_盤點表匯入.ShowLoadingForm = false;
-            this.plC_RJ_Button_盤點作業_盤點表匯入.Size = new System.Drawing.Size(129, 127);
+            this.plC_RJ_Button_盤點作業_盤點表匯入.Size = new System.Drawing.Size(130, 130);
             this.plC_RJ_Button_盤點作業_盤點表匯入.State = false;
             this.plC_RJ_Button_盤點作業_盤點表匯入.TabIndex = 0;
             this.plC_RJ_Button_盤點作業_盤點表匯入.Text = "盤點表匯入";
@@ -38588,7 +38643,7 @@
             this.ContentsPanel.Size = new System.Drawing.Size(1624, 663);
             this.ContentsPanel.TabIndex = 2;
             // 
-            // Form1
+            // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -38597,9 +38652,9 @@
             this.Controls.Add(this.plC_AlarmFlow1);
             this.Controls.Add(this.panel_Main);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Main_Form";
             this.Text = "藥庫管理系統";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Load += new System.EventHandler(this.Main_Form_Load);
             this.panel_Main.ResumeLayout(false);
             this.panel232.ResumeLayout(false);
             this.plC_ScreenPage_Main.ResumeLayout(false);
@@ -40395,6 +40450,7 @@
         private System.Windows.Forms.TabPage tabPage48;
         private MyUI.PLC_RJ_Button plC_RJ_Button_盤點作業_盤點表匯入;
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton52;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_盤點作業_盤點單管理;
     }
 }
 

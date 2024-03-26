@@ -18,7 +18,7 @@ using H_Pannel_lib;
 
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private List<RJ_Lable[]> rJ_Lables_周邊設備_麻醉部ADC_庫存查詢 = new List<RJ_Lable[]>();
        

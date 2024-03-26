@@ -22,7 +22,7 @@ namespace 智能藥庫系統
         藥碼,
         盤點量,
     }
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private void sub_Program_覆盤報表_Init()
         {

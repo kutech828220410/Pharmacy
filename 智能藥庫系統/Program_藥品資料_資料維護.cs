@@ -16,7 +16,7 @@ using SQLUI;
 namespace 智能藥庫系統
 {
 
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         //public enum enum_雲端藥檔
         //{
@@ -93,7 +93,7 @@ namespace 智能藥庫系統
         private void sub_Program_藥品資料_資料維護_Init()
         {
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_雲端藥檔, dBConfigClass.DB_Medicine_Cloud);
-            string url = $"{Api_URL}/api/MED_page/init";
+            string url = $"{API_Server}/api/MED_page/init";
             returnData returnData = new returnData();
             returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
             returnData.ServerName = $"{"DS01"}";
@@ -103,7 +103,7 @@ namespace 智能藥庫系統
             Table table = json.JsonDeserializet<Table>();
             if (table == null)
             {
-                MyMessageBox.ShowDialog($"雲端藥檔表單建立失敗!! Api_URL:{Api_URL}");
+                MyMessageBox.ShowDialog($"雲端藥檔表單建立失敗!! API_Server:{API_Server}");
                 return;
             }
             this.sqL_DataGridView_雲端藥檔.Init(table);

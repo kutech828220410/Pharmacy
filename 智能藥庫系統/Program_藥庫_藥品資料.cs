@@ -15,7 +15,7 @@ using HIS_DB_Lib;
 using SQLUI;
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private DeviceBasicClass DeviceBasicClass_藥庫 = new DeviceBasicClass();
 
@@ -63,7 +63,7 @@ namespace 智能藥庫系統
         {
 
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_藥庫_藥品資料, dBConfigClass.DB_Basic);
-            string url = $"{Api_URL}/api/MED_page/init";
+            string url = $"{API_Server}/api/MED_page/init";
             returnData returnData = new returnData();
             returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
             returnData.ServerName = $"{"DS01"}";
@@ -73,7 +73,7 @@ namespace 智能藥庫系統
             Table table = json.JsonDeserializet<Table>();
             if (table == null)
             {
-                MyMessageBox.ShowDialog($"藥庫藥檔表單建立失敗!! Api_URL:{Api_URL}");
+                MyMessageBox.ShowDialog($"藥庫藥檔表單建立失敗!! API_Server:{API_Server}");
                 return;
             }
             this.sqL_DataGridView_藥庫_藥品資料.Init(table);

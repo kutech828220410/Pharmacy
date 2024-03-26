@@ -15,7 +15,7 @@ using H_Pannel_lib;
 using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         enum enum_藥局_緊急申領_狀態
         {

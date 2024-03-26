@@ -16,7 +16,7 @@ using HIS_DB_Lib;
 using SQLUI;
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
 
         public enum enum_人員資料_匯出
@@ -66,7 +66,7 @@ namespace 智能藥庫系統
             this.loginUI.Set_login_data_index_DB(dBConfigClass.DB_person_page);
             this.loginUI.Init();
 
-            string url = $"{Api_URL}/api/person_page/init";
+            string url = $"{API_Server}/api/person_page/init";
             returnData returnData = new returnData();
             returnData.ServerType = enum_ServerSetting_Type.藥庫.GetEnumName();
             returnData.ServerName = $"{"DS01"}";
@@ -75,7 +75,7 @@ namespace 智能藥庫系統
             Table table = json.JsonDeserializet<Table>();
             if (table == null)
             {
-                MyMessageBox.ShowDialog($"人員資料表單建立失敗!! Api_URL:{Api_URL}");
+                MyMessageBox.ShowDialog($"人員資料表單建立失敗!! API_Server:{API_Server}");
                 return;
             }
             this.sqL_DataGridView_人員資料.Init(table);

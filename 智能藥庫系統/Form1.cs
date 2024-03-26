@@ -23,9 +23,9 @@ using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
 
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
-        private string Api_URL = "http://127.0.0.1:4433";
+        public static string API_Server = "http://127.0.0.1:4433";
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
         private MyConvert myConvert = new MyConvert();
@@ -74,7 +74,7 @@ namespace 智能藥庫系統
             public string FTP_username { get => fTP_username; set => fTP_username = value; }
             public string FTP_password { get => fTP_password; set => fTP_password = value; }
         }
-        public Form1()
+        public Main_Form()
         {
             InitializeComponent();
         }
@@ -140,7 +140,7 @@ namespace 智能藥庫系統
         }
         private void ApiServerSetting(string Name)
         {
-            string json_result = Basic.Net.WEBApiGet($"{Api_URL}/api/ServerSetting");
+            string json_result = Basic.Net.WEBApiGet($"{API_Server}/api/ServerSetting");
             if (json_result.StringIsEmpty())
             {
                 MyMessageBox.ShowDialog("API Server 連結失敗!");
@@ -170,7 +170,7 @@ namespace 智能藥庫系統
                 dBConfigClass.DB_Basic.Password = serverSettingClass.Password;
             }
         }
-        private void Form1_Load(object sender, EventArgs e)
+        private void Main_Form_Load(object sender, EventArgs e)
         {
          
 

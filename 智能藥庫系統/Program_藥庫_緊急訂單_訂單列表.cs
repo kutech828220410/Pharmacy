@@ -19,7 +19,7 @@ using System.Collections;
 
 namespace 智能藥庫系統
 {
-    public partial class Form1 : Form
+    public partial class Main_Form : Form
     {
         private void sub_Program_藥庫_緊急訂單_訂單列表_Init()
         {
