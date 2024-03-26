@@ -39,7 +39,7 @@ namespace InventoryConsumptionTracker
             起始日期,
             結束日期,
             成本價,
-            售價,
+            健保價,
             ATC,
         }
         public class class_MedPrice
@@ -116,6 +116,7 @@ namespace InventoryConsumptionTracker
                     int 消耗量 = 0;
                     string 起始日期 = "";
                     string 結束日期 = "";
+                    string 健保價 = "0";
                     string 售價 = "0";
                     string 成本價 = "0";
                     string ATC = "";
@@ -148,7 +149,7 @@ namespace InventoryConsumptionTracker
                         value[(int)enum_匯出.消耗量] = 消耗量;
                         value[(int)enum_匯出.起始日期] = 起始日期;
                         value[(int)enum_匯出.結束日期] = 結束日期;
-                        value[(int)enum_匯出.售價] = 售價;
+                        value[(int)enum_匯出.健保價] = 健保價;
                         value[(int)enum_匯出.成本價] = 成本價;
                         value[(int)enum_匯出.ATC] = ATC;
 
@@ -162,7 +163,7 @@ namespace InventoryConsumptionTracker
                 Console.WriteLine($"-------------------------------------------------------------------------");
 
                 System.Data.DataTable dataTable = list_匯出資料.ToDataTable(new enum_匯出());
-                MyOffice.ExcelClass.NPOI_SaveFile(dataTable, $"{currentDirectory}\\消耗帳彙總_{DateTime.Now.ToDateString("_")}.xls",new int[]{ (int)enum_匯出.消耗量 , (int)enum_匯出.售價 , (int)enum_匯出.成本價 });
+                MyOffice.ExcelClass.NPOI_SaveFile(dataTable, $"{currentDirectory}\\消耗帳彙總_{DateTime.Now.ToDateString("_")}.xls",new int[]{ (int)enum_匯出.消耗量 , (int)enum_匯出.健保價 , (int)enum_匯出.成本價 });
                 Console.WriteLine($"存檔完成,{myTimerBasic}");
                 Console.WriteLine($"-------------------------------------------------------------------------");
                 System.Threading.Thread.Sleep(2000);
