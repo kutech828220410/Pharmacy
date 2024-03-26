@@ -19,6 +19,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "batch", "batch", "{1949A26E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryConsumptionTracker", "InventoryConsumptionTracker\InventoryConsumptionTracker.csproj", "{77723395-A78A-4A40-A3F6-0E962E67F678}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrospectiveAccounting", "RetrospectiveAccounting\RetrospectiveAccounting.csproj", "{70250F11-3339-4151-AAF9-C11D8A98D7B1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,13 +55,19 @@ Global
 		{77723395-A78A-4A40-A3F6-0E962E67F678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{77723395-A78A-4A40-A3F6-0E962E67F678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{77723395-A78A-4A40-A3F6-0E962E67F678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{73E22838-FF7F-4C31-98CA-A13C2294811B} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
+		{20426473-0782-4134-A9A0-A5B862A616C2} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 		{77723395-A78A-4A40-A3F6-0E962E67F678} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
+		{70250F11-3339-4151-AAF9-C11D8A98D7B1} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B921A9E-6909-4DAB-8E4C-5F9D26A5CEDE}

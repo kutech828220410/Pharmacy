@@ -41,7 +41,7 @@ namespace 智慧調劑台管理系統_WebApi
             MyDb2Connection.Open();
             Console.WriteLine($"DB2連線成功!");
             IBM.Data.DB2.Core.DB2Command MyDB2Command = MyDb2Connection.CreateCommand();
-            MyDB2Command.CommandText = "SELECT * FROM UD.UDDRGVWA WHERE HID = '2A0'";
+            MyDB2Command.CommandText = "SELECT * FROM UD.UDDRGVWA A LEFT OUTER JOIN UD.UDPRDPF B ON A.UDDRGNO = B.UDDRGNO AND A.HID = B.HID WHERE A.HID = '2A0' WITH UR";
 
             var reader = MyDB2Command.ExecuteReader();
             List<string> list_colname_UDDRGVWA = new List<string>();
@@ -59,7 +59,7 @@ namespace 智慧調劑台管理系統_WebApi
                 class_MedPrice.成本價 = reader["UDWCOST"].ToString();
                 class_MedPrice.最近一次售價 = reader["UDOLDPRI"].ToString();
                 class_MedPrice.最近一次成本價 = reader["UDOLDWCO"].ToString();
-                class_MedPrice.健保價 = reader["UDHIWCOS"].ToString();
+                //class_MedPrice.健保價 = reader["UDOLDHIC"].ToString();
                 class_MedPrice.ATC = reader["UDATCCOD"].ToString();
 
                 
