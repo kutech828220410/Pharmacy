@@ -627,3 +627,12 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\System.Xm
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\HIS_WebApi.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點單管理.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Main_Form.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點設定.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點明細.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點單合併.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_新建合併盤點單.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點單合併_選擇.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\office.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\stdole.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點單合併_設定.resources

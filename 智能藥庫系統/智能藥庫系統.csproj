@@ -230,10 +230,10 @@
     <Compile Include="Dialog\Dialog_日期選擇.Designer.cs">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點表匯入.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點表匯入.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點表匯入.Designer.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點表匯入.Designer.cs">
       <DependentUpon>Dialog_盤點表匯入.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\Dialog_輸入批號.cs">
@@ -281,10 +281,10 @@
     <Compile Include="Dialog\Dialog_合併盤點單.Designer.cs">
       <DependentUpon>Dialog_合併盤點單.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點處方量.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點處方量.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點處方量.Designer.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點處方量.Designer.cs">
       <DependentUpon>Dialog_盤點處方量.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialog\Dialog_補給系統藥品建置.cs">
@@ -293,17 +293,53 @@
     <Compile Include="Dialog\Dialog_補給系統藥品建置.Designer.cs">
       <DependentUpon>Dialog_補給系統藥品建置.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog_周邊設備庫存顯示.cs">
+    <Compile Include="Dialog\Dialog_周邊設備庫存顯示.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog_周邊設備庫存顯示.Designer.cs">
+    <Compile Include="Dialog\Dialog_周邊設備庫存顯示.Designer.cs">
       <DependentUpon>Dialog_周邊設備庫存顯示.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點單管理.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點單管理.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Dialog\Dialog_盤點單管理.Designer.cs">
+    <Compile Include="Dialog\盤點\Dialog_盤點單管理.Designer.cs">
       <DependentUpon>Dialog_盤點單管理.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點明細.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點明細.Designer.cs">
+      <DependentUpon>Dialog_盤點明細.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點設定.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點設定.Designer.cs">
+      <DependentUpon>Dialog_盤點設定.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併.Designer.cs">
+      <DependentUpon>Dialog_盤點單合併.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_新建合併盤點單.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_新建合併盤點單.Designer.cs">
+      <DependentUpon>Dialog_新建合併盤點單.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併_選擇.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併_選擇.Designer.cs">
+      <DependentUpon>Dialog_盤點單合併_選擇.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併_設定.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\盤點\Dialog_盤點單合併_設定.Designer.cs">
+      <DependentUpon>Dialog_盤點單合併_設定.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -342,7 +378,9 @@
     <Compile Include="Program_批次過帳_公藥.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Program_盤點作業.cs" />
+    <Compile Include="Program_盤點作業.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_盤點報表.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -450,7 +488,16 @@
     <EmbeddedResource Include="Dialog\Dialog_日期選擇.resx">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\Dialog_盤點表匯入.resx">
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點單合併.resx">
+      <DependentUpon>Dialog_盤點單合併.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點單合併_設定.resx">
+      <DependentUpon>Dialog_盤點單合併_設定.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點單合併_選擇.resx">
+      <DependentUpon>Dialog_盤點單合併_選擇.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點表匯入.resx">
       <DependentUpon>Dialog_盤點表匯入.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_補給系統藥品建置.resx">
@@ -479,14 +526,23 @@
     <EmbeddedResource Include="Dialog\Dialog_合併盤點單.resx">
       <DependentUpon>Dialog_合併盤點單.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\Dialog_盤點處方量.resx">
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點處方量.resx">
       <DependentUpon>Dialog_盤點處方量.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog_周邊設備庫存顯示.resx">
+    <EmbeddedResource Include="Dialog\Dialog_周邊設備庫存顯示.resx">
       <DependentUpon>Dialog_周邊設備庫存顯示.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Dialog\Dialog_盤點單管理.resx">
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點單管理.resx">
       <DependentUpon>Dialog_盤點單管理.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點明細.resx">
+      <DependentUpon>Dialog_盤點明細.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_盤點設定.resx">
+      <DependentUpon>Dialog_盤點設定.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\盤點\Dialog_新建合併盤點單.resx">
+      <DependentUpon>Dialog_新建合併盤點單.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -606,6 +662,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
+    <None Include="Resources\盤點單合併.png" />
     <None Include="Resources\盤點單管理.png" />
     <None Include="Resources\匯入資料.png" />
     <None Include="Resources\icon-19.png" />

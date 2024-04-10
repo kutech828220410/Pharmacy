@@ -126,3 +126,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\InventoryConsumptionTracker.csproj.CopyComplete
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\InventoryConsumptionTracker.exe
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\InventoryConsumptionTracker.pdb
+C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\office.dll
+C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\stdole.dll

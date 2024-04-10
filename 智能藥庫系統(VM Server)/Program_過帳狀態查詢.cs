@@ -198,6 +198,7 @@ namespace 智能藥庫系統_VM_Server_
 
                     if (list_過帳狀態列表_buf.Count == 0)
                     {
+                      
                         object[] value = new object[new enum_過帳狀態列表().GetLength()];
                         value[(int)enum_過帳狀態列表.GUID] = Guid.NewGuid().ToString();
                         value[(int)enum_過帳狀態列表.編號] = 編號;
@@ -258,19 +259,45 @@ namespace 智能藥庫系統_VM_Server_
 
                         if (list_過帳狀態列表_buf.Count == 0)
                         {
-                            object[] value = new object[new enum_過帳狀態列表().GetLength()];
-                            value[(int)enum_過帳狀態列表.GUID] = Guid.NewGuid().ToString();
-                            value[(int)enum_過帳狀態列表.編號] = 編號;
+                            if (更新每日.Length == 4)
+                            {
+                                string str_hour = 更新每日.Substring(0, 2);
+                                string str_min = 更新每日.Substring(2, 2);
+                                DateTime dateTime1 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, str_hour.StringToInt32(), str_min.StringToInt32(), 0);
+                                DateTime dateTime2 = dateTime1.AddMinutes(10);
+                                bool IsInDate = DateTime.Now.IsInDate(dateTime1, dateTime2);
+                                if (IsInDate)
+                                {
+                                    object[] value = new object[new enum_過帳狀態列表().GetLength()];
+                                    value[(int)enum_過帳狀態列表.GUID] = Guid.NewGuid().ToString();
+                                    value[(int)enum_過帳狀態列表.編號] = 編號;
 
-                            value[(int)enum_過帳狀態列表.檔名] = 檔名;
-                            value[(int)enum_過帳狀態列表.檔案位置] = 檔案位置;
-                            value[(int)enum_過帳狀態列表.類別] = 類別;
-                            value[(int)enum_過帳狀態列表.報表日期] = dateTime.ToDateString();
-                            value[(int)enum_過帳狀態列表.產生排程時間] = DateTime.Now.ToDateTimeString_6();
-                            value[(int)enum_過帳狀態列表.排程作業時間] = DateTime.MinValue.ToDateTimeString_6();
-                            value[(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.已產生排程.GetEnumName();
-                            value[(int)enum_過帳狀態列表.備註內容] = 備註內容;
-                            list_過帳狀態列表_Add.Add(value);
+                                    value[(int)enum_過帳狀態列表.檔名] = 檔名;
+                                    value[(int)enum_過帳狀態列表.檔案位置] = 檔案位置;
+                                    value[(int)enum_過帳狀態列表.類別] = 類別;
+                                    value[(int)enum_過帳狀態列表.報表日期] = dateTime.ToDateString();
+                                    value[(int)enum_過帳狀態列表.產生排程時間] = DateTime.Now.ToDateTimeString_6();
+                                    value[(int)enum_過帳狀態列表.排程作業時間] = DateTime.MinValue.ToDateTimeString_6();
+                                    value[(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.已產生排程.GetEnumName();
+                                    value[(int)enum_過帳狀態列表.備註內容] = 備註內容;
+                                    list_過帳狀態列表_Add.Add(value);
+                                }
+
+                            }
+
+                            //object[] value = new object[new enum_過帳狀態列表().GetLength()];
+                            //value[(int)enum_過帳狀態列表.GUID] = Guid.NewGuid().ToString();
+                            //value[(int)enum_過帳狀態列表.編號] = 編號;
+
+                            //value[(int)enum_過帳狀態列表.檔名] = 檔名;
+                            //value[(int)enum_過帳狀態列表.檔案位置] = 檔案位置;
+                            //value[(int)enum_過帳狀態列表.類別] = 類別;
+                            //value[(int)enum_過帳狀態列表.報表日期] = dateTime.ToDateString();
+                            //value[(int)enum_過帳狀態列表.產生排程時間] = DateTime.Now.ToDateTimeString_6();
+                            //value[(int)enum_過帳狀態列表.排程作業時間] = DateTime.MinValue.ToDateTimeString_6();
+                            //value[(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.已產生排程.GetEnumName();
+                            //value[(int)enum_過帳狀態列表.備註內容] = 備註內容;
+                            //list_過帳狀態列表_Add.Add(value);
                         }
                     }
                     else

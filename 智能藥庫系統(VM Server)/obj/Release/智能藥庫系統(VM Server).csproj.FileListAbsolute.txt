@@ -381,3 +381,6 @@ C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\R
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.Common.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll

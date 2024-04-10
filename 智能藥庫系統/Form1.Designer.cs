@@ -1303,6 +1303,7 @@
             this.plC_RJ_Button_覆盤報表_上傳Excel = new MyUI.PLC_RJ_Button();
             this.sqL_DataGridView_覆點報表 = new SQLUI.SQL_DataGridView();
             this.tabPage48 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_盤點作業_盤點單合併 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點作業_盤點單管理 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Button_盤點作業_盤點表匯入 = new MyUI.PLC_RJ_Button();
             this.panel_盤點作業 = new System.Windows.Forms.Panel();
@@ -1906,7 +1907,6 @@
             this.plC_RJ_ScreenButton_盤點作業.ShowIcon = true;
             this.plC_RJ_ScreenButton_盤點作業.Size = new System.Drawing.Size(258, 65);
             this.plC_RJ_ScreenButton_盤點作業.TabIndex = 126;
-            this.plC_RJ_ScreenButton_盤點作業.Visible = false;
             this.plC_RJ_ScreenButton_盤點作業.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton_盤點作業.寫入位置註解 = "";
             this.plC_RJ_ScreenButton_盤點作業.寫入元件位置 = "";
@@ -1922,7 +1922,7 @@
             this.plC_RJ_ScreenButton_盤點作業.頁面編號 = 0;
             this.plC_RJ_ScreenButton_盤點作業.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton_盤點作業.顯示狀態 = false;
-            this.plC_RJ_ScreenButton_盤點作業.顯示讀取位置 = "S39073";
+            this.plC_RJ_ScreenButton_盤點作業.顯示讀取位置 = "";
             // 
             // plC_RJ_ScreenButton_周邊設備
             // 
@@ -36491,6 +36491,7 @@
             // tabPage48
             // 
             this.tabPage48.BackColor = System.Drawing.Color.White;
+            this.tabPage48.Controls.Add(this.plC_RJ_Button_盤點作業_盤點單合併);
             this.tabPage48.Controls.Add(this.plC_RJ_Button_盤點作業_盤點單管理);
             this.tabPage48.Controls.Add(this.plC_RJ_Button_盤點作業_盤點表匯入);
             this.tabPage48.Location = new System.Drawing.Point(4, 25);
@@ -36498,6 +36499,59 @@
             this.tabPage48.Size = new System.Drawing.Size(1630, 938);
             this.tabPage48.TabIndex = 4;
             this.tabPage48.Text = "暫存";
+            // 
+            // plC_RJ_Button_盤點作業_盤點單合併
+            // 
+            this.plC_RJ_Button_盤點作業_盤點單合併.AutoResetState = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Bool = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.BorderColor = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單合併.BorderRadius = 12;
+            this.plC_RJ_Button_盤點作業_盤點單合併.BorderSize = 0;
+            this.plC_RJ_Button_盤點作業_盤點單合併.but_press = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_盤點作業_盤點單合併.DisenableColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_盤點作業_盤點單合併.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_盤點作業_盤點單合併.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_盤點作業_盤點單合併.GUID = "";
+            this.plC_RJ_Button_盤點作業_盤點單合併.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Image_padding = new System.Windows.Forms.Padding(23, 10, 26, 7);
+            this.plC_RJ_Button_盤點作業_盤點單合併.Location = new System.Drawing.Point(307, 28);
+            this.plC_RJ_Button_盤點作業_盤點單合併.Name = "plC_RJ_Button_盤點作業_盤點單合併";
+            this.plC_RJ_Button_盤點作業_盤點單合併.OFF_文字內容 = "盤點單合併";
+            this.plC_RJ_Button_盤點作業_盤點單合併.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_盤點作業_盤點單合併.OFF_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單合併.OFF_背景顏色 = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ON_BorderSize = 1;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ON_文字內容 = "盤點單合併";
+            this.plC_RJ_Button_盤點作業_盤點單合併.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
+            this.plC_RJ_Button_盤點作業_盤點單合併.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ON_背景顏色 = System.Drawing.Color.WhiteSmoke;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ProhibitionLineWidth = 6;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ProhibitionSymbolSize = 45;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ShadowSize = 5;
+            this.plC_RJ_Button_盤點作業_盤點單合併.ShowLoadingForm = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Size = new System.Drawing.Size(130, 130);
+            this.plC_RJ_Button_盤點作業_盤點單合併.State = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.TabIndex = 2;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Text = "盤點單合併";
+            this.plC_RJ_Button_盤點作業_盤點單合併.TextColor = System.Drawing.Color.Black;
+            this.plC_RJ_Button_盤點作業_盤點單合併.TextHeight = 35;
+            this.plC_RJ_Button_盤點作業_盤點單合併.Texts = "盤點單合併";
+            this.plC_RJ_Button_盤點作業_盤點單合併.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.字型鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_盤點作業_盤點單合併.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_盤點作業_盤點單合併.文字鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.背景圖片 = global::智能藥庫系統.Properties.Resources.盤點單合併;
+            this.plC_RJ_Button_盤點作業_盤點單合併.讀取位元反向 = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.讀寫鎖住 = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.音效 = true;
+            this.plC_RJ_Button_盤點作業_盤點單合併.顯示 = false;
+            this.plC_RJ_Button_盤點作業_盤點單合併.顯示狀態 = false;
             // 
             // plC_RJ_Button_盤點作業_盤點單管理
             // 
@@ -40451,6 +40505,7 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button_盤點作業_盤點表匯入;
         private MyUI.PLC_RJ_ScreenButton plC_RJ_ScreenButton52;
         private MyUI.PLC_RJ_Button plC_RJ_Button_盤點作業_盤點單管理;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_盤點作業_盤點單合併;
     }
 }
 
