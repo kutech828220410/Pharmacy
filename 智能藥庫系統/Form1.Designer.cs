@@ -1907,6 +1907,7 @@
             this.plC_RJ_ScreenButton_盤點作業.ShowIcon = true;
             this.plC_RJ_ScreenButton_盤點作業.Size = new System.Drawing.Size(258, 65);
             this.plC_RJ_ScreenButton_盤點作業.TabIndex = 126;
+            this.plC_RJ_ScreenButton_盤點作業.Visible = false;
             this.plC_RJ_ScreenButton_盤點作業.字元長度 = MyUI.PLC_RJ_ScreenButton.WordLengthEnum.單字元;
             this.plC_RJ_ScreenButton_盤點作業.寫入位置註解 = "";
             this.plC_RJ_ScreenButton_盤點作業.寫入元件位置 = "";
@@ -1922,7 +1923,7 @@
             this.plC_RJ_ScreenButton_盤點作業.頁面編號 = 0;
             this.plC_RJ_ScreenButton_盤點作業.顯示方式 = MyUI.PLC_RJ_ScreenButton.StateEnum.顯示為OFF;
             this.plC_RJ_ScreenButton_盤點作業.顯示狀態 = false;
-            this.plC_RJ_ScreenButton_盤點作業.顯示讀取位置 = "";
+            this.plC_RJ_ScreenButton_盤點作業.顯示讀取位置 = "S4077";
             // 
             // plC_RJ_ScreenButton_周邊設備
             // 
