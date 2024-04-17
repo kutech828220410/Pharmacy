@@ -215,11 +215,11 @@ namespace 智能藥庫系統
             // dateTimeIntervelPicker_建表日期
             // 
             this.dateTimeIntervelPicker_建表日期.BackColor = System.Drawing.Color.Transparent;
-            this.dateTimeIntervelPicker_建表日期.EndTime = new System.DateTime(2024, 3, 29, 23, 59, 59, 0);
+            this.dateTimeIntervelPicker_建表日期.EndTime = new System.DateTime(2024, 4, 12, 0, 0, 0, 0);
             this.dateTimeIntervelPicker_建表日期.Location = new System.Drawing.Point(3, 3);
             this.dateTimeIntervelPicker_建表日期.Name = "dateTimeIntervelPicker_建表日期";
             this.dateTimeIntervelPicker_建表日期.Size = new System.Drawing.Size(306, 83);
-            this.dateTimeIntervelPicker_建表日期.StartTime = new System.DateTime(2024, 3, 29, 0, 0, 0, 0);
+            this.dateTimeIntervelPicker_建表日期.StartTime = new System.DateTime(2024, 4, 12, 0, 0, 0, 0);
             this.dateTimeIntervelPicker_建表日期.TabIndex = 11;
             // 
             // panel_controls

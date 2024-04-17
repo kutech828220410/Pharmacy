@@ -37,7 +37,8 @@ namespace 智能藥庫系統
             採購單價,
             庫存金額,
             藥庫庫存,
-            藥局庫存
+            藥局庫存,
+            效期及批號,
         }
         public enum enum_藥庫_藥品資料_匯入
         {
@@ -431,19 +432,45 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
-            this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
-            this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
-            this.List_Pannel35_本地資料 = this.storageUI_WT32.SQL_GetAllStorage();
+            List<Task> tasks = new List<Task>();
+            tasks.Add(Task.Run(new Action(delegate 
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥庫DeviceBasic,{myTimerBasic}ms");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥局DeviceBasic,{myTimerBasic}ms");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_Pannel35_本地資料 = this.storageUI_WT32.SQL_GetAllStorage();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得Pannel35,{myTimerBasic}ms");
+            })));
+            Task.WhenAll(tasks).Wait();
+
+            Dictionary<string, List<DeviceBasic>> Dictionary_藥庫 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥庫_DeviceBasic);
+            Dictionary<string, List<DeviceBasic>> Dictionary_藥局 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥局_DeviceBasic);
+            Dictionary<string, List<Storage>> Dictionary_本地資料 = this.List_Pannel35_本地資料.CoverToDictionaryByCode();
+
             Parallel.ForEach(RowsList, value =>
             {
+          
                 string 藥品碼 = value[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
 
                 int 總庫存 = 0;
                 int 藥庫庫存 = 0;
                 int 藥局庫存 = 0;
-                List<DeviceBasic> deviceBasic_藥庫_buf = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
-                List<DeviceBasic> deviceBasic_藥局_buf = this.List_藥局_DeviceBasic.SortByCode(藥品碼);
-                List<Storage> storages_buf = this.List_Pannel35_本地資料.SortByCode(藥品碼);
+                List<DeviceBasic> deviceBasic_藥庫_buf = Dictionary_藥庫.SortDictionaryByCode(藥品碼);
+                List<DeviceBasic> deviceBasic_藥局_buf = Dictionary_藥局.SortDictionaryByCode(藥品碼);
+                List<Storage> storages_buf = Dictionary_本地資料.SortDictionaryByCode(藥品碼);
 
                 for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
                 {
@@ -626,7 +653,8 @@ namespace 智能藥庫系統
                 if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
                 {
                     this.Cursor = Cursors.WaitCursor;
-
+                    this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+                    this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
 
                     string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
                     List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
@@ -641,20 +669,66 @@ namespace 智能藥庫系統
 
 
                         string 藥品碼 = list_value_out[i][(int)enum_藥庫_藥品資料_匯出.藥碼].ObjectToString();
-                        class_MedPrices_buf = (from value in class_MedPrices
-                                               where value.藥品碼 == 藥品碼
-                                               select value).ToList();
-                        if (class_MedPrices_buf.Count > 0)
+                        if(class_MedPrices != null)
                         {
-                            int 數量 = list_value_out[i][(int)enum_藥庫_藥品資料_匯出.總庫存].ObjectToString().StringToInt32();
-                            double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
-                            double 訂購總價 = 訂購單價 * 數量;
-                            if (訂購單價 > 0)
+                            class_MedPrices_buf = (from value in class_MedPrices
+                                                   where value.藥品碼 == 藥品碼
+                                                   select value).ToList();
+                            if (class_MedPrices_buf.Count > 0)
                             {
-                                list_value_out[i][(int)enum_藥庫_藥品資料_匯出.採購單價] = 訂購單價.ToString("0.000").StringToDouble();
-                                list_value_out[i][(int)enum_藥庫_藥品資料_匯出.庫存金額] = 訂購總價.ToString("0.000").StringToDouble();
+                                int 數量 = list_value_out[i][(int)enum_藥庫_藥品資料_匯出.總庫存].ObjectToString().StringToInt32();
+                                double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                                double 訂購總價 = 訂購單價 * 數量;
+                                if (訂購單價 > 0)
+                                {
+                                    list_value_out[i][(int)enum_藥庫_藥品資料_匯出.採購單價] = 訂購單價.ToString("0.000").StringToDouble();
+                                    list_value_out[i][(int)enum_藥庫_藥品資料_匯出.庫存金額] = 訂購總價.ToString("0.000").StringToDouble();
+                                }
                             }
                         }
+                    
+
+                        List<DeviceBasic> deviceBasic_藥庫_buf = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
+                        List<DeviceBasic> deviceBasic_藥局_buf = this.List_藥局_DeviceBasic.SortByCode(藥品碼);
+                        List<string> list_效期及批號 = new List<string>();
+                        for (int m = 0; m < deviceBasic_藥庫_buf.Count; m++)
+                        {
+                            for (int k = 0; k < deviceBasic_藥庫_buf[m].List_Validity_period.Count; k++)
+                            {
+                                DateTime dateTime = deviceBasic_藥庫_buf[m].List_Validity_period[k].StringToDateTime();
+                                int month = GetMonthsDifference(DateTime.Now, dateTime);
+                                if (month <= 8)
+                                {
+                                    string 效期 = deviceBasic_藥庫_buf[m].List_Validity_period[k];
+                                    string 批號 = deviceBasic_藥庫_buf[m].List_Lot_number[k];
+                                    if (批號.StringIsEmpty() == true) 批號 = "無";
+                                    list_效期及批號.Add($"{效期}({批號})");
+                                }
+                            }
+                        }
+                        for (int m = 0; m < deviceBasic_藥局_buf.Count; m++)
+                        {
+                            for (int k = 0; k < deviceBasic_藥局_buf[m].List_Validity_period.Count; k++)
+                            {
+                                DateTime dateTime = deviceBasic_藥局_buf[m].List_Validity_period[k].StringToDateTime();
+                                int month = GetMonthsDifference(DateTime.Now, dateTime);
+                                if (month <= 8)
+                                {
+                                    string 效期 = deviceBasic_藥局_buf[m].List_Validity_period[k];
+                                    string 批號 = deviceBasic_藥局_buf[m].List_Lot_number[k];
+                                    if (批號.StringIsEmpty() == true) 批號 = "無";
+                                    list_效期及批號.Add($"{效期}({批號})");
+                                }
+                            }
+
+                        }
+                        string 效期及批號 = "";
+                        for (int k = 0; k < list_效期及批號.Count; k++)
+                        {
+                            效期及批號 += list_效期及批號[k];
+                            if (k != list_效期及批號.Count - 1) 效期及批號 += ",";
+                        }
+                        list_value_out[i][(int)enum_藥庫_藥品資料_匯出.效期及批號] = 效期及批號;
                     }
 
                     DataTable dataTable = list_value_out.ToDataTable(new enum_藥庫_藥品資料_匯出());

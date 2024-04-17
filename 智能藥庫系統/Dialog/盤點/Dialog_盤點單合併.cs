@@ -20,6 +20,10 @@ namespace 智能藥庫系統
     {
         private List<Panel> panels = new List<Panel>();
         public inv_combinelistClass Inv_CombinelistClass = new inv_combinelistClass();
+        public stockRecord StockRecord = new stockRecord();
+        public DateTime DateTime_st = new DateTime();
+        public DateTime DateTime_end = new DateTime();
+
         public static bool IsShown = false;
         static public Dialog_盤點單合併 myDialog;
         static public Dialog_盤點單合併 GetForm()
@@ -50,17 +54,44 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_新建.MouseDownEvent += PlC_RJ_Button_新建_MouseDownEvent;
             this.plC_RJ_Button_設定.MouseDownEvent += PlC_RJ_Button_設定_MouseDownEvent;
             this.plC_RJ_Button_選擇.MouseDownEvent += PlC_RJ_Button_選擇_MouseDownEvent;
-            this.plC_RJ_Button_下載報表.MouseDownEvent += PlC_RJ_Button_下載報表_MouseDownEvent;           
+            this.plC_RJ_Button_刪除.MouseDownEvent += PlC_RJ_Button_刪除_MouseDownEvent;
+            this.plC_RJ_Button_下載報表.MouseDownEvent += PlC_RJ_Button_下載報表_MouseDownEvent;
+            this.plC_RJ_Button_刪除選取資料.MouseDownEvent += PlC_RJ_Button_刪除選取資料_MouseDownEvent;
 
             dateTimeIntervelPicker_建表日期.SureClick += DateTimeIntervelPicker_建表日期_SureClick;
             this.comboBox_inv_Combinelist.SelectedIndexChanged += ComboBox_inv_Combinelist_SelectedIndexChanged;
         }
 
+        private void Function_RereshUI()
+        {
+            string text = "";
+            this.Invoke(new Action(delegate { text = this.comboBox_inv_Combinelist.Text; }));
+            if (text.StringIsEmpty()) return;
+            text = RemoveParentheses(text);
 
+            inv_combinelistClass inv_CombinelistClass = inv_combinelistClass.get_all_inv(Main_Form.API_Server, text);
+            DateTime_st = inv_CombinelistClass.消耗量起始時間.StringToDateTime();
+            DateTime_end = inv_CombinelistClass.消耗量結束時間.StringToDateTime();
+            if (inv_CombinelistClass == null)
+            {
+                return;
+            }
+            stockRecord stockRecord = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, inv_CombinelistClass.StockRecord_GUID, inv_CombinelistClass.StockRecord_ServerName, inv_CombinelistClass.StockRecord_ServerType);
 
-        private void Function_RereshUI(inv_combinelistClass Inv_CombinelistClass)
+            if (inv_CombinelistClass == null)
+            {
+                Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm($"查無資料[{text}]", 1500);
+                dialog_AlarmForm.ShowDialog();
+                return;
+            }
+   
+            
+            Function_RereshUI(inv_CombinelistClass, stockRecord);
+        }
+        private void Function_RereshUI(inv_combinelistClass Inv_CombinelistClass , stockRecord stockRecord)
         {
             this.Inv_CombinelistClass = Inv_CombinelistClass;
+            this.StockRecord = stockRecord;
             this.Invoke(new Action(delegate
             {
                 this.panel_controls.Visible = false;
@@ -68,23 +99,20 @@ namespace 智能藥庫系統
                 this.SuspendLayout();
                 panels.Clear();
                 this.panel_controls.SuspendLayout();
-        
-                //if (creats.Count == 0)
-                //{
-                //    rJ_Lable_warning.Visible = true;
-                //}
-                //else
-                //{
-                //    rJ_Lable_warning.Visible = false;
-                //}
+
                 for (int i = 0; i < Inv_CombinelistClass.Records_Ary.Count; i++)
                 {
                     Panel panel_inv_list = new Panel();
                     RJ_Lable rJ_Lable_list_content = new RJ_Lable();
-                    PLC_RJ_Button plC_RJ_Button_delete = new PLC_RJ_Button();
+                    CheckBox checkBox = new CheckBox();
 
-
-
+                    checkBox.AutoSize = true;
+                    checkBox.Dock = System.Windows.Forms.DockStyle.Left;
+                    checkBox.Location = new System.Drawing.Point(2, 2);
+                    checkBox.Name = "checkBox";
+                    checkBox.Size = new System.Drawing.Size(15, 46);
+                    checkBox.TabIndex = 11;
+                    checkBox.UseVisualStyleBackColor = true;
                     // 
                     // panel_inv_list
                     // 
@@ -95,8 +123,8 @@ namespace 智能藥庫系統
                     panel_inv_list.Dock = DockStyle.Top;
                     panel_inv_list.Name = $"{Inv_CombinelistClass.Records_Ary[i].單號}";
                     panel_inv_list.TabIndex = Inv_CombinelistClass.Records_Ary.Count - i;
-                    panel_inv_list.Controls.Add(plC_RJ_Button_delete);
                     panel_inv_list.Controls.Add(rJ_Lable_list_content);
+                    panel_inv_list.Controls.Add(checkBox);
                     rJ_Lable_list_content.BackColor = System.Drawing.Color.White;
                     rJ_Lable_list_content.BackgroundColor = System.Drawing.Color.White;
                     rJ_Lable_list_content.BorderColor = System.Drawing.Color.White;
@@ -117,98 +145,40 @@ namespace 智能藥庫系統
                     rJ_Lable_list_content.TabIndex = 10;
                     rJ_Lable_list_content.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
                     rJ_Lable_list_content.TextColor = System.Drawing.Color.Black;
-                  
-                    // 
-                    // plC_RJ_Button_delete
-                    // 
-                    plC_RJ_Button_delete.AutoResetState = false;
-                    plC_RJ_Button_delete.BackgroundColor = System.Drawing.Color.Red;
-                    plC_RJ_Button_delete.Bool = false;
-                    plC_RJ_Button_delete.BorderColor = System.Drawing.Color.DarkRed;
-                    plC_RJ_Button_delete.BorderRadius = 10;
-                    plC_RJ_Button_delete.BorderSize = 0;
-                    plC_RJ_Button_delete.but_press = false;
-                    plC_RJ_Button_delete.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-                    plC_RJ_Button_delete.DisenableColor = System.Drawing.Color.Gray;
-                    plC_RJ_Button_delete.Dock = System.Windows.Forms.DockStyle.Right;
-                    plC_RJ_Button_delete.FlatAppearance.BorderSize = 0;
-                    plC_RJ_Button_delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-                    plC_RJ_Button_delete.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-                    plC_RJ_Button_delete.GUID = $"{Inv_CombinelistClass.Records_Ary[i].單號}";
-                    plC_RJ_Button_delete.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-                    plC_RJ_Button_delete.Image_padding = new System.Windows.Forms.Padding(0);
-                    plC_RJ_Button_delete.Location = new System.Drawing.Point(1253, 2);
-                    plC_RJ_Button_delete.Name = "plC_RJ_Button_delete";
-                    plC_RJ_Button_delete.OFF_文字內容 = "刪除";
-                    plC_RJ_Button_delete.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-                    plC_RJ_Button_delete.OFF_文字顏色 = System.Drawing.Color.White;
-                    plC_RJ_Button_delete.OFF_背景顏色 = System.Drawing.Color.Red;
-                    plC_RJ_Button_delete.ON_BorderSize = 5;
-                    plC_RJ_Button_delete.ON_文字內容 = "刪除";
-                    plC_RJ_Button_delete.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
-                    plC_RJ_Button_delete.ON_文字顏色 = System.Drawing.Color.White;
-                    plC_RJ_Button_delete.ON_背景顏色 = System.Drawing.Color.Red;
-                    plC_RJ_Button_delete.ProhibitionBorderLineWidth = 1;
-                    plC_RJ_Button_delete.ProhibitionLineWidth = 4;
-                    plC_RJ_Button_delete.ProhibitionSymbolSize = 30;
-                    plC_RJ_Button_delete.ShadowColor = System.Drawing.Color.DimGray;
-                    plC_RJ_Button_delete.ShadowSize = 3;
-                    plC_RJ_Button_delete.ShowLoadingForm = false;
-                    plC_RJ_Button_delete.Size = new System.Drawing.Size(87, 46);
-                    plC_RJ_Button_delete.State = false;
-                    plC_RJ_Button_delete.TabIndex = 5;
-                    plC_RJ_Button_delete.Text = "刪除";
-                    plC_RJ_Button_delete.TextColor = System.Drawing.Color.White;
-                    plC_RJ_Button_delete.TextHeight = 0;
-                    plC_RJ_Button_delete.Texts = "刪除";
-                    plC_RJ_Button_delete.UseVisualStyleBackColor = false;
-                    plC_RJ_Button_delete.字型鎖住 = false;
-                    plC_RJ_Button_delete.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-                    plC_RJ_Button_delete.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-                    plC_RJ_Button_delete.文字鎖住 = false;
-                    plC_RJ_Button_delete.背景圖片 = null;
-                    plC_RJ_Button_delete.讀取位元反向 = false;
-                    plC_RJ_Button_delete.讀寫鎖住 = false;
-                    plC_RJ_Button_delete.音效 = true;
-                    plC_RJ_Button_delete.顯示 = false;
-                    plC_RJ_Button_delete.顯示狀態 = false;
-                    plC_RJ_Button_delete.MouseDownEventEx += PlC_RJ_Button_delete_MouseDownEventEx; ;
+                    rJ_Lable_list_content.Click += RJ_Lable_list_content_Click;
+
+
                     panels.Add(panel_inv_list);
                 }
                 for (int i = panels.Count - 1; i >= 0; i--)
                 {
                     this.panel_controls.Controls.Add(panels[i]);
                 }
-          
+                if (this.StockRecord == null)
+                {
+                    this.label_盤點單設定.Text = $"庫存截點 : ------------    消耗量日期 : ----------------------";
+                }
+                else
+                {
+                    this.label_盤點單設定.Text = $"庫存截點 : {this.StockRecord.加入時間}    消耗量日期 : {this.DateTime_st.ToDateTimeString()} - {this.DateTime_end.ToDateTimeString()}";
+                }
                 this.panel_controls.Visible = true;        
                 this.panel_controls.AutoScroll = true;
                 this.panel_controls.ResumeLayout(false);
                 this.ResumeLayout(false);
                 this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height + 1);
                 this.ClientSize = new Size(this.ClientSize.Width, this.ClientSize.Height);
-                //this.panel_controls.Refresh();
-                //this.panel_controls.ResumeDrawing();
 
             }));
 
 
         }
-
-    
+      
         #region Event
+
         private void ComboBox_inv_Combinelist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string text = this.comboBox_inv_Combinelist.Text;
-            if (text.StringIsEmpty()) return;
-            text = RemoveParentheses(text);
-            inv_combinelistClass inv_CombinelistClass = inv_combinelistClass.get_all_inv(Main_Form.API_Server, text);
-            if(inv_CombinelistClass == null)
-            {
-                Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm($"查無資料[{text}]", 1500);
-                dialog_AlarmForm.ShowDialog();
-                return;
-            }
-            Function_RereshUI(inv_CombinelistClass);
+            Function_RereshUI();
         }
         private void PlC_RJ_Button_下載報表_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -232,6 +202,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_選擇_MouseDownEvent(MouseEventArgs mevent)
         {
+
             string text = "";
             this.Invoke(new Action(delegate { text = this.comboBox_inv_Combinelist.Text; }));
             if (text.StringIsEmpty()) return;
@@ -251,7 +222,7 @@ namespace 智能藥庫系統
                 inv_CombinelistClass.AddRecord(creats[i]);
             }
             inv_combinelistClass.inv_creat_update(Main_Form.API_Server, inv_CombinelistClass);
-            Function_RereshUI(inv_CombinelistClass);
+            Function_RereshUI();
         }
         private void Dialog_盤點單合併_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -294,7 +265,16 @@ namespace 智能藥庫系統
                 string str = $"{inv_CombinelistClasses[i].合併單號}({inv_CombinelistClasses[i].合併單名稱})";
                 list_str.Add(str);
             }
-            comboBox_inv_Combinelist.DataSource = list_str;
+            this.Invoke(new Action(delegate 
+            {
+                comboBox_inv_Combinelist.Items.Clear();
+                for (int i = 0; i < list_str.Count; i++)
+                {
+                    comboBox_inv_Combinelist.Items.Add(list_str[i]);
+                }
+                comboBox_inv_Combinelist.SelectedIndex = 0;
+            }));
+        
         }
         private void PlC_RJ_Button_返回_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -319,37 +299,115 @@ namespace 智能藥庫系統
             }
             dialog_AlarmForm = new Dialog_AlarmForm("新建成功", 1500, Color.Green);
             dialog_AlarmForm.ShowDialog();
+            dateTimeIntervelPicker_建表日期.OnSureClick();
 
         }
         private void PlC_RJ_Button_設定_MouseDownEvent(MouseEventArgs mevent)
         {
             Dialog_盤點單合併_設定 dialog_盤點單合併_設定 = new Dialog_盤點單合併_設定();
-            dialog_盤點單合併_設定.ShowDialog();
+            if (dialog_盤點單合併_設定.ShowDialog() != DialogResult.Yes) return;
+            this.StockRecord = dialog_盤點單合併_設定.StockRecord;
+            inv_combinelistClass.inv_stockrecord_update_by_GUID(Main_Form.API_Server, Inv_CombinelistClass.GUID, dialog_盤點單合併_設定.StockRecord_GUID, dialog_盤點單合併_設定.StockRecord_ServerName, dialog_盤點單合併_設定.StockRecord_ServerType);
+            DateTime_st = dialog_盤點單合併_設定.DateTime_st;
+            DateTime_end = dialog_盤點單合併_設定.DateTime_end;
+            inv_combinelistClass.inv_consumption_time_update_by_GUID(Main_Form.API_Server, Inv_CombinelistClass.GUID, dialog_盤點單合併_設定.DateTime_st, dialog_盤點單合併_設定.DateTime_end);
+            Function_RereshUI();
         }
-        private void PlC_RJ_Button_delete_MouseDownEventEx(RJ_Button rJ_Button, MouseEventArgs mevent)
+        private void PlC_RJ_Button_刪除_MouseDownEvent(MouseEventArgs mevent)
         {
-            if (MyMessageBox.ShowDialog("是否刪除?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+            if (MyMessageBox.ShowDialog("確認刪除?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
             string text = "";
             this.Invoke(new Action(delegate { text = this.comboBox_inv_Combinelist.Text; }));
             if (text.StringIsEmpty()) return;
             text = RemoveParentheses(text);
-            inv_combinelistClass inv_CombinelistClass = inv_combinelistClass.get_all_inv(Main_Form.API_Server, text);
-            if (inv_CombinelistClass == null)
+            inv_combinelistClass.inv_delete_by_SN(Main_Form.API_Server, text);
+            dateTimeIntervelPicker_建表日期.OnSureClick();
+
+        }
+        private void PlC_RJ_Button_刪除選取資料_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<string> list_delete_IC_SN = new List<string>();
+            List<Panel> panels_retmove = new List<Panel>();
+            for (int i = 0; i < panels.Count; i++)
             {
-                Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm($"查無資料[{text}]", 1500);
+                foreach (Control control in panels[i].Controls)
+                {
+                    if (control is CheckBox)
+                    {
+                        CheckBox checkBox = (CheckBox)control;
+                        if (checkBox.Checked)
+                        {
+                            list_delete_IC_SN.Add(panels[i].Name);
+                            panels_retmove.Add(panels[i]);
+                        }
+                    }
+                }
+            }
+            if (list_delete_IC_SN.Count == 0)
+            {
+                Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm("未選取資料", 2000);
                 dialog_AlarmForm.ShowDialog();
                 return;
             }
-            inv_CombinelistClass.DeleteRecord(rJ_Button.GUID);
-            inv_combinelistClass.inv_creat_update(Main_Form.API_Server, inv_CombinelistClass);
-            Function_RereshUI(inv_CombinelistClass);
+            if (MyMessageBox.ShowDialog("確認刪除?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+            LoadingForm.ShowLoadingForm();
 
+            for (int i = 0; i < list_delete_IC_SN.Count; i++)
+            {
+                string IC_SN = list_delete_IC_SN[i];
+                Inv_CombinelistClass.DeleteRecord(IC_SN);
+                inv_combinelistClass.inv_creat_update(Main_Form.API_Server, Inv_CombinelistClass);        
+            }
+
+            Function_RereshUI();
+            LoadingForm.CloseLoadingForm();
         }
-   
+        private void RJ_Lable_list_content_Click(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            if (control.Parent is Panel)
+            {
+                Panel panel = (Panel)control.Parent;
+                for (int i = 0; i < panel.Controls.Count; i++)
+                {
+                    if (panel.Controls[i].Name == "checkBox")
+                    {
+                        CheckBox checkBox = (CheckBox)panel.Controls[i];
+                        if (e != null) checkBox.Checked = !checkBox.Checked;
+
+                        if (checkBox.Checked)
+                        {
+                            for (int k = 0; k < panel.Controls.Count; k++)
+                            {
+                                if (panel.Controls[k] is RJ_Lable) ((RJ_Lable)panel.Controls[k]).BackgroundColor = Color.YellowGreen;
+                            }
+                        }
+                        else
+                        {
+                            for (int k = 0; k < panel.Controls.Count; k++)
+                            {
+                                if (panel.Controls[k] is RJ_Lable) ((RJ_Lable)panel.Controls[k]).BackgroundColor = Color.White;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
         #endregion
+
         static string RemoveParentheses(string input)
         {
-            return System.Text.RegularExpressions.Regex.Replace(input, @"\([^()]*\)", "");
+            string pattern = @"^([^\(]+)";
+            string result = "";
+            System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(input, pattern);
+
+            if (match.Success)
+            {
+                result = match.Groups[1].Value;
+            }
+
+            return result;
         }
     }
 }

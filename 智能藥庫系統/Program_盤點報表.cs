@@ -197,9 +197,10 @@ namespace 智能藥庫系統
         #region Function
         private void Function_盤點報表_載入單價()
         {
-
+       
             string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
             List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+            if (class_MedPrices == null) return;
             List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
             List<object[]> list_value = this.sqL_DataGridView_盤點報表.GetAllRows();
             for (int i = 0; i < list_value.Count; i++)
@@ -307,7 +308,9 @@ namespace 智能藥庫系統
                 return;
             }
             List<object[]> list_value_load = dataTable.DataTableToRowList();
-
+            list_value_load = (from temp in list_value_load
+                               where temp[(int)enum_盤點定盤_Excel.盤點量].ObjectToString().StringToInt32() != 0
+                               select temp).ToList();
             sqL_DataGridView_盤點報表.RefreshGrid(list_value_load);
 
 

@@ -118,3 +118,4 @@ C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\obj\Release
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\obj\Release\RetrospectiveAccounting.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\obj\Release\RetrospectiveAccounting.exe
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\obj\Release\RetrospectiveAccounting.pdb
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Newtonsoft.Json.dll

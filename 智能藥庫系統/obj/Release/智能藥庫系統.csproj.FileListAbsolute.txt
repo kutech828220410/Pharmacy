@@ -636,3 +636,5 @@ C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\Micr
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\office.dll
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\stdole.dll
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點單合併_設定.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\Newtonsoft.Json.dll
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\Newtonsoft.Json.xml

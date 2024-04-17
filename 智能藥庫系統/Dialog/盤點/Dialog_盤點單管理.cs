@@ -33,14 +33,16 @@ namespace 智能藥庫系統
             this.FormBorderStyle = FormBorderStyle.None;
             this.CanResize = true;
             this.Load += Dialog_盤點單管理_Load;
+            this.LoadFinishedEvent += Dialog_盤點單管理_LoadFinishedEvent;
             this.FormClosing += Dialog_盤點單管理_FormClosing;
             this.ShowDialogEvent += Dialog_盤點單管理_ShowDialogEvent;
 
             this.plC_RJ_Button_返回.MouseDownEvent += PlC_RJ_Button_返回_MouseDownEvent;
             this.plC_RJ_Button_刪除.MouseDownEvent += PlC_RJ_Button_刪除_MouseDownEvent;
             this.dateTimeIntervelPicker_建表日期.SureClick += DateTimeIntervelPicker_建表日期_SureClick;
+      
         }
-
+ 
         #region Function
         static public List<inventoryClass.creat> Fuction_取得盤點單(DateTime start, DateTime end)
         {
@@ -343,7 +345,6 @@ namespace 智能藥庫系統
 
   
         #endregion
-
         #region Event
         private void Dialog_盤點單管理_ShowDialogEvent()
         {
@@ -355,7 +356,13 @@ namespace 智能藥庫系統
         }
         private void Dialog_盤點單管理_Load(object sender, EventArgs e)
         {
+            this.dateTimeIntervelPicker_建表日期.SetDateTime(DateTime.Now.AddMonths(-1).GetStartDate(), DateTime.Now.AddMonths(0).GetEndDate());
+            this.dateTimeIntervelPicker_建表日期.OnSureClick();
             IsShown = true;
+        }
+        private void Dialog_盤點單管理_LoadFinishedEvent(EventArgs e)
+        {
+          
         }
         private void Dialog_盤點單管理_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -370,11 +377,13 @@ namespace 智能藥庫系統
         }
         private void DateTimeIntervelPicker_建表日期_SureClick(object sender, EventArgs e, DateTime start, DateTime end)
         {
+            LoadingForm.ShowLoadingForm();
             List<inventoryClass.creat> creats = Fuction_取得盤點單(start, end);
             this.rJ_Lable_狀態.Text = $"已搜尋到{creats.Count}筆資料";
 
             if (creats == null) return;
             Function_RereshUI(creats);
+            LoadingForm.CloseLoadingForm();
         }
         private void PlC_RJ_Button_刪除_MouseDownEvent(MouseEventArgs mevent)
         {

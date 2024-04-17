@@ -224,6 +224,7 @@ namespace 智能藥庫系統
             this.rJ_Lable_warning.Text = "請 搜 尋 盤 點 單";
             this.rJ_Lable_warning.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable_warning.TextColor = System.Drawing.Color.White;
+            this.rJ_Lable_warning.Visible = false;
             // 
             // panel_controls
             // 
@@ -486,7 +487,6 @@ namespace 智能藥庫系統
             this.Controls.Add(this.rJ_Lable_warning);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.MaximizeBox = true;
             this.Name = "Dialog_盤點單管理";
             this.ShowInTaskbar = true;
             this.Text = "盤點單管理";

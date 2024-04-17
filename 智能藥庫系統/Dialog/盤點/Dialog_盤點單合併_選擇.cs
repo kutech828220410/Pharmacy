@@ -173,8 +173,7 @@ namespace 智能藥庫系統
         #region Event
         private void Dialog_盤點單合併_選擇_Load(object sender, EventArgs e)
         {
-            this.dateTimeIntervelPicker_建表日期.StartTime = DateTime.Now.AddMonths(-1).GetStartDate();
-            this.dateTimeIntervelPicker_建表日期.EndTime = DateTime.Now.AddMonths(0).GetEndDate();
+            this.dateTimeIntervelPicker_建表日期.SetDateTime(DateTime.Now.AddMonths(-1).GetStartDate(), DateTime.Now.AddMonths(0).GetEndDate());
             this.dateTimeIntervelPicker_建表日期.OnSureClick();
         }
         private void DateTimeIntervelPicker_建表日期_SureClick(object sender, EventArgs e, DateTime start, DateTime end)

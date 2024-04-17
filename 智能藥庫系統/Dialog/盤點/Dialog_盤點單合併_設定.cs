@@ -19,7 +19,16 @@ namespace 智能藥庫系統
 {
     public partial class Dialog_盤點單合併_設定 : MyDialog
     {
+        private List<stockRecord> stockRecords = new List<stockRecord>();
+        public stockRecord StockRecord = new stockRecord();
+        public DateTime DateTime_st = new DateTime();
+        public DateTime DateTime_end = new DateTime();
+
+        public string StockRecord_GUID = "";
+        public string StockRecord_ServerName = "";
+        public string StockRecord_ServerType = "";
         private List<Panel> panels = new List<Panel>();
+        private List<RJ_RatioButton> rJ_RatioButtons = new List<RJ_RatioButton>();
         public Dialog_盤點單合併_設定()
         {
             InitializeComponent();
@@ -27,14 +36,11 @@ namespace 智能藥庫系統
             this.comboBox_庫別.SelectedIndex = 0;
             this.Load += Dialog_盤點單合併_設定_Load;
             this.LoadFinishedEvent += Dialog_盤點單合併_設定_LoadFinishedEvent;
-            this.plC_RJ_Button_返回.MouseDownEvent += PlC_RJ_Button_返回_MouseDownEvent;
+            this.plC_RJ_Button_確認.MouseDownEvent += PlC_RJ_Button_確認_MouseDownEvent;
 
             this.rJ_DatePicker_盤點日.ValueChanged += RJ_DatePicker_盤點日_ValueChanged;
             this.comboBox_庫別.SelectedIndexChanged += ComboBox_庫別_SelectedIndexChanged;
         }
-
- 
-
 
         #region Function
 
@@ -80,9 +86,13 @@ namespace 智能藥庫系統
                     rJ_RatioButton_盤點日選擇.Size = new System.Drawing.Size(249, 39);
                     rJ_RatioButton_盤點日選擇.TabIndex = 0;
                     rJ_RatioButton_盤點日選擇.TabStop = true;
+                    rJ_RatioButton_盤點日選擇.GUID = $"{stockRecords[i].GUID}";
                     rJ_RatioButton_盤點日選擇.Text = $"({stockRecords[i].庫別}){stockRecords[i].加入時間}";
                     rJ_RatioButton_盤點日選擇.UncheckColor = System.Drawing.Color.Gray;
                     rJ_RatioButton_盤點日選擇.UseVisualStyleBackColor = true;
+                    rJ_RatioButton_盤點日選擇.CheckedChanged += RJ_RatioButton_盤點日選擇_CheckedChanged;
+                    rJ_RatioButton_盤點日選擇.Click += RJ_RatioButton_盤點日選擇_Click;
+                    rJ_RatioButtons.Add(rJ_RatioButton_盤點日選擇);
                     panels.Add(plC_RJ_Pannel_盤點日選擇);
                 }
                 for (int i = panels.Count - 1; i >= 0; i--)
@@ -101,9 +111,12 @@ namespace 智能藥庫系統
 
         }
 
-        #endregion
+  
 
-        #region Event
+
+        #endregion
+        #region Event 
+
         async private void Dialog_盤點單合併_設定_LoadFinishedEvent(EventArgs e)
         {
             this.Refresh();
@@ -111,7 +124,7 @@ namespace 智能藥庫系統
             await Task.Run(new Action(delegate
             {
                 LoadingForm.ShowLoadingFormInvoke();
-                List<stockRecord> stockRecords = stockRecord.POST_get_all_record_simple(Main_Form.API_Server);
+                stockRecords = stockRecord.POST_get_all_record_simple(Main_Form.API_Server);
 
                 stockRecords = (from temp in stockRecords
                                 where temp.加入時間.StringToDateTime().IsInDate(DateTime.Now.GetStartDate(), DateTime.Now.GetEndDate())
@@ -121,8 +134,25 @@ namespace 智能藥庫系統
                 Function_RefreshUI(stockRecords);
                 LoadingForm.CloseLoadingFormInvoke();
             }));
-
-
+        }
+        private void RJ_RatioButton_盤點日選擇_Click(object sender, EventArgs e)
+        {
+            RadioButton radioButton = (RadioButton)sender;
+            for (int i = 0; i < rJ_RatioButtons.Count; i++)
+            {
+                if (radioButton.Text == rJ_RatioButtons[i].Text)
+                {
+                    rJ_RatioButtons[i].Checked = true;
+                }
+                else
+                {
+                    rJ_RatioButtons[i].Checked = false;
+                }
+            }
+        }
+        private void RJ_RatioButton_盤點日選擇_CheckedChanged(object sender, EventArgs e)
+        {
+         
         }
         private void Dialog_盤點單合併_設定_Load(object sender, EventArgs e)
         {
@@ -154,15 +184,43 @@ namespace 智能藥庫系統
             Function_RefreshUI(stockRecords);
             LoadingForm.CloseLoadingFormInvoke();
         }
-        private void PlC_RJ_Button_返回_MouseDownEvent(MouseEventArgs mevent)
+        private void PlC_RJ_Button_確認_MouseDownEvent(MouseEventArgs mevent)
         {
+            for (int i = 0; i < rJ_RatioButtons.Count; i++)
+            {
+                if (rJ_RatioButtons[i].Checked)
+                {           
+                    this.StockRecord_GUID = rJ_RatioButtons[i].GUID;
+                    this.StockRecord_ServerName = "ds01";
+                    this.StockRecord_ServerType = "藥庫";
+                    List<stockRecord> stockRecords_buf = (from temp in stockRecords
+                                                          where temp.GUID == this.StockRecord_GUID
+                                                          select temp).ToList();
+                    if(stockRecords_buf.Count != 0)
+                    {
+                        StockRecord = stockRecords_buf[0];
+                    }
+                }
+                DateTime_st = dateTimeIntervelPicker_消耗量起始及結束日期.StartTime;
+                DateTime_end = dateTimeIntervelPicker_消耗量起始及結束日期.EndTime;
+            }
+            this.DialogResult = DialogResult.Yes;
             this.Close();
         }
-        #endregion
 
+        #endregion
         static string RemoveParentheses(string input)
         {
-            return System.Text.RegularExpressions.Regex.Replace(input, @"\([^()]*\)", "");
+            string pattern = @"^([^\(]+)";
+            string result = "";
+            System.Text.RegularExpressions.Match match = System.Text.RegularExpressions.Regex.Match(input, pattern);
+
+            if (match.Success)
+            {
+                result = match.Groups[1].Value;
+            }
+
+            return result;
         }
     }
 }
