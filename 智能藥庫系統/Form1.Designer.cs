@@ -5696,7 +5696,7 @@
             this.rJ_Lable105.ShadowSize = 3;
             this.rJ_Lable105.Size = new System.Drawing.Size(122, 46);
             this.rJ_Lable105.TabIndex = 219;
-            this.rJ_Lable105.Text = "藥品碼";
+            this.rJ_Lable105.Text = "藥碼";
             this.rJ_Lable105.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable105.TextColor = System.Drawing.Color.Black;
             // 
