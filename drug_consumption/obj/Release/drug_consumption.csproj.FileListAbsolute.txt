@@ -173,3 +173,4 @@ C:\Users\Administrator\Source\Repos\Pharmacy\drug_consumption\obj\Release\drug_c
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\SunnyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\Newtonsoft.Json.dll
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\Newtonsoft.Json.dll

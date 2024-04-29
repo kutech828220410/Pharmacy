@@ -400,6 +400,72 @@ namespace 智能藥庫系統
                 this.sqL_DataGridView_藥品補給系統_藥品資料.SQL_Replace((int)enum_藥品補給系統_藥品資料.藥品碼 , 藥品碼, value, false);
             }
         }
+        private List<object[]> Function_藥庫_藥品資料_取得庫存(List<object[]> RowsList)
+        {
+            List<Task> tasks = new List<Task>();
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥庫DeviceBasic,{myTimerBasic}ms");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥局DeviceBasic,{myTimerBasic}ms");
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimerBasic myTimerBasic = new MyTimerBasic();
+                myTimerBasic.StartTickTime(5000);
+                this.List_Pannel35_本地資料 = this.storageUI_WT32.SQL_GetAllStorage();
+                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得Pannel35,{myTimerBasic}ms");
+            })));
+            Task.WhenAll(tasks).Wait();
+
+            Dictionary<string, List<DeviceBasic>> Dictionary_藥庫 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥庫_DeviceBasic);
+            Dictionary<string, List<DeviceBasic>> Dictionary_藥局 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥局_DeviceBasic);
+            Dictionary<string, List<Storage>> Dictionary_本地資料 = this.List_Pannel35_本地資料.CoverToDictionaryByCode();
+
+            Parallel.ForEach(RowsList, value =>
+            {
+
+                string 藥品碼 = value[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
+
+                int 總庫存 = 0;
+                int 藥庫庫存 = 0;
+                int 藥局庫存 = 0;
+                List<DeviceBasic> deviceBasic_藥庫_buf = Dictionary_藥庫.SortDictionaryByCode(藥品碼);
+                List<DeviceBasic> deviceBasic_藥局_buf = Dictionary_藥局.SortDictionaryByCode(藥品碼);
+                List<Storage> storages_buf = Dictionary_本地資料.SortDictionaryByCode(藥品碼);
+
+                for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
+                {
+
+                    總庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
+                    藥庫庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
+                }
+                for (int i = 0; i < deviceBasic_藥局_buf.Count; i++)
+                {
+                    總庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
+                    藥局庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
+                }
+                for (int i = 0; i < storages_buf.Count; i++)
+                {
+                    總庫存 += storages_buf[i].Inventory.StringToInt32();
+                    藥庫庫存 += storages_buf[i].Inventory.StringToInt32();
+                }
+                //庫存 = this.Function_從本地資料取得庫存(藥品碼);
+
+                value[(int)enum_藥庫_藥品資料.藥庫庫存] = 藥庫庫存;
+                value[(int)enum_藥庫_藥品資料.藥局庫存] = 藥局庫存;
+                value[(int)enum_藥庫_藥品資料.總庫存] = 總庫存;
+            });
+            return RowsList;
+        }
         #endregion
         #region Event
         private void SqL_DataGridView_藥庫_藥品資料_RowDoubleClickEvent(object[] RowValue)
@@ -432,69 +498,8 @@ namespace 智能藥庫系統
         }
         private void SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
         {
-            List<Task> tasks = new List<Task>();
-            tasks.Add(Task.Run(new Action(delegate 
-            {
-                MyTimerBasic myTimerBasic = new MyTimerBasic();
-                myTimerBasic.StartTickTime(5000);
-                this.List_藥庫_DeviceBasic = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
-                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥庫DeviceBasic,{myTimerBasic}ms");
-            })));
-            tasks.Add(Task.Run(new Action(delegate
-            {
-                MyTimerBasic myTimerBasic = new MyTimerBasic();
-                myTimerBasic.StartTickTime(5000);
-                this.List_藥局_DeviceBasic = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
-                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得藥局DeviceBasic,{myTimerBasic}ms");
-            })));
-            tasks.Add(Task.Run(new Action(delegate
-            {
-                MyTimerBasic myTimerBasic = new MyTimerBasic();
-                myTimerBasic.StartTickTime(5000);
-                this.List_Pannel35_本地資料 = this.storageUI_WT32.SQL_GetAllStorage();
-                Console.WriteLine($"[SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeRefEvent] 取得Pannel35,{myTimerBasic}ms");
-            })));
-            Task.WhenAll(tasks).Wait();
 
-            Dictionary<string, List<DeviceBasic>> Dictionary_藥庫 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥庫_DeviceBasic);
-            Dictionary<string, List<DeviceBasic>> Dictionary_藥局 = DeviceBasicMethod.CoverToDictionaryByCode(this.List_藥局_DeviceBasic);
-            Dictionary<string, List<Storage>> Dictionary_本地資料 = this.List_Pannel35_本地資料.CoverToDictionaryByCode();
-
-            Parallel.ForEach(RowsList, value =>
-            {
-          
-                string 藥品碼 = value[(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
-
-                int 總庫存 = 0;
-                int 藥庫庫存 = 0;
-                int 藥局庫存 = 0;
-                List<DeviceBasic> deviceBasic_藥庫_buf = Dictionary_藥庫.SortDictionaryByCode(藥品碼);
-                List<DeviceBasic> deviceBasic_藥局_buf = Dictionary_藥局.SortDictionaryByCode(藥品碼);
-                List<Storage> storages_buf = Dictionary_本地資料.SortDictionaryByCode(藥品碼);
-
-                for (int i = 0; i < deviceBasic_藥庫_buf.Count; i++)
-                {
-
-                    總庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
-                    藥庫庫存 += deviceBasic_藥庫_buf[i].Inventory.StringToInt32();
-                }
-                for (int i = 0; i < deviceBasic_藥局_buf.Count; i++)
-                {
-                    總庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
-                    藥局庫存 += deviceBasic_藥局_buf[i].Inventory.StringToInt32();
-                }
-                for (int i = 0; i < storages_buf.Count; i++)
-                {
-                    總庫存 += storages_buf[i].Inventory.StringToInt32();
-                    藥庫庫存 += storages_buf[i].Inventory.StringToInt32();
-                }
-                //庫存 = this.Function_從本地資料取得庫存(藥品碼);
-
-                value[(int)enum_藥庫_藥品資料.藥庫庫存] = 藥庫庫存;
-                value[(int)enum_藥庫_藥品資料.藥局庫存] = 藥局庫存;
-                value[(int)enum_藥庫_藥品資料.總庫存] = 總庫存;
-            });
-
+            RowsList = Function_藥庫_藥品資料_取得庫存(RowsList);
             Finction_藥品資料_藥品群組_序號轉名稱(RowsList, (int)enum_藥庫_藥品資料.藥品群組);
             if (checkBox_藥庫_藥品資料_近8個月效期.Checked)
             {

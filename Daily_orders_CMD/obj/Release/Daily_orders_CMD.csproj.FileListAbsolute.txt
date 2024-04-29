@@ -221,3 +221,4 @@ C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyUI.Common.dll
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.Json.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.Json.dll

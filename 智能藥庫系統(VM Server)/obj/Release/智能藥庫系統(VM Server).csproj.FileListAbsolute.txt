@@ -384,3 +384,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Releas
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll
