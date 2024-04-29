@@ -97,8 +97,6 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(sub_Program_盤點作業_定盤);
         }
 
-    
-
         private bool flag_Program_盤點作業_定盤_Init = false;
         private void sub_Program_盤點作業_定盤()
         {
@@ -667,9 +665,14 @@ namespace 智能藥庫系統
             List<object[]> list_藥品資料_buf = new List<object[]>();
             List<DeviceBasic> deviceBasics_replace = new List<DeviceBasic>();
             List<object[]> list_交易紀錄_Add = new List<object[]>();
+            inventoryResultClass inventoryResultClass = new inventoryResultClass();
             Function_從SQL取得儲位到本地資料();
             if (庫別 == "藥庫")
             {
+                inventoryResultClass.庫別 = "藥庫";
+                inventoryResultClass.庫名 = "ds01";
+                inventoryResultClass.盤點切帳時間 = DateTime.Now.ToDateTimeString();
+
                 Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(list_盤點明細.Count);
                 dialog_Prcessbar.State = "盤點明細計算...";
                 for (int i = 0; i < list_盤點明細.Count; i++)
@@ -689,6 +692,7 @@ namespace 智能藥庫系統
                     int 庫存量 = list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量].StringToInt32();
                     int 異動量 = 0;
                     List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥碼);
+
                     if (deviceBasics.Count == 0)
                     {
                         list_盤點明細[i][(int)enum_定盤_盤點明細.庫存量] = "異常";
@@ -731,6 +735,10 @@ namespace 智能藥庫系統
                         }
                     }
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] += 備註;
+                    ValidityClass validityClass = new ValidityClass();
+                    validityClass.Value = 備註;
+                    inventoryResultClass.AddContent(藥碼, 藥名, 庫存量, 盤點量, validityClass);
+
 
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
@@ -757,11 +765,17 @@ namespace 智能藥庫系統
             }
             if (庫別 == "藥局")
             {
+                inventoryResultClass.庫別 = "藥庫";
+                inventoryResultClass.庫名 = "ds01";
+                inventoryResultClass.盤點切帳時間 = DateTime.Now.ToDateTimeString();
+
                 Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(list_盤點明細.Count);
                 dialog_Prcessbar.State = "盤點明細計算...";
                 for (int i = 0; i < list_盤點明細.Count; i++)
                 {
+
                     dialog_Prcessbar.Value = i;
+
                     string 備註 = "";
                     string 藥碼 = list_盤點明細[i][(int)enum_定盤_盤點明細.藥碼].ObjectToString();
                     list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端藥檔.藥品碼, 藥碼);
@@ -818,6 +832,10 @@ namespace 智能藥庫系統
                     }
                     list_盤點明細[i][(int)enum_定盤_盤點明細.效期及批號] += 備註;
 
+                    ValidityClass validityClass = new ValidityClass();
+                    validityClass.Value = 備註;
+                    inventoryResultClass.AddContent(藥碼, 藥名, 庫存量, 盤點量, validityClass);
+
                     transactionsClass transactionsClass = new transactionsClass();
                     transactionsClass.GUID = Guid.NewGuid().ToString();
                     transactionsClass.動作 = enum_交易記錄查詢動作.盤存盈虧.GetEnumName();
@@ -841,7 +859,14 @@ namespace 智能藥庫系統
                 dialog_Prcessbar.Dispose();
 
             }
+
+            inventoryResultClass.add_inventoryResult(API_Server, "ds01", "藥庫", inventoryResultClass);
             this.sqL_DataGridView_定盤_盤點明細.RefreshGrid(list_盤點明細);
+
+
+
+
+
             this.Invoke(new Action(delegate
             {
                 plC_RJ_Button_定盤_盤點明細_計算定盤結果.Enabled = false;

@@ -71,7 +71,10 @@ namespace 智能藥庫系統
 
             inv_combinelistClass inv_CombinelistClass = inv_combinelistClass.get_all_inv(Main_Form.API_Server, text);
             DateTime_st = inv_CombinelistClass.消耗量起始時間.StringToDateTime();
+            if (inv_CombinelistClass.消耗量起始時間.Check_Date_String() == false) DateTime_st = DateTime.Now;
             DateTime_end = inv_CombinelistClass.消耗量結束時間.StringToDateTime();
+            if (inv_CombinelistClass.消耗量結束時間.Check_Date_String() == false) DateTime_end = DateTime.Now;
+
             if (inv_CombinelistClass == null)
             {
                 return;
@@ -184,6 +187,8 @@ namespace 智能藥庫系統
         {
             this.Invoke(new Action(delegate
             {
+       
+
                 string text = "";
                 text = this.comboBox_inv_Combinelist.Text;
                 text = RemoveParentheses(text);
@@ -191,12 +196,64 @@ namespace 智能藥庫系統
                 {
                     string fileName = this.saveFileDialog_SaveExcel.FileName;
                     LoadingForm.ShowLoadingForm();
-                    byte[] bytes = inv_combinelistClass.get_full_inv_Excel_by_SN(Main_Form.API_Server, text , "料號");
-                    bytes.SaveFileStream(fileName);
+                    LoadingForm.Set_Description("下載報表...");
+                    List<inventoryClass.content> contents = inv_combinelistClass.get_full_inv_by_SN(Main_Form.API_Server, text);
+                    List<object[]> list_contents_buf = new List<object[]>();
+
+
+                    Console.WriteLine($"[get_full_inv_by_SN] 取得<{contents.Count}>筆盤點資料");
+                    for (int k = 0; k < contents.Count; k++)
+                    {
+                        object[] value = new object[new enum_盤點定盤_Excel().GetLength()];
+                        value[(int)enum_盤點定盤_Excel.藥碼] = contents[k].藥品碼;
+                        value[(int)enum_盤點定盤_Excel.料號] = contents[k].料號;
+                        value[(int)enum_盤點定盤_Excel.藥名] = contents[k].藥品名稱;
+                        value[(int)enum_盤點定盤_Excel.單位] = contents[k].包裝單位;
+                        value[(int)enum_盤點定盤_Excel.庫存量] = contents[k].理論值;
+                        value[(int)enum_盤點定盤_Excel.盤點量] = contents[k].盤點量;
+                        list_contents_buf.Add(value);
+                    }
+
+                    List<object[]> list_藥品消耗帳 = Main_Form.Function_藥品過消耗帳_取得所有過帳明細(DateTime_st, DateTime_end);
+                    List<object[]> list_藥品消耗帳_buf = new List<object[]>();
+                    for (int i = 0; i < list_contents_buf.Count; i++)
+                    {
+                        LoadingForm.Set_Description($"計算消耗量({i}/{contents.Count})");
+                        string 藥碼 = contents[i].藥品碼;
+                        list_藥品消耗帳_buf = list_藥品消耗帳.GetRows((int)Main_Form.enum_藥品過消耗帳.藥品碼, 藥碼);
+                        list_contents_buf[i][(int)enum_盤點定盤_Excel.消耗量] = "0";
+                        if (list_藥品消耗帳_buf.Count > 0)
+                        {
+                            int temp = 0;
+                            for (int k = 0; k < list_藥品消耗帳_buf.Count; k++)
+                            {
+                                temp += list_藥品消耗帳_buf[k][(int)Main_Form.enum_藥品過消耗帳.異動量].StringToInt32();
+                            }
+                            list_contents_buf[i][(int)enum_盤點定盤_Excel.消耗量] = (temp * -1).ToString();
+                        }
+                    }
+                    LoadingForm.Set_Description($"取得庫存紀錄...");
+                    stockRecord _stockRecord  = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, StockRecord.GUID);
+                    for (int i = 0; i < list_contents_buf.Count; i++)
+                    {
+                        string 藥碼 = list_contents_buf[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                        stockRecord_content stockRecord_Content = _stockRecord[藥碼];
+                        if(stockRecord_Content != null)
+                        {
+                            list_contents_buf[i][(int)enum_盤點定盤_Excel.庫存量] = stockRecord_Content.庫存;
+                        }
+
+                    }
+
+
+                    LoadingForm.Set_Description($"儲存檔案...");
+                    DataTable dataTable = list_contents_buf.ToDataTable(new enum_盤點定盤_Excel());
+                    dataTable.NPOI_SaveFile(saveFileDialog_SaveExcel.FileName);
+
                     LoadingForm.CloseLoadingForm();
-                    Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm("匯出完成", 1000, Color.Green);
-                    dialog_AlarmForm.ShowDialog();
+             
                 }
+
             }));
         
         }
@@ -304,7 +361,9 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_設定_MouseDownEvent(MouseEventArgs mevent)
         {
-            Dialog_盤點單合併_設定 dialog_盤點單合併_設定 = new Dialog_盤點單合併_設定();
+            DateTime stockRecordTime = DateTime.Now;
+            if (this.StockRecord != null) stockRecordTime = this.StockRecord.加入時間.StringToDateTime();
+            Dialog_盤點單合併_設定 dialog_盤點單合併_設定 = new Dialog_盤點單合併_設定(stockRecordTime, DateTime_st, DateTime_end);
             if (dialog_盤點單合併_設定.ShowDialog() != DialogResult.Yes) return;
             this.StockRecord = dialog_盤點單合併_設定.StockRecord;
             inv_combinelistClass.inv_stockrecord_update_by_GUID(Main_Form.API_Server, Inv_CombinelistClass.GUID, dialog_盤點單合併_設定.StockRecord_GUID, dialog_盤點單合併_設定.StockRecord_ServerName, dialog_盤點單合併_設定.StockRecord_ServerType);

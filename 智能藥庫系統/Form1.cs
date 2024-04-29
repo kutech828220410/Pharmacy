@@ -198,6 +198,7 @@ namespace 智能藥庫系統
                 MyDialog.form = this.FindForm();
                 LoadingForm.form = this.FindForm();
                 Dialog_Prcessbar.form = this.FindForm();
+                Dialog_AlarmForm.form = this.FindForm();
                 Dialog_寫入批號.form = this.FindForm();
                 Dialog_寫入效期.form = this.FindForm();
                 Dialog_輸入備註.form = this.FindForm();

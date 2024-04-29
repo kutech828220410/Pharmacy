@@ -17,7 +17,7 @@ namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://10.18.1.146:4433";
+        private string Api_URL = "http://127.0.0.1:4433";
 
         private string 登入者名稱 = "系統";
         private PLC_Device PLC_Device_最高權限 = new PLC_Device("S4077");

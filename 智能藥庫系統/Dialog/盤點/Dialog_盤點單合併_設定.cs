@@ -29,23 +29,31 @@ namespace 智能藥庫系統
         public string StockRecord_ServerType = "";
         private List<Panel> panels = new List<Panel>();
         private List<RJ_RatioButton> rJ_RatioButtons = new List<RJ_RatioButton>();
-        public Dialog_盤點單合併_設定()
+        public Dialog_盤點單合併_設定(DateTime stockRecordTime, DateTime consumptionStartTime, DateTime consumptionEndTime)
         {
             InitializeComponent();
             Basic.Reflection.MakeDoubleBuffered(this, true);
+
+            this.dateTimeIntervelPicker_消耗量起始及結束日期.SetDateTime(consumptionStartTime, consumptionEndTime);
+
+
             this.comboBox_庫別.SelectedIndex = 0;
             this.Load += Dialog_盤點單合併_設定_Load;
             this.LoadFinishedEvent += Dialog_盤點單合併_設定_LoadFinishedEvent;
             this.plC_RJ_Button_確認.MouseDownEvent += PlC_RJ_Button_確認_MouseDownEvent;
-
+            this.rJ_DatePicker_盤點日.Value = stockRecordTime;
             this.rJ_DatePicker_盤點日.ValueChanged += RJ_DatePicker_盤點日_ValueChanged;
             this.comboBox_庫別.SelectedIndexChanged += ComboBox_庫別_SelectedIndexChanged;
+
+
+          
         }
 
         #region Function
 
         private void Function_RefreshUI(List<stockRecord> stockRecords)
         {
+            if (this.IsHandleCreated == false) return;
             this.Invoke(new Action(delegate
             {
                 this.SuspendLayout();
@@ -111,9 +119,6 @@ namespace 智能藥庫系統
 
         }
 
-  
-
-
         #endregion
         #region Event 
 
@@ -127,7 +132,7 @@ namespace 智能藥庫系統
                 stockRecords = stockRecord.POST_get_all_record_simple(Main_Form.API_Server);
 
                 stockRecords = (from temp in stockRecords
-                                where temp.加入時間.StringToDateTime().IsInDate(DateTime.Now.GetStartDate(), DateTime.Now.GetEndDate())
+                                where temp.加入時間.StringToDateTime().IsInDate(this.rJ_DatePicker_盤點日.Value.GetStartDate(), this.rJ_DatePicker_盤點日.Value.GetEndDate())
                                 where temp.庫別 == "藥庫"
                                 select temp).ToList();
                 Console.WriteLine($"搜尋到<{stockRecords.Count}>筆,庫存紀錄");

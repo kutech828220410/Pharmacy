@@ -31,10 +31,20 @@ namespace 智能藥庫系統
         藥庫庫存,
         藥庫盤點量,
     }
- 
+    public enum enum_盤點報表_期初期末庫存計算
+    {
+        藥碼,
+        藥名,
+        單價,
+        期初庫存,
+        期末庫存,
+        消耗量,
+
+    }
 
     public partial class Main_Form : Form
     {
+
         private void sub_Program_盤點報表_Init()
         {
             this.plC_RJ_Button_盤點報表_上傳Excel.MouseDownEvent += PlC_RJ_Button_盤點報表_上傳Excel_MouseDownEvent;
@@ -42,6 +52,8 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_盤點報表_匯出Excel.MouseDownEvent += PlC_RJ_Button_盤點報表_匯出Excel_MouseDownEvent;
             this.plC_RJ_Button_盤點報表_計算消耗量.MouseDownEvent += PlC_RJ_Button_盤點報表_計算消耗量_MouseDownEvent;
             this.plC_RJ_Button_盤點報表_製作盤點總表.MouseDownEvent += PlC_RJ_Button_盤點報表_製作盤點總表_MouseDownEvent;
+            this.plC_RJ_Button_盤點報表_庫存依日期帶入.MouseDownEvent += PlC_RJ_Button_盤點報表_庫存依日期帶入_MouseDownEvent;
+
 
             Table table = new Table("");
             table.AddColumnList("藥碼", Table.StringType.VARCHAR, Table.IndexType.None);
@@ -78,6 +90,136 @@ namespace 智能藥庫系統
             plC_UI_Init.Add_Method(sub_Program_盤點報表);
         }
 
+     
+
+        private void sub_Program_盤點報表()
+        {
+
+        }
+
+        #region Function
+        private void Function_盤點報表_載入單價()
+        {
+            DialogResult dialogResult = DialogResult.No;
+            string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
+            List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+            if (class_MedPrices == null)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
+                }));
+                if (dialogResult != DialogResult.OK) return;
+
+                string jsonstr = MyFileStream.LoadFileAllText($"{this.openFileDialog_LoadExcel.FileName}");
+                class_MedPrices = jsonstr.JsonDeserializet<List<class_MedPrice>>();
+            }
+            List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+            List<object[]> list_value = this.sqL_DataGridView_盤點報表.GetAllRows();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                class_MedPrices_buf = (from temp in class_MedPrices
+                                       where temp.藥品碼 == 藥碼
+                                       select temp).ToList();
+                if (class_MedPrices_buf.Count > 0)
+                {
+                    list_value[i][(int)enum_盤點定盤_Excel.單價] = class_MedPrices_buf[0].成本價;
+                }
+            }
+            this.sqL_DataGridView_盤點報表.RefreshGrid(list_value);
+        }
+        #endregion
+        #region Event
+        private void PlC_RJ_Button_盤點報表_庫存依日期帶入_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DateTime dateTime_st = rJ_DatePicker_盤點報表_計算消耗量_起始日期.Value;
+
+            dateTime_st = new DateTime(dateTime_st.Year, dateTime_st.Month, dateTime_st.Day, 00, 00, 00);
+            DateTime dateTime_end = rJ_DatePicker_盤點報表_計算消耗量_結束日期.Value;
+            dateTime_end = new DateTime(dateTime_end.Year, dateTime_end.Month, dateTime_end.Day, 23, 59, 59);
+
+            List<object[]> list_盤點報表 = this.sqL_DataGridView_盤點報表.GetAllRows();
+            DataTable dataTable = list_盤點報表.ToDataTable(new enum_盤點定盤_Excel());
+            List<object[]> list_value = dataTable.ReorderTable(new enum_盤點報表_期初期末庫存計算()).DataTableToRowList();
+
+            List<object[]> list_交易紀錄 = new List<object[]>();
+            List<object[]> list_交易紀錄_buf = new List<object[]>();
+            DateTime targetTime = new DateTime();
+            MyTimer myTimer = new MyTimer();
+            targetTime = dateTime_st;
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                int 庫存 = 0;
+                myTimer.TickStop();
+                myTimer.StartTickTime(50000);
+                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+                list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
+                list_交易紀錄 = (from temp in list_交易紀錄
+                             where(temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
+                             select temp).ToList();
+
+
+
+                if (list_交易紀錄.Count > 0)
+                {
+                    object[] value = list_交易紀錄
+                 .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
+                 .FirstOrDefault();
+                    庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                    Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+                }
+                else
+                {
+                    Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
+
+                }
+
+                list_value[i][(int)enum_盤點報表_期初期末庫存計算.期初庫存] = 庫存;
+            }
+
+            targetTime = dateTime_end;
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                int 庫存 = 0;
+                myTimer.TickStop();
+                myTimer.StartTickTime(50000);
+                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+                list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
+                list_交易紀錄 = (from temp in list_交易紀錄
+                             where (temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
+                             select temp).ToList();
+
+
+                if (list_交易紀錄.Count > 0)
+                {
+                    object[] value = list_交易紀錄
+                 .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
+                 .FirstOrDefault();
+                    庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                    Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+                }
+                else
+                {
+                    Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
+
+                }
+
+                list_value[i][(int)enum_盤點報表_期初期末庫存計算.期末庫存] = 庫存;
+            }
+
+            DataTable dataTable_out = list_value.ToDataTable(new enum_盤點報表_期初期末庫存計算());
+            this.Invoke(new Action(delegate
+            {
+                if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+                {
+                    MyOffice.ExcelClass.NPOI_SaveFile(dataTable_out, this.saveFileDialog_SaveExcel.FileName);
+
+                }
+            }));
+            MyMessageBox.ShowDialog("完成!");
+
+        }
         private void PlC_RJ_Button_盤點報表_製作盤點總表_MouseDownEvent(MouseEventArgs mevent)
         {
             DialogResult dialogResult = DialogResult.None;
@@ -101,11 +243,12 @@ namespace 智能藥庫系統
 
             List<object[]> list_value = new List<object[]>();
             List<object[]> list_value_buf = new List<object[]>();
-            for(int i = 0; i < list_藥庫.Count; i++)
+            for (int i = 0; i < list_藥庫.Count; i++)
             {
                 string 藥碼 = list_藥庫[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
                 string 藥名 = list_藥庫[i][(int)enum_盤點定盤_Excel.藥名].ObjectToString();
-                string 盤點量 = list_藥庫[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
+                //string 盤點量 = list_藥庫[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
+                string 盤點量 = list_藥庫[i][(int)enum_盤點定盤_Excel.盤點量].ObjectToString();
                 string 庫存量 = list_藥庫[i][(int)enum_盤點定盤_Excel.庫存量].ObjectToString();
                 list_value_buf = list_value.GetRows((int)enum_盤點定盤_Excel.藥碼, 藥碼);
                 if (list_value_buf.Count == 0)
@@ -132,9 +275,14 @@ namespace 智能藥庫系統
             {
                 string 藥碼 = list_藥局[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
                 string 藥名 = list_藥局[i][(int)enum_盤點定盤_Excel.藥名].ObjectToString();
-                string 盤點量 = list_藥局[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
+                //string 盤點量 = list_藥局[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
+                string 盤點量 = list_藥局[i][(int)enum_盤點定盤_Excel.盤點量].ObjectToString();
                 string 庫存量 = list_藥局[i][(int)enum_盤點定盤_Excel.庫存量].ObjectToString();
                 list_value_buf = list_value.GetRows((int)enum_盤點定盤_Excel.藥碼, 藥碼);
+                if (藥碼 == "13505")
+                {
+
+                }
                 if (list_value_buf.Count == 0)
                 {
                     object[] value = new object[new enum_盤點報表_盤點總表().GetLength()];
@@ -188,36 +336,6 @@ namespace 智能藥庫系統
             }));
             MyMessageBox.ShowDialog("完成!");
         }
-
-        private void sub_Program_盤點報表()
-        {
-
-        }
-
-        #region Function
-        private void Function_盤點報表_載入單價()
-        {
-       
-            string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
-            List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
-            if (class_MedPrices == null) return;
-            List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
-            List<object[]> list_value = this.sqL_DataGridView_盤點報表.GetAllRows();
-            for (int i = 0; i < list_value.Count; i++)
-            {
-                string 藥碼 = list_value[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
-                class_MedPrices_buf = (from temp in class_MedPrices
-                                       where temp.藥品碼 == 藥碼
-                                       select temp).ToList();
-                if (class_MedPrices_buf.Count > 0)
-                {
-                    list_value[i][(int)enum_盤點定盤_Excel.單價] = class_MedPrices_buf[0].成本價;
-                }
-            }
-            this.sqL_DataGridView_盤點報表.RefreshGrid(list_value);
-        }
-        #endregion
-        #region Event
         private void PlC_RJ_Button_盤點報表_載入庫存差異量_MouseDownEvent(MouseEventArgs mevent)
         {
             DialogResult dialogResult = DialogResult.None;
@@ -309,7 +427,7 @@ namespace 智能藥庫系統
             }
             List<object[]> list_value_load = dataTable.DataTableToRowList();
             list_value_load = (from temp in list_value_load
-                               where temp[(int)enum_盤點定盤_Excel.盤點量].ObjectToString().StringToInt32() != 0
+                               where temp[(int)enum_盤點定盤_Excel.盤點量].ObjectToString().StringToInt32() >= 0
                                select temp).ToList();
             sqL_DataGridView_盤點報表.RefreshGrid(list_value_load);
 
@@ -369,7 +487,6 @@ namespace 智能藥庫系統
             MyMessageBox.ShowDialog("完成!");
 
         }
-
         #endregion
     }
 }

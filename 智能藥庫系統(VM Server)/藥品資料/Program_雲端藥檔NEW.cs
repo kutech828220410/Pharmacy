@@ -35,7 +35,7 @@ namespace 智能藥庫系統_VM_Server_
             }
             SQLUI.SQL_DataGridView.ConnentionClass connentionClass = new SQL_DataGridView.ConnentionClass();
             connentionClass.DataBaseName = "dbvm_new";
-            connentionClass.IP = "10.18.1.146";
+            connentionClass.IP = "127.0.0.1";
             connentionClass.Password = "66437068";
             connentionClass.UserName = "user";
             connentionClass.Port = 3306;

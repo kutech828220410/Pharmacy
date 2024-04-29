@@ -364,7 +364,7 @@ namespace 智能藥庫系統_VM_Server_
                         class_Acceptance_Med_Data.驗收時間 = list_value[i][(int)enum_驗收入庫明細_匯入.驗收日期及時間].ObjectToString();
                         class_Acceptance_Med_Data.狀態 = "";
                         string json_in = class_Acceptance_Med_Data.JsonSerializationt();
-                        string json_result = Basic.Net.WEBApiPostJson("https://10.18.1.146:8082/api/acceptance_med_insert", json_in);
+                        string json_result = Basic.Net.WEBApiPostJson("https://127.0.0.1:8082/api/acceptance_med_insert", json_in);
                         if(json_result != "OK")
                         {
                             MyMessageBox.ShowDialog($"{json_in}");
