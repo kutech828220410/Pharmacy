@@ -808,7 +808,7 @@ namespace 智能藥庫系統
                                 int 數量 = list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
                                 數量 *= -1;
                                 list_藥品過消耗帳_out[i][(int)enum_藥品過消耗帳_匯出.消耗量] = 數量;
-                                double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                                double 訂購單價 = class_MedPrices_buf[0].成本價.StringToDouble();
                                 double 訂購總價 = 訂購單價 * 數量;
                                 if (訂購單價 > 0)
                                 {
@@ -853,7 +853,7 @@ namespace 智能藥庫系統
                             if (class_MedPrices_buf.Count > 0)
                             {
                                 int 數量 = list_藥品過消耗帳_temp[i][(int)enum_藥品過消耗帳_匯出.消耗量].ObjectToString().StringToInt32();
-                                double 訂購單價 = class_MedPrices_buf[0].售價.StringToDouble();
+                                double 訂購單價 = class_MedPrices_buf[0].成本價.StringToDouble();
                                 double 訂購總價 = 訂購單價 * 數量;
                                 if (訂購單價 > 0)
                                 {
