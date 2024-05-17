@@ -20,9 +20,7 @@ using HIS_DB_Lib;
 namespace 智能藥庫系統
 {
     public partial class Main_Form : Form
-    {
-      
-
+    {      
         public enum enum_藥庫_每日訂單_下訂單 : int
         {
             GUID,
@@ -1015,7 +1013,7 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_檢查訂單是否送出_MouseDownEvent(MouseEventArgs mevent)
         {
-            string dateTime = Basic.Net.WEBApiGet("https://10.18.1.146:4433/api/test/OrderLastWriteTime");
+            string dateTime = Basic.Net.WEBApiGet("https://127.0.0.1:4433/api/test/OrderLastWriteTime");
 
             MyMessageBox.ShowDialog($"最後送出時間 {dateTime}");
         }

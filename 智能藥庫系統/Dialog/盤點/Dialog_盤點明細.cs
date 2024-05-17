@@ -36,10 +36,6 @@ namespace 智能藥庫系統
             this.rJ_TextBox_藥名搜尋.KeypressEnterButton = this.rJ_Button_藥名搜尋;
         }
 
-
-
-
-
         #region Fucntion
         private void Function_RereshUI(List<inventoryClass.content> contents)
         {

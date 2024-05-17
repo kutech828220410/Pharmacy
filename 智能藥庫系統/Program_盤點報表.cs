@@ -229,6 +229,9 @@ namespace 智能藥庫系統
             }));
             if (dialogResult != DialogResult.OK) return;
 
+            List<object[]> list_藥庫_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥庫_藥品資料_buf = new List<object[]>();
+
             DataTable dataTable_藥庫 = MyOffice.ExcelClass.NPOI_LoadFile(this.openFileDialog_LoadExcel.FileName);
             dataTable_藥庫 = dataTable_藥庫.ReorderTable(new enum_盤點定盤_Excel());
             List<object[]> list_藥庫 = dataTable_藥庫.DataTableToRowList();
@@ -245,11 +248,18 @@ namespace 智能藥庫系統
             List<object[]> list_value_buf = new List<object[]>();
             for (int i = 0; i < list_藥庫.Count; i++)
             {
+         
                 string 藥碼 = list_藥庫[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
                 string 藥名 = list_藥庫[i][(int)enum_盤點定盤_Excel.藥名].ObjectToString();
                 //string 盤點量 = list_藥庫[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
                 string 盤點量 = list_藥庫[i][(int)enum_盤點定盤_Excel.盤點量].ObjectToString();
                 string 庫存量 = list_藥庫[i][(int)enum_盤點定盤_Excel.庫存量].ObjectToString();
+
+                list_藥庫_藥品資料_buf = list_藥庫_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥碼);
+                if(list_藥庫_藥品資料_buf.Count > 0)
+                {
+                    藥名 = list_藥庫_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
+                }
                 list_value_buf = list_value.GetRows((int)enum_盤點定盤_Excel.藥碼, 藥碼);
                 if (list_value_buf.Count == 0)
                 {
@@ -278,10 +288,12 @@ namespace 智能藥庫系統
                 //string 盤點量 = list_藥局[i][(int)enum_盤點定盤_Excel.異動後結存量].ObjectToString();
                 string 盤點量 = list_藥局[i][(int)enum_盤點定盤_Excel.盤點量].ObjectToString();
                 string 庫存量 = list_藥局[i][(int)enum_盤點定盤_Excel.庫存量].ObjectToString();
-                list_value_buf = list_value.GetRows((int)enum_盤點定盤_Excel.藥碼, 藥碼);
-                if (藥碼 == "13505")
-                {
 
+                list_value_buf = list_value.GetRows((int)enum_盤點定盤_Excel.藥碼, 藥碼);
+                list_藥庫_藥品資料_buf = list_藥庫_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥碼);
+                if (list_藥庫_藥品資料_buf.Count > 0)
+                {
+                    藥名 = list_藥庫_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
                 }
                 if (list_value_buf.Count == 0)
                 {

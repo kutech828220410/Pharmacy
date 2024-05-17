@@ -39,8 +39,6 @@ namespace 智能藥庫系統
         {
             Dialog_盤點表匯入 dialog_盤點表匯入 = new Dialog_盤點表匯入();
             dialog_盤點表匯入.ShowDialog();
-
-
         }
     }
 }
