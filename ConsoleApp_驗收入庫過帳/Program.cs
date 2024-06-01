@@ -282,14 +282,14 @@ namespace ConsoleApp_驗收入庫過帳
                     }
                     list_補給驗收入庫_replace.Add(value);
                 }
-                Logger.Log("上傳補給驗收入庫資料...");
-                Console.WriteLine($"上傳補給驗收入庫資料...");
-                sQLControl_補給驗收入庫.UpdateByDefulteExtra(null ,list_補給驗收入庫_replace);
-                Logger.Log("上傳交易紀錄資料...");
-                Console.WriteLine($"上傳交易紀錄資料...");
-                sQLControl_交易紀錄.AddRows(null ,list_交易紀錄_add);
-                Logger.Log("藥庫儲位庫存更動...");
-                Console.WriteLine($"藥庫儲位庫存更動...");
+                Logger.Log($"上傳補給驗收入庫資料 <{list_補給驗收入庫_replace.Count}>筆...");
+                Console.WriteLine($"上傳補給驗收入庫資料 <{list_補給驗收入庫_replace.Count}>筆...");
+                sQLControl_補給驗收入庫.UpdateByDefulteExtra(null, list_補給驗收入庫_replace);
+                Logger.Log($"上傳交易紀錄資料 <{list_交易紀錄_add.Count}>筆...");
+                Console.WriteLine($"上傳交易紀錄資料 <{list_交易紀錄_add.Count}>筆...");
+                sQLControl_交易紀錄.AddRows(null, list_交易紀錄_add);
+                Logger.Log($"藥庫儲位庫存更動 <{deviceBasics_replace.Count}>筆...");
+                Console.WriteLine($"藥庫儲位庫存更動 <{deviceBasics_replace.Count}>筆...");
                 DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_replace);
 
             }

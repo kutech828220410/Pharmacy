@@ -102,14 +102,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Basic.dll" size="215552">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Basic.dll" size="218112">
       <assemblyIdentity name="Basic" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>4/vhiOVciPYNMo2zAaNYkC+otOiFXQ++tOBop2mqYsI=</dsig:DigestValue>
+        <dsig:DigestValue>dSf8EC7Fnh7pDYGGTanY0pH5/19+i4jkGlStOB0LYrE=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -721,7 +721,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>3gqVcweTNw1VOkJv76kWkh3fzQYr+r9lwIxD11+npB8=</dsig:DigestValue>
+        <dsig:DigestValue>JSckLJG6sdW2AGpGLPvHckmCAPLiA3T4bHC6Ua+DZIk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
