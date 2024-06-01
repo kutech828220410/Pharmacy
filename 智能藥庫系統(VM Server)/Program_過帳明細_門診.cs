@@ -67,7 +67,7 @@ namespace 智能藥庫系統_VM_Server_
 
         private void sub_Program_過帳明細_門診()
         {
-            this.sub_Program_檢查過帳明細_門診();
+            //this.sub_Program_檢查過帳明細_門診();
         }
 
 
@@ -188,14 +188,10 @@ namespace 智能藥庫系統_VM_Server_
                 if (list_text == null) continue;
                 string 來源報表 = list_過帳狀態[i][(int)enum_過帳狀態列表.檔名].ObjectToString();
                 string 藥品碼 = "";
-                string 藥品名稱 = "";
                 string 藥局代碼 = "";
                 string 報表日期 = list_過帳狀態[i][(int)enum_過帳狀態列表.報表日期].ToDateString();
                 string 報表產出日期 = ""; 
                 string 異動量 = "";
-                string 產出時間 = "";
-                string 過帳時間 = "";
-                string 已過帳 = "";
                 list_過帳狀態[i][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                 list_過帳狀態[i][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                 for (int k = 0; k < list_text.Count; k++)
@@ -203,7 +199,6 @@ namespace 智能藥庫系統_VM_Server_
 
                     object[] value = new object[new enum_過帳明細_門診().GetLength()];
                     this.Function_過帳明細_門診_解析TXT(list_text[k], ref 藥品碼, ref 藥局代碼, ref 報表產出日期, ref 異動量);
-                    list_藥品資料_buf = list_藥品資料.GetRows((int)enum_雲端藥檔.藥品碼, 藥品碼);
                
                     if (異動量.StringIsInt32() == false)
                     {

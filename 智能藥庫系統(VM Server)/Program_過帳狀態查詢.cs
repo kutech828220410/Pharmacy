@@ -66,7 +66,7 @@ namespace 智能藥庫系統_VM_Server_
   
         private void sub_Program_過帳狀態查詢()
         {
-            this.sub_Program_檢查過帳狀態();
+            //this.sub_Program_檢查過帳狀態();
         }
 
         #region PLC_檢查過帳狀態

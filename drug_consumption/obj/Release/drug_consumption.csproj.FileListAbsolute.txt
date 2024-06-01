@@ -183,3 +183,12 @@ C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\office.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\stdole.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\MyOffice.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OOXML.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\office.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\stdole.dll

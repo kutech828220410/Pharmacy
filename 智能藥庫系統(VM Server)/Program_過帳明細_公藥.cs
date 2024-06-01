@@ -67,7 +67,7 @@ namespace 智能藥庫系統_VM_Server_
 
         private void sub_Program_過帳明細_公藥()
         {
-            this.sub_Program_檢查過帳明細_公藥();
+            //this.sub_Program_檢查過帳明細_公藥();
         }
         #region PLC_檢查過帳明細_公藥
         Task Task_檢查過帳明細_公藥;

@@ -129,3 +129,12 @@ C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\offi
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\stdole.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\MyOffice.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OOXML.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\office.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\stdole.dll

@@ -65,7 +65,7 @@ namespace 智能藥庫系統_VM_Server_
 
         private void sub_Program_過帳明細_急診()
         {
-            this.sub_Program_檢查過帳明細_急診();
+            //this.sub_Program_檢查過帳明細_急診();
         }
 
 
