@@ -387,3 +387,85 @@ C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\R
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).exe.config
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).exe.manifest
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).application
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).exe
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\智能藥庫系統(VM Server).pdb
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Basic.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\CSkin.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\DrawingClass.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\FontAwesome.Sharp.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HCGUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HIS_DB_Lib.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\H_Pannel_lib.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\IBM.Data.DB2.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\LadderUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\LeadShineUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\LicenseLib.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\LightControlUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MeasureSystemUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MVSDK.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MVSDKUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MyOffice.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MySql.Data.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MySqlBackup.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MySQL_Login.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MyUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Newtonsoft.Json.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\PortControlUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SLDUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SQLUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Buffers.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Memory.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Numerics.Vectors.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Text.Encodings.Web.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Text.Json.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Threading.Tasks.Extensions.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.ValueTuple.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\TCP.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\ZealTechUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\zxing.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Interop.SpeechLib.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.mshtml.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\CallBackUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkBase.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxAltairUDrvAsm4.5.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkBaseAsm4.5.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkMsr.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\MeasureSystemFunction.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxAltairUDrv.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Office.Interop.Excel.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OOXML.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\PopupControl.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\ICSharpCode.SharpZipLib.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\office.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXml4Net.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\NPOI.OpenXmlFormats.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SunnyUI.Common.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\stdole.dll
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\HIS_DB_Lib.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Buffers.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Memory.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Numerics.Vectors.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Text.Encodings.Web.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Text.Json.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Threading.Tasks.Extensions.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.ValueTuple.xml
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.AssemblyReference.cache
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統_VM_Server_.Form1.resources
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統_VM_Server_.Form_Buf.resources
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統_VM_Server_.Properties.Resources.resources
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.GenerateResource.cache
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.CoreCompileInputs.cache
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe.manifest
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).application
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.CopyComplete
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe
+Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb

@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InventoryConsumptionTracker
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RetrospectiveAccounting", "RetrospectiveAccounting\RetrospectiveAccounting.csproj", "{70250F11-3339-4151-AAF9-C11D8A98D7B1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_驗收入庫過帳", "ConsoleApp_驗收入庫過帳\ConsoleApp_驗收入庫過帳.csproj", "{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -59,6 +61,10 @@ Global
 		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{70250F11-3339-4151-AAF9-C11D8A98D7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{20426473-0782-4134-A9A0-A5B862A616C2} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 		{77723395-A78A-4A40-A3F6-0E962E67F678} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 		{70250F11-3339-4151-AAF9-C11D8A98D7B1} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
+		{9EAF23CF-14B4-44B6-9174-8A3AEF89AD77} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B921A9E-6909-4DAB-8E4C-5F9D26A5CEDE}

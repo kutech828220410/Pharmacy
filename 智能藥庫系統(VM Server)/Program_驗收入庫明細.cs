@@ -101,7 +101,7 @@ namespace 智能藥庫系統_VM_Server_
             SQLUI.SQL_DataGridView.SQL_Set_Properties(this.sqL_DataGridView_驗收入庫明細, dBConfigClass.DB_DS01);
             this.sqL_DataGridView_驗收入庫明細.Init();
             this.sqL_DataGridView_驗收入庫明細.DataGridRefreshEvent += SqL_DataGridView_驗收入庫明細_DataGridRefreshEvent;
-
+            this.sqL_DataGridView_驗收入庫明細.DataGridRowsChangeRefEvent += SqL_DataGridView_驗收入庫明細_DataGridRowsChangeRefEvent;
             this.plC_RJ_Button_驗收入庫明細_全部顯示.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_全部顯示_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_選取資料過帳.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_選取資料過帳_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_選取資料設定未過帳.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_選取資料設定未過帳_MouseDownEvent;
@@ -109,13 +109,17 @@ namespace 智能藥庫系統_VM_Server_
             this.plC_RJ_Button_驗收入庫明細_選取資料刪除.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_選取資料刪除_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_顯示異常過帳.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_顯示異常過帳_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_顯示等待過帳.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_顯示等待過帳_MouseDownEvent;
-            this.plC_RJ_Button_驗收入庫明細_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品碼篩選_MouseDownEvent;
+            this.plC_RJ_Button_驗收入庫明細_藥品碼搜尋.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品碼篩選_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_藥品名稱篩選.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_藥品名稱篩選_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_匯出.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_匯出_MouseDownEvent;
             this.plC_RJ_Button_驗收入庫明細_匯入.MouseDownEvent += PlC_RJ_Button_驗收入庫明細_匯入_MouseDownEvent;
+            this.rJ_DatePicker_驗收入庫明細_時間區段搜尋.MouseDownEvent += RJ_DatePicker_驗收入庫明細_時間區段搜尋_MouseDownEvent;
+
 
             this.plC_UI_Init.Add_Method(sub_Program_驗收入庫明細);
         }
+
+     
 
         private bool flag_驗收入庫明細 = false;
         private void sub_Program_驗收入庫明細()
@@ -133,11 +137,20 @@ namespace 智能藥庫系統_VM_Server_
             }
         }
         #region Function
+
         private List<object[]> Function_驗收入庫明細_取得資料()
         {
             List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetAllRows(false);
+            return Function_驗收入庫明細_取得資料(list_補給驗收入庫);
+        }
+        private List<object[]> Function_驗收入庫明細_取得資料(List<object[]> list_補給驗收入庫)
+        {
+          
             List<object[]> list_補給驗收入庫_buf = new List<object[]>();
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<medClass> medClasses = list_藥品資料.SQLToClass<medClass, enum_藥庫_藥品資料>();
+            List<medClass> medClassesbuf = new List<medClass>();
+            Dictionary<string, List<medClass>> keyValuePairs_medclass = medClass.CoverToDictionaryByCode(medClasses);
             List<object[]> list_藥品資料_buf = new List<object[]>();
             List<object[]> list_藥庫_驗收入庫 = new List<object[]>();
             List<object[]> list_藥庫_驗收入庫_error = new List<object[]>();
@@ -147,20 +160,7 @@ namespace 智能藥庫系統_VM_Server_
                 string 藥品碼 = value[(int)enum_驗收入庫明細.藥品碼].ObjectToString();
                 string 料號 = value[(int)enum_驗收入庫明細.藥品碼].ObjectToString();
                 DateTime dateTime = value[(int)enum_驗收入庫明細.驗收時間].StringToDateTime();
-                list_補給驗收入庫_buf = list_補給驗收入庫.GetRowsInDate((int)enum_補給驗收入庫.驗收時間, dateTime);
-                list_補給驗收入庫_buf = list_補給驗收入庫_buf.GetRows((int)enum_驗收入庫明細.藥品碼, 藥品碼);
-                if (list_補給驗收入庫_buf.Count == 0)
-                {
-
-                }
-                else if (list_補給驗收入庫_buf.Count >= 2)
-                {
-
-                }
-                if (list_補給驗收入庫_buf[0][(int)enum_補給驗收入庫.來源].ObjectToString() == "院內系統")
-                { 
-                
-                }
+             
                 if (藥品碼.Length == 10)
                 {
                     藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
@@ -173,14 +173,15 @@ namespace 智能藥庫系統_VM_Server_
                     list_藥庫_驗收入庫_error.Add(value);
                 }
                 list_藥庫_驗收入庫.Add(value);
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
-                if (list_藥品資料_buf.Count == 0)
+
+                medClassesbuf = medClass.SortDictionaryByCode(keyValuePairs_medclass, 藥品碼);
+                if (medClassesbuf.Count == 0)
                 {
 
                     continue;
                 }
-                value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱];
-                value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝單位];
+                value[(int)enum_驗收入庫明細.藥品名稱] = medClassesbuf[0].藥品名稱;
+                value[(int)enum_驗收入庫明細.包裝單位] = medClassesbuf[0].包裝單位;
              
             }
             list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());
@@ -261,7 +262,7 @@ namespace 智能藥庫系統_VM_Server_
             }
             dialog_Prcessbar.State = "上傳儲位資料...";
             this.sqL_DataGridView_補給驗收入庫.SQL_ReplaceExtra(list_補給驗收入庫_replace, false);
-            this.sqL_DataGridView_驗收入庫明細.ReplaceExtra(list_驗收入庫明細_replace, true);
+            this.sqL_DataGridView_驗收入庫明細.ReplaceExtra(list_驗收入庫明細_replace, false);
             this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_add, false);
             this.DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_replace);
  
@@ -270,6 +271,10 @@ namespace 智能藥庫系統_VM_Server_
         }
         #endregion
         #region Event
+        private void SqL_DataGridView_驗收入庫明細_DataGridRowsChangeRefEvent(ref List<object[]> RowsList)
+        {
+            RowsList.Sort(new ICP_驗收入庫_過帳明細());
+        }
         private void SqL_DataGridView_驗收入庫明細_DataGridRefreshEvent()
         {
             String 狀態 = "";
@@ -467,7 +472,8 @@ namespace 智能藥庫系統_VM_Server_
         }
         private void PlC_RJ_Button_驗收入庫明細_顯示等待過帳_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.Function_驗收入庫明細_取得資料();
+            List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetRows((int)enum_補給驗收入庫.狀態, enum_驗收入庫明細_狀態.等待過帳.GetEnumName(),false);
+            List<object[]> list_value = this.Function_驗收入庫明細_取得資料(list_補給驗收入庫);
             list_value = (from value in list_value
                           where value[(int)enum_驗收入庫明細.狀態].ObjectToString() == enum_驗收入庫明細_狀態.等待過帳.GetEnumName()
                           select value).ToList();
@@ -475,15 +481,24 @@ namespace 智能藥庫系統_VM_Server_
         }
         private void PlC_RJ_Button_驗收入庫明細_藥品名稱篩選_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_驗收入庫明細.GetAllRows();
+            List<object[]> list_value = Function_驗收入庫明細_取得資料();
             list_value = list_value.GetRowsByLike((int)enum_驗收入庫明細.藥品名稱, this.rJ_TextBox_驗收入庫明細_藥品名稱篩選.Text);
             this.sqL_DataGridView_驗收入庫明細.RefreshGrid(list_value);
         }
         private void PlC_RJ_Button_驗收入庫明細_藥品碼篩選_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_驗收入庫明細.GetAllRows();
+            List<object[]> list_value = Function_驗收入庫明細_取得資料();
             list_value = list_value.GetRowsByLike((int)enum_驗收入庫明細.藥品碼, this.rJ_TextBox_驗收入庫明細_藥品碼篩選.Text);
             this.sqL_DataGridView_驗收入庫明細.RefreshGrid(list_value);
+        }
+        private void RJ_DatePicker_驗收入庫明細_時間區段搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            DateTime dt_st = rJ_DatePicker_驗收入庫明細_起始時間.Value.GetStartDate();
+            DateTime dt_end = rJ_DatePicker_驗收入庫明細_結束時間.Value.GetEndDate();
+            List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetRowsByBetween((int)enum_補給驗收入庫.驗收時間, dt_st, dt_end, false);
+            List<object[]> list_value = this.Function_驗收入庫明細_取得資料(list_補給驗收入庫);
+            this.sqL_DataGridView_驗收入庫明細.RefreshGrid(list_value);
+
         }
         #endregion
 
@@ -491,8 +506,8 @@ namespace 智能藥庫系統_VM_Server_
         {
             public int Compare(object[] x, object[] y)
             {
-                DateTime temp0 = x[(int)enum_驗收入庫明細.驗收時間].ToDateString().StringToDateTime();
-                DateTime temp1 = y[(int)enum_驗收入庫明細.驗收時間].ToDateString().StringToDateTime();
+                DateTime temp0 = x[(int)enum_驗收入庫明細.加入時間].ToDateTimeString().StringToDateTime();
+                DateTime temp1 = y[(int)enum_驗收入庫明細.加入時間].ToDateTimeString().StringToDateTime();
                 int cmp = temp0.CompareTo(temp1);
                 return cmp;
             }

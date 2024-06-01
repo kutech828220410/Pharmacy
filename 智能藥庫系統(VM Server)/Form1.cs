@@ -13,14 +13,19 @@ using Basic;
 using MyUI;
 using System.Text.RegularExpressions;
 using HIS_DB_Lib;
+using System.IO;
+using System.Reflection;
+
+
 namespace 智能藥庫系統_VM_Server_
 {
     public partial class Form1 : Form
     {
-        private string Api_URL = "http://127.0.0.1:4433";
+        private string Api_URL = "http://10.18.1.146:4433";
 
         private string 登入者名稱 = "系統";
         private PLC_Device PLC_Device_最高權限 = new PLC_Device("S4077");
+        public static string currentDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         private MyConvert myConvert = new MyConvert();
         private Stopwatch stopwatch = new Stopwatch();
@@ -40,7 +45,7 @@ namespace 智能藥庫系統_VM_Server_
         }
         private void LoadDBConfig()
         {
-            string jsonstr = MyFileStream.LoadFileAllText($".//{DBConfigFileName}");
+            string jsonstr = MyFileStream.LoadFileAllText($"{currentDirectory}/{DBConfigFileName}");
             if (jsonstr.StringIsEmpty())
             {
                 jsonstr = Basic.Net.JsonSerializationt<DBConfigClass>(new DBConfigClass(), true);
@@ -64,6 +69,7 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     MyMessageBox.ShowDialog($"建立{DBConfigFileName}檔案失敗!");
                 }
+
             }
         }
         public Form1()

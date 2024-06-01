@@ -186,14 +186,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="142848">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="176640">
       <assemblyIdentity name="HIS_DB_Lib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>c1EW9GY4gMzVlLQueQjTsweBuCDOj11ZeAUu/xGBUCk=</dsig:DigestValue>
+        <dsig:DigestValue>a6qWygFigDDi0OBBCpfm/fC/Stj+HsDXcvIGRBLLKwc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -714,14 +714,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="智能藥庫系統(VM Server).exe" size="857088">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="智能藥庫系統(VM Server).exe" size="871424">
       <assemblyIdentity name="智能藥庫系統(VM Server)" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ejrNplC9SU2pHyOF2QlBYcy1cFa139Qck8y2oE2vvog=</dsig:DigestValue>
+        <dsig:DigestValue>3gqVcweTNw1VOkJv76kWkh3fzQYr+r9lwIxD11+npB8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

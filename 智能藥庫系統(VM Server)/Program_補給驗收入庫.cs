@@ -104,40 +104,40 @@ namespace 智能藥庫系統_VM_Server_
                 list_過帳狀態 = list_過帳狀態.GetRows((int)enum_過帳狀態列表.檔名, "驗收入庫(一)");
                 if (list_過帳狀態.Count > 0)
                 {
-                    List<object[]> list_發票資料 = this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.SQL_GetAllRows(false);
+                    //List<object[]> list_發票資料 = this.sqL_DataGridView_驗收入庫_補給驗收_發票資料.SQL_GetAllRows(false);
 
-                    if (Task_檢查補給驗收入庫 == null)
-                    {
+                    //if (Task_檢查補給驗收入庫 == null)
+                    //{
                     
-                        Task_檢查補給驗收入庫 = new Task(new Action(delegate
-                        {                           
-                            this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
-                            List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
-                            this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
-                        }));
-                    }
-                    if (Task_檢查補給驗收入庫.Status == TaskStatus.RanToCompletion)
-                    {
-                        Task_檢查補給驗收入庫 = new Task(new Action(delegate
-                        {
-                            this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
-                            List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
-                            this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
-                        }));
-                    }
-                    if (Task_檢查補給驗收入庫.Status == TaskStatus.Faulted)
-                    {
-                        Task_檢查補給驗收入庫 = new Task(new Action(delegate
-                        {
-                            this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
-                            List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
-                            this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
-                        }));
-                    }
-                    if (Task_檢查補給驗收入庫.Status == TaskStatus.Created)
-                    {
-                        Task_檢查補給驗收入庫.Start();
-                    }
+                    //    Task_檢查補給驗收入庫 = new Task(new Action(delegate
+                    //    {                           
+                    //        this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
+                    //        List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
+                    //        this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
+                    //    }));
+                    //}
+                    //if (Task_檢查補給驗收入庫.Status == TaskStatus.RanToCompletion)
+                    //{
+                    //    Task_檢查補給驗收入庫 = new Task(new Action(delegate
+                    //    {
+                    //        this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
+                    //        List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
+                    //        this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
+                    //    }));
+                    //}
+                    //if (Task_檢查補給驗收入庫.Status == TaskStatus.Faulted)
+                    //{
+                    //    Task_檢查補給驗收入庫 = new Task(new Action(delegate
+                    //    {
+                    //        this.Function_驗收入庫_補給驗收_寫入過帳明細(list_發票資料);
+                    //        List<object[]> list_驗收入庫明細 = this.Function_驗收入庫明細_取得資料();
+                    //        this.Function_驗收入庫明細_選取資料過帳(list_驗收入庫明細);
+                    //    }));
+                    //}
+                    //if (Task_檢查補給驗收入庫.Status == TaskStatus.Created)
+                    //{
+                    //    Task_檢查補給驗收入庫.Start();
+                    //}
                     list_過帳狀態[0][(int)enum_過帳狀態列表.排程作業時間] = DateTime.Now.ToDateTimeString_6();
                     list_過帳狀態[0][(int)enum_過帳狀態列表.狀態] = enum_過帳狀態.排程已作業.GetEnumName();
                     this.sqL_DataGridView_過帳狀態列表.SQL_ReplaceExtra(list_過帳狀態[0], false);

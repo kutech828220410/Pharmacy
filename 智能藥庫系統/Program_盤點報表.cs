@@ -36,7 +36,11 @@ namespace 智能藥庫系統
         藥碼,
         藥名,
         單價,
+        期初藥局庫存,
+        期初藥庫庫存,
         期初庫存,
+        期末藥局庫存,
+        期末藥庫庫存,
         期末庫存,
         消耗量,
 
@@ -98,6 +102,24 @@ namespace 智能藥庫系統
         }
 
         #region Function
+        private List<class_MedPrice> Function_盤點報表_取得單價()
+        {
+            DialogResult dialogResult = DialogResult.No;
+            string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
+            List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+            if (class_MedPrices == null)
+            {
+                this.Invoke(new Action(delegate
+                {
+                    dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
+                }));
+                if (dialogResult != DialogResult.OK) return null;
+
+                string jsonstr = MyFileStream.LoadFileAllText($"{this.openFileDialog_LoadExcel.FileName}");
+                class_MedPrices = jsonstr.JsonDeserializet<List<class_MedPrice>>();
+            }
+            return class_MedPrices;
+        }
         private void Function_盤點報表_載入單價()
         {
             DialogResult dialogResult = DialogResult.No;
@@ -129,6 +151,16 @@ namespace 智能藥庫系統
             }
             this.sqL_DataGridView_盤點報表.RefreshGrid(list_value);
         }
+        private List<object[]> Function_盤點報表_取得消耗量()
+        {
+            DateTime dateTime_st = rJ_DatePicker_盤點報表_計算消耗量_起始日期.Value;
+
+            dateTime_st = new DateTime(dateTime_st.Year, dateTime_st.Month, dateTime_st.Day, 00, 00, 00);
+            DateTime dateTime_end = rJ_DatePicker_盤點報表_計算消耗量_結束日期.Value;
+            dateTime_end = new DateTime(dateTime_end.Year, dateTime_end.Month, dateTime_end.Day, 23, 59, 59);
+            List<object[]> list_藥品消耗帳 = Function_藥品過消耗帳_取得所有過帳明細(dateTime_st, dateTime_end);
+            return list_藥品消耗帳;
+        }
         #endregion
         #region Event
         private void PlC_RJ_Button_盤點報表_庫存依日期帶入_MouseDownEvent(MouseEventArgs mevent)
@@ -139,75 +171,150 @@ namespace 智能藥庫系統
             DateTime dateTime_end = rJ_DatePicker_盤點報表_計算消耗量_結束日期.Value;
             dateTime_end = new DateTime(dateTime_end.Year, dateTime_end.Month, dateTime_end.Day, 23, 59, 59);
 
-            List<object[]> list_盤點報表 = this.sqL_DataGridView_盤點報表.GetAllRows();
-            DataTable dataTable = list_盤點報表.ToDataTable(new enum_盤點定盤_Excel());
-            List<object[]> list_value = dataTable.ReorderTable(new enum_盤點報表_期初期末庫存計算()).DataTableToRowList();
+            List<stockRecord> stockRecords = stockRecord.POST_get_all_record_simple(Main_Form.API_Server);
+            List<stockRecord> stockRecords_buf = new List<stockRecord>();
+            List<stockRecord> stockRecords_藥局期初 = (from temp in stockRecords
+                                                   where temp.加入時間.StringToDateTime().IsInDate(dateTime_st.GetStartDate(), dateTime_st.GetEndDate())
+                                                   where temp.庫別 == "藥局"
+                                                   select temp).ToList();
+            List<stockRecord> stockRecords_藥庫期初 = (from temp in stockRecords
+                                                   where temp.加入時間.StringToDateTime().IsInDate(dateTime_st.GetStartDate(), dateTime_st.GetEndDate())
+                                                   where temp.庫別 == "藥庫"
+                                                   select temp).ToList();
 
-            List<object[]> list_交易紀錄 = new List<object[]>();
-            List<object[]> list_交易紀錄_buf = new List<object[]>();
-            DateTime targetTime = new DateTime();
-            MyTimer myTimer = new MyTimer();
-            targetTime = dateTime_st;
-            for (int i = 0; i < list_value.Count; i++)
+            List<stockRecord> stockRecords_藥局期末 = (from temp in stockRecords
+                                                   where temp.加入時間.StringToDateTime().IsInDate(dateTime_end.GetStartDate(), dateTime_end.GetEndDate())
+                                                   where temp.庫別 == "藥局"
+                                                   select temp).ToList();
+            List<stockRecord> stockRecords_藥庫期末 = (from temp in stockRecords
+                                                   where temp.加入時間.StringToDateTime().IsInDate(dateTime_end.GetStartDate(), dateTime_end.GetEndDate())
+                                                   where temp.庫別 == "藥庫"
+                                                   select temp).ToList();
+            stockRecord stockRecord_藥局期初 = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, stockRecords_藥局期初[0].GUID);
+            stockRecord stockRecord_藥庫期初 = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, stockRecords_藥庫期初[0].GUID);
+
+            stockRecord stockRecord_藥局期末 = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, stockRecords_藥局期末[0].GUID);
+            stockRecord stockRecord_藥庫期末 = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, stockRecords_藥庫期末[0].GUID);
+
+
+          
+
+            List<object[]> list_value = new List<object[]>();
+            List<object[]> list_value_buf = new List<object[]>();
+
+            for (int i = 0; i < stockRecord_藥局期初.Contents.Count; i++)
             {
-                int 庫存 = 0;
-                myTimer.TickStop();
-                myTimer.StartTickTime(50000);
-                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
-                list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
-                list_交易紀錄 = (from temp in list_交易紀錄
-                             where(temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
-                             select temp).ToList();
-
-
-
-                if (list_交易紀錄.Count > 0)
+                string 藥碼 = stockRecord_藥局期初.Contents[i].藥碼;
+                string 藥名 = stockRecord_藥局期初.Contents[i].藥名;
+                string 庫存 = stockRecord_藥局期初.Contents[i].庫存;
+                list_value_buf = list_value.GetRows((int)enum_盤點報表_期初期末庫存計算.藥碼, 藥碼);
+                if(list_value_buf.Count == 0)
                 {
-                    object[] value = list_交易紀錄
-                 .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
-                 .FirstOrDefault();
-                    庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
-                    Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+                    object[] value = new object[new enum_盤點報表_期初期末庫存計算().GetLength()];
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥碼] = 藥碼;
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥名] = 藥名;
+                    value[(int)enum_盤點報表_期初期末庫存計算.期初藥局庫存] = 庫存;
+                    list_value.Add(value);
                 }
                 else
                 {
-                    Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
-
+                    object[] value = list_value_buf[0];
+                    value[(int)enum_盤點報表_期初期末庫存計算.期初藥局庫存] = 庫存;
                 }
-
-                list_value[i][(int)enum_盤點報表_期初期末庫存計算.期初庫存] = 庫存;
             }
-
-            targetTime = dateTime_end;
-            for (int i = 0; i < list_value.Count; i++)
+            for (int i = 0; i < stockRecord_藥庫期初.Contents.Count; i++)
             {
-                int 庫存 = 0;
-                myTimer.TickStop();
-                myTimer.StartTickTime(50000);
-                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
-                list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
-                list_交易紀錄 = (from temp in list_交易紀錄
-                             where (temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
-                             select temp).ToList();
-
-
-                if (list_交易紀錄.Count > 0)
+                string 藥碼 = stockRecord_藥庫期初.Contents[i].藥碼;
+                string 藥名 = stockRecord_藥庫期初.Contents[i].藥名;
+                string 庫存 = stockRecord_藥庫期初.Contents[i].庫存;
+                list_value_buf = list_value.GetRows((int)enum_盤點報表_期初期末庫存計算.藥碼, 藥碼);
+                if (list_value_buf.Count == 0)
                 {
-                    object[] value = list_交易紀錄
-                 .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
-                 .FirstOrDefault();
-                    庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
-                    Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+                    object[] value = new object[new enum_盤點報表_期初期末庫存計算().GetLength()];
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥碼] = 藥碼;
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥名] = 藥名;
+                    value[(int)enum_盤點報表_期初期末庫存計算.期初藥庫庫存] = 庫存;
+                    list_value.Add(value);
                 }
                 else
                 {
-                    Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
-
+                    object[] value = list_value_buf[0];
+                    value[(int)enum_盤點報表_期初期末庫存計算.期初藥庫庫存] = 庫存;
                 }
-
-                list_value[i][(int)enum_盤點報表_期初期末庫存計算.期末庫存] = 庫存;
             }
 
+            for (int i = 0; i < stockRecord_藥局期末.Contents.Count; i++)
+            {
+                string 藥碼 = stockRecord_藥局期末.Contents[i].藥碼;
+                string 藥名 = stockRecord_藥局期末.Contents[i].藥名;
+                string 庫存 = stockRecord_藥局期末.Contents[i].庫存;
+                list_value_buf = list_value.GetRows((int)enum_盤點報表_期初期末庫存計算.藥碼, 藥碼);
+                if (list_value_buf.Count == 0)
+                {
+                    object[] value = new object[new enum_盤點報表_期初期末庫存計算().GetLength()];
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥碼] = 藥碼;
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥名] = 藥名;
+                    value[(int)enum_盤點報表_期初期末庫存計算.期末藥局庫存] = 庫存;
+                    list_value.Add(value);
+                }
+                else
+                {
+                    object[] value = list_value_buf[0];
+                    value[(int)enum_盤點報表_期初期末庫存計算.期末藥局庫存] = 庫存;
+                }
+            }
+            for (int i = 0; i < stockRecord_藥庫期末.Contents.Count; i++)
+            {
+                string 藥碼 = stockRecord_藥庫期末.Contents[i].藥碼;
+                string 藥名 = stockRecord_藥庫期末.Contents[i].藥名;
+                string 庫存 = stockRecord_藥庫期末.Contents[i].庫存;
+                list_value_buf = list_value.GetRows((int)enum_盤點報表_期初期末庫存計算.藥碼, 藥碼);
+                if (list_value_buf.Count == 0)
+                {
+                    object[] value = new object[new enum_盤點報表_期初期末庫存計算().GetLength()];
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥碼] = 藥碼;
+                    value[(int)enum_盤點報表_期初期末庫存計算.藥名] = 藥名;
+                    value[(int)enum_盤點報表_期初期末庫存計算.期末藥庫庫存] = 庫存;
+                    list_value.Add(value);
+                }
+                else
+                {
+                    object[] value = list_value_buf[0];
+                    value[(int)enum_盤點報表_期初期末庫存計算.期末藥庫庫存] = 庫存;
+                }
+            }
+            List<class_MedPrice> class_MedPrices = Function_盤點報表_取得單價();
+            List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+                class_MedPrices_buf = (from temp in class_MedPrices
+                                       where temp.藥品碼 == 藥碼
+                                       select temp).ToList();
+                list_value[i][(int)enum_盤點報表_期初期末庫存計算.單價] = "0";
+                if (class_MedPrices_buf.Count > 0)
+                {
+                    list_value[i][(int)enum_盤點報表_期初期末庫存計算.單價] = class_MedPrices_buf[0].售價;
+                }
+            }
+
+            List<object[]> list_藥品消耗帳 = Function_藥品過消耗帳_取得所有過帳明細(dateTime_st, dateTime_end);
+            List<object[]> list_藥品消耗帳_buf = new List<object[]>();
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+                list_藥品消耗帳_buf = list_藥品消耗帳.GetRows((int)enum_藥品過消耗帳.藥品碼, 藥碼);
+                list_value[i][(int)enum_盤點報表_期初期末庫存計算.消耗量] = "0";
+                if (list_藥品消耗帳_buf.Count > 0)
+                {
+                    int temp = 0;
+                    for (int k = 0; k < list_藥品消耗帳_buf.Count; k++)
+                    {
+                        temp += list_藥品消耗帳_buf[k][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                    }
+                    list_value[i][(int)enum_盤點報表_期初期末庫存計算.消耗量] = (temp * -1).ToString();
+                }
+            }
             DataTable dataTable_out = list_value.ToDataTable(new enum_盤點報表_期初期末庫存計算());
             this.Invoke(new Action(delegate
             {
@@ -217,6 +324,86 @@ namespace 智能藥庫系統
 
                 }
             }));
+
+
+            //List<object[]> list_盤點報表 = this.sqL_DataGridView_盤點報表.GetAllRows();
+            //DataTable dataTable = list_盤點報表.ToDataTable(new enum_盤點定盤_Excel());
+            //List<object[]> list_value = dataTable.ReorderTable(new enum_盤點報表_期初期末庫存計算()).DataTableToRowList();
+
+            //List<object[]> list_交易紀錄 = new List<object[]>();
+            //List<object[]> list_交易紀錄_buf = new List<object[]>();
+            //DateTime targetTime = new DateTime();
+            //MyTimer myTimer = new MyTimer();
+            //targetTime = dateTime_st;
+            //for (int i = 0; i < list_value.Count; i++)
+            //{
+            //    int 庫存 = 0;
+            //    myTimer.TickStop();
+            //    myTimer.StartTickTime(50000);
+            //    string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+            //    list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
+            //    list_交易紀錄 = (from temp in list_交易紀錄
+            //                 where(temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
+            //                 select temp).ToList();
+
+
+
+            //    if (list_交易紀錄.Count > 0)
+            //    {
+            //        object[] value = list_交易紀錄
+            //     .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
+            //     .FirstOrDefault();
+            //        庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+            //        Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
+
+            //    }
+
+            //    list_value[i][(int)enum_盤點報表_期初期末庫存計算.期初庫存] = 庫存;
+            //}
+
+            //targetTime = dateTime_end;
+            //for (int i = 0; i < list_value.Count; i++)
+            //{
+            //    int 庫存 = 0;
+            //    myTimer.TickStop();
+            //    myTimer.StartTickTime(50000);
+            //    string 藥碼 = list_value[i][(int)enum_盤點報表_期初期末庫存計算.藥碼].ObjectToString();
+            //    list_交易紀錄 = this.sqL_DataGridView_交易記錄查詢.SQL_GetRows((int)enum_交易記錄查詢資料.藥品碼, 藥碼, false);
+            //    list_交易紀錄 = (from temp in list_交易紀錄
+            //                 where (temp[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() <= dateTime_end)
+            //                 select temp).ToList();
+
+
+            //    if (list_交易紀錄.Count > 0)
+            //    {
+            //        object[] value = list_交易紀錄
+            //     .OrderBy(record => Math.Abs((record[(int)enum_交易記錄查詢資料.操作時間].StringToDateTime() - targetTime).Ticks))
+            //     .FirstOrDefault();
+            //        庫存 = value[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+            //        Console.WriteLine($"({藥碼})已搜尋到<{list_交易紀錄.Count}>筆資料,庫存({庫存}),{myTimer.ToString()}");
+            //    }
+            //    else
+            //    {
+            //        Console.WriteLine($"※※({藥碼})未搜尋到資料,{myTimer.ToString()}");
+
+            //    }
+
+            //    list_value[i][(int)enum_盤點報表_期初期末庫存計算.期末庫存] = 庫存;
+            //}
+
+            //DataTable dataTable_out = list_value.ToDataTable(new enum_盤點報表_期初期末庫存計算());
+            //this.Invoke(new Action(delegate
+            //{
+            //    if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
+            //    {
+            //        MyOffice.ExcelClass.NPOI_SaveFile(dataTable_out, this.saveFileDialog_SaveExcel.FileName);
+
+            //    }
+            //}));
             MyMessageBox.ShowDialog("完成!");
 
         }
