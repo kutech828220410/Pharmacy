@@ -780,8 +780,8 @@ namespace 智能藥庫系統
                     this.Cursor = Cursors.WaitCursor;
     
 
-                    string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
-                    List<class_MedPrice> class_MedPrices = MedPrice.JsonDeserializet<List<class_MedPrice>>();
+                    //string MedPrice = Basic.Net.WEBApiGet($"{dBConfigClass.MedPrice_ApiURL}");
+                    List<class_MedPrice> class_MedPrices = Function_盤點報表_取得單價();
                     List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
 
 
