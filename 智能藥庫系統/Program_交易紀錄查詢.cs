@@ -377,9 +377,9 @@ namespace 智能藥庫系統
             {
                 if (list_藥庫盤點量匯入[i][(int)enum_藥局盤點量匯入.盤點量].StringToInt32() != 0) continue;
                 string 藥碼 = list_藥庫盤點量匯入[i][(int)enum_藥局盤點量匯入.藥碼].ObjectToString();
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥局_藥品資料.藥品碼, 藥碼);
-                string 藥名 = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.藥品名稱].ObjectToString();
-                int 藥局庫存 = list_藥品資料_buf[0][(int)enum_藥局_藥品資料.藥局庫存].StringToInt32();
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medPharmacy.藥品碼, 藥碼);
+                string 藥名 = list_藥品資料_buf[0][(int)enum_medPharmacy.藥品名稱].ObjectToString();
+                int 藥局庫存 = list_藥品資料_buf[0][(int)enum_medPharmacy.藥局庫存].StringToInt32();
                 object[] value = new object[new enum_待調整匯出().GetLength()];
                 value[(int)enum_待調整匯出.藥碼] = 藥碼;
                 value[(int)enum_待調整匯出.藥名] = 藥名;

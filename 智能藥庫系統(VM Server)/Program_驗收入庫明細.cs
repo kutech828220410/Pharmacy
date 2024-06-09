@@ -148,7 +148,7 @@ namespace 智能藥庫系統_VM_Server_
           
             List<object[]> list_補給驗收入庫_buf = new List<object[]>();
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-            List<medClass> medClasses = list_藥品資料.SQLToClass<medClass, enum_藥庫_藥品資料>();
+            List<medClass> medClasses = list_藥品資料.SQLToClass<medClass, enum_medDrugstore>();
             List<medClass> medClassesbuf = new List<medClass>();
             Dictionary<string, List<medClass>> keyValuePairs_medclass = medClass.CoverToDictionaryByCode(medClasses);
             List<object[]> list_藥品資料_buf = new List<object[]>();

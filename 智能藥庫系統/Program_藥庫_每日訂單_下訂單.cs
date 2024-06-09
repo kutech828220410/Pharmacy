@@ -237,7 +237,7 @@ namespace 智能藥庫系統
             Console.WriteLine($"取得藥品資料,耗時{myTimer.ToString()}");
             List<object[]> list_藥品資料_每日訂單 = new List<object[]>();
             list_藥品資料 = Function_藥庫_藥品資料_取得庫存(list_藥品資料);
-            list_藥品資料_每日訂單 = list_藥品資料.CopyRows(new enum_藥庫_藥品資料(), new enum_藥庫_每日訂單_下訂單());
+            list_藥品資料_每日訂單 = list_藥品資料.CopyRows(new enum_medDrugstore(), new enum_藥庫_每日訂單_下訂單());
             Console.WriteLine($"轉換藥品資料成每日訂單藥品資料,耗時{myTimer.ToString()}");
 
             tasks.Clear();
@@ -673,12 +673,12 @@ namespace 智能藥庫系統
             for (int i = 0; i < list_value.Count; i++)
             {
                 string code = list_value[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, code);
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, code);
 
                 int 包裝數量 = 0;
                 if (list_藥品資料_buf.Count > 0)
                 {
-                    包裝數量 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝數量].StringToInt32();
+                    包裝數量 = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝數量].StringToInt32();
                 }
                 else
                 {

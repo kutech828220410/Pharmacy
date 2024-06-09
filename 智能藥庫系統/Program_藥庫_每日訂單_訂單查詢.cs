@@ -118,12 +118,12 @@ namespace 智能藥庫系統
                 中文名稱 = "";
                 包裝單位 = "";
 
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
                 if(list_藥品資料_buf.Count > 0)
                 {
-                    藥品名稱 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
-                    中文名稱 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.中文名稱].ObjectToString();
-                    包裝單位 = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝單位].ObjectToString();
+                    藥品名稱 = list_藥品資料_buf[0][(int)enum_medDrugstore.藥品名稱].ObjectToString();
+                    中文名稱 = list_藥品資料_buf[0][(int)enum_medDrugstore.中文名稱].ObjectToString();
+                    包裝單位 = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝單位].ObjectToString();
                 }
                 list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.藥品名稱] = 藥品名稱;
                 list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.中文名稱] = 中文名稱;

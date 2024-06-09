@@ -73,7 +73,7 @@ namespace 智能藥庫系統_VM_Server_
                     continue;
                 }
                 
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
                 if (list_藥品資料_buf.Count == 0)
                 {
                     continue;

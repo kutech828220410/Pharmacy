@@ -81,7 +81,7 @@ namespace 智能藥庫系統
                     continue;
                 }
 
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
                 if (list_藥品資料_buf.Count == 0)
                 {
                     continue;
@@ -212,7 +212,7 @@ namespace 智能藥庫系統
             string 新藥品碼 = dialog_寫入藥品碼.Value;
             string 新藥品名稱 = "";
             List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-            list_藥品資料 = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 新藥品碼);
+            list_藥品資料 = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 新藥品碼);
             if (list_藥品資料.Count == 0)
             {
                 MyMessageBox.ShowDialog($"找無此藥碼 : <{新藥品碼}>!");
@@ -220,7 +220,7 @@ namespace 智能藥庫系統
             }
             else
             {
-                新藥品名稱 = list_藥品資料[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
+                新藥品名稱 = list_藥品資料[0][(int)enum_medDrugstore.藥品名稱].ObjectToString();
             }
 
             List<object[]> list_訂單列表 = this.sqL_DataGridView_訂單管理_訂單列表.SQL_GetAllRows(false);

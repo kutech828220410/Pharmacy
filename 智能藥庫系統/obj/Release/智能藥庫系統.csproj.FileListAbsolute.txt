@@ -382,12 +382,7 @@ C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\Zeal
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\Interop.SpeechLib.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\zxing.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\NPOI.OOXML.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\PopupControl.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\SunnyUI.dll
@@ -649,3 +644,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點明細.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_盤點設定.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_新建合併盤點單.resources
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_藥局_藥品資料_匯入選擇.resources

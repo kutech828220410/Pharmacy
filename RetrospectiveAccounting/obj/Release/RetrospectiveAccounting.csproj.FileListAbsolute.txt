@@ -96,12 +96,7 @@ C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\TCP.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\CallBackUI.dll
-C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\MVSDK.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\HIS_DB_Lib.xml
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml

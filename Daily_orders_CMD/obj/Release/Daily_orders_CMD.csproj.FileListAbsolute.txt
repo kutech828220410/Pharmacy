@@ -197,12 +197,7 @@ C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyU
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\TCP.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\CallBackUI.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkBase.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkMsr.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\MeasureSystemFunction.dll
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\AxAltairUDrv.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\MVSDK.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\System.Buffers.xml

@@ -344,6 +344,12 @@
     <Compile Include="Dialog\盤點\Dialog_盤點單合併_設定.Designer.cs">
       <DependentUpon>Dialog_盤點單合併_設定.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_藥局_藥品資料_匯入選擇.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_藥局_藥品資料_匯入選擇.Designer.cs">
+      <DependentUpon>Dialog_藥局_藥品資料_匯入選擇.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -490,6 +496,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_日期選擇.resx">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_藥局_藥品資料_匯入選擇.resx">
+      <DependentUpon>Dialog_藥局_藥品資料_匯入選擇.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\盤點\Dialog_盤點單合併.resx">
       <DependentUpon>Dialog_盤點單合併.cs</DependentUpon>

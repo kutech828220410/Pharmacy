@@ -138,10 +138,10 @@ namespace 智能藥庫系統
 
             for (int i = 0; i < RowsList.Count; i++)
             {
-                list_藥庫庫存資料_buf = list_藥庫庫存資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString());
+                list_藥庫庫存資料_buf = list_藥庫庫存資料.GetRows((int)enum_medDrugstore.藥品碼, RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString());
                 if(list_藥庫庫存資料_buf.Count > 0)
                 {
-                    RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = list_藥庫庫存資料_buf[0][(int)enum_藥庫_藥品資料.藥庫庫存];
+                    RowsList[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存] = list_藥庫庫存資料_buf[0][(int)enum_medDrugstore.藥庫庫存];
                 }
                 
             }

@@ -209,6 +209,7 @@ namespace 智能藥庫系統
                 Dialog_效期批號歷史紀錄.form = this.FindForm();
                 Dialog_補給系統藥品建置.form = this.FindForm();
                 Dialog_日期選擇.form = this.FindForm();
+                Dialog_藥局_藥品資料_匯入選擇.form = this.FindForm();
                 ApiServerSetting("DS01");
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;

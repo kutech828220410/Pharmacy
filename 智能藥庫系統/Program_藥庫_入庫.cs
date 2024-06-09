@@ -341,8 +341,8 @@ namespace 智能藥庫系統
             {
                 return;
             }
-            list_藥品資訊_buf01 = list_藥品資訊.GetRows((int)enum_藥庫_藥品資料.藥品條碼1, this.rJ_TextBox_藥庫_入庫_藥品條碼搜尋.Texts);
-            list_藥品資訊_buf02 = list_藥品資訊.GetRows((int)enum_藥庫_藥品資料.藥品條碼2, this.rJ_TextBox_藥庫_入庫_藥品條碼搜尋.Texts);
+            list_藥品資訊_buf01 = list_藥品資訊.GetRows((int)enum_medDrugstore.藥品條碼1, this.rJ_TextBox_藥庫_入庫_藥品條碼搜尋.Texts);
+            list_藥品資訊_buf02 = list_藥品資訊.GetRows((int)enum_medDrugstore.藥品條碼2, this.rJ_TextBox_藥庫_入庫_藥品條碼搜尋.Texts);
             if (list_藥品資訊_buf01.Count == 0 && list_藥品資訊_buf02.Count == 0)
             {
                 this.Invoke(new Action(delegate
@@ -355,7 +355,7 @@ namespace 智能藥庫系統
             List<object[]> list_儲位資訊_buf = new List<object[]>();
             if (list_藥品資訊_buf01.Count > 0)
             {
-                list_儲位資訊_buf = list_儲位資訊.GetRows((int)enum_藥庫_入庫.藥品碼, list_藥品資訊_buf01[0][(int)enum_藥庫_藥品資料.藥品碼].ObjectToString());
+                list_儲位資訊_buf = list_儲位資訊.GetRows((int)enum_藥庫_入庫.藥品碼, list_藥品資訊_buf01[0][(int)enum_medDrugstore.藥品碼].ObjectToString());
                 if(list_儲位資訊_buf.Count > 0)
                 {
                     list_儲位資訊_buf.Sort(new ICP_藥庫_入庫_儲位資訊());
@@ -369,7 +369,7 @@ namespace 智能藥庫系統
             }
             if (list_藥品資訊_buf02.Count > 0)
             {
-                list_儲位資訊_buf = list_儲位資訊.GetRows((int)enum_藥庫_入庫.藥品碼, list_藥品資訊_buf02[0][(int)enum_藥庫_藥品資料.藥品碼].ObjectToString());
+                list_儲位資訊_buf = list_儲位資訊.GetRows((int)enum_藥庫_入庫.藥品碼, list_藥品資訊_buf02[0][(int)enum_medDrugstore.藥品碼].ObjectToString());
                 if (list_儲位資訊_buf.Count > 0)
                 {
                     list_儲位資訊_buf.Sort(new ICP_藥庫_入庫_儲位資訊());

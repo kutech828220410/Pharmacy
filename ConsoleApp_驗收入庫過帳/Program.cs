@@ -187,14 +187,14 @@ namespace ConsoleApp_驗收入庫過帳
                     list_藥庫_驗收入庫_error.Add(value);
                 }
                 list_藥庫_驗收入庫.Add(value);
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
                 if (list_藥品資料_buf.Count == 0)
                 {
 
                     continue;
                 }
-                value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.藥品名稱];
-                value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_藥庫_藥品資料.包裝單位];
+                value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_medDrugstore.藥品名稱];
+                value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝單位];
 
             }
             list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());

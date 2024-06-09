@@ -418,13 +418,13 @@ namespace 智能藥庫系統_VM_Server_
                 dialog_Prcessbar.Value = i;
                 if (dialog_Prcessbar.DialogResult == DialogResult.No) return;
 
-                藥品碼 = list_藥品資料[i][(int)enum_藥局_藥品資料.藥品碼].ObjectToString();
-                藥品名稱 = list_藥品資料[i][(int)enum_藥局_藥品資料.藥品名稱].ObjectToString();
+                藥品碼 = list_藥品資料[i][(int)enum_medPharmacy.藥品碼].ObjectToString();
+                藥品名稱 = list_藥品資料[i][(int)enum_medPharmacy.藥品名稱].ObjectToString();
                 List<DeviceBasic> deviceBasic_buf = deviceBasics.SortByCode(藥品碼);
                 if (deviceBasic_buf.Count == 0) continue;
-                安全量 = list_藥品資料[i][(int)enum_藥局_藥品資料.安全庫存].ObjectToString().StringToInt32();
-                基準量 = list_藥品資料[i][(int)enum_藥局_藥品資料.基準量].ObjectToString().StringToInt32();
-                包裝數量 = list_藥庫_藥品資料[i][(int)enum_藥庫_藥品資料.包裝數量].ObjectToString().StringToInt32();
+                安全量 = list_藥品資料[i][(int)enum_medPharmacy.安全庫存].ObjectToString().StringToInt32();
+                基準量 = list_藥品資料[i][(int)enum_medPharmacy.基準量].ObjectToString().StringToInt32();
+                包裝數量 = list_藥庫_藥品資料[i][(int)enum_medDrugstore.包裝數量].ObjectToString().StringToInt32();
                 庫存量 = deviceBasic_buf[0].Inventory.StringToInt32();
                 Console.WriteLine($"{i}.(自動撥補) 藥碼:{藥品碼} ,安全量:{安全量},基準量:{基準量},庫存量:{庫存量},包裝數量:{包裝數量}");
                 if (基準量 <= 0)

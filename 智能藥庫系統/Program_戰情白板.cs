@@ -74,8 +74,8 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_戰情白板_一般藥品.DataGridRefreshEvent += SqL_DataGridView_戰情白板_一般藥品_DataGridRefreshEvent;
 
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Init(this.sqL_DataGridView_藥庫_藥品資料);
-            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(false, new enum_藥庫_藥品資料().GetEnumNames());
-            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(true, enum_藥庫_藥品資料.藥品碼, enum_藥庫_藥品資料.藥品名稱, enum_藥庫_藥品資料.中文名稱, enum_藥庫_藥品資料.包裝單位);
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(false, new enum_medDrugstore().GetEnumNames());
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.Set_ColumnVisible(true, enum_medDrugstore.藥品碼, enum_medDrugstore.藥品名稱, enum_medDrugstore.中文名稱, enum_medDrugstore.包裝單位);
 
             this.plC_RJ_Button_戰情白板_全螢幕顯示.MouseDownEvent += PlC_RJ_Button_戰情白板_全螢幕顯示_MouseDownEvent;
             this.plC_RJ_Button_戰情白板_刷新一般藥品.MouseDownEvent += PlC_RJ_Button_戰情白板_刷新一般藥品_MouseDownEvent;
@@ -833,15 +833,15 @@ namespace 智能藥庫系統
             Parallel.ForEach(list_藥庫_藥品資料, value_temp =>
             {
                 object[] value = new object[new enum_戰情白板().GetLength()];
-                value[(int)enum_戰情白板.藥碼] =value_temp[(int)enum_藥庫_藥品資料.藥品碼];
-                value[(int)enum_戰情白板.藥名] =value_temp[(int)enum_藥庫_藥品資料.藥品名稱];
-                value[(int)enum_戰情白板.中文名] =value_temp[(int)enum_藥庫_藥品資料.中文名稱];
-                value[(int)enum_戰情白板.單位] =value_temp[(int)enum_藥庫_藥品資料.包裝單位];
-                value[(int)enum_戰情白板.總庫存] =value_temp[(int)enum_藥庫_藥品資料.總庫存];
-                value[(int)enum_戰情白板.藥局庫存] =value_temp[(int)enum_藥庫_藥品資料.藥局庫存];
-                value[(int)enum_戰情白板.藥庫庫存] =value_temp[(int)enum_藥庫_藥品資料.藥庫庫存];
-                value[(int)enum_戰情白板.安全量] =value_temp[(int)enum_藥庫_藥品資料.安全庫存];
-                value[(int)enum_戰情白板.基準量] =value_temp[(int)enum_藥庫_藥品資料.基準量];
+                value[(int)enum_戰情白板.藥碼] =value_temp[(int)enum_medDrugstore.藥品碼];
+                value[(int)enum_戰情白板.藥名] =value_temp[(int)enum_medDrugstore.藥品名稱];
+                value[(int)enum_戰情白板.中文名] =value_temp[(int)enum_medDrugstore.中文名稱];
+                value[(int)enum_戰情白板.單位] =value_temp[(int)enum_medDrugstore.包裝單位];
+                value[(int)enum_戰情白板.總庫存] =value_temp[(int)enum_medDrugstore.總庫存];
+                value[(int)enum_戰情白板.藥局庫存] =value_temp[(int)enum_medDrugstore.藥局庫存];
+                value[(int)enum_戰情白板.藥庫庫存] =value_temp[(int)enum_medDrugstore.藥庫庫存];
+                value[(int)enum_戰情白板.安全量] =value_temp[(int)enum_medDrugstore.安全庫存];
+                value[(int)enum_戰情白板.基準量] =value_temp[(int)enum_medDrugstore.基準量];
 
                 int 總庫存 = value[(int)enum_戰情白板.總庫存].StringToInt32();
                 int 安全量 = value[(int)enum_戰情白板.安全量].StringToInt32();
@@ -913,7 +913,7 @@ namespace 智能藥庫系統
             for (int i = 0; i < list_戰情白板_自選藥品資料.Count; i++)
             {
                 string 藥品碼 = list_戰情白板_自選藥品資料[i][(int)enum_戰情白板_自選藥品.藥碼].ObjectToString();
-                list_藥庫_藥品資料_buf = list_藥庫_藥品資料_src.GetRows((int)enum_藥庫_藥品資料.藥品碼, 藥品碼);
+                list_藥庫_藥品資料_buf = list_藥庫_藥品資料_src.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
                 if(list_藥庫_藥品資料_buf.Count > 0)
                 {
                     list_藥庫_藥品資料.Add(list_藥庫_藥品資料_buf[0]);
@@ -930,15 +930,15 @@ namespace 智能藥庫系統
             Parallel.ForEach(list_藥庫_藥品資料, value_temp =>
             {
                 object[] value = new object[new enum_戰情白板().GetLength()];
-                value[(int)enum_戰情白板.藥碼] = value_temp[(int)enum_藥庫_藥品資料.藥品碼];
-                value[(int)enum_戰情白板.藥名] = value_temp[(int)enum_藥庫_藥品資料.藥品名稱];
-                value[(int)enum_戰情白板.中文名] = value_temp[(int)enum_藥庫_藥品資料.中文名稱];
-                value[(int)enum_戰情白板.單位] = value_temp[(int)enum_藥庫_藥品資料.包裝單位];
-                value[(int)enum_戰情白板.總庫存] = value_temp[(int)enum_藥庫_藥品資料.總庫存];
-                value[(int)enum_戰情白板.藥局庫存] = value_temp[(int)enum_藥庫_藥品資料.藥局庫存];
-                value[(int)enum_戰情白板.藥庫庫存] = value_temp[(int)enum_藥庫_藥品資料.藥庫庫存];
-                value[(int)enum_戰情白板.安全量] = value_temp[(int)enum_藥庫_藥品資料.安全庫存];
-                value[(int)enum_戰情白板.基準量] = value_temp[(int)enum_藥庫_藥品資料.基準量];
+                value[(int)enum_戰情白板.藥碼] = value_temp[(int)enum_medDrugstore.藥品碼];
+                value[(int)enum_戰情白板.藥名] = value_temp[(int)enum_medDrugstore.藥品名稱];
+                value[(int)enum_戰情白板.中文名] = value_temp[(int)enum_medDrugstore.中文名稱];
+                value[(int)enum_戰情白板.單位] = value_temp[(int)enum_medDrugstore.包裝單位];
+                value[(int)enum_戰情白板.總庫存] = value_temp[(int)enum_medDrugstore.總庫存];
+                value[(int)enum_戰情白板.藥局庫存] = value_temp[(int)enum_medDrugstore.藥局庫存];
+                value[(int)enum_戰情白板.藥庫庫存] = value_temp[(int)enum_medDrugstore.藥庫庫存];
+                value[(int)enum_戰情白板.安全量] = value_temp[(int)enum_medDrugstore.安全庫存];
+                value[(int)enum_戰情白板.基準量] = value_temp[(int)enum_medDrugstore.基準量];
 
                 int 總庫存 = value[(int)enum_戰情白板.總庫存].StringToInt32();
                 int 安全量 = value[(int)enum_戰情白板.安全量].StringToInt32();
@@ -1125,7 +1125,7 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.SQL_GetAllRows(false);          
-            list_value = list_value.GetRowsByLike((int)enum_藥庫_藥品資料.藥品碼, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品碼.Text);
+            list_value = list_value.GetRowsByLike((int)enum_medDrugstore.藥品碼, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品碼.Text);
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("查無資料!");
@@ -1136,7 +1136,7 @@ namespace 智能藥庫系統
         private void PlC_RJ_Button_戰情白板_自選藥品_藥品資料_藥品名稱搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             List<object[]> list_value = this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.SQL_GetAllRows(false);           
-            list_value = list_value.GetRowsByLike((int)enum_藥庫_藥品資料.藥品名稱, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品名稱.Text);
+            list_value = list_value.GetRowsByLike((int)enum_medDrugstore.藥品名稱, this.rJ_TextBox_戰情白板_自選藥品_藥品資料_藥品名稱.Text);
             if (list_value.Count == 0)
             {
                 MyMessageBox.ShowDialog("查無資料!");
@@ -1154,9 +1154,9 @@ namespace 智能藥庫系統
             }
             List<object[]> list_自選藥品 = this.sqL_DataGridView_戰情白板_自選藥品_選取內容.SQL_GetAllRows(false);
             List<object[]> list_自選藥品_buf = new List<object[]>();
-            string 藥品碼 = list_value[0][(int)enum_藥庫_藥品資料.藥品碼].ObjectToString();
-            string 藥品名稱 = list_value[0][(int)enum_藥庫_藥品資料.藥品名稱].ObjectToString();
-            string 包裝單位 = list_value[0][(int)enum_藥庫_藥品資料.包裝單位].ObjectToString();
+            string 藥品碼 = list_value[0][(int)enum_medDrugstore.藥品碼].ObjectToString();
+            string 藥品名稱 = list_value[0][(int)enum_medDrugstore.藥品名稱].ObjectToString();
+            string 包裝單位 = list_value[0][(int)enum_medDrugstore.包裝單位].ObjectToString();
             list_自選藥品_buf = list_自選藥品.GetRows((int)enum_戰情白板_自選藥品.藥碼, 藥品碼);
             if (list_自選藥品_buf.Count == 0)
             {
