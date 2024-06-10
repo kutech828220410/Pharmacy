@@ -221,7 +221,6 @@ namespace 智能藥庫系統
             PLC_UI_Init.Set_PLC_ScreenPage(panel_Main, this.plC_ScreenPage_Main);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫, this.plC_ScreenPage_藥庫);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_儲位設定, this.plC_ScreenPage_藥庫_儲位設定);
-            PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_撥補, this.plC_ScreenPage_藥庫_撥補);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_撥補_藥局, this.plC_ScreenPage_藥庫_撥補_藥局);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_緊急訂單, this.plC_ScreenPage_藥庫_緊急訂單);
             PLC_UI_Init.Set_PLC_ScreenPage(panel_藥庫_驗收入庫, this.plC_ScreenPage_藥庫_驗收入庫);
@@ -263,7 +262,7 @@ namespace 智能藥庫系統
             this.sub_Program_藥庫_每日訂單_訂單查詢_Init();
             this.sub_Program_藥庫_每日訂單_檢視驗收入庫量_Init();
 
-            this.sub_Program_藥庫_撥補_藥局_自動撥補_Init();
+            this.sub_Program_藥庫_撥補_自動撥補_Init();
             this.sub_Program_藥庫_撥補_藥局_緊急申領_Init();
             this.sub_Program_藥庫_驗收入庫_過帳明細_Init();
             this.sub_Program_藥庫_驗收入庫_補給驗收_Init();

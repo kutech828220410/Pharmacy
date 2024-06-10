@@ -113,8 +113,7 @@ namespace 智能藥庫系統
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_冷藏藥);
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_分包機裸錠);
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_高價藥櫃);
-            this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_少用);
-            this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_易混區);
+            this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_少用及易混);
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_口服藥);
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_針劑);
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥局_藥品資料_表單分類_外用藥);
@@ -444,8 +443,7 @@ namespace 智能藥庫系統
                 if (checkBox_藥局_藥品資料_表單分類_冷藏藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.冷藏藥.GetEnumName()));
                 if (checkBox_藥局_藥品資料_表單分類_分包機裸錠.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.分包機裸錠.GetEnumName()));
                 if (checkBox_藥局_藥品資料_表單分類_高價藥櫃.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.高價藥櫃.GetEnumName()));
-                if (checkBox_藥局_藥品資料_表單分類_少用.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.少用.GetEnumName()));
-                if (checkBox_藥局_藥品資料_表單分類_易混區.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.易混區.GetEnumName()));
+                if (checkBox_藥局_藥品資料_表單分類_少用及易混.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.少用及易混.GetEnumName()));
                 if (checkBox_藥局_藥品資料_表單分類_口服藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.口服藥.GetEnumName()));
                 if (checkBox_藥局_藥品資料_表單分類_針劑.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.針劑.GetEnumName()));
                 if (checkBox_藥局_藥品資料_表單分類_外用藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.外用藥.GetEnumName()));
