@@ -34,7 +34,7 @@ namespace 智能藥庫系統
         private const string DBConfigFileName = "DBConfig.txt";
         private const string MyConfigFileName = "MyConfig.txt";
         public MyConfigClass myConfigClass = new MyConfigClass();
-        public DBConfigClass dBConfigClass = new DBConfigClass();
+        static public DBConfigClass dBConfigClass = new DBConfigClass();
         private PLC_Device PLC_Device_主機模式 = new PLC_Device("S1050");
         private PLC_Device PLC_Device_滑鼠左鍵按下 = new PLC_Device("S4600");
         private PLC_Device PLC_Device_M8013 = new PLC_Device("M8013");

@@ -133,3 +133,4 @@ C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\stdole.dll
+C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\SQLUI.xml

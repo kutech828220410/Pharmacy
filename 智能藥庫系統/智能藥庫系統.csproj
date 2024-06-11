@@ -350,6 +350,12 @@
     <Compile Include="Dialog\Dialog_藥局_藥品資料_匯入選擇.Designer.cs">
       <DependentUpon>Dialog_藥局_藥品資料_匯入選擇.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_自動撥補_列印及匯出.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_自動撥補_列印及匯出.Designer.cs">
+      <DependentUpon>Dialog_自動撥補_列印及匯出.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -496,6 +502,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_日期選擇.resx">
       <DependentUpon>Dialog_日期選擇.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialog\Dialog_自動撥補_列印及匯出.resx">
+      <DependentUpon>Dialog_自動撥補_列印及匯出.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_藥局_藥品資料_匯入選擇.resx">
       <DependentUpon>Dialog_藥局_藥品資料_匯入選擇.cs</DependentUpon>

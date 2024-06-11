@@ -63,3 +63,4 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_公藥批次帳讀取\bi
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_公藥批次帳讀取\bin\Release\stdole.dll
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_公藥批次帳讀取\bin\Release\HIS_DB_Lib.xml
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_公藥批次帳讀取\obj\Release\ConsoleApp_公藥批次帳讀取.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_公藥批次帳讀取\bin\Release\SQLUI.xml

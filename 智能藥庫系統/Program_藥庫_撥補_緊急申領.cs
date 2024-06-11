@@ -187,8 +187,7 @@ namespace 智能藥庫系統
                     if (list_value.Count == 0) return;
                     this.Function_從SQL取得儲位到本地資料();
                     List<object[]> list_儲位資料 = new List<object[]>();
-                    List<Storage> storages_藥庫_replace = new List<Storage>();
-                    List<Storage> storages_藥庫_buf = new List<Storage>();
+            
                     string 藥品碼 = "";
                     string 藥品名稱 = "";
                     int 來源庫存量 = 0;
@@ -287,15 +286,9 @@ namespace 智能藥庫系統
                             儲位資訊_效期 = list_儲位資料[k][(int)enum_儲位資訊.效期].ObjectToString();
                             儲位資訊_批號 = list_儲位資料[k][(int)enum_儲位資訊.批號].ObjectToString();
                             儲位資訊_異動量 = list_儲位資料[k][(int)enum_儲位資訊.異動量].ObjectToString().StringToInt32();
-                            Storage storage_藥庫 = this.List_Pannel35_本地資料.SortByGUID(儲位資訊_GUID);
                             DeviceBasic deviceBasic_藥庫 = this.List_藥庫_DeviceBasic.SortByGUID(儲位資訊_GUID);
-                            if (storage_藥庫 == null && deviceBasic_藥庫 == null) continue;
-                            if (storage_藥庫 != null)
-                            {
-                                storage_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_異動量);
-                                storages_藥庫_replace.Add(storage_藥庫);
-                                this.List_Pannel35_本地資料.Add_NewStorage(storage_藥庫);
-                            }
+                            if (deviceBasic_藥庫 == null) continue;
+                        
                             if (deviceBasic_藥庫 != null)
                             {
 
@@ -320,11 +313,6 @@ namespace 智能藥庫系統
                                
                            
                             }
-
-
-
-
-                           
 
                             來源備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * 1}";
                             if (k != list_儲位資料.Count - 1) 來源備註 += "\n";
@@ -398,7 +386,6 @@ namespace 智能藥庫系統
 
                     dialog_Prcessbar.State = "上傳資料...";
                     dialog_Prcessbar.Close();
-                    this.storageUI_WT32.SQL_ReplaceStorage(storages_藥庫_replace);
                     this.DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_藥庫_replace);
                     this.DeviceBasicClass_藥局.SQL_ReplaceDeviceBasic(deviceBasics_藥局_replace);
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(list_value, false);

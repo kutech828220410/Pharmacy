@@ -65,12 +65,27 @@ namespace ConsoleApp_分包機裸錠_每日自動撥補單建立
                 int 安全量 = medClasses_藥局[i].安全庫存.StringToInt32();
                 int 包裝數量 = medClasses_藥局[i].包裝數量.StringToInt32();
                 if (包裝數量 < 0) 包裝數量 = 1;
+
                 int 撥發量 = 基準量 - 藥局庫存;
+                int 實撥量 = 0;
+
                 if (撥發量 % 包裝數量 != 0)
                 {
                     撥發量 = 撥發量 - (撥發量 % 包裝數量);
-                    撥發量 = 撥發量 + 包裝數量;
+                    撥發量 = 撥發量 + 包裝數量;               
                 }
+                實撥量 = 撥發量;
+
+                if (實撥量 > 藥庫庫存)
+                {
+                    實撥量 = 藥庫庫存;
+                    if (實撥量 % 包裝數量 != 0)
+                    {
+                        實撥量 = 實撥量 - (實撥量 % 包裝數量);
+                    }
+                    if (實撥量 < 0) 實撥量 = 0;
+                }
+
                 string temp_str = $"「({藥碼}) {藥名}」";
                 temp_str = temp_str.StringLength(50);
 
@@ -85,6 +100,7 @@ namespace ConsoleApp_分包機裸錠_每日自動撥補單建立
                 drugStotreDistributionClass.來源庫庫存 = medClasses_藥局[i].藥庫庫存;
                 drugStotreDistributionClass.目的庫庫存 = medClasses_藥局[i].藥局庫存;
                 drugStotreDistributionClass.撥發量 = 撥發量.ToString();
+                drugStotreDistributionClass.實撥量 = 實撥量.ToString();
                 drugStotreDistributionClass.報表名稱 = "分包機裸錠";
                 drugStotreDistributionClass.加入時間 = DateTime.Now;
                 drugStotreDistributionClass.報表生成時間 = DateTime.Now;

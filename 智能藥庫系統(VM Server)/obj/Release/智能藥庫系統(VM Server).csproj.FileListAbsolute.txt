@@ -464,3 +464,4 @@ Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Serv
 Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).csproj.CopyComplete
 Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe
 Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
+C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SQLUI.xml

@@ -572,7 +572,18 @@
             this.藥庫_撥補 = new System.Windows.Forms.TabPage();
             this.plC_ScreenPage_藥庫_撥補_藥局 = new MyUI.PLC_ScreenPage();
             this.tabPage28 = new System.Windows.Forms.TabPage();
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出 = new MyUI.PLC_RJ_Button();
             this.plC_RJ_Pannel7 = new MyUI.PLC_RJ_Pannel();
+            this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.parentCheckBox_藥局_撥補_表單分類_全選 = new MyUI.ParentCheckBox();
+            this.checkBox_藥局_撥補_表單分類_未分類 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_外用藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_針劑 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_口服藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_少用及易混 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_冷藏藥 = new System.Windows.Forms.CheckBox();
             this.dateTimeIntervelPicker_藥庫_撥補_搜尋條件_報表時間 = new MyUI.DateTimeIntervelPicker();
             this.comboBox_藥庫_撥補_搜尋條件 = new System.Windows.Forms.ComboBox();
             this.plC_RJ_Button_藥庫_撥補_搜尋 = new MyUI.PLC_RJ_Button();
@@ -1367,17 +1378,13 @@
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.groupBox30 = new System.Windows.Forms.GroupBox();
-            this.parentCheckBox_藥局_撥補_表單分類_全選 = new MyUI.ParentCheckBox();
-            this.checkBox_藥局_撥補_表單分類_未分類 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_外用藥 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_針劑 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_口服藥 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_少用及易混 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_撥補_表單分類_冷藏藥 = new System.Windows.Forms.CheckBox();
-            this.plC_RJ_Button2 = new MyUI.PLC_RJ_Button();
+            this.plC_RJ_Button_藥庫_撥補_核撥 = new MyUI.PLC_RJ_Button();
+            this.groupBox31 = new System.Windows.Forms.GroupBox();
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成 = new MyUI.PLC_CheckBox();
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳 = new MyUI.PLC_CheckBox();
+            this.parentCheckBox_藥局_撥補_狀態條件_全選 = new MyUI.ParentCheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -1529,6 +1536,7 @@
             this.plC_ScreenPage_藥庫_撥補_藥局.SuspendLayout();
             this.tabPage28.SuspendLayout();
             this.plC_RJ_Pannel7.SuspendLayout();
+            this.groupBox30.SuspendLayout();
             this.plC_RJ_Pannel6.SuspendLayout();
             this.tabPage29.SuspendLayout();
             this.rJ_GroupBox27.ContentsPanel.SuspendLayout();
@@ -1755,7 +1763,7 @@
             this.groupBox15.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.panel_系統.SuspendLayout();
-            this.groupBox30.SuspendLayout();
+            this.groupBox31.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer_init
@@ -4258,7 +4266,7 @@
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeadersHeight = 4;
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_戰情白板_自選藥品_藥品資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -9714,7 +9722,7 @@
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeadersHeight = 18;
+            this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeadersHeight = 15;
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -10824,7 +10832,7 @@
             this.sqL_DataGridView_雲端藥檔.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_雲端藥檔.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_雲端藥檔.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_雲端藥檔.columnHeadersHeight = 18;
+            this.sqL_DataGridView_雲端藥檔.columnHeadersHeight = 15;
             this.sqL_DataGridView_雲端藥檔.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_雲端藥檔.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_雲端藥檔.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -11987,7 +11995,7 @@
             this.sqL_DataGridView_交易記錄查詢.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_交易記錄查詢.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_交易記錄查詢.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_交易記錄查詢.columnHeadersHeight = 18;
+            this.sqL_DataGridView_交易記錄查詢.columnHeadersHeight = 15;
             this.sqL_DataGridView_交易記錄查詢.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_交易記錄查詢.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sqL_DataGridView_交易記錄查詢.Dock = System.Windows.Forms.DockStyle.Top;
@@ -13712,7 +13720,7 @@
             this.sqL_DataGridView_藥庫_藥品資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥庫_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥庫_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥庫_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥庫_藥品資料.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_藥庫_藥品資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -16015,7 +16023,7 @@
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeadersHeight = 4;
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_藥庫_儲位設定_Pannel35_藥品資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -16318,7 +16326,7 @@
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sqL_DataGridView_藥庫_入庫_入庫狀態.Dock = System.Windows.Forms.DockStyle.Top;
@@ -16972,7 +16980,8 @@
             // tabPage28
             // 
             this.tabPage28.BackColor = System.Drawing.Color.White;
-            this.tabPage28.Controls.Add(this.plC_RJ_Button2);
+            this.tabPage28.Controls.Add(this.plC_RJ_Button_藥庫_撥補_核撥);
+            this.tabPage28.Controls.Add(this.plC_RJ_Button_藥庫_撥補_列印及匯出);
             this.tabPage28.Controls.Add(this.plC_RJ_Pannel7);
             this.tabPage28.Controls.Add(this.plC_RJ_Pannel6);
             this.tabPage28.Location = new System.Drawing.Point(4, 25);
@@ -16982,6 +16991,59 @@
             this.tabPage28.TabIndex = 0;
             this.tabPage28.Text = "自動撥補";
             // 
+            // plC_RJ_Button_藥庫_撥補_列印及匯出
+            // 
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Bool = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.BorderRadius = 20;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.but_press = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.DisenableColor = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.GUID = "";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Location = new System.Drawing.Point(1234, 572);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Name = "plC_RJ_Button_藥庫_撥補_列印及匯出";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.OFF_文字內容 = "列印及匯出資料";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ON_文字內容 = "列印及匯出資料";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ShadowSize = 3;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Size = new System.Drawing.Size(184, 83);
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.State = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.TabIndex = 195;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Text = "列印及匯出資料";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.TextHeight = 0;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.Texts = "列印及匯出資料";
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.背景圖片 = null;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.音效 = true;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.顯示 = false;
+            this.plC_RJ_Button_藥庫_撥補_列印及匯出.顯示狀態 = false;
+            // 
             // plC_RJ_Pannel7
             // 
             this.plC_RJ_Pannel7.BackColor = System.Drawing.Color.White;
@@ -16989,6 +17051,7 @@
             this.plC_RJ_Pannel7.BorderColor = System.Drawing.Color.DimGray;
             this.plC_RJ_Pannel7.BorderRadius = 8;
             this.plC_RJ_Pannel7.BorderSize = 2;
+            this.plC_RJ_Pannel7.Controls.Add(this.groupBox31);
             this.plC_RJ_Pannel7.Controls.Add(this.groupBox30);
             this.plC_RJ_Pannel7.Controls.Add(this.dateTimeIntervelPicker_藥庫_撥補_搜尋條件_報表時間);
             this.plC_RJ_Pannel7.Controls.Add(this.comboBox_藥庫_撥補_搜尋條件);
@@ -17005,6 +17068,152 @@
             this.plC_RJ_Pannel7.ShadowSize = 3;
             this.plC_RJ_Pannel7.Size = new System.Drawing.Size(787, 302);
             this.plC_RJ_Pannel7.TabIndex = 156;
+            // 
+            // groupBox30
+            // 
+            this.groupBox30.Controls.Add(this.parentCheckBox_藥局_撥補_表單分類_全選);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_未分類);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_外用藥);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_針劑);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_口服藥);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_少用及易混);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_高價藥櫃);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_分包機裸錠);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_冷藏藥);
+            this.groupBox30.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.groupBox30.ForeColor = System.Drawing.Color.Black;
+            this.groupBox30.Location = new System.Drawing.Point(17, 119);
+            this.groupBox30.Name = "groupBox30";
+            this.groupBox30.Size = new System.Drawing.Size(327, 166);
+            this.groupBox30.TabIndex = 157;
+            this.groupBox30.TabStop = false;
+            this.groupBox30.Text = "表單分類";
+            // 
+            // parentCheckBox_藥局_撥補_表單分類_全選
+            // 
+            this.parentCheckBox_藥局_撥補_表單分類_全選.AutoSize = true;
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Checked = true;
+            this.parentCheckBox_藥局_撥補_表單分類_全選.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.ForeColor = System.Drawing.Color.Black;
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Location = new System.Drawing.Point(12, 29);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Name = "parentCheckBox_藥局_撥補_表單分類_全選";
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Size = new System.Drawing.Size(60, 24);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.TabIndex = 153;
+            this.parentCheckBox_藥局_撥補_表單分類_全選.Text = "全選";
+            this.parentCheckBox_藥局_撥補_表單分類_全選.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_未分類
+            // 
+            this.checkBox_藥局_撥補_表單分類_未分類.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_未分類.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_未分類.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_未分類.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_未分類.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_未分類.Location = new System.Drawing.Point(244, 119);
+            this.checkBox_藥局_撥補_表單分類_未分類.Name = "checkBox_藥局_撥補_表單分類_未分類";
+            this.checkBox_藥局_撥補_表單分類_未分類.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_未分類.TabIndex = 159;
+            this.checkBox_藥局_撥補_表單分類_未分類.Text = "未分類";
+            this.checkBox_藥局_撥補_表單分類_未分類.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_外用藥
+            // 
+            this.checkBox_藥局_撥補_表單分類_外用藥.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_外用藥.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_外用藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_外用藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_外用藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_外用藥.Location = new System.Drawing.Point(244, 59);
+            this.checkBox_藥局_撥補_表單分類_外用藥.Name = "checkBox_藥局_撥補_表單分類_外用藥";
+            this.checkBox_藥局_撥補_表單分類_外用藥.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_外用藥.TabIndex = 158;
+            this.checkBox_藥局_撥補_表單分類_外用藥.Text = "外用藥";
+            this.checkBox_藥局_撥補_表單分類_外用藥.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_針劑
+            // 
+            this.checkBox_藥局_撥補_表單分類_針劑.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_針劑.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_針劑.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_針劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_針劑.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_針劑.Location = new System.Drawing.Point(130, 119);
+            this.checkBox_藥局_撥補_表單分類_針劑.Name = "checkBox_藥局_撥補_表單分類_針劑";
+            this.checkBox_藥局_撥補_表單分類_針劑.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥局_撥補_表單分類_針劑.TabIndex = 157;
+            this.checkBox_藥局_撥補_表單分類_針劑.Text = "針劑";
+            this.checkBox_藥局_撥補_表單分類_針劑.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_口服藥
+            // 
+            this.checkBox_藥局_撥補_表單分類_口服藥.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_口服藥.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_口服藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_口服藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_口服藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_口服藥.Location = new System.Drawing.Point(130, 89);
+            this.checkBox_藥局_撥補_表單分類_口服藥.Name = "checkBox_藥局_撥補_表單分類_口服藥";
+            this.checkBox_藥局_撥補_表單分類_口服藥.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_口服藥.TabIndex = 156;
+            this.checkBox_藥局_撥補_表單分類_口服藥.Text = "口服藥";
+            this.checkBox_藥局_撥補_表單分類_口服藥.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_少用及易混
+            // 
+            this.checkBox_藥局_撥補_表單分類_少用及易混.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_少用及易混.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_少用及易混.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Location = new System.Drawing.Point(130, 59);
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Name = "checkBox_藥局_撥補_表單分類_少用及易混";
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Size = new System.Drawing.Size(108, 24);
+            this.checkBox_藥局_撥補_表單分類_少用及易混.TabIndex = 154;
+            this.checkBox_藥局_撥補_表單分類_少用及易混.Text = "少用及易混";
+            this.checkBox_藥局_撥補_表單分類_少用及易混.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_高價藥櫃
+            // 
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Location = new System.Drawing.Point(12, 119);
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Name = "checkBox_藥局_撥補_表單分類_高價藥櫃";
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Size = new System.Drawing.Size(92, 24);
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.TabIndex = 153;
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Text = "高價藥櫃";
+            this.checkBox_藥局_撥補_表單分類_高價藥櫃.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_分包機裸錠
+            // 
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Location = new System.Drawing.Point(12, 89);
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Name = "checkBox_藥局_撥補_表單分類_分包機裸錠";
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Size = new System.Drawing.Size(108, 24);
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.TabIndex = 152;
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Text = "分包機裸錠";
+            this.checkBox_藥局_撥補_表單分類_分包機裸錠.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_冷藏藥
+            // 
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Location = new System.Drawing.Point(12, 59);
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Name = "checkBox_藥局_撥補_表單分類_冷藏藥";
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.TabIndex = 151;
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.Text = "冷藏藥";
+            this.checkBox_藥局_撥補_表單分類_冷藏藥.UseVisualStyleBackColor = true;
             // 
             // dateTimeIntervelPicker_藥庫_撥補_搜尋條件_報表時間
             // 
@@ -22356,7 +22565,7 @@
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeadersHeight = 18;
+            this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeadersHeight = 4;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.DataBaseName = "order_000";
             this.sqL_DataGridView_緊急訂單_下訂單_供應商搜尋.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -22726,7 +22935,7 @@
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeadersHeight = 18;
+            this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeadersHeight = 4;
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.DataBaseName = "order_000";
             this.sqL_DataGridView_緊急訂單_下訂單_藥品搜尋.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -22864,7 +23073,7 @@
             this.sqL_DataGridView_訂單管理_發票內容.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_訂單管理_發票內容.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_訂單管理_發票內容.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_訂單管理_發票內容.columnHeadersHeight = 18;
+            this.sqL_DataGridView_訂單管理_發票內容.columnHeadersHeight = 15;
             this.sqL_DataGridView_訂單管理_發票內容.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_訂單管理_發票內容.DataBaseName = "order_000";
             this.sqL_DataGridView_訂單管理_發票內容.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -23849,7 +24058,7 @@
             this.sqL_DataGridView_訂單管理_訂單內容.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_訂單管理_訂單內容.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_訂單管理_訂單內容.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_訂單管理_訂單內容.columnHeadersHeight = 18;
+            this.sqL_DataGridView_訂單管理_訂單內容.columnHeadersHeight = 15;
             this.sqL_DataGridView_訂單管理_訂單內容.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_訂單管理_訂單內容.DataBaseName = "order_000";
             this.sqL_DataGridView_訂單管理_訂單內容.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -23946,7 +24155,7 @@
             this.sqL_DataGridView_訂單管理_訂單列表.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_訂單管理_訂單列表.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_訂單管理_訂單列表.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_訂單管理_訂單列表.columnHeadersHeight = 18;
+            this.sqL_DataGridView_訂單管理_訂單列表.columnHeadersHeight = 15;
             this.sqL_DataGridView_訂單管理_訂單列表.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_訂單管理_訂單列表.DataBaseName = "order_000";
             this.sqL_DataGridView_訂單管理_訂單列表.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -27220,7 +27429,7 @@
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.sqL_DataGridView_藥庫_驗收入庫_補給驗收_發票資料.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -27720,7 +27929,7 @@
             this.sqL_DataGridView_藥局_藥品資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥局_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥局_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_藥局_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥局_藥品資料.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_藥局_藥品資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.NotSet;
@@ -28977,7 +29186,7 @@
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeadersHeight = 4;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_藥局_緊急申領_藥品資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -33916,7 +34125,7 @@
             this.sqL_DataGridView_人員資料.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_人員資料.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_人員資料.columnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.sqL_DataGridView_人員資料.columnHeadersHeight = 18;
+            this.sqL_DataGridView_人員資料.columnHeadersHeight = 15;
             this.sqL_DataGridView_人員資料.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_人員資料.DataBaseName = "Dispensing_000";
             this.sqL_DataGridView_人員資料.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -38242,204 +38451,167 @@
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // groupBox30
+            // plC_RJ_Button_藥庫_撥補_核撥
             // 
-            this.groupBox30.Controls.Add(this.parentCheckBox_藥局_撥補_表單分類_全選);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_未分類);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_外用藥);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_針劑);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_口服藥);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_少用及易混);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_高價藥櫃);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_分包機裸錠);
-            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_冷藏藥);
-            this.groupBox30.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.groupBox30.ForeColor = System.Drawing.Color.Black;
-            this.groupBox30.Location = new System.Drawing.Point(17, 119);
-            this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(327, 166);
-            this.groupBox30.TabIndex = 157;
-            this.groupBox30.TabStop = false;
-            this.groupBox30.Text = "表單分類";
+            this.plC_RJ_Button_藥庫_撥補_核撥.AutoResetState = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Bool = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_藥庫_撥補_核撥.BorderRadius = 20;
+            this.plC_RJ_Button_藥庫_撥補_核撥.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_核撥.but_press = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_藥庫_撥補_核撥.DisenableColor = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_藥庫_撥補_核撥.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_藥庫_撥補_核撥.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_核撥.GUID = "";
+            this.plC_RJ_Button_藥庫_撥補_核撥.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_藥庫_撥補_核撥.Location = new System.Drawing.Point(1424, 572);
+            this.plC_RJ_Button_藥庫_撥補_核撥.Name = "plC_RJ_Button_藥庫_撥補_核撥";
+            this.plC_RJ_Button_藥庫_撥補_核撥.OFF_文字內容 = "核撥";
+            this.plC_RJ_Button_藥庫_撥補_核撥.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_核撥.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_核撥.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ON_BorderSize = 5;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ON_文字內容 = "核撥";
+            this.plC_RJ_Button_藥庫_撥補_核撥.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
+            this.plC_RJ_Button_藥庫_撥補_核撥.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ShadowSize = 3;
+            this.plC_RJ_Button_藥庫_撥補_核撥.ShowLoadingForm = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Size = new System.Drawing.Size(184, 83);
+            this.plC_RJ_Button_藥庫_撥補_核撥.State = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.TabIndex = 196;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Text = "核撥";
+            this.plC_RJ_Button_藥庫_撥補_核撥.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_藥庫_撥補_核撥.TextHeight = 0;
+            this.plC_RJ_Button_藥庫_撥補_核撥.Texts = "核撥";
+            this.plC_RJ_Button_藥庫_撥補_核撥.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.字型鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_藥庫_撥補_核撥.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_藥庫_撥補_核撥.文字鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.背景圖片 = null;
+            this.plC_RJ_Button_藥庫_撥補_核撥.讀取位元反向 = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.讀寫鎖住 = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.音效 = true;
+            this.plC_RJ_Button_藥庫_撥補_核撥.顯示 = false;
+            this.plC_RJ_Button_藥庫_撥補_核撥.顯示狀態 = false;
             // 
-            // parentCheckBox_藥局_撥補_表單分類_全選
+            // groupBox31
             // 
-            this.parentCheckBox_藥局_撥補_表單分類_全選.AutoSize = true;
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Checked = true;
-            this.parentCheckBox_藥局_撥補_表單分類_全選.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Font = new System.Drawing.Font("微軟正黑體", 12F);
-            this.parentCheckBox_藥局_撥補_表單分類_全選.ForeColor = System.Drawing.Color.Black;
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Location = new System.Drawing.Point(12, 29);
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Name = "parentCheckBox_藥局_撥補_表單分類_全選";
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Size = new System.Drawing.Size(60, 24);
-            this.parentCheckBox_藥局_撥補_表單分類_全選.TabIndex = 153;
-            this.parentCheckBox_藥局_撥補_表單分類_全選.Text = "全選";
-            this.parentCheckBox_藥局_撥補_表單分類_全選.UseVisualStyleBackColor = true;
+            this.groupBox31.Controls.Add(this.parentCheckBox_藥局_撥補_狀態條件_全選);
+            this.groupBox31.Controls.Add(this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足);
+            this.groupBox31.Controls.Add(this.plC_CheckBox_藥局_撥補_狀態條件_已列印);
+            this.groupBox31.Controls.Add(this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成);
+            this.groupBox31.Controls.Add(this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳);
+            this.groupBox31.Font = new System.Drawing.Font("新細明體", 12F);
+            this.groupBox31.Location = new System.Drawing.Point(350, 119);
+            this.groupBox31.Name = "groupBox31";
+            this.groupBox31.Size = new System.Drawing.Size(289, 166);
+            this.groupBox31.TabIndex = 194;
+            this.groupBox31.TabStop = false;
+            this.groupBox31.Text = "狀態條件";
             // 
-            // checkBox_藥局_撥補_表單分類_未分類
+            // plC_CheckBox_藥局_撥補_狀態條件_庫存不足
             // 
-            this.checkBox_藥局_撥補_表單分類_未分類.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_未分類.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_未分類.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_未分類.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_未分類.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_未分類.Location = new System.Drawing.Point(244, 119);
-            this.checkBox_藥局_撥補_表單分類_未分類.Name = "checkBox_藥局_撥補_表單分類_未分類";
-            this.checkBox_藥局_撥補_表單分類_未分類.Size = new System.Drawing.Size(76, 24);
-            this.checkBox_藥局_撥補_表單分類_未分類.TabIndex = 159;
-            this.checkBox_藥局_撥補_表單分類_未分類.Text = "未分類";
-            this.checkBox_藥局_撥補_表單分類_未分類.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.AutoSize = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Bool = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Checked = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Location = new System.Drawing.Point(121, 61);
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Name = "plC_CheckBox_藥局_撥補_狀態條件_庫存不足";
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Size = new System.Drawing.Size(92, 24);
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.TabIndex = 197;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.Text = "庫存不足";
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.文字內容 = "庫存不足";
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.讀寫鎖住 = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_庫存不足.音效 = true;
             // 
-            // checkBox_藥局_撥補_表單分類_外用藥
+            // plC_CheckBox_藥局_撥補_狀態條件_已列印
             // 
-            this.checkBox_藥局_撥補_表單分類_外用藥.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_外用藥.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_外用藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_外用藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_外用藥.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_外用藥.Location = new System.Drawing.Point(244, 59);
-            this.checkBox_藥局_撥補_表單分類_外用藥.Name = "checkBox_藥局_撥補_表單分類_外用藥";
-            this.checkBox_藥局_撥補_表單分類_外用藥.Size = new System.Drawing.Size(76, 24);
-            this.checkBox_藥局_撥補_表單分類_外用藥.TabIndex = 158;
-            this.checkBox_藥局_撥補_表單分類_外用藥.Text = "外用藥";
-            this.checkBox_藥局_撥補_表單分類_外用藥.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.AutoSize = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Bool = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Checked = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Location = new System.Drawing.Point(18, 119);
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Name = "plC_CheckBox_藥局_撥補_狀態條件_已列印";
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Size = new System.Drawing.Size(76, 24);
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.TabIndex = 196;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.Text = "已列印";
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.文字內容 = "已列印";
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.讀寫鎖住 = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_已列印.音效 = true;
             // 
-            // checkBox_藥局_撥補_表單分類_針劑
+            // plC_CheckBox_藥局_撥補_狀態條件_過帳完成
             // 
-            this.checkBox_藥局_撥補_表單分類_針劑.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_針劑.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_針劑.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_針劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_針劑.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_針劑.Location = new System.Drawing.Point(130, 119);
-            this.checkBox_藥局_撥補_表單分類_針劑.Name = "checkBox_藥局_撥補_表單分類_針劑";
-            this.checkBox_藥局_撥補_表單分類_針劑.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥局_撥補_表單分類_針劑.TabIndex = 157;
-            this.checkBox_藥局_撥補_表單分類_針劑.Text = "針劑";
-            this.checkBox_藥局_撥補_表單分類_針劑.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.AutoSize = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Bool = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Checked = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Location = new System.Drawing.Point(18, 89);
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Name = "plC_CheckBox_藥局_撥補_狀態條件_過帳完成";
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Size = new System.Drawing.Size(92, 24);
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.TabIndex = 194;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.Text = "過帳完成";
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.文字內容 = "過帳完成";
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.讀寫鎖住 = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成.音效 = true;
             // 
-            // checkBox_藥局_撥補_表單分類_口服藥
+            // plC_CheckBox_藥局_撥補_狀態條件_等待過帳
             // 
-            this.checkBox_藥局_撥補_表單分類_口服藥.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_口服藥.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_口服藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_口服藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_口服藥.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_口服藥.Location = new System.Drawing.Point(130, 89);
-            this.checkBox_藥局_撥補_表單分類_口服藥.Name = "checkBox_藥局_撥補_表單分類_口服藥";
-            this.checkBox_藥局_撥補_表單分類_口服藥.Size = new System.Drawing.Size(76, 24);
-            this.checkBox_藥局_撥補_表單分類_口服藥.TabIndex = 156;
-            this.checkBox_藥局_撥補_表單分類_口服藥.Text = "口服藥";
-            this.checkBox_藥局_撥補_表單分類_口服藥.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.AutoSize = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Bool = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Checked = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.ForeColor = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Location = new System.Drawing.Point(18, 59);
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Name = "plC_CheckBox_藥局_撥補_狀態條件_等待過帳";
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Size = new System.Drawing.Size(92, 24);
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.TabIndex = 193;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.Text = "等待過帳";
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.UseVisualStyleBackColor = true;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.文字內容 = "等待過帳";
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.文字字體 = new System.Drawing.Font("微軟正黑體", 12F);
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.文字顏色 = System.Drawing.Color.Black;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.讀寫鎖住 = false;
+            this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳.音效 = true;
             // 
-            // checkBox_藥局_撥補_表單分類_少用及易混
+            // parentCheckBox_藥局_撥補_狀態條件_全選
             // 
-            this.checkBox_藥局_撥補_表單分類_少用及易混.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_少用及易混.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_少用及易混.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Location = new System.Drawing.Point(130, 59);
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Name = "checkBox_藥局_撥補_表單分類_少用及易混";
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Size = new System.Drawing.Size(108, 24);
-            this.checkBox_藥局_撥補_表單分類_少用及易混.TabIndex = 154;
-            this.checkBox_藥局_撥補_表單分類_少用及易混.Text = "少用及易混";
-            this.checkBox_藥局_撥補_表單分類_少用及易混.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥局_撥補_表單分類_高價藥櫃
-            // 
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Location = new System.Drawing.Point(12, 119);
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Name = "checkBox_藥局_撥補_表單分類_高價藥櫃";
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Size = new System.Drawing.Size(92, 24);
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.TabIndex = 153;
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.Text = "高價藥櫃";
-            this.checkBox_藥局_撥補_表單分類_高價藥櫃.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥局_撥補_表單分類_分包機裸錠
-            // 
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Location = new System.Drawing.Point(12, 89);
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Name = "checkBox_藥局_撥補_表單分類_分包機裸錠";
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Size = new System.Drawing.Size(108, 24);
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.TabIndex = 152;
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.Text = "分包機裸錠";
-            this.checkBox_藥局_撥補_表單分類_分包機裸錠.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥局_撥補_表單分類_冷藏藥
-            // 
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Location = new System.Drawing.Point(12, 59);
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Name = "checkBox_藥局_撥補_表單分類_冷藏藥";
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Size = new System.Drawing.Size(76, 24);
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.TabIndex = 151;
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.Text = "冷藏藥";
-            this.checkBox_藥局_撥補_表單分類_冷藏藥.UseVisualStyleBackColor = true;
-            // 
-            // plC_RJ_Button2
-            // 
-            this.plC_RJ_Button2.AutoResetState = false;
-            this.plC_RJ_Button2.BackgroundColor = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button2.Bool = false;
-            this.plC_RJ_Button2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.plC_RJ_Button2.BorderRadius = 20;
-            this.plC_RJ_Button2.BorderSize = 0;
-            this.plC_RJ_Button2.but_press = false;
-            this.plC_RJ_Button2.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
-            this.plC_RJ_Button2.DisenableColor = System.Drawing.Color.Gray;
-            this.plC_RJ_Button2.FlatAppearance.BorderSize = 0;
-            this.plC_RJ_Button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plC_RJ_Button2.Font = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button2.GUID = "";
-            this.plC_RJ_Button2.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
-            this.plC_RJ_Button2.Image_padding = new System.Windows.Forms.Padding(0);
-            this.plC_RJ_Button2.Location = new System.Drawing.Point(1424, 564);
-            this.plC_RJ_Button2.Name = "plC_RJ_Button2";
-            this.plC_RJ_Button2.OFF_文字內容 = "列印及匯出資料";
-            this.plC_RJ_Button2.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button2.OFF_文字顏色 = System.Drawing.Color.White;
-            this.plC_RJ_Button2.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button2.ON_BorderSize = 5;
-            this.plC_RJ_Button2.ON_文字內容 = "列印及匯出資料";
-            this.plC_RJ_Button2.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F);
-            this.plC_RJ_Button2.ON_文字顏色 = System.Drawing.Color.Black;
-            this.plC_RJ_Button2.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
-            this.plC_RJ_Button2.ProhibitionBorderLineWidth = 1;
-            this.plC_RJ_Button2.ProhibitionLineWidth = 4;
-            this.plC_RJ_Button2.ProhibitionSymbolSize = 30;
-            this.plC_RJ_Button2.ShadowColor = System.Drawing.Color.DimGray;
-            this.plC_RJ_Button2.ShadowSize = 3;
-            this.plC_RJ_Button2.ShowLoadingForm = false;
-            this.plC_RJ_Button2.Size = new System.Drawing.Size(184, 83);
-            this.plC_RJ_Button2.State = false;
-            this.plC_RJ_Button2.TabIndex = 195;
-            this.plC_RJ_Button2.Text = "列印及匯出資料";
-            this.plC_RJ_Button2.TextColor = System.Drawing.Color.White;
-            this.plC_RJ_Button2.TextHeight = 0;
-            this.plC_RJ_Button2.Texts = "列印及匯出資料";
-            this.plC_RJ_Button2.UseVisualStyleBackColor = false;
-            this.plC_RJ_Button2.字型鎖住 = false;
-            this.plC_RJ_Button2.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
-            this.plC_RJ_Button2.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
-            this.plC_RJ_Button2.文字鎖住 = false;
-            this.plC_RJ_Button2.背景圖片 = null;
-            this.plC_RJ_Button2.讀取位元反向 = false;
-            this.plC_RJ_Button2.讀寫鎖住 = false;
-            this.plC_RJ_Button2.音效 = true;
-            this.plC_RJ_Button2.顯示 = false;
-            this.plC_RJ_Button2.顯示狀態 = false;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.AutoSize = true;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Checked = true;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Font = new System.Drawing.Font("微軟正黑體", 12F);
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.ForeColor = System.Drawing.Color.Black;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Location = new System.Drawing.Point(18, 29);
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Name = "parentCheckBox_藥局_撥補_狀態條件_全選";
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Size = new System.Drawing.Size(60, 24);
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.TabIndex = 200;
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.Text = "全選";
+            this.parentCheckBox_藥局_撥補_狀態條件_全選.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 
@@ -38620,6 +38792,8 @@
             this.tabPage28.ResumeLayout(false);
             this.plC_RJ_Pannel7.ResumeLayout(false);
             this.plC_RJ_Pannel7.PerformLayout();
+            this.groupBox30.ResumeLayout(false);
+            this.groupBox30.PerformLayout();
             this.plC_RJ_Pannel6.ResumeLayout(false);
             this.tabPage29.ResumeLayout(false);
             this.rJ_GroupBox27.ContentsPanel.ResumeLayout(false);
@@ -38877,8 +39051,8 @@
             this.groupBox15.ResumeLayout(false);
             this.tabPage5.ResumeLayout(false);
             this.panel_系統.ResumeLayout(false);
-            this.groupBox30.ResumeLayout(false);
-            this.groupBox30.PerformLayout();
+            this.groupBox31.ResumeLayout(false);
+            this.groupBox31.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -40232,7 +40406,14 @@
         private System.Windows.Forms.CheckBox checkBox_藥局_撥補_表單分類_高價藥櫃;
         private System.Windows.Forms.CheckBox checkBox_藥局_撥補_表單分類_分包機裸錠;
         private System.Windows.Forms.CheckBox checkBox_藥局_撥補_表單分類_冷藏藥;
-        private MyUI.PLC_RJ_Button plC_RJ_Button2;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_撥補_列印及匯出;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_撥補_核撥;
+        private System.Windows.Forms.GroupBox groupBox31;
+        private MyUI.ParentCheckBox parentCheckBox_藥局_撥補_狀態條件_全選;
+        private MyUI.PLC_CheckBox plC_CheckBox_藥局_撥補_狀態條件_庫存不足;
+        private MyUI.PLC_CheckBox plC_CheckBox_藥局_撥補_狀態條件_已列印;
+        private MyUI.PLC_CheckBox plC_CheckBox_藥局_撥補_狀態條件_過帳完成;
+        private MyUI.PLC_CheckBox plC_CheckBox_藥局_撥補_狀態條件_等待過帳;
     }
 }
 

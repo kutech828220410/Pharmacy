@@ -63,3 +63,4 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_針劑_每日自動撥�
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_針劑_每日自動撥補單建立\bin\Release\System.ValueTuple.xml
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_針劑_每日自動撥補單建立\obj\Release\ConsoleApp_針劑_每日自動撥補單建立.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_針劑_每日自動撥補單建立\obj\Release\ConsoleApp_針劑_每日自動撥補單建立.csproj.AssemblyReference.cache
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_針劑_每日自動撥補單建立\bin\Release\SQLUI.xml

@@ -320,14 +320,8 @@ namespace 智能藥庫系統
         private List<object> Function_從本地資料取得儲位(string 藥品碼)
         {
             List<object> list_value = new List<object>();
-            List<Storage> storages = List_Pannel35_本地資料.SortByCode(藥品碼);
             List<DeviceBasic> deviceBasics = this.List_藥庫_DeviceBasic.SortByCode(藥品碼);
 
-
-            for (int i = 0; i < storages.Count; i++)
-            {
-                list_value.Add(storages[i]);
-            }
             for (int i = 0; i < deviceBasics.Count; i++)
             {
                 list_value.Add(deviceBasics[i]);

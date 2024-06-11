@@ -45,23 +45,33 @@ namespace 智能藥庫系統
             // rJ_Button_取消
             // 
             this.rJ_Button_取消.AutoResetState = false;
-            this.rJ_Button_取消.BackColor = System.Drawing.Color.Gray;
+            this.rJ_Button_取消.BackColor = System.Drawing.Color.White;
             this.rJ_Button_取消.BackgroundColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_取消.BorderRadius = 5;
+            this.rJ_Button_取消.BorderRadius = 20;
             this.rJ_Button_取消.BorderSize = 0;
             this.rJ_Button_取消.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_取消.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.FlatAppearance.BorderSize = 0;
             this.rJ_Button_取消.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_取消.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_取消.ForeColor = System.Drawing.Color.White;
+            this.rJ_Button_取消.GUID = "";
+            this.rJ_Button_取消.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
             this.rJ_Button_取消.Location = new System.Drawing.Point(387, 15);
             this.rJ_Button_取消.Name = "rJ_Button_取消";
+            this.rJ_Button_取消.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_取消.ProhibitionLineWidth = 4;
+            this.rJ_Button_取消.ProhibitionSymbolSize = 30;
+            this.rJ_Button_取消.ShadowColor = System.Drawing.Color.DimGray;
+            this.rJ_Button_取消.ShadowSize = 3;
+            this.rJ_Button_取消.ShowLoadingForm = false;
             this.rJ_Button_取消.Size = new System.Drawing.Size(133, 98);
             this.rJ_Button_取消.State = false;
             this.rJ_Button_取消.TabIndex = 20;
             this.rJ_Button_取消.Text = "取消";
             this.rJ_Button_取消.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_取消.TextHeight = 0;
             this.rJ_Button_取消.UseVisualStyleBackColor = false;
             // 
             // groupBox1

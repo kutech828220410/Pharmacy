@@ -65,3 +65,4 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_門診過消耗帳\bin\R
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_門診過消耗帳\obj\Release\ConsoleApp_門診批次帳讀取.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_門診過消耗帳\obj\Release\ConsoleApp_門診批次帳讀取.exe
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_門診過消耗帳\obj\Release\ConsoleApp_門診批次帳讀取.pdb
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_門診過消耗帳\bin\Release\SQLUI.xml

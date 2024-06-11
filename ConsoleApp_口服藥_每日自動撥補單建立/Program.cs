@@ -58,50 +58,104 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                 medClasses_藥庫_buf = (from temp0 in medClasses_藥庫
                                      where temp0.藥品碼 == 藥碼
                                      select temp0).ToList();
-
+                int 已撥發量 = 0;
                 int 藥局庫存 = medClasses_藥局[i].藥局庫存.StringToInt32();
                 int 藥庫庫存 = medClasses_藥局[i].藥庫庫存.StringToInt32();
                 int 基準量 = medClasses_藥局[i].基準量.StringToInt32();
                 int 安全量 = medClasses_藥局[i].安全庫存.StringToInt32();
                 int 包裝數量 = medClasses_藥局[i].包裝數量.StringToInt32();
                 if (包裝數量 < 0) 包裝數量 = 1;
-                int 撥發量_temp = 基準量 - 藥局庫存;
-              
+
+                int 撥發量 = 基準量 - 藥局庫存;
+         
+                if (撥發量 % 包裝數量 != 0)
+                {
+                    撥發量 = 撥發量 - (撥發量 % 包裝數量);
+                    撥發量 = 撥發量 + 包裝數量;
+                }
+
+                if (撥發量 > 藥庫庫存)
+                {
+                    撥發量 = 藥庫庫存;
+                    if (撥發量 % 包裝數量 != 0)
+                    {
+                        撥發量 = 撥發量 - (撥發量 % 包裝數量);
+                    }
+                    if (撥發量 < 0) 撥發量 = 0;
+
+                }
+                int 撥發量_口服藥_UD = 0;
+                int 撥發量_口服藥_口一 = 0;
+                int 撥發量_口服藥_口二 = 0;
+
+                int 實撥量_口服藥_UD = 0;
+                int 實撥量_口服藥_口一 = 0;
+                int 實撥量_口服藥_口二 = 0;
+
+                撥發量_口服藥_口一 = 撥發量 / 5 * 2;
+                if (撥發量_口服藥_口一 % 包裝數量 != 0)
+                {
+                    撥發量_口服藥_口一 = 撥發量_口服藥_口一 - (撥發量_口服藥_口一 % 包裝數量);
+                    撥發量_口服藥_口一 = 撥發量_口服藥_口一 + 包裝數量;
+                }
+                已撥發量 += 撥發量_口服藥_口一;
+
+                if (已撥發量 <= 藥庫庫存)
+                {
+                    實撥量_口服藥_口一 = 撥發量_口服藥_口一;
+                }
+
+                撥發量_口服藥_口二 = 撥發量 / 5 * 2;
+                if (撥發量_口服藥_口二 % 包裝數量 != 0)
+                {
+                    撥發量_口服藥_口二 = 撥發量_口服藥_口二 - (撥發量_口服藥_口二 % 包裝數量);
+                    撥發量_口服藥_口二 = 撥發量_口服藥_口二 + 包裝數量;
+                }
+                已撥發量 += 撥發量_口服藥_口二;
+
+                if (已撥發量 <= 藥庫庫存)
+                {
+                    實撥量_口服藥_口二 = 撥發量_口服藥_口二;
+                }
+
+                撥發量_口服藥_UD = 撥發量 / 5 * 1;
+                if (撥發量_口服藥_UD % 包裝數量 != 0)
+                {
+                    撥發量_口服藥_UD = 撥發量_口服藥_UD - (撥發量_口服藥_UD % 包裝數量);
+                    撥發量_口服藥_UD = 撥發量_口服藥_UD + 包裝數量;
+                }
+                已撥發量 += 撥發量_口服藥_UD;
+                if (已撥發量 <= 藥庫庫存)
+                {
+                    實撥量_口服藥_UD = 撥發量_口服藥_UD;
+                }
+               
+
                 string temp_str = $"「({藥碼}) {藥名}」";
                 temp_str = temp_str.StringLength(50);
                 for (int k = 0; k < 3; k++)
                 {
-                    int 撥發量 = 0;
+                    int 撥發量_temp = 0;
+                    int 實撥量_temp = 0;
+
                     string 報表名稱 = "";
                     if (k == 0)
                     {
                         報表名稱 = "口服藥-UD";
-                        撥發量 = 撥發量_temp / 5 * 1;
-                        if (撥發量 % 包裝數量 != 0)
-                        {
-                            撥發量 = 撥發量 - (撥發量 % 包裝數量);
-                            撥發量 = 撥發量 + 包裝數量;
-                        }
+                        撥發量_temp = 撥發量_口服藥_UD;
+                        實撥量_temp = 實撥量_口服藥_UD;
                     }
                     if (k == 1)
                     {
                         報表名稱 = "口服藥-口一";
-                        撥發量 = 撥發量_temp / 5 * 2;
-                        if (撥發量 % 包裝數量 != 0)
-                        {
-                            撥發量 = 撥發量 - (撥發量 % 包裝數量);
-                            撥發量 = 撥發量 + 包裝數量;
-                        }
+                        撥發量_temp = 撥發量_口服藥_口一;
+                        實撥量_temp = 實撥量_口服藥_口一;
                     }
                     if (k == 2)
                     {
                         報表名稱 = "口服藥-口二";
-                        撥發量 = 撥發量_temp / 5 * 2;
-                        if (撥發量 % 包裝數量 != 0)
-                        {
-                            撥發量 = 撥發量 - (撥發量 % 包裝數量);
-                            撥發量 = 撥發量 + 包裝數量;
-                        }
+                        撥發量_temp = 撥發量_口服藥_口二;
+                        實撥量_temp = 實撥量_口服藥_口二;
                     }
                     drugStotreDistributionClass drugStotreDistributionClass = new drugStotreDistributionClass();
                     drugStotreDistributionClass.GUID = Guid.NewGuid().ToString();
@@ -114,7 +168,8 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                     drugStotreDistributionClass.狀態 = "等待過帳";
                     drugStotreDistributionClass.來源庫庫存 = medClasses_藥局[i].藥庫庫存;
                     drugStotreDistributionClass.目的庫庫存 = medClasses_藥局[i].藥局庫存;
-                    drugStotreDistributionClass.撥發量 = 撥發量.ToString();
+                    drugStotreDistributionClass.撥發量 = 撥發量_temp.ToString();
+                    drugStotreDistributionClass.實撥量 = 實撥量_temp.ToString();
                     drugStotreDistributionClass.報表名稱 = 報表名稱;
                     drugStotreDistributionClass.加入時間 = DateTime.Now;
                     drugStotreDistributionClass.報表生成時間 = DateTime.Now;

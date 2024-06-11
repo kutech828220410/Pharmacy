@@ -187,3 +187,4 @@ C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\office
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\stdole.dll
+C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\SQLUI.xml
