@@ -70,6 +70,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(230, DataGridViewContentAlignment.MiddleLeft, enum_drugStotreDistribution.備註);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_drugStotreDistribution.藥碼);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_撥補_自動撥補_DataGridRowsChangeRefEvent;
+            this.sqL_DataGridView_藥庫_撥補_自動撥補.RowDoubleClickEvent += SqL_DataGridView_藥庫_撥補_自動撥補_RowDoubleClickEvent;
 
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫庫存", enum_drugStotreDistribution.來源庫庫存);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局庫存", enum_drugStotreDistribution.目的庫庫存);
@@ -101,7 +102,7 @@ namespace 智能藥庫系統
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_自動撥補);
         }
 
-
+    
 
         private void sub_Program_藥庫_撥補_自動撥補()
         {
@@ -291,6 +292,27 @@ namespace 智能藥庫系統
                 if (RowsList[i][(int)enum_drugStotreDistribution.來源庫結存].ObjectToString().StringIsEmpty()) RowsList[i][(int)enum_drugStotreDistribution.來源庫結存] = "-";
                 if (RowsList[i][(int)enum_drugStotreDistribution.目的庫結存].ObjectToString().StringIsEmpty()) RowsList[i][(int)enum_drugStotreDistribution.目的庫結存] = "-";
             }
+        }
+        private void SqL_DataGridView_藥庫_撥補_自動撥補_RowDoubleClickEvent(object[] RowValue)
+        {
+            drugStotreDistributionClass drugStotreDistributionClass = RowValue.SQLToClass<drugStotreDistributionClass, enum_drugStotreDistribution>();
+            if (drugStotreDistributionClass == null) return;
+            if (drugStotreDistributionClass.狀態 == "過帳完成") return;
+
+            Dialog_NumPannel dialog_NumPannel = new Dialog_NumPannel("請輸入實撥數量");
+            if (dialog_NumPannel.ShowDialog() != DialogResult.Yes) return;
+            if(dialog_NumPannel.Value > drugStotreDistributionClass.來源庫庫存.StringToInt32())
+            {
+                MyMessageBox.ShowDialog("實撥量不得大於藥庫庫存");
+                return;
+            }
+            drugStotreDistributionClass.實撥量 = dialog_NumPannel.Value.ToString();
+            List<drugStotreDistributionClass> drugStotreDistributionClasses = new List<drugStotreDistributionClass>();
+            drugStotreDistributionClasses.Add(drugStotreDistributionClass);
+
+            drugStotreDistributionClass.update_by_guid(Main_Form.API_Server, drugStotreDistributionClasses);
+            RowValue = drugStotreDistributionClass.ClassToSQL<drugStotreDistributionClass, enum_drugStotreDistribution>();
+            this.sqL_DataGridView_藥庫_撥補_自動撥補.ReplaceExtra(RowValue, true);
         }
         private void PlC_RJ_Button_藥庫_撥補_核撥_MouseDownEvent(MouseEventArgs mevent)
         {
