@@ -132,7 +132,6 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_藥品資料.RowEnterEvent += SqL_DataGridView_藥庫_藥品資料_RowEnterEvent;
             this.sqL_DataGridView_藥庫_藥品資料_效期及庫存.Init();
             this.DeviceBasicClass_藥庫.Init(dBConfigClass.DB_Basic, "firstclass_device_jsonstring");
-            plC_RJ_ComboBox_藥庫_藥品資料_藥品群組.DataSource = this.plC_RJ_ComboBox_藥品資料_資料維護_本地藥檔_藥品群組.DataSource;
 
             this.plC_RJ_Button_藥庫_藥品資料_匯出.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_匯出_MouseDownEvent;
    
@@ -143,6 +142,17 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_顯示有庫存藥品_MouseDownEvent;
             this.plC_RJ_Button_藥庫_藥品資料_匯入安全基準量.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_匯入安全基準量_MouseDownEvent;
             this.plC_RJ_Button_藥庫_藥品資料_搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_藥品資料_搜尋_MouseDownEvent;
+
+
+            this.comboBox_藥庫_藥品資料_搜尋條件.SelectedIndex = 0;
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_冷藏藥);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_分包機裸錠);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_高價藥櫃);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_少用及易混);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_口服藥);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_針劑);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_外用藥);
+            this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AddChildCheckBox(checkBox_藥庫_藥品資料_表單分類_未分類);
 
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_藥品資料);
         }
@@ -643,47 +653,112 @@ namespace 智能藥庫系統
             }
         }
 
-        private void plC_RJ_ComboBox_藥庫_藥品資料_藥品群組_Enter(object sender, EventArgs e)
-        {
-            plC_RJ_ComboBox_藥庫_藥品資料_藥品群組.SetDataSource(Function_藥品資料_藥品群組_取得選單());
-        }
-
         private void PlC_RJ_Button_藥庫_藥品資料_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
-            List<object[]> list_value = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-            if (!this.rJ_TextBox_藥庫_藥品資料_藥品碼.Text.StringIsEmpty())
+
+            LoadingForm.ShowLoadingForm();
+            try
             {
-                list_value = list_value.GetRowsByLike((int)enum_medDrugstore.藥品碼, this.rJ_TextBox_藥庫_藥品資料_藥品碼.Text);
-            }
-            if (!this.rJ_TextBox_藥庫_藥品資料_中文名稱.Text.StringIsEmpty())
-            {
-                list_value = list_value.GetRowsByLike((int)enum_medDrugstore.中文名稱, this.rJ_TextBox_藥庫_藥品資料_中文名稱.Text);
-            }
-            if (!this.rJ_TextBox_藥庫_藥品資料_中文名稱.Text.StringIsEmpty())
-            {
-                list_value = list_value.GetRowsByLike((int)enum_medDrugstore.中文名稱, this.rJ_TextBox_藥庫_藥品資料_中文名稱.Text);
-            }
-            if (!this.rJ_TextBox_藥庫_藥品資料_藥品名稱.Text.StringIsEmpty())
-            {
-                list_value = list_value.GetRowsByLike((int)enum_medDrugstore.藥品名稱, this.rJ_TextBox_藥庫_藥品資料_藥品名稱.Text);
-            }
-            if (!this.rJ_TextBox_藥庫_藥品資料_藥品學名.Text.StringIsEmpty())
-            {
-                list_value = list_value.GetRowsByLike((int)enum_medDrugstore.藥品學名, this.rJ_TextBox_藥庫_藥品資料_藥品學名.Text);
-            }
-            if (plC_RJ_ChechBox_藥庫_藥品資料_藥品群組.Checked)
-            {
-                string[] strArray = myConvert.分解分隔號字串(plC_RJ_ComboBox_藥庫_藥品資料_藥品群組.Texts, ".");
-                int 群組序號 = strArray[0].StringToInt32();
-                if (群組序號 >= 1 && 群組序號 <= 20)
+                string cmb_text = "";
+                string serch_text = textBox_藥庫_藥品資料_搜尋.Text;
+
+                this.Invoke(new Action(delegate
                 {
-                    list_value = list_value.GetRows((int)enum_medDrugstore.藥品群組, 群組序號.ToString("00"));
+                    cmb_text = this.comboBox_藥庫_藥品資料_搜尋條件.Text;
+                }));
+                List<object[]> list_value = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+                list_value = this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_value);
+                List<object[]> list_value_buf = new List<object[]>();
+
+                if (cmb_text == "全部顯示")
+                {
+                    list_value_buf = list_value;
                 }
+                else if (cmb_text == "低於安全量")
+                {
+                    list_value_buf = (from temp in list_value
+                                      where temp[(int)enum_medPharmacy.藥庫庫存].StringToInt32() <= temp[(int)enum_medPharmacy.安全庫存].StringToInt32()
+                                      && temp[(int)enum_medPharmacy.安全庫存].StringToInt32() != 0
+                                      select temp).ToList();
+                }
+                else
+                {
+                    if (serch_text.StringIsEmpty() == true)
+                    {
+                        MyMessageBox.ShowDialog("搜尋內容空白");
+                        return;
+                    }
+                    if (cmb_text == "藥碼")
+                    {
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_模糊.Checked) list_value_buf = list_value.GetRowsByLike((int)enum_medPharmacy.藥品碼, serch_text);
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_前綴.Checked) list_value_buf = list_value.GetRowsStartWithByLike((int)enum_medPharmacy.藥品碼, serch_text);
+                    }
+                    if (cmb_text == "藥名")
+                    {
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_模糊.Checked) list_value_buf = list_value.GetRowsByLike((int)enum_medPharmacy.藥品名稱, serch_text);
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_前綴.Checked) list_value_buf = list_value.GetRowsStartWithByLike((int)enum_medPharmacy.藥品名稱, serch_text);
+                    }
+                    if (cmb_text == "中文名")
+                    {
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_模糊.Checked) list_value_buf = list_value.GetRowsByLike((int)enum_medPharmacy.中文名稱, serch_text);
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_前綴.Checked) list_value_buf = list_value.GetRowsStartWithByLike((int)enum_medPharmacy.中文名稱, serch_text);
+                    }
+                    if (cmb_text == "商品名")
+                    {
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_模糊.Checked) list_value_buf = list_value.GetRowsByLike((int)enum_medPharmacy.藥品學名, serch_text);
+                        if (rJ_RatioButton_藥庫_藥品資料_搜尋方式_前綴.Checked) list_value_buf = list_value.GetRowsStartWithByLike((int)enum_medPharmacy.藥品學名, serch_text);
+                    }
+                }
+
+                Dictionary<object, List<object[]>> keyValuePairs_開檔狀態 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.開檔狀態);
+                List<object[]> list_開檔狀態 = new List<object[]>();
+                if (checkBox_藥庫_藥品資料_開檔中.Checked)
+                {
+
+                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
+                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
+
+                }
+                if (checkBox_藥庫_藥品資料_未開檔.Checked)
+                {
+                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
+                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
+                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
+                }
+                list_value_buf = list_開檔狀態;
+
+                Dictionary<object, List<object[]>> keyValuePairs_表單分類 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.類別);
+                List<object[]> list_表單分類 = new List<object[]>();
+                if (checkBox_藥庫_藥品資料_表單分類_冷藏藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.冷藏藥.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_分包機裸錠.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.分包機裸錠.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_高價藥櫃.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.高價藥櫃.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_少用及易混.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.少用及易混.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_口服藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.口服藥.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_針劑.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.針劑.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_外用藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.外用藥.GetEnumName()));
+                if (checkBox_藥庫_藥品資料_表單分類_未分類.Checked)
+                {
+                    list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.未分類.GetEnumName()));
+                    list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(""));
+                }
+                list_value_buf = list_表單分類;
+
+                if (list_value_buf.Count == 0)
+                {
+                    MyMessageBox.ShowDialog("查無資料");
+                    return;
+                }
+                list_value_buf.Sort(new ICP_藥庫_藥品資料());
+                this.sqL_DataGridView_藥庫_藥品資料.RefreshGridNoEvent(list_value_buf);
             }
+            catch
+            {
 
-
-
-            this.sqL_DataGridView_藥庫_藥品資料.RefreshGrid(list_value);
+            }
+            finally
+            {
+                LoadingForm.CloseLoadingForm();
+            }
         }
 
         private void PlC_RJ_Button_藥庫_藥品資料_匯出_MouseDownEvent(MouseEventArgs mevent)
