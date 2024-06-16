@@ -65,24 +65,25 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                 int 安全量 = medClasses_藥局[i].安全庫存.StringToInt32();
                 int 包裝數量 = medClasses_藥局[i].包裝數量.StringToInt32();
                 if (包裝數量 < 0) 包裝數量 = 1;
-
+        
                 int 撥發量 = 基準量 - 藥局庫存;
-         
+                int 實撥量 = 0;
+
                 if (撥發量 % 包裝數量 != 0)
                 {
                     撥發量 = 撥發量 - (撥發量 % 包裝數量);
                     撥發量 = 撥發量 + 包裝數量;
                 }
+                實撥量 = 撥發量;
 
-                if (撥發量 > 藥庫庫存)
+                if (實撥量 > 藥庫庫存)
                 {
-                    撥發量 = 藥庫庫存;
-                    if (撥發量 % 包裝數量 != 0)
+                    實撥量 = 藥庫庫存;
+                    if (實撥量 % 包裝數量 != 0)
                     {
-                        撥發量 = 撥發量 - (撥發量 % 包裝數量);
+                        實撥量 = 實撥量 - (實撥量 % 包裝數量);
                     }
-                    if (撥發量 < 0) 撥發量 = 0;
-
+                    if (實撥量 < 0) 實撥量 = 0;
                 }
                 int 撥發量_口服藥_UD = 0;
                 int 撥發量_口服藥_口一 = 0;
@@ -92,44 +93,15 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                 int 實撥量_口服藥_口一 = 0;
                 int 實撥量_口服藥_口二 = 0;
 
-                撥發量_口服藥_口一 = 撥發量 / 5 * 2;
-                if (撥發量_口服藥_口一 % 包裝數量 != 0)
-                {
-                    撥發量_口服藥_口一 = 撥發量_口服藥_口一 - (撥發量_口服藥_口一 % 包裝數量);
-                    撥發量_口服藥_口一 = 撥發量_口服藥_口一 + 包裝數量;
-                }
-                已撥發量 += 撥發量_口服藥_口一;
+                實撥量_口服藥_口一 = (實撥量 / 5) * 2;
 
-                if (已撥發量 <= 藥庫庫存)
-                {
-                    實撥量_口服藥_口一 = 撥發量_口服藥_口一;
-                }
+                實撥量_口服藥_口二 = (實撥量 / 5) * 2;
 
-                撥發量_口服藥_口二 = 撥發量 / 5 * 2;
-                if (撥發量_口服藥_口二 % 包裝數量 != 0)
-                {
-                    撥發量_口服藥_口二 = 撥發量_口服藥_口二 - (撥發量_口服藥_口二 % 包裝數量);
-                    撥發量_口服藥_口二 = 撥發量_口服藥_口二 + 包裝數量;
-                }
-                已撥發量 += 撥發量_口服藥_口二;
+                實撥量_口服藥_UD = (實撥量 / 5) * 1;
 
-                if (已撥發量 <= 藥庫庫存)
-                {
-                    實撥量_口服藥_口二 = 撥發量_口服藥_口二;
-                }
-
-                撥發量_口服藥_UD = 撥發量 / 5 * 1;
-                if (撥發量_口服藥_UD % 包裝數量 != 0)
-                {
-                    撥發量_口服藥_UD = 撥發量_口服藥_UD - (撥發量_口服藥_UD % 包裝數量);
-                    撥發量_口服藥_UD = 撥發量_口服藥_UD + 包裝數量;
-                }
-                已撥發量 += 撥發量_口服藥_UD;
-                if (已撥發量 <= 藥庫庫存)
-                {
-                    實撥量_口服藥_UD = 撥發量_口服藥_UD;
-                }
-               
+                撥發量_口服藥_UD = 實撥量_口服藥_UD;
+                撥發量_口服藥_口一 = 實撥量_口服藥_口一;
+                撥發量_口服藥_口二 = 實撥量_口服藥_口二;
 
                 string temp_str = $"「({藥碼}) {藥名}」";
                 temp_str = temp_str.StringLength(50);
@@ -168,7 +140,7 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                     drugStotreDistributionClass.狀態 = "等待過帳";
                     drugStotreDistributionClass.來源庫庫存 = medClasses_藥局[i].藥庫庫存;
                     drugStotreDistributionClass.目的庫庫存 = medClasses_藥局[i].藥局庫存;
-                    drugStotreDistributionClass.撥發量 = 撥發量_temp.ToString();
+                    drugStotreDistributionClass.撥發量 = 撥發量.ToString();
                     drugStotreDistributionClass.實撥量 = 實撥量_temp.ToString();
                     drugStotreDistributionClass.報表名稱 = 報表名稱;
                     drugStotreDistributionClass.加入時間 = DateTime.Now;
@@ -179,13 +151,13 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                         if (drugStotreDistributionClasses_buf[0].狀態 != "等待過帳") continue;
                         drugStotreDistributionClass.GUID = drugStotreDistributionClasses_buf[0].GUID;
                         drugStotreDistributionClasses_replace.Add(drugStotreDistributionClass);
-                        Console.WriteLine($"[修改]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
+                        Console.WriteLine($"[修改]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量} , 實撥量 : {實撥量_temp}");
 
                     }
                     else
                     {
                         drugStotreDistributionClasses_add.Add(drugStotreDistributionClass);
-                        Console.WriteLine($"[新增]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
+                        Console.WriteLine($"[新增]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量} , 實撥量 : {實撥量_temp}");
                     }
                 }
               

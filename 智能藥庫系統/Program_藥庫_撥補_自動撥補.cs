@@ -502,7 +502,7 @@ namespace 智能藥庫系統
                     object[] value_src = new object[new enum_交易記錄查詢資料().GetLength()];
                     value_src[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                     value_src[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
-                    value_src[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.緊急申領.GetEnumName();
+                    value_src[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.自動撥補.GetEnumName();
                     value_src[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
                     value_src[(int)enum_交易記錄查詢資料.庫存量] = 來源庫存量;
                     value_src[(int)enum_交易記錄查詢資料.交易量] = 來源異動量;
@@ -515,7 +515,7 @@ namespace 智能藥庫系統
                     object[] value_out = new object[new enum_交易記錄查詢資料().GetLength()];
                     value_out[(int)enum_交易記錄查詢資料.GUID] = Guid.NewGuid().ToString();
                     value_out[(int)enum_交易記錄查詢資料.藥品碼] = 藥品碼;
-                    value_out[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.緊急申領.GetEnumName();
+                    value_out[(int)enum_交易記錄查詢資料.動作] = enum_交易記錄查詢動作.自動撥補.GetEnumName();
                     value_out[(int)enum_交易記錄查詢資料.藥品名稱] = 藥品名稱;
                     value_out[(int)enum_交易記錄查詢資料.庫存量] = 輸出庫存量;
                     value_out[(int)enum_交易記錄查詢資料.交易量] = 輸出異動量;
