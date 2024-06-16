@@ -146,6 +146,10 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                     drugStotreDistributionClass.加入時間 = DateTime.Now;
                     drugStotreDistributionClass.報表生成時間 = DateTime.Now;
 
+                    List<StockClass> stockClasses = medClasses_藥庫_buf[0].DeviceBasics[0].庫存異動((實撥量_temp * -1).ToString());
+                    stockClasses = stockClasses.QtyAbs();
+                    drugStotreDistributionClass.issuedStocks = stockClasses;
+
                     if (drugStotreDistributionClasses_buf.Count > 0)
                     {
                         if (drugStotreDistributionClasses_buf[0].狀態 != "等待過帳") continue;

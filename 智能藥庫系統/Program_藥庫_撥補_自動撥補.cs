@@ -363,6 +363,7 @@ namespace 智能藥庫系統
                 dialog_Prcessbar.State = "開始撥補...";
                 for (int i = 0; i < list_value.Count; i++)
                 {
+                    List<StockClass> stockClasses = new List<StockClass>();
                     dialog_Prcessbar.Value = i;
                     if (list_value[i][(int)enum_drugStotreDistribution.狀態].ObjectToString() == "過帳完成")
                     {
@@ -448,6 +449,12 @@ namespace 智能藥庫系統
                         {
                             if ((輸出異動量) > 0)
                             {
+                                StockClass stockClass = new StockClass();
+                                stockClass.Validity_period = 儲位資訊_效期;
+                                stockClass.Lot_number = 儲位資訊_批號;
+                                stockClass.Qty = (儲位資訊_異動量 * -1).ToString();
+                                stockClasses.Add(stockClass);
+
                                 deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_批號, (儲位資訊_異動量 * -1).ToString());
                                 deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
                                 List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
@@ -471,6 +478,12 @@ namespace 智能藥庫系統
                         List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                         for (int k = 0; k < list_藥局效期.Count; k++)
                         {
+                            StockClass stockClass = new StockClass();
+                            stockClass.Validity_period = 儲位資訊_效期;
+                            stockClass.Lot_number = 儲位資訊_批號;
+                            stockClass.Qty = (儲位資訊_異動量 * -1).ToString();
+                            stockClasses.Add(stockClass);
+
                             輸出備註 += $"[效期]:{list_藥局效期[k]},[批號]:{list_藥局批號[k]},[數量]:{list_藥局異動量[k]}";
                             if (k != list_藥局效期.Count - 1) 輸出備註 += "\n";
                         }
@@ -487,6 +500,7 @@ namespace 智能藥庫系統
                     list_value[i][(int)enum_drugStotreDistribution.來源庫結存] = 來源結存量;
 
                     list_value[i][(int)enum_drugStotreDistribution.撥發人員] = this.登入者名稱;
+                    list_value[i][(int)enum_drugStotreDistribution.撥發細節] = stockClasses.JsonSerializationt();
 
                     list_value[i][(int)enum_drugStotreDistribution.撥發時間] = DateTime.Now.ToDateTimeString_6();
                     list_value[i][(int)enum_drugStotreDistribution.狀態] = "過帳完成";

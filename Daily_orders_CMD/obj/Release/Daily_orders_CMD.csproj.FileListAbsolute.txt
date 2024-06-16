@@ -208,7 +208,6 @@ C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\System
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.CopyComplete
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.exe

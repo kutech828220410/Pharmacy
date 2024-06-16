@@ -62,5 +62,4 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\ob
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\obj\Release\ConsoleApp_住院批次帳讀取.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\obj\Release\ConsoleApp_住院批次帳讀取.exe
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\obj\Release\ConsoleApp_住院批次帳讀取.pdb
-C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\obj\Release\ConsoleApp_住院批次帳讀取.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_住院批次帳讀取\bin\Release\SQLUI.xml

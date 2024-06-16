@@ -132,5 +132,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\zxing.dll
 C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\H_Pannel_lib.dll
 C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\zxing.dll
-C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\InventoryConsumptionTracker.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\SQLUI.xml

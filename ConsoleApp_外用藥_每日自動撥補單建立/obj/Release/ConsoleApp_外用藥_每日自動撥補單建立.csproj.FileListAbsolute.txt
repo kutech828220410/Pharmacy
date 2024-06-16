@@ -61,6 +61,6 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動�
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\bin\Release\System.Text.Json.xml
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\bin\Release\System.ValueTuple.xml
-C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\obj\Release\ConsoleApp_外用藥_每日自動撥補單建立.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\obj\Release\ConsoleApp_外用藥_每日自動撥補單建立.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\bin\Release\SQLUI.xml
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_外用藥_每日自動撥補單建立\obj\Release\ConsoleApp_外用藥_每日自動撥補單建立.csproj.AssemblyReference.cache

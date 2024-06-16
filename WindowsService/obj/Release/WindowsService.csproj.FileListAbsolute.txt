@@ -70,7 +70,6 @@ C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Release\System.R
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\bin\Release\System.Threading.Tasks.Extensions.xml
-C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Release\WindowsService.csproj.AssemblyReference.cache
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Release\WindowsService.ProjectInstaller.resources
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Release\WindowsService.Service1.resources
 C:\Users\Administrator\Source\Repos\Pharmacy\WindowsService\obj\Release\WindowsService.csproj.GenerateResource.cache
