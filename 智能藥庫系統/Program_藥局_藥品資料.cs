@@ -66,7 +66,7 @@ namespace 智能藥庫系統
                 return;
             }
             table[enum_medDrugstore.類別.GetEnumName()].TypeName = Table.GetTypeName(Table.OtherType.ENUM, new enum_medType().GetEnumNames());
-            table[enum_medDrugstore.開檔狀態.GetEnumName()].TypeName = Table.GetTypeName(Table.OtherType.ENUM, new enum_開檔狀態().GetEnumNames());
+            //table[enum_medDrugstore.開檔狀態.GetEnumName()].TypeName = Table.GetTypeName(Table.OtherType.ENUM, new enum_開檔狀態().GetEnumNames());
             this.sqL_DataGridView_藥局_藥品資料.Init(table);
             this.sqL_DataGridView_藥局_藥品資料.DataGridRefreshEvent += SqL_DataGridView_藥局_藥品資料_DataGridRefreshEvent;
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnVisible(false, new enum_medPharmacy().GetEnumNames());
@@ -83,7 +83,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnWidth(60, DataGridViewContentAlignment.MiddleLeft, enum_medPharmacy.基準量);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnWidth(60, DataGridViewContentAlignment.MiddleLeft, enum_medPharmacy.安全庫存);
             this.sqL_DataGridView_藥局_藥品資料.Set_ColumnWidth(120, DataGridViewContentAlignment.MiddleCenter, enum_medPharmacy.類別);
-            this.sqL_DataGridView_藥局_藥品資料.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleCenter, enum_medPharmacy.開檔狀態);
+            //this.sqL_DataGridView_藥局_藥品資料.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleCenter, enum_medPharmacy.開檔狀態);
 
 
 

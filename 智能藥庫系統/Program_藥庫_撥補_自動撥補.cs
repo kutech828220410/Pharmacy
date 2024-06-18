@@ -320,15 +320,17 @@ namespace 智能藥庫系統
             {
                 if (MyMessageBox.ShowDialog("是否確定撥發?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
                 List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_自動撥補.Get_All_Checked_RowsValues();
-
+                List<object[]> list_value_buf = new List<object[]>();
                 list_value = (from value in list_value
-                              where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() != "過帳完成"
+                              where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() == "已列印"
                               select value).ToList();
                 if (list_value.Count == 0)
                 {
-                    MyMessageBox.ShowDialog("未選取有效資料!");
+                    MyMessageBox.ShowDialog("未選取有效資料,需為[已列印]狀態資料");
                 }
-                List<object[]> list_value_buf = new List<object[]>();
+
+
+
                 List<object[]> list_交易紀錄_Add = new List<object[]>();
                 List<DeviceBasic> deviceBasics_藥庫 = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
                 List<DeviceBasic> deviceBasics_藥庫_replace = new List<DeviceBasic>();

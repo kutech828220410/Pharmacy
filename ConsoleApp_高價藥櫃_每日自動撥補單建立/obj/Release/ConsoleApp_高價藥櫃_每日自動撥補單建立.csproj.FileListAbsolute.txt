@@ -54,3 +54,9 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自�
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\obj\Release\ConsoleApp_高價藥櫃_每日自動撥補單建立.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\obj\Release\ConsoleApp_高價藥櫃_每日自動撥補單建立.csproj.CopyComplete
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\SQLUI.xml
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\System.Threading.Tasks.Extensions.dll
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\System.Threading.Tasks.Extensions.xml
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_高價藥櫃_每日自動撥補單建立\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml

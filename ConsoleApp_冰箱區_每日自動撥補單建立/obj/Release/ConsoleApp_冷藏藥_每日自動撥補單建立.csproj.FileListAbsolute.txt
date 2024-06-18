@@ -63,3 +63,4 @@ C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_冰箱區_每日自動�
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_冰箱區_每日自動撥補單建立\obj\Release\ConsoleApp_每日自動撥補單建立.exe
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_冰箱區_每日自動撥補單建立\obj\Release\ConsoleApp_每日自動撥補單建立.pdb
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_冰箱區_每日自動撥補單建立\bin\Release\SQLUI.xml
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_冰箱區_每日自動撥補單建立\obj\Release\ConsoleApp_冷藏藥_每日自動撥補單建立.csproj.AssemblyReference.cache
