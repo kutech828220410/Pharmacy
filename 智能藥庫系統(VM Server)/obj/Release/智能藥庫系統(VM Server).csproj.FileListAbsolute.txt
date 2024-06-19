@@ -101,11 +101,6 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Releas
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\ZealTechUI.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\zxing.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\CallBackUI.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkBase.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxOvkMsr.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\AxAltairUDrv.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Buffers.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\System.Memory.xml
@@ -465,3 +460,4 @@ Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Serv
 Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).exe
 Z:\Pharmacy\智能藥庫系統(VM Server)\obj\Release\智能藥庫系統(VM Server).pdb
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統(VM Server)\bin\Release\SQLUI.xml

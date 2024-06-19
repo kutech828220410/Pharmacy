@@ -84,12 +84,7 @@ C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\ZealTechUI.
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\HCGUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\TCP.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\CallBackUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\AxOvkBase.dll
-C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\AxOvkMsr.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\MeasureSystemFunction.dll
-C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\AxAltairUDrv.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\MVSDK.dll
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\System.Buffers.xml
@@ -188,3 +183,4 @@ C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.O
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\stdole.dll
 C:\Users\Administrator\source\repos\Pharmacy\drug_consumption\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\drug_consumption\bin\Release\SQLUI.xml

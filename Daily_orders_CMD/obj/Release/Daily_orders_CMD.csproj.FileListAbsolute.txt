@@ -30,12 +30,7 @@ C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\ZealTechUI.
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\HCGUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\TCP.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\CallBackUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkBase.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\AxOvkMsr.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\MeasureSystemFunction.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\AxAltairUDrv.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\MVSDK.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\System.Buffers.xml
@@ -217,3 +212,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SunnyUI.Com
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml

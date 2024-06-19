@@ -105,11 +105,6 @@ C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Va
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\TCP.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\ZealTechUI.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\zxing.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkBase.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairUDrvAsm4.5.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkBaseAsm4.5.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxOvkMsr.dll
-C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\AxAltairUDrv.dll
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\Microsoft.Bcl.AsyncInterfaces.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Buffers.xml
 C:\Users\hsonds01\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\System.Memory.xml
@@ -151,7 +146,6 @@ C:\Users\HS1T16\source\repos\Pharmacy1\智能藥庫系統\bin\Release\MeasureSys
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\MyPrinterlib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\MeasureSystemFunction.dll
-C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_列印及匯出.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_更換密碼.resources
 C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.exe.config
 C:\Users\HS1T16\Source\Repos\Pharmacy\智能藥庫系統\bin\Release\智能藥庫系統.exe
@@ -647,3 +641,7 @@ C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智�
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_自動撥補_列印及匯出.resources
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.csproj.AssemblyReference.cache
 C:\Users\Administrator\source\repos\Pharmacy\智能藥庫系統\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_緊急申領_列印及匯出.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_自動撥補_列印及匯出.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_藥局_藥品資料_匯入選擇.resources

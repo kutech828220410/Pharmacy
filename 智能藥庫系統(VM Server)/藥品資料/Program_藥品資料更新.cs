@@ -35,7 +35,6 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     this.flag_藥品資料更新 = true;
                 }
-
             }
             else
             {

@@ -108,6 +108,7 @@ namespace 智能藥庫系統_VM_Server_
                     src_value[(int)enum_medDrugstore.總庫存] = dst_value[(int)enum_medDrugstore.總庫存];
                     src_value[(int)enum_medDrugstore.基準量] = dst_value[(int)enum_medDrugstore.基準量];
                     src_value[(int)enum_medDrugstore.安全庫存] = dst_value[(int)enum_medDrugstore.安全庫存];
+                    src_value[(int)enum_medDrugstore.包裝數量] = dst_value[(int)enum_medDrugstore.包裝數量];
                     bool flag_IsEqual = src_value.IsEqual(dst_value, (int)enum_medDrugstore.藥局庫存, (int)enum_medDrugstore.包裝數量, (int)enum_medDrugstore.藥庫庫存, (int)enum_medDrugstore.總庫存, (int)enum_medDrugstore.基準量, (int)enum_medDrugstore.安全庫存);
                     if (src_value[(int)enum_medDrugstore.藥庫庫存].ObjectToString().StringIsEmpty())
                     {
