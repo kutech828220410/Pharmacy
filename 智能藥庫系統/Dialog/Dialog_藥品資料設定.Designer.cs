@@ -76,7 +76,7 @@ namespace 智能藥庫系統
             this.rJ_Lable2.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable2.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable2.GUID = "";
-            this.rJ_Lable2.Location = new System.Drawing.Point(16, 142);
+            this.rJ_Lable2.Location = new System.Drawing.Point(12, 138);
             this.rJ_Lable2.Name = "rJ_Lable2";
             this.rJ_Lable2.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable2.ShadowSize = 0;
@@ -97,7 +97,7 @@ namespace 智能藥庫系統
             this.rJ_Lable3.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable3.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable3.GUID = "";
-            this.rJ_Lable3.Location = new System.Drawing.Point(288, 142);
+            this.rJ_Lable3.Location = new System.Drawing.Point(284, 138);
             this.rJ_Lable3.Name = "rJ_Lable3";
             this.rJ_Lable3.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable3.ShadowSize = 0;
@@ -110,53 +110,65 @@ namespace 智能藥庫系統
             // rJ_Button_確認
             // 
             this.rJ_Button_確認.AutoResetState = false;
-            this.rJ_Button_確認.BackColor = System.Drawing.Color.RoyalBlue;
+            this.rJ_Button_確認.BackColor = System.Drawing.Color.White;
             this.rJ_Button_確認.BackgroundColor = System.Drawing.Color.RoyalBlue;
             this.rJ_Button_確認.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_確認.BorderRadius = 5;
+            this.rJ_Button_確認.BorderRadius = 10;
             this.rJ_Button_確認.BorderSize = 0;
             this.rJ_Button_確認.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_確認.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_確認.FlatAppearance.BorderSize = 0;
             this.rJ_Button_確認.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_確認.Font = new System.Drawing.Font("微軟正黑體", 14.25F);
             this.rJ_Button_確認.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_確認.GUID = "";
-            this.rJ_Button_確認.Location = new System.Drawing.Point(596, 285);
+            this.rJ_Button_確認.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.rJ_Button_確認.Location = new System.Drawing.Point(587, 207);
             this.rJ_Button_確認.Name = "rJ_Button_確認";
+            this.rJ_Button_確認.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_確認.ProhibitionLineWidth = 4;
+            this.rJ_Button_確認.ProhibitionSymbolSize = 30;
             this.rJ_Button_確認.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Button_確認.ShadowSize = 0;
+            this.rJ_Button_確認.ShadowSize = 3;
             this.rJ_Button_確認.ShowLoadingForm = false;
-            this.rJ_Button_確認.Size = new System.Drawing.Size(108, 55);
+            this.rJ_Button_確認.Size = new System.Drawing.Size(117, 62);
             this.rJ_Button_確認.State = false;
             this.rJ_Button_確認.TabIndex = 30;
             this.rJ_Button_確認.Text = "確認";
             this.rJ_Button_確認.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_確認.TextHeight = 0;
             this.rJ_Button_確認.UseVisualStyleBackColor = false;
             // 
             // rJ_Button_取消
             // 
             this.rJ_Button_取消.AutoResetState = false;
-            this.rJ_Button_取消.BackColor = System.Drawing.Color.Gray;
+            this.rJ_Button_取消.BackColor = System.Drawing.Color.White;
             this.rJ_Button_取消.BackgroundColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rJ_Button_取消.BorderRadius = 5;
+            this.rJ_Button_取消.BorderRadius = 10;
             this.rJ_Button_取消.BorderSize = 0;
             this.rJ_Button_取消.buttonType = MyUI.RJ_Button.ButtonType.Push;
+            this.rJ_Button_取消.DisenableColor = System.Drawing.Color.Gray;
             this.rJ_Button_取消.FlatAppearance.BorderSize = 0;
             this.rJ_Button_取消.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rJ_Button_取消.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Button_取消.ForeColor = System.Drawing.Color.White;
             this.rJ_Button_取消.GUID = "";
-            this.rJ_Button_取消.Location = new System.Drawing.Point(710, 285);
+            this.rJ_Button_取消.Image_padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.rJ_Button_取消.Location = new System.Drawing.Point(710, 207);
             this.rJ_Button_取消.Name = "rJ_Button_取消";
+            this.rJ_Button_取消.ProhibitionBorderLineWidth = 1;
+            this.rJ_Button_取消.ProhibitionLineWidth = 4;
+            this.rJ_Button_取消.ProhibitionSymbolSize = 30;
             this.rJ_Button_取消.ShadowColor = System.Drawing.Color.DimGray;
-            this.rJ_Button_取消.ShadowSize = 0;
+            this.rJ_Button_取消.ShadowSize = 3;
             this.rJ_Button_取消.ShowLoadingForm = false;
-            this.rJ_Button_取消.Size = new System.Drawing.Size(108, 55);
+            this.rJ_Button_取消.Size = new System.Drawing.Size(117, 62);
             this.rJ_Button_取消.State = false;
             this.rJ_Button_取消.TabIndex = 29;
             this.rJ_Button_取消.Text = "取消";
             this.rJ_Button_取消.TextColor = System.Drawing.Color.White;
+            this.rJ_Button_取消.TextHeight = 0;
             this.rJ_Button_取消.UseVisualStyleBackColor = false;
             // 
             // rJ_TextBox_安全量
@@ -169,7 +181,7 @@ namespace 智能藥庫系統
             this.rJ_TextBox_安全量.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_安全量.ForeColor = System.Drawing.Color.Black;
             this.rJ_TextBox_安全量.GUID = "";
-            this.rJ_TextBox_安全量.Location = new System.Drawing.Point(163, 139);
+            this.rJ_TextBox_安全量.Location = new System.Drawing.Point(159, 135);
             this.rJ_TextBox_安全量.Multiline = false;
             this.rJ_TextBox_安全量.Name = "rJ_TextBox_安全量";
             this.rJ_TextBox_安全量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -193,7 +205,7 @@ namespace 智能藥庫系統
             this.rJ_TextBox_基準量.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_基準量.ForeColor = System.Drawing.Color.Black;
             this.rJ_TextBox_基準量.GUID = "";
-            this.rJ_TextBox_基準量.Location = new System.Drawing.Point(435, 139);
+            this.rJ_TextBox_基準量.Location = new System.Drawing.Point(431, 135);
             this.rJ_TextBox_基準量.Multiline = false;
             this.rJ_TextBox_基準量.Name = "rJ_TextBox_基準量";
             this.rJ_TextBox_基準量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -239,7 +251,7 @@ namespace 智能藥庫系統
             this.rJ_TextBox_包裝數量.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_包裝數量.ForeColor = System.Drawing.Color.Black;
             this.rJ_TextBox_包裝數量.GUID = "";
-            this.rJ_TextBox_包裝數量.Location = new System.Drawing.Point(707, 139);
+            this.rJ_TextBox_包裝數量.Location = new System.Drawing.Point(703, 135);
             this.rJ_TextBox_包裝數量.Multiline = false;
             this.rJ_TextBox_包裝數量.Name = "rJ_TextBox_包裝數量";
             this.rJ_TextBox_包裝數量.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -264,7 +276,7 @@ namespace 智能藥庫系統
             this.rJ_Lable4.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable4.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable4.GUID = "";
-            this.rJ_Lable4.Location = new System.Drawing.Point(560, 142);
+            this.rJ_Lable4.Location = new System.Drawing.Point(556, 138);
             this.rJ_Lable4.Name = "rJ_Lable4";
             this.rJ_Lable4.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable4.ShadowSize = 0;
@@ -285,7 +297,7 @@ namespace 智能藥庫系統
             this.rJ_Lable5.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_Lable5.ForeColor = System.Drawing.Color.White;
             this.rJ_Lable5.GUID = "";
-            this.rJ_Lable5.Location = new System.Drawing.Point(16, 214);
+            this.rJ_Lable5.Location = new System.Drawing.Point(12, 214);
             this.rJ_Lable5.Name = "rJ_Lable5";
             this.rJ_Lable5.ShadowColor = System.Drawing.Color.DimGray;
             this.rJ_Lable5.ShadowSize = 0;
@@ -294,6 +306,7 @@ namespace 智能藥庫系統
             this.rJ_Lable5.Text = "儲位名稱";
             this.rJ_Lable5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rJ_Lable5.TextColor = System.Drawing.Color.White;
+            this.rJ_Lable5.Visible = false;
             // 
             // rJ_TextBox_儲位名稱
             // 
@@ -305,7 +318,7 @@ namespace 智能藥庫系統
             this.rJ_TextBox_儲位名稱.Font = new System.Drawing.Font("微軟正黑體", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.rJ_TextBox_儲位名稱.ForeColor = System.Drawing.Color.Black;
             this.rJ_TextBox_儲位名稱.GUID = "";
-            this.rJ_TextBox_儲位名稱.Location = new System.Drawing.Point(163, 211);
+            this.rJ_TextBox_儲位名稱.Location = new System.Drawing.Point(159, 211);
             this.rJ_TextBox_儲位名稱.Multiline = false;
             this.rJ_TextBox_儲位名稱.Name = "rJ_TextBox_儲位名稱";
             this.rJ_TextBox_儲位名稱.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
@@ -318,13 +331,14 @@ namespace 智能藥庫系統
             this.rJ_TextBox_儲位名稱.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
             this.rJ_TextBox_儲位名稱.Texts = "";
             this.rJ_TextBox_儲位名稱.UnderlineStyle = false;
+            this.rJ_TextBox_儲位名稱.Visible = false;
             // 
             // Dialog_藥品資料設定
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(829, 352);
+            this.ClientSize = new System.Drawing.Size(829, 277);
             this.ControlBox = false;
             this.Controls.Add(this.rJ_TextBox_儲位名稱);
             this.Controls.Add(this.rJ_Lable5);

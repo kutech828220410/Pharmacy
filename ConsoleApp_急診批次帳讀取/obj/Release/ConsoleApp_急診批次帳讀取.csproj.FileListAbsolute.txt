@@ -129,3 +129,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_急診批次帳讀取\obj\Rel
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_急診批次帳讀取\obj\Release\ConsoleApp_急診批次帳讀取.csproj.CopyComplete
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_急診批次帳讀取\obj\Release\ConsoleApp_急診批次帳讀取.exe
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_急診批次帳讀取\obj\Release\ConsoleApp_急診批次帳讀取.pdb
+C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_急診批次帳讀取\obj\Release\ConsoleApp_急診批次帳讀取.csproj.AssemblyReference.cache

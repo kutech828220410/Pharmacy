@@ -164,7 +164,7 @@ namespace 智能藥庫系統
             {
                 if (MyMessageBox.ShowDialog("是否確定撥發?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
                 List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.Get_All_Checked_RowsValues();
-
+                List<object[]> list_value_buf = new List<object[]>();
                 list_value = (from value in list_value
                               where value[(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString() != enum_藥庫_撥補_藥局_緊急申領_狀態.過帳完成.GetEnumName()
                               select value).ToList();
@@ -172,9 +172,29 @@ namespace 智能藥庫系統
                 {
                     MyMessageBox.ShowDialog("未選取有效資料!");
                 }
+
+                for (int i = 0; i < list_value.Count; i++)
+                {
+                    list_value_buf = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_GetRows((int)enum_藥庫_撥補_藥局_緊急申領.GUID, list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.GUID].ObjectToString(), false);
+                    if (list_value_buf.Count != 0)
+                    {
+                        list_value[i][(int)enum_藥庫_撥補_藥局_緊急申領.狀態] = list_value_buf[0][(int)enum_藥庫_撥補_藥局_緊急申領.狀態];
+                        this.sqL_DataGridView_藥庫_撥補_自動撥補.ReplaceExtra(list_value_buf[0], false);
+                    }
+                }
+                this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.RefreshGrid();
+                list_value_buf = (from value in list_value
+                                  where value[(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString() != "已列印"
+                                  select value).ToList();
+                if (list_value_buf.Count != 0)
+                {
+                    MyMessageBox.ShowDialog("資料都需為[已列印]狀態,重新檢視");
+                    return;
+                }
+
                 if (plC_CheckBox_藥庫_撥補_藥局_緊急申領_要過帳.Checked || true)
                 {
-                    List<object[]> list_value_buf = new List<object[]>();
+               
                     List<object[]> list_交易紀錄_Add = new List<object[]>();
                     List<DeviceBasic> deviceBasics_藥庫 = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
                     List<DeviceBasic> deviceBasics_藥庫_replace = new List<DeviceBasic>();

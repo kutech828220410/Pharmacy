@@ -92,20 +92,20 @@ namespace 智能藥庫系統_VM_Server_
                 {
                     Task_藥品資料更新一次 = new Task(new Action(delegate
                     {
-                        plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
-                        PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
-                        Function_藥庫_藥品資料_檢查表格();
-                        Function_藥局_藥品資料_檢查表格();
+                        //plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
+                        //PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
+                        //Function_藥庫_藥品資料_檢查表格();
+                        //Function_藥局_藥品資料_檢查表格();
                     }));
                 }
                 if (Task_藥品資料更新一次.Status == TaskStatus.RanToCompletion)
                 {
                     Task_藥品資料更新一次 = new Task(new Action(delegate
                     {
-                        plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
-                        PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
-                        Function_藥庫_藥品資料_檢查表格();
-                        Function_藥局_藥品資料_檢查表格();
+                        //plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
+                        //PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
+                        //Function_藥庫_藥品資料_檢查表格();
+                        //Function_藥局_藥品資料_檢查表格();
                     }));
                 }
                 if (Task_藥品資料更新一次.Status == TaskStatus.Created)

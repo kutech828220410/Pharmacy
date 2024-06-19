@@ -759,8 +759,20 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥品過消耗帳.RefreshGrid(list_value);
             if(list_value.Count == 0)
             {
-                Dialog_AlarmForm dialog_AlarmForm = new Dialog_AlarmForm("查無資料", 1500);
-                dialog_AlarmForm.ShowDialog();
+                medClass medClass = null;
+                if (rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text.StringIsEmpty() == false)
+                {
+                    medClass = medClass.get_med_clouds_by_code(Main_Form.API_Server, rJ_TextBox_藥品過消耗帳_藥品碼篩選.Text);
+                }
+                if (medClass == null)
+                {
+                    MyMessageBox.ShowDialog("查無資料");
+                }
+                else
+                {
+                    MyMessageBox.ShowDialog($"<({medClass.藥品碼}){medClass.藥品名稱}> 查無資料");
+                }
+                return;
             }
         }
         private void PlC_RJ_Button_藥品過消耗帳_顯示今日消耗帳_MouseDownEvent(MouseEventArgs mevent)

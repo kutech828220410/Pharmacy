@@ -122,6 +122,17 @@ namespace 智能藥庫系統
                     MyMessageBox.ShowDialog("請輸入正確數字!");
                     return;
                 }
+                if(包裝數量.StringToInt32() <= 0)
+                {
+                    MyMessageBox.ShowDialog("包裝數量不得小於'0'!");
+                    return;
+                }
+
+                if (基準量.StringToInt32() < 安全量.StringToInt32())
+                {
+                    MyMessageBox.ShowDialog("基準量不得小於安全量!");
+                    return;
+                }
                 this.DialogResult = DialogResult.Yes;
                 this.Close();
             }));

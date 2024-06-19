@@ -48,8 +48,7 @@ namespace 智能藥庫系統
         private void sub_Program_藥庫_撥補_自動撥補_Init()
         {
             Table table = drugStotreDistributionClass.init(API_Server);
-
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Init(table);
+            this.sqL_DataGridView_藥庫_撥補_自動撥補.InitEx(table);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnVisible(false, new enum_drugStotreDistribution().GetEnumNames());
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(60, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.藥碼);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(250, DataGridViewContentAlignment.MiddleLeft, enum_drugStotreDistribution.藥名);
@@ -60,8 +59,8 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.目的庫庫存);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(50, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.撥發量);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(50, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.實撥量);
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.來源庫結存);
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.目的庫結存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.來源庫結存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.目的庫結存);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(60, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.撥發人員);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.加入時間);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.撥發時間);
@@ -292,6 +291,10 @@ namespace 智能藥庫系統
                 if (RowsList[i][(int)enum_drugStotreDistribution.來源庫結存].ObjectToString().StringIsEmpty()) RowsList[i][(int)enum_drugStotreDistribution.來源庫結存] = "-";
                 if (RowsList[i][(int)enum_drugStotreDistribution.目的庫結存].ObjectToString().StringIsEmpty()) RowsList[i][(int)enum_drugStotreDistribution.目的庫結存] = "-";
             }
+
+            RowsList = (from temp in RowsList
+                        where temp[(int)enum_drugStotreDistribution.來源庫庫存].StringToInt32() > 0
+                        select temp).ToList();
         }
         private void SqL_DataGridView_藥庫_撥補_自動撥補_RowDoubleClickEvent(object[] RowValue)
         {
@@ -321,12 +324,23 @@ namespace 智能藥庫系統
                 if (MyMessageBox.ShowDialog("是否確定撥發?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
                 List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_自動撥補.Get_All_Checked_RowsValues();
                 List<object[]> list_value_buf = new List<object[]>();
-                list_value = (from value in list_value
-                              where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() == "已列印"
-                              select value).ToList();
-                if (list_value.Count == 0)
+                for (int i = 0; i < list_value.Count; i++)
                 {
-                    MyMessageBox.ShowDialog("未選取有效資料,需為[已列印]狀態資料");
+                    list_value_buf = this.sqL_DataGridView_藥庫_撥補_自動撥補.SQL_GetRows((int)enum_drugStotreDistribution.GUID, list_value[i][(int)enum_drugStotreDistribution.GUID].ObjectToString(), false);
+                    if(list_value_buf.Count != 0)
+                    {
+                        list_value[i][(int)enum_drugStotreDistribution.狀態] = list_value_buf[0][(int)enum_drugStotreDistribution.狀態];
+                        this.sqL_DataGridView_藥庫_撥補_自動撥補.ReplaceExtra(list_value_buf[0], false);
+                    }
+                }
+                this.sqL_DataGridView_藥庫_撥補_自動撥補.RefreshGrid();
+                list_value_buf = (from value in list_value
+                              where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() != "已列印"
+                              select value).ToList();
+                if (list_value_buf.Count != 0)
+                {
+                    MyMessageBox.ShowDialog("資料都需為[已列印]狀態,重新檢視");
+                    return;
                 }
 
 
@@ -626,6 +640,7 @@ namespace 智能藥庫系統
                     list_表單分類.LockAdd(list_口服藥);
                 }
                 if (checkBox_藥局_撥補_表單分類_針劑.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.針劑.GetEnumName()));
+                if (checkBox_藥局_撥補_表單分類_水劑.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.水劑.GetEnumName()));
                 if (checkBox_藥局_撥補_表單分類_外用藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.外用藥.GetEnumName()));
                 if (checkBox_藥局_撥補_表單分類_未分類.Checked)
                 {

@@ -213,3 +213,4 @@ C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newton
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.Json.dll
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml
+C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.AssemblyReference.cache

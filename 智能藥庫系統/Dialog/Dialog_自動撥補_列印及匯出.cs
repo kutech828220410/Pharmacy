@@ -108,7 +108,7 @@ namespace 智能藥庫系統
                 class_Emg_Apply.藥品碼 = _drugStotreDistributionClasses[i].藥碼;
                 class_Emg_Apply.藥品名稱 = _drugStotreDistributionClasses[i].藥名;
                 class_Emg_Apply.撥出量 = _drugStotreDistributionClasses[i].實撥量;
-                class_Emg_Apply.庫存量 = _drugStotreDistributionClasses[i].目的庫庫存;
+                class_Emg_Apply.庫存量 = _drugStotreDistributionClasses[i].來源庫庫存;
                 class_Emg_Apply.備註 = _drugStotreDistributionClasses[i].報表名稱;
                 class_Emg_Applies.Add(class_Emg_Apply);
             }

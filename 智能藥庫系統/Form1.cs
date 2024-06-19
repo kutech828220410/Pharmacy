@@ -18,14 +18,14 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.40")]
-[assembly: AssemblyFileVersion("1.0.51.40")]
+[assembly: AssemblyVersion("1.0.51.41")]
+[assembly: AssemblyFileVersion("1.0.51.41")]
 namespace 智能藥庫系統
 {
 
     public partial class Main_Form : Form
     {
-        public static string API_Server = "http://10.18.1.146:4433";
+        public static string API_Server = "http://127.0.0.1:4433";
         
         private string FormText = "";
         private MyTimer MyTimer_TickTime = new MyTimer();
