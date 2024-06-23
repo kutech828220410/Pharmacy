@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="203776">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="211968">
       <assemblyIdentity name="HIS_DB_Lib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>kFLcyr6/jwsL2rZf4BlRx6YY/nOXqFLZl6qGymNMmGE=</dsig:DigestValue>
+        <dsig:DigestValue>Buc4AG2WBzvoNlr90SItvtEH4QlkphKVqnycaK2uycM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -661,7 +661,7 @@
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>u4rnwg4374o9+pjM9SbZnLSlNqHpoflqdRaMkB9f9Yk=</dsig:DigestValue>
+        <dsig:DigestValue>JVZCGS3bSMCOAGd1c0iLZd3cUivH1pOsqrV89PcrWDY=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

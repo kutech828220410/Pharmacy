@@ -51,6 +51,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_外用藥_每日
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_ABC消耗量計算", "ConsoleApp_ABC消耗量計算\ConsoleApp_ABC消耗量計算.csproj", "{71F50D4C-8CCB-4B04-8FDA-7DA6C20C6262}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_線上藥檔更新", "ConsoleApp_線上藥檔更新\ConsoleApp_線上藥檔更新.csproj", "{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -145,6 +147,10 @@ Global
 		{71F50D4C-8CCB-4B04-8FDA-7DA6C20C6262}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{71F50D4C-8CCB-4B04-8FDA-7DA6C20C6262}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{71F50D4C-8CCB-4B04-8FDA-7DA6C20C6262}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -169,6 +175,7 @@ Global
 		{2911B8D2-C7DD-4AAC-8A4F-B647F2E0CEC8} = {8C266DCD-6A86-4FE7-881B-946B183EBAE1}
 		{6C92649D-E039-47D7-A9C1-4568FF4DB24E} = {8C266DCD-6A86-4FE7-881B-946B183EBAE1}
 		{71F50D4C-8CCB-4B04-8FDA-7DA6C20C6262} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
+		{28E91FFE-06C1-4E12-AE4D-C2F32F3F7ACF} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B921A9E-6909-4DAB-8E4C-5F9D26A5CEDE}

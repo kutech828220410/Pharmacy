@@ -94,7 +94,7 @@ namespace 智能藥庫系統_VM_Server_
                     {
                         //plC_RJ_Button_雲端_藥品資料_更新資料_MouseDownEvent(null);
                         //PlC_RJ_Button_本地_藥品資料_更新所有雲端藥品資料_MouseDownEvent(null);
-                        //Function_藥庫_藥品資料_檢查表格();
+                       // Function_藥庫_藥品資料_檢查表格();
                         //Function_藥局_藥品資料_檢查表格();
                     }));
                 }
