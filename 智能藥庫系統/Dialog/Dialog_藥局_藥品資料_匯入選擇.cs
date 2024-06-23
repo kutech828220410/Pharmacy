@@ -116,23 +116,21 @@ namespace 智能藥庫系統
                 {
                     string 藥碼 = list_包裝量[i][(int)enum_包裝量_匯入.藥碼].ObjectToString();
                     string 包裝量 = list_包裝量[i][(int)enum_包裝量_匯入.包裝量].ObjectToString();
-
+                    if (藥碼 == "03220")
+                    {
+                        
+                    }
                     if (包裝量.StringIsInt32() == false)
                     {
                         list_包裝量_error.Add(list_包裝量[i]);
                         continue;
                     }
-
-
-
                     List<medClass> medClasses_pharma_buf = keyValuePairs_med_pharma.SortDictionaryByCode(藥碼);
                     if (medClasses_pharma_buf.Count == 0)
                     {
                         list_包裝量_error.Add(list_包裝量[i]);
                         continue;
                     }
-
-
                     medClasses_pharma_buf[0].包裝數量 = 包裝量;
                     medClasses_pharma_replace.Add(medClasses_pharma_buf[0]);
                 }

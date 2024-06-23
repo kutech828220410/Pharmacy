@@ -85,6 +85,7 @@ namespace 智能藥庫系統
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_高價藥櫃);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_少用及易混);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_口服藥);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_水劑);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_針劑);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_外用藥);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_未分類);
