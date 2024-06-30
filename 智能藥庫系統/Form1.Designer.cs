@@ -453,6 +453,7 @@
             this.plC_RJ_Button_藥庫_藥品資料_修正庫存 = new MyUI.PLC_RJ_Button();
             this.rJ_Pannel7 = new MyUI.RJ_Pannel();
             this.groupBox33 = new System.Windows.Forms.GroupBox();
+            this.checkBox_藥庫_藥品資料_表單分類_水劑 = new System.Windows.Forms.CheckBox();
             this.parentCheckBox_藥庫_藥品資料_表單分類_全選 = new MyUI.ParentCheckBox();
             this.checkBox_藥庫_藥品資料_表單分類_未分類 = new System.Windows.Forms.CheckBox();
             this.checkBox_藥庫_藥品資料_表單分類_外用藥 = new System.Windows.Forms.CheckBox();
@@ -582,6 +583,7 @@
             this.plC_CheckBox_藥局_撥補_狀態條件_過帳完成 = new MyUI.PLC_CheckBox();
             this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳 = new MyUI.PLC_CheckBox();
             this.groupBox30 = new System.Windows.Forms.GroupBox();
+            this.checkBox_藥局_撥補_表單分類_水劑 = new System.Windows.Forms.CheckBox();
             this.parentCheckBox_藥局_撥補_表單分類_全選 = new MyUI.ParentCheckBox();
             this.checkBox_藥局_撥補_表單分類_未分類 = new System.Windows.Forms.CheckBox();
             this.checkBox_藥局_撥補_表單分類_外用藥 = new System.Windows.Forms.CheckBox();
@@ -998,6 +1000,7 @@
             this.plC_RJ_Button_藥局_藥品資料_新增效期 = new MyUI.PLC_RJ_Button();
             this.rJ_Pannel6 = new MyUI.RJ_Pannel();
             this.groupBox29 = new System.Windows.Forms.GroupBox();
+            this.checkBox_藥局_藥品資料_表單分類_水劑 = new System.Windows.Forms.CheckBox();
             this.parentCheckBox_藥局_藥品資料_表單分類_全選 = new MyUI.ParentCheckBox();
             this.checkBox_藥局_藥品資料_表單分類_未分類 = new System.Windows.Forms.CheckBox();
             this.checkBox_藥局_藥品資料_表單分類_外用藥 = new System.Windows.Forms.CheckBox();
@@ -1385,9 +1388,6 @@
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.checkBox_藥局_撥補_表單分類_水劑 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥庫_藥品資料_表單分類_水劑 = new System.Windows.Forms.CheckBox();
-            this.checkBox_藥局_藥品資料_表單分類_水劑 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -13111,6 +13111,20 @@
             this.groupBox33.TabStop = false;
             this.groupBox33.Text = "表單分類";
             // 
+            // checkBox_藥庫_藥品資料_表單分類_水劑
+            // 
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.AutoSize = true;
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Checked = true;
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Location = new System.Drawing.Point(243, 89);
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Name = "checkBox_藥庫_藥品資料_表單分類_水劑";
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.TabIndex = 160;
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.Text = "水劑";
+            this.checkBox_藥庫_藥品資料_表單分類_水劑.UseVisualStyleBackColor = true;
+            // 
             // parentCheckBox_藥庫_藥品資料_表單分類_全選
             // 
             this.parentCheckBox_藥庫_藥品資料_表單分類_全選.AutoSize = true;
@@ -17162,6 +17176,20 @@
             this.groupBox30.TabIndex = 157;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "表單分類";
+            // 
+            // checkBox_藥局_撥補_表單分類_水劑
+            // 
+            this.checkBox_藥局_撥補_表單分類_水劑.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_水劑.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_水劑.Location = new System.Drawing.Point(244, 89);
+            this.checkBox_藥局_撥補_表單分類_水劑.Name = "checkBox_藥局_撥補_表單分類_水劑";
+            this.checkBox_藥局_撥補_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥局_撥補_表單分類_水劑.TabIndex = 160;
+            this.checkBox_藥局_撥補_表單分類_水劑.Text = "水劑";
+            this.checkBox_藥局_撥補_表單分類_水劑.UseVisualStyleBackColor = true;
             // 
             // parentCheckBox_藥局_撥補_表單分類_全選
             // 
@@ -28445,6 +28473,20 @@
             this.groupBox29.TabStop = false;
             this.groupBox29.Text = "表單分類";
             // 
+            // checkBox_藥局_藥品資料_表單分類_水劑
+            // 
+            this.checkBox_藥局_藥品資料_表單分類_水劑.AutoSize = true;
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Checked = true;
+            this.checkBox_藥局_藥品資料_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_藥品資料_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Location = new System.Drawing.Point(244, 89);
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Name = "checkBox_藥局_藥品資料_表單分類_水劑";
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
+            this.checkBox_藥局_藥品資料_表單分類_水劑.TabIndex = 160;
+            this.checkBox_藥局_藥品資料_表單分類_水劑.Text = "水劑";
+            this.checkBox_藥局_藥品資料_表單分類_水劑.UseVisualStyleBackColor = true;
+            // 
             // parentCheckBox_藥局_藥品資料_表單分類_全選
             // 
             this.parentCheckBox_藥局_藥品資料_表單分類_全選.AutoSize = true;
@@ -38524,48 +38566,6 @@
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
-            // 
-            // checkBox_藥局_撥補_表單分類_水劑
-            // 
-            this.checkBox_藥局_撥補_表單分類_水劑.AutoSize = true;
-            this.checkBox_藥局_撥補_表單分類_水劑.Checked = true;
-            this.checkBox_藥局_撥補_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_撥補_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_撥補_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_水劑.Location = new System.Drawing.Point(244, 89);
-            this.checkBox_藥局_撥補_表單分類_水劑.Name = "checkBox_藥局_撥補_表單分類_水劑";
-            this.checkBox_藥局_撥補_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥局_撥補_表單分類_水劑.TabIndex = 160;
-            this.checkBox_藥局_撥補_表單分類_水劑.Text = "水劑";
-            this.checkBox_藥局_撥補_表單分類_水劑.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥庫_藥品資料_表單分類_水劑
-            // 
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.AutoSize = true;
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Checked = true;
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Location = new System.Drawing.Point(243, 89);
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Name = "checkBox_藥庫_藥品資料_表單分類_水劑";
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.TabIndex = 160;
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.Text = "水劑";
-            this.checkBox_藥庫_藥品資料_表單分類_水劑.UseVisualStyleBackColor = true;
-            // 
-            // checkBox_藥局_藥品資料_表單分類_水劑
-            // 
-            this.checkBox_藥局_藥品資料_表單分類_水劑.AutoSize = true;
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Checked = true;
-            this.checkBox_藥局_藥品資料_表單分類_水劑.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox_藥局_藥品資料_表單分類_水劑.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Location = new System.Drawing.Point(244, 89);
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Name = "checkBox_藥局_藥品資料_表單分類_水劑";
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Size = new System.Drawing.Size(60, 24);
-            this.checkBox_藥局_藥品資料_表單分類_水劑.TabIndex = 160;
-            this.checkBox_藥局_藥品資料_表單分類_水劑.Text = "水劑";
-            this.checkBox_藥局_藥品資料_表單分類_水劑.UseVisualStyleBackColor = true;
             // 
             // Main_Form
             // 
