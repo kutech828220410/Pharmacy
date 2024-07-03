@@ -64,10 +64,13 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選.MouseDownEvent += PlC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品碼篩選_MouseDownEvent;
             this.plC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選.MouseDownEvent += PlC_RJ_Button_藥庫_驗收入庫_過帳明細_藥品名稱篩選_MouseDownEvent;
 
+            this.plC_RJ_Button__驗收入庫_搜尋.MouseDownEvent += PlC_RJ_Button__驗收入庫_搜尋_MouseDownEvent;
+
+            this.comboBox_驗收入庫_搜尋條件.SelectedIndex = 0;
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_驗收入庫_過帳明細);
         }
 
-    
+   
 
         private bool flag_藥庫_驗收入庫_過帳明細 = false;
         private void sub_Program_藥庫_驗收入庫_過帳明細()
@@ -88,6 +91,37 @@ namespace 智能藥庫系統
         }
 
         #region Function
+        private List<object[]> Function_藥庫_驗收入庫_過帳明細_取得資料(DateTime dateTime_st , DateTime dateTime_end)
+        {
+            List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetRowsByBetween((int)enum_補給驗收入庫.加入時間, dateTime_st, dateTime_end, false);
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥品資料_buf = new List<object[]>();
+            List<object[]> list_藥庫_驗收入庫 = new List<object[]>();
+            for (int i = 0; i < list_補給驗收入庫.Count; i++)
+            {
+                object[] value = list_補給驗收入庫[i].CopyRow(new enum_補給驗收入庫(), new enum_藥庫_驗收入庫_過帳明細());
+
+                string 藥品碼 = value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼].ObjectToString();
+                if (藥品碼.Length == 10)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
+                }
+                else if (藥品碼.Length == 12)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 7, 5);
+                }
+                value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼] = 藥品碼;
+
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
+                if (list_藥品資料_buf.Count == 0) continue;
+
+                value[(int)enum_藥庫_驗收入庫_過帳明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_medDrugstore.藥品名稱];
+                value[(int)enum_藥庫_驗收入庫_過帳明細.包裝單位] = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝單位];
+                list_藥庫_驗收入庫.Add(value);
+            }
+            list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());
+            return list_藥庫_驗收入庫;
+        }
         private List<object[]> Function_藥庫_驗收入庫_過帳明細_取得資料()
         {           
             List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetAllRows(false);
@@ -227,6 +261,63 @@ namespace 智能藥庫系統
                 }
             }
         }
+        private void PlC_RJ_Button__驗收入庫_搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            LoadingForm.ShowLoadingForm();
+            try
+            {
+                string text = "";
+                string value = rJ_TextBox_驗收入庫_搜尋條件.Texts;
+                this.Invoke(new Action(delegate
+                {
+                    text = comboBox_驗收入庫_搜尋條件.Text;
+                }));
+             
+                List<object[]> list_value = Function_藥庫_驗收入庫_過帳明細_取得資料(rJ_DatePicker_驗收入庫_起始時間.Value.GetStartDate(), rJ_DatePicker_驗收入庫_結束時間.Value.GetEndDate());
+                if (text == "全部顯示")
+                {
+
+                }
+                if (text == "藥碼")
+                {
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_驗收入庫_過帳明細.藥品碼, value);
+                    }
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_驗收入庫_過帳明細.藥品碼, value);
+                    }
+                }
+                if (text == "藥名")
+                {
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_驗收入庫_過帳明細.藥品名稱, value);
+                    }
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_驗收入庫_過帳明細.藥品名稱, value);
+                    }
+                }
+                if (list_value.Count == 0)
+                {
+                    MyMessageBox.ShowDialog("查無資料");
+                    return;
+                }
+
+                this.sqL_DataGridView_藥庫_過帳明細_驗收入庫明細.RefreshGrid(list_value);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                LoadingForm.CloseLoadingForm();
+            }
+        }
+
         private void PlC_RJ_Button_藥庫_驗收入庫_過帳明細_全部顯示_MouseDownEvent(MouseEventArgs mevent)
         {
             this.sqL_DataGridView_藥庫_過帳明細_驗收入庫明細.RefreshGrid(this.Function_藥庫_驗收入庫_過帳明細_取得資料());

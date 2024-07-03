@@ -53,15 +53,14 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.Init();
             this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料_DataGridRowsChangeRefEvent;
 
-            this.plC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部_MouseDownEvent;
-            this.plC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋.MouseDownEvent += PlC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋_MouseDownEvent;
-            this.plC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋.MouseDownEvent += PlC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_匯出.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_匯出_MouseDownEvent;
             this.plC_RJ_Button_藥庫_每日訂單_訂購資料_刪除.MouseDownEvent += PlC_RJ_Button_藥庫_每日訂單_訂購資料_刪除_MouseDownEvent;
+            this.plC_RJ_Button_藥庫_訂單查詢_搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_訂單查詢_搜尋_MouseDownEvent;
+            this.comboBox_藥庫_訂單查詢_搜尋條件.SelectedIndex = 0;
             this.plC_UI_Init.Add_Method(sub_Program_藥庫_每日訂單_訂單查詢);
         }
 
-     
+    
 
         private bool flag_藥庫_每日訂單_訂單查詢 = false;
         private void sub_Program_藥庫_每日訂單_訂單查詢()
@@ -82,6 +81,57 @@ namespace 智能藥庫系統
         }
 
         #region Function
+        public List<object[]> Function_藥庫_每日訂單_訂單查詢_取得訂單資料(DateTime dateTime_st , DateTime dateTime_end)
+        {
+            MyTimer myTimer = new MyTimer();
+            myTimer.StartTickTime(50000);
+            Console.WriteLine($"Function_藥庫_每日訂單_訂單查詢_取得訂單資料 : {dateTime_st.ToDateTimeString()}-{dateTime_end.ToDateTimeString()}");
+
+            List<object[]> list_value = new List<object[]>();
+            List<object[]> list_value_buf = new List<object[]>();
+            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+            List<object[]> list_藥品資料_buf = new List<object[]>();
+            Console.WriteLine($"取得藥品資料,耗時{myTimer.ToString()}");
+            List<object[]> list_訂單資料 = this.sqL_DataGridView_每日訂單.SQL_GetRowsByBetween((int)enum_每日訂單.訂購時間, dateTime_st, dateTime_end, false);
+            list_value = list_訂單資料.CopyRows(new enum_每日訂單(), new enum_藥庫_每日訂單_訂單查詢());
+            Console.WriteLine($"取得訂單資料,耗時{myTimer.ToString()}");
+
+            string 藥品碼 = "";
+            string 藥品名稱 = "";
+            string 中文名稱 = "";
+            string 包裝單位 = "";
+            int 今日訂購數量 = 0;
+            int 緊急訂購數量 = 0;
+
+            for (int i = 0; i < list_value.Count; i++)
+            {
+                今日訂購數量 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.今日訂購數量].ObjectToString().StringToInt32();
+                緊急訂購數量 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.緊急訂購數量].ObjectToString().StringToInt32();
+                if (!(今日訂購數量 > 0 || 緊急訂購數量 > 0)) continue;
+                藥品碼 = list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.藥品碼].ObjectToString();
+                if (藥品碼.Length != 5)
+                {
+                    continue;
+                }
+                藥品名稱 = "";
+                中文名稱 = "";
+                包裝單位 = "";
+
+                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
+                if (list_藥品資料_buf.Count > 0)
+                {
+                    藥品名稱 = list_藥品資料_buf[0][(int)enum_medDrugstore.藥品名稱].ObjectToString();
+                    中文名稱 = list_藥品資料_buf[0][(int)enum_medDrugstore.中文名稱].ObjectToString();
+                    包裝單位 = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝單位].ObjectToString();
+                }
+                list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.藥品名稱] = 藥品名稱;
+                list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.中文名稱] = 中文名稱;
+                list_value[i][(int)enum_藥庫_每日訂單_訂單查詢.包裝單位] = 包裝單位;
+                list_value_buf.Add(list_value[i]);
+            }
+
+            return list_value_buf;
+        }
         public List<object[]> Function_藥庫_每日訂單_訂單查詢_取得訂單資料()
         {
             MyTimer myTimer = new MyTimer();
@@ -142,6 +192,73 @@ namespace 智能藥庫系統
                 RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間] = RowsList[i][(int)enum_藥庫_每日訂單_訂單查詢.訂購時間].ToDateTimeString();
             }
             RowsList.Sort(new ICP_藥庫_每日訂單_訂單查詢());
+        }
+        private void PlC_RJ_Button_藥庫_訂單查詢_搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            LoadingForm.ShowLoadingForm();
+            try
+            {
+                string text = "";
+                this.Invoke(new Action(delegate
+                {
+                    text = this.comboBox_藥庫_訂單查詢_搜尋條件.Text;
+                }));
+                string value = this.rJ_TextBox_藥庫_訂單查詢_搜尋條件.Texts;
+                List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料(rJ_DatePicker_藥庫_每日訂單_請購時間起始.Value.GetStartDate(), rJ_DatePicker_藥庫_每日訂單_請購時間起始.Value.GetEndDate());
+                if (text == "全部顯示")
+                {
+
+                }
+                if (text == "藥碼")
+                {
+                    if (rJ_RatioButton_藥庫_訂單查詢_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_訂單查詢.藥品碼, value);
+                    }
+                    if (rJ_RatioButton_藥庫_訂單查詢_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_每日訂單_訂單查詢.藥品碼, value);
+                    }
+                }
+                if (text == "藥名")
+                {
+                    if (rJ_RatioButton_藥庫_訂單查詢_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_訂單查詢.藥品名稱, value);
+                    }
+                    if (rJ_RatioButton_藥庫_訂單查詢_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_每日訂單_訂單查詢.藥品名稱, value);
+                    }
+                }
+                if (text == "中文名")
+                {
+                    if (rJ_RatioButton_藥庫_訂單查詢_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_訂單查詢.中文名稱, value);
+                    }
+                    if (rJ_RatioButton_藥庫_訂單查詢_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_每日訂單_訂單查詢.中文名稱, value);
+                    }
+                }
+                if (list_value.Count == 0)
+                {
+                    MyMessageBox.ShowDialog("查無資料");
+                    return;
+                }
+
+                this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RefreshGrid(list_value);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                LoadingForm.CloseLoadingForm();
+            }
+          
         }
         private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_刪除_MouseDownEvent(MouseEventArgs mevent)
         {
@@ -218,23 +335,8 @@ namespace 智能藥庫系統
                 }
             }));
         }
-        private void PlC_RJ_Button_藥庫_每日訂單_訂購資料_顯示全部_MouseDownEvent(MouseEventArgs mevent)
-        {
-            List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料();
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RefreshGrid(list_value);
-        }
-        private void PlC_RJ_ButtonrJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間搜尋_MouseDownEvent(MouseEventArgs mevent)
-        {
-            List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料();
-            list_value = list_value.GetRowsInDate((int)enum_藥庫_每日訂單_訂單查詢.訂購時間, rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間起始, rJ_DatePicker_藥庫_每日訂單_訂購資料_訂購時間結束);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RefreshGrid(list_value);
-        }
-        private void PlC_RJ_Buttonr_藥庫_每日訂單_訂購資料_藥品碼搜尋_MouseDownEvent(MouseEventArgs mevent)
-        {
-            List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料();
-            list_value = list_value.GetRowsByLike((int)enum_藥庫_每日訂單_訂單查詢.藥品碼, rJ_TextBoxr_藥庫_每日訂單_訂購資料_藥品碼搜尋.Text);
-            this.sqL_DataGridView_藥庫_每日訂單_訂單查詢_訂單資料.RefreshGrid(list_value);
-        }
+
+   
         #endregion
         private class ICP_藥庫_每日訂單_訂單查詢 : IComparer<object[]>
         {

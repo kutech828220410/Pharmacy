@@ -177,6 +177,7 @@ namespace 智能藥庫系統
                     src_value[(int)enum_medPharmacy.總庫存] = dst_value[(int)enum_medPharmacy.總庫存];
                     src_value[(int)enum_medPharmacy.基準量] = dst_value[(int)enum_medPharmacy.基準量];
                     src_value[(int)enum_medPharmacy.安全庫存] = dst_value[(int)enum_medPharmacy.安全庫存];
+                    src_value[(int)enum_medPharmacy.包裝數量] = dst_value[(int)enum_medPharmacy.包裝數量];
                     bool flag_IsEqual = src_value.IsEqual(dst_value, (int)enum_medPharmacy.包裝數量, (int)enum_medPharmacy.藥局庫存, (int)enum_medPharmacy.藥庫庫存, (int)enum_medPharmacy.總庫存, (int)enum_medPharmacy.基準量, (int)enum_medPharmacy.安全庫存);
                     if (src_value[(int)enum_medPharmacy.藥庫庫存].ObjectToString().StringIsEmpty())
                     {

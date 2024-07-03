@@ -80,6 +80,9 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印及匯出資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_列印及匯出資料_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_藥局_緊急申領_刪除選取資料.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_刪除選取資料_MouseDownEvent;
 
+            this.comboBox_藥庫_緊急申領_搜尋條件.SelectedIndex = 0;
+
+
             this.printerClass_緊急申領.Init();
             this.printerClass_緊急申領.PrintPageEvent += PrinterClass_緊急申領_PrintPageEvent;
 
@@ -111,7 +114,58 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_撥補_藥局_緊急申領_顯示資料_MouseDownEvent(MouseEventArgs mevent)
         {
-            this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥庫_撥補_藥局_緊急申領.產出時間, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_起始, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_結束, true);
+            LoadingForm.ShowLoadingForm();
+            try
+            {
+                string text = "";
+                string value = rJ_TextBox_藥庫_緊急申領_搜尋條件.Texts;
+                this.Invoke(new Action(delegate
+                {
+                    text = comboBox_藥庫_緊急申領_搜尋條件.Text;
+                }));
+                List<object[]> list_value = this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_GetRowsByBetween((int)enum_藥庫_撥補_藥局_緊急申領.產出時間, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_起始, rJ_DatePicker_藥庫_撥補_藥局_緊急申領_產出日期_結束, false);
+                if (text == "全部顯示")
+                {
+
+                }
+                if (text == "藥碼")
+                {
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_撥補_藥局_緊急申領.藥品碼, value);
+                    }
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_撥補_藥局_緊急申領.藥品碼, value);
+                    }
+                }
+                if (text == "藥名")
+                {
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_模糊.Checked)
+                    {
+                        list_value = list_value.GetRowsByLike((int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱, value);
+                    }
+                    if (rJ_RatioButton_藥庫_每日訂單_下訂單_前綴.Checked)
+                    {
+                        list_value = list_value.GetRowsStartWithByLike((int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱, value);
+                    }
+                }
+                if (list_value.Count == 0)
+                {
+                    MyMessageBox.ShowDialog("查無資料");
+                    return;
+                }
+
+                this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.RefreshGrid(list_value);
+            }
+            catch
+            {
+
+            }
+            finally
+            {
+                LoadingForm.CloseLoadingForm();
+            }
         }
         private void SqL_DataGridView_藥庫_撥補_藥局_緊急申領_RowDoubleClickEvent(object[] RowValue)
         {

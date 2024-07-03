@@ -18,8 +18,8 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.41")]
-[assembly: AssemblyFileVersion("1.0.51.41")]
+[assembly: AssemblyVersion("1.0.51.42")]
+[assembly: AssemblyFileVersion("1.0.51.42")]
 namespace 智能藥庫系統
 {
 
@@ -210,6 +210,8 @@ namespace 智能藥庫系統
                 Dialog_補給系統藥品建置.form = this.FindForm();
                 Dialog_日期選擇.form = this.FindForm();
                 Dialog_藥局_藥品資料_匯入選擇.form = this.FindForm();
+                Dialog_90日內最大消耗量.form = this.FindForm();
+
                 ApiServerSetting("DS01");
                 this.plC_UI_Init.Run(this.FindForm(), this.lowerMachine_Panel1);
                 this.plC_UI_Init.UI_Finished_Event += PlC_UI_Init_UI_Finished_Event;
@@ -469,6 +471,5 @@ namespace 智能藥庫系統
       
 
         }
-
     }
 }

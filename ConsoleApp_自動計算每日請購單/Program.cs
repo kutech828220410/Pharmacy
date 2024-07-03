@@ -153,6 +153,12 @@ namespace ConsoleApp_自動計算每日請購單
             Logger.LogAddLine();
             try
             {
+                if(IsHspitalHolidays(dateTime))
+                {
+                    Logger.Log($"今日為假日無須計算請購單");
+
+                    return;
+                }
                 string filename = "";
                 System.Data.DataTable dataTable;
                 DateTime dateTime_start = new DateTime();
@@ -171,6 +177,7 @@ namespace ConsoleApp_自動計算每日請購單
 
                 List<object[]> list_每日訂單 = sQLControl_每日訂單.GetRowsByBetween(null, (int)enum_每日訂單.訂購時間, dateTime_start.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 List<object[]> list_每日訂單_buf = new List<object[]>();
+                List<object[]> list_每日訂單_add = new List<object[]>();
                 List<medClass> medClasses_drugstore_med = medClass.get_ds_drugstore_med(API_Server, "ds01");
                 List<medClass> medClasses_drugstore_med_buf = new List<medClass>();
                 Dictionary<string, List<medClass>> keyValuePairs_drugstore_med = medClasses_drugstore_med.CoverToDictionaryByCode();
@@ -223,7 +230,7 @@ namespace ConsoleApp_自動計算每日請購單
                         }
                         list_藥品請購表.Add(value);
 
-                        Logger.Log($"({list_藥品請購表.Count})".StringLength(8) + $"({藥碼}){藥名}".StringLength(50)+ $"庫存:{總庫存},在途量:{在途量},安全量:{安全量},基準量:{基準量},請購量:{請購量}"); 
+                        Logger.Log($"({list_藥品請購表.Count})".StringLength(8) + $"({藥碼}){藥名}".StringLength(50) + $"庫存:{總庫存}".StringLength(14) + $"在途量:{在途量}".StringLength(14) + $"安全量:{安全量}".StringLength(14) + $"基準量:{基準量}".StringLength(14) + $"請購量:{請購量}".StringLength(14)); 
                     }
                     else
                     {
@@ -236,6 +243,36 @@ namespace ConsoleApp_自動計算每日請購單
                 MyOffice.ExcelClass.NPOI_SaveFile(dataTable, filename, new int[] { (int)enum_藥品請購表.基準量, (int)enum_藥品請購表.安全量, (int)enum_藥品請購表.在途量, (int)enum_藥品請購表.庫存, (int)enum_藥品請購表.包裝量, (int)enum_藥品請購表.報表請購量, (int)enum_藥品請購表.實際請購量 });
                 Logger.Log($"請購藥品共<{list_藥品請購表.Count}>筆");
 
+                for (int i = 0; i < list_藥品請購表.Count; i++)
+                {
+                    string Code = list_藥品請購表[i][(int)enum_藥品請購表.藥碼].ObjectToString();
+                    string 藥名 = list_藥品請購表[i][(int)enum_藥品請購表.藥名].ObjectToString();
+                    string 實際請購量 = list_藥品請購表[i][(int)enum_藥品請購表.實際請購量].ObjectToString();
+
+                    list_每日訂單_buf = (from temp in list_每日訂單
+                                     where temp[(int)enum_每日訂單.藥品碼].ObjectToString() == Code
+                                     select temp).ToList();
+                    if(list_每日訂單_buf.Count == 0)
+                    {
+                        object[] value = new object[new enum_每日訂單().GetLength()];
+
+                        value[(int)enum_每日訂單.GUID] = Guid.NewGuid().ToString();
+                        value[(int)enum_每日訂單.藥品碼] = Code;
+                        value[(int)enum_每日訂單.今日訂購數量] = 實際請購量;
+                        value[(int)enum_每日訂單.緊急訂購數量] = "0";
+                        value[(int)enum_每日訂單.訂購時間] = DateTime.Now.ToDateTimeString_6();
+                        list_每日訂單_add.Add(value);
+
+                    }
+                    else
+                    {
+                        Logger.Log($"({i})".StringLength(5) + $"({Code}){藥名}".StringLength(50) +$"此藥已請購,數量 : {list_每日訂單_buf[0][(int)enum_每日訂單.今日訂購數量].ObjectToString()}");
+
+                    }
+                }
+                sQLControl_每日訂單.AddRows(null, list_每日訂單_add);
+                Logger.Log($"新增每日訂單共<{list_每日訂單_add.Count}>筆");
+
             }
             catch (Exception ex)
             {
@@ -247,7 +284,74 @@ namespace ConsoleApp_自動計算每日請購單
             }
         
         }
+        public static bool IsHspitalHolidays(DateTime date)
+        {
+            if (date.ToString("MM/dd").Equals("09/23"))
+            {
+                return false;
+            }
+            // 週休二日
+            if (date.DayOfWeek == DayOfWeek.Saturday || date.DayOfWeek == DayOfWeek.Sunday)
+            {
+                return true;
+            }
+            // 國定假日(國曆)
+            if (date.ToString("MM/dd").Equals("01/01"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("02/28"))
+            {
+                return true;
+            }
+            if (date.ToString("MM/dd").Equals("04/05"))
+            {
+                return true;
+            }
 
+            if (date.ToString("MM/dd").Equals("10/10"))
+            {
+                return true;
+            }
+
+            // 國定假日(農曆)
+            System.Globalization.TaiwanLunisolarCalendar TaiwanLunisolarCalendar = new System.Globalization.TaiwanLunisolarCalendar();
+            string LeapDate = string.Format("{0}/{1}", TaiwanLunisolarCalendar.GetMonth(date), TaiwanLunisolarCalendar.GetDayOfMonth(date));
+            if (LeapDate == "12/30")
+            {
+                return true;
+            }
+            if (LeapDate == ("1/1"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/2"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/3"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/4"))
+            {
+                return true;
+            }
+            if (LeapDate == ("1/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("5/5"))
+            {
+                return true;
+            }
+            if (LeapDate == ("8/15"))
+            {
+                return true;
+            }
+
+            return false;
+        }
         static public void Get_st_end_time(DateTime dateTime ,ref DateTime dateTime_start, ref DateTime dateTime_end)
         {
             int hour = 11;

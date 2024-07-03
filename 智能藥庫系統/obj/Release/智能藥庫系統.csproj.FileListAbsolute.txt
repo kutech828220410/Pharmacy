@@ -645,3 +645,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_緊急申領_列印及匯出.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_自動撥補_列印及匯出.resources
 C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_藥局_藥品資料_匯入選擇.resources
+C:\Users\hsonds01\source\repos\Pharmacy\智能藥庫系統\obj\Release\智能藥庫系統.Dialog_90日內最大消耗量.resources

@@ -347,7 +347,7 @@ namespace 智能藥庫系統
             Console.WriteLine($"取得過賬明細 ,耗時{myTimer.ToString()} {DateTime.Now.ToDateTimeString()}");
             return list_value;
         }
-        public List<object[]> Function_藥品過消耗帳_取得所有過帳明細以產出時間(DateTime dateTime1, DateTime dateTime2)
+        static public List<object[]> Function_藥品過消耗帳_取得所有過帳明細以產出時間(DateTime dateTime1, DateTime dateTime2)
         {
             MyTimer myTimer = new MyTimer(500000);
             List<object[]> list_value = new List<object[]>();
@@ -364,7 +364,7 @@ namespace 智能藥庫系統
             dateTime2 = new DateTime(dateTime2.Year, dateTime2.Month, dateTime2.Day, 05, 59, 59);
             tasks.Add(Task.Run(new Action(delegate
             {
-                List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
+                List<object[]> list_門診 = _sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_門診_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
                 list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
                 for (int i = 0; i < list_門診_buf.Count; i++)
                 {
@@ -374,7 +374,7 @@ namespace 智能藥庫系統
 
             tasks.Add(Task.Run(new Action(delegate
             {
-                List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
+                List<object[]> list_急診 = _sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_急診_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
                 list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
                 for (int i = 0; i < list_急診_buf.Count; i++)
                 {
@@ -384,7 +384,7 @@ namespace 智能藥庫系統
 
             tasks.Add(Task.Run(new Action(delegate
             {
-                List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
+                List<object[]> list_住院 = _sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_住院_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
                 list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
                 for (int i = 0; i < list_住院_buf.Count; i++)
                 {
@@ -394,7 +394,7 @@ namespace 智能藥庫系統
 
             tasks.Add(Task.Run(new Action(delegate
             {
-                List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
+                List<object[]> list_公藥 = _sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetRowsByBetween((int)enum_批次過帳_公藥_批次過帳明細.產出時間, dateTime1.ToDateTimeString(), dateTime2.AddDays(0).ToDateTimeString(), false);
                 list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
                 for (int i = 0; i < list_公藥_buf.Count; i++)
                 {
@@ -475,34 +475,60 @@ namespace 智能藥庫系統
 
         private List<object[]> Function_藥品過消耗帳_取得所有過帳明細()
         {
-            List<object[]> list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetAllRows(false);
-            List<object[]> list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetAllRows(false);
-            List<object[]> list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetAllRows(false);
-            List<object[]> list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetAllRows(false);
+            List<object[]> list_門診 = new List<object[]>();
+            List<object[]> list_急診 = new List<object[]>();
+            List<object[]> list_住院 = new List<object[]>();
+            List<object[]> list_公藥 = new List<object[]>();
+
+            List<object[]> list_門診_buf = new List<object[]>();
+            List<object[]> list_急診_buf = new List<object[]>();
+            List<object[]> list_住院_buf = new List<object[]>();
+            List<object[]> list_公藥_buf = new List<object[]>();
+
+            List<Task> tasks = new List<Task>();
+
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                list_門診 = this.sqL_DataGridView_批次過帳_門診_批次過帳明細.SQL_GetAllRows(false);
+                list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_門診_buf.Count; i++)
+                {
+                    list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
+                }
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                list_急診 = this.sqL_DataGridView_批次過帳_急診_批次過帳明細.SQL_GetAllRows(false);
+                list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_急診_buf.Count; i++)
+                {
+                    list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
+                }
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                list_住院 = this.sqL_DataGridView_批次過帳_住院_批次過帳明細.SQL_GetAllRows(false);
+                list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_住院_buf.Count; i++)
+                {
+                    list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
+                }
+            })));
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                list_公藥 = this.sqL_DataGridView_批次過帳_公藥_批次過帳明細.SQL_GetAllRows(false);
+                list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
+                for (int i = 0; i < list_公藥_buf.Count; i++)
+                {
+                    list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
+                }
+
+            })));
+
+            Task.WhenAll(tasks).Wait();
+
+
             List<object[]> list_value = new List<object[]>();
-
-            List<object[]> list_門診_buf = list_門診.CopyRows(new enum_批次過帳_門診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_門診_buf.Count; i++)
-            {
-                list_門診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.門診.GetEnumName();
-            }
-            List<object[]> list_急診_buf = list_急診.CopyRows(new enum_批次過帳_急診_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_急診_buf.Count; i++)
-            {
-                list_急診_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.急診.GetEnumName();
-            }
-            List<object[]> list_住院_buf = list_住院.CopyRows(new enum_批次過帳_住院_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_住院_buf.Count; i++)
-            {
-                list_住院_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.住院.GetEnumName();
-            }
-            List<object[]> list_公藥_buf = list_公藥.CopyRows(new enum_批次過帳_公藥_批次過帳明細(), new enum_藥品過消耗帳());
-            for (int i = 0; i < list_公藥_buf.Count; i++)
-            {
-                list_公藥_buf[i][(int)enum_藥品過消耗帳.來源名稱] = enum_藥品過消耗帳_來源名稱.公藥.GetEnumName();
-            }
-
-
             list_value.LockAdd(list_門診_buf);
             list_value.LockAdd(list_急診_buf);
             list_value.LockAdd(list_住院_buf);
@@ -1163,7 +1189,7 @@ namespace 智能藥庫系統
             DateTime dateTime_截止日期 = dialog_日期選擇.Value;
 
 
-            List<object[]> list_value = this.Function_藥品過消耗帳_取得所有過帳明細以產出時間(dateTime_盤點日期, dateTime_截止日期);
+            List<object[]> list_value = Function_藥品過消耗帳_取得所有過帳明細以產出時間(dateTime_盤點日期, dateTime_截止日期);
             List<object[]> list_過帳明細 = new List<object[]>();
             List<object[]> list_過帳明細_buf = new List<object[]>();
             List<object[]> list_匯出資料 = new List<object[]>();

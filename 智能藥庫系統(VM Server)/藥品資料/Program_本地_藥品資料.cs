@@ -68,13 +68,7 @@ namespace 智能藥庫系統_VM_Server_
         }
 
         #region Function
-        private List<object[]> Function_本地_藥品資料_列出DC藥品()
-        {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
-            List<object[]> list_本地藥檔 = this.sqL_DataGridView_本地_藥品資料.SQL_GetAllRows(false);
-            List<object[]> list_value = this.Function_本地_藥品資料_列出DC藥品(list_雲端藥檔, list_本地藥檔);
-            return list_value;
-        }
+ 
         private List<object[]> Function_本地_藥品資料_列出DC藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
         {
 
@@ -93,13 +87,6 @@ namespace 智能藥庫系統_VM_Server_
             });
 
 
-            return list_value;
-        }
-        private List<object[]> Function_本地_藥品資料_列出異動藥品()
-        {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
-            List<object[]> list_本地藥檔 = this.sqL_DataGridView_本地_藥品資料.SQL_GetAllRows(false);
-            List<object[]> list_value = this.Function_本地_藥品資料_列出異動藥品(list_雲端藥檔, list_本地藥檔);
             return list_value;
         }
         private List<object[]> Function_本地_藥品資料_列出異動藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
@@ -143,14 +130,6 @@ namespace 智能藥庫系統_VM_Server_
             });
 
             return list_本地藥檔_buf;
-        }
-        private List<object[]> Function_本地_藥品資料_列出新增藥品()
-        {
-            List<object[]> list_雲端藥檔 = this.sqL_DataGridView_雲端_藥品資料_old.SQL_GetAllRows(false);
-            List<object[]> list_本地藥檔 = this.sqL_DataGridView_本地_藥品資料.SQL_GetAllRows(false);
-            List<object[]> list_value = this.Function_本地_藥品資料_列出新增藥品(list_雲端藥檔, list_本地藥檔);
-            return list_value;
-
         }
         private List<object[]> Function_本地_藥品資料_列出新增藥品(List<object[]> list_雲端藥檔, List<object[]> list_本地藥檔)
         {

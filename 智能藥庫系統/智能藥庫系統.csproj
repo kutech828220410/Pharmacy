@@ -356,6 +356,12 @@
     <Compile Include="Dialog\Dialog_自動撥補_列印及匯出.Designer.cs">
       <DependentUpon>Dialog_自動撥補_列印及匯出.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialog\Dialog_90日內最大消耗量.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialog\Dialog_90日內最大消耗量.Designer.cs">
+      <DependentUpon>Dialog_90日內最大消耗量.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -497,6 +503,9 @@
     <Compile Include="Program_周邊設備.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Dialog\Dialog_90日內最大消耗量.resx">
+      <DependentUpon>Dialog_90日內最大消耗量.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialog\Dialog_緊急申領_列印及匯出.resx">
       <DependentUpon>Dialog_緊急申領_列印及匯出.cs</DependentUpon>
     </EmbeddedResource>
