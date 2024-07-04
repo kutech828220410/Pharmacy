@@ -55,6 +55,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_線上藥檔更�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_自動計算每日請購單", "ConsoleApp_自動計算每日請購單\ConsoleApp_自動計算每日請購單.csproj", "{E999268B-70AD-49FB-82DC-DFEFB8D3BA4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_申領單自動列印", "ConsoleApp_申領單自動列印\ConsoleApp_申領單自動列印.csproj", "{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "自動列印", "自動列印\自動列印.csproj", "{EAF7E173-0978-4967-A42C-764B4D44599F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_自動撥補單列印", "ConsoleApp_自動撥補單列印\ConsoleApp_自動撥補單列印.csproj", "{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -157,6 +163,18 @@ Global
 		{E999268B-70AD-49FB-82DC-DFEFB8D3BA4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E999268B-70AD-49FB-82DC-DFEFB8D3BA4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E999268B-70AD-49FB-82DC-DFEFB8D3BA4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAF7E173-0978-4967-A42C-764B4D44599F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAF7E173-0978-4967-A42C-764B4D44599F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAF7E173-0978-4967-A42C-764B4D44599F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAF7E173-0978-4967-A42C-764B4D44599F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

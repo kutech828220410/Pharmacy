@@ -204,7 +204,47 @@ namespace 智能藥庫系統
                     text = this.comboBox_藥庫_訂單查詢_搜尋條件.Text;
                 }));
                 string value = this.rJ_TextBox_藥庫_訂單查詢_搜尋條件.Texts;
-                List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料(rJ_DatePicker_藥庫_每日訂單_請購時間起始.Value.GetStartDate(), rJ_DatePicker_藥庫_每日訂單_請購時間起始.Value.GetEndDate());
+
+                int hour = 11;
+                int min = 50;
+
+                DateTime dateTime_start;
+                DateTime dateTime_end;
+
+                DateTime dateTime_basic_start = rJ_DatePicker_藥庫_每日訂單_請購時間起始.Value.GetStartDate();
+                dateTime_basic_start = new DateTime(dateTime_basic_start.Year, dateTime_basic_start.Month, dateTime_basic_start.Day, 12, 00, 00);
+                DateTime dateTime_basic_end = dateTime_basic_start.AddDays(1);
+                bool isholiday = false;
+                while (true)
+                {
+                    if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
+                    {
+                        break;
+                    }
+                    dateTime_basic_start = dateTime_basic_start.AddDays(-1);
+                    isholiday = true;
+                }
+
+                if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+                {
+                    dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                    dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                }
+                else
+                {
+                    dateTime_end = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                    dateTime_start = dateTime_end.AddDays(-1);
+                }
+                while (true)
+                {
+                    if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
+                    {
+                        break;
+                    }
+                    dateTime_basic_end = dateTime_basic_end.AddDays(1);
+                }
+
+                List<object[]> list_value = this.Function_藥庫_每日訂單_訂單查詢_取得訂單資料(dateTime_start, dateTime_basic_end);
                 if (text == "全部顯示")
                 {
 

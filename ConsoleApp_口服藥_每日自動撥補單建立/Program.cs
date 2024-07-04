@@ -64,6 +64,7 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                 int 基準量 = medClasses_藥局[i].基準量.StringToInt32();
                 int 安全量 = medClasses_藥局[i].安全庫存.StringToInt32();
                 int 包裝數量 = medClasses_藥局[i].包裝數量.StringToInt32();
+                string 備註 = "";
                 if (包裝數量 < 0) 包裝數量 = 1;
         
                 int 撥發量 = 基準量 - 藥局庫存;
@@ -113,21 +114,24 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                     string 報表名稱 = "";
                     if (k == 0)
                     {
-                        報表名稱 = "口服藥-UD";
+                        報表名稱 = "口服藥";
                         撥發量_temp = 撥發量_口服藥_UD;
                         實撥量_temp = 實撥量_口服藥_UD;
+                        備註 = $"申領單位:UD,申領人:系統\n";
                     }
                     if (k == 1)
                     {
-                        報表名稱 = "口服藥-口一";
+                        報表名稱 = "口服藥";
                         撥發量_temp = 撥發量_口服藥_口一;
                         實撥量_temp = 實撥量_口服藥_口一;
+                        備註 = $"申領單位:口一,申領人:系統\n";
                     }
                     if (k == 2)
                     {
-                        報表名稱 = "口服藥-口二";
+                        報表名稱 = "口服藥";
                         撥發量_temp = 撥發量_口服藥_口二;
                         實撥量_temp = 實撥量_口服藥_口二;
+                        備註 = $"申領單位:口二,申領人:系統\n";
                     }
                     drugStotreDistributionClass drugStotreDistributionClass = new drugStotreDistributionClass();
                     drugStotreDistributionClass.GUID = Guid.NewGuid().ToString();
@@ -142,6 +146,7 @@ namespace ConsoleApp_口服藥_每日自動撥補單建立
                     drugStotreDistributionClass.目的庫庫存 = medClasses_藥局[i].藥局庫存;
                     drugStotreDistributionClass.撥發量 = 撥發量.ToString();
                     drugStotreDistributionClass.實撥量 = 實撥量_temp.ToString();
+
                     drugStotreDistributionClass.報表名稱 = 報表名稱;
                     drugStotreDistributionClass.加入時間 = DateTime.Now;
                     drugStotreDistributionClass.報表生成時間 = DateTime.Now;

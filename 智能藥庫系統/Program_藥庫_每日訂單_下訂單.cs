@@ -843,8 +843,7 @@ namespace 智能藥庫系統
             this.Function_藥庫_每日訂單_下訂單_更新藥品資料表單();
         }  
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_搜尋_MouseDownEvent(MouseEventArgs mevent)
-        {
-            
+        {          
             try
             {
 
@@ -862,7 +861,18 @@ namespace 智能藥庫系統
                 }
                 LoadingForm.ShowLoadingForm();
                 List<object[]> list_value = this.Function_藥庫_每日訂單_下訂單_取得藥品資料();
+                API_OrderClass aPI_OrderClas_今日訂購數量 = Function_藥庫_每日訂單_下訂單_取得今日訂購數量();
+                API_OrderClass aPI_OrderClas_緊急訂購數量 = Function_藥庫_每日訂單_下訂單_取得緊急訂購數量();
+                List<object[]> list_藥品資料_每日訂單_buf = new List<object[]>();
+                for (int i = 0; i < aPI_OrderClas_今日訂購數量.Result.Count; i++)
+                {
 
+                    list_藥品資料_每日訂單_buf = list_value.GetRows((int)enum_藥庫_每日訂單_下訂單.藥品碼, aPI_OrderClas_今日訂購數量.Result[i].code);
+                    if (list_藥品資料_每日訂單_buf.Count > 0)
+                    {
+                        list_藥品資料_每日訂單_buf[0][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = aPI_OrderClas_今日訂購數量.Result[i].value;
+                    }
+                }
                 if (text == "全部顯示")
                 {
 
@@ -913,7 +923,6 @@ namespace 智能藥庫系統
                 {
                     API_OrderClass api_在途量 = Function_藥庫_每日訂單_下訂單_取得在途量();
 
-                    List<object[]> list_藥品資料_每日訂單_buf = new List<object[]>();
                     List<object[]> list_藥品資料_每日訂單_add = new List<object[]>();
                     for (int i = 0; i < api_在途量.Result.Count; i++)
                     {
@@ -948,10 +957,9 @@ namespace 智能藥庫系統
                 }
                 if (text == "請購藥品")
                 {
-                    List<object[]> list_藥品資料_每日訂單_buf = new List<object[]>();
+           
                     List<object[]> list_藥品資料_每日訂單_add = new List<object[]>();
-                    API_OrderClass aPI_OrderClas_今日訂購數量 = Function_藥庫_每日訂單_下訂單_取得今日訂購數量();
-                    API_OrderClass aPI_OrderClas_緊急訂購數量 = Function_藥庫_每日訂單_下訂單_取得緊急訂購數量();
+
                     for (int i = 0; i < aPI_OrderClas_今日訂購數量.Result.Count; i++)
                     {
 

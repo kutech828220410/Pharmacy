@@ -607,7 +607,7 @@ namespace 智能藥庫系統
                  
             });
             if (checkBox_藥庫_藥品資料_近8個月效期.Checked) RowsList = RowsList_buf;
-
+            RowsList = RowsList.GetRows((int)enum_medDrugstore.開檔狀態, "開檔中");
             RowsList.Sort(new ICP_藥庫_藥品資料());
         }
         private void SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent(List<object[]> RowsList)
@@ -718,7 +718,7 @@ namespace 智能藥庫系統
                 {
 
                     list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
+                    //list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
 
                 }
                 if (checkBox_藥庫_藥品資料_未開檔.Checked)

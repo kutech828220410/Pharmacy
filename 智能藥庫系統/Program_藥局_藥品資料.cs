@@ -424,9 +424,10 @@ namespace 智能藥庫系統
 
             });
             if (checkBox_藥局_藥品資料_近8個月效期.Checked) RowsList = RowsList_buf;
-
+            RowsList = RowsList.GetRows((int)enum_medPharmacy.開檔狀態, "開檔中");
             RowsList.Sort(new ICP_藥局_藥品資料());
         }
+
         private void PlC_RJ_Button_藥局_藥品資料_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {
             LoadingForm.ShowLoadingForm();

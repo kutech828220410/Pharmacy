@@ -49,6 +49,7 @@ namespace ConsoleApp_線上藥檔更新
             try
             {
                 List<medClass> medClasses_temp = new List<medClass>();
+                List<medClass> medClasses_temp_buf = new List<medClass>();
                 List<medClass> medClasses_cloud = medClass.get_med_cloud(API_Server);
                 Dictionary<string, List<medClass>> keyValuePairs_cloud = medClasses_cloud.CoverToDictionaryByCode();
                 List<medClass> medClasses_cloud_replace = new List<medClass>();
@@ -98,11 +99,23 @@ namespace ConsoleApp_線上藥檔更新
                         medClass.中文名稱 = reader["UDCHTNAM"].ToString().Trim();
                         medClass.包裝單位 = reader["UDUNFORM"].ToString().Trim();
                         medClass.包裝數量 = reader["UDCONVER"].ToString().Trim();
+                        string UDABSCTL = reader["UDABSCTL"].ToString().Trim();
+                        string AROUTFLA = reader["AROUTFLA"].ToString().Trim();
+                   
+                        if (UDABSCTL == "Y" && AROUTFLA == "Y")
+                        {
+                            medClass.開檔狀態 = "未開檔";
+                        }
+                        else
+                        {
+                            medClass.開檔狀態 = "開檔中";
+                        }
                         medClasses_temp.Add(medClass);
                     }
                     index++;
                 }
                 MyDb2Connection.Close();
+                Dictionary<string, List<medClass>> keyValuePairs_temp = medClasses_temp.CoverToDictionaryByCode();
 
                 for (int i = 0; i < medClasses_temp.Count; i++)
                 {
@@ -115,12 +128,14 @@ namespace ConsoleApp_線上藥檔更新
                         if (medClasses_cloud_buf[0].藥品學名 != medClasses_temp[i].藥品學名) flag_replace = true;
                         if (medClasses_cloud_buf[0].中文名稱 != medClasses_temp[i].中文名稱) flag_replace = true;
                         if (medClasses_cloud_buf[0].包裝單位 != medClasses_temp[i].包裝單位) flag_replace = true;
+                        if (medClasses_cloud_buf[0].開檔狀態 != medClasses_temp[i].開檔狀態) flag_replace = true;
 
                         medClasses_cloud_buf[0].藥品碼 = medClasses_temp[i].藥品碼;
                         medClasses_cloud_buf[0].藥品名稱 = medClasses_temp[i].藥品名稱;
                         medClasses_cloud_buf[0].藥品學名 = medClasses_temp[i].藥品學名;
                         medClasses_cloud_buf[0].中文名稱 = medClasses_temp[i].中文名稱;
                         medClasses_cloud_buf[0].包裝單位 = medClasses_temp[i].包裝單位;
+                        medClasses_cloud_buf[0].開檔狀態 = medClasses_temp[i].開檔狀態;
                         if (flag_replace)
                         {
                             Logger.Log($"(更新) ({medClasses_temp[i].藥品碼}){ medClasses_temp[i].藥品名稱}");
@@ -134,6 +149,21 @@ namespace ConsoleApp_線上藥檔更新
                         medClasses_cloud_add.Add(medClasses_temp[i]);
                     }
                 }
+                index = 0;
+                for (int i = 0; i < medClasses_cloud.Count; i++)
+                {
+                    medClasses_temp_buf = keyValuePairs_temp.SortDictionaryByCode(medClasses_cloud[i].藥品碼);
+                    if (medClasses_temp_buf.Count == 0)
+                    {
+                        medClasses_cloud[i].開檔狀態 = "未開檔";
+                        Logger.Log($"{index + 1}. (未開檔) ({medClasses_cloud[i].藥品碼}){ medClasses_cloud[i].藥品名稱}");
+                        medClasses_cloud_replace.Add(medClasses_cloud[i]);
+                        index++;
+
+                    }
+                }
+
+
                 if (medClasses_cloud_add.Count > 0) medClass.add_med_clouds(API_Server, medClasses_cloud_add);
                 if (medClasses_cloud_replace.Count > 0) medClass.update_med_clouds_by_guid(API_Server, medClasses_cloud_replace);
                 Logger.Log($"雲端藥檔新增<{medClasses_cloud_add.Count}>筆,修改<{medClasses_cloud_replace.Count}>筆");
