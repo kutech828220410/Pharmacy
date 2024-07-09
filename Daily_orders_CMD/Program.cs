@@ -327,9 +327,11 @@ namespace Daily_orders_CMD
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
             DateTime dateNow =  new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+
             //dateNow = new DateTime(DateTime.Now.Year,10,1, 11, 50, 00);
             DateTime dateTime_temp = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, hour, min, 00);
-            dateTime_temp = dateTime_temp.AddMinutes(20);
+            dateTime_temp = dateTime_temp.AddMinutes(5);
 
 
             DateTime dateTime_start;
@@ -362,7 +364,7 @@ namespace Daily_orders_CMD
             if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.AddDays(1).ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
@@ -371,13 +373,12 @@ namespace Daily_orders_CMD
             }
             while (true)
             {
-                if (!IsHspitalHolidays(dateTime_basic_end))
+                if (!IsHspitalHolidays(dateTime_end))
                 {
                     break;
                 }
-                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+                dateTime_end = dateTime_end.AddDays(1);
             }
-
             list_value = sQLControl_每日訂單.GetAllRows(null);
             list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             return list_value;

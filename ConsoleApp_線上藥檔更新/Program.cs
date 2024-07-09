@@ -122,6 +122,14 @@ namespace ConsoleApp_線上藥檔更新
                     medClasses_cloud_buf = keyValuePairs_cloud.SortDictionaryByCode(medClasses_temp[i].藥品碼);
                     if (medClasses_cloud_buf.Count > 0)
                     {
+                        if (medClasses_temp[i].藥品碼 == "04330")
+                        {
+                            medClasses_temp[i].開檔狀態 = "開檔中";
+                        }
+                        if (medClasses_temp[i].藥品碼 == "21371")
+                        {
+                            medClasses_temp[i].開檔狀態 = "開檔中";
+                        }
                         bool flag_replace = false;
                         if (medClasses_cloud_buf[0].藥品碼 != medClasses_temp[i].藥品碼) flag_replace = true;
                         if (medClasses_cloud_buf[0].藥品名稱 != medClasses_temp[i].藥品名稱) flag_replace = true;

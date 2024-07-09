@@ -339,12 +339,32 @@ namespace 智能藥庫系統
             int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
             int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
 
+
+            DateTime dateNow = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+
+            //dateNow = new DateTime(DateTime.Now.Year,10,1, 11, 50, 00);
+            DateTime dateTime_temp = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, hour, min, 00);
+            dateTime_temp = dateTime_temp.AddMinutes(5);
+
+
             DateTime dateTime_start;
             DateTime dateTime_end;
 
-            DateTime dateTime_basic_start = DateTime.Now;
-            DateTime dateTime_basic_end = dateTime_basic_start.AddDays(1);
+            DateTime dateTime_basic_start = dateNow;
+            DateTime dateTime_basic_end = dateNow.AddDays(1);
             bool isholiday = false;
+            if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
+            {
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
+                {
+                    if (Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
+                    {
+                        dateTime_basic_start = dateTime_basic_start.AddDays(-1);
+                    }
+                }
+
+            }
             while (true)
             {
                 if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
@@ -354,11 +374,11 @@ namespace 智能藥庫系統
                 dateTime_basic_start = dateTime_basic_start.AddDays(-1);
                 isholiday = true;
             }
-          
-            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+
+            if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.AddDays(1).ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
@@ -367,12 +387,14 @@ namespace 智能藥庫系統
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
+                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_end))
                 {
                     break;
                 }
-                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+                dateTime_end = dateTime_end.AddDays(1);
             }
+
+          
 
             list_value = this.sqL_DataGridView_每日訂單.SQL_GetRowsByBetween((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end, false);
             //list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);

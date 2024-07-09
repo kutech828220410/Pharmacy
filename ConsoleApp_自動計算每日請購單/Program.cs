@@ -358,12 +358,31 @@ namespace ConsoleApp_自動計算每日請購單
             int min = 50;
 
 
-            DateTime dateTime_basic_start = dateTime;
-            DateTime dateTime_basic_end = dateTime_basic_start.AddDays(1);
+            DateTime dateNow = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
+
+            //dateNow = new DateTime(DateTime.Now.Year,10,1, 11, 50, 00);
+            DateTime dateTime_temp = new DateTime(dateNow.Year, dateNow.Month, dateNow.Day, hour, min, 00);
+            dateTime_temp = dateTime_temp.AddMinutes(5);
+
+
+
+            DateTime dateTime_basic_start = dateNow;
+            DateTime dateTime_basic_end = dateNow.AddDays(1);
             bool isholiday = false;
+            if (!dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute))
+            {
+                if (!IsHspitalHolidays(dateTime_basic_start))
+                {
+                    if (IsHspitalHolidays(dateTime_basic_start.AddDays(-1)))
+                    {
+                        dateTime_basic_start = dateTime_basic_start.AddDays(-1);
+                    }
+                }
+
+            }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_start))
+                if (!IsHspitalHolidays(dateTime_basic_start))
                 {
                     break;
                 }
@@ -371,10 +390,10 @@ namespace ConsoleApp_自動計算每日請購單
                 isholiday = true;
             }
 
-            if (dateTime_basic_start.IsNewDay(hour, min) || isholiday)
+            if (dateTime_basic_start.IsNewDay(dateTime_temp.Hour, dateTime_temp.Minute) || isholiday)
             {
                 dateTime_start = $"{dateTime_basic_start.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = $"{dateTime_basic_end.ToDateString()} {hour}:{min}:00".StringToDateTime();
+                dateTime_end = $"{dateTime_basic_start.AddDays(1).ToDateString()} {hour}:{min}:00".StringToDateTime();
             }
             else
             {
@@ -383,11 +402,11 @@ namespace ConsoleApp_自動計算每日請購單
             }
             while (true)
             {
-                if (!Basic.TypeConvert.IsHspitalHolidays(dateTime_basic_end))
+                if (!IsHspitalHolidays(dateTime_end))
                 {
                     break;
                 }
-                dateTime_basic_end = dateTime_basic_end.AddDays(1);
+                dateTime_end = dateTime_end.AddDays(1);
             }
         }
 

@@ -263,7 +263,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_藥品資料.SQL_AddRows(list_Add, false);
             Console.Write($"上傳 藥庫-藥品資料 耗時 : {myTimer.ToString()} ms\n");
 
-            this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(true);
+            //this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
             Console.Write($"更新 藥庫-藥品資料Grid 耗時 : {myTimer.ToString()} ms\n");
         }
         private void Function_藥庫_藥品資料_匯入()
@@ -502,6 +502,7 @@ namespace 智能藥庫系統
         }
         #endregion
         #region Event
+        private bool flag_藥庫_開檔狀態顯示 = false;
         private void SqL_DataGridView_藥庫_藥品資料_ComboBoxSelectedIndexChangedEvent(object sender, string colName, object[] RowValue)
         {
             string 藥碼 = RowValue[(int)enum_medDrugstore.藥品碼].ObjectToString();
@@ -607,7 +608,10 @@ namespace 智能藥庫系統
                  
             });
             if (checkBox_藥庫_藥品資料_近8個月效期.Checked) RowsList = RowsList_buf;
-            RowsList = RowsList.GetRows((int)enum_medDrugstore.開檔狀態, "開檔中");
+
+            List<object[]> list_buf = RowsList.GetRows((int)enum_medDrugstore.開檔狀態, "未開檔"); 
+            if (flag_藥庫_開檔狀態顯示 == false) RowsList = RowsList.GetRows((int)enum_medDrugstore.開檔狀態, "開檔中");
+            flag_藥庫_開檔狀態顯示 = false;
             RowsList.Sort(new ICP_藥庫_藥品資料());
         }
         private void SqL_DataGridView_藥庫_藥品資料_DataGridRowsChangeEvent(List<object[]> RowsList)
@@ -668,6 +672,7 @@ namespace 智能藥庫系統
                 {
                     cmb_text = this.comboBox_藥庫_藥品資料_搜尋條件.Text;
                 }));
+                if (cmb_text == "藥碼" || cmb_text == "藥名" || cmb_text == "中文名" || cmb_text == "商品名") flag_藥庫_開檔狀態顯示 = true;
                 List<object[]> list_value = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
                 list_value = this.sqL_DataGridView_藥庫_藥品資料.RowsChangeFunction(list_value);
                 List<object[]> list_value_buf = new List<object[]>();
@@ -714,19 +719,25 @@ namespace 智能藥庫系統
 
                 Dictionary<object, List<object[]>> keyValuePairs_開檔狀態 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.開檔狀態);
                 List<object[]> list_開檔狀態 = new List<object[]>();
-                if (checkBox_藥庫_藥品資料_開檔中.Checked)
-                {
 
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
-                    //list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary("未開檔"));
+                //if (checkBox_藥庫_藥品資料_開檔中.Checked)
+                //{
 
-                }
-                if (checkBox_藥庫_藥品資料_未開檔.Checked)
-                {
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
-                }
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
+                //    //list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
+
+                //}
+                //if (checkBox_藥庫_藥品資料_未開檔.Checked)
+                //{
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
+                //}
                 list_value_buf = list_開檔狀態;
 
                 Dictionary<object, List<object[]>> keyValuePairs_表單分類 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.類別);

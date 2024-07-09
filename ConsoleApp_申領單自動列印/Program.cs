@@ -75,6 +75,10 @@ namespace ConsoleApp_申領單自動列印
                              where temp[(int)enum_藥庫_撥補_藥局_緊急申領.狀態].ObjectToString() == "等待過帳"
                              select temp).ToList();
                 Logger.Log($"其中[等待過帳]申領資料共<{list_緊急申領.Count}>筆 ({DateTime.Now.GetStartDate().ToDateTimeString()}~{ DateTime.Now.GetEndDate().ToDateTimeString()})");
+                List<medClass> medClasses_ds = medClass.get_ds_drugstore_med(API_Server ,"ds01");
+                List<medClass> medClasses_ds_buf = new List<medClass>();
+                Dictionary<string, List<medClass>> keyValuePairs_medClasses_ds = medClasses_ds.CoverToDictionaryByCode();
+
 
                 List<class_emg_apply> class_Emg_Applies = new List<class_emg_apply>();
                 for (int i = 0; i < list_緊急申領.Count; i++)
@@ -84,7 +88,14 @@ namespace ConsoleApp_申領單自動列印
                     class_Emg_Apply.藥品碼 = list_緊急申領[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品碼].ObjectToString();
                     class_Emg_Apply.藥品名稱 = list_緊急申領[i][(int)enum_藥庫_撥補_藥局_緊急申領.藥品名稱].ObjectToString();
                     class_Emg_Apply.撥出量 = list_緊急申領[i][(int)enum_藥庫_撥補_藥局_緊急申領.異動量].ObjectToString();
-                    class_Emg_Apply.庫存量 = list_緊急申領[i][(int)enum_藥庫_撥補_藥局_緊急申領.庫存].ObjectToString();
+                    class_Emg_Apply.庫存量 = "0";
+                    medClasses_ds_buf = keyValuePairs_medClasses_ds.SortDictionaryByCode(class_Emg_Apply.藥品碼);
+                    if (medClasses_ds_buf.Count > 0)
+                    {
+                        class_Emg_Apply.庫存量 = medClasses_ds_buf[0].藥庫庫存;
+                    }
+
+
                     class_Emg_Apply.備註 = list_緊急申領[i][(int)enum_藥庫_撥補_藥局_緊急申領.備註].ObjectToString();
                     class_Emg_Applies.Add(class_Emg_Apply);
                 }

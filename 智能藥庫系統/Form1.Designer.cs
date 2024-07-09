@@ -13253,6 +13253,7 @@
             this.checkBox_藥庫_藥品資料_未開檔.TabIndex = 148;
             this.checkBox_藥庫_藥品資料_未開檔.Text = "未開檔";
             this.checkBox_藥庫_藥品資料_未開檔.UseVisualStyleBackColor = true;
+            this.checkBox_藥庫_藥品資料_未開檔.Visible = false;
             // 
             // checkBox_藥庫_藥品資料_開檔中
             // 
@@ -13267,6 +13268,7 @@
             this.checkBox_藥庫_藥品資料_開檔中.TabIndex = 147;
             this.checkBox_藥庫_藥品資料_開檔中.Text = "開檔中";
             this.checkBox_藥庫_藥品資料_開檔中.UseVisualStyleBackColor = true;
+            this.checkBox_藥庫_藥品資料_開檔中.Visible = false;
             // 
             // rJ_RatioButton_藥庫_藥品資料_搜尋方式_前綴
             // 
@@ -28232,6 +28234,7 @@
             this.checkBox_藥局_藥品資料_未開檔.TabIndex = 148;
             this.checkBox_藥局_藥品資料_未開檔.Text = "未開檔";
             this.checkBox_藥局_藥品資料_未開檔.UseVisualStyleBackColor = true;
+            this.checkBox_藥局_藥品資料_未開檔.Visible = false;
             // 
             // checkBox_藥局_藥品資料_開檔中
             // 
@@ -28246,6 +28249,7 @@
             this.checkBox_藥局_藥品資料_開檔中.TabIndex = 147;
             this.checkBox_藥局_藥品資料_開檔中.Text = "開檔中";
             this.checkBox_藥局_藥品資料_開檔中.UseVisualStyleBackColor = true;
+            this.checkBox_藥局_藥品資料_開檔中.Visible = false;
             // 
             // rJ_RatioButton_藥局_藥品資料_搜尋方式_前綴
             // 

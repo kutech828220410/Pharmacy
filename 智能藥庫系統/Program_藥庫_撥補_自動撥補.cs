@@ -71,10 +71,10 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_撥補_自動撥補.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_撥補_自動撥補_DataGridRowsChangeRefEvent;
             this.sqL_DataGridView_藥庫_撥補_自動撥補.RowDoubleClickEvent += SqL_DataGridView_藥庫_撥補_自動撥補_RowDoubleClickEvent;
 
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫庫存", enum_drugStotreDistribution.來源庫庫存);
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局庫存", enum_drugStotreDistribution.目的庫庫存);
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫結存", enum_drugStotreDistribution.來源庫結存);
-            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局結存", enum_drugStotreDistribution.目的庫結存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫庫存", enum_drugStotreDistribution.來源庫庫存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局庫存", enum_drugStotreDistribution.目的庫庫存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫結存", enum_drugStotreDistribution.來源庫結存);
+            //this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局結存", enum_drugStotreDistribution.目的庫結存);
 
             this.plC_RJ_Button_藥庫_撥補_搜尋.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_搜尋_MouseDownEvent;
             this.plC_RJ_Button_藥庫_撥補_列印及匯出.MouseDownEvent += PlC_RJ_Button_藥庫_撥補_列印及匯出_MouseDownEvent;

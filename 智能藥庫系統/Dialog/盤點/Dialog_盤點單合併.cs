@@ -233,7 +233,7 @@ namespace 智能藥庫系統
                         }
                     }
                     LoadingForm.Set_Description($"取得庫存紀錄...");
-                    stockRecord _stockRecord  = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, StockRecord.GUID);
+                    stockRecord _stockRecord  = stockRecord.POST_get_record_by_guid(Main_Form.API_Server,"ds01","藥庫", StockRecord.GUID);
                     for (int i = 0; i < list_contents_buf.Count; i++)
                     {
                         string 藥碼 = list_contents_buf[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
@@ -329,7 +329,11 @@ namespace 智能藥庫系統
                 {
                     comboBox_inv_Combinelist.Items.Add(list_str[i]);
                 }
-                comboBox_inv_Combinelist.SelectedIndex = 0;
+                if(list_str.Count > 0)
+                {
+                    comboBox_inv_Combinelist.SelectedIndex = 0;
+                }
+              
             }));
         
         }
