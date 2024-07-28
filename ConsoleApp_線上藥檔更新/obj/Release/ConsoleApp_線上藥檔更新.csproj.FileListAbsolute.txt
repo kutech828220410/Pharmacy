@@ -21,7 +21,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\System.Text.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\System.ValueTuple.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\MyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\Interop.SpeechLib.dll
@@ -30,7 +29,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\DrawingClass.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\LadderUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\CallBackUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\PopupControl.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\SunnyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\FontAwesome.Sharp.dll
@@ -65,3 +63,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\System.Threading.Tasks.Extensions.xml
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\System.ValueTuple.xml
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\obj\Release\ConsoleApp_線上藥檔更新.csproj.CopyComplete
+C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_線上藥檔更新\bin\Release\Basic.xml

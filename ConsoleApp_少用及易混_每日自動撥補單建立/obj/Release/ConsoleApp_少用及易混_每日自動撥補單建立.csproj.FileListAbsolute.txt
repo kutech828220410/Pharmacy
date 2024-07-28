@@ -84,7 +84,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動�
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\MyOffice.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\zxing.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\DrawingClass.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\PopupControl.dll
@@ -102,7 +101,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動�
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\NPOI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\Microsoft.Office.Interop.Excel.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\NPOI.OOXML.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\SunnyUI.Common.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\TCP.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\CallBackUI.dll
@@ -129,3 +127,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動�
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\obj\Release\ConsoleApp_少用及易混_每日自動撥補單建立.csproj.CopyComplete
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\obj\Release\ConsoleApp_少用及易混_每日自動撥補單建立.exe
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\obj\Release\ConsoleApp_少用及易混_每日自動撥補單建立.pdb
+C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_少用及易混_每日自動撥補單建立\bin\Release\Basic.xml

@@ -199,11 +199,20 @@ namespace ConsoleApp_ABC消耗量計算
 
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
                     基準量 = (消耗量 / 90) * 16;
-                    安全量 = 基準量 / 2; 
-                    基準量 = Math.Truncate(基準量);
-                    安全量 = Math.Truncate(安全量);
-                    if (安全量 < 0) 安全量 = 0;
-                    if (基準量 < 0) 基準量 = 0;
+                    安全量 = 基準量 / 2;
+                    if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
+                    {
+                        基準量 = 1;
+                        安全量 = 1;
+                    }
+                    else
+                    {
+                        基準量 = Math.Truncate(基準量);
+                        安全量 = Math.Truncate(安全量);
+                        if (安全量 < 0) 安全量 = 0;
+                        if (基準量 < 0) 基準量 = 0;
+                    }
+
                     list_ABC[i][(int)enum_ABC報表.基準量] = 基準量;
                     list_ABC[i][(int)enum_ABC報表.安全量] = 安全量;
                     list_ABC[i][(int)enum_ABC報表.ABC類] = "A";
@@ -214,10 +223,18 @@ namespace ConsoleApp_ABC消耗量計算
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
                     基準量 = (消耗量 / 90) * 32;
                     安全量 = 基準量 / 2;
-                    if (安全量 < 0) 安全量 = 0;
-                    if (基準量 < 0) 基準量 = 0;
-                    基準量 = Math.Truncate(基準量);
-                    安全量 = Math.Truncate(安全量);
+                    if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
+                    {
+                        基準量 = 1;
+                        安全量 = 1;
+                    }
+                    else
+                    {
+                        基準量 = Math.Truncate(基準量);
+                        安全量 = Math.Truncate(安全量);
+                        if (安全量 < 0) 安全量 = 0;
+                        if (基準量 < 0) 基準量 = 0;
+                    }
                     list_ABC[i][(int)enum_ABC報表.基準量] = 基準量;
                     list_ABC[i][(int)enum_ABC報表.安全量] = 安全量;
                     list_ABC[i][(int)enum_ABC報表.ABC類] = "B";
@@ -228,10 +245,18 @@ namespace ConsoleApp_ABC消耗量計算
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
                     基準量 = (消耗量 / 90) * 38;
                     安全量 = 基準量 / 2;
-                    if (安全量 < 0) 安全量 = 0;
-                    if (基準量 < 0) 基準量 = 0;
-                    基準量 = Math.Truncate(基準量);
-                    安全量 = Math.Truncate(安全量);
+                    if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
+                    {
+                        基準量 = 1;
+                        安全量 = 1;               
+                    }
+                    else
+                    {
+                        基準量 = Math.Truncate(基準量);
+                        安全量 = Math.Truncate(安全量);
+                        if (安全量 < 0) 安全量 = 0;
+                        if (基準量 < 0) 基準量 = 0;
+                    }
                     list_ABC[i][(int)enum_ABC報表.基準量] = 基準量;
                     list_ABC[i][(int)enum_ABC報表.安全量] = 安全量;
                     list_ABC[i][(int)enum_ABC報表.ABC類] = "C";

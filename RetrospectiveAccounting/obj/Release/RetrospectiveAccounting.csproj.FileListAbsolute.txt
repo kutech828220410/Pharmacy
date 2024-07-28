@@ -23,7 +23,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\zxin
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\DrawingClass.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\PopupControl.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\SunnyUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\LadderUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\FontAwesome.Sharp.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\MeasureSystemUI.dll
@@ -35,7 +34,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Ligh
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\ZealTechUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\HCGUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\SunnyUI.Common.dll
-C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\TCP.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\CallBackUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\MeasureSystemFunction.dll
@@ -130,3 +128,4 @@ C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\stdole.dll
 C:\Users\Administrator\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\RetrospectiveAccounting\bin\Release\Basic.xml

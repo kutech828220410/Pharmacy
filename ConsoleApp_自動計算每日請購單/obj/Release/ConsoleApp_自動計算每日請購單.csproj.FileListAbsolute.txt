@@ -15,14 +15,12 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\b
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\System.Text.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\System.ValueTuple.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\MyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\MyOffice.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\zxing.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\DrawingClass.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\PopupControl.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\SunnyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\LadderUI.dll
@@ -64,3 +62,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\o
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\obj\Release\ConsoleApp_自動計算每日請購單.csproj.CopyComplete
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\obj\Release\ConsoleApp_自動計算每日請購單.exe
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\obj\Release\ConsoleApp_自動計算每日請購單.pdb
+C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_自動計算每日請購單\bin\Release\Basic.xml

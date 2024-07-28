@@ -21,7 +21,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\System.Text.Enc
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\System.Text.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\System.Threading.Tasks.Extensions.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\System.ValueTuple.dll
-C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\Interop.SpeechLib.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\H_Pannel_lib.dll
@@ -40,7 +39,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\ZealTechUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\HCGUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\DrawingClass.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\ICSharpCode.SharpZipLib.dll
-C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\zxing.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\SunnyUI.Common.dll
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\TCP.dll
@@ -66,3 +64,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\自動列印\obj\Release\自動列印.cs
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\obj\Release\自動列印.exe
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\obj\Release\自動列印.pdb
 C:\Users\hsonds01\source\repos\Pharmacy\自動列印\obj\Release\自動列印.Main_Form.resources
+C:\Users\hsonds01\source\repos\Pharmacy\自動列印\bin\Release\Basic.xml

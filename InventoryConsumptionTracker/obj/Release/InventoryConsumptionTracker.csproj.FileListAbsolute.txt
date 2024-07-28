@@ -79,7 +79,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\NPOI.OOXML.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\PopupControl.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\SunnyUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\LadderUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\FontAwesome.Sharp.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\MeasureSystemUI.dll
@@ -95,7 +94,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\NPOI.OpenXml4Net.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\NPOI.OpenXmlFormats.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\SunnyUI.Common.dll
-C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\TCP.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\CallBackUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\MeasureSystemFunction.dll
@@ -130,3 +128,4 @@ C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Rel
 C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\SQLUI.xml
 C:\Users\Administrator\source\repos\Pharmacy\InventoryConsumptionTracker\obj\Release\InventoryConsumptionTracker.csproj.AssemblyReference.cache
 C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\SQLUI.xml
+C:\Users\hsonds01\source\repos\Pharmacy\InventoryConsumptionTracker\bin\Release\Basic.xml

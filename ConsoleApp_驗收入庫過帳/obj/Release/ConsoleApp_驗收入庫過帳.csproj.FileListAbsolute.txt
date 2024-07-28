@@ -335,3 +335,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_驗收入庫過帳\obj\Releas
 C:\Users\Administrator\source\repos\Pharmacy\ConsoleApp_驗收入庫過帳\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_驗收入庫過帳\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_驗收入庫過帳\bin\Release\MyPrinterlib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_驗收入庫過帳\bin\Release\Basic.xml

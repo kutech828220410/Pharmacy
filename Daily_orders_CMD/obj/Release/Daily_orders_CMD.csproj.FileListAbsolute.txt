@@ -153,8 +153,6 @@ C:\Users\HS\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.
 C:\Users\HS\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.exe
 C:\Users\HS\Source\Repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.pdb
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\PopupControl.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\CSkin.dll
-C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Microsoft.mshtml.dll
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\Daily_orders_CMD.exe.config
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\Daily_orders_CMD.exe
 C:\Users\Administrator\Source\Repos\Pharmacy\Daily_orders_CMD\bin\Release\Daily_orders_CMD.pdb
@@ -214,3 +212,15 @@ C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Newtonsoft.
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml
 C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\SQLUI.xml
 C:\Users\Administrator\source\repos\Pharmacy\Daily_orders_CMD\obj\Release\Daily_orders_CMD.csproj.AssemblyReference.cache
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\HIS_DB_Lib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\MyOffice.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\NPOI.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Microsoft.Office.Interop.Excel.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\NPOI.OOXML.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\ICSharpCode.SharpZipLib.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\office.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\NPOI.OpenXml4Net.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\NPOI.OpenXmlFormats.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\stdole.dll
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\Basic.xml
+C:\Users\hsonds01\source\repos\Pharmacy\Daily_orders_CMD\bin\Release\HIS_DB_Lib.xml

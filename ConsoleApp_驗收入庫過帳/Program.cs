@@ -151,8 +151,15 @@ namespace ConsoleApp_驗收入庫過帳
             SQLControl sQLControl_藥庫_藥品資料 = new SQLControl(DB_Medicine_Cloud.IP, DB_Medicine_Cloud.DataBaseName, DB_Medicine_Cloud.UserName, DB_Medicine_Cloud.Password, DB_Medicine_Cloud.Port);
             sQLControl_藥庫_藥品資料.TableName = "medicine_page_cloud";
             List<object[]> list_補給驗收入庫_buf = new List<object[]>();
-            List<object[]> list_藥品資料 = sQLControl_藥庫_藥品資料.GetAllRows(null);
-            List<object[]> list_藥品資料_buf = new List<object[]>();
+
+            List<medClass> medClasses_cloud = medClass.get_med_cloud(API_Server);
+            List<medClass> medClasses_cloud_buf = new List<medClass>();
+            Dictionary<string, List<medClass>> keyValuePairs_medClasses_cloud = null;
+            if (medClasses_cloud != null)
+            {
+                keyValuePairs_medClasses_cloud = medClasses_cloud.CoverToDictionaryByCode();
+            }
+       
             List<object[]> list_藥庫_驗收入庫 = new List<object[]>();
             List<object[]> list_藥庫_驗收入庫_error = new List<object[]>();
             for (int i = 0; i < list_補給驗收入庫.Count; i++)
@@ -187,14 +194,14 @@ namespace ConsoleApp_驗收入庫過帳
                     list_藥庫_驗收入庫_error.Add(value);
                 }
                 list_藥庫_驗收入庫.Add(value);
-                list_藥品資料_buf = list_藥品資料.GetRows((int)enum_medDrugstore.藥品碼, 藥品碼);
-                if (list_藥品資料_buf.Count == 0)
+                if (keyValuePairs_medClasses_cloud != null)
                 {
-
-                    continue;
+                    medClasses_cloud_buf = keyValuePairs_medClasses_cloud.SortDictionaryByCode(藥品碼);
+                    if (medClasses_cloud_buf.Count == 0) continue;
+                    value[(int)enum_驗收入庫明細.藥品名稱] = medClasses_cloud_buf[0].藥品名稱;
+                    value[(int)enum_驗收入庫明細.包裝單位] = medClasses_cloud_buf[0].包裝單位;
                 }
-                value[(int)enum_驗收入庫明細.藥品名稱] = list_藥品資料_buf[0][(int)enum_medDrugstore.藥品名稱];
-                value[(int)enum_驗收入庫明細.包裝單位] = list_藥品資料_buf[0][(int)enum_medDrugstore.包裝單位];
+               
 
             }
             list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());

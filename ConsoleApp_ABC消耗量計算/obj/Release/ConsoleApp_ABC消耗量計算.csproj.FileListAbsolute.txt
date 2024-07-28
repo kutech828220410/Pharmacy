@@ -25,7 +25,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\MyUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\Newtonsoft.Json.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\Interop.SpeechLib.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\CSkin.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\zxing.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\DrawingClass.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\Microsoft.Office.Interop.Excel.dll
@@ -42,7 +41,6 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\LightControlUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\ZealTechUI.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\HCGUI.dll
-C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\Microsoft.mshtml.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\office.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\SunnyUI.Common.dll
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\TCP.dll
@@ -64,3 +62,4 @@ C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Releas
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\obj\Release\ConsoleApp_ABC消耗量計算.csproj.CopyComplete
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\obj\Release\ConsoleApp_ABC消耗量計算.exe
 C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\obj\Release\ConsoleApp_ABC消耗量計算.pdb
+C:\Users\hsonds01\source\repos\Pharmacy\ConsoleApp_ABC消耗量計算\bin\Release\Basic.xml
