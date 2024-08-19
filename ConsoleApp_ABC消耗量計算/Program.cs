@@ -334,7 +334,6 @@ namespace ConsoleApp_ABC消耗量計算
             medClass.update_ds_drugstore_by_guid("http://127.0.0.1:4433", "ds01", medClasses_replace);
             Logger.Log($"總共更新藥庫安全量基準量共<{medClasses_replace.Count}>筆");
 
-
             Logger.LogAddLine();
         }
 

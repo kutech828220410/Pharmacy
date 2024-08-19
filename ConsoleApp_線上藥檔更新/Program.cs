@@ -77,7 +77,6 @@ namespace ConsoleApp_線上藥檔更新
                 {
                     string 藥碼 = "";
                     藥碼 = reader["UDSTOKNO"].ToString().Trim();
-
                     if (藥碼.Length >= 5)
                     {
                         藥碼 = 藥碼.Substring(藥碼.Length - 5);
@@ -102,6 +101,7 @@ namespace ConsoleApp_線上藥檔更新
                         string UDABSCTL = reader["UDABSCTL"].ToString().Trim();
                         string AROUTFLA = reader["AROUTFLA"].ToString().Trim();
                    
+
                         if (UDABSCTL == "Y" && AROUTFLA == "Y")
                         {
                             medClass.開檔狀態 = "未開檔";
@@ -110,6 +110,7 @@ namespace ConsoleApp_線上藥檔更新
                         {
                             medClass.開檔狀態 = "開檔中";
                         }
+      
                         medClasses_temp.Add(medClass);
                     }
                     index++;

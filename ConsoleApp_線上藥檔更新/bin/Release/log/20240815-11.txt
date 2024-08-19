@@ -1,0 +1,106 @@
+20240815-11:36:41 - ---------------------------------------------------------------------------
+20240815-11:36:46 - 開啟DB2連線,(server=DBGW1.VGHKS.GOV.TW:50000;database=DBDSNP;uid=APUD07;pwd=UD07AP;)
+20240815-11:36:46 - DB2連線成功,耗時4968.368ms
+20240815-11:36:46 - 取得DB2資料,耗時155.987ms
+20240815-11:37:07 - ---------------------------------------------------------------------------
+20240815-11:37:10 - 開啟DB2連線,(server=DBGW1.VGHKS.GOV.TW:50000;database=DBDSNP;uid=APUD07;pwd=UD07AP;)
+20240815-11:37:10 - DB2連線成功,耗時3423.397ms
+20240815-11:37:10 - 取得DB2資料,耗時112.403ms
+20240815-11:37:12 - (新增) (21362)Vyndamax Cap 61mg(Tafamidis)
+20240815-11:37:12 - (更新) (09204)Bokey EM cap 100mg (Aspirin)
+20240815-11:37:12 - (更新) (16546)(Re-use PEN) Alvosteo 20mcg/80ul
+20240815-11:37:12 - (更新) (03441)Soonmelt Inj 600mg(AmC)
+20240815-11:37:12 - (更新) (03449)CURAM Dispersible Tab 1gm
+20240815-11:37:12 - (更新) (03607)Clindamycin Cap 150mg "SYNMOSA"
+20240815-11:37:12 - (更新) (03432)Tapimycin Inj 2.25g "YUNG SHIN"
+20240815-11:37:12 - (更新) (03946)Avelox Tab 400mg(Moxifloxacin)
+20240815-11:37:12 - (更新) (06239)Cofarin Tab 1mg (Warfarin)
+20240815-11:37:12 - (更新) (08404)Phenytoin Sod Inj 250mg/5ml
+20240815-11:37:12 - (更新) (08412)TEGRETOL CR 200mg(Carbamazepine)
+20240815-11:37:12 - (更新) (09035)Ascotyl E.M. Cap 100mg(Aspirin)
+20240815-11:37:12 - (更新) (11373)Sodium Chloride Inj 0.9% 1000ml
+20240815-11:37:12 - (更新) (11384)Lipofundin MCT/LCT 20% 100ml
+20240815-11:37:12 - (更新) (13474)Mezavant Tab 1200mg(Mesalazine)
+20240815-11:37:12 - (更新) (16512)Somatosan Inj 3mg
+20240815-11:37:12 - (更新) (20401)Sinbaby Baby Lotion "SINPHAR"
+20240815-11:37:12 - (更新) (30017)50% Glucose Inj 20ml "T.F."
+20240815-11:37:12 - (更新) (30020)SMOFlipid 20% Emulsion 250ml
+20240815-11:37:12 - (更新) (50082)Levin Tab 250mg(Levofloxacin)
+20240815-11:37:12 - (更新) (11423)Anol Inj 20% 100ml(Mannitol)
+20240815-11:37:12 - (更新) (06144)Hote Chewable Tab 100mg(Iron)
+20240815-11:37:12 - (更新) (08217)Morphine HCl Inj 20mg/ml
+20240815-11:37:12 - (更新) (03355)Furoxime Inj 1.5g (Cefuroxime)
+20240815-11:37:12 - (更新) (03676)Penem for Inj 500mg(Imi/Cil)
+20240815-11:37:12 - (新增) (21425)Clomid Tab 50mg (Clomiphene)
+20240815-11:37:12 - (更新) (50092)Oseltamivir Oral Susp 6mg/ml_CDC
+20240815-11:37:12 - (更新) (50052)Moxetero Tab 400mg
+20240815-11:37:12 - (更新) (31123)Sod.Chloride 0.9% 500ml PBOT"CS"
+20240815-11:37:12 - (更新) (31125)Saline 0.9% Inj 500ml "N.K."
+20240815-11:37:12 - (更新) (31126)Haforman Inj 500ml/bag "N.K."
+20240815-11:37:12 - (更新) (31134)Sod.Chloride 0.9% 250ml PBOT"CS"
+20240815-11:37:12 - (更新) (31137)*Saline Inj 0.9% 500ml "N.K."
+20240815-11:37:12 - (更新) (31138)*Sod.Chloride 0.9%500ml PBOT"CS"
+20240815-11:37:12 - (更新) (31135)B. Braun 0.9% NaCl IV Sol 500ml
+20240815-11:37:12 - (更新) (31136)Sod.Chloride0.9% 500/bot_B.Braun
+20240815-11:37:12 - (更新) (31144)Otsuka Normal Saline 500ml/bag
+20240815-11:37:12 - (更新) (20484)RINS NS (Irri.) 0.9% 3000ml/bag
+20240815-11:37:12 - (更新) (16377)10mg Jardiance Tab
+20240815-11:37:12 - (更新) (50097)Leflodal Inj 250mg(Levofloxacin)
+20240815-11:37:12 - (更新) (03677)Vancomycin Powder For Inj 500mg
+20240815-11:37:12 - (更新) (31147)Otsuka Normal Saline 1000ml/bag
+20240815-11:37:12 - (新增) (03508)Doxynin Cap 100mg(Doxycycline)
+20240815-11:37:12 - (新增) (16520)Stilamin Inj 3mg(Somatostatin)
+20240815-11:37:12 - (新增) (21230)100mg/20ml Remodulin Inj
+20240815-11:37:12 - (新增) (21199)20mg/20ml Remodulin Inj
+20240815-11:37:12 - (新增) (40037)Biktarvy Tab (CDC
+20240815-11:37:13 - (新增) (08797)Smilon Tab 15mg(Mirtazapine)
+20240815-11:37:13 - (新增) (18272)M-M-R Live Virus Vaccine(IMPORT)
+20240815-11:37:13 - (新增) (08132)1% Fresofol Inj 50ml (Propofol)
+20240815-11:37:13 - (新增) (03445)Ziefmycin Cap 250mg
+20240815-11:37:13 - (新增) (30052)Gitose Inj 10% 500ml (Dextrose)
+20240815-11:37:13 - (新增) (03679)Kojarclinda Cap 150mg "KOJAR"
+20240815-11:37:13 - 1. (未開檔) (24032)Priorix 1dose(M.M.R.)(free)
+20240815-11:37:13 - 2. (未開檔) (24045)Priorix else 1dose(M.M.R.)
+20240815-11:37:13 - 3. (未開檔) (24059)Focetria 0.5ml/dose(H1N1)
+20240815-11:37:13 - 4. (未開檔) (24079)AdimFlu-S 0.5ml(free)
+20240815-11:37:13 - 5. (未開檔) (24080)DTPa-IPV-HIB(Pentaxim)_1st
+20240815-11:37:13 - 6. (未開檔) (24081)DTPa-IPV-HIB(Pentaxim)_2nd
+20240815-11:37:13 - 7. (未開檔) (24082)DTPa-IPV-HIB(Pentaxim)_3rd
+20240815-11:37:13 - 8. (未開檔) (24083)DTPa-IPV-HIB(Pentaxim)_4th
+20240815-11:37:13 - 9. (未開檔) (24088)Avaxim Inj 80U/0.5ml(CDC)
+20240815-11:37:13 - 10. (未開檔) (24095)DTaP-IPV(Tetraxim) 0.5ml_3rd
+20240815-11:37:13 - 11. (未開檔) (24096)DTaP-IPV(Tetraxim) 0.5ml_4th
+20240815-11:37:13 - 12. (未開檔) (24103)Imojev(JE-CV_LiveAtd1) 1st
+20240815-11:37:13 - 13. (未開檔) (24104)Imojev(JE-CV_LiveAtd2) 2nd
+20240815-11:37:13 - 14. (未開檔) (24108)JE-VC_Inactd 1ST(Inactivated)
+20240815-11:37:13 - 15. (未開檔) (24109)JE-VC_Inactd 2ND(Inactivated)
+20240815-11:37:13 - 16. (未開檔) (24110)JE-VC_Inactd 3RD(Inactivated)
+20240815-11:37:13 - 17. (未開檔) (24111)JE-VC_Inactd 4RD(Inactivated)
+20240815-11:37:13 - 18. (未開檔) (24158)BioNTech COVID-19 Vac 0.2ml
+20240815-11:37:14 - 雲端藥檔新增<13>筆,修改<58>筆
+20240815-11:37:17 - ---------------------------------------------------------------------------
+20240815-11:38:13 - ---------------------------------------------------------------------------
+20240815-11:38:17 - 開啟DB2連線,(server=DBGW1.VGHKS.GOV.TW:50000;database=DBDSNP;uid=APUD07;pwd=UD07AP;)
+20240815-11:38:17 - DB2連線成功,耗時4165.844ms
+20240815-11:38:17 - 取得DB2資料,耗時161.454ms
+20240815-11:38:26 - (更新) (50082)Levin Tab 250mg(Levofloxacin)
+20240815-11:38:26 - 1. (未開檔) (24032)Priorix 1dose(M.M.R.)(free)
+20240815-11:38:26 - 2. (未開檔) (24045)Priorix else 1dose(M.M.R.)
+20240815-11:38:26 - 3. (未開檔) (24059)Focetria 0.5ml/dose(H1N1)
+20240815-11:38:26 - 4. (未開檔) (24079)AdimFlu-S 0.5ml(free)
+20240815-11:38:26 - 5. (未開檔) (24080)DTPa-IPV-HIB(Pentaxim)_1st
+20240815-11:38:26 - 6. (未開檔) (24081)DTPa-IPV-HIB(Pentaxim)_2nd
+20240815-11:38:26 - 7. (未開檔) (24082)DTPa-IPV-HIB(Pentaxim)_3rd
+20240815-11:38:26 - 8. (未開檔) (24083)DTPa-IPV-HIB(Pentaxim)_4th
+20240815-11:38:26 - 9. (未開檔) (24088)Avaxim Inj 80U/0.5ml(CDC)
+20240815-11:38:26 - 10. (未開檔) (24095)DTaP-IPV(Tetraxim) 0.5ml_3rd
+20240815-11:38:26 - 11. (未開檔) (24096)DTaP-IPV(Tetraxim) 0.5ml_4th
+20240815-11:38:26 - 12. (未開檔) (24103)Imojev(JE-CV_LiveAtd1) 1st
+20240815-11:38:26 - 13. (未開檔) (24104)Imojev(JE-CV_LiveAtd2) 2nd
+20240815-11:38:26 - 14. (未開檔) (24108)JE-VC_Inactd 1ST(Inactivated)
+20240815-11:38:26 - 15. (未開檔) (24109)JE-VC_Inactd 2ND(Inactivated)
+20240815-11:38:26 - 16. (未開檔) (24110)JE-VC_Inactd 3RD(Inactivated)
+20240815-11:38:26 - 17. (未開檔) (24111)JE-VC_Inactd 4RD(Inactivated)
+20240815-11:38:26 - 18. (未開檔) (24158)BioNTech COVID-19 Vac 0.2ml
+20240815-11:38:27 - 雲端藥檔新增<0>筆,修改<19>筆
+20240815-11:38:37 - ---------------------------------------------------------------------------

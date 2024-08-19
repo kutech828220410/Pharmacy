@@ -18,6 +18,12 @@ namespace 智能藥庫系統
    
     public partial class Dialog_盤點單管理 : MyDialog
     {
+        public enum enum_盤點品項匯出
+        {
+            藥碼,
+            藥名,
+            盤點人員
+        }
         public static bool IsShown = false;
         private MyThread myThread = new MyThread();
         private List<Panel> panels = new List<Panel>();
@@ -40,9 +46,86 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_返回.MouseDownEvent += PlC_RJ_Button_返回_MouseDownEvent;
             this.plC_RJ_Button_刪除.MouseDownEvent += PlC_RJ_Button_刪除_MouseDownEvent;
             this.dateTimeIntervelPicker_建表日期.SureClick += DateTimeIntervelPicker_建表日期_SureClick;
-      
+            this.plC_RJ_Button_測試.MouseDownEvent += PlC_RJ_Button_測試_MouseDownEvent;
+
+
         }
- 
+
+        private void PlC_RJ_Button_測試_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<Panel> panels_checked = panels;
+            List<Panel> panels_retmove = new List<Panel>();
+            LoadingForm.ShowLoadingForm();
+            List<string> list_IC_SN = new List<string>();
+            for (int i = 0; i < panels_checked.Count; i++)
+            {
+                foreach (Control control in panels_checked[i].Controls)
+                {
+                    if (control is CheckBox)
+                    {
+                        CheckBox checkBox = (CheckBox)control;
+                        if (checkBox.Checked)
+                        {
+                            list_IC_SN.Add(panels_checked[i].Name);
+                            panels_retmove.Add(panels_checked[i]);
+                        }
+                    }
+                }
+            }
+
+            List<object[]> list_盤點品項 = new List<object[]>();
+            List<object[]> list_盤點品項_buf = new List<object[]>();
+            for (int i = 0; i < list_IC_SN.Count; i++)
+            {
+                string IC_SN = list_IC_SN[i];
+                inventoryClass.creat creat = inventoryClass.creat_get_by_IC_SN(Main_Form.API_Server, IC_SN);
+                if (creat == null)
+                {
+                    MyMessageBox.ShowDialog($"{IC_SN},取得失敗");
+                    return;
+                }
+                foreach(inventoryClass.content content in creat.Contents)
+                {
+                    foreach(inventoryClass.sub_content sub_Content in content.Sub_content)
+                    {
+                        string 藥碼 = content.藥品碼;
+                        string 藥名 = content.藥品名稱;
+                        string 盤點人員 = sub_Content.操作人;
+
+                        list_盤點品項_buf = list_盤點品項.GetRows((int)enum_盤點品項匯出.藥碼, 藥碼);
+                        if (list_盤點品項_buf.Count == 0)
+                        {
+                            object[] value = new object[new enum_盤點品項匯出().GetLength()];
+                            value[(int)enum_盤點品項匯出.藥碼] = 藥碼;
+                            value[(int)enum_盤點品項匯出.藥名] = 藥名;
+                            value[(int)enum_盤點品項匯出.盤點人員] = 盤點人員;
+                            list_盤點品項.Add(value);
+                        }
+                        else
+                        {
+                            object[] value = list_盤點品項_buf[0];
+                            value[(int)enum_盤點品項匯出.藥碼] = 藥碼;
+                            value[(int)enum_盤點品項匯出.藥名] = 藥名;
+                            if(value[(int)enum_盤點品項匯出.盤點人員].ObjectToString().Contains(盤點人員) == false)
+                            {
+                                value[(int)enum_盤點品項匯出.盤點人員] = $"{ value[(int)enum_盤點品項匯出.盤點人員].ObjectToString()},{盤點人員}";
+                            }
+                    
+                        }
+                    }
+                }
+            }
+            this.Invoke(new Action(delegate 
+            {
+                DataTable dataTable = list_盤點品項.ToDataTable(new enum_盤點品項匯出());
+                if (saveFileDialog_SaveExcel.ShowDialog() != DialogResult.OK) return;
+                dataTable.NPOI_SaveFile(saveFileDialog_SaveExcel.FileName);
+            }));
+  
+
+            LoadingForm.CloseLoadingForm();
+        }
+
         #region Function
         static public List<inventoryClass.creat> Fuction_取得盤點單(DateTime start, DateTime end)
         {

@@ -44,6 +44,7 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_content = new MyUI.PLC_RJ_Button();
             this.checkBox = new System.Windows.Forms.CheckBox();
             this.saveFileDialog_SaveExcel = new System.Windows.Forms.SaveFileDialog();
+            this.plC_RJ_Button_測試 = new MyUI.PLC_RJ_Button();
             this.panel1.SuspendLayout();
             this.panel_controls.SuspendLayout();
             this.panel_inv_list.SuspendLayout();
@@ -51,6 +52,7 @@ namespace 智能藥庫系統
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.plC_RJ_Button_測試);
             this.panel1.Controls.Add(this.plC_RJ_Button_刪除);
             this.panel1.Controls.Add(this.rJ_Lable_狀態);
             this.panel1.Controls.Add(this.dateTimeIntervelPicker_建表日期);
@@ -141,12 +143,17 @@ namespace 智能藥庫系統
             // dateTimeIntervelPicker_建表日期
             // 
             this.dateTimeIntervelPicker_建表日期.BackColor = System.Drawing.Color.Transparent;
+            this.dateTimeIntervelPicker_建表日期.DateFont = new System.Drawing.Font("微軟正黑體", 14F);
+            this.dateTimeIntervelPicker_建表日期.DateSize = new System.Drawing.Size(217, 39);
             this.dateTimeIntervelPicker_建表日期.EndTime = new System.DateTime(2024, 3, 29, 23, 59, 59, 0);
             this.dateTimeIntervelPicker_建表日期.Location = new System.Drawing.Point(3, 3);
             this.dateTimeIntervelPicker_建表日期.Name = "dateTimeIntervelPicker_建表日期";
+            this.dateTimeIntervelPicker_建表日期.Padding = new System.Windows.Forms.Padding(2);
             this.dateTimeIntervelPicker_建表日期.Size = new System.Drawing.Size(306, 83);
             this.dateTimeIntervelPicker_建表日期.StartTime = new System.DateTime(2024, 3, 29, 0, 0, 0, 0);
             this.dateTimeIntervelPicker_建表日期.TabIndex = 11;
+            this.dateTimeIntervelPicker_建表日期.TitleFont = new System.Drawing.Font("新細明體", 9F);
+            this.dateTimeIntervelPicker_建表日期.TiTleSize = new System.Drawing.Size(33, 39);
             // 
             // plC_RJ_Button_返回
             // 
@@ -474,6 +481,61 @@ namespace 智能藥庫系統
             this.saveFileDialog_SaveExcel.DefaultExt = "xlsx";
             this.saveFileDialog_SaveExcel.Filter = "Excel File (*.xlsx)|*.xlsx";
             // 
+            // plC_RJ_Button_測試
+            // 
+            this.plC_RJ_Button_測試.AutoResetState = false;
+            this.plC_RJ_Button_測試.BackgroundColor = System.Drawing.Color.Red;
+            this.plC_RJ_Button_測試.Bool = false;
+            this.plC_RJ_Button_測試.BorderColor = System.Drawing.Color.Thistle;
+            this.plC_RJ_Button_測試.BorderRadius = 20;
+            this.plC_RJ_Button_測試.BorderSize = 0;
+            this.plC_RJ_Button_測試.but_press = false;
+            this.plC_RJ_Button_測試.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_測試.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.plC_RJ_Button_測試.DisenableColor = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_測試.Dock = System.Windows.Forms.DockStyle.Right;
+            this.plC_RJ_Button_測試.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_測試.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_測試.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_測試.GUID = "";
+            this.plC_RJ_Button_測試.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_測試.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_測試.Location = new System.Drawing.Point(688, 0);
+            this.plC_RJ_Button_測試.Name = "plC_RJ_Button_測試";
+            this.plC_RJ_Button_測試.OFF_文字內容 = "測試";
+            this.plC_RJ_Button_測試.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.plC_RJ_Button_測試.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_測試.OFF_背景顏色 = System.Drawing.Color.Red;
+            this.plC_RJ_Button_測試.ON_BorderSize = 5;
+            this.plC_RJ_Button_測試.ON_文字內容 = "測試";
+            this.plC_RJ_Button_測試.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold);
+            this.plC_RJ_Button_測試.ON_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_測試.ON_背景顏色 = System.Drawing.Color.Red;
+            this.plC_RJ_Button_測試.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_測試.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_測試.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_測試.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_測試.ShadowSize = 3;
+            this.plC_RJ_Button_測試.ShowLoadingForm = false;
+            this.plC_RJ_Button_測試.Size = new System.Drawing.Size(161, 88);
+            this.plC_RJ_Button_測試.State = false;
+            this.plC_RJ_Button_測試.TabIndex = 15;
+            this.plC_RJ_Button_測試.Text = "測試";
+            this.plC_RJ_Button_測試.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_測試.TextHeight = 0;
+            this.plC_RJ_Button_測試.Texts = "測試";
+            this.plC_RJ_Button_測試.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_測試.字型鎖住 = false;
+            this.plC_RJ_Button_測試.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_測試.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_測試.文字鎖住 = false;
+            this.plC_RJ_Button_測試.背景圖片 = null;
+            this.plC_RJ_Button_測試.讀取位元反向 = false;
+            this.plC_RJ_Button_測試.讀寫鎖住 = false;
+            this.plC_RJ_Button_測試.音效 = false;
+            this.plC_RJ_Button_測試.顯示 = false;
+            this.plC_RJ_Button_測試.顯示狀態 = false;
+            // 
             // Dialog_盤點單管理
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -515,5 +577,6 @@ namespace 智能藥庫系統
         private MyUI.RJ_Lable rJ_Lable_list_content;
         private MyUI.PLC_RJ_Button plC_RJ_Button_export;
         private System.Windows.Forms.SaveFileDialog saveFileDialog_SaveExcel;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_測試;
     }
 }

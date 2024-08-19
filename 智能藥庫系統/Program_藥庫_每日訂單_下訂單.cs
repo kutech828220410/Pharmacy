@@ -35,7 +35,6 @@ namespace 智能藥庫系統
             基準量,
             今日訂購數量,
             在途量,
-            未消耗量,
         }
         public enum enum_每日訂單
         {
@@ -286,38 +285,38 @@ namespace 智能藥庫系統
             })));
             tasks.Add(Task.Run(new Action(delegate
             {
-                string Code = "";
-                int 未消耗量 = 0;
-                List<object[]> list_消耗帳_buf = new List<object[]>();
-                list_每日訂單_消耗帳 = (from temp in list_每日訂單_消耗帳
-                                 where temp[(int)enum_藥品過消耗帳.狀態].ObjectToString() == "等待過帳" || temp[(int)enum_藥品過消耗帳.狀態].ObjectToString() == "庫存不足"
-                                 select temp).ToList();
+                //string Code = "";
+                //int 未消耗量 = 0;
+                //List<object[]> list_消耗帳_buf = new List<object[]>();
+                //list_每日訂單_消耗帳 = (from temp in list_每日訂單_消耗帳
+                //                 where temp[(int)enum_藥品過消耗帳.狀態].ObjectToString() == "等待過帳" || temp[(int)enum_藥品過消耗帳.狀態].ObjectToString() == "庫存不足"
+                //                 select temp).ToList();
 
-                Dictionary<object, List<object[]>> keyValuePairs = list_每日訂單_消耗帳.ConvertToDictionary((int)enum_藥品過消耗帳.藥品碼);
-                for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
-                {
-                    未消耗量 = 0;
-                    Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
+                //Dictionary<object, List<object[]>> keyValuePairs = list_每日訂單_消耗帳.ConvertToDictionary((int)enum_藥品過消耗帳.藥品碼);
+                //for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
+                //{
+                //    未消耗量 = 0;
+                //    Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
                 
-                    list_消耗帳_buf = keyValuePairs.SortDictionary(Code);
+                //    list_消耗帳_buf = keyValuePairs.SortDictionary(Code);
 
-                    for (int k = 0; k < list_消耗帳_buf.Count; k++)
-                    {
-                        int temp = 0;
-                        if (list_消耗帳_buf[k][(int)enum_藥品過消耗帳.狀態].ObjectToString() == "庫存不足")
-                        {
-                            temp = this.Function_藥品過消耗帳_取得已消耗量(list_消耗帳_buf[k]);
-                        }
-                        if (list_消耗帳_buf[k][(int)enum_藥品過消耗帳.狀態].ObjectToString() == "等待過帳")
-                        {
-                            temp = list_消耗帳_buf[k][(int)enum_藥品過消耗帳.異動量].StringToInt32();
-                        }
+                //    for (int k = 0; k < list_消耗帳_buf.Count; k++)
+                //    {
+                //        int temp = 0;
+                //        if (list_消耗帳_buf[k][(int)enum_藥品過消耗帳.狀態].ObjectToString() == "庫存不足")
+                //        {
+                //            temp = this.Function_藥品過消耗帳_取得已消耗量(list_消耗帳_buf[k]);
+                //        }
+                //        if (list_消耗帳_buf[k][(int)enum_藥品過消耗帳.狀態].ObjectToString() == "等待過帳")
+                //        {
+                //            temp = list_消耗帳_buf[k][(int)enum_藥品過消耗帳.異動量].StringToInt32();
+                //        }
 
-                        未消耗量 += temp;
-                    }
-                    未消耗量 *= -1;
-                    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.未消耗量] = 未消耗量;
-                }
+                //        未消耗量 += temp;
+                //    }
+                //    未消耗量 *= -1;
+                //    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.未消耗量] = 未消耗量;
+                //}
             })));
 
             Task.WhenAll(tasks).Wait();
@@ -745,8 +744,6 @@ namespace 智能藥庫系統
         }
         #endregion
         #region Event
-   
- 
         private void SqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料_RowDoubleClickEvent(object[] RowValue)
         {
             List<Task> tasks = new List<Task>();
@@ -809,60 +806,28 @@ namespace 智能藥庫系統
         }
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_清除選取藥品訂單_MouseDownEvent(MouseEventArgs mevent)
         {
-            if (MyMessageBox.ShowDialog("是否清除訂單?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
-            List<object[]> list_value = this.sqL_DataGridView_藥庫_每日訂單_下訂單_藥品資料.Get_All_Checked_RowsValues();
-            List<object[]> list_每日訂單 = this.sqL_DataGridView_每日訂單.SQL_GetAllRows(false);
+
+            if (MyMessageBox.ShowDialog($"是否清除所有請購資料?", MyMessageBox.enum_BoxType.Warning, MyMessageBox.enum_Button.Confirm_Cancel) != DialogResult.Yes) return;
+
+            LoadingForm.ShowLoadingForm();
+            List<object[]> list_每日訂單 = Function_藥庫_每日訂單_下訂單_取得每日訂單資料();
             List<object[]> list_每日訂單_buf = new List<object[]>();
             List<object[]> list_value_delete = new List<object[]>();
-            if (list_value.Count == 0)
-            {
-                MyMessageBox.ShowDialog("未選取資料!");
-                return;
-            }
+         
 
-
-            List<object[]> list_寫入報表設定 = this.sqL_DataGridView_寫入報表設定.SQL_GetAllRows(false);
-            list_寫入報表設定 = list_寫入報表設定.GetRows((int)enum_寫入報表設定.檔名, "每日訂單送出");
-            if (list_寫入報表設定.Count == 0) return;
-            int hour = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(0, 2).StringToInt32();
-            int min = list_寫入報表設定[0][(int)enum_寫入報表設定.更新每日].ObjectToString().Substring(2, 2).StringToInt32();
-
-            DateTime dateTime_start;
-            DateTime dateTime_end;
-
-            DateTime dateTime_basic = DateTime.Now;
-            while (true)
-            {
-                if (!Basic.TypeConvert.IsHolidays(dateTime_basic))
-                {
-                    break;
-                }
-                dateTime_basic.AddDays(-1);
-            }
-
-            if (dateTime_basic.IsNewDay(hour, min))
-            {
-                dateTime_start = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_end = dateTime_start.AddDays(1);
-            }
-            else
-            {
-                dateTime_end = $"{dateTime_basic.ToDateString()} {hour}:{min}:00".StringToDateTime();
-                dateTime_start = dateTime_end.AddDays(-1);
-            }
-
-            for (int i = 0; i < list_value.Count; i++)
-            {
-                string code = list_value[i][(int)enum_每日訂單.藥品碼].ObjectToString();
-                list_每日訂單_buf = list_每日訂單.GetRows((int)enum_每日訂單.藥品碼, code);
-                list_每日訂單_buf = list_每日訂單_buf.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
-                if(list_每日訂單_buf.Count > 0)
-                {
-                    list_value_delete.Add(list_每日訂單_buf[0]);
-                }
-            }
-            this.sqL_DataGridView_每日訂單.SQL_DeleteExtra(list_value_delete, false);
+            //for (int i = 0; i < list_value.Count; i++)
+            //{
+            //    string code = list_value[i][(int)enum_每日訂單.藥品碼].ObjectToString();
+            //    list_每日訂單_buf = list_每日訂單.GetRows((int)enum_每日訂單.藥品碼, code);
+            //    if(list_每日訂單_buf.Count > 0)
+            //    {
+            //        list_value_delete.Add(list_每日訂單_buf[0]);
+            //    }
+            //}
+            this.sqL_DataGridView_每日訂單.SQL_DeleteExtra(list_每日訂單, false);
             this.Function_藥庫_每日訂單_下訂單_更新藥品資料表單();
+            LoadingForm.CloseLoadingForm();
+            MyMessageBox.ShowDialog("完成");
         }  
         private void PlC_RJ_Button_藥庫_每日訂單_下訂單_搜尋_MouseDownEvent(MouseEventArgs mevent)
         {          
