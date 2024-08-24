@@ -648,6 +648,7 @@ namespace 智能藥庫系統
                     list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.未分類.GetEnumName()));
                     list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(""));
                 }
+                list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary("管制藥"));
                 list_value_buf = list_表單分類;
 
                 Dictionary<object, List<object[]>> keyValuePairs_狀態條件 = list_value_buf.ConvertToDictionary((int)enum_drugStotreDistribution.狀態);

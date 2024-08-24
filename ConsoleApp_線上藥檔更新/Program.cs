@@ -86,7 +86,7 @@ namespace ConsoleApp_線上藥檔更新
                         藥碼 = "";
                     }
                     藥碼 = reader["UDDRGNO"].ToString().Trim();
-
+                    string test = reader["UDCTCCTL"].ToString().Trim(); 
                     Console.WriteLine($"({index}) 取得藥品資料({藥碼})");
             
                     if (藥碼.StringIsEmpty() == false)
@@ -100,7 +100,7 @@ namespace ConsoleApp_線上藥檔更新
                         medClass.包裝數量 = reader["UDCONVER"].ToString().Trim();
                         string UDABSCTL = reader["UDABSCTL"].ToString().Trim();
                         string AROUTFLA = reader["AROUTFLA"].ToString().Trim();
-                   
+                        
 
                         if (UDABSCTL == "Y" && AROUTFLA == "Y")
                         {
@@ -110,7 +110,15 @@ namespace ConsoleApp_線上藥檔更新
                         {
                             medClass.開檔狀態 = "開檔中";
                         }
-      
+                        string UDSTOCK = reader["UDSTOCK"].ToString().Trim();
+                        if (UDSTOCK == "1" || UDSTOCK == "2" || UDSTOCK == "3" || UDSTOCK == "4")
+                        {
+                            medClass.管制級別 = UDSTOCK;
+                        }
+                        else
+                        {
+                            medClass.管制級別 = "";
+                        }
                         medClasses_temp.Add(medClass);
                     }
                     index++;
@@ -137,6 +145,7 @@ namespace ConsoleApp_線上藥檔更新
                         if (medClasses_cloud_buf[0].藥品學名 != medClasses_temp[i].藥品學名) flag_replace = true;
                         if (medClasses_cloud_buf[0].中文名稱 != medClasses_temp[i].中文名稱) flag_replace = true;
                         if (medClasses_cloud_buf[0].包裝單位 != medClasses_temp[i].包裝單位) flag_replace = true;
+                        if (medClasses_cloud_buf[0].管制級別 != medClasses_temp[i].管制級別) flag_replace = true;
                         if (medClasses_cloud_buf[0].開檔狀態 != medClasses_temp[i].開檔狀態) flag_replace = true;
 
                         medClasses_cloud_buf[0].藥品碼 = medClasses_temp[i].藥品碼;
@@ -144,6 +153,7 @@ namespace ConsoleApp_線上藥檔更新
                         medClasses_cloud_buf[0].藥品學名 = medClasses_temp[i].藥品學名;
                         medClasses_cloud_buf[0].中文名稱 = medClasses_temp[i].中文名稱;
                         medClasses_cloud_buf[0].包裝單位 = medClasses_temp[i].包裝單位;
+                        medClasses_cloud_buf[0].管制級別 = medClasses_temp[i].管制級別;
                         medClasses_cloud_buf[0].開檔狀態 = medClasses_temp[i].開檔狀態;
                         if (flag_replace)
                         {

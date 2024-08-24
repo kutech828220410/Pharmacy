@@ -195,7 +195,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 {
 
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 16;
+                    基準量 = (消耗量 / 90) * 10;
                     安全量 = 基準量 / 2;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
@@ -218,7 +218,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else if (i > A_num && i <= B_num)
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 32;
+                    基準量 = (消耗量 / 90) * 10;
                     安全量 = 基準量 / 2;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
@@ -240,7 +240,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 38;
+                    基準量 = (消耗量 / 90) * 10;
                     安全量 = 基準量 / 2;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
@@ -261,11 +261,13 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 }
             }
             Logger.Log($"ABC類分類完成,全部<{list_ABC.Count}>種藥品,A類共<{A_total}>種藥品,B類共<{B_total}>種藥品,C類共<{C_total}>種藥品");
-          
+
 
             List<medClass> medClasses = medClass.get_ds_pharma_med("http://127.0.0.1:4433", "ds01");
+            List<medClass> medClasses_cloud = medClass.get_med_cloud("http://127.0.0.1:4433");
+            Dictionary<string, List<medClass>> keyValuePairs_med_cloud = medClasses_cloud.CoverToDictionaryByCode();
             medClasses = (from temp in medClasses
-                          where temp.類別 != "未分類" && temp.類別.Trim().StringIsEmpty() != true
+                          where (temp.類別 != "未分類" && temp.類別.Trim().StringIsEmpty() != true) || (Function_檢查是否為管制藥(temp,keyValuePairs_med_cloud))
                           select temp).ToList();
             List<medClass> medClasses_buf = new List<medClass>();
             List<medClass> medClasses_replace = new List<medClass>();
@@ -351,6 +353,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
             MyOffice.ExcelClass.NPOI_SaveFile(dataTable, filename, new int[] { (int)enum_ABC報表.基準量, (int)enum_ABC報表.安全量, (int)enum_ABC報表.成本價, (int)enum_ABC報表.消耗量, (int)enum_ABC報表.總金額 });
 
             Logger.Log($"總共更新藥庫安全量基準量共<{medClasses_replace.Count}>筆");
+            medClass.update_ds_pharma_by_guid("http://127.0.0.1:4433", "ds01", medClasses_replace);
 
             Logger.LogAddLine();
         }
@@ -367,6 +370,18 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 return temp1.CompareTo(temp0);
 
             }
+        }
+        private static bool Function_檢查是否為管制藥(medClass medClass, Dictionary<string, List<medClass>> keyValuePairs_med_cloud)
+        {
+            List<medClass> medClasses = keyValuePairs_med_cloud.SortDictionaryByCode(medClass.藥品碼);
+            if(medClasses.Count > 0)
+            {
+                if (medClasses[0].管制級別 == "1") return true;
+                if (medClasses[0].管制級別 == "2") return true;
+                if (medClasses[0].管制級別 == "3") return true;
+                if (medClasses[0].管制級別 == "4") return true;
+            }
+            return false;
         }
     }
 }

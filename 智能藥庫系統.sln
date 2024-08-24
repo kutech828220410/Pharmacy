@@ -63,6 +63,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_自動撥補單�
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_藥局ABC消耗量計算", "ConsoleApp_藥局ABC消耗量計算\ConsoleApp_藥局ABC消耗量計算.csproj", "{8B1F60E8-7085-4554-8C21-C019E3954AD2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_管制藥_每日自動撥補單建立", "ConsoleApp_管制藥_每日自動撥補單建立\ConsoleApp_管制藥_每日自動撥補單建立.csproj", "{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp_庫存量檢查", "ConsoleApp_庫存量檢查\ConsoleApp_庫存量檢查.csproj", "{87CE6A11-8384-4CB4-9CBF-EA0C28CF9C80}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -181,6 +185,14 @@ Global
 		{8B1F60E8-7085-4554-8C21-C019E3954AD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8B1F60E8-7085-4554-8C21-C019E3954AD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8B1F60E8-7085-4554-8C21-C019E3954AD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CE6A11-8384-4CB4-9CBF-EA0C28CF9C80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CE6A11-8384-4CB4-9CBF-EA0C28CF9C80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CE6A11-8384-4CB4-9CBF-EA0C28CF9C80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CE6A11-8384-4CB4-9CBF-EA0C28CF9C80}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -210,6 +222,7 @@ Global
 		{5AFCAD4E-85C6-42BE-9A7D-6B18AF79934F} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 		{273087F6-2B4A-4BC2-B57B-A2E8CB30A9D5} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
 		{8B1F60E8-7085-4554-8C21-C019E3954AD2} = {1949A26E-75AD-48A4-9CE3-C0638550DC01}
+		{4F9EF5C3-3ABD-4EEB-9D27-AC7BA177DC39} = {8C266DCD-6A86-4FE7-881B-946B183EBAE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B921A9E-6909-4DAB-8E4C-5F9D26A5CEDE}
