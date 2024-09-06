@@ -260,6 +260,7 @@ namespace 智能藥庫系統
             this.sub_Program_藥庫_儲位設定_區域儲位_Init();
             this.sub_Program_藥庫_儲位設定_Pannel35_Init();
             this.sub_Program_藥庫_入庫_Init();
+            this.sub_Program_藥庫_出入庫作業_Init();
             this.sub_Program_藥庫_每日訂單_下訂單_Init();
             this.sub_Program_藥庫_每日訂單_訂單查詢_Init();
             this.sub_Program_藥庫_每日訂單_檢視驗收入庫量_Init();

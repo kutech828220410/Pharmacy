@@ -149,7 +149,13 @@ namespace ConsoleApp_庫存量檢查
                         if (flag_OK) msg += $"【庫存正常】";
                         msg += $"藥碼 : {藥碼} ,藥庫庫存:{藥庫庫存},藥庫結存:{藥庫結存}   ,藥局庫存:{藥局庫存},藥局結存:{藥局結存}";
                         str_log += msg;
-                        if (flag_OK == false) Console.WriteLine($"({index}).{msg}");
+                        if (flag_OK == false)
+                        {
+                            Console.WriteLine();
+                            Console.WriteLine($"({index}).{msg}");
+                            Console.WriteLine();
+                        }
+                        else Console.Write($"({index})...");
                         index++;
                     }
                 })));

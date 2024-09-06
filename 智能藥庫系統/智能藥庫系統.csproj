@@ -414,6 +414,9 @@
     <Compile Include="Program_藥品過消耗帳.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Program_藥庫_出入庫作業.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Program_藥庫_每日訂單_下訂單.cs">
       <SubType>Form</SubType>
     </Compile>

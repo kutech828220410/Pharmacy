@@ -279,6 +279,7 @@ namespace 智能藥庫系統
                     string 儲位資訊_批號 = "";
                     int 儲位資訊_異動量 = 0;
                     bool flag_部分撥發 = false;
+                    string str = "";
                     Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(list_value.Count);
                     dialog_Prcessbar.State = "開始撥補...";
                     for (int i = 0; i < list_value.Count; i++)
@@ -303,6 +304,8 @@ namespace 智能藥庫系統
                             來源異動量 = 來源庫存量 * -1;
                             輸出異動量 = 來源庫存量;
                             flag_部分撥發 = true;
+                            str += $"({藥品碼}){藥品名稱}\n";
+                            continue;
                         }
 
                         輸出庫存量 = deviceBasics_藥局_buf[0].取得庫存();
@@ -465,6 +468,11 @@ namespace 智能藥庫系統
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.SQL_ReplaceExtra(list_value, false);
                     this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_Add, false);
                     this.sqL_DataGridView_藥庫_撥補_藥局_緊急申領.RefreshGrid(list_value);
+                    if (str.StringIsEmpty() == false)
+                    {
+                        str += "以上藥品,藥庫庫存不足無法撥發,請重新設定核撥量";
+                        MyMessageBox.ShowDialog(str);
+                    }
 
                 }
                 else
