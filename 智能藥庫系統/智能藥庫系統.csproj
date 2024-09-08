@@ -695,6 +695,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ICON01.ico" />
+    <None Include="Resources\add-new-plus-5121.png" />
     <None Include="Resources\盤點單合併.png" />
     <None Include="Resources\盤點單管理.png" />
     <None Include="Resources\匯入資料.png" />

@@ -98,6 +98,7 @@ namespace ConsoleApp_線上藥檔更新
                         medClass.中文名稱 = reader["UDCHTNAM"].ToString().Trim();
                         medClass.包裝單位 = reader["UDUNFORM"].ToString().Trim();
                         medClass.包裝數量 = reader["UDCONVER"].ToString().Trim();
+
                         string UDABSCTL = reader["UDABSCTL"].ToString().Trim();
                         string AROUTFLA = reader["AROUTFLA"].ToString().Trim();
                         

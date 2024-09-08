@@ -143,6 +143,16 @@ namespace 智能藥庫系統.Properties {
         /// <summary>
         ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
         /// </summary>
+        internal static System.Drawing.Bitmap add_new_plus_5121 {
+            get {
+                object obj = ResourceManager.GetObject("add-new-plus-5121", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   查詢類型 System.Drawing.Bitmap 的當地語系化資源。
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_alarm {
             get {
                 object obj = ResourceManager.GetObject("Blue_alarm", resourceCulture);
