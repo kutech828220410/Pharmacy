@@ -89,7 +89,11 @@ namespace 智能藥庫系統
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_針劑);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_外用藥);
             this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_未分類);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_管制藥);
+            this.parentCheckBox_藥局_撥補_表單分類_全選.AddChildCheckBox(checkBox_藥局_撥補_表單分類_癌症藥);
 
+
+            
             this.parentCheckBox_藥局_撥補_狀態條件_全選.AddChildCheckBox(plC_CheckBox_藥局_撥補_狀態條件_等待過帳);
             this.parentCheckBox_藥局_撥補_狀態條件_全選.AddChildCheckBox(plC_CheckBox_藥局_撥補_狀態條件_過帳完成);
             this.parentCheckBox_藥局_撥補_狀態條件_全選.AddChildCheckBox(plC_CheckBox_藥局_撥補_狀態條件_已列印);
@@ -648,7 +652,8 @@ namespace 智能藥庫系統
                     list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(enum_medType.未分類.GetEnumName()));
                     list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary(""));
                 }
-                list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary("管制藥"));
+                if (checkBox_藥局_撥補_表單分類_管制藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary("管制藥"));
+                if (checkBox_藥局_撥補_表單分類_癌症藥.Checked) list_表單分類.LockAdd(keyValuePairs_表單分類.SortDictionary("癌症藥"));
                 list_value_buf = list_表單分類;
 
                 Dictionary<object, List<object[]>> keyValuePairs_狀態條件 = list_value_buf.ConvertToDictionary((int)enum_drugStotreDistribution.狀態);

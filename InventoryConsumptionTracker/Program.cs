@@ -41,6 +41,10 @@ namespace InventoryConsumptionTracker
             成本價,
             健保價,
             ATC,
+            期初藥局庫存,
+            期末藥局庫存,
+            期初藥庫庫存,
+            期末藥庫庫存,
         }
         public class class_MedPrice
         {
@@ -64,10 +68,18 @@ namespace InventoryConsumptionTracker
 
         static void Main(string[] args)
         {
+            int month = 8;
+            DateTime dateTime = new DateTime(DateTime.Now.Year, month, 1);
+            DateTime dateTime_st = dateTime.GetStartDate();
+            DateTime dateTime_end = dateTime.AddMonths(1).AddDays(-1).GetEndDate();
+
             string e_msg = "\n";
             MyTimerBasic myTimerBasic = new MyTimerBasic();
             try
-            {               
+            {
+           
+
+
                 List<Task> tasks = new List<Task>();
                 List<object[]> list_medicine_cloud = new List<object[]>();
                 List<object[]> list_sd0_public = new List<object[]>();
@@ -77,23 +89,27 @@ namespace InventoryConsumptionTracker
                 List<object[]> list_消耗帳 = new List<object[]>();
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_medicine_cloud = sQLControl_medicine_cloud.GetAllRows(null);
+                    List<medClass> medClasses_cloud = medClass.get_med_cloud("http://127.0.0.1:4433");
+                    medClasses_cloud = (from temp in medClasses_cloud
+                                        where temp.開檔狀態 == "開檔中"
+                                        select temp).ToList();
+                    list_medicine_cloud = medClasses_cloud.ClassToSQL<medClass , enum_雲端藥檔>();
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_sd0_public = sQLControl_sd0_public.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, "2022-11-21 00:00:00", DateTime.Now.GetEndDate().ToDateString());
+                    list_sd0_public = sQLControl_sd0_public.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, dateTime_st.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_sd0_opd = sQLControl_sd0_opd.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, "2022-11-21 00:00:00", DateTime.Now.GetEndDate().ToDateString());
+                    list_sd0_opd = sQLControl_sd0_opd.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, dateTime_st.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_sd0_pher = sQLControl_sd0_pher.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, "2022-11-21 00:00:00", DateTime.Now.GetEndDate().ToDateString());
+                    list_sd0_pher = sQLControl_sd0_pher.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, dateTime_st.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_sd0_phr = sQLControl_sd0_phr.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, "2022-11-21 00:00:00", DateTime.Now.GetEndDate().ToDateString());
+                    list_sd0_phr = sQLControl_sd0_phr.GetRowsByBetween(null, (int)enum_批次過帳_批次過帳明細.報表日期, dateTime_st.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 })));
                 Task.WhenAll(tasks).Wait();
                 string MedPrice = Basic.Net.WEBApiGet($"https://10.18.1.146:4434/api/MedPrice");
@@ -157,13 +173,91 @@ namespace InventoryConsumptionTracker
                         Console.WriteLine($"藥碼:{藥品碼} ,藥名:{藥名} ,消耗量:{消耗量} ,日期:{起始日期} ~ {結束日期}");
                     }
                 }
+                Table table = new Table("trading");
+                table.Server = "127.0.0.1";
+                table.Port = "3306";
+                table.Username = "user";
+                table.Password = "66437068";
+                table.DBName = "ds01";
+                tasks.Clear();
+                SQLControl sQLControl_trading = new SQLControl(table);
+                int index = 0;
+                for (int i = 0; i < list_匯出資料.Count; i++)
+                {
+                    object[] value = list_匯出資料[i];
+                    string 藥碼 = list_匯出資料[i][(int)enum_匯出.藥碼].ObjectToString() ;
+                    tasks.Add(Task.Run(new Action(delegate
+                    {
+                        string[] col_names = new string[] {"藥品碼","操作時間" };
+                        List<object[]> list_trading = sQLControl_trading.GetRowsByDefult(null, (int)enum_交易記錄查詢資料.藥品碼, 藥碼);
+                        list_trading = list_trading.GetRowsInDateEx((int)enum_交易記錄查詢資料.操作時間, dateTime_st, dateTime_end);
+
+                        int 期初藥局庫存 = 0;
+                        int 期初藥庫庫存 = 0;
+                        int 期末藥局庫存 = 0;
+                        int 期末藥庫庫存 = 0;
+
+                        List<object[]> list_trading_藥庫 = new List<object[]>();
+                        List<object[]> list_trading_藥局 = new List<object[]>();
+            
+                        string msg = "";
+
+                        msg = "";
+                        if (list_trading.Count > 0)
+                        {
+                            list_trading.Sort(new ICP_交易記錄查詢());
+                            list_trading_藥庫 = list_trading.GetRows((int)enum_交易記錄查詢資料.庫別, "藥庫");
+                            list_trading_藥局 = (from temp in list_trading
+                                               where temp[(int)enum_交易記錄查詢資料.庫別].ObjectToString().Contains("藥局")
+                                               select temp).ToList();
+                            list_trading_藥庫.Sort(new ICP_交易記錄查詢());
+                            list_trading_藥局.Sort(new ICP_交易記錄查詢());
+
+
+
+                      
+
+                            if (list_trading_藥庫.Count > 0)
+                            {
+                                期初藥庫庫存 = list_trading_藥庫[0][(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                                期末藥庫庫存 = list_trading_藥庫[list_trading_藥庫.Count -1][(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                            }
+                            else
+                            {
+                                msg += " [找無藥庫交易紀錄]";
+                            }
+
+                            if (list_trading_藥局.Count > 0)
+                            {
+                                期初藥局庫存 = list_trading_藥局[0][(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                                期末藥局庫存 = list_trading_藥局[list_trading_藥局.Count - 1][(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                            }
+                            else
+                            {
+                                msg += " [找無藥局交易紀錄]";
+                            }
+                            Console.Write($"({index})...");
+                            index++;
+                        }
+                        value[(int)enum_匯出.期初藥局庫存] = 期初藥局庫存;
+                        value[(int)enum_匯出.期末藥局庫存] = 期末藥局庫存;
+                        value[(int)enum_匯出.期初藥庫庫存] = 期初藥庫庫存;
+                        value[(int)enum_匯出.期末藥庫庫存] = 期末藥庫庫存;
+                    })));
+
+               
+
+
+                }
+                Task.WhenAll(tasks).Wait();
                 list_匯出資料.Sort(new ICP_匯出_藥品碼排序());
 
                 Console.WriteLine($"整理消耗帳完成,{myTimerBasic}");
                 Console.WriteLine($"-------------------------------------------------------------------------");
 
                 System.Data.DataTable dataTable = list_匯出資料.ToDataTable(new enum_匯出());
-                MyOffice.ExcelClass.NPOI_SaveFile(dataTable, $"{currentDirectory}\\消耗帳彙總_{DateTime.Now.ToDateString("_")}.xls",new int[]{ (int)enum_匯出.消耗量 , (int)enum_匯出.健保價 , (int)enum_匯出.成本價 });
+                MyOffice.ExcelClass.NPOI_SaveFile(dataTable, $"{currentDirectory}\\期初期末彙總_{dateTime_st.ToDateTinyString()}_{dateTime_end.ToDateTinyString()}.xls",new int[]{ (int)enum_匯出.消耗量 , (int)enum_匯出.健保價, (int)enum_匯出.成本價,
+                    (int)enum_匯出.期初藥局庫存, (int)enum_匯出.期初藥庫庫存,   (int)enum_匯出.期末藥局庫存, (int)enum_匯出.期末藥庫庫存 });
                 Console.WriteLine($"存檔完成,{myTimerBasic}");
                 Console.WriteLine($"-------------------------------------------------------------------------");
                 System.Threading.Thread.Sleep(2000);
@@ -224,6 +318,56 @@ namespace InventoryConsumptionTracker
                 string Code0 = x[(int)enum_匯出.藥碼].ObjectToString();
                 string Code1 = y[(int)enum_匯出.藥碼].ObjectToString();
                 return Code0.CompareTo(Code1);
+            }
+        }
+
+
+        public class ICP_交易記錄查詢 : IComparer<object[]>
+        {
+            //實作Compare方法
+            //依Speed由小排到大。
+            public int Compare(object[] x, object[] y)
+            {
+                DateTime datetime1 = x[(int)enum_交易記錄查詢資料.操作時間].ToDateTimeString_6().StringToDateTime();
+                DateTime datetime2 = y[(int)enum_交易記錄查詢資料.操作時間].ToDateTimeString_6().StringToDateTime();
+                int compare = DateTime.Compare(datetime1, datetime2);
+                if (compare != 0) return compare;
+                int 結存量1 = x[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                int 結存量2 = y[(int)enum_交易記錄查詢資料.結存量].StringToInt32();
+                string 動作1 = x[(int)enum_交易記錄查詢資料.動作].ObjectToString();
+                string 動作2 = x[(int)enum_交易記錄查詢資料.動作].ObjectToString();
+
+                string 庫別1 = x[(int)enum_交易記錄查詢資料.庫別].ObjectToString();
+                string 庫別2 = x[(int)enum_交易記錄查詢資料.庫別].ObjectToString();
+
+                if (動作1 == "自動撥補" && 動作2 == "自動撥補")
+                {
+                    if (庫別1.Contains("藥局") && 庫別2.Contains("藥局"))
+                    {
+                        if (結存量1 > 結存量2)
+                        {
+                            return -1;
+                        }
+                        else if (結存量1 < 結存量2)
+                        {
+                            return 1;
+                        }
+                        else if (結存量1 == 結存量2) return 0;
+                    }
+                }
+
+                if (結存量1 > 結存量2)
+                {
+                    return 1;
+                }
+                else if (結存量1 < 結存量2)
+                {
+                    return -1;
+                }
+                else if (結存量1 == 結存量2) return 0;
+
+                return 0;
+
             }
         }
     }

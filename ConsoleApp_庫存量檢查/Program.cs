@@ -51,12 +51,19 @@ namespace ConsoleApp_庫存量檢查
             SQLControl sQLControl_trading = new SQLControl(table);
             string str_log = "";
             int index = 0;
+            DateTime dateTime_b = DateTime.Now.AddDays(-1);
+            DateTime dateTime_st = dateTime_b.AddMonths(-12).AddDays(0).GetStartDate();
+            DateTime dateTime_end = dateTime_b.AddMonths(0).AddDays(0).GetEndDate();
+
             for (int i = 0; i < medClasses_cloud.Count; i++)
             {
                 string 藥碼 = medClasses_cloud[i].藥品碼;
                 tasks.Add(Task.Run(new Action(delegate
                 {
                     List<object[]> list_trading = sQLControl_trading.GetRowsByDefult(null, (int)enum_交易記錄查詢資料.藥品碼, 藥碼);
+
+                    list_trading = list_trading.GetRowsInDateEx((int)enum_交易記錄查詢資料.操作時間, dateTime_st, dateTime_end);
+
                     List<object[]> list_trading_藥庫 = new List<object[]>();
                     List<object[]> list_trading_藥局 = new List<object[]>();
                     List<DeviceBasic> deviceBasics_藥庫_buf = new List<DeviceBasic>();

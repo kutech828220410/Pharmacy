@@ -42,7 +42,7 @@ namespace ConsoleApp_分包機裸錠_每日自動撥補單建立
                              where temp.藥局庫存.StringToInt32() <= temp.安全庫存.StringToInt32()
                              && temp.安全庫存.StringToInt32() > 0
                              select temp).ToList();
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Logger.Log("-----------------------------------------------------------------------");
             for (int i = 0; i < medClasses_藥局.Count; i++)
             {
 
@@ -112,13 +112,13 @@ namespace ConsoleApp_分包機裸錠_每日自動撥補單建立
                     if (drugStotreDistributionClasses_buf[0].狀態 != "等待過帳") continue;
                     drugStotreDistributionClass.GUID = drugStotreDistributionClasses_buf[0].GUID;
                     drugStotreDistributionClasses_replace.Add(drugStotreDistributionClass);
-                    Console.WriteLine($"[修改]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
+                    Logger.Log($"[修改]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
 
                 }
                 else
                 {
                     drugStotreDistributionClasses_add.Add(drugStotreDistributionClass);
-                    Console.WriteLine($"[新增]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
+                    Logger.Log($"[新增]({i.ToString("00")}/{medClasses_藥局.Count}) {temp_str} 撥發量 : {撥發量}");
                 }
 
 
@@ -127,9 +127,9 @@ namespace ConsoleApp_分包機裸錠_每日自動撥補單建立
             drugStotreDistributionClass.add(API_Server, drugStotreDistributionClasses_add);
             drugStotreDistributionClass.update_by_guid(API_Server, drugStotreDistributionClasses_replace);
 
-            Console.WriteLine($"新增資料共<{drugStotreDistributionClasses_add.Count}>筆");
-            Console.WriteLine($"修改資料共<{drugStotreDistributionClasses_replace.Count}>筆");
-            Console.WriteLine("-----------------------------------------------------------------------");
+            Logger.Log($"新增資料共<{drugStotreDistributionClasses_add.Count}>筆");
+            Logger.Log($"修改資料共<{drugStotreDistributionClasses_replace.Count}>筆");
+            Logger.Log("-----------------------------------------------------------------------");
 
             System.Threading.Thread.Sleep(5000);
         }

@@ -18,8 +18,8 @@ using System.Net.Http;
 using System.IO;
 using HIS_DB_Lib;
 
-[assembly: AssemblyVersion("1.0.51.51")]
-[assembly: AssemblyFileVersion("1.0.51.51")]
+[assembly: AssemblyVersion("1.0.51.52")]
+[assembly: AssemblyFileVersion("1.0.51.52")]
 namespace 智能藥庫系統
 {
 

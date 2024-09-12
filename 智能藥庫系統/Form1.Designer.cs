@@ -1403,6 +1403,8 @@
             this.ContentsPanel = new MyUI.RJ_Pannel();
             this.colorDialog = new System.Windows.Forms.ColorDialog();
             this.contextMenuStrip_DatagridView = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.checkBox_藥局_撥補_表單分類_管制藥 = new System.Windows.Forms.CheckBox();
+            this.checkBox_藥局_撥補_表單分類_癌症藥 = new System.Windows.Forms.CheckBox();
             this.panel_Main.SuspendLayout();
             this.panel232.SuspendLayout();
             this.plC_ScreenPage_Main.SuspendLayout();
@@ -17113,7 +17115,7 @@
             this.groupBox31.Controls.Add(this.plC_CheckBox_藥局_撥補_狀態條件_等待過帳);
             this.groupBox31.Font = new System.Drawing.Font("新細明體", 12F);
             this.groupBox31.ForeColor = System.Drawing.Color.Black;
-            this.groupBox31.Location = new System.Drawing.Point(350, 119);
+            this.groupBox31.Location = new System.Drawing.Point(465, 119);
             this.groupBox31.Name = "groupBox31";
             this.groupBox31.Size = new System.Drawing.Size(289, 166);
             this.groupBox31.TabIndex = 194;
@@ -17216,6 +17218,8 @@
             // 
             // groupBox30
             // 
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_癌症藥);
+            this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_管制藥);
             this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_水劑);
             this.groupBox30.Controls.Add(this.parentCheckBox_藥局_撥補_表單分類_全選);
             this.groupBox30.Controls.Add(this.checkBox_藥局_撥補_表單分類_未分類);
@@ -17230,7 +17234,7 @@
             this.groupBox30.ForeColor = System.Drawing.Color.Black;
             this.groupBox30.Location = new System.Drawing.Point(17, 119);
             this.groupBox30.Name = "groupBox30";
-            this.groupBox30.Size = new System.Drawing.Size(327, 166);
+            this.groupBox30.Size = new System.Drawing.Size(442, 166);
             this.groupBox30.TabIndex = 157;
             this.groupBox30.TabStop = false;
             this.groupBox30.Text = "表單分類";
@@ -17270,7 +17274,7 @@
             this.checkBox_藥局_撥補_表單分類_未分類.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox_藥局_撥補_表單分類_未分類.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.checkBox_藥局_撥補_表單分類_未分類.ForeColor = System.Drawing.Color.Black;
-            this.checkBox_藥局_撥補_表單分類_未分類.Location = new System.Drawing.Point(244, 119);
+            this.checkBox_藥局_撥補_表單分類_未分類.Location = new System.Drawing.Point(360, 119);
             this.checkBox_藥局_撥補_表單分類_未分類.Name = "checkBox_藥局_撥補_表單分類_未分類";
             this.checkBox_藥局_撥補_表單分類_未分類.Size = new System.Drawing.Size(76, 24);
             this.checkBox_藥局_撥補_表單分類_未分類.TabIndex = 159;
@@ -38701,6 +38705,34 @@
             this.contextMenuStrip_DatagridView.Name = "contextMenuStrip1";
             this.contextMenuStrip_DatagridView.Size = new System.Drawing.Size(61, 4);
             // 
+            // checkBox_藥局_撥補_表單分類_管制藥
+            // 
+            this.checkBox_藥局_撥補_表單分類_管制藥.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_管制藥.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_管制藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_管制藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_管制藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_管制藥.Location = new System.Drawing.Point(244, 119);
+            this.checkBox_藥局_撥補_表單分類_管制藥.Name = "checkBox_藥局_撥補_表單分類_管制藥";
+            this.checkBox_藥局_撥補_表單分類_管制藥.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_管制藥.TabIndex = 161;
+            this.checkBox_藥局_撥補_表單分類_管制藥.Text = "管制藥";
+            this.checkBox_藥局_撥補_表單分類_管制藥.UseVisualStyleBackColor = true;
+            // 
+            // checkBox_藥局_撥補_表單分類_癌症藥
+            // 
+            this.checkBox_藥局_撥補_表單分類_癌症藥.AutoSize = true;
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Checked = true;
+            this.checkBox_藥局_撥補_表單分類_癌症藥.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkBox_藥局_撥補_表單分類_癌症藥.ForeColor = System.Drawing.Color.Black;
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Location = new System.Drawing.Point(360, 57);
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Name = "checkBox_藥局_撥補_表單分類_癌症藥";
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Size = new System.Drawing.Size(76, 24);
+            this.checkBox_藥局_撥補_表單分類_癌症藥.TabIndex = 162;
+            this.checkBox_藥局_撥補_表單分類_癌症藥.Text = "癌症藥";
+            this.checkBox_藥局_撥補_表單分類_癌症藥.UseVisualStyleBackColor = true;
+            // 
             // Main_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -40515,6 +40547,8 @@
         private MyUI.PLC_RJ_Button plC_RJ_Button2;
         private System.Windows.Forms.TextBox textBox_藥庫_出入庫作業_數量;
         private System.Windows.Forms.Label label58;
+        private System.Windows.Forms.CheckBox checkBox_藥局_撥補_表單分類_癌症藥;
+        private System.Windows.Forms.CheckBox checkBox_藥局_撥補_表單分類_管制藥;
     }
 }
 
