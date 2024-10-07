@@ -68,7 +68,7 @@ namespace InventoryConsumptionTracker
 
         static void Main(string[] args)
         {
-            int month = 8;
+            int month = 9;
             DateTime dateTime = new DateTime(DateTime.Now.Year, month, 1);
             DateTime dateTime_st = dateTime.GetStartDate();
             DateTime dateTime_end = dateTime.AddMonths(1).AddDays(-1).GetEndDate();

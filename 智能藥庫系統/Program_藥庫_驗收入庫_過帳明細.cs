@@ -91,6 +91,48 @@ namespace 智能藥庫系統
         }
 
         #region Function
+        private List<object[]> Function_藥庫_驗收入庫_過帳明細_取得資料(string 藥碼, ref List<string> list_效期, ref List<string> list_批號)
+        {
+            List<object[]> list_value = Function_藥庫_驗收入庫_過帳明細_取得資料(藥碼);
+            list_value.Sort(new ICP_驗收入庫_過帳明細_des());
+            List<object[]> list_value_buf = new List<object[]>();
+            List<string> list_val = new List<string>();
+            list_val = (from temp in list_value
+                          select temp[(int)enum_藥庫_驗收入庫_過帳明細.效期].ToDateString()).Distinct().ToList(); 
+            for (int i = 0; i < list_val.Count; i++)
+            {
+                list_value_buf = (from temp in list_value
+                                  where temp[(int)enum_藥庫_驗收入庫_過帳明細.效期].ToDateString() == list_val[i]
+                                  select temp).ToList();
+                list_效期.Add(list_value_buf[0][(int)enum_藥庫_驗收入庫_過帳明細.效期].ToDateString());
+                list_批號.Add(list_value_buf[0][(int)enum_藥庫_驗收入庫_過帳明細.批號].ObjectToString());
+            }
+            return list_value;
+        }
+        private List<object[]> Function_藥庫_驗收入庫_過帳明細_取得資料(string code)
+        {
+            List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetRows((int)enum_補給驗收入庫.藥品碼, $"A0000{code}", false);
+            List<object[]> list_藥庫_驗收入庫 = new List<object[]>();
+            for (int i = 0; i < list_補給驗收入庫.Count; i++)
+            {
+                object[] value = list_補給驗收入庫[i].CopyRow(new enum_補給驗收入庫(), new enum_藥庫_驗收入庫_過帳明細());
+
+                string 藥品碼 = value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼].ObjectToString();
+                if (藥品碼.Length == 10)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 5, 5);
+                }
+                else if (藥品碼.Length == 12)
+                {
+                    藥品碼 = 藥品碼.Substring(藥品碼.Length - 7, 5);
+                }
+                value[(int)enum_藥庫_驗收入庫_過帳明細.藥品碼] = 藥品碼;
+                list_藥庫_驗收入庫.Add(value);
+            }
+            list_藥庫_驗收入庫.Sort(new ICP_驗收入庫_過帳明細());
+            return list_藥庫_驗收入庫;
+        }
+
         private List<object[]> Function_藥庫_驗收入庫_過帳明細_取得資料(DateTime dateTime_st , DateTime dateTime_end)
         {
             List<object[]> list_補給驗收入庫 = this.sqL_DataGridView_補給驗收入庫.SQL_GetRowsByBetween((int)enum_補給驗收入庫.加入時間, dateTime_st, dateTime_end, false);
@@ -431,6 +473,17 @@ namespace 智能藥庫系統
                 DateTime temp0 = x[(int)enum_藥庫_驗收入庫_過帳明細.驗收時間].ToDateString().StringToDateTime();
                 DateTime temp1 = y[(int)enum_藥庫_驗收入庫_過帳明細.驗收時間].ToDateString().StringToDateTime();
                 int cmp = temp0.CompareTo(temp1);
+                return cmp;
+            }
+        }
+
+        private class ICP_驗收入庫_過帳明細_des : IComparer<object[]>
+        {
+            public int Compare(object[] x, object[] y)
+            {
+                DateTime temp0 = x[(int)enum_藥庫_驗收入庫_過帳明細.驗收時間].ToDateString().StringToDateTime();
+                DateTime temp1 = y[(int)enum_藥庫_驗收入庫_過帳明細.驗收時間].ToDateString().StringToDateTime();
+                int cmp = temp1.CompareTo(temp0);
                 return cmp;
             }
         }

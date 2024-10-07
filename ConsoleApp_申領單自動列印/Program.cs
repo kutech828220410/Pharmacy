@@ -107,9 +107,8 @@ namespace ConsoleApp_申領單自動列印
                 Logger.Log($"取得資料表共<{sheetClass.Count}>張");
                 if (sheetClass.Count > 0)
                 {
+                    printerClass.PrinterName = "SHARP BP-30M28 PCL6";
                     printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
-
-
                 }
                 for (int i = 0; i < list_緊急申領.Count; i++)
                 {

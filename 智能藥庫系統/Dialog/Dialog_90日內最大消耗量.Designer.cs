@@ -31,6 +31,9 @@ namespace 智能藥庫系統
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.sqL_DataGridView_90日內最大消耗量 = new SQLUI.SQL_DataGridView();
+            this.comboBox_搜尋條件 = new System.Windows.Forms.ComboBox();
+            this.rJ_TextBox_搜尋條件 = new MyUI.RJ_TextBox();
+            this.plC_RJ_Button_搜尋 = new MyUI.PLC_RJ_Button();
             this.SuspendLayout();
             // 
             // panel1
@@ -53,6 +56,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_90日內最大消耗量.cellStylBackColor = System.Drawing.Color.LightBlue;
             this.sqL_DataGridView_90日內最大消耗量.cellStyleFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
             this.sqL_DataGridView_90日內最大消耗量.cellStylForeColor = System.Drawing.Color.Black;
+            this.sqL_DataGridView_90日內最大消耗量.checkedRowBackColor = System.Drawing.Color.YellowGreen;
             this.sqL_DataGridView_90日內最大消耗量.columnHeaderBackColor = System.Drawing.Color.SkyBlue;
             this.sqL_DataGridView_90日內最大消耗量.columnHeaderBorderColor = System.Drawing.Color.DimGray;
             this.sqL_DataGridView_90日內最大消耗量.columnHeaderFont = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold);
@@ -61,7 +65,8 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_90日內最大消耗量.columnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.sqL_DataGridView_90日內最大消耗量.DataBaseName = "storehouse_0";
             this.sqL_DataGridView_90日內最大消耗量.DataGridViewAutoSizeColumnMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.sqL_DataGridView_90日內最大消耗量.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.sqL_DataGridView_90日內最大消耗量.DataKeyEnable = false;
+            this.sqL_DataGridView_90日內最大消耗量.Dock = System.Windows.Forms.DockStyle.Top;
             this.sqL_DataGridView_90日內最大消耗量.Font = new System.Drawing.Font("新細明體", 12F);
             this.sqL_DataGridView_90日內最大消耗量.ImageBox = false;
             this.sqL_DataGridView_90日內最大消耗量.Location = new System.Drawing.Point(4, 42);
@@ -80,7 +85,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_90日內最大消耗量.selectedRowBorderColor = System.Drawing.Color.Blue;
             this.sqL_DataGridView_90日內最大消耗量.selectedRowForeColor = System.Drawing.Color.White;
             this.sqL_DataGridView_90日內最大消耗量.Server = "localhost";
-            this.sqL_DataGridView_90日內最大消耗量.Size = new System.Drawing.Size(1177, 795);
+            this.sqL_DataGridView_90日內最大消耗量.Size = new System.Drawing.Size(1177, 685);
             this.sqL_DataGridView_90日內最大消耗量.SSLMode = MySql.Data.MySqlClient.MySqlSslMode.None;
             this.sqL_DataGridView_90日內最大消耗量.TabIndex = 159;
             this.sqL_DataGridView_90日內最大消耗量.TableName = "medicine_page_firstclass";
@@ -97,6 +102,97 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_90日內最大消耗量.首列樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.sqL_DataGridView_90日內最大消耗量.首行樣式 = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             // 
+            // comboBox_搜尋條件
+            // 
+            this.comboBox_搜尋條件.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox_搜尋條件.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBox_搜尋條件.FormattingEnabled = true;
+            this.comboBox_搜尋條件.Items.AddRange(new object[] {
+            "藥碼",
+            "藥名",
+            "全部顯示"});
+            this.comboBox_搜尋條件.Location = new System.Drawing.Point(20, 768);
+            this.comboBox_搜尋條件.Name = "comboBox_搜尋條件";
+            this.comboBox_搜尋條件.Size = new System.Drawing.Size(144, 32);
+            this.comboBox_搜尋條件.TabIndex = 204;
+            // 
+            // rJ_TextBox_搜尋條件
+            // 
+            this.rJ_TextBox_搜尋條件.BackColor = System.Drawing.SystemColors.Window;
+            this.rJ_TextBox_搜尋條件.BorderColor = System.Drawing.Color.Black;
+            this.rJ_TextBox_搜尋條件.BorderFocusColor = System.Drawing.Color.HotPink;
+            this.rJ_TextBox_搜尋條件.BorderRadius = 0;
+            this.rJ_TextBox_搜尋條件.BorderSize = 2;
+            this.rJ_TextBox_搜尋條件.Font = new System.Drawing.Font("新細明體", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.rJ_TextBox_搜尋條件.ForeColor = System.Drawing.Color.Black;
+            this.rJ_TextBox_搜尋條件.GUID = "";
+            this.rJ_TextBox_搜尋條件.Location = new System.Drawing.Point(170, 766);
+            this.rJ_TextBox_搜尋條件.Multiline = false;
+            this.rJ_TextBox_搜尋條件.Name = "rJ_TextBox_搜尋條件";
+            this.rJ_TextBox_搜尋條件.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
+            this.rJ_TextBox_搜尋條件.PassWordChar = false;
+            this.rJ_TextBox_搜尋條件.PlaceholderColor = System.Drawing.Color.LightGray;
+            this.rJ_TextBox_搜尋條件.PlaceholderText = "輸入搜尋條件";
+            this.rJ_TextBox_搜尋條件.ShowTouchPannel = false;
+            this.rJ_TextBox_搜尋條件.Size = new System.Drawing.Size(224, 37);
+            this.rJ_TextBox_搜尋條件.TabIndex = 203;
+            this.rJ_TextBox_搜尋條件.TextAlgin = System.Windows.Forms.HorizontalAlignment.Left;
+            this.rJ_TextBox_搜尋條件.Texts = "";
+            this.rJ_TextBox_搜尋條件.UnderlineStyle = false;
+            // 
+            // plC_RJ_Button_搜尋
+            // 
+            this.plC_RJ_Button_搜尋.AutoResetState = false;
+            this.plC_RJ_Button_搜尋.BackgroundColor = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_搜尋.Bool = false;
+            this.plC_RJ_Button_搜尋.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.plC_RJ_Button_搜尋.BorderRadius = 20;
+            this.plC_RJ_Button_搜尋.BorderSize = 0;
+            this.plC_RJ_Button_搜尋.but_press = false;
+            this.plC_RJ_Button_搜尋.buttonType = MyUI.RJ_Button.ButtonType.Toggle;
+            this.plC_RJ_Button_搜尋.DisenableColor = System.Drawing.Color.Gray;
+            this.plC_RJ_Button_搜尋.FlatAppearance.BorderSize = 0;
+            this.plC_RJ_Button_搜尋.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.plC_RJ_Button_搜尋.Font = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_搜尋.GUID = "";
+            this.plC_RJ_Button_搜尋.Icon = System.Windows.Forms.MessageBoxIcon.Warning;
+            this.plC_RJ_Button_搜尋.Image_padding = new System.Windows.Forms.Padding(0);
+            this.plC_RJ_Button_搜尋.Location = new System.Drawing.Point(400, 744);
+            this.plC_RJ_Button_搜尋.Name = "plC_RJ_Button_搜尋";
+            this.plC_RJ_Button_搜尋.OFF_文字內容 = "搜尋";
+            this.plC_RJ_Button_搜尋.OFF_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_搜尋.OFF_文字顏色 = System.Drawing.Color.White;
+            this.plC_RJ_Button_搜尋.OFF_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_搜尋.ON_BorderSize = 5;
+            this.plC_RJ_Button_搜尋.ON_文字內容 = "搜尋";
+            this.plC_RJ_Button_搜尋.ON_文字字體 = new System.Drawing.Font("微軟正黑體", 14F);
+            this.plC_RJ_Button_搜尋.ON_文字顏色 = System.Drawing.Color.Black;
+            this.plC_RJ_Button_搜尋.ON_背景顏色 = System.Drawing.Color.RoyalBlue;
+            this.plC_RJ_Button_搜尋.ProhibitionBorderLineWidth = 1;
+            this.plC_RJ_Button_搜尋.ProhibitionLineWidth = 4;
+            this.plC_RJ_Button_搜尋.ProhibitionSymbolSize = 30;
+            this.plC_RJ_Button_搜尋.ShadowColor = System.Drawing.Color.DimGray;
+            this.plC_RJ_Button_搜尋.ShadowSize = 3;
+            this.plC_RJ_Button_搜尋.ShowLoadingForm = false;
+            this.plC_RJ_Button_搜尋.Size = new System.Drawing.Size(120, 80);
+            this.plC_RJ_Button_搜尋.State = false;
+            this.plC_RJ_Button_搜尋.TabIndex = 202;
+            this.plC_RJ_Button_搜尋.Text = "搜尋";
+            this.plC_RJ_Button_搜尋.TextColor = System.Drawing.Color.White;
+            this.plC_RJ_Button_搜尋.TextHeight = 0;
+            this.plC_RJ_Button_搜尋.Texts = "搜尋";
+            this.plC_RJ_Button_搜尋.UseVisualStyleBackColor = false;
+            this.plC_RJ_Button_搜尋.字型鎖住 = false;
+            this.plC_RJ_Button_搜尋.按鈕型態 = MyUI.PLC_RJ_Button.StatusEnum.保持型;
+            this.plC_RJ_Button_搜尋.按鍵方式 = MyUI.PLC_RJ_Button.PressEnum.Mouse_左鍵;
+            this.plC_RJ_Button_搜尋.文字鎖住 = false;
+            this.plC_RJ_Button_搜尋.背景圖片 = null;
+            this.plC_RJ_Button_搜尋.讀取位元反向 = false;
+            this.plC_RJ_Button_搜尋.讀寫鎖住 = false;
+            this.plC_RJ_Button_搜尋.音效 = true;
+            this.plC_RJ_Button_搜尋.顯示 = false;
+            this.plC_RJ_Button_搜尋.顯示狀態 = false;
+            // 
             // Dialog_90日內最大消耗量
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -104,6 +200,9 @@ namespace 智能藥庫系統
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1185, 841);
             this.ControlBox = true;
+            this.Controls.Add(this.comboBox_搜尋條件);
+            this.Controls.Add(this.rJ_TextBox_搜尋條件);
+            this.Controls.Add(this.plC_RJ_Button_搜尋);
             this.Controls.Add(this.sqL_DataGridView_90日內最大消耗量);
             this.Controls.Add(this.panel1);
             this.Name = "Dialog_90日內最大消耗量";
@@ -116,5 +215,8 @@ namespace 智能藥庫系統
 
         private System.Windows.Forms.Panel panel1;
         private SQLUI.SQL_DataGridView sqL_DataGridView_90日內最大消耗量;
+        private System.Windows.Forms.ComboBox comboBox_搜尋條件;
+        private MyUI.RJ_TextBox rJ_TextBox_搜尋條件;
+        private MyUI.PLC_RJ_Button plC_RJ_Button_搜尋;
     }
 }

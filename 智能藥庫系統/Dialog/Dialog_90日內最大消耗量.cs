@@ -17,6 +17,7 @@ namespace 智能藥庫系統
 {
     public partial class Dialog_90日內最大消耗量 : MyDialog
     {
+        List<object[]> list_90日內最大消耗量 = new List<object[]>();
         public enum enum_90日內最大消耗量
         {
             [Description("GUID,VARCHAR,50,None")]
@@ -35,12 +36,54 @@ namespace 智能藥庫系統
             form.Invoke(new Action(delegate { InitializeComponent(); }));
  
             this.Load += Dialog_90日內最大消耗量_Load;
+            this.LoadFinishedEvent += Dialog_90日內最大消耗量_LoadFinishedEvent;
+            this.plC_RJ_Button_搜尋.MouseDownEvent += PlC_RJ_Button_搜尋_MouseDownEvent;
         }
 
+  
+
+        private void PlC_RJ_Button_搜尋_MouseDownEvent(MouseEventArgs mevent)
+        {
+            List<object[]> list_90日內最大消耗量_buf = new List<object[]>();
+
+            string serch_text = comboBox_搜尋條件.GetComboBoxText();
+            if(rJ_TextBox_搜尋條件.Text.StringIsEmpty())
+            {
+                MyMessageBox.ShowDialog("請輸入搜尋內容");
+                return;
+            }
+            if (serch_text == "全部顯示")
+            {
+                list_90日內最大消耗量_buf = list_90日內最大消耗量;
+            }
+            if (serch_text == "藥碼")
+            {
+                list_90日內最大消耗量_buf = (from temp in list_90日內最大消耗量
+                                      where temp[(int)enum_90日內最大消耗量.藥碼].ObjectToString().ToUpper().StartsWith(rJ_TextBox_搜尋條件.Text.ToUpper())
+                                      select temp).ToList();
+            }
+            if (serch_text == "藥名")
+            {
+                list_90日內最大消耗量_buf = (from temp in list_90日內最大消耗量
+                                      where temp[(int)enum_90日內最大消耗量.藥名].ObjectToString().ToUpper().StartsWith(rJ_TextBox_搜尋條件.Text.ToUpper())
+                                      select temp).ToList();
+            }
+            if(list_90日內最大消耗量_buf.Count == 0)
+            {
+                MyMessageBox.ShowDialog("查無資料");
+            }
+            this.sqL_DataGridView_90日內最大消耗量.RefreshGrid(list_90日內最大消耗量_buf);
+
+        }
         private void Dialog_90日內最大消耗量_Load(object sender, EventArgs e)
         {
+          
+        }
+        private void Dialog_90日內最大消耗量_LoadFinishedEvent(EventArgs e)
+        {
+            comboBox_搜尋條件.SelectedIndex = 0;
             Table table = new Table(new enum_90日內最大消耗量());
-            
+
             this.sqL_DataGridView_90日內最大消耗量.Init(table);
             this.sqL_DataGridView_90日內最大消耗量.Set_ColumnVisible(false, new enum_90日內最大消耗量().GetEnumNames());
             this.sqL_DataGridView_90日內最大消耗量.Set_ColumnWidth(100, DataGridViewContentAlignment.MiddleLeft, enum_90日內最大消耗量.藥碼);
@@ -48,7 +91,6 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_90日內最大消耗量.Set_ColumnWidth(150, DataGridViewContentAlignment.MiddleCenter, enum_90日內最大消耗量.消耗量);
             LoadingForm.ShowLoadingForm();
 
-            List<object[]> list_90日內最大消耗量 = new List<object[]>();
             List<object[]> list_過帳明細 = Main_Form.Function_藥品過消耗帳_取得所有過帳明細以產出時間(DateTime.Now.AddDays(-90), DateTime.Now);
             List<object[]> list_過帳明細_buf = new List<object[]>();
             Dictionary<object, List<object[]>> keyValuePairs_過帳明細 = list_過帳明細.ConvertToDictionary((int)Main_Form.enum_藥品過消耗帳.藥品碼);
@@ -65,7 +107,10 @@ namespace 智能藥庫系統
 
                     for (int i = 0; i < list_過帳明細_buf.Count; i++)
                     {
-                        消耗量 += list_過帳明細_buf[i][(int)Main_Form.enum_藥品過消耗帳.異動量].StringToInt32();
+                        if (list_過帳明細_buf[i][(int)Main_Form.enum_藥品過消耗帳.異動量].StringToInt32() * -1 > 消耗量 * -1)
+                        {
+                            消耗量 = list_過帳明細_buf[i][(int)Main_Form.enum_藥品過消耗帳.異動量].StringToInt32();
+                        }
                     }
                     消耗量 = 消耗量 * -1;
                     value[(int)enum_90日內最大消耗量.消耗量] = 消耗量;
@@ -78,7 +123,6 @@ namespace 智能藥庫系統
 
             LoadingForm.CloseLoadingForm();
         }
-
         private class ICP_90日內最大消耗量 : IComparer<object[]>
         {
             public int Compare(object[] x, object[] y)

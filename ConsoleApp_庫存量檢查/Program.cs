@@ -51,7 +51,7 @@ namespace ConsoleApp_庫存量檢查
             SQLControl sQLControl_trading = new SQLControl(table);
             string str_log = "";
             int index = 0;
-            DateTime dateTime_b = DateTime.Now.AddDays(-1);
+            DateTime dateTime_b = DateTime.Now.AddDays(0);
             DateTime dateTime_st = dateTime_b.AddMonths(-12).AddDays(0).GetStartDate();
             DateTime dateTime_end = dateTime_b.AddMonths(0).AddDays(0).GetEndDate();
 
@@ -73,7 +73,16 @@ namespace ConsoleApp_庫存量檢查
                     msg = "";
                     if (list_trading.Count > 0)
                     {
-                        list_trading.Sort(new ICP_交易記錄查詢());
+                        try
+                        {
+                            list_trading.Sort(new ICP_交易記錄查詢());
+                        }
+                        catch(Exception ex)
+                        {
+                            Console.WriteLine($"[{藥碼}]Exception : {ex.Message}");
+                            return;
+                        }
+                      
                         list_trading_藥庫 = list_trading.GetRows((int)enum_交易記錄查詢資料.庫別, "藥庫");
                         list_trading_藥局 = (from temp in list_trading
                                            where temp[(int)enum_交易記錄查詢資料.庫別].ObjectToString().Contains("藥局")

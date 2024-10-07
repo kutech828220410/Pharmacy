@@ -332,7 +332,7 @@ namespace 智能藥庫系統
                 for (int i = 0; i < list_value.Count; i++)
                 {
                     list_value_buf = this.sqL_DataGridView_藥庫_撥補_自動撥補.SQL_GetRows((int)enum_drugStotreDistribution.GUID, list_value[i][(int)enum_drugStotreDistribution.GUID].ObjectToString(), false);
-                    if(list_value_buf.Count != 0)
+                    if (list_value_buf.Count != 0)
                     {
                         list_value[i][(int)enum_drugStotreDistribution.狀態] = list_value_buf[0][(int)enum_drugStotreDistribution.狀態];
                         this.sqL_DataGridView_藥庫_撥補_自動撥補.ReplaceExtra(list_value_buf[0], false);
@@ -340,8 +340,8 @@ namespace 智能藥庫系統
                 }
                 this.sqL_DataGridView_藥庫_撥補_自動撥補.RefreshGrid();
                 list_value_buf = (from value in list_value
-                              where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() != "已列印"
-                              select value).ToList();
+                                  where value[(int)enum_drugStotreDistribution.狀態].ObjectToString() != "已列印"
+                                  select value).ToList();
                 if (list_value_buf.Count != 0)
                 {
                     MyMessageBox.ShowDialog("資料都需為[已列印]狀態,重新檢視");
@@ -349,16 +349,19 @@ namespace 智能藥庫系統
                 }
 
 
-
+                string error_msg = "";
                 List<object[]> list_交易紀錄_Add = new List<object[]>();
                 List<DeviceBasic> deviceBasics_藥庫 = DeviceBasicClass_藥庫.SQL_GetAllDeviceBasic();
                 List<DeviceBasic> deviceBasics_藥庫_replace = new List<DeviceBasic>();
+                List<string> list_deviceBasics_藥庫_replace_GUID = new List<string>();
+                List<string> list_deviceBasics_藥庫_replace_GUID_buf = new List<string>();
                 List<DeviceBasic> deviceBasics_藥庫_buf = new List<DeviceBasic>();
 
                 List<DeviceBasic> deviceBasics_藥局 = DeviceBasicClass_藥局.SQL_GetAllDeviceBasic();
                 List<DeviceBasic> deviceBasics_藥局_replace = new List<DeviceBasic>();
+                List<string> list_deviceBasics_藥局_replace_GUID = new List<string>();
+                List<string> list_deviceBasics_藥局_replace_GUID_buf = new List<string>();
                 List<DeviceBasic> deviceBasics_藥局_buf = new List<DeviceBasic>();
-
                 if (list_value.Count == 0) return;
                 this.Function_從SQL取得儲位到本地資料();
                 List<object[]> list_儲位資料 = new List<object[]>();
@@ -380,6 +383,17 @@ namespace 智能藥庫系統
                 string 儲位資訊_批號 = "";
                 int 儲位資訊_異動量 = 0;
                 bool flag_部分撥發 = false;
+
+                for (int i = 0; i < deviceBasics_藥局.Count; i++)
+                {
+                    deviceBasics_藥局[i].flag_replace = false;
+                }
+                for (int i = 0; i < deviceBasics_藥庫.Count; i++)
+                {
+                    deviceBasics_藥庫[i].flag_replace = false;
+                }
+
+
                 Dialog_Prcessbar dialog_Prcessbar = new Dialog_Prcessbar(list_value.Count);
                 dialog_Prcessbar.State = "開始撥補...";
                 for (int i = 0; i < list_value.Count; i++)
@@ -395,6 +409,7 @@ namespace 智能藥庫系統
                     藥品碼 = list_value[i][(int)enum_drugStotreDistribution.藥碼].ObjectToString();
                     藥品名稱 = list_value[i][(int)enum_drugStotreDistribution.藥名].ObjectToString();
                     deviceBasics_藥局_buf = deviceBasics_藥局.SortByCode(藥品碼);
+                    deviceBasics_藥庫_buf = deviceBasics_藥庫.SortByCode(藥品碼);
                     if (deviceBasics_藥局_buf.Count == 0) continue;
 
                     來源庫存量 = this.Function_從本地資料取得庫存(藥品碼);
@@ -448,7 +463,7 @@ namespace 智能藥庫系統
                         list_儲位資料 = Function_取得異動儲位資訊從本地資料(藥品碼, 來源異動量);
 
                     }
-
+                    DeviceBasic deviceBasic_藥庫 = null;
                     for (int k = 0; k < list_儲位資料.Count; k++)
                     {
                         儲位資訊_GUID = list_儲位資料[k][(int)enum_儲位資訊.GUID].ObjectToString();
@@ -456,14 +471,14 @@ namespace 智能藥庫系統
                         儲位資訊_效期 = list_儲位資料[k][(int)enum_儲位資訊.效期].ObjectToString();
                         儲位資訊_批號 = list_儲位資料[k][(int)enum_儲位資訊.批號].ObjectToString();
                         儲位資訊_異動量 = list_儲位資料[k][(int)enum_儲位資訊.異動量].ObjectToString().StringToInt32();
-                        DeviceBasic deviceBasic_藥庫 = this.List_藥庫_DeviceBasic.SortByGUID(儲位資訊_GUID);
+                        if (deviceBasics_藥庫_buf.Count == 0) continue;
+                        deviceBasic_藥庫 = deviceBasics_藥庫_buf[0];
                         if (deviceBasic_藥庫 == null) continue;
 
                         if (deviceBasic_藥庫 != null)
                         {
-
                             deviceBasic_藥庫.效期庫存異動(儲位資訊_效期, 儲位資訊_異動量);
-                            deviceBasics_藥庫_replace.Add(deviceBasic_藥庫);
+                            deviceBasic_藥庫.flag_replace = true; ;
                             List_藥庫_DeviceBasic.Add_NewDeviceBasic(deviceBasic_藥庫);
                         }
                         if (deviceBasics_藥局_buf[0] != null)
@@ -477,7 +492,7 @@ namespace 智能藥庫系統
                                 stockClasses.Add(stockClass);
 
                                 deviceBasics_藥局_buf[0].效期庫存異動(儲位資訊_效期, 儲位資訊_批號, (儲位資訊_異動量 * -1).ToString());
-                                deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
+                                deviceBasics_藥局_buf[0].flag_replace = true;
                                 List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                                 輸出備註 += $"[效期]:{儲位資訊_效期},[批號]:{儲位資訊_批號},[數量]:{儲位資訊_異動量 * -1}";
                                 if (k != list_儲位資料.Count - 1) 輸出備註 += "\n";
@@ -488,14 +503,14 @@ namespace 智能藥庫系統
                         if (k != list_儲位資料.Count - 1) 來源備註 += "\n";
                     }
 
-                    if ((輸出異動量) <= 0)
+                    if ((輸出異動量) < 0)
                     {
                         List<string> list_藥局效期 = new List<string>();
                         List<string> list_藥局批號 = new List<string>();
                         List<string> list_藥局異動量 = new List<string>();
 
                         deviceBasics_藥局_buf[0].庫存異動(輸出異動量, out list_藥局效期, out list_藥局批號, out list_藥局異動量);
-                        deviceBasics_藥局_replace.Add(deviceBasics_藥局_buf[0]);
+                        deviceBasics_藥局_buf[0].flag_replace = true;
                         List_藥局_DeviceBasic.Add_NewDeviceBasic(deviceBasics_藥局_buf[0]);
                         for (int k = 0; k < list_藥局效期.Count; k++)
                         {
@@ -514,6 +529,22 @@ namespace 智能藥庫系統
                     {
 
                     }
+
+                    if (deviceBasics_藥庫_buf[0].Inventory.StringToInt32() != 來源結存量)
+                    {
+                        error_msg += $"[藥庫]({藥品碼}){藥品名稱}\n";
+                        deviceBasics_藥庫_buf[0].flag_replace = false;
+                        continue;
+                    }
+
+                    if (deviceBasics_藥局_buf[0].Inventory.StringToInt32() != 輸出結存量)
+                    {
+                        error_msg += $"[藥局]({藥品碼}){藥品名稱}\n";
+                        deviceBasics_藥局_buf[0].flag_replace = false;
+                        continue;
+                    }
+
+
                     list_value[i][(int)enum_drugStotreDistribution.目的庫庫存] = 輸出庫存量;
                     list_value[i][(int)enum_drugStotreDistribution.實撥量] = 輸出異動量;
                     list_value[i][(int)enum_drugStotreDistribution.目的庫結存] = 輸出結存量;
@@ -567,6 +598,24 @@ namespace 智能藥庫系統
 
                 dialog_Prcessbar.State = "上傳資料...";
                 dialog_Prcessbar.Close();
+
+                for (int i = 0; i < deviceBasics_藥局.Count; i++)
+                {
+                    if (deviceBasics_藥局[i].flag_replace)
+                    {
+                        deviceBasics_藥局_replace.Add(deviceBasics_藥局[i]);
+                        deviceBasics_藥局[i].flag_replace = false;
+                    }
+                }
+                for (int i = 0; i < deviceBasics_藥庫.Count; i++)
+                {
+                    if (deviceBasics_藥庫[i].flag_replace)
+                    {
+                        deviceBasics_藥庫_replace.Add(deviceBasics_藥庫[i]);
+                        deviceBasics_藥庫[i].flag_replace = false;
+                    }
+                }
+
                 this.DeviceBasicClass_藥庫.SQL_ReplaceDeviceBasic(deviceBasics_藥庫_replace);
                 this.DeviceBasicClass_藥局.SQL_ReplaceDeviceBasic(deviceBasics_藥局_replace);
 
@@ -575,6 +624,11 @@ namespace 智能藥庫系統
 
                 this.sqL_DataGridView_交易記錄查詢.SQL_AddRows(list_交易紀錄_Add, false);
                 this.sqL_DataGridView_藥庫_撥補_自動撥補.RefreshGrid(list_value);
+
+                if (error_msg.StringIsEmpty() == false)
+                {
+                    MyMessageBox.ShowDialog($"{error_msg}\n 藥品撥發異常,重新撥發");
+                }
             }));
         }
         private void PlC_RJ_Button_藥庫_撥補_搜尋_MouseDownEvent(MouseEventArgs mevent)

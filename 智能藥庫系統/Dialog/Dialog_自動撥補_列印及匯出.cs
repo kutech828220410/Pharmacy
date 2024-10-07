@@ -91,7 +91,10 @@ namespace 智能藥庫系統
             {
 
                 List<SheetClass> sheetClass = this.GetSheetClasses(false);
-
+                for (int i = 0; i < sheetClass.Count; i++)
+                {
+                    sheetClass[i].Name = $"{i}";
+                }
                 sheetClass.NPOI_SaveFile(this.saveFileDialog_SaveExcel.FileName);
                 MyMessageBox.ShowDialog("匯出完成!");
                 this.Close();

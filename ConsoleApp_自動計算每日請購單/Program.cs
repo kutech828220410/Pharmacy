@@ -120,7 +120,12 @@ namespace ConsoleApp_自動計算每日請購單
                 return 0;
             }
         }
+        public enum enum_自控品
+        {
+            藥碼,
+            藥名,
 
+        }
         public enum enum_每日訂單
         {
             GUID,
@@ -174,6 +179,18 @@ namespace ConsoleApp_自動計算每日請購單
                 table_每日訂單.Port = "3306";
                 SQLControl sQLControl_每日訂單 = new SQLControl(table_每日訂單);
 
+                DataTable dataTable_自控品 = MyOffice.ExcelClass.NPOI_LoadFile($"{currentDirectory}\\自控品.xlsx");
+                List<object[]> list_自控品 = new List<object[]>();
+                List<object[]> list_自控品_buf = new List<object[]>();
+                if (dataTable_自控品 != null)
+                {
+                    list_自控品 = dataTable_自控品.DataTableToRowList();
+                }
+                for(int i = 0; i < list_自控品.Count; i++)
+                {
+                    list_自控品[i][(int)enum_自控品.藥碼] = list_自控品[i][(int)enum_自控品.藥碼].StringToInt32().ToString("00000");
+                }
+                Logger.Log($"取得自控品項資料共<{list_自控品.Count}>筆");
 
                 List<object[]> list_每日訂單 = sQLControl_每日訂單.GetRowsByBetween(null, (int)enum_每日訂單.訂購時間, dateTime_start.ToDateTimeString(), dateTime_end.ToDateTimeString());
                 List<object[]> list_每日訂單_buf = new List<object[]>();
@@ -191,6 +208,17 @@ namespace ConsoleApp_自動計算每日請購單
                 {
                     string 藥碼 = medClasses_drugstore_med[i].藥品碼;
                     string 藥名 = medClasses_drugstore_med[i].藥品名稱;
+                    list_自控品_buf = (from temp in list_自控品
+                                    where temp[(int)enum_自控品.藥碼].ObjectToString() == 藥碼
+                                    select temp).ToList();
+
+                    if(list_自控品_buf.Count > 0)
+                    {
+                        Logger.Log($"({藥碼})藥名 為自控品項");
+                        continue;
+                    }
+
+                  
                     int 安全量 = medClasses_drugstore_med[i].安全庫存.StringToInt32();
                     int 基準量 = medClasses_drugstore_med[i].基準量.StringToInt32();
                     int 總庫存 = medClasses_drugstore_med[i].總庫存.StringToInt32();

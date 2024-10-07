@@ -85,6 +85,7 @@ namespace ConsoleApp_自動撥補單列印
                 Logger.Log($"取得資料表共<{sheetClass.Count}>張");
                 if (sheetClass.Count > 0)
                 {
+                    printerClass.PrinterName = "SHARP BP-30M28 PCL6";
                     printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
 
 

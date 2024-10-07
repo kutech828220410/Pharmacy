@@ -65,6 +65,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(70, DataGridViewContentAlignment.MiddleRight, enum_交易記錄查詢資料.結存量);
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.操作人);
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(180, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.操作時間);
+            this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleCenter, enum_交易記錄查詢資料.收支原因);
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnWidth(400, DataGridViewContentAlignment.MiddleLeft, enum_交易記錄查詢資料.備註);
 
             this.sqL_DataGridView_交易記錄查詢.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_交易記錄查詢資料.藥品碼);
@@ -275,9 +276,9 @@ namespace 智能藥庫系統
             {
                 list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.批次過帳.GetEnumName()));
             }   
-            if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_入庫作業.Bool)
+            if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_出庫作業.Bool)
             {
-                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.入庫作業.GetEnumName()));
+                list_list_value_buf.Add(list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.出庫作業.GetEnumName()));
             }
             if (plC_RJ_ChechBox_交易紀錄查詢_搜尋條件_自動撥補.Bool)
             {
