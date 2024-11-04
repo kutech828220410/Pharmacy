@@ -26,6 +26,7 @@ namespace 智能藥庫系統
         藥碼,
         藥名,
         單價,
+        消耗量,
         藥局庫存,
         藥局盤點量,
         藥庫庫存,
@@ -523,9 +524,31 @@ namespace 智能藥庫系統
                 }
             }
 
+            DateTime DateTime_st = DateTime.Now;
+
+        
 
             this.Invoke(new Action(delegate
             {
+                List<object[]> list_藥品消耗帳 = Main_Form.Function_藥品過消耗帳_取得所有過帳明細(DateTime_st.AddDays(-90), DateTime_st.AddDays(0));
+                List<object[]> list_藥品消耗帳_buf = new List<object[]>();
+                for (int i = 0; i < list_value.Count; i++)
+                {
+                    LoadingForm.Set_Description($"計算消耗量({i}/{list_value.Count})");
+                    string 藥碼 = list_value[i][(int)enum_盤點報表_盤點總表.藥碼].ObjectToString();
+                    list_藥品消耗帳_buf = list_藥品消耗帳.GetRows((int)Main_Form.enum_藥品過消耗帳.藥品碼, 藥碼);
+                    list_value[i][(int)enum_盤點報表_盤點總表.消耗量] = "0";
+                    if (list_藥品消耗帳_buf.Count > 0)
+                    {
+                        int temp = 0;
+                        for (int k = 0; k < list_藥品消耗帳_buf.Count; k++)
+                        {
+                            temp += list_藥品消耗帳_buf[k][(int)Main_Form.enum_藥品過消耗帳.異動量].StringToInt32();
+                        }
+                        list_value[i][(int)enum_盤點報表_盤點總表.消耗量] = (temp * -1).ToString();
+                    }
+                }
+
                 DataTable dataTable = list_value.ToDataTable(new enum_盤點報表_盤點總表());
                 if (this.saveFileDialog_SaveExcel.ShowDialog() == DialogResult.OK)
                 {

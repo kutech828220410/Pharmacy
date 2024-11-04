@@ -214,7 +214,7 @@ namespace 智能藥庫系統
                         list_contents_buf.Add(value);
                     }
 
-                    List<object[]> list_藥品消耗帳 = Main_Form.Function_藥品過消耗帳_取得所有過帳明細(DateTime_st, DateTime_end);
+                    List<object[]> list_藥品消耗帳 = Main_Form.Function_藥品過消耗帳_取得所有過帳明細(DateTime_st.AddDays(-90), DateTime_st.AddDays(0));
                     List<object[]> list_藥品消耗帳_buf = new List<object[]>();
                     for (int i = 0; i < list_contents_buf.Count; i++)
                     {
@@ -233,17 +233,21 @@ namespace 智能藥庫系統
                         }
                     }
                     LoadingForm.Set_Description($"取得庫存紀錄...");
-                    stockRecord _stockRecord  = stockRecord.POST_get_record_by_guid(Main_Form.API_Server,"ds01","藥庫", StockRecord.GUID);
-                    for (int i = 0; i < list_contents_buf.Count; i++)
+                    stockRecord _stockRecord  = stockRecord.POST_get_record_by_guid(Main_Form.API_Server, StockRecord.GUID, "ds01","藥庫");
+                    if (_stockRecord != null)
                     {
-                        string 藥碼 = list_contents_buf[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
-                        stockRecord_content stockRecord_Content = _stockRecord[藥碼];
-                        if(stockRecord_Content != null)
+                        for (int i = 0; i < list_contents_buf.Count; i++)
                         {
-                            list_contents_buf[i][(int)enum_盤點定盤_Excel.庫存量] = stockRecord_Content.庫存;
-                        }
+                            string 藥碼 = list_contents_buf[i][(int)enum_盤點定盤_Excel.藥碼].ObjectToString();
+                            stockRecord_content stockRecord_Content = _stockRecord[藥碼];
+                            if (stockRecord_Content != null)
+                            {
+                                list_contents_buf[i][(int)enum_盤點定盤_Excel.庫存量] = stockRecord_Content.庫存;
+                            }
 
+                        }
                     }
+              
 
 
                     LoadingForm.Set_Description($"儲存檔案...");

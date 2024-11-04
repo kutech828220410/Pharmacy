@@ -126,14 +126,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="249344">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="HIS_DB_Lib.dll" size="269312">
       <assemblyIdentity name="HIS_DB_Lib" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>QuPq26Xy5Ltx0C0Z+cHAUNfKhY8KY6zn1O+w3RQ7eR0=</dsig:DigestValue>
+        <dsig:DigestValue>nsME/775G8vF7m+yUjVgEQ+IcMOAD6tlaQMbyAUmjKg=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

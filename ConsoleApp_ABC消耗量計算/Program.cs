@@ -139,7 +139,7 @@ namespace ConsoleApp_ABC消耗量計算
               
                 if (keyValuePairs_消耗帳.ContainsKey(藥碼))
                 {
-                
+              
                     int 消耗量 = 0;
                     List<object[]> list_temp = keyValuePairs_消耗帳[藥碼];
                     for (int i = 0; i < list_temp.Count; i++)
@@ -190,7 +190,7 @@ namespace ConsoleApp_ABC消耗量計算
             {
                 object[] value = list_ABC[i];
                 string 藥碼 = value[(int)enum_ABC報表.藥碼].ObjectToString();
-     
+  
                 double 基準量 = 0;
                 double 安全量 = 0;
                 double 消耗量 = 0;
@@ -325,7 +325,7 @@ namespace ConsoleApp_ABC消耗量計算
             }
             dataTable = list_異常安全基準量.ToDataTable(new enum_異常安全基準量報表());
             filename = $@"{currentDirectory}\abc_excel\異常基準安全量表({dateTime_st.ToDateString("")}_{dateTime_end.ToDateString("")}).xlsx";
-            MyOffice.ExcelClass.NPOI_SaveFile(dataTable, filename, new int[] { (int)enum_異常安全基準量報表.基準量, (int)enum_異常安全基準量報表.安全量});
+            MyOffice.ExcelClass.NPOI_SaveFile(dataTable, filename, new int[] { (int)enum_異常安全基準量報表.基準量, (int)enum_異常安全基準量報表.安全量 });
 
             dataTable = list_更新安全基準量.ToDataTable(new enum_更新安全基準量報表());
             filename = $@"{currentDirectory}\abc_excel\更新基準安全量表({dateTime_st.ToDateString("")}_{dateTime_end.ToDateString("")}).xlsx";
