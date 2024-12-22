@@ -197,43 +197,57 @@ namespace 智能藥庫系統
         }
 
         #region Function
+        List<object[]> list_藥品資料_每日訂單 = new List<object[]>();
         public List<object[]> Function_藥庫_每日訂單_下訂單_取得藥品資料()
         {
-            MyTimer myTimer = new MyTimer();
-            myTimer.StartTickTime(50000);
+        
             List<Task> tasks = new List<Task>();
 
             if (flag_藥庫_每日訂單_資料Init == false)
             {
                 tasks.Add(Task.Run(new Action(delegate
                 {
+                    MyTimer myTimer = new MyTimer();
+                    myTimer.StartTickTime(50000);
                     API_OrderClass_每日訂單_緊急訂購數量_Buf = this.Function_藥庫_每日訂單_下訂單_取得緊急訂購數量();
+                    Console.WriteLine($"取得「今日訂購數量」資料,耗時{myTimer.ToString()}");
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
+                    MyTimer myTimer = new MyTimer();
+                    myTimer.StartTickTime(50000);
                     API_OrderClass_每日訂單_在途量_Buf = this.Function_藥庫_每日訂單_下訂單_取得在途量();
+                    Console.WriteLine($"取得「在途量」資料,耗時{myTimer.ToString()}");
                 })));
                 tasks.Add(Task.Run(new Action(delegate
                 {
-                    list_每日訂單_消耗帳 = Function_藥品過消耗帳_取得所有過帳明細以產出時間(DateTime.Now.AddDays(-90), DateTime.Now);
+                    //MyTimer myTimer = new MyTimer();
+                    //myTimer.StartTickTime(50000);
+                    //list_每日訂單_消耗帳 = Function_藥品過消耗帳_取得所有過帳明細以產出時間(DateTime.Now.AddDays(-90), DateTime.Now);
+                    //Console.WriteLine($"取得「每日訂單消耗帳」 ,耗時{myTimer.ToString()}");
+                })));
+                tasks.Add(Task.Run(new Action(delegate
+                {
+                    MyTimer myTimer = new MyTimer();
+                    myTimer.StartTickTime(50000);
+                    List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
+                    Console.WriteLine($"取得「藥品資料」,耗時{myTimer.ToString()}");
+                    list_藥品資料 = Function_藥庫_藥品資料_取得庫存(list_藥品資料, !flag_藥庫_每日訂單_資料Init);
+                    list_藥品資料_每日訂單 = list_藥品資料.CopyRows(new enum_medDrugstore(), new enum_藥庫_每日訂單_下訂單());
+                    Console.WriteLine($"轉換「藥品資料」成「每日訂單」資料,耗時{myTimer.ToString()}");
                 })));
                 Task.WhenAll(tasks).Wait();
 
 
-                flag_藥庫_每日訂單_資料Init = true;
+             
             }
-            List<object[]> list_藥品資料 = this.sqL_DataGridView_藥庫_藥品資料.SQL_GetAllRows(false);
-            Console.WriteLine($"取得藥品資料,耗時{myTimer.ToString()}");
-            List<object[]> list_藥品資料_每日訂單 = new List<object[]>();
-            list_藥品資料 = Function_藥庫_藥品資料_取得庫存(list_藥品資料);
-            list_藥品資料_每日訂單 = list_藥品資料.CopyRows(new enum_medDrugstore(), new enum_藥庫_每日訂單_下訂單());
-            Console.WriteLine($"轉換藥品資料成每日訂單藥品資料,耗時{myTimer.ToString()}");
-
+          
+            flag_藥庫_每日訂單_資料Init = true;
             tasks.Clear();
             tasks.Add(Task.Run(new Action(delegate
             {
-                //取得今日訂購數量
-                //API_OrderClass_每日訂單_今日訂購數量_Buf = this.Function_藥庫_每日訂單_下訂單_取得今日訂購數量();
+                MyTimer myTimer = new MyTimer();
+                myTimer.StartTickTime(50000);
                 for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
                 {
                     list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = "0";
@@ -246,28 +260,13 @@ namespace 智能藥庫系統
                         list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.今日訂購數量] = resultClasses[0].value;
                     }
                 }
-                Console.WriteLine($"取得今日訂購數量資料,耗時{myTimer.ToString()}");
+                Console.WriteLine($"整理「今日訂購數量」資料,耗時{myTimer.ToString()}");
             })));
-            tasks.Add(Task.Run(new Action(delegate
-            {
-                //取得緊急訂購數量
-                //for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
-                //{
-                //    list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = "0";
-                //    string Code = list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.藥品碼].ObjectToString();
-                //    List<API_OrderClass.resultClass> resultClasses = (from value in API_OrderClass_每日訂單_緊急訂購數量_Buf.Result
-                //                                                      where value.code == Code
-                //                                                      select value).ToList();
-                //    if (resultClasses.Count > 0)
-                //    {
-                //        list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.緊急訂購數量] = resultClasses[0].value;
-                //    }
-                //}
-                Console.WriteLine($"取得緊急訂購數量資料,耗時{myTimer.ToString()}");
-            })));
-            tasks.Add(Task.Run(new Action(delegate
-            {
 
+            tasks.Add(Task.Run(new Action(delegate
+            {
+                MyTimer myTimer = new MyTimer();
+                myTimer.StartTickTime(50000);
                 //取得在途量
                 for (int i = 0; i < list_藥品資料_每日訂單.Count; i++)
                 {
@@ -281,7 +280,7 @@ namespace 智能藥庫系統
                         list_藥品資料_每日訂單[i][(int)enum_藥庫_每日訂單_下訂單.在途量] = resultClasses[0].value;
                     }
                 }
-                Console.WriteLine($"取得在途量資料,耗時{myTimer.ToString()}");
+                Console.WriteLine($"整理「在途量」資料,耗時{myTimer.ToString()}");
             })));
             tasks.Add(Task.Run(new Action(delegate
             {
@@ -393,8 +392,8 @@ namespace 智能藥庫系統
                 dateTime_end = dateTime_end.AddDays(1);
             }
 
-          
 
+            Console.WriteLine($"檢查[每日訂單],耗時{myTimer.ToString()}");
             list_value = this.sqL_DataGridView_每日訂單.SQL_GetRowsByBetween((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end, false);
             //list_value = list_value.GetRowsInDate((int)enum_每日訂單.訂購時間, dateTime_start, dateTime_end);
             Console.WriteLine($"取得[每日訂單],耗時{myTimer.ToString()}");
@@ -531,6 +530,7 @@ namespace 智能藥庫系統
             MyTimer myTimer = new MyTimer();
             myTimer.StartTickTime(50000);
             string result = Basic.Net.WEBApiPostJson("https://wac01p.vghks.gov.tw:4430/ITWeb/jaxrs/ItCommon/pinmed_itm", "{\"hid\"   : [\"2A0\"]}");
+            Console.WriteLine($"「在途量」取得完成({myTimer.ToString()})");
             if(result.StringIsEmpty())
             {
                 MyMessageBox.ShowDialog("在途量API呼叫失敗!");

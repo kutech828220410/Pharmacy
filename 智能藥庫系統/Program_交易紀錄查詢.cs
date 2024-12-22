@@ -32,12 +32,30 @@ namespace 智能藥庫系統
             調整量,
             
         }
+
+        public enum enum_入出庫表單匯出
+        {
+            動作,
+            藥碼,
+            藥名,
+            消耗量,
+            訂購單價,
+            消耗金額,
+            操作人,
+            操作時間,
+            收支原因,
+            備註,
+
+        }
         public enum enum_藥局盤點量匯入
         {
             藥碼,
             盤點量,
         }
-
+        public enum ContextMenuStrip_交易紀錄匯出
+        {
+            入出庫表單,
+        }
 
         private void sub_Program_交易紀錄查詢_Init()
         {
@@ -77,12 +95,12 @@ namespace 智能藥庫系統
             this.plC_RJ_Button_交易紀錄查詢_全部顯示.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_全部顯示_MouseDownEvent;
             this.plC_RJ_Button_交易紀錄查詢_刪除選取資料.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_刪除選取資料_MouseDownEvent;
             this.plC_RJ_Button_交易紀錄查詢_測試.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_測試_MouseDownEvent;
-
+            this.plC_RJ_Button_交易紀錄查詢_匯出資料.MouseDownEvent += PlC_RJ_Button_交易紀錄查詢_匯出資料_MouseDownEvent;
 
             this.plC_UI_Init.Add_Method(this.sub_Program_交易紀錄查詢);
         }
 
-     
+  
 
         private bool flag_交易紀錄查詢_頁面更新 = false;
         private bool flag_交易紀錄查詢_頁面更新_init = false;
@@ -216,6 +234,69 @@ namespace 智能藥庫系統
                     this.sqL_DataGridView_交易記錄查詢.dataGridView.Rows[i].DefaultCellStyle.BackColor = Color.Pink;
                     this.sqL_DataGridView_交易記錄查詢.dataGridView.Rows[i].DefaultCellStyle.ForeColor = Color.Black;
                 }
+            }
+        }
+        private void PlC_RJ_Button_交易紀錄查詢_匯出資料_MouseDownEvent(MouseEventArgs mevent)
+        {
+            Dialog_ContextMenuStrip dialog_ContextMenuStrip = new Dialog_ContextMenuStrip(new ContextMenuStrip_交易紀錄匯出().GetEnumNames());
+            dialog_ContextMenuStrip.TitleText = "交易紀錄匯出";
+            if (dialog_ContextMenuStrip.ShowDialog() != DialogResult.Yes) return;
+
+            if (dialog_ContextMenuStrip.Value == ContextMenuStrip_交易紀錄匯出.入出庫表單.GetEnumName())
+            {
+                this.Invoke(new Action(delegate 
+                {
+                    List<object[]> list_value = this.sqL_DataGridView_交易記錄查詢.GetAllRows();
+                    list_value = list_value.GetRows((int)enum_交易記錄查詢資料.動作, enum_交易記錄查詢動作.出庫作業.GetEnumName());
+
+                    if (list_value.Count == 0)
+                    {
+                        MyMessageBox.ShowDialog("無資料可匯出,請重新搜尋");
+                        return;
+                    }
+                    if (this.saveFileDialog_SaveExcel.ShowDialog() != DialogResult.OK) return;
+
+                    LoadingForm.ShowLoadingForm();
+                    List<class_MedPrice> class_MedPrices = Function_盤點報表_取得單價();
+                    List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+                    List<object[]> list_export = new List<object[]>();
+                    for (int i = 0; i < list_value.Count; i++)
+                    {
+                        string 藥碼 = list_value[i][(int)enum_交易記錄查詢資料.藥品碼].ObjectToString();
+                        class_MedPrices_buf = (from temp in class_MedPrices
+                                               where temp.藥品碼 == 藥碼
+                                               select temp).ToList();
+
+                        double 消耗量 = (list_value[i][(int)enum_交易記錄查詢資料.交易量].StringToDouble() * -1);
+                        double 訂購單價 = class_MedPrices_buf[0].成本價.StringToDouble();
+
+
+                        object[] value = new object[new enum_入出庫表單匯出().GetLength()];
+                        value[(int)enum_入出庫表單匯出.動作] = list_value[i][(int)enum_交易記錄查詢資料.動作];
+                        value[(int)enum_入出庫表單匯出.藥碼] = list_value[i][(int)enum_交易記錄查詢資料.藥品碼];
+                        value[(int)enum_入出庫表單匯出.藥名] = list_value[i][(int)enum_交易記錄查詢資料.藥品名稱];
+                        value[(int)enum_入出庫表單匯出.消耗量] = 消耗量;
+
+                        if (class_MedPrices_buf.Count > 0)
+                        {
+                            value[(int)enum_入出庫表單匯出.訂購單價] = 訂購單價;
+                            value[(int)enum_入出庫表單匯出.消耗金額] = 訂購單價 * 消耗量;
+                        }
+
+                        value[(int)enum_入出庫表單匯出.操作人] = list_value[i][(int)enum_交易記錄查詢資料.操作人];
+                        value[(int)enum_入出庫表單匯出.操作時間] = list_value[i][(int)enum_交易記錄查詢資料.操作時間];
+                        value[(int)enum_入出庫表單匯出.收支原因] = list_value[i][(int)enum_交易記錄查詢資料.收支原因];
+                        value[(int)enum_入出庫表單匯出.備註] = list_value[i][(int)enum_交易記錄查詢資料.備註];
+
+                        list_export.Add(value);
+                    }
+                    LoadingForm.CloseLoadingForm();
+
+                    MyOffice.ExcelClass.NPOI_SaveFile(list_export.ToDataTable(new enum_入出庫表單匯出()), this.saveFileDialog_SaveExcel.FileName , (int)enum_入出庫表單匯出.消耗量, (int)enum_入出庫表單匯出.訂購單價, (int)enum_入出庫表單匯出.消耗金額);
+                    MyMessageBox.ShowDialog("匯出完成");
+                }));
+              
+                return;
             }
         }
         private void PlC_RJ_Button_交易紀錄查詢_全部顯示_MouseDownEvent(MouseEventArgs mevent)

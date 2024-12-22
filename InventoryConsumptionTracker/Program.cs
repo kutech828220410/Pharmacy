@@ -68,10 +68,10 @@ namespace InventoryConsumptionTracker
 
         static void Main(string[] args)
         {
-            int month = 10;
+            int month = 9;
             DateTime dateTime = new DateTime(DateTime.Now.Year, month, 1);
             DateTime dateTime_st = dateTime.GetStartDate();
-            DateTime dateTime_end = dateTime.AddMonths(1).AddDays(-1).GetEndDate();
+            DateTime dateTime_end = dateTime.AddMonths(3).AddDays(-1).GetEndDate();
 
             string e_msg = "\n";
             MyTimerBasic myTimerBasic = new MyTimerBasic();
