@@ -311,6 +311,7 @@ namespace 智能藥庫系統
         }
         #endregion
         #region Event
+        private bool flag_藥局_開檔狀態顯示 = false;
         private void SqL_DataGridView_藥局_藥品資料_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -424,7 +425,9 @@ namespace 智能藥庫系統
 
             });
             if (checkBox_藥局_藥品資料_近8個月效期.Checked) RowsList = RowsList_buf;
-            RowsList = RowsList.GetRows((int)enum_medPharmacy.開檔狀態, "開檔中");
+            if (flag_藥局_開檔狀態顯示 == false) RowsList = RowsList.GetRows((int)enum_medPharmacy.開檔狀態, "開檔中");
+            flag_藥局_開檔狀態顯示 = false;
+
             RowsList.Sort(new ICP_藥局_藥品資料());
         }
 
@@ -440,6 +443,7 @@ namespace 智能藥庫系統
                 {
                     cmb_text = this.comboBox_藥局_藥品資料_搜尋條件.Text;
                 }));
+                if (cmb_text == "藥碼" || cmb_text == "藥名" || cmb_text == "中文名" || cmb_text == "商品名") flag_藥局_開檔狀態顯示 = true;
                 List<object[]> list_value = this.sqL_DataGridView_藥局_藥品資料.SQL_GetAllRows(false);
                 list_value = this.sqL_DataGridView_藥局_藥品資料.RowsChangeFunction(list_value);
                 List<object[]> list_value_buf = new List<object[]>();

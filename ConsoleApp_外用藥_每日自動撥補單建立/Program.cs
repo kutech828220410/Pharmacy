@@ -36,6 +36,8 @@ namespace ConsoleApp_外用藥_每日自動撥補單建立
                 List<medClass> medClasses_藥局 = medClass.get_ds_pharma_med(API_Server, "ds01");
                 List<medClass> medClasses_藥局_buf = new List<medClass>();
 
+
+
                 medClasses_藥局 = (from temp in medClasses_藥局
                                  where temp.類別 == "外用藥"
                                  select temp).ToList();
@@ -60,7 +62,14 @@ namespace ConsoleApp_外用藥_每日自動撥補單建立
                     medClasses_藥庫_buf = (from temp0 in medClasses_藥庫
                                          where temp0.藥品碼 == 藥碼
                                          select temp0).ToList();
-
+                    if (medClasses_藥庫_buf.Count > 0)
+                    {
+                        if (medClasses_藥庫_buf[0].開檔狀態 != "開檔中") continue;
+                    }
+                    else
+                    {
+                        continue;
+                    }
                     int 藥局庫存 = medClasses_藥局[i].藥局庫存.StringToInt32();
                     int 藥庫庫存 = medClasses_藥局[i].藥庫庫存.StringToInt32();
                     int 基準量 = medClasses_藥局[i].基準量.StringToInt32();

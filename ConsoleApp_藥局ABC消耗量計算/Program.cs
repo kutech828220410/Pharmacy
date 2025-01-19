@@ -195,8 +195,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 {
 
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 10;
-                    安全量 = 基準量 / 2;
+                    基準量 = (消耗量 / 90) * 8;
+                    安全量 = (消耗量 / 90) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;
@@ -218,8 +218,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else if (i > A_num && i <= B_num)
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 10;
-                    安全量 = 基準量 / 2;
+                    基準量 = (消耗量 / 90) * 8;
+                    安全量 = (消耗量 / 90) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;
@@ -240,8 +240,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 10;
-                    安全量 = 基準量 / 2;
+                    基準量 = (消耗量 / 90) * 8;
+                    安全量 = (消耗量 / 90) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;
@@ -352,7 +352,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
             filename = $@"{currentDirectory}\abc_excel\ABC_tabel({dateTime_st.ToDateString("")}_{dateTime_end.ToDateString("")}).xlsx";
             MyOffice.ExcelClass.NPOI_SaveFile(dataTable, filename, new int[] { (int)enum_ABC報表.基準量, (int)enum_ABC報表.安全量, (int)enum_ABC報表.成本價, (int)enum_ABC報表.消耗量, (int)enum_ABC報表.總金額 });
 
-            Logger.Log($"總共更新藥庫安全量基準量共<{medClasses_replace.Count}>筆");
+            Logger.Log($"總共更新藥局安全量基準量共<{medClasses_replace.Count}>筆");
             medClass.update_ds_pharma_by_guid("http://127.0.0.1:4433", "ds01", medClasses_replace);
 
             Logger.LogAddLine();

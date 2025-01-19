@@ -271,6 +271,9 @@ namespace ConsoleApp_ABC消耗量計算
             List<medClass> medClasses = medClass.get_ds_drugstore_med("http://127.0.0.1:4433", "ds01");
             List<medClass> medClasses_buf = new List<medClass>();
             List<medClass> medClasses_replace = new List<medClass>();
+            medClasses = (from temp in medClasses
+                          where temp.開檔狀態 == "開檔中"
+                          select temp).ToList();
             Dictionary<string, List<medClass>> keyValuePairs_drugstore_med = medClasses.CoverToDictionaryByCode();
 
             List<object[]> list_異常安全基準量 = new List<object[]>();

@@ -95,6 +95,8 @@ namespace ConsoleApp_癌症藥_每日自動撥補單建立
                 List<medClass> medClasses_藥局_buf = new List<medClass>();
                 List<medClass> medClasses_藥局_temp = new List<medClass>();
 
+
+
                 List<medClass> medClasses_cloud = medClass.get_med_cloud(API_Server);
                 medClasses_cloud = (from temp in medClasses_cloud
                                     where Function_medClass_containCode(temp ,UDCTCCTL_Codes)
@@ -131,7 +133,14 @@ namespace ConsoleApp_癌症藥_每日自動撥補單建立
                     medClasses_藥庫_buf = (from temp0 in medClasses_藥庫
                                          where temp0.藥品碼 == 藥碼
                                          select temp0).ToList();
-
+                    if (medClasses_藥庫_buf.Count > 0)
+                    {
+                        if (medClasses_藥庫_buf[0].開檔狀態 != "開檔中") continue;
+                    }
+                    else
+                    {
+                        continue;
+                    }
 
                     int 藥局庫存 = medClasses_藥局[i].藥局庫存.StringToInt32();
                     int 藥庫庫存 = medClasses_藥局[i].藥庫庫存.StringToInt32();

@@ -68,6 +68,9 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(80, DataGridViewContentAlignment.MiddleCenter, enum_drugStotreDistribution.狀態);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnWidth(230, DataGridViewContentAlignment.MiddleLeft, enum_drugStotreDistribution.備註);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnSortMode(DataGridViewColumnSortMode.Automatic, enum_drugStotreDistribution.藥碼);
+
+            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥庫庫存", enum_drugStotreDistribution.來源庫庫存);
+            this.sqL_DataGridView_藥庫_撥補_自動撥補.Set_ColumnText("藥局庫存", enum_drugStotreDistribution.目的庫庫存);
             this.sqL_DataGridView_藥庫_撥補_自動撥補.DataGridRowsChangeRefEvent += SqL_DataGridView_藥庫_撥補_自動撥補_DataGridRowsChangeRefEvent;
             this.sqL_DataGridView_藥庫_撥補_自動撥補.RowDoubleClickEvent += SqL_DataGridView_藥庫_撥補_自動撥補_RowDoubleClickEvent;
 
