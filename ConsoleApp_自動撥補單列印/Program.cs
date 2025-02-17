@@ -87,7 +87,8 @@ namespace ConsoleApp_自動撥補單列印
                 {
                     printerClass.PrinterName = "藥庫";
                     printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
-
+                    printerClass.PrinterName = "撥補單";
+                    printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
 
                 }
                 for (int i = 0; i < list_自動撥補.Count; i++)

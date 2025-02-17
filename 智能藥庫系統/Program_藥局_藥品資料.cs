@@ -490,19 +490,24 @@ namespace 智能藥庫系統
                 
                 Dictionary<object, List<object[]>> keyValuePairs_開檔狀態 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.開檔狀態);
                 List<object[]> list_開檔狀態 = new List<object[]>();
-                if (checkBox_藥局_藥品資料_開檔中.Checked)
-                {
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
+                list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary("未開檔"));
+                //if (checkBox_藥庫_藥品資料_開檔中.Checked)
+                //{
 
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
-                 
-                }
-                if (checkBox_藥局_藥品資料_未開檔.Checked)
-                {
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
-                    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
-                }
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.開檔中.GetEnumName()));
+                //    //list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(""));
+
+                //}
+                //if (checkBox_藥庫_藥品資料_未開檔.Checked)
+                //{
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.停用中.GetEnumName()));
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.已取消.GetEnumName()));
+                //    list_開檔狀態.LockAdd(keyValuePairs_開檔狀態.SortDictionary(enum_開檔狀態.關檔中.GetEnumName()));
+                //}
                 list_value_buf = list_開檔狀態;
 
                 Dictionary<object, List<object[]>> keyValuePairs_表單分類 = list_value_buf.ConvertToDictionary((int)enum_medPharmacy.類別);

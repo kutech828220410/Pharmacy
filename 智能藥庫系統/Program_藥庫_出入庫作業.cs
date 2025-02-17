@@ -48,7 +48,8 @@ namespace 智能藥庫系統
             原因,
             [Description("採購金額繳回,VARCHAR,50,NONE")]
             採購金額繳回,
-                      
+            [Description("備註,VARCHAR,50,NONE")]
+            備註,
         }
 
         private List<medClass> medClasses_cloud_出入庫作業 = new List<medClass>();
@@ -74,6 +75,7 @@ namespace 智能藥庫系統
             this.sqL_DataGridView_藥庫_出入庫作業.Set_ColumnWidth(120, DataGridViewContentAlignment.MiddleLeft, enum_出入庫作業.效期);
             this.sqL_DataGridView_藥庫_出入庫作業.Set_ColumnWidth(120, DataGridViewContentAlignment.MiddleLeft, enum_出入庫作業.批號);
             this.sqL_DataGridView_藥庫_出入庫作業.Set_ColumnWidth(200, DataGridViewContentAlignment.MiddleLeft, enum_出入庫作業.原因);
+            this.sqL_DataGridView_藥庫_出入庫作業.Set_ColumnWidth(200, DataGridViewContentAlignment.MiddleLeft, enum_出入庫作業.備註);
             //this.sqL_DataGridView_藥庫_出入庫作業.Set_ColumnWidth(120, DataGridViewContentAlignment.MiddleCenter, enum_出入庫作業.採購金額繳回);
             this.sqL_DataGridView_藥庫_出入庫作業.MouseDown += SqL_DataGridView_藥庫_出入庫作業_MouseDown;
             this.plC_RJ_Button_藥庫_出入庫作業_新增資料.MouseDownEvent += PlC_RJ_Button_藥庫_出入庫作業_新增資料_MouseDownEvent;
@@ -181,7 +183,7 @@ namespace 智能藥庫系統
                 string 原因 = ComboBox_藥庫_出入庫作業_出入庫原因.GetComboBoxText();
                 string 採購金額是否繳回 = "False";
                 string 數量 = textBox_藥庫_出入庫作業_數量.Text;
-
+                string 備註 = textBox_藥庫_出入庫作業_備註.Text;
                 int temp0 = 數量.StringToInt32();
                 List<object[]> list_value = sqL_DataGridView_藥庫_出入庫作業.GetAllRows();
                 list_value = (from temp1 in list_value
@@ -209,7 +211,7 @@ namespace 智能藥庫系統
                 value[(int)enum_出入庫作業.藥庫庫存] = 藥庫庫存;
                 value[(int)enum_出入庫作業.數量] = 數量;
                 value[(int)enum_出入庫作業.動作] = 動作;
-
+                value[(int)enum_出入庫作業.備註] = 備註;
                 sqL_DataGridView_藥庫_出入庫作業.AddRow(value, true);
 
 
@@ -448,8 +450,11 @@ namespace 智能藥庫系統
                 出庫_批號 = list_value[i][(int)enum_出入庫作業.批號].ObjectToString();
                 收支原因 = list_value[i][(int)enum_出入庫作業.原因].ObjectToString();
                 list_儲位資料 = Function_取得異動儲位資訊從本地資料(藥品碼, 來源異動量);
-                來源備註 = "";
-
+                來源備註 = list_value[i][(int)enum_出入庫作業.備註].ObjectToString();
+                if (來源備註.StringIsEmpty() == false)
+                {
+                    來源備註 = $"「{來源備註}」";
+                }
                 DeviceBasic deviceBasic_藥庫 = null;
                 for (int k = 0; k < list_儲位資料.Count; k++)
                 {

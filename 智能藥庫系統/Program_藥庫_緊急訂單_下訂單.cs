@@ -190,7 +190,7 @@ namespace 智能藥庫系統
                 this.myEmail_Send_UI.Password = this.textBox_信箱設定_伺服器參數_Password.Text;
                 this.myEmail_Send_UI.Host = this.textBox_信箱設定_伺服器參數_Host.Text;
                 this.myEmail_Send_UI.Port = this.textBox_信箱設定_伺服器參數_Port.Text;
-
+                this.myEmail_Send_UI.EnableSsl = false;
 
                 string 包裝單位;
                 MyEmail.MyEmail_Send_UI.Table_Rtf Table_Rtf = new MyEmail.MyEmail_Send_UI.Table_Rtf(4, list_訂單內容.Count + 1);

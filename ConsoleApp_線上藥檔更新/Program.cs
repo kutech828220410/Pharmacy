@@ -101,7 +101,6 @@ namespace ConsoleApp_線上藥檔更新
 
                         string UDABSCTL = reader["UDABSCTL"].ToString().Trim();
                         string AROUTFLA = reader["AROUTFLA"].ToString().Trim();
-                        
 
                         if (UDABSCTL == "Y" && AROUTFLA == "Y")
                         {
@@ -111,6 +110,7 @@ namespace ConsoleApp_線上藥檔更新
                         {
                             medClass.開檔狀態 = "開檔中";
                         }
+
                         string UDSTOCK = reader["UDSTOCK"].ToString().Trim();
                         if (UDSTOCK == "1" || UDSTOCK == "2" || UDSTOCK == "3" || UDSTOCK == "4")
                         {

@@ -271,9 +271,13 @@ namespace ConsoleApp_ABC消耗量計算
             List<medClass> medClasses = medClass.get_ds_drugstore_med("http://127.0.0.1:4433", "ds01");
             List<medClass> medClasses_buf = new List<medClass>();
             List<medClass> medClasses_replace = new List<medClass>();
+            List<medClass> medClasses_非開檔中藥品 = (from temp in medClasses
+                                                where temp.開檔狀態 != "開檔中"
+                                                select temp).ToList();
             medClasses = (from temp in medClasses
                           where temp.開檔狀態 == "開檔中"
                           select temp).ToList();
+
             Dictionary<string, List<medClass>> keyValuePairs_drugstore_med = medClasses.CoverToDictionaryByCode();
 
             List<object[]> list_異常安全基準量 = new List<object[]>();
@@ -325,6 +329,13 @@ namespace ConsoleApp_ABC消耗量計算
 
                     Logger.Log($"({list_更新安全基準量.Count})".StringLength(8) + $"更新安全基準量 ({藥碼}){藥名}".StringLength(60) + $" 安全量 : {安全量} ,基準量 : {基準量}");
                 }
+            }
+            for (int i = 0; i < medClasses_非開檔中藥品.Count; i++)
+            {
+                medClasses_非開檔中藥品[i].安全庫存 = "0";
+                medClasses_非開檔中藥品[i].基準量 = "0";
+                medClasses_replace.Add(medClasses_非開檔中藥品[i]);
+
             }
             dataTable = list_異常安全基準量.ToDataTable(new enum_異常安全基準量報表());
             filename = $@"{currentDirectory}\abc_excel\異常基準安全量表({dateTime_st.ToDateString("")}_{dateTime_end.ToDateString("")}).xlsx";

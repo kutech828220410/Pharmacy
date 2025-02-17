@@ -983,6 +983,8 @@
             this.sqL_DataGridView_藥庫_出入庫作業 = new SQLUI.SQL_DataGridView();
             this.plC_RJ_Button_藥庫_出入庫作業_確認送出 = new MyUI.PLC_RJ_Button();
             this.rJ_Pannel8 = new MyUI.RJ_Pannel();
+            this.textBox_藥庫_出入庫作業_備註 = new System.Windows.Forms.TextBox();
+            this.label62 = new System.Windows.Forms.Label();
             this.plC_RJ_Button_藥庫_出入庫作業_刪除資料 = new MyUI.PLC_RJ_Button();
             this.button_藥庫_出入庫作業_選擇效期 = new System.Windows.Forms.Button();
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期 = new MyUI.RJ_DatePicker();
@@ -27626,6 +27628,8 @@
             this.rJ_Pannel8.BorderColor = System.Drawing.Color.Black;
             this.rJ_Pannel8.BorderRadius = 10;
             this.rJ_Pannel8.BorderSize = 2;
+            this.rJ_Pannel8.Controls.Add(this.textBox_藥庫_出入庫作業_備註);
+            this.rJ_Pannel8.Controls.Add(this.label62);
             this.rJ_Pannel8.Controls.Add(this.plC_RJ_Button_藥庫_出入庫作業_刪除資料);
             this.rJ_Pannel8.Controls.Add(this.button_藥庫_出入庫作業_選擇效期);
             this.rJ_Pannel8.Controls.Add(this.rJ_DatePicker_藥庫_出入庫作業_選擇效期);
@@ -27650,6 +27654,24 @@
             this.rJ_Pannel8.ShadowSize = 3;
             this.rJ_Pannel8.Size = new System.Drawing.Size(1629, 175);
             this.rJ_Pannel8.TabIndex = 159;
+            // 
+            // textBox_藥庫_出入庫作業_備註
+            // 
+            this.textBox_藥庫_出入庫作業_備註.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.textBox_藥庫_出入庫作業_備註.Location = new System.Drawing.Point(311, 117);
+            this.textBox_藥庫_出入庫作業_備註.Name = "textBox_藥庫_出入庫作業_備註";
+            this.textBox_藥庫_出入庫作業_備註.Size = new System.Drawing.Size(779, 35);
+            this.textBox_藥庫_出入庫作業_備註.TabIndex = 176;
+            // 
+            // label62
+            // 
+            this.label62.AutoSize = true;
+            this.label62.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label62.Location = new System.Drawing.Point(241, 120);
+            this.label62.Name = "label62";
+            this.label62.Size = new System.Drawing.Size(64, 26);
+            this.label62.TabIndex = 175;
+            this.label62.Text = "備註 :";
             // 
             // plC_RJ_Button_藥庫_出入庫作業_刪除資料
             // 
@@ -27707,7 +27729,7 @@
             // button_藥庫_出入庫作業_選擇效期
             // 
             this.button_藥庫_出入庫作業_選擇效期.Font = new System.Drawing.Font("新細明體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button_藥庫_出入庫作業_選擇效期.Location = new System.Drawing.Point(481, 114);
+            this.button_藥庫_出入庫作業_選擇效期.Location = new System.Drawing.Point(501, 66);
             this.button_藥庫_出入庫作業_選擇效期.Name = "button_藥庫_出入庫作業_選擇效期";
             this.button_藥庫_出入庫作業_選擇效期.Size = new System.Drawing.Size(41, 35);
             this.button_藥庫_出入庫作業_選擇效期.TabIndex = 173;
@@ -27720,7 +27742,7 @@
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.BorderSize = 0;
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.CalendarFont = new System.Drawing.Font("新細明體", 15.75F);
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.Font = new System.Drawing.Font("新細明體", 15.75F);
-            this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.Location = new System.Drawing.Point(226, 114);
+            this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.Location = new System.Drawing.Point(246, 66);
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.MinimumSize = new System.Drawing.Size(250, 35);
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.Name = "rJ_DatePicker_藥庫_出入庫作業_選擇效期";
             this.rJ_DatePicker_藥庫_出入庫作業_選擇效期.PickerFont = new System.Drawing.Font("新細明體", 15.75F);
@@ -27761,7 +27783,7 @@
             // textBox_藥庫_出入庫作業_數量
             // 
             this.textBox_藥庫_出入庫作業_數量.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBox_藥庫_出入庫作業_數量.Location = new System.Drawing.Point(1048, 63);
+            this.textBox_藥庫_出入庫作業_數量.Location = new System.Drawing.Point(1186, 68);
             this.textBox_藥庫_出入庫作業_數量.Name = "textBox_藥庫_出入庫作業_數量";
             this.textBox_藥庫_出入庫作業_數量.Size = new System.Drawing.Size(100, 35);
             this.textBox_藥庫_出入庫作業_數量.TabIndex = 168;
@@ -27771,7 +27793,7 @@
             // 
             this.label58.AutoSize = true;
             this.label58.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label58.Location = new System.Drawing.Point(978, 66);
+            this.label58.Location = new System.Drawing.Point(1116, 71);
             this.label58.Name = "label58";
             this.label58.Size = new System.Drawing.Size(64, 26);
             this.label58.TabIndex = 167;
@@ -27835,9 +27857,9 @@
             this.panel1.Controls.Add(this.rJ_RatioButton_藥庫_出入庫作業_入庫);
             this.panel1.Controls.Add(this.rJ_RatioButton_藥庫_出入庫作業_出庫);
             this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(15, 20);
+            this.panel1.Location = new System.Drawing.Point(15, 11);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 70);
+            this.panel1.Size = new System.Drawing.Size(220, 44);
             this.panel1.TabIndex = 156;
             // 
             // rJ_RatioButton_藥庫_出入庫作業_入庫
@@ -27845,7 +27867,7 @@
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.AutoSize = true;
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.CheckColor = System.Drawing.Color.MediumSlateBlue;
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_RatioButton_藥庫_出入庫作業_入庫.Location = new System.Drawing.Point(115, 25);
+            this.rJ_RatioButton_藥庫_出入庫作業_入庫.Location = new System.Drawing.Point(110, 7);
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.MinimumSize = new System.Drawing.Size(0, 21);
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.Name = "rJ_RatioButton_藥庫_出入庫作業_入庫";
             this.rJ_RatioButton_藥庫_出入庫作業_入庫.Size = new System.Drawing.Size(90, 28);
@@ -27861,7 +27883,7 @@
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.CheckColor = System.Drawing.Color.MediumSlateBlue;
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.Checked = true;
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.Font = new System.Drawing.Font("新細明體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.rJ_RatioButton_藥庫_出入庫作業_出庫.Location = new System.Drawing.Point(19, 25);
+            this.rJ_RatioButton_藥庫_出入庫作業_出庫.Location = new System.Drawing.Point(14, 7);
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.MinimumSize = new System.Drawing.Size(0, 21);
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.Name = "rJ_RatioButton_藥庫_出入庫作業_出庫";
             this.rJ_RatioButton_藥庫_出入庫作業_出庫.Size = new System.Drawing.Size(90, 28);
@@ -27875,7 +27897,7 @@
             // 
             this.ComboBox_藥庫_出入庫作業_批號.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ComboBox_藥庫_出入庫作業_批號.FormattingEnabled = true;
-            this.ComboBox_藥庫_出入庫作業_批號.Location = new System.Drawing.Point(551, 115);
+            this.ComboBox_藥庫_出入庫作業_批號.Location = new System.Drawing.Point(571, 67);
             this.ComboBox_藥庫_出入庫作業_批號.Name = "ComboBox_藥庫_出入庫作業_批號";
             this.ComboBox_藥庫_出入庫作業_批號.Size = new System.Drawing.Size(234, 34);
             this.ComboBox_藥庫_出入庫作業_批號.TabIndex = 158;
@@ -27885,7 +27907,7 @@
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label26.Location = new System.Drawing.Point(241, 66);
+            this.label26.Location = new System.Drawing.Point(561, 24);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(64, 26);
             this.label26.TabIndex = 1;
@@ -27896,7 +27918,7 @@
             this.ComboBox_藥庫_出入庫作業_效期.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ComboBox_藥庫_出入庫作業_效期.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ComboBox_藥庫_出入庫作業_效期.FormattingEnabled = true;
-            this.ComboBox_藥庫_出入庫作業_效期.Location = new System.Drawing.Point(222, 115);
+            this.ComboBox_藥庫_出入庫作業_效期.Location = new System.Drawing.Point(246, 68);
             this.ComboBox_藥庫_出入庫作業_效期.Name = "ComboBox_藥庫_出入庫作業_效期";
             this.ComboBox_藥庫_出入庫作業_效期.Size = new System.Drawing.Size(234, 34);
             this.ComboBox_藥庫_出入庫作業_效期.TabIndex = 157;
@@ -27906,7 +27928,7 @@
             // 
             this.ComboBox_藥庫_出入庫作業_藥名.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.ComboBox_藥庫_出入庫作業_藥名.FormattingEnabled = true;
-            this.ComboBox_藥庫_出入庫作業_藥名.Location = new System.Drawing.Point(311, 62);
+            this.ComboBox_藥庫_出入庫作業_藥名.Location = new System.Drawing.Point(631, 20);
             this.ComboBox_藥庫_出入庫作業_藥名.Name = "ComboBox_藥庫_出入庫作業_藥名";
             this.ComboBox_藥庫_出入庫作業_藥名.Size = new System.Drawing.Size(635, 34);
             this.ComboBox_藥庫_出入庫作業_藥名.TabIndex = 150;
@@ -27929,7 +27951,7 @@
             "11_其他非處方消耗外撥",
             "12_研究用藥外撥",
             "13_藥師輸入外撥"});
-            this.ComboBox_藥庫_出入庫作業_出入庫原因.Location = new System.Drawing.Point(791, 115);
+            this.ComboBox_藥庫_出入庫作業_出入庫原因.Location = new System.Drawing.Point(811, 67);
             this.ComboBox_藥庫_出入庫作業_出入庫原因.Name = "ComboBox_藥庫_出入庫作業_出入庫原因";
             this.ComboBox_藥庫_出入庫作業_出入庫原因.Size = new System.Drawing.Size(279, 34);
             this.ComboBox_藥庫_出入庫作業_出入庫原因.TabIndex = 152;
@@ -40749,6 +40771,8 @@
         private MyUI.RJ_DatePicker rJ_DatePicker_藥庫_出入庫作業_選擇效期;
         private MyUI.PLC_RJ_Button plC_RJ_Button_藥庫_出入庫作業_刪除資料;
         private MyUI.PLC_RJ_Button plC_RJ_Button_交易紀錄查詢_匯出資料;
+        private System.Windows.Forms.TextBox textBox_藥庫_出入庫作業_備註;
+        private System.Windows.Forms.Label label62;
     }
 }
 
