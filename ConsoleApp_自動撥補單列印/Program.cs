@@ -56,14 +56,18 @@ namespace ConsoleApp_自動撥補單列印
                 table.Port = "3306";
                 SQLControl sQLControl_自動撥補 = new SQLControl(table);
                 Logger.LogAddLine();
-                List<object[]> list_自動撥補 = sQLControl_自動撥補.GetRowsByBetween(null, (int)enum_drugStotreDistribution.加入時間, DateTime.Now.GetStartDate().ToDateTimeString(), DateTime.Now.GetEndDate().ToDateTimeString());
-                Logger.Log($"共取得撥補資料共<{list_自動撥補.Count}>筆 ({DateTime.Now.GetStartDate().ToDateTimeString()}~{ DateTime.Now.GetEndDate().ToDateTimeString()})");
+                List<object[]> list_自動撥補 = sQLControl_自動撥補.GetRowsByBetween(null, (int)enum_drugStotreDistribution.加入時間, DateTime.Now.AddDays(0).GetStartDate().ToDateTimeString(), DateTime.Now.AddDays(0).GetEndDate().ToDateTimeString());
                 list_自動撥補 = (from temp in list_自動撥補
-                             where temp[(int)enum_drugStotreDistribution.狀態].ObjectToString() == "等待過帳"
-                             || temp[(int)enum_drugStotreDistribution.狀態].ObjectToString() == "已列印"
-                             && temp[(int)enum_drugStotreDistribution.實撥量].StringToInt32() > 0
+                             //where temp[(int)enum_drugStotreDistribution.狀態].ObjectToString() == "等待過帳"
+                             where temp[(int)enum_drugStotreDistribution.實撥量].StringToInt32() > 0
+                             where temp[(int)enum_drugStotreDistribution.來源庫庫存].StringToInt32() > 0
                              select temp).ToList();
+                Logger.Log($"共取得撥補資料共<{list_自動撥補.Count}>筆 ({DateTime.Now.GetStartDate().ToDateTimeString()}~{ DateTime.Now.GetEndDate().ToDateTimeString()})");
                 Logger.Log($"其中[等待過帳]撥補資料共<{list_自動撥補.Count}>筆 ({DateTime.Now.GetStartDate().ToDateTimeString()}~{ DateTime.Now.GetEndDate().ToDateTimeString()})");
+
+                List<drugStotreDistributionClass> drugStotreDistributionClasses = drugStotreDistributionClasses = list_自動撥補.SQLToClass<drugStotreDistributionClass, enum_drugStotreDistribution>();
+                drugStotreDistributionClasses.Sort(new drugStotreDistributionClass.ICP_By_addedTime());
+                list_自動撥補 = drugStotreDistributionClasses.ClassToSQL<drugStotreDistributionClass, enum_drugStotreDistribution>();
 
                 List<class_emg_apply> class_Emg_Applies = new List<class_emg_apply>();
                 for (int i = 0; i < list_自動撥補.Count; i++)
@@ -82,20 +86,19 @@ namespace ConsoleApp_自動撥補單列印
                 string json = Basic.Net.WEBApiPostJson($"{emg_apply_ApiURL}", json_in);
                 List<SheetClass> sheetClass = json.JsonDeserializet<List<SheetClass>>();
 
-                Logger.Log($"取得資料表共<{sheetClass.Count}>張");
+
                 if (sheetClass.Count > 0)
                 {
-                    printerClass.PrinterName = "藥庫";
-                    printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
+                    //printerClass.PrinterName = "藥庫";
                     printerClass.PrinterName = "撥補單";
                     printerClass.Print(sheetClass, PrinterClass.PageSize.A4);
-
                 }
-                for (int i = 0; i < list_自動撥補.Count; i++)
-                {
-                    if (list_自動撥補[i][(int)enum_drugStotreDistribution.狀態].ObjectToString() == "過帳完成") continue;
-                    list_自動撥補[i][(int)enum_drugStotreDistribution.狀態] = "已列印";
-                }
+                Logger.Log($"取得資料表共<{sheetClass.Count}>張,使用「{ printerClass.PrinterName}」列印...");
+                //for (int i = 0; i < list_自動撥補.Count; i++)
+                //{
+                //    if (list_自動撥補[i][(int)enum_drugStotreDistribution.狀態].ObjectToString() == "過帳完成") continue;
+                //    list_自動撥補[i][(int)enum_drugStotreDistribution.狀態] = "已列印";
+                //}
                 sQLControl_自動撥補.UpdateByDefulteExtra(null, list_自動撥補);
                 Logger.Log($"列印完成");
 

@@ -68,7 +68,7 @@ namespace InventoryConsumptionTracker
 
         static void Main(string[] args)
         {
-            int month = 1;
+            int month = 3;
             DateTime dateTime = new DateTime(2025, month, 1);
             DateTime dateTime_st = dateTime.GetStartDate();
             DateTime dateTime_end = dateTime.AddMonths(1).AddDays(-1).GetEndDate();

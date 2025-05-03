@@ -92,7 +92,7 @@ namespace ConsoleApp_藥局ABC消耗量計算
             List<object[]> list_急診消耗帳 = new List<object[]>();
             List<object[]> list_住院消耗帳 = new List<object[]>();
             List<object[]> list_消耗帳 = new List<object[]>();
-            DateTime dateTime_st = dateTime.AddDays(-90);
+            DateTime dateTime_st = dateTime.AddDays(-30);
             DateTime dateTime_end = dateTime.AddDays(0);
             List<Task> tasks = new List<Task>();
             Logger.LogAddLine();
@@ -195,8 +195,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 {
 
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 8;
-                    安全量 = (消耗量 / 90) * 6;
+                    基準量 = (消耗量 / 30) * 8;
+                    安全量 = (消耗量 / 30) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;
@@ -218,8 +218,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else if (i > A_num && i <= B_num)
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 8;
-                    安全量 = (消耗量 / 90) * 6;
+                    基準量 = (消耗量 / 30) * 8;
+                    安全量 = (消耗量 / 30) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;
@@ -240,8 +240,8 @@ namespace ConsoleApp_藥局ABC消耗量計算
                 else
                 {
                     消耗量 = list_ABC[i][(int)enum_ABC報表.消耗量].ObjectToString().StringToDouble();
-                    基準量 = (消耗量 / 90) * 8;
-                    安全量 = (消耗量 / 90) * 6;
+                    基準量 = (消耗量 / 30) * 8;
+                    安全量 = (消耗量 / 30) * 6;
                     if ((基準量 > 0 && 基準量 < 1) || (安全量 > 0 && 安全量 < 1))
                     {
                         基準量 = 1;

@@ -108,9 +108,6 @@ namespace 智能藥庫系統
 
             this.plC_UI_Init.Add_Method(this.sub_Program_藥庫_撥補_自動撥補);
         }
-
-    
-
         private void sub_Program_藥庫_撥補_自動撥補()
         {
 

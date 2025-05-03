@@ -508,22 +508,31 @@ namespace 智能藥庫系統
                 dialogResult = this.openFileDialog_LoadExcel.ShowDialog();
             }));
             if (dialogResult != DialogResult.OK) return;
-
-            string jsonstr = MyFileStream.LoadFileAllText($"{this.openFileDialog_LoadExcel.FileName}");
-            List<class_MedPrice> class_MedPrices = jsonstr.JsonDeserializet<List<class_MedPrice>>();
-            List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
-            for (int i = 0; i < list_value.Count; i++)
+            try
             {
-                string 藥碼 = list_value[i][(int)enum_盤點報表_盤點總表.藥碼].ObjectToString();
-                class_MedPrices_buf = (from temp in class_MedPrices
-                                       where temp.藥品碼 == 藥碼
-                                       select temp).ToList();
-                if (class_MedPrices_buf.Count > 0)
+                string jsonstr = MyFileStream.LoadFileAllText($"{this.openFileDialog_LoadExcel.FileName}");
+                List<class_MedPrice> class_MedPrices = jsonstr.JsonDeserializet<List<class_MedPrice>>();
+                List<class_MedPrice> class_MedPrices_buf = new List<class_MedPrice>();
+                for (int i = 0; i < list_value.Count; i++)
                 {
-                    list_value[i][(int)enum_盤點報表_盤點總表.單價] = class_MedPrices_buf[0].成本價;
+                    string 藥碼 = list_value[i][(int)enum_盤點報表_盤點總表.藥碼].ObjectToString();
+                    class_MedPrices_buf = (from temp in class_MedPrices
+                                           where temp.藥品碼 == 藥碼
+                                           select temp).ToList();
+                    if (class_MedPrices_buf.Count > 0)
+                    {
+                        list_value[i][(int)enum_盤點報表_盤點總表.單價] = class_MedPrices_buf[0].成本價;
+                    }
                 }
-            }
 
+
+            }
+            catch(Exception ex)
+            {
+                MyMessageBox.ShowDialog($"Exception {ex.Message}");
+                return;
+            }
+        
             DateTime DateTime_st = DateTime.Now;
 
         

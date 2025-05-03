@@ -88,7 +88,10 @@ namespace ConsoleApp_線上藥檔更新
                     藥碼 = reader["UDDRGNO"].ToString().Trim();
                     string test = reader["UDCTCCTL"].ToString().Trim(); 
                     Console.WriteLine($"({index}) 取得藥品資料({藥碼})");
-            
+                    if(藥碼 == "05246")
+                    {
+
+                    }
                     if (藥碼.StringIsEmpty() == false)
                     {
                         medClass medClass = new medClass();

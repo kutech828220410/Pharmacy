@@ -107,6 +107,7 @@ namespace ConsoleApp_住院批次帳讀取
             Logger.Log($"------------------開始執行------------------");
             try
             {
+                
                 bool isNewInstance;
                 string applicationName = Assembly.GetExecutingAssembly().GetName().Name; // 获取程序集名称
                 using (System.Threading.Mutex mutex = new System.Threading.Mutex(true, applicationName, out isNewInstance))
@@ -151,10 +152,7 @@ namespace ConsoleApp_住院批次帳讀取
                             DB_DS01.UserName = serverSettingClass.User;
                             DB_DS01.Password = serverSettingClass.Password;
                         }
-                        SQLControl sQLControl_藥庫_藥品資料 = new SQLControl(DB_Medicine_Cloud.IP, DB_Medicine_Cloud.DataBaseName, DB_Medicine_Cloud.UserName, DB_Medicine_Cloud.Password, DB_Medicine_Cloud.Port);
-                        sQLControl_藥庫_藥品資料.TableName = "medicine_page_cloud";
-                        List<object[]> list_藥品資料 = sQLControl_藥庫_藥品資料.GetAllRows(null);
-                        List<medClass> medClasses = list_藥品資料.SQLToClass<medClass, enum_雲端藥檔>();
+                        List<medClass> medClasses = medClass.get_med_cloud("http://127.0.0.1:4433");
                         List<medClass> medClasses_buf = new List<medClass>();
                         Dictionary<string, List<medClass>> keyValuePairs_medClass = medClass.CoverToDictionaryByCode(medClasses);
 
@@ -308,6 +306,10 @@ namespace ConsoleApp_住院批次帳讀取
             finally
             {
                 Logger.Log($"------------------程序結束------------------");
+                if (System.Diagnostics.Debugger.IsAttached)
+                {
+                    Console.ReadKey();
+                }
             }
         }
         static private void Function_過帳明細_解析TXT(string text, ref string 藥品碼, ref string 藥局代碼, ref string Date, ref string 異動量)

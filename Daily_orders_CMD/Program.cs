@@ -403,6 +403,10 @@ namespace Daily_orders_CMD
             {
                 return true;
             }
+            if (date.ToString("MM/dd").Equals("04/04"))
+            {
+                return true;
+            }
             if (date.ToString("MM/dd").Equals("04/05"))
             {
                 return true;
